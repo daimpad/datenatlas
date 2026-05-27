@@ -27,15 +27,38 @@
                   "label": "Rot — nur Metadaten publizierbar",
                   "explanation": "Patientenakten sind das sensibelste Datengut im Gesundheitswesen — Direktveröffentlichung ist kategorisch ausgeschlossen. Aggregierte Diagnosestatistiken auf ICD-Kapitel-Ebene (ohne Patientenbezug) werden durch das RKI als Public-Health-Open-Data bereitgestellt."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
-                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
-                "format":      [{ "code": "FT_03", "label": "XML" }],
-                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Einzelfallbezogene Daten"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
                 "relevance": 2,
                 "processes": [
-                  { "method": "Behandlungsdokumentation", "description": "Patientenakte ist rechtlich vorgeschriebene Dokumentation jedes Behandlungsschritts (§ 630f BGB)." },
-                  { "method": "Qualitätssicherung im Krankenhaus", "description": "Fallakten dienen der internen Qualitätsprüfung und Vorbereitung von Qualitätsberichten nach IQTIG-Anforderungen." }
+                  {
+                    "method": "Gesundheitsversorgung & Prävention",
+                    "description": "Patientenakte ist rechtlich vorgeschriebene Dokumentation jedes Behandlungsschritts (§ 630f BGB)."
+                  },
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Fallakten dienen der internen Qualitätsprüfung und Vorbereitung von Qualitätsberichten nach IQTIG-Anforderungen."
+                  }
                 ]
               }
             },
@@ -51,15 +74,42 @@
                   "label": "Gelb — nach Aufbereitung publizierbar",
                   "explanation": "Aggregierte DRG-Statistiken auf 3-stelliger ICD-Ebene (Kapitel), nach Krankenhaustyp und Region, können nach Entfernung aller Fallreferenzen veröffentlicht werden. Das InEK stellt bereits einen anonymisierten DRG-Datenbrowser bereit — ein gutes Vorbild für offene Versorgungsforschungsdaten."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_05", "label": "Finanzdaten / Berichte" },
-                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
-                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_03", "label": "XML" }],
-                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzdaten / Berichte"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
                 "relevance": 4,
                 "processes": [
-                  { "method": "Krankenhausabrechnung", "description": "DRG-Datensätze werden an Krankenkassen übermittelt und bilden die Grundlage der Fallpauschalen-Abrechnung." },
-                  { "method": "Versorgungsforschung", "description": "Aggregierte DRG-Daten ermöglichen Analysen zu Versorgungsqualität, Fallkosten und regionalen Unterschieden." }
+                  {
+                    "method": "Verwaltung & Compliance",
+                    "description": "DRG-Datensätze werden an Krankenkassen übermittelt und bilden die Grundlage der Fallpauschalen-Abrechnung."
+                  },
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Aggregierte DRG-Daten ermöglichen Analysen zu Versorgungsqualität, Fallkosten und regionalen Unterschieden."
+                  }
                 ]
               }
             },
@@ -75,15 +125,42 @@
                   "label": "Grün — sofort publizierbar",
                   "explanation": "Qualitätsberichte nach § 136b SGB V sind gesetzlich vorgeschriebene Pflichtveröffentlichungen ohne Personenbezug. Sie werden bereits vom IQTIG als maschinenlesbare XML-Dateien je Krankenhaus veröffentlicht und eignen sich direkt für Vergleichsportale und Versorgungsforschung."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
-                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Einrichtung)" },
-                "format":      [{ "code": "FT_03", "label": "XML" }, { "code": "FT_04", "label": "PDF" }],
-                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Einrichtung)"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
                 "relevance": 5,
                 "processes": [
-                  { "method": "Gesetzliche Qualitätssicherung", "description": "Krankenhäuser sind nach § 136b SGB V verpflichtet, alle zwei Jahre strukturierte Qualitätsberichte zu veröffentlichen." },
-                  { "method": "Krankenhausvergleich & Patientenorientierung", "description": "Qualitätsberichte ermöglichen Patienten und Kostenträgern den systematischen Vergleich von Versorgungsqualität und Leistungsspektrum." }
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Krankenhäuser sind nach § 136b SGB V verpflichtet, alle zwei Jahre strukturierte Qualitätsberichte zu veröffentlichen."
+                  },
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Qualitätsberichte ermöglichen Patienten und Kostenträgern den systematischen Vergleich von Versorgungsqualität und Leistungsspektrum."
+                  }
                 ]
               }
             }
@@ -108,15 +185,38 @@
                   "label": "Gelb — nach Aufbereitung publizierbar",
                   "explanation": "Nach vollständiger DICOM-Anonymisierung (PS3.15 Annex E) und Defacing bei Schädel-CTs können Bilddatensätze für KI-Training und Forschung freigegeben werden. Projekte wie der Cancer Imaging Archive (TCIA) zeigen erfolgreiche Open-Data-Praxis mit anonymisierten Bilddaten."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_07", "label": "Mediendaten / Dokumente" },
-                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
-                "format":      [{ "code": "FT_03", "label": "XML (DICOM)" }],
-                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Mediendaten / Dokumente"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "XML (DICOM)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
                 "relevance": 3,
                 "processes": [
-                  { "method": "Medizinische Bildgebung & Diagnostik", "description": "DICOM-Daten entstehen bei Untersuchungen und sind die primäre Grundlage für radiologische Befundung." },
-                  { "method": "KI-Training & Medizinforschung", "description": "Anonymisierte Bilddatensätze sind begehrte Trainingsgrundlage für KI-gestützte Diagnoseassistenz." }
+                  {
+                    "method": "Gesundheitsversorgung & Prävention",
+                    "description": "DICOM-Daten entstehen bei Untersuchungen und sind die primäre Grundlage für radiologische Befundung."
+                  },
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Anonymisierte Bilddatensätze sind begehrte Trainingsgrundlage für KI-gestützte Diagnoseassistenz."
+                  }
                 ]
               }
             },
@@ -132,15 +232,42 @@
                   "label": "Gelb — nach Aufbereitung publizierbar",
                   "explanation": "Aggregierte Labordaten (Positivrate pro Erreger und Altersgruppe, ohne Patientenbezug) sind wertvolle Public-Health-Daten für Infektionssurveillance. Das RKI nutzt solche Aggregate bereits für SurvStat@RKI. Einzelbefunde sind vollständig zu schützen."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
-                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
-                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_03", "label": "XML" }],
-                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
                 "relevance": 4,
                 "processes": [
-                  { "method": "Labordiagnostik", "description": "Befunde fließen direkt in klinische Entscheidungen und Therapieanpassungen ein." },
-                  { "method": "Infektionsüberwachung (Surveillance)", "description": "Erregernachweise werden aggregiert an Gesundheitsämter und RKI gemeldet (IfSG § 7)." }
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Befunde fließen direkt in klinische Entscheidungen und Therapieanpassungen ein."
+                  },
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Erregernachweise werden aggregiert an Gesundheitsämter und RKI gemeldet (IfSG § 7)."
+                  }
                 ]
               }
             },
@@ -156,15 +283,42 @@
                   "label": "Rot — nur Metadaten publizierbar",
                   "explanation": "Pathologiebefunde enthalten direkte Patientenidentifikatoren und besonders schutzwürdige Gesundheitsinformationen (Tumordiagnosen). Aggregierte Krebsregisterdaten ohne Personenbezug werden durch die Landeskrebsregister und das DKTK als Open Data bereitgestellt."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
-                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
-                "format":      [{ "code": "FT_04", "label": "PDF" }, { "code": "FT_03", "label": "XML" }],
-                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Einzelfallbezogene Daten"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
                 "relevance": 2,
                 "processes": [
-                  { "method": "Histologische Diagnostik", "description": "Pathologiebefunde sind Grundlage für Tumordiagnosen und steuern die onkologische Therapieentscheidung maßgeblich." },
-                  { "method": "Krebsregistermeldung", "description": "Meldepflichtige Tumoren werden auf Basis der Pathologiebefunde an die Landeskrebsregister übermittelt (Krebsregistergesetz der Länder)." }
+                  {
+                    "method": "Gesundheitsversorgung & Prävention",
+                    "description": "Pathologiebefunde sind Grundlage für Tumordiagnosen und steuern die onkologische Therapieentscheidung maßgeblich."
+                  },
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Meldepflichtige Tumoren werden auf Basis der Pathologiebefunde an die Landeskrebsregister übermittelt (Krebsregistergesetz der Länder)."
+                  }
                 ]
               }
             }
@@ -198,15 +352,38 @@
                   "label": "Rot — nur Metadaten publizierbar",
                   "explanation": "Ambulante Patientenakten fallen unter ärztliche Schweigepflicht und sind vollständig geschützt. Epidemiologisch relevante Aggregatdaten (häufigste Diagnosen, Impfquoten nach Region) werden durch die Kassenärztlichen Vereinigungen auf Bundeslandebene veröffentlicht."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
-                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
-                "format":      [{ "code": "FT_03", "label": "XML" }],
-                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Einzelfallbezogene Daten"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
                 "relevance": 2,
                 "processes": [
-                  { "method": "Behandlungsdokumentation", "description": "Gesetzlich vorgeschriebene Dokumentation jedes Arzt-Patienten-Kontakts (§ 630f BGB)." },
-                  { "method": "Kassenabrechnung", "description": "Abrechnungsrelevante Diagnosen (ICD-Codes) werden in aggregierter Form an die Kassenärztliche Vereinigung übermittelt." }
+                  {
+                    "method": "Gesundheitsversorgung & Prävention",
+                    "description": "Gesetzlich vorgeschriebene Dokumentation jedes Arzt-Patienten-Kontakts (§ 630f BGB)."
+                  },
+                  {
+                    "method": "Verwaltung & Compliance",
+                    "description": "Abrechnungsrelevante Diagnosen (ICD-Codes) werden in aggregierter Form an die Kassenärztliche Vereinigung übermittelt."
+                  }
                 ]
               }
             },
@@ -222,15 +399,42 @@
                   "label": "Gelb — nach Aufbereitung publizierbar",
                   "explanation": "Aggregierte Verschreibungsstatistiken (ATC-Gruppen nach Region und Quartal, ohne Patienten- oder Arztbezug) sind wertvolle Indikatoren für Versorgungsforschung. Das WIdO publiziert den Arzneiverordnungs-Report auf Basis solcher Daten — ein vorbildlicher Open-Data-Ansatz."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
-                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
-                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
-                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
                 "relevance": 4,
                 "processes": [
-                  { "method": "Arzneimittelverordnung", "description": "Verschreibungsprozess erzeugt Verordnungsdaten, die direkt an Apotheken und Krankenkassen übermittelt werden." },
-                  { "method": "Versorgungsanalyse & Forschung", "description": "Aggregierte Verordnungsstatistiken ermöglichen Erkennung von Über-, Unter- und Fehlversorgung auf regionaler Ebene." }
+                  {
+                    "method": "Gesundheitsversorgung & Prävention",
+                    "description": "Verschreibungsprozess erzeugt Verordnungsdaten, die direkt an Apotheken und Krankenkassen übermittelt werden."
+                  },
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Aggregierte Verordnungsstatistiken ermöglichen Erkennung von Über-, Unter- und Fehlversorgung auf regionaler Ebene."
+                  }
                 ]
               }
             },
@@ -246,15 +450,42 @@
                   "label": "Gelb — nach Aufbereitung publizierbar",
                   "explanation": "Aggregierte Impfquoten ohne Personenbezug (nach Altersgruppe und Region) können nach Entfernung aller Identifikatoren als Open Data veröffentlicht werden. Das RKI publiziert bereits solche Auswertungen im Rahmen der KV-Impfsurveillance, weitere Granularität wäre öffentlich wertvoll."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
-                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
-                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
-                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
                 "relevance": 5,
                 "processes": [
-                  { "method": "Impfsurveillance", "description": "Impfquoten aus Praxisdaten fließen in die KV-Impfsurveillance des RKI ein und bilden die Grundlage nationaler Impfstrategie." },
-                  { "method": "Öffentliche Gesundheitsplanung", "description": "Regionale Impfquoten nach Altersgruppe ermöglichen die gezielte Planung von Aufholimpfkampagnen und Ressourcenallokation." }
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Impfquoten aus Praxisdaten fließen in die KV-Impfsurveillance des RKI ein und bilden die Grundlage nationaler Impfstrategie."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Regionale Impfquoten nach Altersgruppe ermöglichen die gezielte Planung von Aufholimpfkampagnen und Ressourcenallokation."
+                  }
                 ]
               }
             }
@@ -288,15 +519,42 @@
                   "label": "Gelb — nach Aufbereitung publizierbar",
                   "explanation": "Einzelmeldungen enthalten Identifikatoren und sind vollständig geschützt. Aggregierte Fallzahlen pro Erreger, Altersgruppe und Kreisgebiet können nach Anonymisierung als Open Data bereitgestellt werden. Das RKI praktiziert dies bereits über SurvStat — eine Ausweitung auf maschinenlesbare Formate ist erstrebenswert."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
-                "granularity": { "code": "GR_02", "label": "Lokal (Kreis/Gemeinde)" },
-                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON" }],
-                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Kreis/Gemeinde)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
                 "relevance": 5,
                 "processes": [
-                  { "method": "Infektionsschutz & Meldewesen", "description": "Labore und Ärzte melden meldepflichtige Erreger an Gesundheitsämter, die Daten werden ans RKI weitergeleitet (§ 11 IfSG)." },
-                  { "method": "Epidemiologische Surveillance", "description": "Aggregierte Meldedaten ermöglichen die frühzeitige Erkennung von Ausbrüchen und die Bewertung von Seuchenlagen auf nationaler Ebene." }
+                  {
+                    "method": "Gesundheitsversorgung & Prävention",
+                    "description": "Labore und Ärzte melden meldepflichtige Erreger an Gesundheitsämter, die Daten werden ans RKI weitergeleitet (§ 11 IfSG)."
+                  },
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Aggregierte Meldedaten ermöglichen die frühzeitige Erkennung von Ausbrüchen und die Bewertung von Seuchenlagen auf nationaler Ebene."
+                  }
                 ]
               }
             },
@@ -312,15 +570,42 @@
                   "label": "Grün — sofort publizierbar",
                   "explanation": "Impfquoten-Surveillance-Daten enthalten keinen Personenbezug und werden vom RKI bereits im Epidemiologischen Bulletin veröffentlicht. Eine vollständige Bereitstellung als maschinenlesbarer Open-Data-Datensatz (CSV/JSON) wäre technisch sofort umsetzbar und gesellschaftlich hochwertvoll."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_06", "label": "Zeitreihendaten" },
-                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
-                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
-                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Zeitreihendaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
                 "relevance": 5,
                 "processes": [
-                  { "method": "Nationale Impfstrategie", "description": "Impfquoten-Daten sind Grundlage für die Nationalen Impfempfehlungen der STIKO und die Bewertung von Impfzielerreichung." },
-                  { "method": "Internationale Gesundheitsberichterstattung", "description": "Deutschland meldet Impfquoten im Rahmen der WHO-Berichterstattung — offene Daten erhöhen Transparenz und Nachvollziehbarkeit." }
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Impfquoten-Daten sind Grundlage für die Nationalen Impfempfehlungen der STIKO und die Bewertung von Impfzielerreichung."
+                  },
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Deutschland meldet Impfquoten im Rahmen der WHO-Berichterstattung — offene Daten erhöhen Transparenz und Nachvollziehbarkeit."
+                  }
                 ]
               }
             },
@@ -336,15 +621,42 @@
                   "label": "Gelb — nach Aufbereitung publizierbar",
                   "explanation": "Ausbruchsdaten erfordern sorgfältige Anonymisierung, da Ort und Zeitraum mit anderen Quellen zur Identifizierung betroffener Personen oder Einrichtungen kombiniert werden könnten. Nach angemessener Aggregation und Zeitverzug sind anonymisierte Ausbruchsberichte wertvolle epidemiologische Open Data."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
-                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
-                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_04", "label": "PDF" }],
-                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
                 "relevance": 4,
                 "processes": [
-                  { "method": "Ausbruchsmanagement", "description": "Gesundheitsämter dokumentieren Infektionsausbrüche nach IfSG und melden diese an das RKI zur nationalen Lagebeurteilung." },
-                  { "method": "Lessons-Learned-Analyse", "description": "Systematische Ausbruchsdokumentation ermöglicht die Auswertung von Infektionsketten und die Verbesserung präventiver Maßnahmen." }
+                  {
+                    "method": "Gesundheitsversorgung & Prävention",
+                    "description": "Gesundheitsämter dokumentieren Infektionsausbrüche nach IfSG und melden diese an das RKI zur nationalen Lagebeurteilung."
+                  },
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Systematische Ausbruchsdokumentation ermöglicht die Auswertung von Infektionsketten und die Verbesserung präventiver Maßnahmen."
+                  }
                 ]
               }
             }
@@ -369,15 +681,42 @@
                   "label": "Grün — sofort publizierbar",
                   "explanation": "Gesundheitsatlas-Daten enthalten ausschließlich aggregierte Indikatoren ohne Personenbezug und sind bereits durch das RKI (GBE-Bund) und Landeszentren für Gesundheit veröffentlicht. Eine einheitliche maschinenlesbare Bereitstellung mit stabilen Metadaten würde die Nutzbarkeit deutlich erhöhen."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_04", "label": "Geodaten / Karten" },
-                "granularity": { "code": "GR_02", "label": "Lokal (Kreis/Gemeinde)" },
-                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON" }],
-                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Geodaten / Karten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Kreis/Gemeinde)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
                 "relevance": 5,
                 "processes": [
-                  { "method": "Kommunale Gesundheitsplanung", "description": "Gesundheitsatlanten bilden die Datengrundlage für kommunale Gesundheitskonferenzen und die Priorisierung von Präventionsmaßnahmen." },
-                  { "method": "Wissenschaftliche Versorgungsforschung", "description": "Regionale Gesundheitsindikatoren ermöglichen die Analyse von Versorgungsungleichheiten und die Evaluation von Interventionen." }
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Gesundheitsatlanten bilden die Datengrundlage für kommunale Gesundheitskonferenzen und die Priorisierung von Präventionsmaßnahmen."
+                  },
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Regionale Gesundheitsindikatoren ermöglichen die Analyse von Versorgungsungleichheiten und die Evaluation von Interventionen."
+                  }
                 ]
               }
             },
@@ -393,15 +732,42 @@
                   "label": "Grün — sofort publizierbar",
                   "explanation": "Statistiken zu öffentlich finanzierten Präventionsprogrammen sind aggregierte Wirkungsdaten ohne Personenbezug und erfüllen alle Voraussetzungen für Open Data. Die Nationale Präventionskonferenz veröffentlicht bereits Präventionsberichte — eine maschinenlesbare Disaggregation würde erheblichen Mehrwert schaffen."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
-                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
-                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_04", "label": "PDF" }],
-                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
                 "relevance": 4,
                 "processes": [
-                  { "method": "Präventionsevaluation", "description": "Programmdaten ermöglichen die evidenzbasierte Bewertung der Wirksamkeit von Präventionsmaßnahmen gemäß § 20 SGB V." },
-                  { "method": "Ressourcenallokation", "description": "Reichweiten- und Wirkungsdaten steuern die Verteilung öffentlicher Mittel auf Präventionsprogramme durch Krankenkassen und Kommunen." }
+                  {
+                    "method": "Gesundheitsversorgung & Prävention",
+                    "description": "Programmdaten ermöglichen die evidenzbasierte Bewertung der Wirksamkeit von Präventionsmaßnahmen gemäß § 20 SGB V."
+                  },
+                  {
+                    "method": "Ressourcenplanung",
+                    "description": "Reichweiten- und Wirkungsdaten steuern die Verteilung öffentlicher Mittel auf Präventionsprogramme durch Krankenkassen und Kommunen."
+                  }
                 ]
               }
             },
@@ -417,15 +783,42 @@
                   "label": "Gelb — nach Aufbereitung publizierbar",
                   "explanation": "Sozialepidemiologische Daten aus unterschiedlichen Verwaltungsquellen erfordern eine datenschutzkonforme Verknüpfung und Aggregation vor der Veröffentlichung. Nach statistischer Geheimhaltungsprüfung (Mindestfallzahlen) können kreisbezogene Indikatoren als Open Data bereitgestellt werden."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
-                "granularity": { "code": "GR_02", "label": "Lokal (Kreis/Gemeinde)" },
-                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON" }],
-                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Kreis/Gemeinde)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
                 "relevance": 4,
                 "processes": [
-                  { "method": "Gesundheitliche Chancengleichheit", "description": "Sozialepidemiologische Daten sind Kerngrundlage für Programme zur Reduktion gesundheitlicher Ungleichheit (Präventionsgesetz § 20h SGB V)." },
-                  { "method": "Kommunale Sozialplanung", "description": "Kommunen nutzen Daten zu sozialen Determinanten für die integrierte Stadt- und Gesundheitsplanung in sozial benachteiligten Quartieren." }
+                  {
+                    "method": "Gesundheitsversorgung & Prävention",
+                    "description": "Sozialepidemiologische Daten sind Kerngrundlage für Programme zur Reduktion gesundheitlicher Ungleichheit (Präventionsgesetz § 20h SGB V)."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Kommunen nutzen Daten zu sozialen Determinanten für die integrierte Stadt- und Gesundheitsplanung in sozial benachteiligten Quartieren."
+                  }
                 ]
               }
             }
@@ -459,15 +852,38 @@
                   "label": "Rot — nur Metadaten publizierbar",
                   "explanation": "Einzelfallbezogene Rettungseinsatzdaten verbinden hochsensible Gesundheitsdaten mit präzisen Ortsangaben und sind vollständig geschützt. Aggregierte Einsatzstatistiken ohne Personenbezug können hingegen als Open Data bereitgestellt werden und ermöglichen Versorgungsanalysen."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
-                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
-                "format":      [{ "code": "FT_03", "label": "XML" }],
-                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Einzelfallbezogene Daten"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
                 "relevance": 2,
                 "processes": [
-                  { "method": "Einsatzdokumentation & Qualitätssicherung", "description": "Rettungsdienstprotokoll ist gesetzlich vorgeschriebene Dokumentation des Notfalleinsatzes und Grundlage der Qualitätssicherung." },
-                  { "method": "Medizinische Versorgungsplanung", "description": "Einsatzdaten bilden die Grundlage für Standortplanung von Rettungswachen und Optimierung von Dispositionsalgorithmen." }
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Rettungsdienstprotokoll ist gesetzlich vorgeschriebene Dokumentation des Notfalleinsatzes und Grundlage der Qualitätssicherung."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Einsatzdaten bilden die Grundlage für Standortplanung von Rettungswachen und Optimierung von Dispositionsalgorithmen."
+                  }
                 ]
               }
             },
@@ -483,15 +899,42 @@
                   "label": "Grün — sofort publizierbar",
                   "explanation": "Hilfsfriststatistiken sind aggregierte Qualitätskennzahlen ohne Personenbezug, die von Rettungsdienstträgern und Landesbehörden im Rahmen der gesetzlichen Berichtspflicht veröffentlicht werden. Eine standardisierte, maschinenlesbare Bereitstellung bundesweit würde die Vergleichbarkeit erheblich verbessern."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
-                "granularity": { "code": "GR_02", "label": "Lokal (Kreis/Gemeinde)" },
-                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_04", "label": "PDF" }],
-                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Kreis/Gemeinde)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
                 "relevance": 5,
                 "processes": [
-                  { "method": "Berichtspflicht Rettungsdienst", "description": "Rettungsdienstträger berichten jährlich über Hilfsfristeinhaltung an Aufsichtsbehörden gemäß Rettungsdienstgesetz der jeweiligen Länder." },
-                  { "method": "Versorgungsqualitätskontrolle", "description": "Hilfsfristdaten sind zentraler Qualitätsindikator für die Notfallversorgung und Grundlage für Rettungswachenbedarfspläne." }
+                  {
+                    "method": "Verwaltung & Compliance",
+                    "description": "Rettungsdienstträger berichten jährlich über Hilfsfristeinhaltung an Aufsichtsbehörden gemäß Rettungsdienstgesetz der jeweiligen Länder."
+                  },
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Hilfsfristdaten sind zentraler Qualitätsindikator für die Notfallversorgung und Grundlage für Rettungswachenbedarfspläne."
+                  }
                 ]
               }
             },
@@ -507,15 +950,42 @@
                   "label": "Grün — sofort publizierbar",
                   "explanation": "Einsatzaufkommen-Zeitreihen sind vollständig anonymisierte Mengenstatistiken ohne jeden Personenbezug und könnten sofort als Open Data bereitgestellt werden. Aktuell sind sie nur fragmentarisch und ohne einheitliche Standards verfügbar — eine bundesweite Standardisierung wäre ein erheblicher Mehrwert."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_06", "label": "Zeitreihendaten" },
-                "granularity": { "code": "GR_02", "label": "Lokal (Kreis/Gemeinde)" },
-                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON" }],
-                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Zeitreihendaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Kreis/Gemeinde)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
                 "relevance": 4,
                 "processes": [
-                  { "method": "Rettungsdienstbedarfsplanung", "description": "Einsatzaufkommen-Zeitreihen sind Kerngröße für die Dimensionierung von Rettungswachen, Fahrzeugen und Personal." },
-                  { "method": "Saisonale Kapazitätssteuerung", "description": "Monatliche Einsatzzahlen ermöglichen die Vorhersage von Nachfragespitzen und die vorausschauende Ressourcenplanung." }
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Einsatzaufkommen-Zeitreihen sind Kerngröße für die Dimensionierung von Rettungswachen, Fahrzeugen und Personal."
+                  },
+                  {
+                    "method": "Ressourcenplanung",
+                    "description": "Monatliche Einsatzzahlen ermöglichen die Vorhersage von Nachfragespitzen und die vorausschauende Ressourcenplanung."
+                  }
                 ]
               }
             }
@@ -540,15 +1010,42 @@
                   "label": "Gelb — nach Aufbereitung publizierbar",
                   "explanation": "Qualitätsindikatoren der Notfallversorgung werden in Qualitätsregistern wie dem DGAI-Reanimationsregister aggregiert und können nach sorgfältiger Anonymisierung und Prüfung auf Rückschlussmöglichkeiten auf Einrichtungen als Open Data bereitgestellt werden."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
-                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
-                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_04", "label": "PDF" }],
-                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
                 "relevance": 4,
                 "processes": [
-                  { "method": "Rettungsdienstliche Qualitätssicherung", "description": "Qualitätsindikatoren werden in Peer-Review-Verfahren und internen Audits genutzt, um Versorgungsstandards kontinuierlich zu verbessern." },
-                  { "method": "Benchmarking Rettungsorganisationen", "description": "Aggregierte Qualitätsdaten ermöglichen den Vergleich zwischen Rettungsdienstbereichen und die Identifikation von Best Practices." }
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Qualitätsindikatoren werden in Peer-Review-Verfahren und internen Audits genutzt, um Versorgungsstandards kontinuierlich zu verbessern."
+                  },
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Aggregierte Qualitätsdaten ermöglichen den Vergleich zwischen Rettungsdienstbereichen und die Identifikation von Best Practices."
+                  }
                 ]
               }
             },
@@ -564,15 +1061,42 @@
                   "label": "Grün — sofort publizierbar",
                   "explanation": "Wartezeit- und Abbruchstatistiken sind aggregierte Qualitätskennzahlen ohne Personenbezug. Das IQTIG erfasst diese Daten im Rahmen der Qualitätssicherung Notaufnahme — eine vollständige Open-Data-Bereitstellung wäre ohne weitere Anonymisierungsschritte sofort möglich."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
-                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Einrichtung)" },
-                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON" }],
-                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Einrichtung)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
                 "relevance": 5,
                 "processes": [
-                  { "method": "Notaufnahme-Qualitätssicherung", "description": "Wartezeit- und Abbruchdaten sind Schlüsselindikatoren für die Versorgungskapazität und Belastung von Notaufnahmen." },
-                  { "method": "Krankenhausplanung & Kapazitätssteuerung", "description": "Länder und Kommunen nutzen Notaufnahmedaten für die Bedarfsplanung und die Reform der Notfallversorgungsstrukturen." }
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Wartezeit- und Abbruchdaten sind Schlüsselindikatoren für die Versorgungskapazität und Belastung von Notaufnahmen."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Länder und Kommunen nutzen Notaufnahmedaten für die Bedarfsplanung und die Reform der Notfallversorgungsstrukturen."
+                  }
                 ]
               }
             },
@@ -588,15 +1112,42 @@
                   "label": "Gelb — nach Aufbereitung publizierbar",
                   "explanation": "Traumaregister-Daten werden bereits im Jahresbericht des TraumaRegister DGU aggregiert veröffentlicht. Eine maschinenlesbare Bereitstellung disaggregierter Daten nach Verletzungsmuster und Versorgungsregion würde nach Prüfung auf Reidentifizierungsrisiken erheblichen Forschungsmehrwert schaffen."
                 },
-                "theme":       { "code": "TH_04", "label": "Gesundheit" },
-                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
-                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
-                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_04", "label": "PDF" }],
-                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
                 "relevance": 4,
                 "processes": [
-                  { "method": "Traumaversorgungsforschung", "description": "Traumaregister-Daten ermöglichen die Evaluation von Behandlungsprotokollen und die Identifikation von Verbesserungspotenzialen in der Schwerstverletztenversorgung." },
-                  { "method": "Zertifizierung Traumazentren", "description": "Registerauswertungen sind Grundlage für die Zertifizierung und Rezertifizierung von Traumazentren durch die Deutsche Gesellschaft für Unfallchirurgie." }
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Traumaregister-Daten ermöglichen die Evaluation von Behandlungsprotokollen und die Identifikation von Verbesserungspotenzialen in der Schwerstverletztenversorgung."
+                  },
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Registerauswertungen sind Grundlage für die Zertifizierung und Rezertifizierung von Traumazentren durch die Deutsche Gesellschaft für Unfallchirurgie."
+                  }
                 ]
               }
             }

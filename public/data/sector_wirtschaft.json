@@ -62,6 +62,30 @@
                   { "method": "Marktforschung & Analyse", "description": "Aggregierte Kauftrends (Kategorie + Saison) fließen in Marktforschungsberichte ein — stets ohne Kundenbezug." }
                 ]
               }
+            },
+            {
+              "id": "warenkorbanalyse",
+              "level": 4,
+              "name": "Warenkorbanalyse",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Aggregierte Auswertungen häufig gemeinsam gekaufter Produktkombinationen über alle Transaktionen hinweg. Die Daten zeigen Assoziationsmuster auf Artikelebene ohne Bezug zu einzelnen Kund:innen. Grundlage für Regalplatzierung, Bündelangebote und algorithmische Produktempfehlungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung teilbar",
+                  "explanation": "Warenkorbmuster enthalten keinen Personenbezug, sofern sie auf hinreichend großen Transaktionsmengen beruhen und keine Rückschlüsse auf individuelle Einkäufe erlauben. Nach Aggregation und k-Anonymisierung der Häufigkeitsschwellen sind branchenweite Kategoriemuster für Marktforschungszwecke nutzbar."
+                },
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_01", "label": "Statistische Daten" },
+                "granularity": { "code": "GR_02", "label": "Lokal / Filialebene" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Sortiments- & Regaloptimierung", "description": "Assoziationsregeln aus der Warenkorbanalyse steuern Produktplatzierung und Cross-Selling-Empfehlungen im Laden und Online-Shop." },
+                  { "method": "Marktforschung & Kategoriemanagement", "description": "Anonymisierte Kategoriemuster werden mit Lieferanten und Branchenverbänden geteilt, um Nachfrage- und Saisonalitätstrends zu verstehen." }
+                ]
+              }
             }
           ]
         }
@@ -126,6 +150,372 @@
                 "processes": [
                   { "method": "Finanztransaktionen", "description": "Buchungshistorie ist rechtlich vorgeschriebenes Grundbuch jeder Bankoperation und Basis für Abrechnungen." },
                   { "method": "Geldwäscheprävention", "description": "Transaktionsprofile werden zur Erkennung auffälliger Muster (AML) analysiert und verdächtige Fälle gemeldet." }
+                ]
+              }
+            },
+            {
+              "id": "kreditscoring",
+              "level": 4,
+              "name": "Kreditscoring",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Bonitätsbewertungen einzelner Personen auf Basis von Zahlungshistorie, Kreditauslastung, Kontenlaufzeit und externen Auskunftsdaten (z.B. SCHUFA). Der Score bestimmt Kreditvergabe, Zinshöhe und Rahmenbedingungen von Finanzprodukten. Jede Bewertung ist einer natürlichen Person direkt zugeordnet.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Kreditscores sind hochsensible personenbezogene Finanzdaten, deren Weitergabe durch DSGVO Art. 22 (automatisierte Entscheidungen) und das BDSG streng reguliert ist. Betroffene haben Auskunftsrecht über ihren eigenen Score, eine Veröffentlichung oder breitere Nutzung ist ausgeschlossen. Aggregierte Ausfallquoten nach Branche werden nur durch die Bundesbank publiziert."
+                },
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_02", "label": "JSON" }],
+                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "relevance": 1,
+                "processes": [
+                  { "method": "Kreditvergabe & Risikoprüfung", "description": "Bonitätsbewertungen fließen als zentrales Entscheidungskriterium in die automatisierte und manuelle Kreditvergabe ein." },
+                  { "method": "Produktkonditionierung", "description": "Zinssätze, Kreditrahmen und Versicherungsprämien werden auf Basis des individuellen Scorewerts kalkuliert und angepasst." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personalwesen",
+      "level": 2,
+      "name": "Arbeitgeber & Personalverwaltung",
+      "color": "#b7770d",
+      "description": "Unternehmen jeder Größe mit Personalverwaltung, Gehaltsabrechnung und Bewerbermanagement",
+      "children": [
+        {
+          "id": "mitarbeiterdaten",
+          "level": 3,
+          "name": "Mitarbeiterverwaltung",
+          "color": "#e67e22",
+          "description": "Personalakten, Gehaltsabrechnung und Bewerberdaten als Kernbestandteile des HR-Systems",
+          "children": [
+            {
+              "id": "personalakte",
+              "level": 4,
+              "name": "Personalakte",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Umfassende digitale Personalakte mit Name, Adresse, Geburtsdatum, Qualifikationen, Arbeitsvertrag, Abmahnungen, Leistungsbeurteilungen und Krankheitszeiten. Enthält alle arbeitsrechtlich relevanten Dokumente über den gesamten Beschäftigungszeitraum. Zugang ist auf HR und direkte Vorgesetzte beschränkt.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Personalakten sind vollständig geschlossen und unterliegen dem arbeitsrechtlichen Persönlichkeitsschutz sowie DSGVO. Selbst aggregierte Auswertungen (z.B. Altersstruktur) dürfen nur intern genutzt werden. Eine externe Weitergabe ist ausnahmslos unzulässig, mit Ausnahme gesetzlich vorgeschriebener Meldungen an Sozialversicherungsträger."
+                },
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }],
+                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "relevance": 1,
+                "processes": [
+                  { "method": "Personalverwaltung & Compliance", "description": "Personalakten sind rechtlich vorgeschriebene Dokumentation des Arbeitsverhältnisses und Grundlage für Abmahnungen, Beurteilungen und Arbeitszeugnisse." },
+                  { "method": "Interne Audits & Betriebsrat", "description": "Ausgewählte Akteninhalte werden im Rahmen betrieblicher Mitbestimmung und Gleichstellungsprüfungen ausgewertet — stets pseudonymisiert." }
+                ]
+              }
+            },
+            {
+              "id": "gehaltsabrechnung",
+              "level": 4,
+              "name": "Gehaltsabrechnung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatliche Lohn- und Gehaltsabrechnungen mit Brutto/Netto-Berechnung, Steuerklasse, Sozialversicherungsbeiträgen, Zulagen und Abzügen. Enthält steuerlich relevante Identifikatoren (Steuer-ID, SV-Nummer) und ist gesetzlich 10 Jahre aufzubewahren. Direkte Zuordnung zur natürlichen Person ist untrennbar.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Gehaltsdaten gehören zu den sensibelsten personenbezogenen Informationen im Arbeitsverhältnis und sind durch arbeitsrechtliche Vertraulichkeitspflichten sowie DSGVO vollständig geschützt. Statistische Aggregate (mittleres Gehalt nach Berufsgruppe) werden durch das Statistische Bundesamt veröffentlicht, nicht durch Einzelunternehmen."
+                },
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_05", "label": "Finanzdaten / Berichte" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }, { "code": "FT_05", "label": "Excel" }],
+                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "relevance": 1,
+                "processes": [
+                  { "method": "Lohnbuchhaltung & Steuerabführung", "description": "Gehaltsabrechnungen bilden die Grundlage für automatisierte Lohnsteueranmeldungen und SV-Beitragsmeldungen an Finanzamt und Krankenkassen." },
+                  { "method": "Personalcontrolling", "description": "Aggregierte Personalkostenauswertungen nach Abteilung und Kostenstelle fließen in das interne Controlling und Budgetplanung ein." }
+                ]
+              }
+            },
+            {
+              "id": "bewerberdaten",
+              "level": 4,
+              "name": "Bewerberdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Bewerbungsunterlagen inkl. Anschreiben, Lebenslauf, Zeugnisse, Lichtbild und Ergebnisse aus Eignungstests oder Assessment-Centern. Daten sind an konkrete Personen und Bewerbungsverfahren gebunden und dürfen nach Ablehnung nur mit Einwilligung länger gespeichert werden.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Bewerberdaten umfassen besonders schützenswerte Angaben (Foto, ggf. Gesundheit, Nationalität) und unterliegen den strengen Löschfristen der DSGVO (max. 6 Monate nach Absage). Eine Weitergabe oder Veröffentlichung ist ausgeschlossen. Statistische Auswertungen über Bewerberquoten nach Ausbildungsstand bleiben vollständig intern."
+                },
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }],
+                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "relevance": 1,
+                "processes": [
+                  { "method": "Recruiting & Auswahlverfahren", "description": "Bewerberdaten bilden die Entscheidungsgrundlage im mehrstufigen Auswahlprozess vom Erstscreening bis zum Vorstellungsgespräch." },
+                  { "method": "Diversity-Monitoring (intern)", "description": "Aggregierte Kennzahlen über Geschlecht, Qualifikationsniveau und Herkunftsregion der Bewerber:innen werden intern für Gleichstellungsberichte genutzt." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "arbeitsmarkt_reporting",
+          "level": 3,
+          "name": "Arbeitsmarkt & Reporting",
+          "color": "#e67e22",
+          "description": "Öffentliche Stellenangebote, anonymisierte Gehaltsauswertungen und Fluktuationsstatistiken",
+          "children": [
+            {
+              "id": "stellenausschreibungen",
+              "level": 4,
+              "name": "Stellenausschreibungen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Öffentlich zugängliche Stellenanzeigen mit Berufsbezeichnung, Anforderungsprofil, Arbeitsort, Vertragsart und Kontaktinformationen des Arbeitgebers. Werden aktiv auf Unternehmenswebsites, Jobbörsen und der Bundesagentur für Arbeit veröffentlicht. Enthalten keine personenbezogenen Daten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort nutzbar",
+                  "explanation": "Stellenausschreibungen sind explizit zur öffentlichen Verbreitung bestimmt und enthalten ausschließlich Informationen über das Stellenangebot selbst. Sie können ohne Aufbereitung für Arbeitsmarktanalysen, Jobsuchmaschinen und Qualifikationstrend-Studien genutzt werden."
+                },
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_02", "label": "Lokal / Betriebsebene" },
+                "format":      [{ "code": "FT_02", "label": "JSON" }, { "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Arbeitsmarktanalyse", "description": "Ausschreibungsvolumen nach Berufsfeld und Region zeigt Nachfragetrends auf dem Arbeitsmarkt und hilft Arbeitssuchenden bei der Orientierung." },
+                  { "method": "Qualifikationsbedarfsforschung", "description": "Systematische Auswertung geforderter Skills in Stellenanzeigen liefert Bildungseinrichtungen und politischen Stellen Hinweise auf Kompetenzlücken." }
+                ]
+              }
+            },
+            {
+              "id": "gehaltsreport_branche",
+              "level": 4,
+              "name": "Gehaltsreport Branche",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anonymisierte Auswertungen von Gehaltsstrukturen nach Branche, Berufsgruppe, Erfahrungsjahren und Region. Basieren auf aggregierten Eingaben von Arbeitnehmern oder statistischen Erhebungen. Kein Personenbezug; Mindestfallzahlen sichern Anonymität.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung teilbar",
+                  "explanation": "Rohe Gehaltsdaten sind personenbezogen und nicht öffentlich. Erst nach Aggregation über Mindestfallzahlen (z.B. n≥10 pro Zelle) und statistischer Prüfung auf Rückschlusspotenzial können Ergebnisse als Branchenreport veröffentlicht werden. Die Aufbereitung liegt üblicherweise bei Verbänden oder dem Statistischen Bundesamt."
+                },
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_01", "label": "Statistische Daten" },
+                "granularity": { "code": "GR_03", "label": "Regional" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_04", "label": "PDF" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Tarifverhandlungen & Entgelttransparenz", "description": "Branchengehaltsdaten unterstützen Gewerkschaften und Arbeitgeberverbände bei Tarifverhandlungen und die Umsetzung des Entgelttransparenzgesetzes." },
+                  { "method": "Karriereplanung & Berufsberatung", "description": "Gehaltsvergleiche nach Qualifikation und Region helfen Arbeitnehmer:innen und Berufsberatern bei evidenzbasierter Karriereplanung." }
+                ]
+              }
+            },
+            {
+              "id": "fluktuation_statistik",
+              "level": 4,
+              "name": "Fluktuationsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Aggregierte Kennzahlen zu Mitarbeiterfluktuation (Ein- und Austritte) nach Abteilung, Betriebszugehörigkeit und Zeitraum. Werden intern für HR-Controlling genutzt und können — vollständig anonymisiert — für Branchenvergleiche bereitgestellt werden. Kein Personenbezug auf Abteilungsebene mit ausreichend großen Einheiten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung teilbar",
+                  "explanation": "Fluktuationsdaten auf Einzelpersonenebene sind sensibel (z.B. Kündigungsgründe). Erst nach Aggregation auf Abteilungs- oder Unternehmensebene mit ausreichenden Fallzahlen und Entfernung von Austrittsgründen können Raten veröffentlicht werden. Branchenverbände sammeln diese Daten regelmäßig für Benchmark-Studien."
+                },
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_01", "label": "Statistische Daten" },
+                "granularity": { "code": "GR_02", "label": "Lokal / Betriebsebene" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "HR-Controlling & Personalplanung", "description": "Fluktuationsraten nach Abteilung und Zeitraum helfen HR-Verantwortlichen, Risikobereiche zu identifizieren und Gegenmaßnahmen wie Bindungsprogramme zu planen." },
+                  { "method": "Branchenvergleich & Benchmarking", "description": "Anonymisierte Fluktuationsquoten fließen in Branchenberichte ein und ermöglichen Unternehmen, ihre Mitarbeiterbindung im Wettbewerbskontext einzuschätzen." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "immobilienwirtschaft",
+      "level": 2,
+      "name": "Immobilienunternehmen & Wohnungswirtschaft",
+      "color": "#b7770d",
+      "description": "Wohnungsgesellschaften, Makler und Verwalter mit Objekt- und Mieterdaten",
+      "children": [
+        {
+          "id": "objektverwaltung",
+          "level": 3,
+          "name": "Objektverwaltung & Vermietung",
+          "color": "#e67e22",
+          "description": "Mietverträge, Objektexposés und aufbereitete Mietpreisdaten als Kernbestand der Immobilienverwaltung",
+          "children": [
+            {
+              "id": "mietvertragsdaten",
+              "level": 4,
+              "name": "Mietvertragsdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Persönliche Mieterdaten (Name, Adresse, Geburtsdatum, Bonität), Vertragslaufzeit, Kaltmiete, Nebenkosten und Kautionshöhe. Enthalten vollständige Identitätsnachweise und finanzielle Verpflichtungen. Unterliegen dem Datenschutz und dem Mietrecht und sind ausschließlich für die Vertragsabwicklung bestimmt.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Mietvertragsdaten kombinieren persönliche Identifikatoren, Wohnortangaben und Finanzdaten. Eine Weitergabe ist durch DSGVO sowie mietrechtliche Vertraulichkeitspflichten ausgeschlossen. Aggregierte Mietpreisinformationen ohne Mieterbezug können nach Aufbereitung für Marktanalysen genutzt werden."
+                },
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }],
+                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "relevance": 1,
+                "processes": [
+                  { "method": "Mieterverwaltung & Abrechnung", "description": "Vertragsdaten bilden die Grundlage für Nebenkostenabrechnungen, Mietzinsanpassungen und die rechtskonforme Kündigung oder Verlängerung von Mietverhältnissen." },
+                  { "method": "Bonitätsprüfung & Risikomanagement", "description": "Kombination aus Miethistorie und Bonitätsdaten ermöglicht Vermietern eine Einschätzung des Zahlungsausfallrisikos bei Neuvermietungen." }
+                ]
+              }
+            },
+            {
+              "id": "objekt_expose",
+              "level": 4,
+              "name": "Objekt-Exposé",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Öffentlich zugängliche Beschreibungen von Miet- und Kaufobjekten mit Grundriss, Wohnfläche, Ausstattungsmerkmalen, Lageinfos und Energieausweis-Kennwerten. Werden aktiv auf Immobilienportalen und Makler-Websites publiziert. Enthalten keine personenbezogenen Daten des Mieters oder Eigentümers.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort nutzbar",
+                  "explanation": "Objektexposés sind explizit zur Vermarktung veröffentlicht und enthalten ausschließlich objektbezogene Informationen. Sie können direkt für Standortanalysen, Wohnungsmarktforschung und Stadtentwicklungsplanung genutzt werden, ohne dass Aufbereitung oder Anonymisierung erforderlich ist."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Verkehr" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_02", "label": "Lokal / Objektebene" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }, { "code": "FT_02", "label": "JSON" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Wohnungsmarktanalyse", "description": "Strukturierte Exposédaten ermöglichen systematische Auswertungen von Angebotsdichte, Ausstattungsstandards und Preisniveaus auf Stadtteilebene." },
+                  { "method": "Stadtentwicklung & Wohnraumplanung", "description": "Kommunen nutzen Exposédaten zur Einschätzung des lokalen Wohnungsangebots und zur Ableitung von Handlungsbedarf im sozialen Wohnungsbau." }
+                ]
+              }
+            },
+            {
+              "id": "mietpreisspiegel_daten",
+              "level": 4,
+              "name": "Mietpreisspiegel",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Aggregierte Mietpreise nach Lage, Wohnungsgröße, Baujahr und Ausstattungsklasse, die nach statistischer Aufbereitung als qualifizierter oder einfacher Mietspiegel veröffentlicht werden. Bilden die Grundlage für Mieterhöhungsverlangen (§ 558 BGB) und Vergleichsmieten. Kein Personenbezug nach Aggregation.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung teilbar",
+                  "explanation": "Rohe Mietvertragsdaten sind personenbezogen und nicht öffentlich. Erst nach statistischer Aggregation über Mindestfallzahlen, räumlicher Vergröberung und behördlicher Prüfung entsteht ein veröffentlichungsfähiger Mietspiegel. Die Aufbereitung obliegt Kommunen oder beauftragten Forschungsinstituten nach festgelegten Methoden."
+                },
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_01", "label": "Statistische Daten" },
+                "granularity": { "code": "GR_02", "label": "Lokal / Stadtbezirk" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Mietrechtsanwendung", "description": "Qualifizierte Mietspiegel sind gesetzlich anerkannte Referenz für die Berechnung ortsüblicher Vergleichsmieten bei Mieterhöhungsverlangen." },
+                  { "method": "Wohnkostenmonitoring", "description": "Zeitreihen aus Mietspiegeln liefern Kommunen und Forschungsinstituten Indikatoren für Wohnkostenbelastung und Verdrängungsdruck." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "marktdaten",
+          "level": 3,
+          "name": "Immobilienmarkt & Analyse",
+          "color": "#e67e22",
+          "description": "Transaktionspreise, Leerstandsquoten und Energieeffizienzdaten für Markt- und Stadtanalysen",
+          "children": [
+            {
+              "id": "transaktionspreise",
+              "level": 4,
+              "name": "Transaktionspreise",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Kaufpreise von Immobilien aggregiert nach Postleitzahl, Baujahr und Objekttyp (Einfamilienhaus, Eigentumswohnung, Gewerbe). Basieren auf Kaufvertragsdaten der Gutachterausschüsse, die nach gesetzlicher Aufbereitung als Bodenrichtwerte und Marktberichte veröffentlicht werden. Kein Bezug zu einzelnen Käufern oder Verkäufern.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung teilbar",
+                  "explanation": "Einzelne Kaufverträge sind personenbezogen (Käufer, Verkäufer, genaue Adresse) und unterliegen dem Datenschutz. Erst nach Aggregation auf PLZ-Ebene, Mindestfallzahlprüfung und behördlicher Freigabe durch Gutachterausschüsse können Preisdaten als Marktberichte veröffentlicht werden."
+                },
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_01", "label": "Statistische Daten" },
+                "granularity": { "code": "GR_02", "label": "Lokal / PLZ-Ebene" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_04", "label": "PDF" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Immobilienbewertung & Gutachten", "description": "Aggregierte Transaktionspreise sind zentrale Referenzgröße für die Wertermittlung nach Vergleichswertverfahren durch Gutachter und Kreditinstitute." },
+                  { "method": "Stadtentwicklung & Bodenpreismonitoring", "description": "Kommunen und Forschungsinstitute nutzen Preistrends für Grundstücke und Gebäude, um Aufwertungsdynamiken und Verdrängungsprozesse zu identifizieren." }
+                ]
+              }
+            },
+            {
+              "id": "leerstandsstatistik",
+              "level": 4,
+              "name": "Leerstandsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Leerstandsquoten von Wohn- und Gewerbeimmobilien nach Stadtbezirk und Gebäudetyp, erhoben durch Zensus, kommunale Erhebungen oder Energieversorger. Zeigen räumliche Konzentration von Wohnungsknappheit und -überschuss auf. Keine personenbezogenen Daten auf der Ebene der Veröffentlichung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort nutzbar",
+                  "explanation": "Leerstandsquoten auf Stadtbezirksebene sind aggregierte Strukturkennzahlen ohne Personenbezug und werden von Statistischen Ämtern, Wohnungsunternehmen und Kommunen regelmäßig veröffentlicht. Sie können direkt für Stadtentwicklungsplanung, Wohnungsmarktanalysen und sozialwissenschaftliche Forschung genutzt werden."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Verkehr" },
+                "object":      { "code": "OB_01", "label": "Statistische Daten" },
+                "granularity": { "code": "GR_02", "label": "Lokal / Stadtbezirk" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_04", "label": "PDF" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Wohnraumplanung & Flächenmanagement", "description": "Leerstandsdaten helfen Kommunen, ungenutzte Potenziale für Nachverdichtung oder Nutzungsänderung zu identifizieren und Förderprogramme zielgerichtet einzusetzen." },
+                  { "method": "Investitionsentscheidungen", "description": "Immobilienunternehmen und Investoren nutzen Leerstandsquoten als Frühindikator für Marktattraktivität und Revitalisierungsbedarf in bestimmten Lagen." }
+                ]
+              }
+            },
+            {
+              "id": "energieausweise_statistik",
+              "level": 4,
+              "name": "Energieausweise Statistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Aggregierte Auswertungen von Energieeffizienzklassen (A+ bis H) nach Baualtersklasse, Gebäudetyp und Region. Basieren auf ausgestellten Energieausweisen nach GEG und ermöglichen Einschätzungen zum energetischen Zustand des Gebäudebestands. Veröffentlicht ohne Bezug zu einzelnen Gebäuden oder Eigentümern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort nutzbar",
+                  "explanation": "Aggregierte Energieeffizienzklassen nach Baualter und Gebäudetyp enthalten keinen Personenbezug und keine Rückschlussmöglichkeit auf Einzelgebäude. Sie werden vom Deutschen Institut für Bautechnik und statistischen Ämtern regelmäßig publiziert und sind unmittelbar für Klimaschutzplanung und Sanierungsberatung nutzbar."
+                },
+                "theme":       { "code": "TH_02", "label": "Umwelt & Energie" },
+                "object":      { "code": "OB_01", "label": "Statistische Daten" },
+                "granularity": { "code": "GR_03", "label": "Regional" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_04", "label": "PDF" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Klimaschutz & Sanierungsplanung", "description": "Kommunen und Energieagenturen nutzen Effizienzklassenstatistiken zur Priorisierung von Sanierungsberatung und Fördermitteln nach Gebäudealter und Lage." },
+                  { "method": "Immobilienwertentwicklung", "description": "Energetische Profilstatistiken helfen Investoren und Eigentümern, den Sanierungsbedarf und den damit verbundenen Wertverlust oder Wertsteigerungspotenzial einzuschätzen." }
                 ]
               }
             }

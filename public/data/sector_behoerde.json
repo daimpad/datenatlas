@@ -62,6 +62,30 @@
                   { "method": "Monitoring & Evaluation", "description": "Trendanalysen der Verstöße unterstützen Entscheidungen über Standorte neuer Messpunkte." }
                 ]
               }
+            },
+            {
+              "id": "messstellen_geodaten",
+              "level": 4,
+              "name": "Messstellen-Geodaten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Georeferenzierte Standorte aller stationären und mobilen Messpunkte im Stadtgebiet: Koordinaten, Messrichtung, Betriebszeiträume und zulässige Höchstgeschwindigkeit je Standort. Dient der Netzanalyse und Bürgerinformation.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Standortdaten von Messanlagen enthalten keinen Personenbezug und fallen nicht unter Datenschutzrecht. Eine öffentliche Veröffentlichung erhöht die Akzeptanz der Verkehrsüberwachung und entspricht dem Transparenzgebot. Einzelne Kommunen stellen solche Daten bereits auf Open-Data-Portalen bereit."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Stadtplanung & Entwicklung", "description": "Standortkarte der Messstellen fließt in Verkehrsplanungstools und Lärmschutzgutachten ein." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Öffentliche Karte schafft Bürgerakzeptanz und informiert über aktive Überwachungsbereiche." }
+                ]
+              }
             }
           ]
         },
@@ -93,6 +117,54 @@
                 "processes": [
                   { "method": "Wirtschaftsförderung", "description": "Verzeichnis dient als Grundlage für Wirtschaftsstrukturanalysen und Fördermaßnahmen." },
                   { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Öffentliches Gewerberegister schafft Transparenz und erleichtert B2B-Vernetzung im lokalen Gewerbe." }
+                ]
+              }
+            },
+            {
+              "id": "gewerbe_statistik",
+              "level": 4,
+              "name": "Gewerbe-An- und Abmeldestatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Aggregierte Zeitreihendaten über Gewerbeanmeldungen, -abmeldungen und -ummeldungen je Branche (WZ-Klassifikation), Stadtbezirk und Quartal. Enthält keine personenbezogenen Angaben zu Inhabern, sondern ausschließlich aggregierte Kennzahlen zur Wirtschaftsdynamik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte An- und Abmeldestatistiken ohne Einzelfallbezug entsprechen dem Standard kommunaler Wirtschaftsberichterstattung. Die Daten stehen für Städte wie München und Berlin bereits auf Open-Data-Portalen bereit. Kein Datenschutzrisiko, da kein Personenbezug in den Aggregaten."
+                },
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Wirtschaftsförderung", "description": "Quartalszahlen zu Gründungen und Schließungen sind Frühindikator für wirtschaftliche Dynamik und Förderbedarf." },
+                  { "method": "Monitoring & Evaluation", "description": "Langfristige Trendanalyse zeigt Branchenverschiebungen und Auswirkungen kommunaler Wirtschaftspolitik." }
+                ]
+              }
+            },
+            {
+              "id": "gewerbeuntersagungen",
+              "level": 4,
+              "name": "Gewerbeuntersagungen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Datensatz behördlich ausgesprochener Gewerbeuntersagungen nach § 35 GewO: Datum, Untersagungsgrund (z. B. Unzuverlässigkeit), Branche und Bezirk. Enthält im Rohzustand Personendaten des Betroffenen, die vor Veröffentlichung zu entfernen sind.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Auswertungen nach Untersagungsgrund, Branche und Zeitraum können nach vollständiger Anonymisierung veröffentlicht werden. Der Einzelfall bleibt wegen des Eingriffs in die wirtschaftliche Handlungsfreiheit nach Art. 12 GG geschlossen. Aggregierte Daten sind für Verbraucherschutz und Wirtschaftskriminalitätsforschung wertvoll."
+                },
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_04", "label": "PDF" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Ordnungsrechtliche Vollstreckung", "description": "Untersagungsbescheide bilden den Verfahrensabschluss und begründen Berufsausübungsverbote." },
+                  { "method": "Monitoring & Evaluation", "description": "Häufigkeitsanalysen nach Branche und Untersagungsgrund ermöglichen risikobasierte Prüfplanung." }
                 ]
               }
             }
@@ -159,6 +231,372 @@
                 "processes": [
                   { "method": "Stadtplanung & Entwicklung", "description": "Bevölkerungsdaten sind Pflichtgrundlage für Flächennutzungs-, Bebauungs- und Infrastrukturplanung." },
                   { "method": "Forschung & Studien", "description": "Demographische Zeitreihen ermöglichen wissenschaftliche Analysen zu Urbanisierung, Migration und sozialem Wandel." }
+                ]
+              }
+            },
+            {
+              "id": "wanderungsbewegungen",
+              "level": 4,
+              "name": "Wanderungsbewegungen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Aggregierte Zuzugs- und Fortzugsdaten nach Herkunfts- bzw. Zielgebiet (Gemeinde, Bundesland, Ausland), Altersgruppe und Jahr. Wird aus anonymisierten Bewegungsdaten des Melderegisters abgeleitet und ist ein Kernindikator der kommunalen Demografiebeobachtung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Wanderungsstatistiken auf Gemeindeebene sind standardmäßig von Statistischen Ämtern des Bundes und der Länder veröffentlicht und gelten als nicht personenbezogen. Die kommunale Aufbereitung aus Meldedaten ist damit unmittelbar publizierbar und stärkt die Planungsgrundlage für Wohnungsbau und Infrastruktur."
+                },
+                "theme":       { "code": "TH_09", "label": "Migration" },
+                "object":      { "code": "OB_06", "label": "Zeitreihen" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Stadtplanung & Entwicklung", "description": "Wanderungssalden bestimmen Bedarfsprognosen für Schulen, Kitas und Wohnungsbau." },
+                  { "method": "Forschung & Studien", "description": "Herkunfts- und Zielanalysen ermöglichen sozialwissenschaftliche Untersuchungen zu Suburbanisierung und Segregation." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bauordnungsamt",
+      "level": 2,
+      "name": "Bauordnungsamt",
+      "color": "#2980b9",
+      "description": "Baugenehmigungsbehörde, Stadtplanung und GIS",
+      "children": [
+        {
+          "id": "baugenehmigungen",
+          "level": 3,
+          "name": "Baugenehmigungen & Bauvorhaben",
+          "color": "#3498db",
+          "description": "Bearbeitung von Bauanträgen, Erteilung von Baugenehmigungen und Überwachung von Bauvorhaben im Stadtgebiet",
+          "children": [
+            {
+              "id": "baugenehmigungsregister",
+              "level": 4,
+              "name": "Baugenehmigungsregister",
+              "color": "#2471a3",
+              "details": {
+                "description": "Öffentlich zugängliches Register erteilter Baugenehmigungen: Aktenzeichen, Bauort (Flur/Flurstück), Nutzungsart, Genehmigungsdatum und Bauherrentyp (privat/gewerblich/öffentlich). Grundlage für Transparenz im Baurecht und Planungssicherheit für Bürger und Investoren.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Baugenehmigungen sind öffentlich-rechtliche Bescheide mit eingeschränkter Publizitätswirkung. Nach Entfernung privater Antragstellerdaten (Name, Adresse natürlicher Personen) sind Ort, Art und Datum der Genehmigung ohne datenschutzrechtliche Hindernisse veröffentlichbar. Mehrere Großstädte (Hamburg, Köln) publizieren solche Register bereits."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Stadtplanung & Entwicklung", "description": "Baugenehmigungsregister ist Primärquelle für Baufertigstellungsstatistiken und Investitionsmonitoring." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Transparentes Register stärkt das Vertrauen in behördliche Entscheidungen und ermöglicht Nachbarschaftsinformation." }
+                ]
+              }
+            },
+            {
+              "id": "bauvorhaben_statistik",
+              "level": 4,
+              "name": "Bauvorhaben-Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anonymisierte Aggregatdaten zu genehmigten Bauvorhaben: Anzahl nach Nutzungsart (Wohnen, Gewerbe, Industrie), Stadtbezirk, Quartal und Investitionsvolumenklasse. Grundlage für Wohnungsmarktberichte und Investitionsklimastudien ohne Rückschluss auf Einzelbauherren.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Baugenehmigungsstatistiken ohne Einzelfallbezug entsprechen dem Veröffentlichungsstandard des Statistischen Bundesamts (Bautätigkeitsstatistik). Die kommunale Aufbereitung dieser Daten ergänzt nationale Statistiken mit lokalem Detailgrad und ist vollständig anonymisiert."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Stadtplanung & Entwicklung", "description": "Quartalszahlen zu Baugenehmigungen sind Leitindikator für kommunale Wohnraumversorgung und Infrastrukturplanung." },
+                  { "method": "Forschung & Studien", "description": "Zeitreihen ermöglichen wissenschaftliche Analysen zu Bautätigkeit, Verdichtung und Klimawandelfolgen im Baubestand." }
+                ]
+              }
+            },
+            {
+              "id": "abriss_meldungen",
+              "level": 4,
+              "name": "Abriss- und Schwarzbaumeldungen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Datensatz genehmigter Abrissgenehmigungen sowie gemeldeter und verfolgter Schwarzbauten (unerlaubte Baumaßnahmen): Standort, Delikttyp, Verfahrensstatus. Enthält im Rohzustand personenbezogene Angaben zu Baurechtsverstößen, die vor Veröffentlichung zu entfernen sind.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Auswertungen nach Bezirk, Delikttyp und Zeitraum sind nach Entfernung aller Personendaten veröffentlichbar. Schwarzbau-Einzelfälle bleiben wegen laufender Ordnungswidrigkeitenverfahren und Persönlichkeitsrechtsgrundsätzen geschlossen. Standortverteilungen unterstützen transparente Bauaufsicht und risikobasierte Prüfplanung."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Ordnungsrechtliche Vollstreckung", "description": "Meldungen über Schwarzbauten lösen Vor-Ort-Prüfungen und ggf. Rückbauanordnungen nach Landesbauordnung aus." },
+                  { "method": "Monitoring & Evaluation", "description": "Raumzeitliche Analyse von Verstößen unterstützt risikobasierte Prioritätensetzung in der Bauaufsicht." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "stadtplanung_gis",
+          "level": 3,
+          "name": "Stadtplanung & Geodaten",
+          "color": "#3498db",
+          "description": "Erstellung und Pflege von Bebauungsplänen, Liegenschaftskataster und amtlichen Geodaten des Stadtgebiets",
+          "children": [
+            {
+              "id": "bebauungsplan_geodaten",
+              "level": 4,
+              "name": "Bebauungsplan-Geodaten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Georeferenzierte Polygone geltender Bebauungspläne (B-Pläne) mit Attributen zu Nutzungsart (WR, MI, GE, etc.), Geschossflächenzahl (GFZ), Grundflächenzahl (GRZ) und Planstatus. Rechtsgrundlage: BauGB §§ 8–10. Bildet die Grundlage kommunaler Stadtentwicklung und ist öffentlich bekannt zu machen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Bebauungspläne sind nach § 10 BauGB als Satzung öffentlich bekannt zu machen und damit per Gesetz öffentlich. Die digitale Bereitstellung als Geodaten auf Open-Data-Portalen (z. B. über XPlanung-Standard) ist der nächste konsequente Schritt. Kein Personenbezug, kein Datenschutzrisiko."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Stadtplanung & Entwicklung", "description": "B-Plan-Geodaten sind Pflichtgrundlage für alle städtebaulichen Entwurfs- und Genehmigungsverfahren." },
+                  { "method": "Forschung & Studien", "description": "Flächennutzungsanalysen auf Basis von B-Plan-Daten ermöglichen räumliche Entwicklungsforschung und Wohnraummodellierungen." }
+                ]
+              }
+            },
+            {
+              "id": "liegenschaftskataster",
+              "level": 4,
+              "name": "Liegenschaftskataster",
+              "color": "#2471a3",
+              "details": {
+                "description": "Amtliches Verzeichnis aller Grundstücke (Flurstücke) im Gemeindegebiet mit Lage, Fläche, Nutzungsart und Eigentümerangaben. Geführt nach Landesvermessungsgesetzen. Eigentümerangaben natürlicher Personen unterliegen dem Datenschutz und erfordern eine Prüfung vor Veröffentlichung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Geometrien (Flurstücksgrenzen, Flächenangaben) und Nutzungsarten sind ohne Datenschutzbedenken publizierbar. Eigentümerangaben natürlicher Personen müssen pseudonymisiert oder entfernt werden. Nach dieser Aufbereitung entsteht ein wertvoller Geodatensatz für Stadtforschung, Klimaanpassung und Infrastrukturplanung."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Stadtplanung & Entwicklung", "description": "Flurstücksdaten sind Basis für Erschließungsplanungen, Grundstücksverkehrsberichte und Umlegungsverfahren." },
+                  { "method": "Wirtschaftsförderung", "description": "Verfügbarkeitskarten freier Gewerbeflächen werden aus Katasterdaten und Nutzungsklassen abgeleitet." }
+                ]
+              }
+            },
+            {
+              "id": "bodenrichtwerte",
+              "level": 4,
+              "name": "Bodenrichtwerte",
+              "color": "#2471a3",
+              "details": {
+                "description": "Vom Gutachterausschuss für Grundstückswerte jährlich ermittelte und veröffentlichte Durchschnittswerte des Bodens je Lagequalität und Nutzungszone (€/m²). Dienen als Referenzgröße für Grundstücksverkehr, Erbschaft- und Grundsteuer sowie Investitionsentscheidungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Bodenrichtwerte werden nach § 196 BauGB vom Gutachterausschuss ermittelt und sind gesetzlich zur Veröffentlichung verpflichtet. Die digitale Bereitstellung als Open Data ist bereits in vielen Bundesländern über BORIS-Portale realisiert. Kein Personenbezug, da es sich um Zonendurchschnitte handelt."
+                },
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Stadtplanung & Entwicklung", "description": "Bodenrichtwerte fließen in Flächennutzungspläne, Erschließungsbeitragssatzungen und kommunale Wohnraumstrategien ein." },
+                  { "method": "Wirtschaftsförderung", "description": "Investoren und Unternehmen nutzen Bodenrichtwerte als Grundlage für Standortentscheidungen und Grundstücksbewertungen." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gesundheitsamt",
+      "level": 2,
+      "name": "Gesundheitsamt",
+      "color": "#2980b9",
+      "description": "Kommunales Gesundheitsamt, Infektionsschutz und Umwelthygiene",
+      "children": [
+        {
+          "id": "infektionsschutz",
+          "level": 3,
+          "name": "Infektionsschutz & Überwachung",
+          "color": "#3498db",
+          "description": "Erfassung und Überwachung meldepflichtiger Infektionskrankheiten, Ausbruchsmanagement und epidemiologische Berichterstattung",
+          "children": [
+            {
+              "id": "meldepflichtige_erkrankungen",
+              "level": 4,
+              "name": "Meldepflichtige Erkrankungen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Falldaten meldepflichtiger Infektionskrankheiten nach IfSG (Influenza, Masern, Tuberkulose u. a.): Erkrankungsdatum, Diagnose, Altersgruppe, Geschlecht und Wohnortgemeinde. Im Rohzustand enthalten die Daten personenbezogene Gesundheitsinformationen, die nach Anonymisierung auf Kreisebene publizierbar werden.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Rohdaten sind besondere Kategorien nach Art. 9 DSGVO (Gesundheitsdaten) und absolut geschlossen. Nach Aggregation auf Kreisebene und Altersgruppe sowie k-Anonymisierung (Mindestfallzahl ≥ 5) können die Daten veröffentlicht werden. Das RKI-SurvStat-System zeigt, dass dies technisch und rechtlich umsetzbar ist."
+                },
+                "theme":       { "code": "TH_04", "label": "Gesundheit" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland/Landkreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Infektionsschutz & Überwachung", "description": "Meldedaten lösen Ermittlungen, Kontaktpersonennachverfolgung und Ausbruchsmanagement nach IfSG § 25 aus." },
+                  { "method": "Forschung & Studien", "description": "Anonymisierte Zeitreihen ermöglichen epidemiologische Forschung zu Krankheitsverbreitung und Impfwirksamkeit." }
+                ]
+              }
+            },
+            {
+              "id": "infektionsstatistik",
+              "level": 4,
+              "name": "Infektionsstatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Aggregierte Wochendaten zu Infektionskrankheiten auf Kreisebene: Fallzahlen je Erkrankungstyp, Inzidenz pro 100.000 Einwohner, Altersverteilung und saisonale Trends. Wird aus anonymisierten Meldedaten abgeleitet und entspricht dem Standard der RKI-Veröffentlichungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Wöchentliche Inzidenzdaten auf Kreisebene sind nach dem Vorbild des RKI-Dashboards (COVID-19) und SurvStat ohne datenschutzrechtliche Einschränkungen veröffentlichbar. Die Aggregation auf Kreisebene verhindert Rückschlüsse auf Einzelpersonen. Hoher öffentlicher Informationswert, insbesondere in Ausbruchsphasen."
+                },
+                "theme":       { "code": "TH_04", "label": "Gesundheit" },
+                "object":      { "code": "OB_06", "label": "Zeitreihen" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland/Landkreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Monitoring & Evaluation", "description": "Wochenberichte bilden die Grundlage für Lageeinschätzungen der Gesundheitskonferenzen und regionaler Gesundheitsberichte." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Zeitnahe Veröffentlichung von Inzidenzdaten stärkt das Vertrauen der Bevölkerung und unterstützt eigenverantwortliches Gesundheitshandeln." }
+                ]
+              }
+            },
+            {
+              "id": "ausbruchsuntersuchungen",
+              "level": 4,
+              "name": "Ausbruchsuntersuchungen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Berichte zu untersuchten Infektionsausbrüchen (Häufungen ≥ 2 epidemiologisch verknüpfte Fälle): Erreger, Quelle, Setting (Kita, Krankenhaus, Veranstaltung), Maßnahmen und Ergebnis. Rohberichte enthalten Fallidentifikatoren, die vor Veröffentlichung vollständig entfernt werden müssen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Ausbruchsberichte ohne Fallidentifikatoren, Einrichtungsnamen und geografische Einzelpunkte sind publizierbar und folgen dem Format des ECDC-Rapid Risk Assessment. Die Aufbereitung erfordert systematische Anonymisierung, liefert aber wertvolle Informationen für Präventionsplanung und wissenschaftliche Gemeinschaft."
+                },
+                "theme":       { "code": "TH_04", "label": "Gesundheit" },
+                "object":      { "code": "OB_08", "label": "Metadaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland/Landkreis)" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Infektionsschutz & Überwachung", "description": "Ausbruchsberichte dokumentieren die behördliche Reaktion und fließen in nationale Ausbruchsdatenbanken (RKI SurvNet) ein." },
+                  { "method": "Forschung & Studien", "description": "Anonymisierte Ausbruchsberichte sind Primärquelle für epidemiologische Fallstudien und Präventionsforschung." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "umwelthygiene",
+          "level": 3,
+          "name": "Umwelthygiene & Lebensmittelüberwachung",
+          "color": "#3498db",
+          "description": "Überwachung von Trink- und Badewasserqualität sowie amtliche Lebensmittel- und Hygienekontrollen",
+          "children": [
+            {
+              "id": "trinkwasserqualitaet",
+              "level": 4,
+              "name": "Trinkwasserqualität",
+              "color": "#2471a3",
+              "details": {
+                "description": "Messergebnisse der laufenden Trinkwasserüberwachung nach TrinkwV: Parameter (Nitrat, Bakterien, Schwermetalle, pH), Messstelle, Probenahmedatum und Grenzwert-Compliance. Wasserversorger sind nach § 21 TrinkwV zur Veröffentlichung verpflichtet; die behördliche Aufsicht konsolidiert die Daten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Trinkwasserqualitätsdaten unterliegen einer gesetzlichen Pflichtveröffentlichung nach § 21 Abs. 1 TrinkwV 2023. Die digitale Bereitstellung als maschinenlesbare Open Data geht über die Mindestanforderung hinaus, folgt aber der EU-Trinkwasserrichtlinie (2020/2184) und dem Transparenzgebot. Kein Datenschutzrisiko."
+                },
+                "theme":       { "code": "TH_02", "label": "Umwelt" },
+                "object":      { "code": "OB_06", "label": "Zeitreihen" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Infektionsschutz & Überwachung", "description": "Grenzwertüberschreitungen lösen sofortige Maßnahmen (Abkochgebot, Entnahmeverbot) und behördliche Anordnungen aus." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Transparente Veröffentlichung stärkt Vertrauen in die Trinkwasserversorgung und informiert besonders vulnerable Gruppen." }
+                ]
+              }
+            },
+            {
+              "id": "badewasserqualitaet",
+              "level": 4,
+              "name": "Badegewässerqualität",
+              "color": "#2471a3",
+              "details": {
+                "description": "Saisonale Qualitätsmessungen an ausgewiesenen Badegewässern gemäß EU-Badegewässerrichtlinie (2006/7/EG): Bakterienbelastung (E. coli, Enterokokken), Sichttiefe, Einstufung (ausgezeichnet/gut/ausreichend/mangelhaft) und Sperrhistorie. Meldung an BMUV und EU ist Pflicht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Die EU-Badegewässerrichtlinie verpflichtet Mitgliedstaaten explizit zur aktiven Veröffentlichung der Messergebnisse und Badestellen-Bewertungen. Deutschland meldet die Daten an die EEA (Bathing Water Quality). Die kommunale Bereitstellung als Open Data erfüllt und übererfüllt diese Pflicht. Kein Datenschutzrisiko."
+                },
+                "theme":       { "code": "TH_02", "label": "Umwelt" },
+                "object":      { "code": "OB_06", "label": "Zeitreihen" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Infektionsschutz & Überwachung", "description": "Grenzwertüberschreitungen führen zu Badeverboten und werden über Warn-Apps sowie Beschilderung kommuniziert." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Aktuelle Wasserqualitätsdaten ermöglichen Bürgern informierte Badeentscheidungen und stärken kommunalen Gesundheitsschutz." }
+                ]
+              }
+            },
+            {
+              "id": "lebensmittelkontrolle_statistik",
+              "level": 4,
+              "name": "Lebensmittelkontroll-Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Aggregierte Ergebnisse amtlicher Lebensmittel- und Betriebshygienekontrollen: Anzahl Kontrollen, Beanstandungsquoten nach Betriebsart (Gastronomie, Handel, Produktion), häufigste Mängel und verhängte Maßnahmen (Verwarnung, Schließung). Kein Betriebsnamen-Bezug in den Aggregaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Kontrollstatistiken ohne Betriebsidentifikatoren sind vollständig anonymisiert und unterliegen keinem Datenschutz oder Betriebs-/Geschäftsgeheimnisschutz. Sie stärken Verbrauchervertrauen und Systemtransparenz. Einzelne Bundesländer (z. B. NRW im Rahmen von TopfSecret/FragDenStaat) gehen sogar noch weiter mit betriebsspezifischen Daten."
+                },
+                "theme":       { "code": "TH_04", "label": "Gesundheit" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Monitoring & Evaluation", "description": "Beanstandungsquoten nach Betriebsart steuern die risikoorientierte Prüfplanung des folgenden Jahres." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Veröffentlichte Kontrollstatistiken stärken das Vertrauen der Verbraucher in die amtliche Lebensmittelüberwachung." }
                 ]
               }
             }

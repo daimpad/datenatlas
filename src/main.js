@@ -3,6 +3,8 @@ import { initControls }      from './controls.js';
 import { openSidebar, closeSidebar } from './modal.js';
 import { loadMain, loadSector }      from './dataLoader.js';
 import { state, patchState }         from './state.js';
+import { applyRiskColors }           from './utils.js';
+import { buildSearchIndex, initSearch } from './search.js';
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
 const canvas       = document.getElementById('map-canvas');
@@ -29,19 +31,23 @@ initControls({
 btnBack.addEventListener('click', navigateBack);
 btnHome.addEventListener('click', navigateHome);
 
-// Retry button wires up to a replaceable callback
 let _retryFn = null;
-errorRetry.addEventListener('click', () => {
-  hideError();
-  _retryFn?.();
-});
+errorRetry.addEventListener('click', () => { hideError(); _retryFn?.(); });
 
-// Boot
+// ── Boot ──────────────────────────────────────────────────────────────────────
+
+let _mainTiles = [];
+
 (async () => {
   try {
     showLoading(true);
     const sectors = await loadMain();
+    _mainTiles = sectors;
     pushLevel(sectors, { id: null, name: 'Übersicht', level: 0 });
+
+    // Background: pre-load all sectors for search index
+    const indexPromise = buildIndexInBackground(sectors);
+    initSearch({ indexPromise, onNavigate: navigateToSearchResult });
   } catch (err) {
     console.error(err);
     showError('Hauptdaten konnten nicht geladen werden.', () => location.reload());
@@ -50,17 +56,34 @@ errorRetry.addEventListener('click', () => {
   }
 })();
 
+async function buildIndexInBackground(mainTiles) {
+  const pairs = await Promise.all(
+    mainTiles
+      .filter(t => t.subFile)
+      .map(async t => {
+        try {
+          const data = await loadSector(t.id);
+          return [t, data];
+        } catch {
+          return null;
+        }
+      })
+  );
+  return buildSearchIndex(mainTiles, pairs.filter(Boolean));
+}
+
 // ── Navigation ────────────────────────────────────────────────────────────────
 
 function pushLevel(tiles, crumb) {
-  state.breadcrumb.push({ ...crumb, tiles });
+  const processed = applyRiskColors(tiles);
+  state.breadcrumb.push({ ...crumb, tiles: processed });
   patchState({
     zoomLevel:    crumb.level ?? state.zoomLevel,
-    currentTiles: tiles,
+    currentTiles: processed,
     panOffset:    { x: 0, y: 0 },
   });
   renderer.setPan(0, 0);
-  animateIn(tiles);
+  animateIn(processed);
   updateChrome();
 }
 
@@ -96,22 +119,32 @@ function navigateToCrumb(index) {
   updateChrome();
 }
 
+function navigateToSearchResult(result) {
+  closeSidebar();
+  // Restore full breadcrumb from search result
+  state.breadcrumb = result.breadcrumb.map(c => ({ ...c }));
+  const last = state.breadcrumb[state.breadcrumb.length - 1];
+  patchState({ zoomLevel: last.level, currentTiles: last.tiles, panOffset: { x:0, y:0 } });
+  renderer.setPan(0, 0);
+  animateIn(last.tiles);
+  updateChrome();
+  // Auto-open sidebar for the matched tile
+  const target = last.tiles.find(t => t.id === result.tile.id);
+  if (target) openSidebar(target);
+}
+
 // ── Tile click handler ────────────────────────────────────────────────────────
 
 function handleTileClick(id) {
   const tile = state.currentTiles.find(t => t.id === id);
   if (!tile) return;
 
-  // #1 — immediate visual pulse feedback
   renderer.startPulse(id);
 
   const hasChildren = tile.children?.length || tile.subFile;
-
   if (hasChildren) {
-    // #2 — Levels 1-3: open sidebar with info + explore button
     openSidebar(tile, { onExplore: () => navigateDeeper(tile) });
   } else {
-    // Level 4 / leaf node: open sidebar with full DSGVO details
     openSidebar(tile);
   }
 }
@@ -130,7 +163,6 @@ async function navigateDeeper(tile) {
       }
     } catch (err) {
       console.error('Failed to load sector:', err);
-      // #3 — show error state with retry
       showError(
         `Sektor „${tile.name}" konnte nicht geladen werden.`,
         () => navigateDeeper(tile),
@@ -232,8 +264,6 @@ function hideError() {
   errorState.hidden = true;
   _retryFn = null;
 }
-
-// ── Helpers ───────────────────────────────────────────────────────────────────
 
 function esc(str = '') {
   return String(str)

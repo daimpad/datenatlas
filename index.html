@@ -22,6 +22,14 @@
         <!-- populated by JS -->
       </nav>
 
+      <input id="search-input" type="text" placeholder="Datentyp suchen…" autocomplete="off" aria-label="Suche" />
+
+      <button id="search-toggle" title="Suchen" aria-label="Suche öffnen">
+        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
+          <path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </button>
+
       <div id="level-badge">
         <span class="level-label">Ebene</span>
         <span id="level-number">1</span>
@@ -65,6 +73,8 @@
         </div>
       </div>
     </aside>
+
+    <div id="search-results" hidden role="listbox" aria-label="Suchergebnisse"></div>
 
     <div id="tooltip" role="tooltip" hidden></div>
 

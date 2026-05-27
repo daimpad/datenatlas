@@ -62,6 +62,30 @@
                   { "method": "Bildungsforschung", "description": "Längsschnittdaten zu Studienerfolg liefern wichtige Erkenntnisse zur Wirksamkeit verschiedener Lehrformate." }
                 ]
               }
+            },
+            {
+              "id": "absolventenverbleib",
+              "level": 4,
+              "name": "Absolventenverbleib",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Ergebnisse aus Absolventenverbleibstudien: Berufseinstieg, Gehalt nach Fachbereich und Abschluss, Übergang in Promotion oder Weiterbildung. Daten werden aggregiert und anonymisiert erhoben, sodass kein Personenbezug nach der Aufbereitung verbleibt.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Absolventenverbleibstudien liefern wertvolle aggregierte Informationen zur Arbeitsmarktintegration von Hochschulabsolvent:innen. Nach vollständiger Anonymisierung sind die Ergebnisse als Open Data veröffentlichbar und unterstützen die Hochschulberichterstattung und Studienberatung."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Absolventenbefragung", "description": "Standardisierte Befragungen von Absolvent:innen 1–3 Jahre nach Studienabschluss zu Berufseinstieg, Gehalt und Weiterbeschäftigung." },
+                  { "method": "Hochschulberichterstattung", "description": "Aggregierte Verbleibsdaten fließen in Akkreditierungsberichte und Qualitätssicherung der Studiengänge ein." }
+                ]
+              }
             }
           ]
         },
@@ -93,6 +117,54 @@
                 "processes": [
                   { "method": "Wissenschaftliche Studien", "description": "Messdaten entstehen im Studienverlauf und werden nach Abschluss für Publikationen und Metaanalysen aufbereitet." },
                   { "method": "Ethikprüfung & Datenschutz", "description": "Jeder Verwendungsschritt erfordert Ethikvotum, DSFA und Einwilligung der Probanden." }
+                ]
+              }
+            },
+            {
+              "id": "forschungsrohdaten",
+              "level": 4,
+              "name": "Forschungsrohdaten",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Messdaten und Laborwerte aus experimentellen Forschungsprojekten: Sensormessungen, Laborergebnisse, Simulationsdaten und Beobachtungsreihen. Aufbereitung und Bereitstellung erfolgen nach den FAIR-Prinzipien (Findable, Accessible, Interoperable, Reusable) nach Anonymisierung personenbeziehbarer Parameter.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Messdaten und Laborwerte können nach FAIR-konformer Aufbereitung und Anonymisierung etwaiger personenbezogener Merkmale als Open Research Data veröffentlicht werden. Forschungsförderer wie DFG und EU verlangen zunehmend die Bereitstellung von Rohdaten in Repositorien wie Zenodo oder Dryad."
+                },
+                "theme":       { "code": "TH_10", "label": "Wissenschaft & Forschung" },
+                "object":      { "code": "OB_05", "label": "Messdaten / Sensordaten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_04", "label": "PDF / Dokument" }],
+                "license":     { "code": "LI_03", "label": "CC BY-SA 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Datenerhebung im Labor", "description": "Systematische Messung und Protokollierung von Experimenten gemäß Versuchsplan und Ethikvotum." },
+                  { "method": "FAIR-Datenpublikation", "description": "Aufbereitung der Rohdaten mit umfassenden Metadaten und Ablage in zertifizierten Repositorien für Nachnutzbarkeit." }
+                ]
+              }
+            },
+            {
+              "id": "publikationsdaten",
+              "level": 4,
+              "name": "Publikationsdaten",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Metadaten von Forschungspublikationen: Titel, Autor:innen, DOI, Zeitschrift, Erscheinungsjahr, Abstract, Fördermittelgeber und Fachgebietskategorisierung. Publikationsmetadaten sind vollständig offen und bilden die Grundlage für Bibliometrie und Forschungsevaluation.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Metadaten von Forschungspublikationen enthalten keine schützenswerten Informationen und sind vollständig offen zugänglich. Plattformen wie Crossref, OpenAlex und ORCID stellen diese Daten als Open Data bereit und unterstützen so die Transparenz wissenschaftlicher Produktion."
+                },
+                "theme":       { "code": "TH_10", "label": "Wissenschaft & Forschung" },
+                "object":      { "code": "OB_04", "label": "Dokumente & Texte" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_01", "label": "CC0 / Public Domain" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Forschungsberichterstattung", "description": "Publikationsmetadaten werden für institutionelle Forschungsberichte, Rankings und Drittmittelberichte genutzt." },
+                  { "method": "Bibliometrische Analyse", "description": "Systematische Auswertung von Zitationsnetzwerken und Publikationsoutput für Forschungsevaluation und Strategieentwicklung." }
                 ]
               }
             }
@@ -135,6 +207,396 @@
                 "processes": [
                   { "method": "Sozialforschung & Erhebung", "description": "Umfragedaten entstehen durch standardisierte Datenerhebungsverfahren und repräsentative Stichprobenplanung." },
                   { "method": "Datenarchivierung & Nachnutzung", "description": "Archivierung in Forschungsdatenzentren (GESIS, FDZ) für weltweite Sekundärnutzung durch Wissenschaft." }
+                ]
+              }
+            },
+            {
+              "id": "geodaten_messung",
+              "level": 4,
+              "name": "Geodaten Messung",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Umweltmessdaten aus Felderhebungen: Klimadaten, Bodenproben, Gewässerqualität, Luftschadstoffmessungen und Biodiversitätserfassungen mit räumlicher Georeferenzierung. Erhebungen erfolgen nach standardisierten Protokollen für internationale Vergleichbarkeit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Umweltmessdaten im Feld enthalten in der Regel keinen Personenbezug und können unmittelbar als Open Data bereitgestellt werden. Internationale Initiativen wie GBIF, Copernicus und OpenStreetMap zeigen, wie Geodaten vollständig offen geteilt werden können und enormen gesellschaftlichen Mehrwert schaffen."
+                },
+                "theme":       { "code": "TH_07", "label": "Umwelt & Klima" },
+                "object":      { "code": "OB_05", "label": "Messdaten / Sensordaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal / Kommunal" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_06", "label": "Shapefile / Geodaten" }],
+                "license":     { "code": "LI_01", "label": "CC0 / Public Domain" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Felderhebung & Sensorik", "description": "Systematische Messung von Umweltparametern an definierten Standorten mit kalibrierten Messgeräten und GPS-Referenzierung." },
+                  { "method": "Geodateninfrastruktur", "description": "Integration in nationale und europäische Geodateninfrastrukturen (INSPIRE, GDI-DE) zur überregionalen Nachnutzung." }
+                ]
+              }
+            },
+            {
+              "id": "interviewprotokolle",
+              "level": 4,
+              "name": "Interviewprotokolle",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Qualitative Rohdaten aus leitfadengestützten Interviews und Fokusgruppen: Transkripte, Feldnotizen, Audioaufnahmen und Kodierschemata. Interviewprotokolle enthalten häufig direkt identifizierende Informationen wie Namen, Ortsangaben und persönliche Lebensumstände.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Qualitative Interviewdaten enthalten auch nach Pseudonymisierung häufig re-identifizierbare Informationen durch spezifische Lebensumstände, Ortsangaben oder seltene Merkmalskombinationen. Eine Veröffentlichung der Rohdaten ist in der Regel nicht möglich; nur Metadaten und aggregierte Analyseergebnisse können geteilt werden."
+                },
+                "theme":       { "code": "TH_10", "label": "Wissenschaft & Forschung" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_04", "label": "PDF / Dokument" }, { "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Qualitative Feldforschung", "description": "Durchführung und Transkription leitfadengestützter Interviews gemäß Ethikvotum und informierter Einwilligung der Interviewpartner:innen." },
+                  { "method": "Datenschutzkonforme Archivierung", "description": "Langzeitspeicherung unter strengen Zugriffskontrollen; nur aggregierte Analyseergebnisse und Methodenberichte werden publiziert." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "statistisches_amt",
+      "level": 2,
+      "name": "Statistisches Amt",
+      "color": "#6c3483",
+      "description": "Amtliche Statistikbehörde für Bevölkerungs-, Wirtschafts- und Sozialstatistiken auf Landes- und Bundesebene",
+      "children": [
+        {
+          "id": "amtliche_statistiken",
+          "level": 3,
+          "name": "Amtliche Statistikproduktion",
+          "color": "#7d3c98",
+          "description": "Produktion und Veröffentlichung amtlicher Statistiken zu Bevölkerung, Wirtschaft und sozialen Verhältnissen",
+          "children": [
+            {
+              "id": "mikrozensus_daten",
+              "level": 4,
+              "name": "Mikrozensus-Daten",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Scientific-Use-Files des Mikrozensus: stark anonymisierte Einzelfalldaten zu Haushalt, Erwerb, Bildung und Einkommen auf Basis der 1-Prozent-Stichprobe der Bevölkerung. Freigabe erfolgt nach umfassendem Disclosure-Risk-Assessment durch das Statistische Bundesamt.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Mikrozensus-Scientific-Use-Files sind nach Anonymisierung und Disclosure-Risk-Assessment für wissenschaftliche Zwecke zugänglich, jedoch nur nach Vertragsabschluss mit dem Statistischen Bundesamt. Sie sind Paradebeispiele für den kontrollierten Zugang zu hochwertigen Einzelfalldaten im deutschen Datensystem."
+                },
+                "theme":       { "code": "TH_01", "label": "Bevölkerung & Gesellschaft" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_03", "label": "CC BY-SA 4.0" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Amtliche Erhebung", "description": "Gesetzlich vorgeschriebene Stichprobenerhebung bei 1% der deutschen Bevölkerung zu soziodemografischen Merkmalen." },
+                  { "method": "Disclosure-Risk-Assessment", "description": "Systematische Prüfung und Anonymisierung der Einzelfalldaten vor Freigabe als Scientific-Use-File für die Wissenschaft." }
+                ]
+              }
+            },
+            {
+              "id": "wirtschaftsstatistiken",
+              "level": 4,
+              "name": "Wirtschaftsstatistiken",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Amtliche Wirtschaftsstatistiken: Bruttoinlandsprodukt, Verbraucherpreisindizes, Außenhandelsdaten, Unternehmensregister-Aggregate und Konjunkturindikatoren. Diese Kerndaten der volkswirtschaftlichen Gesamtrechnung werden vollständig offen bereitgestellt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Wirtschaftsstatistiken wie BIP, Preisindizes und Außenhandelsdaten sind vollständig offen und werden vom Statistischen Bundesamt (Destatis) sowie Eurostat kostenlos bereitgestellt. Als Kerndaten für Wirtschaftspolitik und Forschung haben sie größten gesellschaftlichen Nutzen und keinerlei Schutzwürdigkeit."
+                },
+                "theme":       { "code": "TH_05", "label": "Wirtschaft & Finanzen" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 / Public Domain" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Volkswirtschaftliche Gesamtrechnung", "description": "Systematische Berechnung wirtschaftlicher Kennzahlen nach international harmonisierten Standards (ESVG, SNA)." },
+                  { "method": "Konjunkturberichterstattung", "description": "Regelmäßige Veröffentlichung aktueller Wirtschaftsdaten für Politik, Wirtschaft und Öffentlichkeit." }
+                ]
+              }
+            },
+            {
+              "id": "regionalatlanten",
+              "level": 4,
+              "name": "Regionalatlanten",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Geodaten-basierte Regionalkarten aus amtlicher Statistik: kleinräumige Indikatoren zu Demografie, Wirtschaft und Infrastruktur auf Gemeinde- und Kreisebene. Die Regionalatlanten der Statistischen Ämter verbinden statistische Daten mit geographischer Visualisierung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Regionalatlanten und kleinräumige Statistiken auf Gemeinde- und Kreisebene enthalten aggregierte Daten ohne Personenbezug und sind vollständig offen zugänglich. Sie sind wichtige Werkzeuge für Raumplanung, Kommunalpolitik und Regionalforschung."
+                },
+                "theme":       { "code": "TH_01", "label": "Bevölkerung & Gesellschaft" },
+                "object":      { "code": "OB_06", "label": "Geodaten / Karten" },
+                "granularity": { "code": "GR_02", "label": "Lokal / Kommunal" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_06", "label": "Shapefile / Geodaten" }],
+                "license":     { "code": "LI_01", "label": "CC0 / Public Domain" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Kleinräumige Statistik", "description": "Aggregierung amtlicher Statistiken auf Gemeinde- und Kreisebene mit Georeferenzierung für kartographische Darstellung." },
+                  { "method": "Raumplanung & Kommunalentwicklung", "description": "Regionalatlanten dienen als Datengrundlage für Flächennutzungspläne, Infrastrukturplanung und Fördermittelvergabe." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "zensus_daten",
+          "level": 3,
+          "name": "Zensus & Volkszählung",
+          "color": "#7d3c98",
+          "description": "Daten aus dem Zensus zur Bevölkerung, Gebäude- und Wohnungsbestand sowie Erwerbstätigkeit",
+          "children": [
+            {
+              "id": "volkszaehlung_aggregate",
+              "level": 4,
+              "name": "Volkszählung Aggregate",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Aggregierte Zensus-Ergebnisse auf Gemeindeebene: Bevölkerungszahl, Altersstruktur, Staatsangehörigkeit, Religionszugehörigkeit und Haushaltsgröße nach Anonymisierung. Grundlage für Bevölkerungsfortschreibung, kommunale Planungen und Finanzmittelzuweisungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Zensus-Daten auf Gemeindeebene erfordern eine sorgfältige Anonymisierung kleiner Zellen (Mindestfallzahlen), bevor sie veröffentlicht werden können. Nach diesem Schritt sind sie vollständig offen und unverzichtbare Grundlage für Kommunalstatistik und Bedarfsplanung."
+                },
+                "theme":       { "code": "TH_01", "label": "Bevölkerung & Gesellschaft" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal / Kommunal" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Registerbasierte Volkszählung", "description": "Zusammenführung von Melderegistern, Bundesagentur-Daten und Stichprobenerhebungen zur vollständigen Bevölkerungserfassung." },
+                  { "method": "Kommunale Bedarfsplanung", "description": "Zensus-Aggregate sind Pflichtdatengrundlage für Finanzausgleich, Schulbedarfsplanung und kommunale Infrastrukturentscheidungen." }
+                ]
+              }
+            },
+            {
+              "id": "gebaeude_wohnungszaehlung",
+              "level": 4,
+              "name": "Gebäude- und Wohnungszählung",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Ergebnisse der Gebäude- und Wohnungszählung: Anzahl und Art der Gebäude, Wohnungen nach Größe und Baujahr, Heizungsart, Eigentumsform und Leerstandsquoten auf Gemeindeebene. Unverzichtbare Datenbasis für Wohnungsmarktanalysen und Klimaschutzplanungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Gebäude- und Wohnungszählungsdaten auf aggregierter Gemeindeebene enthalten keinen Personenbezug und sind vollständig offen zugänglich. Sie bilden eine unverzichtbare Grundlage für Wohnungsmarktpolitik, Klimaschutzplanung und Stadtentwicklung."
+                },
+                "theme":       { "code": "TH_01", "label": "Bevölkerung & Gesellschaft" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal / Kommunal" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_06", "label": "Shapefile / Geodaten" }],
+                "license":     { "code": "LI_01", "label": "CC0 / Public Domain" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Wohnungsmarktbeobachtung", "description": "Systematische Erfassung des Gebäude- und Wohnungsbestands als Grundlage für Mietpreisanalysen und Leerstandsmonitoring." },
+                  { "method": "Klimaschutzplanung", "description": "Heizungsart und Baujahr der Gebäude sind Schlüsseldaten für Wärmewendeplanung und Gebäudesanierungsstrategien." }
+                ]
+              }
+            },
+            {
+              "id": "erwerbstaetigkeitsstatistik",
+              "level": 4,
+              "name": "Erwerbstätigkeitsstatistik",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Aggregierte Daten zur Erwerbstätigkeit aus dem Zensus: Beschäftigungsquoten nach Branche, Berufsgruppe und Region, Selbstständigenanteil sowie Pendlerströme auf Kreisebene. Ermöglicht regionalisierte Arbeitsmarktanalysen und branchenspezifische Strukturvergleiche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Zensus-basierte Erwerbstätigkeitsstatistiken sind vollständig aggregiert und ohne Personenbezug, daher unmittelbar als Open Data verfügbar. Sie ergänzen die laufenden Arbeitsmarktdaten der Bundesagentur für Arbeit um eine umfassende Strukturperspektive."
+                },
+                "theme":       { "code": "TH_04", "label": "Arbeit & Soziales" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 / Public Domain" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Regionale Arbeitsmarktanalyse", "description": "Auswertung von Beschäftigungsstrukturen nach Branche und Region für Wirtschaftsförderung und Strukturpolitik." },
+                  { "method": "Pendlerstatistik", "description": "Erfassung und Analyse von Einpendler- und Auspendlerströmen als Grundlage für Verkehrs- und Regionalplanung." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "forschungsdatenzentrum",
+      "level": 2,
+      "name": "Forschungsdatenzentrum",
+      "color": "#6c3483",
+      "description": "Akkreditierte Einrichtung zur sicheren Archivierung, Erschließung und Bereitstellung von Forschungsdaten für Sekundäranalysen (z.B. GESIS, FDZ-BA, RDC)",
+      "children": [
+        {
+          "id": "datenarchivierung",
+          "level": 3,
+          "name": "Datenarchivierung & Kuratierung",
+          "color": "#7d3c98",
+          "description": "Langzeitsicherung, Erschließung und Qualitätssicherung von Forschungsdatensätzen für die Nachnutzung",
+          "children": [
+            {
+              "id": "scientific_use_files",
+              "level": 4,
+              "name": "Scientific-Use-Files",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Anonymisierte Forschungsdatensätze für die Wissenschaft: faktisch anonymisierte Mikrodaten aus Bevölkerungsbefragungen, administrativen Datenquellen und Panelstudien. Zugang erfolgt nach Vertragsabschluss und Nachweis wissenschaftlicher Nutzungsabsicht.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Scientific-Use-Files sind nach umfassendem Disclosure-Risk-Assessment anonymisiert und für wissenschaftliche Nutzung freigegeben. Der Zugang ist vertraglich geregelt und auf Forschungszwecke beschränkt — ein etabliertes Modell, das Datenschutz und Forschungsnutzen ausbalanciert."
+                },
+                "theme":       { "code": "TH_10", "label": "Wissenschaft & Forschung" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_03", "label": "CC BY-SA 4.0" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Anonymisierung & Kuratierung", "description": "Systematische Anonymisierung und Dokumentation von Forschungsdatensätzen gemäß internationalen Standards (DDI, Dublin Core)." },
+                  { "method": "Wissenschaftlicher Datenzugang", "description": "Bereitstellung anonymisierter Mikrodaten für Sekundäranalysen nach Vertragsabschluss und Prüfung des Nutzungszwecks." }
+                ]
+              }
+            },
+            {
+              "id": "metadatenkatalog",
+              "level": 4,
+              "name": "Metadatenkatalog",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Vollständig offener Katalog aller im Forschungsdatenzentrum archivierten Studien: Studienbeschreibung, Erhebungszeitraum, Stichprobengröße, verwendete Instrumente und Verfügbarkeitsstatus. Ermöglicht Forscher:innen die Auffindbarkeit relevanter Datensätze für Sekundäranalysen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Metadaten zu archivierten Studien enthalten keine personenbezogenen Daten und sind vollständig offen zugänglich. Offene Metadatenkataloge wie der von GESIS oder ZA sind unverzichtbar für die Auffindbarkeit von Forschungsdaten und unterstützen das FAIR-Prinzip."
+                },
+                "theme":       { "code": "TH_10", "label": "Wissenschaft & Forschung" },
+                "object":      { "code": "OB_04", "label": "Dokumente & Texte" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_01", "label": "CC0 / Public Domain" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Datendokumentation", "description": "Standardisierte Beschreibung aller Studien mit DDI-konformen Metadaten für nationale und internationale Interoperabilität." },
+                  { "method": "Forschungsdaten-Auffindbarkeit", "description": "Indexierung in nationalen (da|ra) und internationalen (ICPSR, CESSDA) Katalogen zur globalen Sichtbarkeit." }
+                ]
+              }
+            },
+            {
+              "id": "synthetische_datensaetze",
+              "level": 4,
+              "name": "Synthetische Datensätze",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Künstlich generierte Datensätze, die die statistischen Eigenschaften realer Forschungsdaten nachbilden, ohne echte Personen zu repräsentieren. Synthetische Daten ermöglichen die Entwicklung und Erprobung von Analysemethoden ohne Datenschutzrisiko.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Synthetisch generierte Daten enthalten per Definition keinen Personenbezug und können vollständig offen bereitgestellt werden. Sie sind ein zukunftsweisendes Instrument, das Datenschutz und Forschungsnutzen vereint und die Reproduzierbarkeit wissenschaftlicher Analysen fördert."
+                },
+                "theme":       { "code": "TH_10", "label": "Wissenschaft & Forschung" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 / Public Domain" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Synthetische Datengenerierung", "description": "Erzeugung künstlicher Datensätze mit statistischen Modellen (z.B. Sequential Regression Multivariate Imputation), die reale Verteilungen nachbilden." },
+                  { "method": "Methoden-Prototyping", "description": "Bereitstellung synthetischer Daten als Sandbox für Entwicklung und Test neuer Analysemethoden ohne Datenschutzrisiken." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "datenzugang",
+          "level": 3,
+          "name": "Datenzugang & Nutzungsverwaltung",
+          "color": "#7d3c98",
+          "description": "Verwaltung von Datenzugangsanträgen, Nutzungsverträgen und Zugriffsstatistiken für archivierte Forschungsdaten",
+          "children": [
+            {
+              "id": "nutzungsvertraege",
+              "level": 4,
+              "name": "Nutzungsverträge",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Vertragsdaten der Forschungsdatenzugangs-Nutzer:innen: Name, Institution, Forschungszweck, beantragte Datensätze, Datenschutzverpflichtungen und Zugangszeitraum. Nutzungsverträge sind rechtliche Grundlage für jeden Datenzugang und unterliegen strengem Datenschutz.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Nutzungsvertragsdaten enthalten personenbezogene Daten der Forscher:innen und deren institutionelle Informationen sowie Forschungsdetails. Eine Veröffentlichung ist nicht möglich; aggregierte Nutzungsstatistiken ohne Personenbezug können jedoch transparent gemacht werden."
+                },
+                "theme":       { "code": "TH_10", "label": "Wissenschaft & Forschung" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_04", "label": "PDF / Dokument" }, { "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "relevance": 1,
+                "processes": [
+                  { "method": "Antragsprüfung & Vertragsverwaltung", "description": "Prüfung von Datenzugangsanträgen auf Wissenschaftlichkeit und Datenschutzkonformität, Abschluss von Nutzungsverträgen." },
+                  { "method": "Compliance-Monitoring", "description": "Überwachung der Vertragseinhaltung und Durchsetzung von Datenlöschpflichten nach Ablauf des Zugangszeitraums." }
+                ]
+              }
+            },
+            {
+              "id": "zugangshaeufigkeit_statistik",
+              "level": 4,
+              "name": "Zugangshäufigkeit Statistik",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Nutzungsstatistiken pro Datensatz: Anzahl der Downloads, Zugriffshäufigkeiten, Antragszahlen nach Jahr und Fachgebiet sowie Länderherkunft der Nutzenden. Diese aggregierten Daten sind vollständig offen und dienen der Transparenz über die Nachfrage nach Forschungsdaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Nutzungsstatistiken enthalten keinen Personenbezug und können vollständig offen veröffentlicht werden. Sie schaffen Transparenz über die tatsächliche Nutzung archivierten Datenmaterials und sind wichtige Qualitätsindikatoren für Forschungsdatenzentren."
+                },
+                "theme":       { "code": "TH_10", "label": "Wissenschaft & Forschung" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 / Public Domain" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Nutzungsmonitoring", "description": "Automatisierte Erfassung und Aggregation von Zugriffsstatistiken pro Datensatz ohne Speicherung personenbezogener Nutzungsdaten." },
+                  { "method": "Berichterstattung & Qualitätssicherung", "description": "Regelmäßige Veröffentlichung von Nutzungsberichten als Nachweis des gesellschaftlichen Mehrwerts der Datenarchivierung." }
+                ]
+              }
+            },
+            {
+              "id": "datennachfrage_analyse",
+              "level": 4,
+              "name": "Datennachfrage-Analyse",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Aggregierte Analyse welche Datensätze am häufigsten nachgefragt werden: Themenfelder mit höchster Nutzungsintensität, Trends in der Forschungsdatennachfrage und Bedarfslücken im Datenangebot. Grundlage für strategische Akquisitionsentscheidungen des Forschungsdatenzentrums.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Nachfrageanalysen ohne Personenbezug sind vollständig offen und schaffen wertvolle Transparenz über Forschungsinteressen und Datenlücken im Wissenschaftssystem. Sie können strategische Datenbeschaffungsentscheidungen anderer Institutionen informieren."
+                },
+                "theme":       { "code": "TH_10", "label": "Wissenschaft & Forschung" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_04", "label": "PDF / Dokument" }],
+                "license":     { "code": "LI_01", "label": "CC0 / Public Domain" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Bedarfsanalyse & Strategieentwicklung", "description": "Auswertung von Nachfragetrends zur Identifikation von Datenlücken und Priorisierung neuer Akquisitionsprojekte." },
+                  { "method": "Wissenschaftssystem-Monitoring", "description": "Longitudinale Beobachtung von Forschungsinteressen anhand aggregierter Nachfragestatistiken für wissenschaftspolitische Berichterstattung." }
                 ]
               }
             }

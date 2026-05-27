@@ -1,4 +1,4 @@
-// Builds and controls the sidebar panel
+import { esc, safeColor } from './utils.js';
 
 const sidebar  = document.getElementById('sidebar');
 const body     = document.getElementById('sidebar-body');
@@ -42,7 +42,7 @@ function buildContent(tile, hasExplore = false, exploreLabel = 'Erkunden') {
   const badgeCls = BADGE_CLASS[lvl] ?? 'l4';
   const lvlLabel = LEVEL_LABELS[lvl] ?? 'Ebene';
 
-  const strip  = `<div style="height:4px;border-radius:4px 4px 0 0;background:${tile.color};margin:-22px -20px 18px;"></div>`;
+  const strip  = `<div style="height:4px;border-radius:4px 4px 0 0;background:${safeColor(tile.color)};margin:-22px -20px 18px;"></div>`;
   const badge  = `<span class="sb-badge ${badgeCls}">◈ ${lvlLabel}</span>`;
   const title  = `<h2 class="sb-title">${esc(tile.name)}</h2>`;
   const desc   = tile.description ? `<p class="sb-desc">${esc(tile.description)}</p>` : '';
@@ -144,10 +144,3 @@ function section(title, inner) {
   </div>`;
 }
 
-function esc(str = '') {
-  return String(str)
-    .replace(/&/g,'&amp;')
-    .replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;');
-}

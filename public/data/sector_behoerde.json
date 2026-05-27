@@ -21,22 +21,21 @@
               "name": "Blitzerfoto-Datenbank",
               "color": "#2471a3",
               "details": {
-                "description": "Datenbank automatisch erfasster Geschwindigkeitsverstöße: Fahrzeugfoto, Kennzeichen, Zeitstempel, Messort, Geschwindigkeit, Fahrzeughalter-Daten (via KBA-Abfrage). Grundlage für Bußgeldverfahren.",
-                "openDataPotential": {
-                  "score": "Mittel",
-                  "scoreValue": 2,
-                  "explanation": "Standort- und Zeitstatistiken (Unfallschwerpunkte, Häufigkeiten nach Tageszeit und Wochentag) sind für Stadtplanung und Verkehrssicherheitsforschung hoch wertvoll und werden in vorbildlichen Open-Government-Portalen bereits veröffentlicht. Individualdaten hingegen niemals."
+                "description": "Datenbank automatisch erfasster Geschwindigkeitsverstöße: Fahrzeugfoto, Kennzeichen, Zeitstempel, Messort, Geschwindigkeit und Fahrzeughalter-Daten (via KBA-Abfrage). Grundlage für Bußgeldverfahren. Fotos können Gesichter enthalten und fallen unter Art. 9 DSGVO.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Rohdaten enthalten biometrische Daten (Gesichtsbilder) und KFZ-Kennzeichen als direkte Personenidentifikatoren. Direktveröffentlichung ist rechtlich ausgeschlossen. Nur aggregierte Standortstatistiken (Anzahl Verstöße pro Messort und Monat) ohne Fahrzeug- oder Personenbezug sind als Open Data geeignet."
                 },
-                "dsgvoRisk": {
-                  "level": "Sehr hoch",
-                  "riskClass": "risk-veryhigh",
-                  "explanation": "Fahrzeugfotos können Gesichtsbilder enthalten → biometrische Daten gemäß Art. 9 DSGVO. Kennzeichen sind personenbezogen (über KBA eindeutig zuordenbar). Zweckbindung: ausschließlich Bußgeldverfahren. Automatische Löschung nach Abschluss des Verfahrens (§ 100 Abs. 1 OWiG).",
-                  "articles": ["Art. 9 DSGVO", "Art. 6 Abs. 1 lit. e DSGVO", "§ 100 OWiG", "StVG § 52"]
-                },
-                "anonymization": [
-                  { "method": "Gesichtsverpixelung", "description": "Automatische Verpixelung aller erkennbaren Gesichter in Rohmaterialien vor jeglicher Weiterverarbeitung oder Archivierung." },
-                  { "method": "Aggregation", "description": "Veröffentlichung ausschließlich als Heatmaps (Messstellen-Koordinaten + Anzahl Verstöße pro Monat) ohne Fahrzeug- oder Personenbezug." },
-                  { "method": "Löschkonzept", "description": "Automatische Löschung aller Bilddaten 3 Monate nach Rechtskraft des Bußgeldbescheids, spätestens jedoch nach 1 Jahr." }
+                "theme":       { "code": "TH_05", "label": "Demokratie & Partizipation" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }],
+                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Verkehrsüberwachung", "description": "Kerndatensatz des automatisierten Messvorgangs — Grundlage für jedes Bußgeldverfahren." },
+                  { "method": "Bußgeldverfahren", "description": "Foto und Messdaten werden im Verfahren als Beweismittel verwendet und danach gelöscht." }
                 ]
               }
             },
@@ -46,21 +45,21 @@
               "name": "Bußgeldstatistiken",
               "color": "#2471a3",
               "details": {
-                "description": "Aggregierte Auswertungen über verhängte Bußgelder: Anzahl, Deliktarten, Verteilung nach Stadtbezirk, Tageszeit und Deliktklasse. Bereits teilweise anonymisiert.",
-                "openDataPotential": {
-                  "score": "Hoch",
-                  "scoreValue": 3,
-                  "explanation": "Stark anonymisierte Bußgeldstatistiken sind wertvolle Open-Government-Daten: Verkehrssicherheitsforschung, Journalismus, kommunale Planung. Das Umweltbundesamt veröffentlicht vergleichbare Bundesstatistiken bereits; kommunale Behörden sollten nachziehen."
+                "description": "Aggregierte Auswertungen über verhängte Bußgelder: Anzahl, Deliktarten, Verteilung nach Stadtbezirk, Tageszeit und Deliktklasse. Personenbezug ist bereits vollständig aufgelöst — kein Rückschluss auf Einzelpersonen möglich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Vollständig anonymisierte Aggregatstatistiken ohne Personenbezug. Veröffentlichung auf kommunalen Open-Data-Portalen steigert Transparenz und ermöglicht Verkehrssicherheitsforschung. Viele Städte (Berlin, Hamburg) veröffentlichen vergleichbare Daten bereits."
                 },
-                "dsgvoRisk": {
-                  "level": "Niedrig",
-                  "riskClass": "risk-low",
-                  "explanation": "Bei korrekter Aggregation (keine Rückschlüsse auf Einzelpersonen) kein personenbezogenes Datum mehr vorhanden. Art. 4 Nr. 1 DSGVO: Anonymisierung hebt den Anwendungsbereich der DSGVO auf. Empfehlung: Mindestgruppengrößen von 10 einhalten.",
-                  "articles": ["Art. 4 Nr. 1 DSGVO", "ErwG 26 DSGVO"]
-                },
-                "anonymization": [
-                  { "method": "Aggregation", "description": "Auflösung auf Stadtbezirk-Ebene (nicht Straße), Zeiteinheit Monat (nicht Tag), Deliktklassen statt Einzeldelikte." },
-                  { "method": "Mindestgröße", "description": "Gruppen mit weniger als 10 Einträgen werden als '<10' oder unterdrückt, um Singulärdaten zu vermeiden." }
+                "theme":       { "code": "TH_05", "label": "Demokratie & Partizipation" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Statistiken belegen Wirksamkeit von Geschwindigkeitsüberwachung und werden in Rechenschaftsberichten verwendet." },
+                  { "method": "Monitoring & Evaluation", "description": "Trendanalysen der Verstöße unterstützen Entscheidungen über Standorte neuer Messpunkte." }
                 ]
               }
             }
@@ -79,21 +78,21 @@
               "name": "Gewerbeverzeichnis",
               "color": "#2471a3",
               "details": {
-                "description": "Register aller angemeldeten Gewerbebetriebe im Stadtgebiet: Firmenname, Geschäftszweck, Adresse, Inhaberschaft, Anmeldedatum. Geführt nach § 14 GewO.",
-                "openDataPotential": {
-                  "score": "Hoch",
-                  "scoreValue": 3,
-                  "explanation": "Gewerbedaten sind in vielen EU-Ländern bereits Open Data (z.B. OpenDataSoft Unternehmensregister). Wirtschaftsstruktur, Gründungsaktivität und Branchenverteilung sind wichtige Indikatoren für Stadtentwicklung und Wirtschaftsförderung. Das Transparenzregister ist ein erster Schritt in diese Richtung."
+                "description": "Register aller angemeldeten Gewerbebetriebe im Stadtgebiet: Firmenname, Geschäftszweck, Adresse, Inhaberschaft, Anmeldedatum. Geführt nach § 14 GewO. Bei Einzelkaufleuten kann die Adresse identisch mit der Privatanschrift sein.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Juristische Personen (GmbH, AG, Verein) können direkt veröffentlicht werden. Bei Einzelunternehmern ist Prüfung nötig, ob die Geschäftsadresse eine Privatanschrift ist. Nach Filterung ein wertvolles Gewerberegister für Wirtschaftsförderung und Stadtentwicklung."
                 },
-                "dsgvoRisk": {
-                  "level": "Mittel",
-                  "riskClass": "risk-medium",
-                  "explanation": "Natürliche Personen (Einzelkaufleute) sind personenbezogen. Juristische Personen fallen nicht unter DSGVO. Geschäftsanschriften können mit Privatadressen zusammenfallen. Getrennte Veröffentlichung: Firmenregister (öffentlich) vs. Inhaberdaten (nur bei öffentlichem Interesse).",
-                  "articles": ["Art. 4 Nr. 1 DSGVO", "Art. 6 Abs. 1 lit. c DSGVO", "§ 14 GewO"]
-                },
-                "anonymization": [
-                  { "method": "Kategorialisierung", "description": "Bei Einzelunternehmern: Nur Branche + Stadtbezirk veröffentlichen, keinen Namen oder genaue Adresse." },
-                  { "method": "Opt-out", "description": "Möglichkeit für Inhaber:innen, persönliche Daten aus der öffentlichen Version zu entfernen (separates Datenschutz-Register)." }
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Wirtschaftsförderung", "description": "Verzeichnis dient als Grundlage für Wirtschaftsstrukturanalysen und Fördermaßnahmen." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Öffentliches Gewerberegister schafft Transparenz und erleichtert B2B-Vernetzung im lokalen Gewerbe." }
                 ]
               }
             }
@@ -121,22 +120,21 @@
               "name": "Melderegister",
               "color": "#2471a3",
               "details": {
-                "description": "Umfassendes Verzeichnis aller gemeldeten Einwohner:innen: Name, Anschrift, Geburtsdatum, Familienstand, Staatsangehörigkeit, Religionszugehörigkeit (für Kirchensteuer). Rechtsgrundlage: Bundesmeldegesetz (BMG).",
-                "openDataPotential": {
-                  "score": "Sehr niedrig",
-                  "scoreValue": 0,
-                  "explanation": "Keine Direktveröffentlichung möglich oder rechtlich zulässig. Aggregierte Bevölkerungsstatistiken (Einwohnerzahl, Altersstruktur, Wanderungssaldo) werden durch das Statistische Bundesamt bereits veröffentlicht und haben hohes gesellschaftliches Informationspotenzial."
+                "description": "Umfassendes Verzeichnis aller gemeldeten Einwohner:innen: Name, Anschrift, Geburtsdatum, Familienstand, Staatsangehörigkeit, Religionszugehörigkeit (für Kirchensteuer). Rechtsgrundlage: Bundesmeldegesetz (BMG). Enthält besondere Kategorien nach Art. 9 DSGVO.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Direktveröffentlichung ist gesetzlich ausgeschlossen (BMG § 44). Einzelauskünfte nur unter engen Voraussetzungen. Aggregierte Bevölkerungsstatistiken auf Bezirksebene sind separat über das Statistische Amt zu beziehen — das Register selbst bleibt vollständig geschlossen."
                 },
-                "dsgvoRisk": {
-                  "level": "Sehr hoch",
-                  "riskClass": "risk-veryhigh",
-                  "explanation": "Art. 9 DSGVO: Religionszugehörigkeit ist besondere Kategorie. Umfassende Persönlichkeitsprofile möglich. Meldeauskunft nur unter strengen Voraussetzungen (§§ 44 ff. BMG). Einzelabfragen durch Private nur eingeschränkt gestattet (§ 44 BMG). Keine Sammelabfragen.",
-                  "articles": ["Art. 9 DSGVO", "Art. 6 Abs. 1 lit. c DSGVO", "BMG § 44", "BMG § 50"]
-                },
-                "anonymization": [
-                  { "method": "Aggregation", "description": "Veröffentlichung ausschließlich als statistische Tabellen: Altersverteilung, Geschlechterverteilung, Haushaltsgröße — stets auf Stadtbezirk-Ebene oder größer." },
-                  { "method": "Löschfristen", "description": "Weggezogene Personen werden nach 5 Jahren aus dem aktiven Register gelöscht (§ 17 BMG). Archivierung nur für statistische Langzeitanalysen ohne Personenbezug." },
-                  { "method": "Differential Privacy", "description": "Bei Daten zu Kleingruppen (z.B. seltene Staatsangehörigkeiten in kleinen Bezirken) statistisches Rauschen hinzufügen, um Re-Identifikation zu verhindern." }
+                "theme":       { "code": "TH_01", "label": "Soziales & Wohlfahrt" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Meldewesen & Identitätsprüfung", "description": "Grundlage aller hoheitlichen Identitätsprüfungen und Adressauskünfte im gesetzlichen Rahmen." },
+                  { "method": "Verwaltungsdienstleistungen", "description": "Basis für Ausstellung von Personalausweisen, Bescheinigungen und behördliche Schriftzustellungen." }
                 ]
               }
             },
@@ -146,21 +144,21 @@
               "name": "Bevölkerungsstatistik",
               "color": "#2471a3",
               "details": {
-                "description": "Aggregierte Kennzahlen aus dem Melderegister: Einwohnerzahl nach Stadtbezirk und Altersgruppe, Wanderungssalden, Haushaltsgrößen. Grundlage für kommunale Planung.",
-                "openDataPotential": {
-                  "score": "Hoch",
-                  "scoreValue": 3,
-                  "explanation": "Demografische Aggregatdaten sind klassische Open-Government-Daten. Sie ermöglichen Forschung zu Stadtentwicklung, sozialer Ungleichheit und Infrastrukturplanung. Viele Kommunen veröffentlichen diese Daten bereits über Open-Data-Portale (z.B. data.berlin.de). Hoher gesellschaftlicher Mehrwert."
+                "description": "Aggregierte Kennzahlen aus dem Melderegister: Einwohnerzahl nach Stadtbezirk und Altersgruppe, Wanderungssalden, Haushaltsgrößen. Grundlage für kommunale Planung. Kein Personenbezug in den veröffentlichten Aggregaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Korrekt aggregierte Bevölkerungsstatistiken enthalten keine personenbezogenen Daten mehr (ErwG 26 DSGVO). Viele Kommunen stellen diese Daten bereits auf Open-Data-Portalen bereit (data.berlin.de, München Statistik). Hoher gesellschaftlicher Mehrwert für Forschung und Stadtplanung."
                 },
-                "dsgvoRisk": {
-                  "level": "Niedrig",
-                  "riskClass": "risk-low",
-                  "explanation": "Korrekt aggregierte Bevölkerungsstatistiken enthalten keine personenbezogenen Daten mehr (ErwG 26 DSGVO). Bei sehr kleinen Gruppen (<5 Personen in einer Zelle) sind Suppressionstechniken anzuwenden.",
-                  "articles": ["ErwG 26 DSGVO", "Art. 4 Nr. 1 DSGVO", "BStatG § 16"]
-                },
-                "anonymization": [
-                  { "method": "Zellsuppression", "description": "Zellen mit weniger als 3 Einträgen werden als '<3' dargestellt oder weggelassen, um Rückschlüsse auf Einzelpersonen zu vermeiden." },
-                  { "method": "Geographische Aggregation", "description": "Kleinstgebiete mit weniger als 100 Einwohnern werden zum nächstgrößeren Gebiet zusammengefasst." }
+                "theme":       { "code": "TH_01", "label": "Soziales & Wohlfahrt" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Stadtplanung & Entwicklung", "description": "Bevölkerungsdaten sind Pflichtgrundlage für Flächennutzungs-, Bebauungs- und Infrastrukturplanung." },
+                  { "method": "Forschung & Studien", "description": "Demographische Zeitreihen ermöglichen wissenschaftliche Analysen zu Urbanisierung, Migration und sozialem Wandel." }
                 ]
               }
             }

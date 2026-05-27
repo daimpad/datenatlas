@@ -80,13 +80,17 @@ export class IsometricRenderer {
   }
 
   _resize() {
-    const dpr  = window.devicePixelRatio || 1;
-    const rect = this.canvas.getBoundingClientRect();
-    this.lW = rect.width  || this.canvas.offsetWidth;
-    this.lH = rect.height || this.canvas.offsetHeight;
-    this.canvas.width  = this.lW * dpr;
-    this.canvas.height = this.lH * dpr;
-    this.ctx.scale(dpr, dpr);
+    const dpr = window.devicePixelRatio || 1;
+    // offsetWidth/Height are always in CSS pixels and available once laid out
+    const W = this.canvas.offsetWidth;
+    const H = this.canvas.offsetHeight;
+    if (!W || !H) return;
+    this.lW = W;
+    this.lH = H;
+    this.canvas.width  = W * dpr;
+    this.canvas.height = H * dpr;
+    // setTransform sets an absolute matrix — safe to call repeatedly without accumulation
+    this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     this.dirty = true;
   }
 
@@ -137,14 +141,22 @@ export class IsometricRenderer {
     return t < 0.35 ? t / 0.35 : 1 - (t - 0.35) / 0.65;
   }
 
+  // True when the tile's bounding box overlaps the logical viewport
+  _isVisible(tx, ty) {
+    const { W, H, D, lW, lH } = this;
+    const pad = 16; // small buffer to avoid edge pop-in during pan
+    return tx + W / 2 + pad > 0 && tx - W / 2 - pad < lW &&
+           ty + H + D + pad > 0 && ty - pad < lH;
+  }
+
   // Return tile id at logical screen point (px, py), or null
   hitTest(px, py) {
-    // Iterate tiles front-to-back (reverse painter order)
+    // Iterate tiles front-to-back (reverse painter order), skip off-screen
     const sorted = [...this.tiles].sort((a, b) => (b.col + b.row) - (a.col + a.row));
     for (const t of sorted) {
       const { tx, ty } = this._tilePos(t.col, t.row);
+      if (!this._isVisible(tx, ty)) continue;
       const W = this.W, H = this.H, D = this.D;
-      // Hexagonal bounding polygon: top-diamond + side faces
       const poly = [
         [tx,       ty],
         [tx+W/2,   ty+H/2],
@@ -178,10 +190,11 @@ export class IsometricRenderer {
     ctx.save();
     ctx.globalAlpha = alpha;
 
-    // Paint tiles back-to-front (ascending col+row)
+    // Paint tiles back-to-front (ascending col+row), skip off-screen tiles
     const sorted = [...this.tiles].sort((a, b) => (a.col + a.row) - (b.col + b.row));
     for (const t of sorted) {
       const { tx, ty } = this._tilePos(t.col, t.row);
+      if (!this._isVisible(tx, ty)) continue;
       const pulse = this._pulseFactor(t.id);
       this._drawTile(ctx, tx, ty, t.color, t.name, t.id === this.hov, pulse, t.navigable);
     }

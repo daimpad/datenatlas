@@ -1,4 +1,4 @@
-import { applyRiskColors } from './utils.js';
+import { applyOpennessColors } from './utils.js';
 
 // ── Index building ─────────────────────────────────────────────────────────────
 
@@ -7,19 +7,19 @@ export function buildSearchIndex(mainTiles, sectorPairs) {
   const rootCrumb = { id: null, name: 'Übersicht', level: 0, tiles: mainTiles };
 
   for (const [sectorTile, sectorData] of sectorPairs) {
-    const l2tiles    = applyRiskColors(sectorData.children ?? []);
+    const l2tiles    = applyOpennessColors(sectorData.children ?? []);
     const sectorCrumb = { id: sectorTile.id, name: sectorTile.name, level: 2, tiles: l2tiles };
 
     for (const org of sectorData.children ?? []) {
-      const l3tiles  = applyRiskColors(org.children ?? []);
+      const l3tiles  = applyOpennessColors(org.children ?? []);
       const orgCrumb = { id: org.id, name: org.name, level: 3, tiles: l3tiles };
 
       for (const activity of org.children ?? []) {
-        const l4tiles      = applyRiskColors(activity.children ?? []);
+        const l4tiles      = applyOpennessColors(activity.children ?? []);
         const activityCrumb = { id: activity.id, name: activity.name, level: 4, tiles: l4tiles };
 
         for (const dataType of activity.children ?? []) {
-          const tile = applyRiskColors([dataType])[0];
+          const tile = applyOpennessColors([dataType])[0];
           index.push({
             tile,
             breadcrumb:  [rootCrumb, sectorCrumb, orgCrumb, activityCrumb],

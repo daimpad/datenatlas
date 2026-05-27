@@ -254,28 +254,41 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
 
 .sb-section p { font-size: 13px; color: var(--text-1); line-height: 1.72; }
 
-/* Risk badges */
-.risk-pill {
+/* Öffnungsklasse pill */
+.openness-pill {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 3px 10px;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 14px;
   border-radius: 20px;
-  margin-bottom: 9px;
+  margin-bottom: 10px;
+  letter-spacing: 0.2px;
 }
-.risk-low      { background:rgba(63,185,80,0.12);  color:var(--green);  border:1px solid rgba(63,185,80,0.25); }
-.risk-medium   { background:rgba(210,153,34,0.12); color:var(--yellow); border:1px solid rgba(210,153,34,0.25); }
-.risk-high     { background:rgba(248,81,73,0.12);  color:var(--red);    border:1px solid rgba(248,81,73,0.25); }
-.risk-veryhigh { background:rgba(248,81,73,0.2);   color:var(--red-hi); border:1px solid rgba(248,81,73,0.4); }
+.op-gruen { background: rgba(39,174,96,0.14);  color: #2ecc71; border: 1px solid rgba(39,174,96,0.3); }
+.op-gelb  { background: rgba(212,160,23,0.14); color: #f0c040; border: 1px solid rgba(212,160,23,0.3); }
+.op-rot   { background: rgba(192,57,43,0.14);  color: #e74c3c; border: 1px solid rgba(192,57,43,0.3); }
 
-/* Open data score */
-.od-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-.od-dots { display: flex; gap: 4px; }
-.od-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--surface-3); border: 1px solid var(--border); }
-.od-dot.on { background: var(--green); border-color: var(--green); }
-.od-score-label { font-size: 13px; font-weight: 600; color: var(--text-1); }
+/* Metadata chips */
+.meta-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.meta-chip {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 3px 9px;
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+
+/* Relevance dots */
+.rel-row { display: flex; align-items: center; gap: 10px; }
+.rel-dots { display: flex; gap: 5px; }
+.rel-dot { width: 11px; height: 11px; border-radius: 50%; background: var(--surface-3); border: 1px solid var(--border); }
+.rel-dot.on { background: var(--yellow); border-color: var(--yellow); }
+.rel-label { font-size: 13px; font-weight: 600; color: var(--text-1); font-family: var(--mono); }
 
 /* Anonymization methods */
 .anon-list { display: flex; flex-direction: column; gap: 0; }

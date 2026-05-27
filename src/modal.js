@@ -34,7 +34,7 @@ export function closeSidebar() {
 
 // ── Content builders ──────────────────────────────────────────────────────────
 
-const LEVEL_LABELS = ['', 'Sektor', 'Organisation', 'Aktivität', 'Datentyp', 'Methode', 'Datentyp'];
+const LEVEL_LABELS = ['', 'Sektor', 'Organisation', 'Aktivität', 'Datentyp', 'Prozess', 'Datentyp'];
 const BADGE_CLASS  = ['', 'l1',     'l2',           'l3',        'l4',       'l5',      'l6'];
 
 function buildContent(tile, hasExplore = false, exploreLabel = 'Erkunden') {
@@ -54,7 +54,7 @@ function buildContent(tile, hasExplore = false, exploreLabel = 'Erkunden') {
        </button>`
     : '';
 
-  // ── Level 5 — Anonymisierungsmethode ──
+  // ── Level 5 — Prozess ──
   if (lvl === 5) {
     const count = tile._relatedCount;
     const meta  = count != null
@@ -88,40 +88,50 @@ function buildContent(tile, hasExplore = false, exploreLabel = 'Erkunden') {
 function buildDetailSections(d) {
   const parts = [];
 
-  parts.push(section('Beschreibung', `<p>${esc(d.description)}</p>`));
+  parts.push(section('&#x1F4CB; Beschreibung', `<p>${esc(d.description)}</p>`));
 
-  if (d.openDataPotential) {
-    const od   = d.openDataPotential;
-    const dots = [0,1,2,3].map(i =>
-      `<span class="od-dot${i < (od.scoreValue ?? 0) ? ' on' : ''}"></span>`
+  if (d.openness) {
+    const op = d.openness;
+    const opClass = op.class === 'OP_01' ? 'op-gruen' : op.class === 'OP_02' ? 'op-gelb' : 'op-rot';
+    const opIcon  = op.class === 'OP_01' ? '●' : op.class === 'OP_02' ? '◑' : '○';
+    parts.push(section('&#x1F513; Öffnungsklasse', `
+      <div class="openness-pill ${opClass}">${opIcon} ${esc(op.label)}</div>
+      <p>${esc(op.explanation)}</p>`));
+  }
+
+  const metaItems = [];
+  if (d.theme)       metaItems.push({ label: d.theme.label,       icon: '🏷' });
+  if (d.object)      metaItems.push({ label: d.object.label,      icon: '📦' });
+  if (d.granularity) metaItems.push({ label: d.granularity.label, icon: '🔍' });
+  if (d.format?.length) {
+    d.format.forEach(f => metaItems.push({ label: f.label, icon: '📄' }));
+  }
+  if (d.license)     metaItems.push({ label: d.license.label,     icon: '⚖' });
+  if (metaItems.length) {
+    const chips = metaItems.map(m =>
+      `<span class="meta-chip">${m.label}</span>`
     ).join('');
-    parts.push(section('Open-Data-Potenzial', `
-      <div class="od-row">
-        <div class="od-dots">${dots}</div>
-        <span class="od-score-label">${esc(od.score)}</span>
-      </div>
-      <p>${esc(od.explanation)}</p>`));
+    parts.push(section('&#x1F4CB; Metadaten', `<div class="meta-chips">${chips}</div>`));
   }
 
-  if (d.dsgvoRisk) {
-    const dr      = d.dsgvoRisk;
-    const pill    = `<span class="risk-pill ${dr.riskClass ?? 'risk-medium'}">⚠ ${esc(dr.level)}</span>`;
-    const articles = (dr.articles ?? [])
-      .map(a => `<span class="law-pill">${esc(a)}</span>`).join('');
-    parts.push(section('DSGVO-Risikoanalyse', `
-      ${pill}
-      <p>${esc(dr.explanation)}</p>
-      ${articles ? `<div class="law-pills">${articles}</div>` : ''}`));
+  if (d.relevance != null) {
+    const dots = [1,2,3,4,5].map(i =>
+      `<span class="rel-dot${i <= d.relevance ? ' on' : ''}"></span>`
+    ).join('');
+    parts.push(section('&#x2B50; Relevanz', `
+      <div class="rel-row">
+        <div class="rel-dots">${dots}</div>
+        <span class="rel-label">${d.relevance} / 5</span>
+      </div>`));
   }
 
-  if (d.anonymization?.length) {
-    const items = d.anonymization.map(m => `
+  if (d.processes?.length) {
+    const items = d.processes.map(p => `
       <div class="anon-item">
-        <span class="anon-tag">${esc(m.method)}</span>
-        <span class="anon-text">${esc(m.description)}</span>
+        <span class="anon-tag">${esc(p.method)}</span>
+        <span class="anon-text">${esc(p.description)}</span>
       </div>`).join('');
-    parts.push(section('Anonymisierungs&shy;empfehlung',
-      `<div class="anon-list">${items}</div>`));
+    parts.push(section('&#x2699; Prozessbezug', `<div class="anon-list">${items}</div>`));
   }
 
   return parts.join('');

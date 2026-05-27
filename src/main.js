@@ -3,7 +3,7 @@ import { initControls }      from './controls.js';
 import { openSidebar, closeSidebar } from './modal.js';
 import { loadMain, loadSector }      from './dataLoader.js';
 import { state, patchState }         from './state.js';
-import { applyRiskColors }           from './utils.js';
+import { applyOpennessColors }        from './utils.js';
 import { buildSearchIndex, initSearch } from './search.js';
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
@@ -42,7 +42,7 @@ document.getElementById('ob-start').addEventListener('click', () => {
 });
 
 // ── Filter ────────────────────────────────────────────────────────────────────
-const filterState = { risk: null, openData: null };
+const filterState = { openness: null };
 let filterOpen    = false;
 
 filterToggle.addEventListener('click', () => {
@@ -51,20 +51,11 @@ filterToggle.addEventListener('click', () => {
   syncFilterBar();
 });
 
-document.getElementById('fc-risk').addEventListener('click', e => {
+document.getElementById('fc-openness').addEventListener('click', e => {
   const btn = e.target.closest('.fc');
   if (!btn) return;
-  filterState.risk = btn.dataset.risk || null;
-  setActiveChip('fc-risk', btn);
-  applyFilter();
-});
-
-document.getElementById('fc-od').addEventListener('click', e => {
-  const btn = e.target.closest('.fc');
-  if (!btn) return;
-  const v = btn.dataset.od;
-  filterState.openData = v === '' ? null : parseInt(v, 10);
-  setActiveChip('fc-od', btn);
+  filterState.openness = btn.dataset.op || null;
+  setActiveChip('fc-openness', btn);
   applyFilter();
 });
 
@@ -81,7 +72,7 @@ function syncFilterBar() {
 function applyFilter() {
   syncFilterBar();
   const atL4 = currentLevel() === 4;
-  if (!atL4 || (filterState.risk === null && filterState.openData === null)) {
+  if (!atL4 || filterState.openness === null) {
     renderer.setDimmedIds(new Set());
     return;
   }
@@ -91,46 +82,46 @@ function applyFilter() {
 }
 
 function tileMatchesFilter(tile) {
-  if (filterState.risk !== null &&
-      tile.details?.dsgvoRisk?.riskClass !== filterState.risk) return false;
-  if (filterState.openData !== null &&
-      tile.details?.openDataPotential?.scoreValue !== filterState.openData) return false;
+  if (filterState.openness !== null &&
+      tile.details?.openness?.class !== filterState.openness) return false;
   return true;
 }
 
-// ── Method index (for L5 → L6 cross-sector lookup) ───────────────────────────
+// ── Process index (for L5 → L6 cross-sector lookup) ──────────────────────────
 
-// Map<methodName, searchIndexEntry[]>
+// Map<processName, searchIndexEntry[]>
 let methodIndex = null;
 
 function buildMethodIndex(searchIdx) {
   const mi = new Map();
   for (const entry of searchIdx) {
-    for (const m of entry.tile.details?.anonymization ?? []) {
-      if (!mi.has(m.method)) mi.set(m.method, []);
-      mi.get(m.method).push(entry);
+    for (const p of entry.tile.details?.processes ?? []) {
+      if (!mi.has(p.method)) mi.set(p.method, []);
+      mi.get(p.method).push(entry);
     }
   }
   return mi;
 }
 
-// Colors assigned to anonymization method categories
-const METHOD_COLORS = [
-  ['aggregation',      '#1a6eb5'],
-  ['k-anonymit',       '#7d3c98'],
-  ['pseudonymisier',   '#0e6655'],
-  ['differential',     '#7e5109'],
-  ['synthetisch',      '#1d6a39'],
-  ['datensparsamkeit', '#7d6608'],
-  ['suppression',      '#5d6d7e'],
-  ['dicom',            '#1a5276'],
-  ['zweckbindung',     '#616a6b'],
-  ['rausch',           '#5d6d7e'],
+// Colors assigned to process categories
+const PROCESS_COLORS = [
+  ['beratung',         '#1a6eb5'],
+  ['bildung',          '#7d3c98'],
+  ['fundraising',      '#0e6655'],
+  ['förder',           '#7e5109'],
+  ['monitoring',       '#1d6a39'],
+  ['evaluation',       '#7d6608'],
+  ['netzwerk',         '#5d6d7e'],
+  ['politik',          '#1a5276'],
+  ['kampagnen',        '#616a6b'],
+  ['forschung',        '#5d4d7e'],
+  ['öffentlichkeit',   '#0e4d2e'],
+  ['veranstaltung',    '#4a2070'],
 ];
 
-function methodColor(name) {
+function processColor(name) {
   const key = name.toLowerCase();
-  for (const [prefix, color] of METHOD_COLORS) {
+  for (const [prefix, color] of PROCESS_COLORS) {
     if (key.includes(prefix)) return color;
   }
   return '#4a5568';
@@ -174,7 +165,7 @@ function currentLevel() {
 }
 
 function pushLevel(tiles, crumb) {
-  const processed = applyRiskColors(tiles);
+  const processed = applyOpennessColors(tiles);
   state.breadcrumb.push({ ...crumb, tiles: processed });
   patchState({ zoomLevel: crumb.level ?? state.zoomLevel, currentTiles: processed, panOffset: { x:0, y:0 } });
   renderer.setPan(0, 0);
@@ -249,15 +240,15 @@ function sidebarOpts(tile) {
     return { onExplore: () => navigateDeeper(tile), exploreLabel: 'Erkunden' };
   }
 
-  // L4 or L6 (cross-sector data type): navigate to its anonymization methods
-  if ((lvl === 4 || lvl === 6) && tile.details?.anonymization?.length) {
+  // L4 or L6 (cross-sector data type): navigate to its linked processes
+  if ((lvl === 4 || lvl === 6) && tile.details?.processes?.length) {
     return {
       onExplore: () => navigateDeeper(tile),
-      exploreLabel: 'Anonymisierungsmethoden erkunden',
+      exploreLabel: 'Verwandte Prozesse erkunden',
     };
   }
 
-  // L5 (method): navigate to related data types across sectors
+  // L5 (process): navigate to related data types across sectors
   if (lvl === 5) {
     return {
       onExplore: () => navigateDeeper(tile),
@@ -298,24 +289,24 @@ async function navigateDeeper(tile) {
     return;
   }
 
-  // ── L4 or L6: show anonymization methods as L5 tiles ──
-  if ((lvl === 4 || lvl === 6) && tile.details?.anonymization?.length) {
-    const methods = tile.details.anonymization;
-    const l5 = methods.map(m => {
-      const related = methodIndex?.get(m.method) ?? [];
+  // ── L4 or L6: show linked processes as L5 tiles ──
+  if ((lvl === 4 || lvl === 6) && tile.details?.processes?.length) {
+    const processes = tile.details.processes;
+    const l5 = processes.map(p => {
+      const related = methodIndex?.get(p.method) ?? [];
       return {
-        id:              `method-${slugify(m.method)}`,
+        id:              `process-${slugify(p.method)}`,
         level:           5,
-        name:            m.method,
-        color:           methodColor(m.method),
-        description:     m.description,
+        name:            p.method,
+        color:           processColor(p.method),
+        description:     p.description,
         navigable:       related.length > 0,
-        _methodName:     m.method,
+        _methodName:     p.method,
         _relatedCount:   related.length,
       };
     });
     await animateOut(tile.id);
-    pushLevel(l5, { id: `methods-${tile.id}`, name: `Methoden · ${tile.name}`, level: 5 });
+    pushLevel(l5, { id: `processes-${tile.id}`, name: `Prozesse · ${tile.name}`, level: 5 });
     return;
   }
 
@@ -327,11 +318,11 @@ async function navigateDeeper(tile) {
       id:          `xref-${e.tile.id}-${slugify(tile._methodName)}`,
       level:       6,
       name:        e.tile.name,
-      color:       e.tile.color,      // risk color already applied
+      color:       e.tile.color,
       description: e.displayPath,
       details:     e.tile.details,
-      navigable:   !!(e.tile.details?.anonymization?.length),
-      _methodName: tile._methodName,  // parent method context
+      navigable:   !!(e.tile.details?.processes?.length),
+      _methodName: tile._methodName,
     }));
     await animateOut(tile.id);
     pushLevel(l6, { id: `types-${slugify(tile._methodName)}`, name: `${tile.name} · Datentypen`, level: 6 });

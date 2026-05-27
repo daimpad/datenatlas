@@ -1,17 +1,16 @@
-// Shared utilities for risk color mapping
+// Shared utilities for openness color mapping
 
-export const RISK_COLORS = {
-  'risk-low':      '#27ae60',
-  'risk-medium':   '#d4a017',
-  'risk-high':     '#e67e22',
-  'risk-veryhigh': '#c0392b',
+export const OPENNESS_COLORS = {
+  'OP_01': '#27ae60',  // Grün — sofort publizierbar
+  'OP_02': '#d4a017',  // Gelb — nach Aufbereitung
+  'OP_03': '#c0392b',  // Rot — nur Metadaten
 };
 
-// Override level-4 tile colors with their DSGVO risk class color
-export function applyRiskColors(tiles) {
+// Override level-4 tile colors with their Öffnungsklasse color
+export function applyOpennessColors(tiles) {
   return tiles.map(t => {
     if (t.level !== 4) return t;
-    const rc = t.details?.dsgvoRisk?.riskClass;
-    return rc && RISK_COLORS[rc] ? { ...t, color: RISK_COLORS[rc] } : t;
+    const oc = t.details?.openness?.class;
+    return oc && OPENNESS_COLORS[oc] ? { ...t, color: OPENNESS_COLORS[oc] } : t;
   });
 }

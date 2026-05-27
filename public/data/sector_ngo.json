@@ -2,98 +2,178 @@
   "sectorId": "ngo",
   "children": [
     {
-      "id": "umweltverein",
+      "id": "soziale-dienste",
       "level": 2,
-      "name": "Umweltverein",
-      "color": "#27ae60",
-      "description": "Gemeinnütziger Verein zum Schutz der natürlichen Umwelt, Biodiversität und Klimagerechtigkeit",
+      "name": "Soziale Dienste",
+      "color": "#2ecc71",
+      "description": "Wohlfahrtsverbände, Beratungsstellen und soziale Einrichtungen, die Menschen in Notlagen unterstützen, Beratung anbieten und Hilfe zur Selbsthilfe leisten.",
       "children": [
         {
-          "id": "mitglieder_akquise",
+          "id": "beratung-hilfeplanung",
           "level": 3,
-          "name": "Mitglieder akquirieren",
-          "color": "#1abc9c",
-          "description": "Gewinnung neuer Vereinsmitglieder, Verwaltung von Beitritten und Beitragserhebung",
+          "name": "Beratung & Hilfeplanung",
+          "color": "#27ae60",
+          "description": "Systematische Erfassung von Beratungsleistungen, Bedarfsanalysen und Hilfeplanungsprozessen in sozialen Einrichtungen.",
           "children": [
             {
-              "id": "mitgliederliste",
+              "id": "beratungsstatistik",
               "level": 4,
-              "name": "Mitgliederliste",
-              "color": "#16a085",
+              "name": "Beratungsstatistik",
+              "color": "#27ae60",
               "details": {
-                "description": "Stammdaten aller registrierten Vereinsmitglieder: Name, Adresse, Geburtsdatum, Kontaktdaten (E-Mail, Telefon) und Zahlungsinformationen (IBAN, Beitragsklasse). Dient der internen Verwaltung und Beitragsmahnung.",
-                "openDataPotential": {
-                  "score": "Niedrig",
-                  "scoreValue": 1,
-                  "explanation": "Inhärent personenbezogene Daten erlauben keine Direktveröffentlichung. Aggregierte Mitgliederstatistiken (Wachstum pro Jahr, Altersverteilung, regionale Dichte nach PLZ) besitzen jedoch mittleres gesellschaftliches Erkenntnispotenzial für Zivilgesellschaftsanalysen."
+                "description": "Aggregierte Auswertungen aller erbrachten Beratungsleistungen: Anzahl Beratungsfälle, Themenfelder (Schulden, Wohnen, Migration, Familie), durchschnittliche Beratungsdauer und Fallverläufe nach Zeitraum und Region. Grundlage für Kapazitäts- und Bedarfsplanung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Fallzahlen ohne Personenbezug können nach Anonymisierung auf Gemeinde- oder Kreisebene veröffentlicht werden. Direkter Fallbezug muss zuvor vollständig entfernt werden. Hoher gesellschaftlicher Nutzen für Bedarfsplanung und Politikberatung."
                 },
-                "dsgvoRisk": {
-                  "level": "Sehr hoch",
-                  "riskClass": "risk-veryhigh",
-                  "explanation": "Art. 9 DSGVO kann greifen, wenn aus der Vereinsmitgliedschaft politische oder weltanschauliche Überzeugungen ableitbar sind (z.B. ökologische Haltung). Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung). Besondere Sorgfalt bei Datenweitergabe an Dritte.",
-                  "articles": ["Art. 6 DSGVO", "Art. 9 DSGVO", "Art. 17 DSGVO", "Art. 32 DSGVO"]
-                },
-                "anonymization": [
-                  { "method": "Aggregation", "description": "Zusammenfassung auf PLZ-Ebene und 5-Jahres-Altersgruppen. Nur Mitgliederzahlen pro Region statt Individualdaten veröffentlichen." },
-                  { "method": "K-Anonymität ≥5", "description": "Keine Subgruppe darf weniger als 5 Personen umfassen. Seltene Kombinationen (z.B. Altersklasse + Stadt) müssen vergröbert oder unterdrückt werden." },
-                  { "method": "Entfernung", "description": "Vollständige Entfernung von Name, Anschrift, Geburtsdatum, IBAN und E-Mail-Adresse vor jeder externen Datenübermittlung." }
+                "theme":       { "code": "TH_01", "label": "Soziales & Wohlfahrt" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Beratung & Betreuung", "description": "Kerndatensatz jedes Beratungsvorgangs — Thema, Dauer, Ergebnis — dient als Grundlage dieser Statistik." },
+                  { "method": "Monitoring & Evaluation", "description": "Regelmäßige Auswertung der Beratungsstatistik zur Qualitätssicherung und Kapazitätsplanung." }
                 ]
               }
             },
             {
-              "id": "beitragshistorie",
+              "id": "einrichtungsverzeichnis",
               "level": 4,
-              "name": "Beitragshistorie",
-              "color": "#16a085",
+              "name": "Verzeichnis Sozialer Einrichtungen",
+              "color": "#27ae60",
               "details": {
-                "description": "Aufzeichnung aller geleisteten Mitgliedsbeiträge mit Zeitstempel, Betrag, Zahlungsart und Referenz auf die Mitglieds-ID. Grundlage für Mahnwesen und Buchführung.",
-                "openDataPotential": {
-                  "score": "Niedrig",
-                  "scoreValue": 1,
-                  "explanation": "Individuelle Finanztransaktionen sind nicht öffentlichkeitstauglich. Der aggregierte Jahresfinanzbericht (Gesamteinnahmen, Ausgaben, Rücklagen) ist für gemeinnützige Vereine ohnehin als Transparenzmittel empfehlenswert und besitzt hohes gesellschaftliches Informationspotenzial."
+                "description": "Strukturiertes Verzeichnis aller sozialen Einrichtungen und Anlaufstellen: Name, Träger, Adresse, Öffnungszeiten, Angebotsspektrum, Zielgruppen und Kontaktdaten. Grundlage für Wegweiser und Beratungsvermittlung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Rein institutionelle Daten ohne Personenbezug. Veröffentlichung als offenes Verzeichnis erhöht die Auffindbarkeit sozialer Angebote erheblich. Maximaler gesellschaftlicher Nutzen bei minimalem Aufbereitungsaufwand."
                 },
-                "dsgvoRisk": {
-                  "level": "Hoch",
-                  "riskClass": "risk-high",
-                  "explanation": "Finanzdaten erlauben Rückschlüsse auf die wirtschaftliche Lage der Mitglieder. Gesetzliche Aufbewahrungspflicht: 10 Jahre (§ 147 AO / § 257 HGB). Nach Ablauf: vollständige Löschung gemäß Art. 17 DSGVO.",
-                  "articles": ["Art. 6 DSGVO", "Art. 17 DSGVO", "§ 147 AO", "§ 257 HGB"]
-                },
-                "anonymization": [
-                  { "method": "Pseudonymisierung", "description": "Ersetzen der Mitglieds-ID durch einen kryptografischen Hash (HMAC-SHA-256 + Secret) für interne Auswertungen ohne Personenbezug." },
-                  { "method": "Aggregation", "description": "Externe Reports ausschließlich als Gesamteinnahmen pro Quartal, ohne Mitglieds- oder Transaktionsbezug." }
+                "theme":       { "code": "TH_01", "label": "Soziales & Wohlfahrt" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Das Verzeichnis ist primäres Kommunikationsinstrument, um Hilfesuchende zu sozialen Angeboten zu führen." },
+                  { "method": "Netzwerkarbeit & Kooperationen", "description": "Gepflegtes Verzeichnis erleichtert Kooperationen zwischen Einrichtungen und gegenseitige Weitervermittlung." }
                 ]
               }
             }
           ]
         },
         {
-          "id": "kampagnen",
+          "id": "foerderung-finanzierung",
           "level": 3,
-          "name": "Kampagnen führen",
-          "color": "#1abc9c",
-          "description": "Planung und Durchführung von Öffentlichkeitskampagnen, Petitionen und Aktionen",
+          "name": "Förderung & Finanzierung",
+          "color": "#27ae60",
+          "description": "Verwaltung und Transparenz von Fördermitteln, Zuschüssen und finanziellen Ressourcen sozialer Organisationen.",
           "children": [
             {
-              "id": "petitions_daten",
+              "id": "foerderprogrammkatalog",
               "level": 4,
-              "name": "Petitionsdaten",
-              "color": "#16a085",
+              "name": "Förderprogrammkatalog",
+              "color": "#27ae60",
               "details": {
-                "description": "Unterzeichnerdaten einer Petition: Name, E-Mail, PLZ, Zeitstempel der Unterschrift. Wird für die offizielle Einreichung bei Behörden gesammelt.",
-                "openDataPotential": {
-                  "score": "Mittel",
-                  "scoreValue": 2,
-                  "explanation": "Aggregierte Petitionsstatistiken (Unterstützer pro Region, zeitlicher Verlauf) sind aufschlussreich für politische Beteiligungsanalysen. Einzeldaten sind nicht veröffentlichungsfähig."
+                "description": "Strukturierter Katalog öffentlicher und privater Förderprogramme für soziale Organisationen: Programm­name, Fördergeber, Förderzweck, Antrags­fristen, Fördervolumen und Zielgruppen. Enthält keine personenbezogenen Daten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Ausschließlich öffentliche Programminformationen ohne jeglichen Personenbezug. Offene Bereitstellung als Linked Open Data erhöht Reichweite und Auffindbarkeit für kleine NGOs erheblich."
                 },
-                "dsgvoRisk": {
-                  "level": "Mittel",
-                  "riskClass": "risk-medium",
-                  "explanation": "Explizite Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) ist die einzige valide Rechtsgrundlage. Zweckbindung: ausschließlich für Einreichung der Petition. Löschpflicht nach Abschluss des Petitionsverfahrens.",
-                  "articles": ["Art. 6 DSGVO", "Art. 7 DSGVO", "Art. 17 DSGVO"]
+                "theme":       { "code": "TH_01", "label": "Soziales & Wohlfahrt" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_06", "label": "RDF / Linked Data" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Förderantragsstellung", "description": "Zentrales Nachschlagewerk für die Recherche passender Förderprogramme vor der Antragstellung." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Öffentlich zugänglicher Katalog stärkt Transparenz des Förderwesens und erleichtert kleinen Organisationen den Zugang." }
+                ]
+              }
+            },
+            {
+              "id": "foerdermittelfluss",
+              "level": 4,
+              "name": "Fördermittelflüsse",
+              "color": "#27ae60",
+              "details": {
+                "description": "Anonymisierte Übersichten vergebener Fördermittel: Fördergeber, Empfängerorganisation (ggf. anonymisiert), Förderzweck, Betrag und Förderjahr. Ermöglicht Transparenz über die Verteilung öffentlicher und privater Gelder im sozialen Sektor.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Öffentliche Mittelflüsse können nach Aggregation auf Organisationstyp-Ebene und Entfernung von Einzelfall-Informationen veröffentlicht werden. Kleine Förderbeträge an Einzelorganisationen erfordern Prüfung auf Rückschlusspotenzial."
                 },
-                "anonymization": [
-                  { "method": "Aggregation", "description": "Veröffentlichung nur der Gesamtzahl und regionalen Verteilung (Bundesland-Ebene), nicht der individuellen Namen." },
-                  { "method": "Datensparsamkeit", "description": "Nur minimal erforderliche Daten erheben. Für offizielle Einreichungen ggf. nur Anzahl und repräsentative Auswahl (mit Zustimmung)." }
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_05", "label": "Finanzdaten / Berichte" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Förderantragsstellung", "description": "Transparenz über vergebene Mittel hilft Antragstellenden, eigene Chancen realistisch einzuschätzen." },
+                  { "method": "Monitoring & Evaluation", "description": "Auswertung der Mittelverteilung dient der organisationsübergreifenden Wirkungsmessung und politischen Rechenschaftspflicht." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "monitoring-wirkung",
+          "level": 3,
+          "name": "Monitoring & Wirkung",
+          "color": "#27ae60",
+          "description": "Dokumentation und Auswertung der gesellschaftlichen Wirkung sozialer Angebote durch Berichte, Evaluationen und Kennzahlen.",
+          "children": [
+            {
+              "id": "jahres-wirkungsberichte",
+              "level": 4,
+              "name": "Jahres- & Wirkungsberichte",
+              "color": "#27ae60",
+              "details": {
+                "description": "Jährliche Rechenschaftsberichte sozialer Organisationen: Aktivitäten, Leistungszahlen, finanzielle Übersichten und Wirkungsnachweise. Für gemeinnützige Organisationen teilweise gesetzlich vorgeschrieben und zentrales Instrument der Transparenz gegenüber Fördergebern und Öffentlichkeit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Jahresberichte sind per se für die Öffentlichkeit gedacht. Maschinenlesbare Strukturierung (als CSV oder JSON) erhöht Nachnutzbarkeit und Vergleichbarkeit erheblich — über eine bloße PDF-Veröffentlichung hinaus."
+                },
+                "theme":       { "code": "TH_01", "label": "Soziales & Wohlfahrt" },
+                "object":      { "code": "OB_05", "label": "Finanzdaten / Berichte" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Monitoring & Evaluation", "description": "Wirkungsberichte sind das zentrale Output des internen Monitorings und der Wirkungsmessung." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Berichte kommunizieren Wirkung gegenüber Fördergebern, Mitgliedern und der breiten Öffentlichkeit." }
+                ]
+              }
+            },
+            {
+              "id": "evaluationsberichte",
+              "level": 4,
+              "name": "Evaluationsberichte",
+              "color": "#27ae60",
+              "details": {
+                "description": "Strukturierte Evaluationen einzelner Programme oder Maßnahmen: Zielerreichung, Methodenbeschreibung, Wirkungsindikatoren, Handlungsempfehlungen. Oft extern beauftragt; enthält ggf. anonymisierte Teilnehmerdaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Evaluationsberichte enthalten bei korrekter Erstellung keine personenbezogenen Daten. Open-Access-Veröffentlichung stärkt Evidenzbasis im sozialen Sektor und fördert Lernprozesse."
+                },
+                "theme":       { "code": "TH_01", "label": "Soziales & Wohlfahrt" },
+                "object":      { "code": "OB_07", "label": "Mediendaten / Dokumente" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }],
+                "license":     { "code": "LI_03", "label": "CC BY-SA 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Monitoring & Evaluation", "description": "Evaluationsberichte sind das strukturierte Hauptergebnis des Evaluationsprozesses." },
+                  { "method": "Forschung & Studien", "description": "Evaluationen folgen wissenschaftlichen Standards und können als Forschungsbeiträge veröffentlicht werden." }
                 ]
               }
             }
@@ -102,41 +182,424 @@
       ]
     },
     {
-      "id": "wohlfahrtsverband",
+      "id": "umwelt-naturschutz",
       "level": 2,
-      "name": "Wohlfahrtsverband",
-      "color": "#27ae60",
-      "description": "Soziale Wohlfahrtsorganisation zur Unterstützung benachteiligter und vulnerabler Bevölkerungsgruppen",
+      "name": "Umwelt & Naturschutz",
+      "color": "#1abc9c",
+      "description": "Umweltschutz- und Naturschutzorganisationen, die Ökosysteme überwachen, schützen und die Öffentlichkeit für Klimathemen sensibilisieren.",
       "children": [
         {
-          "id": "hilfsprogramme",
+          "id": "umweltmonitoring",
           "level": 3,
-          "name": "Hilfsprogramme",
-          "color": "#1abc9c",
-          "description": "Planung, Zuweisung und Dokumentation sozialer Unterstützungsleistungen",
+          "name": "Umweltmonitoring",
+          "color": "#16a085",
+          "description": "Systematische Erhebung und Auswertung von Umwelt- und Klimadaten durch NGOs und Bürger­wissenschaftler.",
           "children": [
             {
-              "id": "beguenstigte_db",
+              "id": "messstationsdaten",
               "level": 4,
-              "name": "Begünstigten-DB",
+              "name": "Messstationsdaten (Luft/Wasser)",
               "color": "#16a085",
               "details": {
-                "description": "Fallbasierte Datenbank aller betreuten Personen: Fallnummer, Bedarfsanalyse (Wohnsituation, Gesundheitsstatus, finanzielle Lage), erhaltene Leistungen und Betreuungsverläufe.",
-                "openDataPotential": {
-                  "score": "Sehr niedrig",
-                  "scoreValue": 0,
-                  "explanation": "Enthält hochsensitive Daten über vulnerable Personen. Direktveröffentlichung ist kategorisch ausgeschlossen. Anonymisierte Aggregatdaten zur Sozialplanung (z.B. Bedarfsdichte nach Stadtteilen) können für kommunale Entscheidungsträger wertvoll sein, erfordern aber maximale Sorgfalt."
+                "description": "Zeitreihendaten von NGO-betriebenen Messstationen: Luftqualitätsparameter (PM2.5, NO₂, O₃), Gewässerqualität (pH, Temperatur, Nitrat) und Lärmemissionen. Stündliche oder tägliche Messintervalle mit Geokoordinaten der Stationen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Umweltmessdaten ohne Personenbezug. Veröffentlichung als offene Zeitreihen von maximalem wissenschaftlichem und gesellschaftlichem Nutzen — Grundlage für Bürgerwissenschaft, Forschung und politische Entscheidungen."
                 },
-                "dsgvoRisk": {
-                  "level": "Sehr hoch",
-                  "riskClass": "risk-veryhigh",
-                  "explanation": "Besondere Kategorien nach Art. 9 DSGVO: Gesundheitsdaten, Angaben zu sozialer und wirtschaftlicher Notlage. Datenverarbeitung nur auf Grundlage expliziter Einwilligung (Art. 6 lit. a / Art. 9 lit. a) oder sozialrechtlicher Ermächtigung (SGB I, SGB X). Datenweitergabe nur an akkreditierte Träger.",
-                  "articles": ["Art. 9 DSGVO", "Art. 6 DSGVO", "SGB I § 35", "SGB X § 67"]
+                "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
+                "object":      { "code": "OB_06", "label": "Zeitreihendaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Umweltmonitoring", "description": "Messstationsdaten sind der primäre Output kontinuierlicher Umweltbeobachtung." },
+                  { "method": "Forschung & Studien", "description": "Langzeitreihen bilden die Grundlage für wissenschaftliche Klimaanalysen und Trendberechnungen." }
+                ]
+              }
+            },
+            {
+              "id": "artenvorkommen",
+              "level": 4,
+              "name": "Artenvorkommen (Biodiversität)",
+              "color": "#16a085",
+              "details": {
+                "description": "Beobachtungsdaten zu Tier- und Pflanzenarten: Art, Datum, Anzahl, Geokoordinaten des Fundorts und Erfassungsmethode. Erhobben durch Ehrenamtliche und Bürger­wissenschaftler. Grundlage für Rote Listen und Schutzgebietsmanagement.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Biodiversitätsdaten sind öffentliches Gut und Grundlage aller Naturschutzarbeit. Veröffentlichung unter CC0 in internationalen Datenbanken (GBIF, OpenStreetMap) maximiert Wirkung und wissenschaftliche Nutzbarkeit."
                 },
-                "anonymization": [
-                  { "method": "Differential Privacy", "description": "Statistisches Rauschen (ε-Privatheit) bei Aggregatauswertungen, sodass keine Einzelperson rekonstruiert werden kann." },
-                  { "method": "K-Anonymität ≥10", "description": "Hohe Schwelle (≥10) aufgrund der Sensitivität. Gruppenbildung nach Region + Bedarfstyp, keine feineren Kategorien." },
-                  { "method": "Datentreuhänder", "description": "Externe Auswertungen nur durch akkreditierten, auditierten Datentreuhänder. Kein direkter Rohdatenzugang für Dritte." }
+                "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
+                "object":      { "code": "OB_04", "label": "Geodaten / Karten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Umweltmonitoring", "description": "Arterfassungen sind Kerndaten des biologischen Monitorings und Indikator für Ökosystemgesundheit." },
+                  { "method": "Netzwerkarbeit & Kooperationen", "description": "Daten werden häufig kooperativ durch Bürgerwissenschaftsnetzwerke wie iNaturalist oder NABU erhoben." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "geodaten-flaechen",
+          "level": 3,
+          "name": "Geodaten & Flächenschutz",
+          "color": "#16a085",
+          "description": "Räumliche Daten zu Schutzgebieten, Biotopen, Flächennutzung und ökologisch sensiblen Bereichen.",
+          "children": [
+            {
+              "id": "schutzgebietskataster",
+              "level": 4,
+              "name": "Schutzgebietskataster",
+              "color": "#16a085",
+              "details": {
+                "description": "Geographische Daten zu Naturschutzgebieten, FFH-Gebieten, Vogelschutzgebieten und Biosphären­reservaten: Geometrien, Schutzstatus, Schutzzweck, rechtliche Grundlagen und Verwaltungsdaten. Ergänzt offizielle Daten durch NGO-eigene Kartierungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Geodaten zu Schutzgebieten sind per se öffentliche Informationen. Bereitstellung als GeoJSON oder WFS erhöht Nutzbarkeit für Planungsverfahren, Bildung und Bürger­beteiligung erheblich."
+                },
+                "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
+                "object":      { "code": "OB_04", "label": "Geodaten / Karten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Umweltmonitoring", "description": "Schutzgebietsgrenzen sind Referenzrahmen für alle Monitoring-Aktivitäten und Bestandsaufnahmen." },
+                  { "method": "Interessenvertretung & Lobbying", "description": "Präzise Gebietsdaten sind Grundlage von Einsprüchen in Planungsverfahren und Stellungnahmen." }
+                ]
+              }
+            },
+            {
+              "id": "flaechennutzungsanalysen",
+              "level": 4,
+              "name": "Flächennutzungsanalysen",
+              "color": "#16a085",
+              "details": {
+                "description": "Auswertungen zur Entwicklung der Flächennutzung in Schutz- und Vorranggebieten: Versiegelungsgrad, Landwirtschafts­anteil, Waldbedeckung, Bebauungsentwicklung. Basiert auf Fernerkundungsdaten und eigenen Kartierungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Analyse­ergebnisse können nach Aggregation auf Gemeindeebene und Entfernung von Grundstücks­referenzen frei veröffentlicht werden. Rohdaten auf Parzellen­ebene erfordern Prüfung wegen möglicher Eigentumsrückschlüsse."
+                },
+                "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
+                "object":      { "code": "OB_06", "label": "Zeitreihendaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Umweltmonitoring", "description": "Flächenanalysen dokumentieren Veränderungen in sensiblen Gebieten und zeigen Trends frühzeitig auf." },
+                  { "method": "Forschung & Studien", "description": "Zeitreihen­analysen liefern wissenschaftliche Grundlagen für Argumentationen in Planungsverfahren." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "kampagnen-mobilisierung",
+          "level": 3,
+          "name": "Kampagnen & Mobilisierung",
+          "color": "#16a085",
+          "description": "Daten aus öffentlichen Kampagnen, Petitionen und Mobilisierungsaktionen von Umweltschutzorganisationen.",
+          "children": [
+            {
+              "id": "kampagnendaten",
+              "level": 4,
+              "name": "Petitions- & Kampagnendaten",
+              "color": "#16a085",
+              "details": {
+                "description": "Aggregierte Statistiken zu Petitionen und Umweltkampagnen: Anzahl Unterstützende nach Region, zeitlicher Verlauf der Unterschriftensammlung, Reichweite in sozialen Medien und Medienresonanz. Individualdaten der Unterzeichnenden werden nicht veröffentlicht.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Kampagnenstatistiken sind nach Entfernung aller Individualdaten für die Öffentlichkeit wertvoll. Belegen Mobilisierungspotenzial und politisches Interesse in der Bevölkerung."
+                },
+                "theme":       { "code": "TH_05", "label": "Demokratie & Partizipation" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Interessenvertretung & Lobbying", "description": "Kampagnendaten quantifizieren gesellschaftliche Unterstützung und stärken Lobbying-Argumente gegenüber Entscheidungs­trägern." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Kampagnenstatistiken dokumentieren Reichweite und Wirkung der Öffentlichkeits­arbeit." }
+                ]
+              }
+            },
+            {
+              "id": "oeffentlichkeitsstatistiken",
+              "level": 4,
+              "name": "Öffentlichkeitsstatistiken",
+              "color": "#16a085",
+              "details": {
+                "description": "Statistiken zur Medienresonanz und öffentlichen Wahrnehmung von Umweltthemen: Presseerwähnungen, Reichweite in sozialen Medien, Veranstaltungsteilnahmen und Download­zahlen von Publikationen. Aggregiert nach Thema und Zeitraum.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Vollständig anonymisierte Reichweitenstatistiken ohne Nutzerbezug. Veröffentlichung zeigt gesellschaftliche Relevanz von Umweltthemen und ist Grundlage für Drittmittel­berichte."
+                },
+                "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Reichweitenstatistiken messen den Erfolg von Kommunikationsmaßnahmen und ermöglichen datenbasierte Optimierung." },
+                  { "method": "Monitoring & Evaluation", "description": "Veranstaltungs- und Mediendaten dienen der Wirkungsmessung im Rahmen von Projektevaluationen." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interessenvertretung",
+      "level": 2,
+      "name": "Interessenvertretung",
+      "color": "#3498db",
+      "description": "Advocacy-Organisationen, Verbände und zivilgesellschaftliche Akteure, die politische Entscheidungsprozesse begleiten, kommentieren und beeinflussen.",
+      "children": [
+        {
+          "id": "policy-lobbying",
+          "level": 3,
+          "name": "Policy & Lobbying",
+          "color": "#2980b9",
+          "description": "Strukturierte Aufbereitung und Veröffentlichung von Stellungnahmen, Positionspapieren und Gesetzgebungsbegleitungen.",
+          "children": [
+            {
+              "id": "positionspapiere",
+              "level": 4,
+              "name": "Positionspapiere & Stellungnahmen",
+              "color": "#2980b9",
+              "details": {
+                "description": "Sammlung von Positionspapieren, Stellungnahmen zu Gesetzentwürfen und öffentlichen Konsultationsbeiträgen. Enthält: Datum, Thema, Verfasser, referenziertes Verfahren und Volltext. Kernbestand zivilgesellschaftlicher Expertise.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Positionspapiere sind per definitionem öffentliche Dokumente. Maschinenlesbare Bereitstellung als Metadaten (Autor, Thema, Verfahren) ermöglicht systematische Auswertung zivilgesellschaftlicher Beteiligung."
+                },
+                "theme":       { "code": "TH_05", "label": "Demokratie & Partizipation" },
+                "object":      { "code": "OB_07", "label": "Mediendaten / Dokumente" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Interessenvertretung & Lobbying", "description": "Positionspapiere sind das zentrale Instrument zur fachlichen Begleitung von Gesetzgebungs­verfahren." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Stellungnahmen werden aktiv verbreitet, um gesellschaftliche Debatte zu stimulieren." }
+                ]
+              }
+            },
+            {
+              "id": "gesetzgebungsmonitoring",
+              "level": 4,
+              "name": "Gesetzgebungsmonitoring",
+              "color": "#2980b9",
+              "details": {
+                "description": "Strukturierte Erfassung des Status laufender Gesetzgebungsverfahren, parlamentarischer Anfragen und regulatorischer Entwicklungen: Verfahrens-ID, Titel, aktueller Stand, Zeitplan, involvierte Ausschüsse und eigene Bewertung der gesellschaftlichen Relevanz.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Metadaten zu öffentlichen Parlamentsverfahren. Open-Data-Bereitstellung des Monitoring-Datensatzes ermöglicht Sekundärnutzung durch andere NGOs und Journalisten."
+                },
+                "theme":       { "code": "TH_05", "label": "Demokratie & Partizipation" },
+                "object":      { "code": "OB_08", "label": "Metadaten" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Interessenvertretung & Lobbying", "description": "Monitoring gibt strategischen Überblick über relevante Verfahren und priorisiert den Ressourceneinsatz." },
+                  { "method": "Forschung & Studien", "description": "Strukturierte Verfahrensdaten ermöglichen quantitative Analyse zivilgesellschaftlicher Beteiligungs­muster." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "vernetzung-kooperation",
+          "level": 3,
+          "name": "Vernetzung & Kooperation",
+          "color": "#2980b9",
+          "description": "Verwaltung und Transparenz von Mitgliederorganisationen, Netzwerken und Kooperationsbeziehungen in der Zivilgesellschaft.",
+          "children": [
+            {
+              "id": "organisationsverzeichnis",
+              "level": 4,
+              "name": "Organisationsverzeichnis",
+              "color": "#2980b9",
+              "details": {
+                "description": "Strukturiertes Verzeichnis zivilgesellschaftlicher Organisationen: Name, Rechtsform, Themenfeld, Tätigkeitsgebiet (regional/national), Kontaktdaten und Registernummer. Grundlage für Vernetzungsarbeit und Kooperationsanbahnung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Institutionelle Daten ohne Personenbezug. Öffentliches Verzeichnis stärkt Sichtbarkeit und gegenseitige Auffindbarkeit zivilgesellschaftlicher Akteure. Ergänzt das staatliche Vereinsregister um thematische Kategorisierung."
+                },
+                "theme":       { "code": "TH_05", "label": "Demokratie & Partizipation" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Netzwerkarbeit & Kooperationen", "description": "Gepflegtes Verzeichnis ist Basis aller Vernetzungs- und Kooperationsaktivitäten eines Dachverbands." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Öffentliches Verzeichnis erhöht Auffindbarkeit und Sichtbarkeit der Mitgliedsorganisationen." }
+                ]
+              }
+            },
+            {
+              "id": "kooperationsvereinbarungen",
+              "level": 4,
+              "name": "Kooperationsvereinbarungen",
+              "color": "#2980b9",
+              "details": {
+                "description": "Metadaten zu formellen Kooperationsvereinbarungen: Kooperationspartner, Themenfeld, Laufzeit, Vereinbarungstyp (MoU, Rahmenvertrag, Projektpartnerschaft) und Status. Vertragsinhalte und finanzielle Konditionen bleiben intern.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Metadaten (Partnername, Themenfeld, Laufzeit) können frei veröffentlicht werden. Vertragliche Konditionen, finanzielle Details und interne Bewertungen sind auszusparen. Transparenz über Kooperationsnetzwerke stärkt gesellschaftliches Vertrauen."
+                },
+                "theme":       { "code": "TH_05", "label": "Demokratie & Partizipation" },
+                "object":      { "code": "OB_08", "label": "Metadaten" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Netzwerkarbeit & Kooperationen", "description": "Kooperationsvereinbarungen formalisieren Netzwerkbeziehungen und schaffen verbindliche Rahmen für gemeinsame Aktivitäten." },
+                  { "method": "Interessenvertretung & Lobbying", "description": "Formelle Koalitionen stärken politische Wirkmacht bei Lobbying-Aktivitäten." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bildung-kultur",
+      "level": 2,
+      "name": "Bildung & Kultur",
+      "color": "#9b59b6",
+      "description": "Bildungseinrichtungen, Kulturorganisationen und Jugendverbände, die non-formale Lernorte schaffen und kulturelle Teilhabe fördern.",
+      "children": [
+        {
+          "id": "bildungsangebote",
+          "level": 3,
+          "name": "Bildungsangebote",
+          "color": "#8e44ad",
+          "description": "Dokumentation und Publikation non-formaler Bildungsangebote: Kurse, Workshops, Seminare und informelle Lernangebote.",
+          "children": [
+            {
+              "id": "angebotskatalog",
+              "level": 4,
+              "name": "Angebotskatalog",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Strukturierter Katalog non-formaler Bildungsangebote: Titel, Beschreibung, Zielgruppe, Alter, Kosten, Ort/Online-Format, Zeitraum, Anmeldeinformationen und zuständige Organisation. Grundlage für Bildungswegweiser und Beratungsangebote.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Rein institutionelle Programm­informationen ohne Personenbezug. Offene Bereitstellung als maschinenlesbarer Datensatz ermöglicht Integration in regionale Bildungsplattformen und Vergleichbarkeit von Angeboten."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Bildungsarbeit & Veranstaltungen", "description": "Der Angebotskatalog ist das zentrale Kommunikationsinstrument für Bildungsangebote und erster Kontaktpunkt für Interessierte." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Maschinenlesbarer Katalog ermöglicht Syndizierung auf Bildungsportalen und erhöht Reichweite." }
+                ]
+              }
+            },
+            {
+              "id": "teilnahmestatistik",
+              "level": 4,
+              "name": "Teilnahmestatistik",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Aggregierte Nutzungsstatistiken zu Bildungsangeboten: Anzahl Teilnehmende pro Angebot, Altersgruppen, Herkunft (PLZ-Ebene), Abschlussquoten und Zufriedenheitsbewertungen. Dient der Wirkungsmessung und Bedarfsanalyse.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Statistiken auf PLZ-Ebene (mind. 5 Teilnehmende pro Gruppe) können veröffentlicht werden. Einzelteilnahmen und demographische Feinprofile sind auszusparen. Daten belegen gesellschaftliche Reichweite von Bildungsarbeit."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Bildungsarbeit & Veranstaltungen", "description": "Teilnahmedaten ermöglichen bedarfsgerechte Planung und Anpassung von Bildungsangeboten." },
+                  { "method": "Monitoring & Evaluation", "description": "Statistiken sind Kernindikatoren für Projektevaluationen und Förderberichte." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "veranstaltungen-events",
+          "level": 3,
+          "name": "Veranstaltungen & Events",
+          "color": "#8e44ad",
+          "description": "Planung, Durchführung und Dokumentation von Kulturveranstaltungen, Festivals und zivilgesellschaftlichen Events.",
+          "children": [
+            {
+              "id": "veranstaltungskalender",
+              "level": 4,
+              "name": "Veranstaltungskalender",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Offener Kalender öffentlicher Kulturveranstaltungen: Event-Titel, Datum, Uhrzeit, Ort, Beschreibung, Zielgruppe, Ticketinformationen und veranstaltende Organisation. Maschinenlesbar zur Integration in Stadtportale und Aggregatoren.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Veranstaltungsdaten sind per se zur öffentlichen Verbreitung bestimmt. Maschinenlesbare Bereitstellung im iCal- oder JSON-Format ermöglicht automatische Syndizierung und Reichweitenmultiplikation."
+                },
+                "theme":       { "code": "TH_08", "label": "Kultur & Medien" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_03", "label": "XML (iCal)" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Bildungsarbeit & Veranstaltungen", "description": "Veranstaltungskalender ist primäres Planungs- und Kommunikationsinstrument für kulturelle und Bildungs­veranstaltungen." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Offener Kalender erhöht Reichweite durch Syndizierung auf Stadtportalen und sozialen Medien." }
+                ]
+              }
+            },
+            {
+              "id": "kulturangebot-zugaenglichkeit",
+              "level": 4,
+              "name": "Kulturangebot & Zugänglichkeit",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Datensatz zur Zugänglichkeit von Kulturangeboten: Barrierefreiheitsinformationen (Rollstuhlzugang, Gebärdensprache, Audiodeskription), Sprachverfügbarkeit, Preisstruktur (kostenlos/gefördert) und ÖPNV-Anbindung. Grundlage für inklusive Kulturplanung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Zugänglichkeitsinformationen sind öffentlich relevante Infrastrukturdaten ohne Personenbezug. Offene Bereitstellung ermöglicht die Entwicklung von Barrierefreiheits-Guides und inklusiven Stadtführern."
+                },
+                "theme":       { "code": "TH_08", "label": "Kultur & Medien" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Bildungsarbeit & Veranstaltungen", "description": "Zugänglichkeitsdaten ermöglichen inklusive Planung und gezieltes Ansprechen von Menschen mit Einschränkungen." },
+                  { "method": "Interessenvertretung & Lobbying", "description": "Systematische Daten zu Barrieren sind Grundlage für Forderungen nach inklusiver Kulturförderung." }
                 ]
               }
             }

@@ -1,0 +1,172 @@
+{
+  "sectorId": "behoerde",
+  "children": [
+    {
+      "id": "ordnungsamt",
+      "level": 2,
+      "name": "Ordnungsamt",
+      "color": "#2980b9",
+      "description": "Kommunale Ordnungsbehörde für Verkehrsüberwachung, Gewerberecht und öffentliche Sicherheit",
+      "children": [
+        {
+          "id": "verkehrsueberwachung",
+          "level": 3,
+          "name": "Verkehrsüberwachung",
+          "color": "#3498db",
+          "description": "Automatisierte und manuelle Erfassung von Verkehrsverstößen im Stadtgebiet",
+          "children": [
+            {
+              "id": "blitzer_db",
+              "level": 4,
+              "name": "Blitzerfoto-Datenbank",
+              "color": "#2471a3",
+              "details": {
+                "description": "Datenbank automatisch erfasster Geschwindigkeitsverstöße: Fahrzeugfoto, Kennzeichen, Zeitstempel, Messort, Geschwindigkeit, Fahrzeughalter-Daten (via KBA-Abfrage). Grundlage für Bußgeldverfahren.",
+                "openDataPotential": {
+                  "score": "Mittel",
+                  "scoreValue": 2,
+                  "explanation": "Standort- und Zeitstatistiken (Unfallschwerpunkte, Häufigkeiten nach Tageszeit und Wochentag) sind für Stadtplanung und Verkehrssicherheitsforschung hoch wertvoll und werden in vorbildlichen Open-Government-Portalen bereits veröffentlicht. Individualdaten hingegen niemals."
+                },
+                "dsgvoRisk": {
+                  "level": "Sehr hoch",
+                  "riskClass": "risk-veryhigh",
+                  "explanation": "Fahrzeugfotos können Gesichtsbilder enthalten → biometrische Daten gemäß Art. 9 DSGVO. Kennzeichen sind personenbezogen (über KBA eindeutig zuordenbar). Zweckbindung: ausschließlich Bußgeldverfahren. Automatische Löschung nach Abschluss des Verfahrens (§ 100 Abs. 1 OWiG).",
+                  "articles": ["Art. 9 DSGVO", "Art. 6 Abs. 1 lit. e DSGVO", "§ 100 OWiG", "StVG § 52"]
+                },
+                "anonymization": [
+                  { "method": "Gesichtsverpixelung", "description": "Automatische Verpixelung aller erkennbaren Gesichter in Rohmaterialien vor jeglicher Weiterverarbeitung oder Archivierung." },
+                  { "method": "Aggregation", "description": "Veröffentlichung ausschließlich als Heatmaps (Messstellen-Koordinaten + Anzahl Verstöße pro Monat) ohne Fahrzeug- oder Personenbezug." },
+                  { "method": "Löschkonzept", "description": "Automatische Löschung aller Bilddaten 3 Monate nach Rechtskraft des Bußgeldbescheids, spätestens jedoch nach 1 Jahr." }
+                ]
+              }
+            },
+            {
+              "id": "bussgeld_statistik",
+              "level": 4,
+              "name": "Bußgeldstatistiken",
+              "color": "#2471a3",
+              "details": {
+                "description": "Aggregierte Auswertungen über verhängte Bußgelder: Anzahl, Deliktarten, Verteilung nach Stadtbezirk, Tageszeit und Deliktklasse. Bereits teilweise anonymisiert.",
+                "openDataPotential": {
+                  "score": "Hoch",
+                  "scoreValue": 3,
+                  "explanation": "Stark anonymisierte Bußgeldstatistiken sind wertvolle Open-Government-Daten: Verkehrssicherheitsforschung, Journalismus, kommunale Planung. Das Umweltbundesamt veröffentlicht vergleichbare Bundesstatistiken bereits; kommunale Behörden sollten nachziehen."
+                },
+                "dsgvoRisk": {
+                  "level": "Niedrig",
+                  "riskClass": "risk-low",
+                  "explanation": "Bei korrekter Aggregation (keine Rückschlüsse auf Einzelpersonen) kein personenbezogenes Datum mehr vorhanden. Art. 4 Nr. 1 DSGVO: Anonymisierung hebt den Anwendungsbereich der DSGVO auf. Empfehlung: Mindestgruppengrößen von 10 einhalten.",
+                  "articles": ["Art. 4 Nr. 1 DSGVO", "ErwG 26 DSGVO"]
+                },
+                "anonymization": [
+                  { "method": "Aggregation", "description": "Auflösung auf Stadtbezirk-Ebene (nicht Straße), Zeiteinheit Monat (nicht Tag), Deliktklassen statt Einzeldelikte." },
+                  { "method": "Mindestgröße", "description": "Gruppen mit weniger als 10 Einträgen werden als '<10' oder unterdrückt, um Singulärdaten zu vermeiden." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "gewerbezulassung",
+          "level": 3,
+          "name": "Gewerbezulassung",
+          "color": "#3498db",
+          "description": "Bearbeitung von Gewerbeanmeldungen, -änderungen und -abmeldungen sowie Führung des Gewerbeverzeichnisses",
+          "children": [
+            {
+              "id": "gewerbeverzeichnis",
+              "level": 4,
+              "name": "Gewerbeverzeichnis",
+              "color": "#2471a3",
+              "details": {
+                "description": "Register aller angemeldeten Gewerbebetriebe im Stadtgebiet: Firmenname, Geschäftszweck, Adresse, Inhaberschaft, Anmeldedatum. Geführt nach § 14 GewO.",
+                "openDataPotential": {
+                  "score": "Hoch",
+                  "scoreValue": 3,
+                  "explanation": "Gewerbedaten sind in vielen EU-Ländern bereits Open Data (z.B. OpenDataSoft Unternehmensregister). Wirtschaftsstruktur, Gründungsaktivität und Branchenverteilung sind wichtige Indikatoren für Stadtentwicklung und Wirtschaftsförderung. Das Transparenzregister ist ein erster Schritt in diese Richtung."
+                },
+                "dsgvoRisk": {
+                  "level": "Mittel",
+                  "riskClass": "risk-medium",
+                  "explanation": "Natürliche Personen (Einzelkaufleute) sind personenbezogen. Juristische Personen fallen nicht unter DSGVO. Geschäftsanschriften können mit Privatadressen zusammenfallen. Getrennte Veröffentlichung: Firmenregister (öffentlich) vs. Inhaberdaten (nur bei öffentlichem Interesse).",
+                  "articles": ["Art. 4 Nr. 1 DSGVO", "Art. 6 Abs. 1 lit. c DSGVO", "§ 14 GewO"]
+                },
+                "anonymization": [
+                  { "method": "Kategorialisierung", "description": "Bei Einzelunternehmern: Nur Branche + Stadtbezirk veröffentlichen, keinen Namen oder genaue Adresse." },
+                  { "method": "Opt-out", "description": "Möglichkeit für Inhaber:innen, persönliche Daten aus der öffentlichen Version zu entfernen (separates Datenschutz-Register)." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "einwohnermeldeamt",
+      "level": 2,
+      "name": "Einwohnermeldeamt",
+      "color": "#2980b9",
+      "description": "Behörde für Einwohnerregistrierung, Meldewesen und amtliche Personenstandsdokumente",
+      "children": [
+        {
+          "id": "einwohner_reg",
+          "level": 3,
+          "name": "Einwohner registrieren",
+          "color": "#3498db",
+          "description": "Pflege des kommunalen Melderegisters, Verarbeitung von An-, Ab- und Ummeldungen",
+          "children": [
+            {
+              "id": "melderegister",
+              "level": 4,
+              "name": "Melderegister",
+              "color": "#2471a3",
+              "details": {
+                "description": "Umfassendes Verzeichnis aller gemeldeten Einwohner:innen: Name, Anschrift, Geburtsdatum, Familienstand, Staatsangehörigkeit, Religionszugehörigkeit (für Kirchensteuer). Rechtsgrundlage: Bundesmeldegesetz (BMG).",
+                "openDataPotential": {
+                  "score": "Sehr niedrig",
+                  "scoreValue": 0,
+                  "explanation": "Keine Direktveröffentlichung möglich oder rechtlich zulässig. Aggregierte Bevölkerungsstatistiken (Einwohnerzahl, Altersstruktur, Wanderungssaldo) werden durch das Statistische Bundesamt bereits veröffentlicht und haben hohes gesellschaftliches Informationspotenzial."
+                },
+                "dsgvoRisk": {
+                  "level": "Sehr hoch",
+                  "riskClass": "risk-veryhigh",
+                  "explanation": "Art. 9 DSGVO: Religionszugehörigkeit ist besondere Kategorie. Umfassende Persönlichkeitsprofile möglich. Meldeauskunft nur unter strengen Voraussetzungen (§§ 44 ff. BMG). Einzelabfragen durch Private nur eingeschränkt gestattet (§ 44 BMG). Keine Sammelabfragen.",
+                  "articles": ["Art. 9 DSGVO", "Art. 6 Abs. 1 lit. c DSGVO", "BMG § 44", "BMG § 50"]
+                },
+                "anonymization": [
+                  { "method": "Aggregation", "description": "Veröffentlichung ausschließlich als statistische Tabellen: Altersverteilung, Geschlechterverteilung, Haushaltsgröße — stets auf Stadtbezirk-Ebene oder größer." },
+                  { "method": "Löschfristen", "description": "Weggezogene Personen werden nach 5 Jahren aus dem aktiven Register gelöscht (§ 17 BMG). Archivierung nur für statistische Langzeitanalysen ohne Personenbezug." },
+                  { "method": "Differential Privacy", "description": "Bei Daten zu Kleingruppen (z.B. seltene Staatsangehörigkeiten in kleinen Bezirken) statistisches Rauschen hinzufügen, um Re-Identifikation zu verhindern." }
+                ]
+              }
+            },
+            {
+              "id": "bevoelkerungsstatistik",
+              "level": 4,
+              "name": "Bevölkerungsstatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Aggregierte Kennzahlen aus dem Melderegister: Einwohnerzahl nach Stadtbezirk und Altersgruppe, Wanderungssalden, Haushaltsgrößen. Grundlage für kommunale Planung.",
+                "openDataPotential": {
+                  "score": "Hoch",
+                  "scoreValue": 3,
+                  "explanation": "Demografische Aggregatdaten sind klassische Open-Government-Daten. Sie ermöglichen Forschung zu Stadtentwicklung, sozialer Ungleichheit und Infrastrukturplanung. Viele Kommunen veröffentlichen diese Daten bereits über Open-Data-Portale (z.B. data.berlin.de). Hoher gesellschaftlicher Mehrwert."
+                },
+                "dsgvoRisk": {
+                  "level": "Niedrig",
+                  "riskClass": "risk-low",
+                  "explanation": "Korrekt aggregierte Bevölkerungsstatistiken enthalten keine personenbezogenen Daten mehr (ErwG 26 DSGVO). Bei sehr kleinen Gruppen (<5 Personen in einer Zelle) sind Suppressionstechniken anzuwenden.",
+                  "articles": ["ErwG 26 DSGVO", "Art. 4 Nr. 1 DSGVO", "BStatG § 16"]
+                },
+                "anonymization": [
+                  { "method": "Zellsuppression", "description": "Zellen mit weniger als 3 Einträgen werden als '<3' dargestellt oder weggelassen, um Rückschlüsse auf Einzelpersonen zu vermeiden." },
+                  { "method": "Geographische Aggregation", "description": "Kleinstgebiete mit weniger als 100 Einwohnern werden zum nächstgrößeren Gebiet zusammengefasst." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -30,12 +30,42 @@
         </svg>
       </button>
 
+      <button id="filter-toggle" title="Filtern" aria-label="Filter öffnen">
+        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
+          <path d="M4 6h16M7 12h10M10 18h4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </button>
+
       <div id="level-badge">
         <span class="level-label">Ebene</span>
         <span id="level-number">1</span>
         <span class="level-label">/ 4</span>
       </div>
     </header>
+
+    <div id="filter-bar" hidden aria-label="Filter">
+      <div class="fb-group">
+        <span class="fb-label">Risiko</span>
+        <div class="fb-chips" id="fc-risk">
+          <button class="fc active" data-risk="">Alle</button>
+          <button class="fc" data-risk="risk-low"><span class="fc-dot" style="background:#27ae60"></span>Niedrig</button>
+          <button class="fc" data-risk="risk-medium"><span class="fc-dot" style="background:#d4a017"></span>Mittel</button>
+          <button class="fc" data-risk="risk-high"><span class="fc-dot" style="background:#e67e22"></span>Hoch</button>
+          <button class="fc" data-risk="risk-veryhigh"><span class="fc-dot" style="background:#c0392b"></span>Sehr hoch</button>
+        </div>
+      </div>
+      <div class="fb-sep"></div>
+      <div class="fb-group">
+        <span class="fb-label">Open Data</span>
+        <div class="fb-chips" id="fc-od">
+          <button class="fc active" data-od="">Alle</button>
+          <button class="fc" data-od="3">Hoch</button>
+          <button class="fc" data-od="2">Mittel</button>
+          <button class="fc" data-od="1">Niedrig</button>
+          <button class="fc" data-od="0">Sehr niedrig</button>
+        </div>
+      </div>
+    </div>
 
     <main id="map-wrap">
       <canvas id="map-canvas" aria-label="Isometrische Datenkarte"></canvas>
@@ -77,6 +107,32 @@
     <div id="search-results" hidden role="listbox" aria-label="Suchergebnisse"></div>
 
     <div id="tooltip" role="tooltip" hidden></div>
+
+    <!-- Onboarding overlay — shown on first visit -->
+    <div id="onboarding" role="dialog" aria-modal="true" aria-label="Willkommen">
+      <div class="ob-card">
+        <div class="ob-logo">
+          <span class="logo-mark">◈</span>
+          <span class="logo-text">Datenatlas</span>
+        </div>
+        <p class="ob-subtitle">Erkunde die DSGVO-Datenlandschaft Deutschlands — von Sektoren bis zu einzelnen Datentypen.</p>
+        <div class="ob-hints">
+          <div class="ob-hint">
+            <span class="ob-icon">→</span>
+            <div><strong>Klicken</strong><br>Kachel öffnen und tiefer navigieren</div>
+          </div>
+          <div class="ob-hint">
+            <span class="ob-icon">⇄</span>
+            <div><strong>Ziehen</strong><br>Karte frei verschieben</div>
+          </div>
+          <div class="ob-hint">
+            <span class="ob-icon">◎</span>
+            <div><strong>Suchen</strong><br>Datentypen direkt finden</div>
+          </div>
+        </div>
+        <button id="ob-start">Erkunden →</button>
+      </div>
+    </div>
 
   </div>
   <script type="module" src="/src/main.js"></script>

@@ -149,6 +149,19 @@ export class IsometricRenderer {
            ty + H + D + pad > 0 && ty - pad < lH;
   }
 
+  // Public: returns logical-pixel center of a tile by id (for zoom-origin)
+  getTileCenter(id) {
+    const t = this.tiles.find(t => t.id === id);
+    if (!t) return null;
+    const { tx, ty } = this._tilePos(t.col, t.row);
+    return { x: tx, y: ty + (this.H + this.D) / 2 };
+  }
+
+  setDimmedIds(ids) {
+    this._dimmed = ids;
+    this.dirty   = true;
+  }
+
   // Return tile id at logical screen point (px, py), or null
   hitTest(px, py) {
     // Iterate tiles front-to-back (reverse painter order), skip off-screen
@@ -195,8 +208,9 @@ export class IsometricRenderer {
     for (const t of sorted) {
       const { tx, ty } = this._tilePos(t.col, t.row);
       if (!this._isVisible(tx, ty)) continue;
-      const pulse = this._pulseFactor(t.id);
-      this._drawTile(ctx, tx, ty, t.color, t.name, t.id === this.hov, pulse, t.navigable);
+      const pulse  = this._pulseFactor(t.id);
+      const dimmed = this._dimmed?.has(t.id) ?? false;
+      this._drawTile(ctx, tx, ty, t.color, t.name, t.id === this.hov && !dimmed, pulse, t.navigable, dimmed);
     }
 
     ctx.restore();
@@ -212,8 +226,14 @@ export class IsometricRenderer {
     return { tx, ty };
   }
 
-  _drawTile(ctx, tx, ty, color, label, hovered, pulse = 0, navigable = false) {
+  _drawTile(ctx, tx, ty, color, label, hovered, pulse = 0, navigable = false, dimmed = false) {
     const { W, H, D } = this;
+
+    if (dimmed) {
+      ctx.save();
+      ctx.globalAlpha *= 0.18;
+      color = '#2e333b';
+    }
 
     const brightFactor = (hovered ? 1.35 : 1.0) + pulse * 0.55;
     const topColor   = tint(color, brightFactor);
@@ -300,6 +320,8 @@ export class IsometricRenderer {
       ctx.fillText('▼', tx, ty + H * 0.68);
       ctx.restore();
     }
+
+    if (dimmed) ctx.restore();
   }
 
   _drawLabel(ctx, cx, cy, maxW, text) {

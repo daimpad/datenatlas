@@ -1,0 +1,148 @@
+{
+  "sectorId": "ngo",
+  "children": [
+    {
+      "id": "umweltverein",
+      "level": 2,
+      "name": "Umweltverein",
+      "color": "#27ae60",
+      "description": "Gemeinnütziger Verein zum Schutz der natürlichen Umwelt, Biodiversität und Klimagerechtigkeit",
+      "children": [
+        {
+          "id": "mitglieder_akquise",
+          "level": 3,
+          "name": "Mitglieder akquirieren",
+          "color": "#1abc9c",
+          "description": "Gewinnung neuer Vereinsmitglieder, Verwaltung von Beitritten und Beitragserhebung",
+          "children": [
+            {
+              "id": "mitgliederliste",
+              "level": 4,
+              "name": "Mitgliederliste",
+              "color": "#16a085",
+              "details": {
+                "description": "Stammdaten aller registrierten Vereinsmitglieder: Name, Adresse, Geburtsdatum, Kontaktdaten (E-Mail, Telefon) und Zahlungsinformationen (IBAN, Beitragsklasse). Dient der internen Verwaltung und Beitragsmahnung.",
+                "openDataPotential": {
+                  "score": "Niedrig",
+                  "scoreValue": 1,
+                  "explanation": "Inhärent personenbezogene Daten erlauben keine Direktveröffentlichung. Aggregierte Mitgliederstatistiken (Wachstum pro Jahr, Altersverteilung, regionale Dichte nach PLZ) besitzen jedoch mittleres gesellschaftliches Erkenntnispotenzial für Zivilgesellschaftsanalysen."
+                },
+                "dsgvoRisk": {
+                  "level": "Sehr hoch",
+                  "riskClass": "risk-veryhigh",
+                  "explanation": "Art. 9 DSGVO kann greifen, wenn aus der Vereinsmitgliedschaft politische oder weltanschauliche Überzeugungen ableitbar sind (z.B. ökologische Haltung). Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung). Besondere Sorgfalt bei Datenweitergabe an Dritte.",
+                  "articles": ["Art. 6 DSGVO", "Art. 9 DSGVO", "Art. 17 DSGVO", "Art. 32 DSGVO"]
+                },
+                "anonymization": [
+                  { "method": "Aggregation", "description": "Zusammenfassung auf PLZ-Ebene und 5-Jahres-Altersgruppen. Nur Mitgliederzahlen pro Region statt Individualdaten veröffentlichen." },
+                  { "method": "K-Anonymität ≥5", "description": "Keine Subgruppe darf weniger als 5 Personen umfassen. Seltene Kombinationen (z.B. Altersklasse + Stadt) müssen vergröbert oder unterdrückt werden." },
+                  { "method": "Entfernung", "description": "Vollständige Entfernung von Name, Anschrift, Geburtsdatum, IBAN und E-Mail-Adresse vor jeder externen Datenübermittlung." }
+                ]
+              }
+            },
+            {
+              "id": "beitragshistorie",
+              "level": 4,
+              "name": "Beitragshistorie",
+              "color": "#16a085",
+              "details": {
+                "description": "Aufzeichnung aller geleisteten Mitgliedsbeiträge mit Zeitstempel, Betrag, Zahlungsart und Referenz auf die Mitglieds-ID. Grundlage für Mahnwesen und Buchführung.",
+                "openDataPotential": {
+                  "score": "Niedrig",
+                  "scoreValue": 1,
+                  "explanation": "Individuelle Finanztransaktionen sind nicht öffentlichkeitstauglich. Der aggregierte Jahresfinanzbericht (Gesamteinnahmen, Ausgaben, Rücklagen) ist für gemeinnützige Vereine ohnehin als Transparenzmittel empfehlenswert und besitzt hohes gesellschaftliches Informationspotenzial."
+                },
+                "dsgvoRisk": {
+                  "level": "Hoch",
+                  "riskClass": "risk-high",
+                  "explanation": "Finanzdaten erlauben Rückschlüsse auf die wirtschaftliche Lage der Mitglieder. Gesetzliche Aufbewahrungspflicht: 10 Jahre (§ 147 AO / § 257 HGB). Nach Ablauf: vollständige Löschung gemäß Art. 17 DSGVO.",
+                  "articles": ["Art. 6 DSGVO", "Art. 17 DSGVO", "§ 147 AO", "§ 257 HGB"]
+                },
+                "anonymization": [
+                  { "method": "Pseudonymisierung", "description": "Ersetzen der Mitglieds-ID durch einen kryptografischen Hash (HMAC-SHA-256 + Secret) für interne Auswertungen ohne Personenbezug." },
+                  { "method": "Aggregation", "description": "Externe Reports ausschließlich als Gesamteinnahmen pro Quartal, ohne Mitglieds- oder Transaktionsbezug." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "kampagnen",
+          "level": 3,
+          "name": "Kampagnen führen",
+          "color": "#1abc9c",
+          "description": "Planung und Durchführung von Öffentlichkeitskampagnen, Petitionen und Aktionen",
+          "children": [
+            {
+              "id": "petitions_daten",
+              "level": 4,
+              "name": "Petitionsdaten",
+              "color": "#16a085",
+              "details": {
+                "description": "Unterzeichnerdaten einer Petition: Name, E-Mail, PLZ, Zeitstempel der Unterschrift. Wird für die offizielle Einreichung bei Behörden gesammelt.",
+                "openDataPotential": {
+                  "score": "Mittel",
+                  "scoreValue": 2,
+                  "explanation": "Aggregierte Petitionsstatistiken (Unterstützer pro Region, zeitlicher Verlauf) sind aufschlussreich für politische Beteiligungsanalysen. Einzeldaten sind nicht veröffentlichungsfähig."
+                },
+                "dsgvoRisk": {
+                  "level": "Mittel",
+                  "riskClass": "risk-medium",
+                  "explanation": "Explizite Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) ist die einzige valide Rechtsgrundlage. Zweckbindung: ausschließlich für Einreichung der Petition. Löschpflicht nach Abschluss des Petitionsverfahrens.",
+                  "articles": ["Art. 6 DSGVO", "Art. 7 DSGVO", "Art. 17 DSGVO"]
+                },
+                "anonymization": [
+                  { "method": "Aggregation", "description": "Veröffentlichung nur der Gesamtzahl und regionalen Verteilung (Bundesland-Ebene), nicht der individuellen Namen." },
+                  { "method": "Datensparsamkeit", "description": "Nur minimal erforderliche Daten erheben. Für offizielle Einreichungen ggf. nur Anzahl und repräsentative Auswahl (mit Zustimmung)." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wohlfahrtsverband",
+      "level": 2,
+      "name": "Wohlfahrtsverband",
+      "color": "#27ae60",
+      "description": "Soziale Wohlfahrtsorganisation zur Unterstützung benachteiligter und vulnerabler Bevölkerungsgruppen",
+      "children": [
+        {
+          "id": "hilfsprogramme",
+          "level": 3,
+          "name": "Hilfsprogramme",
+          "color": "#1abc9c",
+          "description": "Planung, Zuweisung und Dokumentation sozialer Unterstützungsleistungen",
+          "children": [
+            {
+              "id": "beguenstigte_db",
+              "level": 4,
+              "name": "Begünstigten-DB",
+              "color": "#16a085",
+              "details": {
+                "description": "Fallbasierte Datenbank aller betreuten Personen: Fallnummer, Bedarfsanalyse (Wohnsituation, Gesundheitsstatus, finanzielle Lage), erhaltene Leistungen und Betreuungsverläufe.",
+                "openDataPotential": {
+                  "score": "Sehr niedrig",
+                  "scoreValue": 0,
+                  "explanation": "Enthält hochsensitive Daten über vulnerable Personen. Direktveröffentlichung ist kategorisch ausgeschlossen. Anonymisierte Aggregatdaten zur Sozialplanung (z.B. Bedarfsdichte nach Stadtteilen) können für kommunale Entscheidungsträger wertvoll sein, erfordern aber maximale Sorgfalt."
+                },
+                "dsgvoRisk": {
+                  "level": "Sehr hoch",
+                  "riskClass": "risk-veryhigh",
+                  "explanation": "Besondere Kategorien nach Art. 9 DSGVO: Gesundheitsdaten, Angaben zu sozialer und wirtschaftlicher Notlage. Datenverarbeitung nur auf Grundlage expliziter Einwilligung (Art. 6 lit. a / Art. 9 lit. a) oder sozialrechtlicher Ermächtigung (SGB I, SGB X). Datenweitergabe nur an akkreditierte Träger.",
+                  "articles": ["Art. 9 DSGVO", "Art. 6 DSGVO", "SGB I § 35", "SGB X § 67"]
+                },
+                "anonymization": [
+                  { "method": "Differential Privacy", "description": "Statistisches Rauschen (ε-Privatheit) bei Aggregatauswertungen, sodass keine Einzelperson rekonstruiert werden kann." },
+                  { "method": "K-Anonymität ≥10", "description": "Hohe Schwelle (≥10) aufgrund der Sensitivität. Gruppenbildung nach Region + Bedarfstyp, keine feineren Kategorien." },
+                  { "method": "Datentreuhänder", "description": "Externe Auswertungen nur durch akkreditierten, auditierten Datentreuhänder. Kein direkter Rohdatenzugang für Dritte." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

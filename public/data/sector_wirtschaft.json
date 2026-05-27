@@ -1,0 +1,139 @@
+{
+  "sectorId": "wirtschaft",
+  "children": [
+    {
+      "id": "einzelhandel",
+      "level": 2,
+      "name": "Einzelhandel",
+      "color": "#d35400",
+      "description": "Stationärer und digitaler Einzelhandel mit direktem Kundenkontakt und Transaktionsverarbeitung",
+      "children": [
+        {
+          "id": "kundenbeziehungen",
+          "level": 3,
+          "name": "Kundenbeziehungen",
+          "color": "#e67e22",
+          "description": "CRM-Prozesse: Kundendaten, Loyalitätsprogramme, personalisierte Kommunikation",
+          "children": [
+            {
+              "id": "kundendatenbank",
+              "level": 4,
+              "name": "Kundendatenbank",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "CRM-System mit Profildaten aller registrierten Kund:innen: Name, Adresse, E-Mail, Telefon, Geburtsdatum, Kaufhistorie, Reklamationen, Loyalty-Punkte und Marketing-Präferenzen.",
+                "openDataPotential": {
+                  "score": "Sehr niedrig",
+                  "scoreValue": 0,
+                  "explanation": "Kundendaten sind Kernelement des Geschäftsgeheimnisses und zutiefst personenbezogen. Kein Open-Data-Potenzial. Branchenstatistiken (Kaufverhalten nach Altersgruppe, Umsatztrends) könnten anonymisiert wissenschaftlich wertvoll sein."
+                },
+                "dsgvoRisk": {
+                  "level": "Hoch",
+                  "riskClass": "risk-high",
+                  "explanation": "Umfangreiches Profiling. Zweckbindung zwingend: Daten dürfen nicht für andere Zwecke als den explizit angegebenen verwendet werden. Auskunftsrecht (Art. 15 DSGVO) und Löschrecht (Art. 17 DSGVO) müssen technisch umsetzbar sein. Bei Profilbildung: Widerspruchsrecht nach Art. 21 DSGVO.",
+                  "articles": ["Art. 6 DSGVO", "Art. 13/14 DSGVO", "Art. 15 DSGVO", "Art. 17 DSGVO", "Art. 21 DSGVO", "Art. 22 DSGVO"]
+                },
+                "anonymization": [
+                  { "method": "Pseudonymisierung", "description": "Trennung von Identifikationsdaten (Name, E-Mail) und Analysedaten (Kaufmuster) in separate, zugriffsgeschützte Systeme mit referentiellem Hash." },
+                  { "method": "Datensparsamkeit", "description": "Erhebung nur der für den Vertragszweck unbedingt notwendigen Felder. Geburtsdatum z.B. nur wenn für Alterskontrolle oder personalisierten Rabatt zwingend nötig." },
+                  { "method": "Löschautomatik", "description": "Automatische Löschung inaktiver Kund:innen-Profile nach 3 Jahren Inaktivität gemäß Datenschutzfolgenabschätzung (DSFA)." }
+                ]
+              }
+            },
+            {
+              "id": "kaufhistorie",
+              "level": 4,
+              "name": "Kaufhistorie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Transaktionslogs aller Käufe: Artikel-ID, Preis, Menge, Zeitstempel, Zahlungsart, Filiale/Kanal — verknüpft mit der Kunden-ID.",
+                "openDataPotential": {
+                  "score": "Niedrig",
+                  "scoreValue": 1,
+                  "explanation": "Auf Einzelkundenebene nicht veröffentlichbar. Aggregierte Kauftrends (Kategorien nach Saison, Preisklassen-Verteilung) haben wissenschaftlichen Wert für Wirtschaftsforschung. Dataspenden-Modelle (freiwillige, kontrollierte Weitergabe) sind ein aufkommender Ansatz."
+                },
+                "dsgvoRisk": {
+                  "level": "Hoch",
+                  "riskClass": "risk-high",
+                  "explanation": "Kaufhistorien erlauben tiefe Einblicke in Lebensgewohnheiten, Gesundheitszustand (z.B. Apothekenprodukte), religiöse Praxis (Lebensmittel) und finanzielle Lage. Hochsensibel trotz fehlender Art.-9-Klassifikation. Datenschutzfolgenabschätzung (Art. 35 DSGVO) empfohlen.",
+                  "articles": ["Art. 35 DSGVO", "Art. 22 DSGVO", "Art. 6 DSGVO"]
+                },
+                "anonymization": [
+                  { "method": "Aggregation", "description": "Wissenschaftliche Auswertungen nur auf Kategorie-Ebene (nicht Artikel-ID), Zeiteinheit Woche (nicht Timestamp), Region (nicht Kunde)." },
+                  { "method": "k-Anonymität", "description": "Jede Kombination aus Artikel-Kategorie + Region + Zeiteinheit muss von mindestens k=5 Transaktionen gebildet werden." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "finanzdienstleister",
+      "level": 2,
+      "name": "Finanzdienstleister",
+      "color": "#d35400",
+      "description": "Banken, Versicherungen und Kreditinstitute mit sensiblen Finanzdaten ihrer Kunden",
+      "children": [
+        {
+          "id": "konten_verwaltung",
+          "level": 3,
+          "name": "Konten verwalten",
+          "color": "#e67e22",
+          "description": "Führung von Giro-, Spar- und Anlagekonten sowie zugehörige Transaktionsverarbeitung",
+          "children": [
+            {
+              "id": "kontoinformationen",
+              "level": 4,
+              "name": "Kontoinformationen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Stammdaten aller Bankkonten: IBAN, BIC, Kontoinhaber (Name, Adresse, Identifikationsnummer), Kontoart, Eröffnungsdatum, aktueller Saldo, Kreditrahmen.",
+                "openDataPotential": {
+                  "score": "Sehr niedrig",
+                  "scoreValue": 0,
+                  "explanation": "Keinerlei Open-Data-Potenzial. Maximale Vertraulichkeit gesetzlich und regulatorisch gefordert (Bankgeheimnis, GwG). Makroökonomische Aggregate (Gesamtsparvolumen, Kreditmenge) werden durch die Bundesbank als Open Data veröffentlicht."
+                },
+                "dsgvoRisk": {
+                  "level": "Sehr hoch",
+                  "riskClass": "risk-veryhigh",
+                  "explanation": "Finanzkonten sind Kernkategorie personenbezogener Daten. Bankgeheimnis (§ 25a KWG), Geldwäschegesetz (GwG) und PSD2 regulieren Zugriff und Weitergabe streng. DSGVO-Datenschutzbeauftragter zwingend vorgeschrieben (Art. 37 DSGVO). DSFA erforderlich.",
+                  "articles": ["Art. 9 DSGVO", "Art. 35 DSGVO", "Art. 37 DSGVO", "§ 25a KWG", "GwG § 10"]
+                },
+                "anonymization": [
+                  { "method": "Keine Veröffentlichung", "description": "Rohdaten dürfen unter keinen Umständen außerhalb streng regulierter Aufsichtsprozesse weitergegeben werden." },
+                  { "method": "Aufsichtsbehörden", "description": "Aggregierte Meldungen an BaFin und Bundesbank erfolgen nach § 24 KWG in definierter, anonymisierter Tabellenform." }
+                ]
+              }
+            },
+            {
+              "id": "transaktionsdaten",
+              "level": 4,
+              "name": "Transaktionsdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Vollständige Buchungshistorie aller Kontotransaktionen: Betrag, Datum, Gegenkonto (IBAN), Verwendungszweck, Buchungstext, Kategorie. Aufbewahrungspflicht 10 Jahre.",
+                "openDataPotential": {
+                  "score": "Sehr niedrig",
+                  "scoreValue": 0,
+                  "explanation": "Transaktionsdaten ermöglichen vollständige Rekonstruktion des Lebenswegs einer Person. Absolutely kein Open-Data-Potenzial. Wirtschaftliche Aggregatstatistiken (durchschn. Sparquote, Konsumkategorien) können durch die Bundesbank ohne Personenbezug bereitgestellt werden."
+                },
+                "dsgvoRisk": {
+                  "level": "Sehr hoch",
+                  "riskClass": "risk-veryhigh",
+                  "explanation": "Transaktionsdaten sind das sensibelste Datengut im privaten Bereich. Verwendungszwecke offenbaren Gesundheit, Religion, politische Haltung, Beziehungen. PSD2 (Zahlungsdienstrichtlinie) schreibt strenge Authentifizierungspflichten vor. Aufbewahrung nur für gesetzlich vorgeschriebenen Zeitraum.",
+                  "articles": ["Art. 6 DSGVO", "Art. 32 DSGVO", "PSD2 Richtlinie 2015/2366", "§ 147 AO", "§ 25i ZAG"]
+                },
+                "anonymization": [
+                  { "method": "Aggregation", "description": "Für Forschungszwecke: Nur Summen pro Kategorie (z.B. 'Lebensmittel', 'Mobilität') pro Monat, ohne Einzelbuchungen oder Gegenkonten." },
+                  { "method": "Differential Privacy", "description": "Beim Teilen mit Forschungseinrichtungen: ε-differentiell private Mechanismen, um auch aus aggregierten Werten keine Rückschlüsse zu erlauben." },
+                  { "method": "Löschkonzept", "description": "Technische Löschung nach 10 Jahren (AO-Frist). Vorher: regelmäßige Überprüfung auf Dateminimierungspotenzial (Art. 5 Abs. 1 lit. e DSGVO)." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

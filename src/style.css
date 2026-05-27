@@ -330,6 +330,59 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
 .sb-meta-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-2); }
 .sb-meta-item strong { font-family: var(--mono); color: var(--text-1); font-weight: 700; }
 
+/* ── Explore button ── */
+.sb-explore-btn {
+  width: 100%;
+  padding: 11px 16px;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.15s, transform 0.1s;
+  letter-spacing: 0.2px;
+}
+.sb-explore-btn:hover  { background: #79b8ff; }
+.sb-explore-btn:active { transform: scale(0.98); }
+.sb-explore-arrow { font-size: 16px; }
+
+/* ── Error state ── */
+#error-state {
+  position: absolute; inset: 0;
+  background: rgba(13,17,23,0.88);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  z-index: 60;
+  text-align: center;
+  padding: 32px;
+}
+#error-state[hidden] { display: none; }
+.error-icon { font-size: 36px; color: var(--yellow); line-height: 1; }
+#error-message { font-size: 14px; color: var(--text-2); max-width: 280px; line-height: 1.6; }
+#error-retry {
+  padding: 9px 22px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-hi);
+  border-radius: 8px;
+  color: var(--text-1);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+#error-retry:hover { background: var(--surface-3); border-color: var(--accent); color: var(--accent); }
+
 /* ── Tooltip ── */
 #tooltip {
   position: fixed;

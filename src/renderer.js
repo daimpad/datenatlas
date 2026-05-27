@@ -70,6 +70,10 @@ export class IsometricRenderer {
     this.alpha  = 1;        // global fade (0-1) for transitions
     this.dirty  = true;
     this._raf   = null;
+    // Pulse state (click feedback)
+    this._pulseId  = null;
+    this._pulseT0  = 0;
+    this._pulseDur = 260;
 
     this._resize();
     this._loop();
@@ -96,8 +100,9 @@ export class IsometricRenderer {
     this.rows  = rows;
     this.tiles = tiles.map((t, i) => ({
       ...t,
-      col: i % cols,
-      row: Math.floor(i / cols),
+      col:       i % cols,
+      row:       Math.floor(i / cols),
+      navigable: !!(t.children?.length || t.subFile),
     }));
     this.dirty = true;
   }
@@ -115,6 +120,21 @@ export class IsometricRenderer {
   setAlpha(a) {
     this.alpha = a;
     this.dirty = true;
+  }
+
+  // Trigger a brief brightness-pulse on the given tile id
+  startPulse(id) {
+    this._pulseId = id;
+    this._pulseT0 = performance.now();
+    this.dirty    = true;
+  }
+
+  _pulseFactor(id) {
+    if (this._pulseId !== id) return 0;
+    const t = Math.min((performance.now() - this._pulseT0) / this._pulseDur, 1);
+    if (t >= 1) { this._pulseId = null; return 0; }
+    // Triangle wave: ramps up to peak at 35%, then falls back
+    return t < 0.35 ? t / 0.35 : 1 - (t - 0.35) / 0.65;
   }
 
   // Return tile id at logical screen point (px, py), or null
@@ -142,6 +162,9 @@ export class IsometricRenderer {
 
   _loop() {
     this._raf = requestAnimationFrame(() => this._loop());
+    // Keep rendering while pulse is active
+    if (this._pulseId && performance.now() - this._pulseT0 < this._pulseDur)
+      this.dirty = true;
     if (!this.dirty) return;
     this.dirty = false;
     this._draw();
@@ -159,7 +182,8 @@ export class IsometricRenderer {
     const sorted = [...this.tiles].sort((a, b) => (a.col + a.row) - (b.col + b.row));
     for (const t of sorted) {
       const { tx, ty } = this._tilePos(t.col, t.row);
-      this._drawTile(ctx, tx, ty, t.color, t.name, t.id === this.hov);
+      const pulse = this._pulseFactor(t.id);
+      this._drawTile(ctx, tx, ty, t.color, t.name, t.id === this.hov, pulse, t.navigable);
     }
 
     ctx.restore();
@@ -175,13 +199,14 @@ export class IsometricRenderer {
     return { tx, ty };
   }
 
-  _drawTile(ctx, tx, ty, color, label, hovered) {
+  _drawTile(ctx, tx, ty, color, label, hovered, pulse = 0, navigable = false) {
     const { W, H, D } = this;
 
-    const topColor   = hovered ? tint(color, 1.35) : color;
+    const brightFactor = (hovered ? 1.35 : 1.0) + pulse * 0.55;
+    const topColor   = tint(color, brightFactor);
     const rightColor = tint(color, 0.72);
     const leftColor  = tint(color, 0.52);
-    const edgeAlpha  = hovered ? 0.45 : 0.2;
+    const edgeAlpha  = hovered || pulse > 0.1 ? 0.45 : 0.2;
 
     // ── Right face ──
     ctx.beginPath();
@@ -221,21 +246,47 @@ export class IsometricRenderer {
     ctx.lineWidth = hovered ? 1.5 : 0.8;
     ctx.stroke();
 
-    // ── Hover glow ring ──
-    if (hovered) {
+    // ── Hover / pulse glow ring ──
+    if (hovered || pulse > 0.05) {
       ctx.beginPath();
       ctx.moveTo(tx,       ty        );
       ctx.lineTo(tx + W/2, ty + H/2  );
       ctx.lineTo(tx,       ty + H    );
       ctx.lineTo(tx - W/2, ty + H/2  );
       ctx.closePath();
-      ctx.strokeStyle = rgba('#ffffff', 0.6);
-      ctx.lineWidth = 2;
+      ctx.strokeStyle = rgba('#ffffff', hovered ? 0.6 : pulse * 0.8);
+      ctx.lineWidth = hovered ? 2 : 2.5;
       ctx.stroke();
     }
 
+    // ── Pulse white flash overlay ──
+    if (pulse > 0.05) {
+      ctx.beginPath();
+      ctx.moveTo(tx,       ty        );
+      ctx.lineTo(tx + W/2, ty + H/2  );
+      ctx.lineTo(tx,       ty + H    );
+      ctx.lineTo(tx - W/2, ty + H/2  );
+      ctx.closePath();
+      ctx.fillStyle = `rgba(255,255,255,${pulse * 0.18})`;
+      ctx.fill();
+    }
+
     // ── Label ──
-    this._drawLabel(ctx, tx, ty + H * 0.42, W * 0.74, label);
+    const labelY = navigable ? ty + H * 0.36 : ty + H * 0.42;
+    this._drawLabel(ctx, tx, labelY, W * 0.74, label);
+
+    // ── Navigable indicator (subtle down-arrow) ──
+    if (navigable) {
+      ctx.save();
+      ctx.font = `bold 9px Inter, system-ui, sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = hovered ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.45)';
+      ctx.shadowColor = 'rgba(0,0,0,0.6)';
+      ctx.shadowBlur  = 3;
+      ctx.fillText('▼', tx, ty + H * 0.68);
+      ctx.restore();
+    }
   }
 
   _drawLabel(ctx, cx, cy, maxW, text) {

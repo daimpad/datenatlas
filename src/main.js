@@ -24,6 +24,9 @@ const filterCount   = document.getElementById('filter-count');
 const onboarding    = document.getElementById('onboarding');
 const shareBtn      = document.getElementById('share-btn');
 const shareToast    = document.getElementById('share-toast');
+const infoBtn       = document.getElementById('info-btn');
+const infoModal     = document.getElementById('info-modal');
+const imClose       = document.getElementById('im-close');
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 const renderer = new IsometricRenderer(canvas);
@@ -43,6 +46,15 @@ document.getElementById('ob-start').addEventListener('click', () => {
   localStorage.setItem(OB_KEY, '1');
   onboarding.hidden = true;
 });
+
+// ── Info modal ────────────────────────────────────────────────────────────────
+function openInfoModal()  { infoModal.hidden = false; infoBtn.classList.add('active'); }
+function closeInfoModal() { infoModal.hidden = true;  infoBtn.classList.remove('active'); }
+
+infoBtn.addEventListener('click', openInfoModal);
+imClose.addEventListener('click', closeInfoModal);
+infoModal.addEventListener('click', e => { if (e.target === infoModal) closeInfoModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !infoModal.hidden) closeInfoModal(); });
 
 // ── Share / deep-link ─────────────────────────────────────────────────────────
 let _hashEnabled = false;

@@ -629,9 +629,51 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
 }
 #tooltip[hidden] { display: none; }
 
+/* ── Openness legend ── */
+#openness-legend {
+  position: absolute;
+  bottom: 24px;
+  right: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  z-index: 20;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+}
+.ol-item { display: flex; align-items: center; gap: 8px; }
+.ol-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.1);
+}
+.ol-label { font-size: 11px; color: var(--text-2); white-space: nowrap; font-family: var(--mono); }
+
+/* Onboarding color preview */
+.ob-colors {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--surface-2);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+.ob-color-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-2);
+}
+
 /* ── Responsive ── */
 @media (max-width: 580px) {
   :root { --sidebar-w: 100vw; }
   .logo-text { display: none; }
   #level-badge { display: none; }
+  #openness-legend { display: none; }
 }

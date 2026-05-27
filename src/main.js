@@ -16,6 +16,7 @@ const btnBack       = document.getElementById('btn-back');
 const btnHome       = document.getElementById('btn-home');
 const breadcrumbEl  = document.getElementById('breadcrumb');
 const levelNumEl    = document.getElementById('level-number');
+const levelMaxEl    = document.getElementById('level-max');
 const tooltip       = document.getElementById('tooltip');
 const filterBar     = document.getElementById('filter-bar');
 const filterToggle  = document.getElementById('filter-toggle');
@@ -24,12 +25,7 @@ const onboarding    = document.getElementById('onboarding');
 // ── Init ──────────────────────────────────────────────────────────────────────
 const renderer = new IsometricRenderer(canvas);
 
-initControls({
-  canvas,
-  renderer,
-  onTileClick: handleTileClick,
-  onHover:     handleHover,
-});
+initControls({ canvas, renderer, onTileClick: handleTileClick, onHover: handleHover });
 
 btnBack.addEventListener('click', navigateBack);
 btnHome.addEventListener('click', navigateHome);
@@ -38,33 +34,23 @@ let _retryFn = null;
 errorRetry.addEventListener('click', () => { hideError(); _retryFn?.(); });
 
 // ── Onboarding ────────────────────────────────────────────────────────────────
-
 const OB_KEY = 'datenatlas_onboarded_v1';
-if (!localStorage.getItem(OB_KEY)) {
-  onboarding.hidden = false;
-} else {
-  onboarding.hidden = true;
-}
-
+onboarding.hidden = !!localStorage.getItem(OB_KEY);
 document.getElementById('ob-start').addEventListener('click', () => {
   localStorage.setItem(OB_KEY, '1');
   onboarding.hidden = true;
 });
 
 // ── Filter ────────────────────────────────────────────────────────────────────
-
 const filterState = { risk: null, openData: null };
 let filterOpen    = false;
 
 filterToggle.addEventListener('click', () => {
   filterOpen = !filterOpen;
   filterToggle.classList.toggle('active', filterOpen);
-  // Filter bar only makes sense at level 4 — show/hide respects current level
-  const atL4 = (state.breadcrumb[state.breadcrumb.length - 1]?.level ?? 0) === 4;
-  filterBar.hidden = !(filterOpen && atL4);
+  syncFilterBar();
 });
 
-// Risk chip group
 document.getElementById('fc-risk').addEventListener('click', e => {
   const btn = e.target.closest('.fc');
   if (!btn) return;
@@ -73,53 +59,84 @@ document.getElementById('fc-risk').addEventListener('click', e => {
   applyFilter();
 });
 
-// Open-data chip group
 document.getElementById('fc-od').addEventListener('click', e => {
   const btn = e.target.closest('.fc');
   if (!btn) return;
-  const val = btn.dataset.od;
-  filterState.openData = val === '' ? null : parseInt(val, 10);
+  const v = btn.dataset.od;
+  filterState.openData = v === '' ? null : parseInt(v, 10);
   setActiveChip('fc-od', btn);
   applyFilter();
 });
 
 function setActiveChip(groupId, activeBtn) {
-  document.getElementById(groupId)
-    .querySelectorAll('.fc')
+  document.getElementById(groupId).querySelectorAll('.fc')
     .forEach(b => b.classList.toggle('active', b === activeBtn));
 }
 
-function applyFilter() {
-  const atL4 = (state.breadcrumb[state.breadcrumb.length - 1]?.level ?? 0) === 4;
-
-  // Show/hide filter bar based on level + toggle state
+function syncFilterBar() {
+  const atL4 = currentLevel() === 4;
   filterBar.hidden = !(filterOpen && atL4);
+}
 
+function applyFilter() {
+  syncFilterBar();
+  const atL4 = currentLevel() === 4;
   if (!atL4 || (filterState.risk === null && filterState.openData === null)) {
     renderer.setDimmedIds(new Set());
     return;
   }
-
-  const dimmed = new Set(
-    state.currentTiles
-      .filter(t => !tileMatchesFilter(t))
-      .map(t => t.id)
-  );
-  renderer.setDimmedIds(dimmed);
+  renderer.setDimmedIds(new Set(
+    state.currentTiles.filter(t => !tileMatchesFilter(t)).map(t => t.id)
+  ));
 }
 
 function tileMatchesFilter(tile) {
-  if (filterState.risk !== null) {
-    if (tile.details?.dsgvoRisk?.riskClass !== filterState.risk) return false;
-  }
-  if (filterState.openData !== null) {
-    if (tile.details?.openDataPotential?.scoreValue !== filterState.openData) return false;
-  }
+  if (filterState.risk !== null &&
+      tile.details?.dsgvoRisk?.riskClass !== filterState.risk) return false;
+  if (filterState.openData !== null &&
+      tile.details?.openDataPotential?.scoreValue !== filterState.openData) return false;
   return true;
 }
 
-// ── Boot ──────────────────────────────────────────────────────────────────────
+// ── Method index (for L5 → L6 cross-sector lookup) ───────────────────────────
 
+// Map<methodName, searchIndexEntry[]>
+let methodIndex = null;
+
+function buildMethodIndex(searchIdx) {
+  const mi = new Map();
+  for (const entry of searchIdx) {
+    for (const m of entry.tile.details?.anonymization ?? []) {
+      if (!mi.has(m.method)) mi.set(m.method, []);
+      mi.get(m.method).push(entry);
+    }
+  }
+  return mi;
+}
+
+// Colors assigned to anonymization method categories
+const METHOD_COLORS = [
+  ['aggregation',      '#1a6eb5'],
+  ['k-anonymit',       '#7d3c98'],
+  ['pseudonymisier',   '#0e6655'],
+  ['differential',     '#7e5109'],
+  ['synthetisch',      '#1d6a39'],
+  ['datensparsamkeit', '#7d6608'],
+  ['suppression',      '#5d6d7e'],
+  ['dicom',            '#1a5276'],
+  ['zweckbindung',     '#616a6b'],
+  ['rausch',           '#5d6d7e'],
+];
+
+function methodColor(name) {
+  const key = name.toLowerCase();
+  for (const [prefix, color] of METHOD_COLORS) {
+    if (key.includes(prefix)) return color;
+  }
+  return '#4a5568';
+}
+
+// ── Boot ──────────────────────────────────────────────────────────────────────
 let _mainTiles = [];
 
 (async () => {
@@ -130,6 +147,7 @@ let _mainTiles = [];
     pushLevel(sectors, { id: null, name: 'Übersicht', level: 0 });
 
     const indexPromise = buildIndexInBackground(sectors);
+    indexPromise.then(idx => { methodIndex = buildMethodIndex(idx); });
     initSearch({ indexPromise, onNavigate: navigateToSearchResult });
   } catch (err) {
     console.error(err);
@@ -141,26 +159,24 @@ let _mainTiles = [];
 
 async function buildIndexInBackground(mainTiles) {
   const pairs = await Promise.all(
-    mainTiles
-      .filter(t => t.subFile)
-      .map(async t => {
-        try   { return [t, await loadSector(t.id)]; }
-        catch { return null; }
-      })
+    mainTiles.filter(t => t.subFile).map(async t => {
+      try   { return [t, await loadSector(t.id)]; }
+      catch { return null; }
+    })
   );
   return buildSearchIndex(mainTiles, pairs.filter(Boolean));
 }
 
 // ── Navigation ────────────────────────────────────────────────────────────────
 
+function currentLevel() {
+  return state.breadcrumb[state.breadcrumb.length - 1]?.level ?? 0;
+}
+
 function pushLevel(tiles, crumb) {
   const processed = applyRiskColors(tiles);
   state.breadcrumb.push({ ...crumb, tiles: processed });
-  patchState({
-    zoomLevel:    crumb.level ?? state.zoomLevel,
-    currentTiles: processed,
-    panOffset:    { x: 0, y: 0 },
-  });
+  patchState({ zoomLevel: crumb.level ?? state.zoomLevel, currentTiles: processed, panOffset: { x:0, y:0 } });
   renderer.setPan(0, 0);
   animateIn(processed);
   updateChrome();
@@ -212,7 +228,7 @@ function navigateToSearchResult(result) {
   updateChrome();
   applyFilter();
   const target = last.tiles.find(t => t.id === result.tile.id);
-  if (target) openSidebar(target);
+  if (target) openSidebar(target, sidebarOpts(target));
 }
 
 // ── Tile click handler ────────────────────────────────────────────────────────
@@ -220,45 +236,106 @@ function navigateToSearchResult(result) {
 function handleTileClick(id) {
   const tile = state.currentTiles.find(t => t.id === id);
   if (!tile) return;
-
   renderer.startPulse(id);
+  openSidebar(tile, sidebarOpts(tile));
+}
 
-  const hasChildren = tile.children?.length || tile.subFile;
-  if (hasChildren) {
-    openSidebar(tile, { onExplore: () => navigateDeeper(tile) });
-  } else {
-    openSidebar(tile);
+// Returns the sidebar options (explore callback + label) appropriate for the tile's level
+function sidebarOpts(tile) {
+  const lvl = tile.level ?? 1;
+
+  // L1–L3: standard drill-down
+  if (lvl <= 3 && (tile.children?.length || tile.subFile)) {
+    return { onExplore: () => navigateDeeper(tile), exploreLabel: 'Erkunden' };
   }
+
+  // L4 or L6 (cross-sector data type): navigate to its anonymization methods
+  if ((lvl === 4 || lvl === 6) && tile.details?.anonymization?.length) {
+    return {
+      onExplore: () => navigateDeeper(tile),
+      exploreLabel: 'Anonymisierungsmethoden erkunden',
+    };
+  }
+
+  // L5 (method): navigate to related data types across sectors
+  if (lvl === 5) {
+    return {
+      onExplore: () => navigateDeeper(tile),
+      exploreLabel: 'Verwandte Datentypen',
+    };
+  }
+
+  return {};
 }
 
 async function navigateDeeper(tile) {
   closeSidebar();
+  const lvl = tile.level ?? 1;
 
-  if (tile.level === 1 && tile.subFile) {
+  // ── L1 sector: load from JSON ──
+  if (lvl === 1 && tile.subFile) {
     try {
       showLoading(true);
-      const sectorData = await loadSector(tile.id);
-      const children   = sectorData.children ?? [];
+      const data     = await loadSector(tile.id);
+      const children = data.children ?? [];
       if (children.length) {
         await animateOut(tile.id);
         pushLevel(children, { id: tile.id, name: tile.name, level: 2 });
       }
     } catch (err) {
-      console.error('Failed to load sector:', err);
-      showError(
-        `Sektor „${tile.name}" konnte nicht geladen werden.`,
-        () => navigateDeeper(tile),
-      );
+      console.error(err);
+      showError(`Sektor „${tile.name}" konnte nicht geladen werden.`, () => navigateDeeper(tile));
     } finally {
       showLoading(false);
     }
     return;
   }
 
-  if (tile.children?.length) {
-    const nextLevel = (tile.level ?? 1) + 1;
+  // ── L2–L3: standard children ──
+  if (lvl >= 2 && lvl <= 3 && tile.children?.length) {
     await animateOut(tile.id);
-    pushLevel(tile.children, { id: tile.id, name: tile.name, level: nextLevel });
+    pushLevel(tile.children, { id: tile.id, name: tile.name, level: lvl + 1 });
+    return;
+  }
+
+  // ── L4 or L6: show anonymization methods as L5 tiles ──
+  if ((lvl === 4 || lvl === 6) && tile.details?.anonymization?.length) {
+    const methods = tile.details.anonymization;
+    const l5 = methods.map(m => {
+      const related = methodIndex?.get(m.method) ?? [];
+      return {
+        id:              `method-${slugify(m.method)}`,
+        level:           5,
+        name:            m.method,
+        color:           methodColor(m.method),
+        description:     m.description,
+        navigable:       related.length > 0,
+        _methodName:     m.method,
+        _relatedCount:   related.length,
+      };
+    });
+    await animateOut(tile.id);
+    pushLevel(l5, { id: `methods-${tile.id}`, name: `Methoden · ${tile.name}`, level: 5 });
+    return;
+  }
+
+  // ── L5 method: show all data types using this method as L6 tiles ──
+  if (lvl === 5) {
+    const entries = methodIndex?.get(tile._methodName) ?? [];
+    if (!entries.length) return;
+    const l6 = entries.map(e => ({
+      id:          `xref-${e.tile.id}-${slugify(tile._methodName)}`,
+      level:       6,
+      name:        e.tile.name,
+      color:       e.tile.color,      // risk color already applied
+      description: e.displayPath,
+      details:     e.tile.details,
+      navigable:   !!(e.tile.details?.anonymization?.length),
+      _methodName: tile._methodName,  // parent method context
+    }));
+    await animateOut(tile.id);
+    pushLevel(l6, { id: `types-${slugify(tile._methodName)}`, name: `${tile.name} · Datentypen`, level: 6 });
+    return;
   }
 }
 
@@ -268,35 +345,27 @@ function handleHover(id, clientX, clientY) {
   if (!id) { tooltip.hidden = true; return; }
   const tile = state.currentTiles.find(t => t.id === id);
   if (!tile) { tooltip.hidden = true; return; }
-
   tooltip.textContent = tile.name;
   tooltip.hidden = false;
   tooltip.style.left = `${clientX + 14}px`;
   tooltip.style.top  = `${clientY - 30}px`;
 }
 
-// ── Transition animation ──────────────────────────────────────────────────────
+// ── Animations ────────────────────────────────────────────────────────────────
 
 const ANIM_DUR = 280;
 
-// tileId: if given, canvas zooms slightly toward that tile's center while fading out
 function animateOut(tileId) {
   const center = tileId ? renderer.getTileCenter(tileId) : null;
-  if (center) {
-    canvas.style.transformOrigin = `${center.x}px ${center.y}px`;
-  }
+  if (center) canvas.style.transformOrigin = `${center.x}px ${center.y}px`;
   return new Promise(resolve => {
-    const t0 = performance.now();
+    const t0   = performance.now();
     const step = now => {
       const t = Math.min((now - t0) / ANIM_DUR, 1);
       renderer.setAlpha(1 - easeIn(t));
       if (center) canvas.style.transform = `scale(${1 + 0.09 * easeIn(t)})`;
       if (t < 1) requestAnimationFrame(step);
-      else {
-        canvas.style.transform = '';
-        canvas.style.transformOrigin = '';
-        resolve();
-      }
+      else { canvas.style.transform = ''; canvas.style.transformOrigin = ''; resolve(); }
     };
     requestAnimationFrame(step);
   });
@@ -305,7 +374,7 @@ function animateOut(tileId) {
 function animateIn(tiles) {
   renderer.setTiles(tiles);
   renderer.setAlpha(0);
-  const t0 = performance.now();
+  const t0   = performance.now();
   const step = now => {
     const t = Math.min((now - t0) / ANIM_DUR, 1);
     renderer.setAlpha(easeOut(t));
@@ -317,20 +386,21 @@ function animateIn(tiles) {
 const easeIn  = t => t * t;
 const easeOut = t => 1 - (1 - t) ** 2;
 
-// ── Chrome updates ────────────────────────────────────────────────────────────
+// ── Chrome ────────────────────────────────────────────────────────────────────
 
 function updateChrome() {
   const crumbs = state.breadcrumb;
+  const lvl    = crumbs[crumbs.length - 1]?.level ?? 1;
 
-  levelNumEl.textContent = Math.max(1, crumbs[crumbs.length - 1]?.level ?? 1);
+  levelNumEl.textContent  = Math.max(1, lvl);
+  levelMaxEl.textContent  = lvl <= 4 ? '/ 4' : '/ ∞';
   btnBack.disabled = crumbs.length <= 1;
   btnHome.disabled = crumbs.length <= 1;
 
   breadcrumbEl.innerHTML = crumbs.map((c, i) => {
     const isLast = i === crumbs.length - 1;
     const sep    = i > 0 ? '<span class="crumb-sep">/</span>' : '';
-    return `${sep}<span class="crumb ${isLast ? 'active' : ''}"
-      data-index="${i}">${esc(c.name)}</span>`;
+    return `${sep}<span class="crumb ${isLast ? 'active' : ''}" data-index="${i}">${esc(c.name)}</span>`;
   }).join('');
 
   breadcrumbEl.querySelectorAll('.crumb:not(.active)').forEach(el => {
@@ -338,12 +408,9 @@ function updateChrome() {
   });
 }
 
-// ── Loading / error state ─────────────────────────────────────────────────────
+// ── Loading / error ───────────────────────────────────────────────────────────
 
-function showLoading(on) {
-  loadingVeil.hidden = !on;
-  if (on) hideError();
-}
+function showLoading(on) { loadingVeil.hidden = !on; if (on) hideError(); }
 
 function showError(message, retryFn) {
   showLoading(false);
@@ -352,14 +419,14 @@ function showError(message, retryFn) {
   errorState.hidden = false;
 }
 
-function hideError() {
-  errorState.hidden = true;
-  _retryFn = null;
+function hideError() { errorState.hidden = true; _retryFn = null; }
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+
+function slugify(str) {
+  return String(str).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
 function esc(str = '') {
-  return String(str)
-    .replace(/&/g,'&amp;')
-    .replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;');
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }

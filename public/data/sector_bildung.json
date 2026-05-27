@@ -1,0 +1,689 @@
+{
+  "sectorId": "bildung",
+  "children": [
+    {
+      "id": "allgemeinbildende-schule",
+      "level": 2,
+      "name": "Allgemeinbildende Schule",
+      "color": "#d68910",
+      "description": "Grundschulen, Gymnasien, Real- und Gesamtschulen mit Bildungsauftrag, Schülerbetreuung und schulischer Verwaltung",
+      "children": [
+        {
+          "id": "unterricht-verwaltung",
+          "level": 3,
+          "name": "Unterricht & Verwaltung",
+          "color": "#e59866",
+          "description": "Verwaltung von Schülerstammdaten, Noten, Stundenplänen und Klassenorganisation",
+          "children": [
+            {
+              "id": "schuelerregister",
+              "level": 4,
+              "name": "Schülerregister",
+              "color": "#d68910",
+              "details": {
+                "description": "Stammdaten aller eingeschulten Schülerinnen und Schüler: Name, Geburtsdatum, Adresse, Erziehungsberechtigte, Klassenzugehörigkeit, Schuljahr und besondere Förderbedarfe. Vollständig personenbezogene Verwaltungsdaten mit besonderem Schutzbedarf.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Schülerregister enthalten direkte Identifikatoren Minderjähriger und unterliegen dem besonders strengen Kinder- und Datenschutz. Eine Veröffentlichung ist kategorisch ausgeschlossen; aggregierte Schülerzahlen nach Schulform und Region werden durch die Statistischen Ämter der Länder bereitgestellt."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "relevance": 1,
+                "processes": [
+                  { "method": "Schulverwaltung & Einschulung", "description": "Das Schülerregister ist die zentrale Verwaltungsgrundlage für alle schulischen Prozesse von der Einschulung bis zur Abmeldung." },
+                  { "method": "Schulpflichtüberwachung", "description": "Schulbehörden nutzen Registerdaten zur Überwachung der Schulpflicht und zur Weitergabe an weiterführende Schulen bei Schulwechseln." }
+                ]
+              }
+            },
+            {
+              "id": "notenstatistik",
+              "level": 4,
+              "name": "Notenstatistik",
+              "color": "#d68910",
+              "details": {
+                "description": "Aggregierte Notenverteilungen und Bestehensquoten nach Klasse, Fach, Schulform und Schuljahr ohne individuelle Schüleridentifikatoren. Ermöglicht Analysen zu Leistungsunterschieden zwischen Schulformen, Fächern und Regionen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Notenstatistiken erfordern sorgfältige Anonymisierung, da kleine Klassengrößen in Kombination mit weiteren Merkmalen Rückschlüsse auf Einzelpersonen ermöglichen könnten. Nach Prüfung auf statistische Geheimhaltung (Mindestfallzahlen) sind aggregierte Bestehensquoten als Open Data geeignet."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Schulinterne Qualitätsentwicklung", "description": "Fachkonferenzen nutzen Notenverteilungen zur Reflexion des Unterrichts und zur Vorbereitung von Schulentwicklungsmaßnahmen." },
+                  { "method": "Schulaufsicht & Qualitätssicherung", "description": "Schulbehörden werten aggregierte Notenstatistiken im Rahmen der Schulevaluation und Qualitätssicherung aus." }
+                ]
+              }
+            },
+            {
+              "id": "stundenplan_daten",
+              "level": 4,
+              "name": "Stundenplan-Daten",
+              "color": "#d68910",
+              "details": {
+                "description": "Strukturdaten des Schulstundenplans: Unterrichtsfächer, Klassenstufen, Wochenstunden und Raumzuordnungen ohne Lehrerpersonenbezug. Maschinenlesbare Stundenplandaten ermöglichen Analysen zur Unterrichtsversorgung und Ressourcennutzung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Stundenplandaten ohne Personenbezug sind reine Organisationsdaten, die keine schutzwürdigen Informationen enthalten. Aggregierte Stundentafeln nach Schulform und Fach sind bereits öffentlich zugänglich und eignen sich direkt für maschinenlesbare Open-Data-Bereitstellung."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Einrichtung)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Schulorganisation & Ressourcenplanung", "description": "Stundenplandaten steuern die Zuteilung von Räumen, Lehrpersonal und Unterrichtsmaterial im Schulalltag." },
+                  { "method": "Unterrichtsversorgungsanalyse", "description": "Schulbehörden werten Stundenplandaten aus, um Unterrichtsausfälle und Versorgungslücken nach Fächern und Schulen zu erkennen." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "schulberichterstattung",
+          "level": 3,
+          "name": "Schulberichterstattung",
+          "color": "#e59866",
+          "description": "Qualitätsindikatoren, Schulstatistiken und Schulentwicklungsberichte",
+          "children": [
+            {
+              "id": "schulstatistik",
+              "level": 4,
+              "name": "Schulstatistik",
+              "color": "#d68910",
+              "details": {
+                "description": "Amtliche Schulstatistik der Länder: Schülerzahlen, Klassenstärken, Lehrerstellen und Abschlussquoten nach Schulform, Gemeinde und Schuljahr. Wird von den Statistischen Landesämtern im Rahmen der Kultusministerkonferenz-Statistik erhoben und veröffentlicht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Amtliche Schulstatistiken sind vollständig aggregierte Daten ohne Personenbezug, die von den Statistischen Landesämtern und der KMK bereits regelmäßig veröffentlicht werden. Eine maschinenlesbare Bereitstellung im CSV- oder JSON-Format wäre ohne weitere Anonymisierungsschritte sofort möglich."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Einrichtung)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Bildungsplanung & Schulentwicklung", "description": "Amtliche Schulstatistiken sind Grundlage für die kommunale Schulentwicklungsplanung, Ressourcenallokation und den Bildungsbericht der Länder." },
+                  { "method": "Nationales Bildungsmonitoring", "description": "KMK und Bund nutzen Schulstatistiken für den Nationalen Bildungsbericht und internationale Vergleiche (OECD Education at a Glance)." }
+                ]
+              }
+            },
+            {
+              "id": "abschlussquoten",
+              "level": 4,
+              "name": "Abschlussquoten",
+              "color": "#d68910",
+              "details": {
+                "description": "Quoten erfolgreicher Schulabschlüsse (Hauptschule, Mittlere Reife, Abitur, ohne Abschluss) nach Schulart, Region und Schuljahr. Schlüsselindikator für Bildungsgerechtigkeit und Qualität des Schulsystems, differenziert nach Bundesland und Schultyp.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Abschlussquoten sind vollständig aggregierte Kennzahlen ohne Personenbezug, die von Statistischen Landesämtern und der KMK bereits publiziert werden. Als zentraler Bildungsindikator sollten sie standardisiert und maschinenlesbar als Open Data bereitgestellt werden."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_06", "label": "Zeitreihendaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Bildungsberichterstattung", "description": "Abschlussquoten sind Kernindikatoren des nationalen und länderübergreifenden Bildungsberichts und dienen der politischen Steuerung." },
+                  { "method": "Chancengerechtigkeitsmonitoring", "description": "Differenzierte Abschlussquoten nach Region und Schulform ermöglichen die Analyse von Bildungsungleichheiten und das Targeting von Fördermaßnahmen." }
+                ]
+              }
+            },
+            {
+              "id": "foerderbedarf_statistik",
+              "level": 4,
+              "name": "Förderbedarf-Statistik",
+              "color": "#d68910",
+              "details": {
+                "description": "Aggregierte Statistiken zu sonderpädagogischen Förderbedarfen nach Schulform, Förderschwerpunkt und Region: Anzahl der Schüler mit Förderbedarf, Inklusionsquoten und Verteilung auf Regelschulen und Förderschulen — ohne individuelle Personendaten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Förderbedarfsstatistiken erfordern Prüfung auf statistische Geheimhaltung, da kleine Gemeinden und spezifische Förderschwerpunkte Rückschlüsse auf Einzelpersonen ermöglichen könnten. Nach Geheimhaltungsprüfung (Mindestfallzahlen) sind diese Daten als Open Data geeignet."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Inklusive Schulentwicklung", "description": "Förderbedarfsstatistiken steuern die Ressourcenzuweisung für sonderpädagogische Unterstützung und die Planung inklusiver Bildungsangebote." },
+                  { "method": "KMK-Inklusionsmonitoring", "description": "Länder berichten jährlich Inklusionsquoten und Förderbedarfsentwicklungen an die KMK für das bundesweite Bildungsmonitoring." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "berufsschule",
+      "level": 2,
+      "name": "Berufsschule & Ausbildung",
+      "color": "#d68910",
+      "description": "Berufsbildende Schulen, Ausbildungsbetriebe und duale Ausbildungsträger mit Ausbildungsverhältnissen und Prüfungsorganisation",
+      "children": [
+        {
+          "id": "ausbildungsverhaeltnisse",
+          "level": 3,
+          "name": "Ausbildungsverhältnisse",
+          "color": "#e59866",
+          "description": "Verwaltung von Auszubildenden, Ausbildungsverträgen und Betriebsdaten",
+          "children": [
+            {
+              "id": "ausbildungsvertraege",
+              "level": 4,
+              "name": "Ausbildungsverträge",
+              "color": "#d68910",
+              "details": {
+                "description": "Personenbezogene Vertragsdaten zu Ausbildungsverhältnissen: Name und Adresse des Auszubildenden, Ausbildungsbetrieb, Ausbildungsberuf, Beginn- und Enddatum sowie vereinbarte Vergütung. Werden bei den Industrie- und Handelskammern sowie Handwerkskammern registriert.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Ausbildungsverträge enthalten direkte Personenidentifikatoren der Auszubildenden und vertrauliche Betriebsdaten. Aggregierte Statistiken zu Ausbildungsverhältnissen nach Beruf und Region werden vom Bundesinstitut für Berufsbildung (BIBB) als Open Data bereitgestellt."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "relevance": 1,
+                "processes": [
+                  { "method": "Ausbildungsregistrierung", "description": "Kammern registrieren Ausbildungsverträge gesetzlich vorgeschrieben und führen das Verzeichnis der Berufsausbildungsverhältnisse (§ 34 BBiG)." },
+                  { "method": "Ausbildungsberatung & -begleitung", "description": "Vertragsregistrierung ist Grundlage für die Beratungsleistungen der Kammern und die Überwachung der Ausbildungsqualität." }
+                ]
+              }
+            },
+            {
+              "id": "ausbildungsberufe_statistik",
+              "level": 4,
+              "name": "Ausbildungsberufe-Statistik",
+              "color": "#d68910",
+              "details": {
+                "description": "Anzahl neu abgeschlossener Ausbildungsverträge und Ausbildungsverhältnisse nach Ausbildungsberuf, Kammerbezirk und Jahr ohne Personenbezug. Vom Bundesinstitut für Berufsbildung (BIBB) jährlich erhoben und als Berufsbildungsbericht veröffentlicht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Ausbildungsberufestatistiken sind vollständig aggregierte, bereits vom BIBB als Open Data bereitgestellte Kerndaten der Berufsbildungsberichterstattung. Eine vollständig maschinenlesbare Bereitstellung auf Kreisebene würde die regionale Auswertbarkeit erheblich verbessern."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Einrichtung)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Berufsbildungsberichterstattung", "description": "BIBB und Bundesministerium veröffentlichen jährlich den Berufsbildungsbericht auf Basis dieser Statistiken zur Beurteilung des Ausbildungsmarkts." },
+                  { "method": "Regionale Ausbildungsmarktanalyse", "description": "Kommunen und Agenturen für Arbeit nutzen die Daten für die Analyse von Angebot-Nachfrage-Relationen im regionalen Ausbildungsmarkt." }
+                ]
+              }
+            },
+            {
+              "id": "ausbildungsbetriebe_register",
+              "level": 4,
+              "name": "Ausbildungsbetriebe-Register",
+              "color": "#d68910",
+              "details": {
+                "description": "Verzeichnis aller von den Kammern anerkannten Ausbildungsbetriebe mit Betriebsname, Anschrift, angebotenen Ausbildungsberufen und zuständiger Kammer. Enthält keine personenbezogenen Daten zu Auszubildenden oder Mitarbeitern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Das Verzeichnis anerkannter Ausbildungsbetriebe ist ein öffentliches Register ohne personenbezogenen Inhalt, das sofort als Open Data bereitgestellt werden könnte. Es würde die Transparenz des Ausbildungsmarkts erheblich erhöhen und die Berufsorientierung für Jugendliche erleichtern."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Einrichtung)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Betriebsanerkennung & -kontrolle", "description": "Kammern führen das Register zur Verwaltung der Ausbildungseignung von Betrieben gemäß § 27 BBiG." },
+                  { "method": "Ausbildungsplatzvermittlung", "description": "Ausbildungssuchende und Berufsberatungsstellen nutzen das Register für die Suche nach geeigneten Ausbildungsbetrieben." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "pruefungswesen_bbs",
+          "level": 3,
+          "name": "Prüfungswesen",
+          "color": "#e59866",
+          "description": "Organisation und Auswertung von Abschlussprüfungen und Gesellenprüfungen",
+          "children": [
+            {
+              "id": "pruefungsergebnisse_bbs",
+              "level": 4,
+              "name": "Prüfungsergebnisse",
+              "color": "#d68910",
+              "details": {
+                "description": "Individuelle Prüfungsergebnisse der Abschluss- und Gesellenprüfungen: Name des Prüflings, Prüfungsdatum, Einzelnoten in schriftlichen und praktischen Prüfungsteilen, Gesamtnote und Bestehen oder Nichtbestehen. Vollständig personenbezogen.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Individuelle Prüfungsergebnisse sind sensible personenbezogene Daten, die der ärztlichen Schweigepflicht vergleichbar geschützt sind und nicht veröffentlicht werden dürfen. Aggregierte Bestehensquoten nach Beruf und Kammer können hingegen ohne Einschränkungen veröffentlicht werden."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }],
+                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "relevance": 1,
+                "processes": [
+                  { "method": "Prüfungsabwicklung", "description": "Kammern dokumentieren Prüfungsergebnisse gesetzlich vorgeschrieben und stellen Prüfungszeugnisse aus (§ 37 BBiG)." },
+                  { "method": "Zeugnisverwaltung", "description": "Ergebnisse werden zur Ausstellung der Abschlusszeugnisse und für Nachweise bei Arbeitgebern aufbewahrt." }
+                ]
+              }
+            },
+            {
+              "id": "bestehensquote_ausbildung",
+              "level": 4,
+              "name": "Bestehensquote Ausbildung",
+              "color": "#d68910",
+              "details": {
+                "description": "Aggregierte Bestehensquoten der Abschlussprüfungen nach Ausbildungsberuf, Kammerbezirk und Jahr: Anteil bestandener Prüfungen im ersten und zweiten Versuch ohne personenbezogene Daten. Zentraler Qualitätsindikator des dualen Ausbildungssystems.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Bestehensquoten sind vollständig anonymisierte Qualitätskennzahlen, die vom BIBB bereits im Rahmen der Berufsbildungsstatistik aggregiert veröffentlicht werden. Eine vollständig maschinenlesbare und disaggregierte Bereitstellung auf Kammerebene wäre sofort umsetzbar."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Ausbildungsqualitätsmonitoring", "description": "Bestehensquoten sind Kernindikatoren des Qualitätsmonitorings im dualen Ausbildungssystem und Grundlage für Kammerberichte." },
+                  { "method": "Ausbildungsreform & Curriculumentwicklung", "description": "BIBB und Sozialpartner nutzen Bestehensquoten zur Überprüfung von Ausbildungsordnungen und Prüfungsanforderungen." }
+                ]
+              }
+            },
+            {
+              "id": "pruefungsteilnahme_statistik",
+              "level": 4,
+              "name": "Prüfungsteilnahme-Statistik",
+              "color": "#d68910",
+              "details": {
+                "description": "Anzahl der Prüfungsteilnehmer bei Abschluss- und Gesellenprüfungen nach Ausbildungsberuf, Kammerbezirk und Prüfungsjahr ohne Personenbezug. Langzeitreihen ermöglichen Analysen zu Veränderungen in der Nachfrage nach Ausbildungsberufen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Prüfungsteilnahmezahlen sind vollständig anonymisierte Mengenstatistiken ohne Personenbezug, die sofort als Open Data bereitgestellt werden können. Sie ergänzen die Bestehensquoten und ermöglichen ein vollständiges Bild der Prüfungslandschaft im dualen System."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_06", "label": "Zeitreihendaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Prüfungsorganisation & -planung", "description": "Kammern planen Prüfungskapazitäten und Prüfungsausschüsse auf Basis der Anmeldezahlen und historischer Teilnahmedaten." },
+                  { "method": "Berufsbildungsberichterstattung", "description": "Teilnahmezahlen fließen als Kerngröße in den jährlichen Berufsbildungsbericht des Bundesministeriums für Bildung und Forschung ein." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "volkshochschule",
+      "level": 2,
+      "name": "Volkshochschule & Weiterbildung",
+      "color": "#d68910",
+      "description": "Kommunale Volkshochschulen und freie Weiterbildungsträger mit Kursangeboten, Teilnehmerverwaltung und Bildungsstatistiken",
+      "children": [
+        {
+          "id": "kursangebot",
+          "level": 3,
+          "name": "Kursangebot & Belegung",
+          "color": "#e59866",
+          "description": "Verwaltung des Kursangebots, Anmeldungen und Teilnahmebescheinigungen",
+          "children": [
+            {
+              "id": "kursprogramm",
+              "level": 4,
+              "name": "Kursprogramm",
+              "color": "#d68910",
+              "details": {
+                "description": "Vollständiges Kursverzeichnis der Volkshochschule: Kurstitel, Fachbereich, Kursbeschreibung, Termin, Ort, Dauer, Preis und Anmeldeverfahren ohne Personenbezug. Das VHS-Programm ist per Definition ein öffentliches Angebot.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Das VHS-Programm ist ein öffentliches Informationsangebot, das bereits auf VHS-Websites veröffentlicht wird. Eine maschinenlesbare Bereitstellung im JSON- oder CSV-Format würde die Auffindbarkeit verbessern und die Integration in Weiterbildungsportale wie den Nationalen Weiterbildungsatlas erleichtern."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Einrichtung)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Programmplanung & Öffentlichkeitsarbeit", "description": "Das Kursprogramm ist das zentrale Kommunikationsmittel der VHS und Grundlage für die Teilnehmergewinnung und Kursplanung." },
+                  { "method": "Weiterbildungsportale & Beratung", "description": "Maschinenlesbare Programmdaten ermöglichen die Integration in kommunale Weiterbildungsportale und Beratungsinstrumente." }
+                ]
+              }
+            },
+            {
+              "id": "teilnehmerdaten_vhs",
+              "level": 4,
+              "name": "Teilnehmerdaten",
+              "color": "#d68910",
+              "details": {
+                "description": "Personenbezogene Verwaltungsdaten der Kursteilnehmer: Name, Adresse, Geburtsdatum, gebuchte Kurse, Zahlungsstatus und Teilnahmebescheinigungen. Enthält bei Integrationskursen auch Aufenthaltsstatus und BAMF-Verknüpfungen.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "VHS-Teilnehmerdaten enthalten direkte Personenidentifikatoren und sind nach DSGVO vollständig geschützt. Bei Integrationskursen kommen besonders sensible Informationen zum Aufenthaltsstatus hinzu. Aggregierte Belegungsstatistiken ohne Personenbezug können hingegen frei veröffentlicht werden."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "relevance": 1,
+                "processes": [
+                  { "method": "Kursverwaltung & Abrechnung", "description": "Teilnehmerdaten sind Grundlage der Kursverwaltung, Gebührenabrechnung und Ausstellung von Teilnahmebescheinigungen." },
+                  { "method": "Integrationskurs-Verwaltung (BAMF)", "description": "Bei Integrationskursen werden Teilnehmerdaten an das Bundesamt für Migration und Flüchtlinge (BAMF) für Förderabrechnungen übermittelt." }
+                ]
+              }
+            },
+            {
+              "id": "belegungsstatistik_vhs",
+              "level": 4,
+              "name": "Belegungsstatistik",
+              "color": "#d68910",
+              "details": {
+                "description": "Aggregierte Kursbelegungszahlen nach Fachbereich, Veranstaltungsart und Semester ohne Personenbezug: Anzahl Kurse, Unterrichtsstunden, Belegungen und Teilnahmequoten. Grundlage der VHS-Statistik des Deutschen Instituts für Erwachsenenbildung (DIE).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Belegungsstatistiken sind vollständig aggregierte Mengen- und Nachfragedaten ohne Personenbezug, die vom DIE im Rahmen der VHS-Statistik bereits jährlich veröffentlicht werden. Eine einrichtungsbezogene und maschinenlesbare Bereitstellung würde die Nutzbarkeit für kommunale Bildungsplanung erhöhen."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Einrichtung)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Programmplanung der VHS", "description": "Belegungsdaten steuern die Priorisierung von Fachbereichen und die Kapazitätsplanung für das nächste Semester." },
+                  { "method": "Kommunale Bildungsberichterstattung", "description": "Kommunen nutzen VHS-Belegungsstatistiken für den kommunalen Bildungsbericht und die Förderungsentscheidungen gegenüber der VHS." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "weiterbildungsberichterstattung",
+          "level": 3,
+          "name": "Weiterbildungsberichterstattung",
+          "color": "#e59866",
+          "description": "Kennzahlen zur Erreichung von Zielgruppen und Wirksamkeit der Bildungsangebote",
+          "children": [
+            {
+              "id": "erreichbarkeitsanalyse",
+              "level": 4,
+              "name": "Erreichbarkeits-Analyse",
+              "color": "#d68910",
+              "details": {
+                "description": "Aggregierte Reichweitenanalyse der Weiterbildungsangebote nach Altersgruppe, Bildungshintergrund und Wohnortregion: Anteil erreichter Zielgruppen, Unterrepräsentation bestimmter Bevölkerungsgruppen und regionale Angebotsabdeckung ohne Personenbezug.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Erreichbarkeitsanalysen kombinieren VHS-Belegungsdaten mit Bevölkerungsstatistiken und erfordern sorgfältige Anonymisierung der demografischen Segmentierung. Nach Prüfung auf Mindestfallzahlen können diese Analysen als Open Data bereitgestellt werden und sind wertvoll für Bildungsgerechtigkeit."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Einrichtung)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_04", "label": "PDF" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Zielgruppenorientierte Programmplanung", "description": "VHS nutzen Erreichbarkeitsanalysen, um unterrepräsentierte Bevölkerungsgruppen gezielt anzusprechen und Angebote anzupassen." },
+                  { "method": "Bildungsgerechtigkeitsmonitoring", "description": "Kommunale Bildungsberichte und Fördergeber bewerten anhand von Erreichbarkeitsanalysen die soziale Breite der Weiterbildungsangebote." }
+                ]
+              }
+            },
+            {
+              "id": "abschlussquote_vhs",
+              "level": 4,
+              "name": "Abschlussquote",
+              "color": "#d68910",
+              "details": {
+                "description": "Anteil erfolgreich abgeschlossener Kurse nach Kurstyp, Fachbereich und Jahr ohne Personenbezug: Abschlussquoten für Sprachkurse (inkl. Integrationskurse), berufliche Qualifikationskurse und allgemeinbildende Angebote. Qualitätsindikator der DIE-VHS-Statistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Abschlussquoten der VHS sind vollständig anonymisierte Qualitätskennzahlen, die das DIE bereits im Rahmen der VHS-Statistik aggregiert veröffentlicht. Eine einrichtungsbezogene Bereitstellung als maschinenlesbare Open Data wäre ohne weitere Schritte möglich."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_06", "label": "Zeitreihendaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Einrichtung)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Kursqualitätsevaluation", "description": "Abschlussquoten sind Kerngröße der internen Qualitätssicherung und Grundlage für Gespräche mit Kursleitenden über Betreuungsintensität." },
+                  { "method": "Fördernachweis & Rechenschaftspflicht", "description": "Kommunale Träger und Fördergeber verlangen Abschlussquoten als Nachweis der Wirksamkeit öffentlich finanzierter Weiterbildungsangebote." }
+                ]
+              }
+            },
+            {
+              "id": "foerderquellen_statistik",
+              "level": 4,
+              "name": "Förderquellen-Statistik",
+              "color": "#d68910",
+              "details": {
+                "description": "Aufschlüsselung der Finanzierungsquellen von VHS-Angeboten nach Förderprogramm, Träger und Jahr: kommunale Zuschüsse, Landesmittel, Bundesprogramme (z.B. Integrationskurse BAMF), EU-Fördermittel und Teilnehmergebühren als aggregierte Beträge ohne Personenbezug.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Förderquellen-Statistiken sind aggregierte Finanzdaten öffentlicher Mittel ohne Personenbezug und erfüllen alle Voraussetzungen für Open Data. Transparenz über die Verwendung öffentlicher Bildungsförderung ist ein politisch wichtiges Anliegen und fördert die Rechenschaftspflicht."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_05", "label": "Finanzdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Einrichtung)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Bildungsfinanzierungsplanung", "description": "VHS und Träger nutzen Förderquellen-Statistiken für die Haushaltsplanung und die strategische Erschließung neuer Förderprogramme." },
+                  { "method": "Öffentliche Rechenschaftslegung", "description": "Kommunalparlamente und Fördergeber prüfen anhand dieser Statistiken die zweckgemäße Verwendung öffentlicher Bildungsmittel." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kita-fruehbildung",
+      "level": 2,
+      "name": "Kita & Frühkindliche Bildung",
+      "color": "#d68910",
+      "description": "Kindertageseinrichtungen, Krippen und Tagespflege mit frühkindlicher Förderung, Belegungsmanagement und Betreuungsstatistiken",
+      "children": [
+        {
+          "id": "betreuungsplaetze",
+          "level": 3,
+          "name": "Betreuungsplätze & Belegung",
+          "color": "#e59866",
+          "description": "Verwaltung von Kita-Plätzen, Wartelisten und Betreuungsverträgen",
+          "children": [
+            {
+              "id": "kita_platzvergabe",
+              "level": 4,
+              "name": "Kita-Platzvergabe",
+              "color": "#d68910",
+              "details": {
+                "description": "Verwaltungsdaten zur Vergabe von Kita-Plätzen: Kindername, Geburtsdatum, Adresse der Erziehungsberechtigten, Bedarfstermin, Wartelistenposition und Vergabeentscheidung. Besonderer Schutz als Daten Minderjähriger.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Kita-Platzvergabedaten enthalten direkte Identifikatoren von Kindern und ihren Familien und unterliegen dem strikten Kinder- und Datenschutz. Aggregierte Wartelistenstatistiken (Anzahl Kinder auf Warteliste nach Altersgruppe und Stadtbezirk) können hingegen als Open Data veröffentlicht werden."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "relevance": 1,
+                "processes": [
+                  { "method": "Kita-Platzverwaltung & Bedarfsdeckung", "description": "Jugendämter und Kita-Träger nutzen Platzvergabedaten zur Steuerung der Versorgung mit Betreuungsplätzen nach § 24 SGB VIII." },
+                  { "method": "Bedarfsplanung Jugendhilfe", "description": "Anmeldeüberhänge und Wartelisten sind Planungsgrundlage für den Kita-Bedarfsplan der Kommunen und den Ausbau von Betreuungskapazitäten." }
+                ]
+              }
+            },
+            {
+              "id": "kita_belegungsstatistik",
+              "level": 4,
+              "name": "Kita-Belegungsstatistik",
+              "color": "#d68910",
+              "details": {
+                "description": "Aggregierte Belegungsdaten der Kindertageseinrichtungen nach Träger, Stadtbezirk und Altersgruppe: Auslastungsquoten, freie Plätze und Betreuungszeitmodelle ohne Kinderpersonenbezug. Grundlage für die amtliche Kinder- und Jugendhilfestatistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Kita-Belegungsstatistiken sind vollständig anonymisierte Auslastungsdaten, die vom Statistischen Bundesamt bereits im Rahmen der Kinder- und Jugendhilfestatistik (KJH-Statistik) veröffentlicht werden. Eine disaggregiertere und maschinenlesbare Bereitstellung auf Einrichtungsebene wäre ohne weiteres möglich."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Einrichtung)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Kita-Bedarfsplanung", "description": "Kommunen nutzen Belegungsstatistiken für die Jugendhilfeplanung und den Bedarfsplan nach § 80 SGB VIII." },
+                  { "method": "Elternberatung & Platzsuchportal", "description": "Belegungsdaten ermöglichen kommunale Platzsuchportale, die Eltern bei der Suche nach freien Kita-Plätzen unterstützen." }
+                ]
+              }
+            },
+            {
+              "id": "betreuungsquoten",
+              "level": 4,
+              "name": "Betreuungsquoten",
+              "color": "#d68910",
+              "details": {
+                "description": "U3- und Ü3-Betreuungsquoten nach Gemeinde: Anteil der Kinder unter drei Jahren (U3) und ab drei Jahren (Ü3) in institutioneller Tagesbetreuung relativ zur jeweiligen Alterskohorte. Zentraler politischer Steuerungsindikator und Pflichtberichtsgröße.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Betreuungsquoten sind vollständig anonymisierte, aggregierte Kennzahlen, die vom Statistischen Bundesamt und den Ländern bereits öffentlich bereitgestellt werden. Als wichtiger politischer Steuerungsindikator sollten sie standardisiert, maschinenlesbar und mit zeitlicher Tiefe als Open Data zugänglich sein."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_06", "label": "Zeitreihendaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Einrichtung)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Politisches KPI-Monitoring", "description": "Betreuungsquoten sind der zentrale politische Indikator für den Rechtsanspruch auf Kindertagesbetreuung (§ 24 SGB VIII) und Benchmark im europäischen Vergleich." },
+                  { "method": "Bundesberichterstattung Kita-Ausbau", "description": "Bund und Länder berichten jährlich über die Entwicklung der Betreuungsquoten und den Fortschritt beim Kita-Ausbau an Bundestag und Öffentlichkeit." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "kitaqualitaet",
+          "level": 3,
+          "name": "Qualitätsentwicklung & Fachkräfte",
+          "color": "#e59866",
+          "description": "Fachkräftebestand, pädagogische Qualitätsindikatoren und Einrichtungsprofile",
+          "children": [
+            {
+              "id": "fachkraefte_kita",
+              "level": 4,
+              "name": "Fachkräftedaten Kita",
+              "color": "#d68910",
+              "details": {
+                "description": "Individuelle Beschäftigungsdaten des pädagogischen Personals in Kindertageseinrichtungen: Name, Qualifikation, Stellenumfang, Einrichtungszugehörigkeit und Beschäftigungsverhältnis. Werden im Rahmen der KJH-Statistik erhoben.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Individuelle Beschäftigungsdaten des Kita-Personals sind vollständig geschützte Arbeitnehmerdaten. Aggregierte Fachkraftquoten und Qualifikationsstruktur nach Einrichtungstyp und Region können hingegen ohne Einschränkungen als Open Data veröffentlicht werden."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "relevance": 1,
+                "processes": [
+                  { "method": "Personalverwaltung Kita-Träger", "description": "Träger dokumentieren Qualifikationen und Beschäftigungsverhältnisse des Personals zur Erfüllung gesetzlicher Fachkräftegebote der Kitagesetze der Länder." },
+                  { "method": "KJH-Statistik Personalerhebung", "description": "Statistisches Bundesamt erhebt Personaldaten der Kitas im Rahmen der jährlichen Kinder- und Jugendhilfestatistik nach § 98 SGB VIII." }
+                ]
+              }
+            },
+            {
+              "id": "fachkraefte_statistik",
+              "level": 4,
+              "name": "Fachkräfte-Statistik",
+              "color": "#d68910",
+              "details": {
+                "description": "Aggregierte Personalstruktur in Kitas nach Träger, Region und Einrichtungstyp: Fachkraftquoten, Qualifikationsniveaus (staatlich anerkannte Erzieher, Quereinsteiger, Helfer), Beschäftigungsumfang und Altersstruktur des Personals ohne Personenbezug.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Fachkraftquoten und Qualifikationsstatistiken sind vollständig anonymisierte Strukturdaten, die das Statistische Bundesamt bereits im Rahmen der KJH-Statistik veröffentlicht. Eine einrichtungsbezogene Open-Data-Bereitstellung würde die Transparenz über Qualitätsunterschiede zwischen Kitas erhöhen."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Fachkräftegewinnung & -entwicklung", "description": "Fachkraftquoten steuern Maßnahmen zur Fachkräftegewinnung, Qualifizierungsoffensiven und die Förderung von Quereinsteigern durch Länder und Träger." },
+                  { "method": "KiQuTG-Qualitätsmonitoring", "description": "Fachkraftstatistiken sind Kernindikatoren des Qualitätsmonitorings nach dem Gute-Kita-Gesetz (KiQuTG) und der Länderberichterstattung." }
+                ]
+              }
+            },
+            {
+              "id": "einrichtungsprofile",
+              "level": 4,
+              "name": "Einrichtungsprofile",
+              "color": "#d68910",
+              "details": {
+                "description": "Verzeichnis aller Kindertageseinrichtungen mit strukturellen Merkmalen: Einrichtungsname, Träger, Adresse, Kapazität nach Altersgruppe, pädagogischer Ansatz (z.B. Montessori, Waldorf, Regelkita), Öffnungszeiten und Kontaktdaten. Keine Personenbezüge.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Einrichtungsprofile sind öffentliche Informationen ohne Personenbezug, die viele Kommunen bereits auf Kita-Findungsportalen bereitstellen. Eine standardisierte, bundesweit einheitliche Open-Data-Bereitstellung würde die Transparenz für Eltern und die Qualitätsforschung erheblich verbessern."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Einrichtung)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Kita-Suche & Elternberatung", "description": "Einrichtungsprofile sind Grundlage für kommunale Kita-Finder-Portale und ermöglichen Eltern eine informierte Einrichtungsauswahl." },
+                  { "method": "Jugendhilfeplanung & Angebotssteuerung", "description": "Kommunale Jugendämter nutzen Einrichtungsprofile für die Bedarfsplanung und die Steuerung der Angebotsstruktur nach § 80 SGB VIII." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

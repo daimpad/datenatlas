@@ -62,6 +62,30 @@
                   { "method": "Netzwerkarbeit & Kooperationen", "description": "Gepflegtes Verzeichnis erleichtert Kooperationen zwischen Einrichtungen und gegenseitige Weitervermittlung." }
                 ]
               }
+            },
+            {
+              "id": "hilfeplan-daten",
+              "level": 4,
+              "name": "Hilfeplan-Statistik",
+              "color": "#27ae60",
+              "details": {
+                "description": "Aggregierte Auswertungen der erstellten Hilfepläne: Anzahl aktiver Pläne nach Hilfeart, durchschnittliche Laufzeit, Zielerreichungsquoten und Abbruchgründe. Kein Personenbezug in den Aggregaten — Einzelpläne bleiben vollständig geschützt.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Planungsstatistiken ohne Fallbezug können nach Anonymisierung veröffentlicht werden. Wichtige Planungsgrundlage für kommunale Sozialbehörden und Wohlfahrtsverbände."
+                },
+                "theme":       { "code": "TH_01", "label": "Soziales & Wohlfahrt" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Beratung & Betreuung", "description": "Hilfepläne steuern den Betreuungsprozess und dokumentieren Fortschritte und Zielanpassungen." },
+                  { "method": "Monitoring & Evaluation", "description": "Aggregierte Hilfeplanstatistiken zeigen Wirksamkeit der Hilfeformen und Bedarfsmuster." }
+                ]
+              }
             }
           ]
         },
@@ -78,7 +102,7 @@
               "name": "Förderprogrammkatalog",
               "color": "#27ae60",
               "details": {
-                "description": "Strukturierter Katalog öffentlicher und privater Förderprogramme für soziale Organisationen: Programm­name, Fördergeber, Förderzweck, Antrags­fristen, Fördervolumen und Zielgruppen. Enthält keine personenbezogenen Daten.",
+                "description": "Strukturierter Katalog öffentlicher und privater Förderprogramme für soziale Organisationen: Programmname, Fördergeber, Förderzweck, Antragsfristen, Fördervolumen und Zielgruppen. Enthält keine personenbezogenen Daten.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Grün — sofort publizierbar",
@@ -117,6 +141,30 @@
                 "processes": [
                   { "method": "Förderantragsstellung", "description": "Transparenz über vergebene Mittel hilft Antragstellenden, eigene Chancen realistisch einzuschätzen." },
                   { "method": "Monitoring & Evaluation", "description": "Auswertung der Mittelverteilung dient der organisationsübergreifenden Wirkungsmessung und politischen Rechenschaftspflicht." }
+                ]
+              }
+            },
+            {
+              "id": "jahresabschluss-ngo",
+              "level": 4,
+              "name": "Jahresabschluss (gemeinnützig)",
+              "color": "#27ae60",
+              "details": {
+                "description": "Strukturierte Jahresabschlussdaten gemeinnütziger Organisationen: Einnahmen nach Quelle (Mitgliedsbeiträge, Spenden, Zuschüsse, Eigenerlöse), Ausgaben nach Bereich und Ergebnis. Für eingetragene Vereine teils gesetzlich vorgeschrieben.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Jahresabschlüsse gemeinnütziger Organisationen sind Vertrauensgrundlage gegenüber Spendern und Öffentlichkeit. Maschinenlesbare Strukturierung (JSON/CSV) erhöht Vergleichbarkeit und ermöglicht sektorweite Finanzanalysen."
+                },
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_05", "label": "Finanzdaten / Berichte" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_04", "label": "PDF" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Förderantragsstellung", "description": "Jahresabschlüsse sind Pflichtanlage bei Förderanträgen und Verwendungsnachweisen." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Transparente Finanzberichterstattung stärkt Vertrauen bei Spendern und der Öffentlichkeit." }
                 ]
               }
             }
@@ -176,6 +224,30 @@
                   { "method": "Forschung & Studien", "description": "Evaluationen folgen wissenschaftlichen Standards und können als Forschungsbeiträge veröffentlicht werden." }
                 ]
               }
+            },
+            {
+              "id": "kennzahlen-dashboard",
+              "level": 4,
+              "name": "Wirkungskennzahlen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Maschinenlesbare Sammlung quantitativer Wirkungskennzahlen: Reichweite (Personen), Output (Beratungen, Veranstaltungen), Outcome-Indikatoren (Zielerreichungsquoten) und gesellschaftliche Impact-Schätzungen. Standardisiert nach SROI oder IRIS+-Rahmen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Kennzahlen ohne Personenbezug — sofort als Open Data publizierbar. Standardisierte Wirkungsdaten ermöglichen sektorweite Vergleiche und stärken die Evidenzbasis der Sozialwirtschaft."
+                },
+                "theme":       { "code": "TH_01", "label": "Soziales & Wohlfahrt" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Monitoring & Evaluation", "description": "Kennzahlen-Sets sind das operative Herzstück jedes Wirkungsmonitorings." },
+                  { "method": "Förderantragsstellung", "description": "Standardisierte Impact-Kennzahlen erhöhen Überzeugungskraft in Förderanträgen und Verwendungsnachweisen." }
+                ]
+              }
             }
           ]
         }
@@ -193,7 +265,7 @@
           "level": 3,
           "name": "Umweltmonitoring",
           "color": "#16a085",
-          "description": "Systematische Erhebung und Auswertung von Umwelt- und Klimadaten durch NGOs und Bürger­wissenschaftler.",
+          "description": "Systematische Erhebung und Auswertung von Umwelt- und Klimadaten durch NGOs und Bürgerwissenschaftler.",
           "children": [
             {
               "id": "messstationsdaten",
@@ -225,7 +297,7 @@
               "name": "Artenvorkommen (Biodiversität)",
               "color": "#16a085",
               "details": {
-                "description": "Beobachtungsdaten zu Tier- und Pflanzenarten: Art, Datum, Anzahl, Geokoordinaten des Fundorts und Erfassungsmethode. Erhobben durch Ehrenamtliche und Bürger­wissenschaftler. Grundlage für Rote Listen und Schutzgebietsmanagement.",
+                "description": "Beobachtungsdaten zu Tier- und Pflanzenarten: Art, Datum, Anzahl, Geokoordinaten des Fundorts und Erfassungsmethode. Erhoben durch Ehrenamtliche und Bürgerwissenschaftler. Grundlage für Rote Listen und Schutzgebietsmanagement.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Grün — sofort publizierbar",
@@ -240,6 +312,30 @@
                 "processes": [
                   { "method": "Umweltmonitoring", "description": "Arterfassungen sind Kerndaten des biologischen Monitorings und Indikator für Ökosystemgesundheit." },
                   { "method": "Netzwerkarbeit & Kooperationen", "description": "Daten werden häufig kooperativ durch Bürgerwissenschaftsnetzwerke wie iNaturalist oder NABU erhoben." }
+                ]
+              }
+            },
+            {
+              "id": "buerger-meldungen-umwelt",
+              "level": 4,
+              "name": "Bürgermeldungen Umwelt",
+              "color": "#16a085",
+              "details": {
+                "description": "Anonymisierte Meldungen von Bürgerinnen und Bürgern zu Umweltproblemen: Müllablagerungen, Gewässerverschmutzungen, tote Tiere, invasive Arten. Enthält Geokoordinaten und Foto (nach Prüfung), aber keinen Personenbezug der Meldenden.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Nach Entfernung aller Meldenden-Identifikatoren sind Umweltmeldungen vollständig anonym und sofort publizierbar. Crowdsourced Umweltdaten sind wertvolles Ergänzungsmaterial zu behördlichem Monitoring."
+                },
+                "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
+                "object":      { "code": "OB_04", "label": "Geodaten / Karten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Umweltmonitoring", "description": "Bürgermeldungen ergänzen stationäre Messungen um flächendeckende qualitative Umweltbeobachtung." },
+                  { "method": "Interessenvertretung & Lobbying", "description": "Gehäufte Meldungen in bestimmten Gebieten sind starkes Argument für behördliches Eingreifen." }
                 ]
               }
             }
@@ -258,11 +354,11 @@
               "name": "Schutzgebietskataster",
               "color": "#16a085",
               "details": {
-                "description": "Geographische Daten zu Naturschutzgebieten, FFH-Gebieten, Vogelschutzgebieten und Biosphären­reservaten: Geometrien, Schutzstatus, Schutzzweck, rechtliche Grundlagen und Verwaltungsdaten. Ergänzt offizielle Daten durch NGO-eigene Kartierungen.",
+                "description": "Geographische Daten zu Naturschutzgebieten, FFH-Gebieten, Vogelschutzgebieten und Biosphärenreservaten: Geometrien, Schutzstatus, Schutzzweck, rechtliche Grundlagen und Verwaltungsdaten. Ergänzt offizielle Daten durch NGO-eigene Kartierungen.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Grün — sofort publizierbar",
-                  "explanation": "Geodaten zu Schutzgebieten sind per se öffentliche Informationen. Bereitstellung als GeoJSON oder WFS erhöht Nutzbarkeit für Planungsverfahren, Bildung und Bürger­beteiligung erheblich."
+                  "explanation": "Geodaten zu Schutzgebieten sind per se öffentliche Informationen. Bereitstellung als GeoJSON oder WFS erhöht Nutzbarkeit für Planungsverfahren, Bildung und Bürgerbeteiligung erheblich."
                 },
                 "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
                 "object":      { "code": "OB_04", "label": "Geodaten / Karten" },
@@ -282,11 +378,11 @@
               "name": "Flächennutzungsanalysen",
               "color": "#16a085",
               "details": {
-                "description": "Auswertungen zur Entwicklung der Flächennutzung in Schutz- und Vorranggebieten: Versiegelungsgrad, Landwirtschafts­anteil, Waldbedeckung, Bebauungsentwicklung. Basiert auf Fernerkundungsdaten und eigenen Kartierungen.",
+                "description": "Auswertungen zur Entwicklung der Flächennutzung in Schutz- und Vorranggebieten: Versiegelungsgrad, Landwirtschaftsanteil, Waldbedeckung, Bebauungsentwicklung. Basiert auf Fernerkundungsdaten und eigenen Kartierungen.",
                 "openness": {
                   "class": "OP_02",
                   "label": "Gelb — nach Aufbereitung publizierbar",
-                  "explanation": "Analyse­ergebnisse können nach Aggregation auf Gemeindeebene und Entfernung von Grundstücks­referenzen frei veröffentlicht werden. Rohdaten auf Parzellen­ebene erfordern Prüfung wegen möglicher Eigentumsrückschlüsse."
+                  "explanation": "Analyseergebnisse können nach Aggregation auf Gemeindeebene und Entfernung von Grundstücksreferenzen frei veröffentlicht werden. Rohdaten auf Parzellenebene erfordern Prüfung wegen möglicher Eigentumsrückschlüsse."
                 },
                 "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
                 "object":      { "code": "OB_06", "label": "Zeitreihendaten" },
@@ -296,7 +392,31 @@
                 "relevance": 4,
                 "processes": [
                   { "method": "Umweltmonitoring", "description": "Flächenanalysen dokumentieren Veränderungen in sensiblen Gebieten und zeigen Trends frühzeitig auf." },
-                  { "method": "Forschung & Studien", "description": "Zeitreihen­analysen liefern wissenschaftliche Grundlagen für Argumentationen in Planungsverfahren." }
+                  { "method": "Forschung & Studien", "description": "Zeitreihenanalysen liefern wissenschaftliche Grundlagen für Argumentationen in Planungsverfahren." }
+                ]
+              }
+            },
+            {
+              "id": "schutzgebiet-zeitreihe",
+              "level": 4,
+              "name": "Schutzgebietsentwicklung Zeitreihe",
+              "color": "#16a085",
+              "details": {
+                "description": "Zeitreihen zur Entwicklung von Schutzgebietsflächen: Gesamtfläche nach Schutzgebietskategorie und Jahr, Neu-Ausweisungen, Verkleinerungen und Aufhebungen. Indikator für politischen Fortschritt beim Biodiversitätsschutz.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Flächenstatistiken ohne Personenbezug sind sofort publizierbar. Wichtiger Indikator für EU-Biodiversitätsziele (30x30) und nationale Naturschutzstrategien."
+                },
+                "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
+                "object":      { "code": "OB_06", "label": "Zeitreihendaten" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Interessenvertretung & Lobbying", "description": "Zeitreihen belegen Fortschritt oder Rückschritt beim Flächenschutz — zentrales Argument in der Naturschutzpolitik." },
+                  { "method": "Monitoring & Evaluation", "description": "Flächenentwicklung ist Kernindiktor für Wirksamkeit von Naturschutzpolitik und NGO-Advocacy." }
                 ]
               }
             }
@@ -328,8 +448,8 @@
                 "license":     { "code": "LI_02", "label": "CC BY 4.0" },
                 "relevance": 4,
                 "processes": [
-                  { "method": "Interessenvertretung & Lobbying", "description": "Kampagnendaten quantifizieren gesellschaftliche Unterstützung und stärken Lobbying-Argumente gegenüber Entscheidungs­trägern." },
-                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Kampagnenstatistiken dokumentieren Reichweite und Wirkung der Öffentlichkeits­arbeit." }
+                  { "method": "Interessenvertretung & Lobbying", "description": "Kampagnendaten quantifizieren gesellschaftliche Unterstützung und stärken Lobbying-Argumente gegenüber Entscheidungsträgern." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Kampagnenstatistiken dokumentieren Reichweite und Wirkung der Öffentlichkeitsarbeit." }
                 ]
               }
             },
@@ -339,11 +459,11 @@
               "name": "Öffentlichkeitsstatistiken",
               "color": "#16a085",
               "details": {
-                "description": "Statistiken zur Medienresonanz und öffentlichen Wahrnehmung von Umweltthemen: Presseerwähnungen, Reichweite in sozialen Medien, Veranstaltungsteilnahmen und Download­zahlen von Publikationen. Aggregiert nach Thema und Zeitraum.",
+                "description": "Statistiken zur Medienresonanz und öffentlichen Wahrnehmung von Umweltthemen: Presseerwähnungen, Reichweite in sozialen Medien, Veranstaltungsteilnahmen und Downloadzahlen von Publikationen. Aggregiert nach Thema und Zeitraum.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Grün — sofort publizierbar",
-                  "explanation": "Vollständig anonymisierte Reichweitenstatistiken ohne Nutzerbezug. Veröffentlichung zeigt gesellschaftliche Relevanz von Umweltthemen und ist Grundlage für Drittmittel­berichte."
+                  "explanation": "Vollständig anonymisierte Reichweitenstatistiken ohne Nutzerbezug. Veröffentlichung zeigt gesellschaftliche Relevanz von Umweltthemen und ist Grundlage für Drittmittelberichte."
                 },
                 "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
                 "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
@@ -354,6 +474,30 @@
                 "processes": [
                   { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Reichweitenstatistiken messen den Erfolg von Kommunikationsmaßnahmen und ermöglichen datenbasierte Optimierung." },
                   { "method": "Monitoring & Evaluation", "description": "Veranstaltungs- und Mediendaten dienen der Wirkungsmessung im Rahmen von Projektevaluationen." }
+                ]
+              }
+            },
+            {
+              "id": "veranstaltungsberichte-umwelt",
+              "level": 4,
+              "name": "Veranstaltungsberichte",
+              "color": "#16a085",
+              "details": {
+                "description": "Öffentliche Berichte zu Umweltveranstaltungen: Pflanzaktionen, Aufräumtage, Demonstrationen. Enthält Teilnehmerzahlen (aggregiert), Ort, Datum, Ergebnisse (z.B. gesammelte Müllmengen, gepflanzte Bäume) und Medienberichte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Veranstaltungsberichte sind öffentliche Dokumente ohne Personenbezug. Maschinenlesbare Bereitstellung ermöglicht sektorweite Wirkungsanalysen von Umweltengagement."
+                },
+                "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
+                "object":      { "code": "OB_07", "label": "Mediendaten / Dokumente" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Veranstaltungsberichte kommunizieren gelebtes Engagement und mobilisieren weitere Mitmachwillige." },
+                  { "method": "Monitoring & Evaluation", "description": "Aggregierte Ergebnisdaten (Müllmengen, Pflanzungen) sind konkrete Wirkungsnachweise für Förderberichte." }
                 ]
               }
             }
@@ -394,7 +538,7 @@
                 "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
                 "relevance": 5,
                 "processes": [
-                  { "method": "Interessenvertretung & Lobbying", "description": "Positionspapiere sind das zentrale Instrument zur fachlichen Begleitung von Gesetzgebungs­verfahren." },
+                  { "method": "Interessenvertretung & Lobbying", "description": "Positionspapiere sind das zentrale Instrument zur fachlichen Begleitung von Gesetzgebungsverfahren." },
                   { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Stellungnahmen werden aktiv verbreitet, um gesellschaftliche Debatte zu stimulieren." }
                 ]
               }
@@ -419,7 +563,31 @@
                 "relevance": 5,
                 "processes": [
                   { "method": "Interessenvertretung & Lobbying", "description": "Monitoring gibt strategischen Überblick über relevante Verfahren und priorisiert den Ressourceneinsatz." },
-                  { "method": "Forschung & Studien", "description": "Strukturierte Verfahrensdaten ermöglichen quantitative Analyse zivilgesellschaftlicher Beteiligungs­muster." }
+                  { "method": "Forschung & Studien", "description": "Strukturierte Verfahrensdaten ermöglichen quantitative Analyse zivilgesellschaftlicher Beteiligungsmuster." }
+                ]
+              }
+            },
+            {
+              "id": "konsultationsbeitraege",
+              "level": 4,
+              "name": "Konsultationsbeiträge",
+              "color": "#2980b9",
+              "details": {
+                "description": "Eingereichte Beiträge zu öffentlichen Konsultationsverfahren (EU-Kommission, Bundesministerien): Verfahrenstitel, Einreichungsdatum, Organisationsname, Themenschwerpunkte und Kernforderungen als strukturierte Metadaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Konsultationsbeiträge sind im EU-Transparenzregister ohnehin öffentlich. Strukturierte Metadaten als Open Data ermöglichen Auswertungen zur Breite zivilgesellschaftlicher Beteiligung an Regulierungsverfahren."
+                },
+                "theme":       { "code": "TH_05", "label": "Demokratie & Partizipation" },
+                "object":      { "code": "OB_08", "label": "Metadaten" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Interessenvertretung & Lobbying", "description": "Konsultationsbeiträge sind formelles Instrument der Einflussnahme auf Regulierungsverfahren." },
+                  { "method": "Forschung & Studien", "description": "Metadaten über eingereichte Beiträge ermöglichen Analyse von Lobbying-Mustern und zivilgesellschaftlichem Engagement." }
                 ]
               }
             }
@@ -479,6 +647,30 @@
                   { "method": "Interessenvertretung & Lobbying", "description": "Formelle Koalitionen stärken politische Wirkmacht bei Lobbying-Aktivitäten." }
                 ]
               }
+            },
+            {
+              "id": "netzwerktreffen-protokolle",
+              "level": 4,
+              "name": "Netzwerktreffen-Dokumentation",
+              "color": "#2980b9",
+              "details": {
+                "description": "Öffentliche Protokolle und Beschlüsse von Netzwerktreffen: Datum, Teilnehmende Organisationen (ohne Personennamen), Tagesordnung, Ergebnisse und Folgemaßnahmen. Schafft Transparenz über Koordinationsprozesse.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Öffentliche Sitzungsprotokolle ohne Personenbezug der Teilnehmenden können direkt veröffentlicht werden. Stärkt Rechenschaftspflicht und ermöglicht Nicht-Mitgliedern, Netzwerkaktivitäten nachzuvollziehen."
+                },
+                "theme":       { "code": "TH_05", "label": "Demokratie & Partizipation" },
+                "object":      { "code": "OB_07", "label": "Mediendaten / Dokumente" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Netzwerkarbeit & Kooperationen", "description": "Protokolle dokumentieren Netzwerkentscheidungen und schaffen Verbindlichkeit für Folgemaßnahmen." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Transparente Netzwerkdokumentation stärkt Vertrauen und zieht neue Mitglieder an." }
+                ]
+              }
             }
           ]
         }
@@ -508,7 +700,7 @@
                 "openness": {
                   "class": "OP_01",
                   "label": "Grün — sofort publizierbar",
-                  "explanation": "Rein institutionelle Programm­informationen ohne Personenbezug. Offene Bereitstellung als maschinenlesbarer Datensatz ermöglicht Integration in regionale Bildungsplattformen und Vergleichbarkeit von Angeboten."
+                  "explanation": "Rein institutionelle Programminformationen ohne Personenbezug. Offene Bereitstellung als maschinenlesbarer Datensatz ermöglicht Integration in regionale Bildungsplattformen und Vergleichbarkeit von Angeboten."
                 },
                 "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
                 "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
@@ -545,6 +737,30 @@
                   { "method": "Monitoring & Evaluation", "description": "Statistiken sind Kernindikatoren für Projektevaluationen und Förderberichte." }
                 ]
               }
+            },
+            {
+              "id": "curriculum-daten",
+              "level": 4,
+              "name": "Curricula & Lehrpläne",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Offene Lehrpläne und Curricula non-formaler Bildungsangebote: Lernziele, Modulstruktur, Methoden, Materialien und Zeitplanung. Ermöglicht Nachnutzung und Anpassung durch andere Bildungsträger.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Curricula sind Wissen ohne Personenbezug — sofort als Open Educational Resources (OER) publizierbar. Offene Lehrpläne multiplizieren die gesellschaftliche Wirkung von Bildungsinvestitionen erheblich."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_07", "label": "Mediendaten / Dokumente" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Bildungsarbeit & Veranstaltungen", "description": "Curricula strukturieren die Durchführung von Bildungsangeboten und sichern Qualität." },
+                  { "method": "Netzwerkarbeit & Kooperationen", "description": "Offene Lehrpläne ermöglichen anderen NGOs, erfolgreiche Bildungsformate zu adaptieren und weiterzuverbreiten." }
+                ]
+              }
             }
           ]
         },
@@ -574,7 +790,7 @@
                 "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
                 "relevance": 4,
                 "processes": [
-                  { "method": "Bildungsarbeit & Veranstaltungen", "description": "Veranstaltungskalender ist primäres Planungs- und Kommunikationsinstrument für kulturelle und Bildungs­veranstaltungen." },
+                  { "method": "Bildungsarbeit & Veranstaltungen", "description": "Veranstaltungskalender ist primäres Planungs- und Kommunikationsinstrument für kulturelle und Bildungsveranstaltungen." },
                   { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Offener Kalender erhöht Reichweite durch Syndizierung auf Stadtportalen und sozialen Medien." }
                 ]
               }
@@ -600,6 +816,30 @@
                 "processes": [
                   { "method": "Bildungsarbeit & Veranstaltungen", "description": "Zugänglichkeitsdaten ermöglichen inklusive Planung und gezieltes Ansprechen von Menschen mit Einschränkungen." },
                   { "method": "Interessenvertretung & Lobbying", "description": "Systematische Daten zu Barrieren sind Grundlage für Forderungen nach inklusiver Kulturförderung." }
+                ]
+              }
+            },
+            {
+              "id": "besuchszahlen-statistik",
+              "level": 4,
+              "name": "Besuchszahlen-Statistik",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Aggregierte Besuchszahlen von Kulturveranstaltungen und -einrichtungen: Gesamtbesuchende pro Jahr, Aufschlüsselung nach Veranstaltungstyp, Saisonalität und Altersgruppen. Kein Personenbezug — reine Zählwerte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Anonyme Zählwerte ohne jeglichen Personenbezug sind sofort publizierbar. Besuchsstatistiken belegen gesellschaftliche Relevanz von Kultureinrichtungen und unterstützen Förderanträge."
+                },
+                "theme":       { "code": "TH_08", "label": "Kultur & Medien" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Monitoring & Evaluation", "description": "Besuchszahlen sind Kernindikator für Reichweite und gesellschaftliche Wirkung von Kulturangeboten." },
+                  { "method": "Förderantragsstellung", "description": "Besuchsstatistiken sind Pflichtnachweis in öffentlichen Kulturförderanträgen und Verwendungsnachweisen." }
                 ]
               }
             }
@@ -668,6 +908,30 @@
                   { "method": "Netzwerkarbeit & Kooperationen", "description": "Gepflegtes Verzeichnis erleichtert Weitervermittlung zwischen Beratungsstellen und fördert Kooperationen." }
                 ]
               }
+            },
+            {
+              "id": "wartezeiten-beratung",
+              "level": 4,
+              "name": "Wartezeiten-Statistik",
+              "color": "#27ae60",
+              "details": {
+                "description": "Aggregierte Statistiken zu Wartezeiten auf Beratungstermine nach Region, Beratungsart und Saison. Zeigt Kapazitätsengpässe im Migrationsberatungssystem und ermöglicht bedarfsgerechte Ressourcenallokation.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Wartezeitstatistiken ohne Fallbezug können nach regionaler Aggregation veröffentlicht werden. Wichtige Planungsgrundlage für Kommunen und Träger zur Bedarfsdeckung."
+                },
+                "theme":       { "code": "TH_09", "label": "Migration & Integration" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Beratung & Betreuung", "description": "Wartezeiten spiegeln Kapazitätsauslastung wider und steuern Terminplanung und Ressourceneinsatz." },
+                  { "method": "Interessenvertretung & Lobbying", "description": "Lange Wartezeiten als quantitative Belege für unzureichende Beratungskapazitäten in Förder- und Politikgesprächen." }
+                ]
+              }
             }
           ]
         },
@@ -723,6 +987,30 @@
                 "processes": [
                   { "method": "Bildungsarbeit & Veranstaltungen", "description": "Angebotskatalog ist primäres Kommunikationsinstrument für Kursangebote und erster Kontaktpunkt." },
                   { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Maschinenlesbare mehrsprachige Daten ermöglichen Syndizierung auf Integrationsportalen." }
+                ]
+              }
+            },
+            {
+              "id": "sprachniveau-verteilung",
+              "level": 4,
+              "name": "Sprachniveau-Verteilung",
+              "color": "#27ae60",
+              "details": {
+                "description": "Auswertung der erreichten Sprachniveaus (GER A1–C1) nach Kurstyp, Herkunftsregion und Kursdauer. Zeigt Lernfortschritte und Wirksamkeit verschiedener Sprachförderformate auf aggregierter Ebene.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Niveauverteilungen ohne Einzelfallbezug sind sofort publizierbar. Wichtige Evidenzbasis für die Weiterentwicklung von Integrationskurskonzepten und Sprachförderförderung."
+                },
+                "theme":       { "code": "TH_09", "label": "Migration & Integration" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Bildungsarbeit & Veranstaltungen", "description": "Sprachniveaudaten messen Lernfortschritte und dienen der Kursoptimierung." },
+                  { "method": "Monitoring & Evaluation", "description": "Niveauverteilungen sind Kernindikatoren für Wirksamkeitsnachweise in Förderberichten." }
                 ]
               }
             }
@@ -791,6 +1079,30 @@
                   { "method": "Förderantragsstellung", "description": "Leistungsstatistiken sind Pflichtbestandteil von Verwendungsnachweisen gegenüber öffentlichen Fördergebern." }
                 ]
               }
+            },
+            {
+              "id": "hospiz-statistik",
+              "level": 4,
+              "name": "Hospizbegleitungs-Statistik",
+              "color": "#27ae60",
+              "details": {
+                "description": "Aggregierte Auswertungen ehrenamtlicher Hospizbegleitungen: Anzahl Begleitungen nach Diagnosegruppe und Setting (Zuhause, Pflegeheim, Hospiz), Begleitdauer und Qualifikation der Ehrenamtlichen. Kein Personenbezug.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Hospizstatistiken ohne Patientenidentifikatoren sind sofort publizierbar. Wichtige Versorgungsdaten für Palliativforschung und Bedarfsplanung in der Hospizlandschaft."
+                },
+                "theme":       { "code": "TH_04", "label": "Gesundheit" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Monitoring & Evaluation", "description": "Begleitungsstatistiken dokumentieren Reichweite und Tiefe des Hospizengagements." },
+                  { "method": "Forschung & Studien", "description": "Aggregierte Hospizversorgungsdaten sind Grundlage für Palliativforschung und Qualitätsentwicklung." }
+                ]
+              }
             }
           ]
         },
@@ -846,6 +1158,30 @@
                 "processes": [
                   { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Verzeichnis ist primäres Auffindbarkeits-Instrument für Betroffene und Zuweisende (Ärzte, Sozialarbeiter)." },
                   { "method": "Netzwerkarbeit & Kooperationen", "description": "Gepflegtes Verzeichnis fördert Vernetzung zwischen Gruppen gleicher Themen und Dachverbänden." }
+                ]
+              }
+            },
+            {
+              "id": "praeventions-teilnahme",
+              "level": 4,
+              "name": "Präventionsprogramm-Teilnahme",
+              "color": "#27ae60",
+              "details": {
+                "description": "Aggregierte Teilnahmedaten an Präventionsprogrammen (Suchtprävention, Ernährung, Bewegung): Teilnehmende nach Altersgruppe, Zielgruppe und Programmtyp. Keine Individualdaten — nur Gruppenstatistiken.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Teilnahmestatistiken können nach Prüfung auf Kleingruppenrisiken (Mindest-n=10) veröffentlicht werden. Wichtige Evidenzbasis für Wirksamkeitsnachweis und Bedarfsplanung in der Gesundheitsprävention."
+                },
+                "theme":       { "code": "TH_04", "label": "Gesundheit" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Monitoring & Evaluation", "description": "Teilnahmedaten sind Kernindikatoren für Wirkungsberichte und Programmevaluationen." },
+                  { "method": "Förderantragsstellung", "description": "Nachgewiesene Reichweite durch Teilnahmestatistiken stärkt Förderanträge für Präventionsprogramme." }
                 ]
               }
             }
@@ -910,8 +1246,32 @@
                 "license":     { "code": "LI_02", "label": "CC BY 4.0" },
                 "relevance": 3,
                 "processes": [
-                  { "method": "Monitoring & Evaluation", "description": "Mitgliederentwicklung ist Kernindiktor für Attraktivität und Reichweite des Vereinssports." },
+                  { "method": "Monitoring & Evaluation", "description": "Mitgliederentwicklung ist Kernindikator für Attraktivität und Reichweite des Vereinssports." },
                   { "method": "Interessenvertretung & Lobbying", "description": "Mitgliederzahlen sind zentrales Argument in Fördergesprächen und sportpolitischen Debatten." }
+                ]
+              }
+            },
+            {
+              "id": "ehrenamt-statistik-sport",
+              "level": 4,
+              "name": "Ehrenamts-Statistik",
+              "color": "#27ae60",
+              "details": {
+                "description": "Aggregierte Statistiken zum Ehrenamtsengagement in Sportvereinen: Anzahl Ehrenamtlicher nach Tätigkeitsbereich (Trainer, Vorstand, Organisation), Altersgruppe und Sportart. Basis für Ehrenamtsentwicklungsstrategien.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Ehrenamtsdaten auf Verbandsebene können nach Anonymisierung veröffentlicht werden. Wichtige Daten für Freiwilligenforschung und kommunale Ehrenamtsförderung — keine Individualdaten."
+                },
+                "theme":       { "code": "TH_08", "label": "Kultur & Medien" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Monitoring & Evaluation", "description": "Ehrenamtszahlen sind Kernindikatoren für gesellschaftliches Engagement und Vereinsvitalität." },
+                  { "method": "Interessenvertretung & Lobbying", "description": "Ehrenamtsvolumen belegt gesellschaftlichen Wert des organisierten Sports in politischen Diskussionen." }
                 ]
               }
             }
@@ -969,6 +1329,30 @@
                 "processes": [
                   { "method": "Ressourcenplanung", "description": "Belegungsanalysen identifizieren Überlastung und Leerzeiten und optimieren die Zuteilung von Hallenzeiten." },
                   { "method": "Monitoring & Evaluation", "description": "Auslastungstrends belegen Nutzungsintensität und unterstützen Investitionsanträge für neue Anlagen." }
+                ]
+              }
+            },
+            {
+              "id": "sanierungsbedarf-sport",
+              "level": 4,
+              "name": "Sanierungsbedarf-Statistik",
+              "color": "#27ae60",
+              "details": {
+                "description": "Aggregierte Auswertung des Sanierungsbedarfs von Sportstätten: Anteil sanierungsbedürftiger Anlagen nach Typ (Hallen, Freibäder, Kunstrasenplätze), Baualter und Trägerschaft. Basis für kommunale Investitionspriorisierung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Sanierungsstatistiken nach Sportstättentyp und Region können nach Prüfung auf Eigentümeridentifizierbarkeit veröffentlicht werden. Wichtige Grundlage für sportpolitische Debatten über Infrastrukturinvestitionen."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Interessenvertretung & Lobbying", "description": "Sanierungsbedarfsdaten sind starke Argumente in Gesprächen mit Kommunen und Sportministerien über Investitionsbedarfe." },
+                  { "method": "Ressourcenplanung", "description": "Bedarfsstatistiken ermöglichen Priorisierung von Sanierungsmaßnahmen nach Dringlichkeit und Wirkung." }
                 ]
               }
             }

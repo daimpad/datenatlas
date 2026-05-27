@@ -47,6 +47,12 @@
         <span id="level-number">1</span>
         <span id="level-max" class="level-label">/ 4</span>
       </div>
+
+      <button id="info-btn" title="Über den Datenatlas" aria-label="Infos und Hilfe öffnen">
+        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </button>
     </header>
 
     <div id="filter-bar" hidden aria-label="Filter">
@@ -118,6 +124,98 @@
 
     <div id="tooltip" role="tooltip" hidden></div>
     <div id="share-toast" hidden aria-live="polite">Link kopiert!</div>
+
+    <!-- Info / About modal -->
+    <div id="info-modal" role="dialog" aria-modal="true" aria-label="Über den Datenatlas" hidden>
+      <div class="im-card">
+        <button id="im-close" title="Schließen" aria-label="Schließen">✕</button>
+
+        <div class="im-header">
+          <span class="logo-mark">◈</span>
+          <span class="logo-text">Datenatlas</span>
+        </div>
+        <p class="im-intro">Der Datenatlas visualisiert, welche Daten NGOs, Behörden, Unternehmen und andere zivilgesellschaftliche Akteure besitzen — und wie offen diese Daten potenziell sind. Navigiere von gesellschaftlichen Sektoren bis zu einzelnen Datentypen und erkunde sektorübergreifende Verbindungen.</p>
+
+        <section class="im-section">
+          <h3 class="im-heading">Navigation</h3>
+          <div class="im-levels">
+            <div class="im-level">
+              <span class="im-badge">1</span>
+              <div><strong>Sektor</strong><br>Wähle einen gesellschaftlichen Bereich — NGO, Behörde, Wirtschaft, Forschung, Gesundheit, Infrastruktur oder Bildung.</div>
+            </div>
+            <div class="im-level">
+              <span class="im-badge">2</span>
+              <div><strong>Organisation</strong><br>Art der Organisation innerhalb des Sektors, z. B. Wohlfahrtsverband, Ordnungsamt oder Krankenhaus.</div>
+            </div>
+            <div class="im-level">
+              <span class="im-badge">3</span>
+              <div><strong>Aktivität</strong><br>Was diese Organisation tut — z. B. Beratung, Umweltmonitoring oder Forschungsförderung.</div>
+            </div>
+            <div class="im-level">
+              <span class="im-badge im-badge--accent">4</span>
+              <div><strong>Datentyp</strong><br>Welche Daten dabei entstehen. Jede Kachel zeigt Thema, Format, Lizenz und Öffnungsklasse.</div>
+            </div>
+            <div class="im-level">
+              <span class="im-badge im-badge--dim">5</span>
+              <div><strong>Prozess</strong><br>In welchen Abläufen dieser Datentyp genutzt wird. Klicke auf einen Prozess, um verwandte Datentypen aus anderen Sektoren zu sehen.</div>
+            </div>
+            <div class="im-level">
+              <span class="im-badge im-badge--dim">6+</span>
+              <div><strong>Cross-Sektor</strong><br>Datentypen anderer Sektoren, die denselben Prozess teilen. Von dort aus lässt sich die Reise beliebig fortsetzen.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="im-section">
+          <h3 class="im-heading">Öffnungsklassen</h3>
+          <div class="im-openness">
+            <div class="im-op-item">
+              <span class="im-op-dot" style="background:#27ae60"></span>
+              <div>
+                <strong>Grün — sofort publizierbar</strong><br>
+                Kein oder minimaler Aufbereitungsbedarf. Daten können direkt als Open Data veröffentlicht werden.
+              </div>
+            </div>
+            <div class="im-op-item">
+              <span class="im-op-dot" style="background:#d4a017"></span>
+              <div>
+                <strong>Gelb — nach Aufbereitung publizierbar</strong><br>
+                Anonymisierung, Aggregation oder Lizenzklärung erforderlich, bevor eine Veröffentlichung möglich ist.
+              </div>
+            </div>
+            <div class="im-op-item">
+              <span class="im-op-dot" style="background:#c0392b"></span>
+              <div>
+                <strong>Rot — nur Metadaten</strong><br>
+                Der Inhalt ist zu sensibel für eine Veröffentlichung. Nur beschreibende Metadaten sind als Open Data geeignet.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="im-section">
+          <h3 class="im-heading">Funktionen</h3>
+          <div class="im-features">
+            <div class="im-feat">
+              <span class="im-feat-icon">🔍</span>
+              <div><strong>Volltext-Suche</strong><br>Finde Datentypen über alle Sektoren hinweg. Die Suche berücksichtigt Namen, Beschreibungen und Pfade.</div>
+            </div>
+            <div class="im-feat">
+              <span class="im-feat-icon">🎛</span>
+              <div><strong>Öffnungsklasse-Filter</strong><br>Blende auf Ebene 4 alle Kacheln einer bestimmten Klasse hervor — Grün, Gelb oder Rot.</div>
+            </div>
+            <div class="im-feat">
+              <span class="im-feat-icon">🔗</span>
+              <div><strong>Teilen</strong><br>Der Teilen-Button kopiert den Link zur aktuellen Ansicht. Jede Navigationstiefe hat eine eigene URL.</div>
+            </div>
+            <div class="im-feat">
+              <span class="im-feat-icon">⇄</span>
+              <div><strong>Pan &amp; Zoom</strong><br>Ziehe die Karte frei. Auf Touch-Geräten funktioniert Pinch-to-Zoom.</div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
 
     <!-- Onboarding overlay — shown on first visit -->
     <div id="onboarding" role="dialog" aria-modal="true" aria-label="Willkommen">

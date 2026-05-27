@@ -1,0 +1,205 @@
+{
+  "sectorId": "infrastruktur",
+  "children": [
+    {
+      "id": "stadtwerke",
+      "level": 2,
+      "name": "Stadtwerke",
+      "color": "#16a085",
+      "description": "Kommunale Versorgungsunternehmen für Strom, Gas, Wasser und Fernwärme",
+      "children": [
+        {
+          "id": "energieversorgung",
+          "level": 3,
+          "name": "Energie versorgen",
+          "color": "#1abc9c",
+          "description": "Betrieb und Abrechnung der Strom- und Gasversorgung inkl. Smart-Meter-Infrastruktur",
+          "children": [
+            {
+              "id": "smart_meter",
+              "level": 4,
+              "name": "Smart-Meter-Daten",
+              "color": "#16a085",
+              "details": {
+                "description": "Hochauflösende Verbrauchsmessdaten intelligenter Stromzähler: Haushalt-ID, Zeitstempel (15-Minuten-Intervalle), Stromverbrauch in kWh, Einspeiseleistung (bei PV-Anlagen), Spannungsqualität.",
+                "openDataPotential": {
+                  "score": "Mittel",
+                  "scoreValue": 2,
+                  "explanation": "Aggregierte Lastprofile (Stadtbezirk- oder Netzabschnitt-Ebene) sind für Netzplanung, Energiewende-Monitoring und Nachfrageprognosen unverzichtbar. Europäische Netzbetreiber veröffentlichen zunehmend aggregierte Lastgangdaten als Open Data."
+                },
+                "dsgvoRisk": {
+                  "level": "Hoch",
+                  "riskClass": "risk-high",
+                  "explanation": "15-Minuten-Verbrauchskurven erlauben Rückschlüsse auf Anwesenheit, Schlafgewohnheiten, Gerätenutzung und Lebensstil (\"Non-Intrusive Load Monitoring\"). Der EuGH (C-252/21) bestätigte Personenbezug von Nutzungsprofilen. Rechtsgrundlage: MsbG § 19 und DSGVO Art. 6 Abs. 1 lit. b.",
+                  "articles": ["Art. 6 DSGVO", "Art. 22 DSGVO", "MsbG § 19", "EnWG § 21d"]
+                },
+                "anonymization": [
+                  { "method": "Räumliche Aggregation", "description": "Aggregation auf mindestens 50 Haushalte pro Zelle. Veröffentlichung als Lastprofil auf Ortsteil-Ebene, nicht Haushaltsebene." },
+                  { "method": "Zeitliche Aggregation", "description": "Für Open-Data-Portale: stündliche oder tägliche Mittelwerte statt 15-Minuten-Werte, um Lebensstil-Rückschlüsse zu verhindern." },
+                  { "method": "Differential Privacy", "description": "Beim Teilen mit Forschern: Rauschaddition (Laplace-Mechanismus) auf Haushaltsebene vor Aggregation, um Re-Identifikation aus Lastprofilen zu verhindern." }
+                ]
+              }
+            },
+            {
+              "id": "netzlastdaten",
+              "level": 4,
+              "name": "Netzlastdaten",
+              "color": "#16a085",
+              "details": {
+                "description": "Aggregierte Netzbelastungsdaten auf Umspannwerks- und Netzabschnittsebene: maximale und mittlere Last, Spannungsqualität, Ausfallstatistiken, Einspeiseleistung erneuerbarer Energien.",
+                "openDataPotential": {
+                  "score": "Hoch",
+                  "scoreValue": 3,
+                  "explanation": "Netzlastdaten auf aggregierter Ebene sind klassische Open-Government-Daten für die Energiewende: Netzplanung, Speicherbedarf, Flexibilitätsoptionen, wissenschaftliche Forschung. Übertragungsnetzbetreiber (50Hertz, Amprion etc.) veröffentlichen Entsprechendes bereits auf der SMARD-Plattform."
+                },
+                "dsgvoRisk": {
+                  "level": "Niedrig",
+                  "riskClass": "risk-low",
+                  "explanation": "Bei korrekter Aggregation über ≥50 Haushalte kein Personenbezug mehr (ErwG 26 DSGVO). Infrastrukturtopologie (Lage von Umspannwerken) kann sicherheitsrelevant sein — Veröffentlichung mit BSI abstimmen.",
+                  "articles": ["ErwG 26 DSGVO", "Art. 4 Nr. 1 DSGVO", "KRITIS-Verordnung § 10"]
+                },
+                "anonymization": [
+                  { "method": "Aggregation", "description": "Veröffentlichung auf Netzabschnitt- (nicht Haushalts-) Ebene. Mindestens 50 Verbraucher pro Zelle, stündliche Zeitauflösung." },
+                  { "method": "KRITIS-Prüfung", "description": "Keine Angaben zu physischer Lage oder Kapazität einzelner Umspannwerke — BSI-Koordination vor Veröffentlichung empfohlen." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "wasserversorgung",
+          "level": 3,
+          "name": "Wasser versorgen",
+          "color": "#1abc9c",
+          "description": "Betrieb und Überwachung der Trinkwasserversorgung und Abwasserentsorgung",
+          "children": [
+            {
+              "id": "wasserverbrauch",
+              "level": 4,
+              "name": "Verbrauchsmessung",
+              "color": "#16a085",
+              "details": {
+                "description": "Wasserzählerdaten von Haushalten und Gewerbebetrieben: Zähler-ID, Ablesezeitraum, Verbrauch in m³, ggf. Leckagewarnungen bei auffälligem Verbrauchsmuster.",
+                "openDataPotential": {
+                  "score": "Niedrig",
+                  "scoreValue": 1,
+                  "explanation": "Auf Haushalt-Ebene nicht veröffentlichbar. Aggregierter kommunaler Gesamtverbrauch (m³/Tag) und saisonale Schwankungen haben Wert für Ressourcenplanung und Klimafolgenforschung."
+                },
+                "dsgvoRisk": {
+                  "level": "Mittel",
+                  "riskClass": "risk-medium",
+                  "explanation": "Wasserverbrauch ist weniger sensitiv als Stromverbrauch, da die zeitliche Auflösung geringer ist (i.d.R. jährliche Ablesung). Bei Smart-Water-Metering mit höherer Auflösung steigt das Risiko analog zu Smart-Metern.",
+                  "articles": ["Art. 6 DSGVO", "TrinkwV § 19", "AVBWasserV § 18"]
+                },
+                "anonymization": [
+                  { "method": "Aggregation", "description": "Gesamtverbrauch auf Stadtbezirk- und Jahresebene. Kein Haushaltsbezug in Berichten." },
+                  { "method": "Datensparsamkeit", "description": "Jährliche Ablesung bevorzugen, Smart-Meter-Einsatz nur bei nachgewiesenem Mehrwert. Speicherung nur des Jahreswertes, keine Verbrauchshistorie." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "verkehrsbetriebe",
+      "level": 2,
+      "name": "Verkehrsbetriebe",
+      "color": "#16a085",
+      "description": "Öffentliche Nahverkehrsunternehmen (Bus, Tram, U-Bahn) und Betreiber von Ladeinfrastruktur",
+      "children": [
+        {
+          "id": "oepnv_betrieb",
+          "level": 3,
+          "name": "ÖPNV betreiben",
+          "color": "#1abc9c",
+          "description": "Ticketing, Fahrgastzählung und Betriebssteuerung im öffentlichen Personennahverkehr",
+          "children": [
+            {
+              "id": "ticketing_daten",
+              "level": 4,
+              "name": "Ticketing & Fahrtdaten",
+              "color": "#16a085",
+              "details": {
+                "description": "Transaktionsdaten aus ÖPNV-Ticketsystemen: Kundenkarten-ID (beim personalisierten Ticket), Ein- und Ausstiegshaltestelle, Zeitstempel, Tarifzone, Zahlungsart. Bei anonymen Einzelfahrscheinen: keine Personenbindung.",
+                "openDataPotential": {
+                  "score": "Niedrig",
+                  "scoreValue": 1,
+                  "explanation": "Auf Einzelfahrtenebene nicht veröffentlichbar. Aggregierte Fahrgastströme (Origin-Destination-Matrizen auf Stationspaar-Ebene) sind hochwertige Open-Data für Stadtplanung, Bahnhofsentwicklung und Verkehrsmodellierung. Viele europäische Verkehrsverbünde stellen solche Daten zur Verfügung."
+                },
+                "dsgvoRisk": {
+                  "level": "Hoch",
+                  "riskClass": "risk-high",
+                  "explanation": "Nutzungsprofile personalisierter Tickets erlauben lückenlose Bewegungsprofile über Jahre. Der EuGH sieht Bewegungsdaten als besonders sensitiv. Verbindung mit anderen Datensätzen (z.B. Arbeitszeiten) ermöglicht Re-Identifikation auch bei scheinbar anonymen Daten.",
+                  "articles": ["Art. 6 DSGVO", "Art. 22 DSGVO", "BDSG § 26", "EuGH C-184/20"]
+                },
+                "anonymization": [
+                  { "method": "Aggregation", "description": "Origin-Destination-Matrizen auf Haltestellen-Ebene mit mindestens 20 Fahrten pro Relation und Zeitfenster (Stunde). Keine Personenzuordnung." },
+                  { "method": "k-Anonymität", "description": "Relationen mit < k=20 Fahrten werden zusammengefasst oder unterdrückt, um Bewegungsprofile nicht rekonstruierbar zu machen." },
+                  { "method": "Datentrennung", "description": "Anonyme Ticketvarianten technisch bevorzugen. Personalisierung nur bei explizitem Kundenwunsch (Opt-in) und klar definierten Löschfristen (max. 6 Monate)." }
+                ]
+              }
+            },
+            {
+              "id": "fahrgastzaehlung",
+              "level": 4,
+              "name": "Fahrgastzählung",
+              "color": "#16a085",
+              "details": {
+                "description": "Automatische Fahrgastzählsysteme (APC) in Fahrzeugen: Einstieg-/Ausstiegszahlen pro Haltestelle und Fahrt mittels Lichtschranke oder Kamerasystemen (kein Personenbezug bei korrekter Konfiguration).",
+                "openDataPotential": {
+                  "score": "Hoch",
+                  "scoreValue": 3,
+                  "explanation": "Fahrgastzahlen nach Linie, Haltestelle und Tageszeit sind ideale Open-Data: Taktplanung, Barrierefreiheitspriorisierung, Wissenschaft und Stadtentwicklung profitieren unmittelbar. Vorbild: VGN Nürnberg, VBB Berlin veröffentlichen Zähldaten als Open Data."
+                },
+                "dsgvoRisk": {
+                  "level": "Niedrig",
+                  "riskClass": "risk-low",
+                  "explanation": "Kamerabasierte Zählung ohne Gesichtserkennung und ohne Speicherung von Bilddaten ist nach korrekter Konfiguration datenschutzrechtlich unproblematisch — kein Personenbezug (ErwG 26 DSGVO). Zählwert (Integer) ist anonym.",
+                  "articles": ["ErwG 26 DSGVO", "Art. 4 Nr. 1 DSGVO"]
+                },
+                "anonymization": [
+                  { "method": "Technische Anonymisierung", "description": "Kamerasystem zählt Ein-/Ausstiege ohne Bildspeicherung. Nur der Zählwert (Integer) wird weitergegeben — kein Personenbezug." },
+                  { "method": "Aggregation", "description": "Veröffentlichung als stündliche Fahrgastzahlen pro Linie und Haltestelle. Keine Einzelfahrtaufzeichnungen." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "ladeinfrastruktur",
+          "level": 3,
+          "name": "E-Ladeinfrastruktur",
+          "color": "#1abc9c",
+          "description": "Öffentliche Ladepunkte für Elektrofahrzeuge: Nutzungsmanagement, Abrechnung und Auslastungssteuerung",
+          "children": [
+            {
+              "id": "ladesessions",
+              "level": 4,
+              "name": "Ladesession-Daten",
+              "color": "#16a085",
+              "details": {
+                "description": "Transaktionsdaten öffentlicher Ladepunkte: EVSE-ID (Ladepunkt), Fahrzeugkennung (RFID-Token oder Plug-and-Charge-Zertifikat), Session-Start/-Ende, geladene Energiemenge (kWh), Ladeleistung, Abrechnung.",
+                "openDataPotential": {
+                  "score": "Mittel",
+                  "scoreValue": 2,
+                  "explanation": "Aggregierte Auslastungsdaten öffentlicher Ladepunkte (Durchschnittsauslastung, Spitzenzeiten, Standortpopularität) sind wertvoll für Ladeinfrastrukturplanung und Mobilitätsforschung. Das Bundesnetzwerk Elektromobilität (BNE) fordert entsprechende Open-Data-Standards."
+                },
+                "dsgvoRisk": {
+                  "level": "Mittel",
+                  "riskClass": "risk-medium",
+                  "explanation": "RFID-Token sind persistente Kennungen und damit personenbezogen, wenn eine Vertragszuordnung besteht. Kombination aus Ladestandort + Zeitstempel ergibt Bewegungsprofil. Bei Plug-and-Charge (ISO 15118) sind Fahrzeugzertifikate eindeutige Identifikatoren.",
+                  "articles": ["Art. 6 DSGVO", "Art. 4 Nr. 1 DSGVO", "AFIR-Verordnung EU 2023/1804"]
+                },
+                "anonymization": [
+                  { "method": "Pseudonymisierung", "description": "RFID-Token durch Hash ersetzen für interne Auswertungen. Keine Klartextverknüpfung mit Kundendaten außerhalb des Abrechnungssystems." },
+                  { "method": "Aggregation", "description": "Open-Data-Veröffentlichung: Auslastungsprozent pro Ladepunkt und Stunde — kein Fahrzeug- oder Nutzerbezug." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

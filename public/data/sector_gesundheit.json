@@ -1,0 +1,197 @@
+{
+  "sectorId": "gesundheit",
+  "children": [
+    {
+      "id": "krankenhaus",
+      "level": 2,
+      "name": "Krankenhaus",
+      "color": "#c0392b",
+      "description": "Stationäre und ambulante Patientenversorgung, Diagnostik, Chirurgie und Intensivmedizin",
+      "children": [
+        {
+          "id": "patientenverwaltung",
+          "level": 3,
+          "name": "Patientenverwaltung",
+          "color": "#e74c3c",
+          "description": "Aufnahme, Entlassung, Fallakte und Abrechnungsdaten für stationäre Patienten",
+          "children": [
+            {
+              "id": "patientenakte",
+              "level": 4,
+              "name": "Patientenakte",
+              "color": "#c0392b",
+              "details": {
+                "description": "Elektronische Patientenakte (ePA): vollständige Anamnese, Diagnosen (ICD-10), Medikationspläne, Allergien, Operationsberichte, Pflegedokumentation, Laborbefunde und behandelnde Ärzte seit Erstkontakt.",
+                "openDataPotential": {
+                  "score": "Sehr niedrig",
+                  "scoreValue": 0,
+                  "explanation": "Inhärent nicht veröffentlichbar. Aggregierte Krankheitsstatistiken (Inzidenz, Mortalität nach ICD-Gruppe und Region) werden durch das RKI und Destatis bereits als Open Data bereitgestellt und sind für Public-Health-Forschung unverzichtbar."
+                },
+                "dsgvoRisk": {
+                  "level": "Sehr hoch",
+                  "riskClass": "risk-veryhigh",
+                  "explanation": "Art. 9 Abs. 2 lit. h DSGVO: Gesundheitsdaten als besondere Kategorie. Zugang nur für behandelnde Personen nach Erforderlichkeitsprinzip. Krankenhäuser müssen Datenschutzbeauftragten benennen (Art. 37 DSGVO) und DSFA durchführen (Art. 35 DSGVO). Aufbewahrung: 10 Jahre nach letzter Behandlung (§ 630f BGB).",
+                  "articles": ["Art. 9 DSGVO", "Art. 35 DSGVO", "Art. 37 DSGVO", "§ 630f BGB", "SGB V § 291a"]
+                },
+                "anonymization": [
+                  { "method": "Aggregation", "description": "Für Qualitätsberichte: Diagnosegruppen (ICD-Kapitel), Verweildauer-Median, Komplikationsrate — aggregiert auf Klinik-Ebene, kein Patientenbezug." },
+                  { "method": "Pseudonymisierung", "description": "Für interne Qualitätsforschung: Patienten-ID durch kryptografischen Hash ersetzen; Zuordnungsliste nur beim Datenschutzbeauftragten." },
+                  { "method": "Synthetische Daten", "description": "Für KI-Training und Forschungskooperationen: Generierung synthetischer Patientendatensätze (z.B. via SynthEHR), die statistisch äquivalent aber nicht rückverfolgbar sind." }
+                ]
+              }
+            },
+            {
+              "id": "abrechnungsdaten",
+              "level": 4,
+              "name": "Abrechnungsdaten",
+              "color": "#c0392b",
+              "details": {
+                "description": "Krankenhaus-DRG-Abrechnungsdatensätze: Fallnummer, Versicherten-ID, DRG-Code, Nebendiagnosen, Prozeduren (OPS), Krankenhaus, Behandlungsdatum, Rechnungsbetrag.",
+                "openDataPotential": {
+                  "score": "Mittel",
+                  "scoreValue": 2,
+                  "explanation": "Aggregierte DRG-Statistiken (häufigste Diagnosen, Fallkosten nach Region, Verweildauer) sind wichtige Indikatoren für Gesundheitssystemplanung. Das InEK veröffentlicht bereits anonymisierte DRG-Datenbrowser-Daten als Quasi-Open-Data — ein gutes Vorbild."
+                },
+                "dsgvoRisk": {
+                  "level": "Sehr hoch",
+                  "riskClass": "risk-veryhigh",
+                  "explanation": "Abrechnungsdaten enthalten direkt ICD- und OPS-Codes, die Krankheitsbilder offenbaren. Re-Identifikation über Kombination von Alter, Region und seltener Diagnose möglich. Krankenkassen dürfen diese Daten nur für Abrechnungszwecke verwenden (§ 301 SGB V).",
+                  "articles": ["Art. 9 DSGVO", "§ 301 SGB V", "§ 303 SGB V", "KHEntgG"]
+                },
+                "anonymization": [
+                  { "method": "ICD-Grobkodierung", "description": "Veröffentlichung nur auf 3-stelliger ICD-Ebene (Kapitel), nicht 5-stellig (Subklassifikation) um Rückschlüsse auf seltene Erkrankungen zu verhindern." },
+                  { "method": "Zellsuppression", "description": "DRG-Gruppen mit weniger als 5 Fällen pro Krankenhaus und Quartal werden nicht veröffentlicht." },
+                  { "method": "Rauschaddition", "description": "Kleinere Abweichungen (±2 Fälle) beim Bereitstellen von Fallahlzahlen, um exakte Rückschlüsse aus kleinen Fallzahlen zu vermeiden." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "diagnostik",
+          "level": 3,
+          "name": "Diagnostik & Bildgebung",
+          "color": "#e74c3c",
+          "description": "Radiologie, Labormedizin und Pathologie — Erzeugung und Verwaltung diagnostischer Bilddaten und Befunde",
+          "children": [
+            {
+              "id": "bilddaten",
+              "level": 4,
+              "name": "CT- / MRT-Bilddaten",
+              "color": "#c0392b",
+              "details": {
+                "description": "DICOM-Bilddatensätze aus Computertomographie und Magnetresonanztomographie: Schichtaufnahmen mit eingebettetem Patientenname, Geburtsdatum, Untersuchungsdatum und ärztlichem Befund.",
+                "openDataPotential": {
+                  "score": "Niedrig",
+                  "scoreValue": 1,
+                  "explanation": "Anonymisierte Bilddatensätze sind für KI-Training in der medizinischen Bildauswertung äußerst wertvoll. Projekte wie der Cancer Imaging Archive (TCIA) zeigen, dass DICOM-Daten nach konsequenter De-Identifikation als Open Research Data verfügbar gemacht werden können."
+                },
+                "dsgvoRisk": {
+                  "level": "Sehr hoch",
+                  "riskClass": "risk-veryhigh",
+                  "explanation": "DICOM-Metadaten enthalten direkte Identifikatoren. Gesichtsrekonstruktion aus Schädel-CT ist technisch möglich (Re-Identifikationsrisiko auch nach Anonymisierung). Genetisch assoziierbare Marker können in Bilddaten sichtbar sein. Verarbeitung nur durch autorisiertes medizinisches Personal.",
+                  "articles": ["Art. 9 DSGVO", "Art. 32 DSGVO", "DiGAV", "MPG § 3"]
+                },
+                "anonymization": [
+                  { "method": "DICOM-Anonymisierung", "description": "Entfernung aller DICOM-Tags mit Patientenbezug nach DICOM-Standard PS3.15 Annex E. Tools: OHIF DICOM Anonymizer, CTP." },
+                  { "method": "Gesichtsde-Identifikation", "description": "Bei Schädel-CTs: automatische Defacing-Algorithmen (z.B. pydeface) zur Verhinderung von Gesichtsrekonstruktion." },
+                  { "method": "Datentreuhänder", "description": "Weitergabe anonymisierter Bilddaten ausschließlich über akkreditierte Forschungsdatenzentren mit Nutzungsvertrag." }
+                ]
+              }
+            },
+            {
+              "id": "laborbefunde",
+              "level": 4,
+              "name": "Laborbefunde",
+              "color": "#c0392b",
+              "details": {
+                "description": "Laborergebnisse aus Hämatologie, Klinischer Chemie und Mikrobiologie: Patientenreferenz, Untersuchungsdatum, Parameterliste (z.B. Hämoglobin, CRP, Erregernachweis) mit Referenzwerten und Bewertung.",
+                "openDataPotential": {
+                  "score": "Niedrig",
+                  "scoreValue": 1,
+                  "explanation": "Aggregierte Labordaten ermöglichen Überwachung von Infektionsgeschehen (Surveillance) und Antibiotikaresistenzen — hohes Public-Health-Potenzial. Das RKI nutzt solche Aggregate bereits für SurvStat@RKI."
+                },
+                "dsgvoRisk": {
+                  "level": "Sehr hoch",
+                  "riskClass": "risk-veryhigh",
+                  "explanation": "Genetische und infektiologische Laborparameter fallen unter Art. 9 DSGVO (genetische Daten, Gesundheitsdaten). Positive Erregernachweise können Stigmatisierung verursachen. Besondere Pflichten für Labore nach BDSG § 22.",
+                  "articles": ["Art. 9 DSGVO", "BDSG § 22", "IfSG § 7", "§ 630f BGB"]
+                },
+                "anonymization": [
+                  { "method": "Aggregation", "description": "Wöchentliche Surveillance-Reports: Positivrate pro Erreger und Altersgruppe auf Bundeslandebene — ohne Patientenreferenz." },
+                  { "method": "Mindestgruppengrößen", "description": "Gruppen < 5 Laborbefunde werden in Reports unterdrückt; besonders wichtig bei seltenen Infektionskrankheiten." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arztpraxis",
+      "level": 2,
+      "name": "Arztpraxis",
+      "color": "#c0392b",
+      "description": "Ambulante medizinische Versorgung in hausärztlichen und fachärztlichen Einzelpraxen und Gemeinschaftspraxen",
+      "children": [
+        {
+          "id": "behandlungsdokumentation",
+          "level": 3,
+          "name": "Behandlung dokumentieren",
+          "color": "#e74c3c",
+          "description": "Elektronische Dokumentation aller ambulanten Arzt-Patienten-Kontakte inkl. Diagnosen und Verordnungen",
+          "children": [
+            {
+              "id": "praxis_patientenakte",
+              "level": 4,
+              "name": "Praxis-Patientenakte",
+              "color": "#c0392b",
+              "details": {
+                "description": "Ambulante Krankengeschichte: Kontaktdaten, Versicherungsstatus, Beschwerden, Diagnosen (ICD-10), Medikation, Überweisungen, AU-Bescheinigungen, Impfstatus.",
+                "openDataPotential": {
+                  "score": "Sehr niedrig",
+                  "scoreValue": 0,
+                  "explanation": "Keine Direktveröffentlichung möglich. Aggregierte Praxisstatistiken (häufigste Diagnosen, Verschreibungsmuster nach Region) haben epidemiologischen Wert, werden aber durch die Kassenärztliche Vereinigung bereits teilweise publiziert."
+                },
+                "dsgvoRisk": {
+                  "level": "Sehr hoch",
+                  "riskClass": "risk-veryhigh",
+                  "explanation": "Ärztliche Schweigepflicht (§ 203 StGB) ergänzt DSGVO-Schutz. Aufbewahrungspflicht: 10 Jahre (§ 630f BGB), bei bestimmten Erkrankungen länger. Elektronische Übermittlung nur über zugelassene KIM-Dienste (Kommunikation im Medizinwesen).",
+                  "articles": ["Art. 9 DSGVO", "§ 203 StGB", "§ 630f BGB", "SGB V § 295"]
+                },
+                "anonymization": [
+                  { "method": "Zweckbindung", "description": "Strenge Zweckbindung: Daten dürfen ausschließlich für Behandlung, Abrechnung und gesetzliche Dokumentationspflichten verwendet werden." },
+                  { "method": "Aggregation für KV", "description": "Für die Kassenärztliche Vereinigung: nur aggregierte Fallahlzahlen nach ICD-Gruppe, keine Individualdaten." }
+                ]
+              }
+            },
+            {
+              "id": "rezeptdaten",
+              "level": 4,
+              "name": "Rezeptdaten",
+              "color": "#c0392b",
+              "details": {
+                "description": "Verschreibungsdaten: Patientenidentifikation, verschriebenes Medikament (PZN, ATC-Code), Dosierung, Verordnungsdatum, Arzt-LANR. Grundlage für Kassenabrechnung.",
+                "openDataPotential": {
+                  "score": "Mittel",
+                  "scoreValue": 2,
+                  "explanation": "Aggregierte Verschreibungsstatistiken (ATC-Gruppen nach Region und Quartal) sind wertvolle Indikatoren für Verordnungsverhalten und Arzneimittelversorgung. Das Wissenschaftliche Institut der AOK (WIdO) publiziert den Arzneiverordnungs-Report auf Basis solcher Daten."
+                },
+                "dsgvoRisk": {
+                  "level": "Sehr hoch",
+                  "riskClass": "risk-veryhigh",
+                  "explanation": "Medikamenten-ATC-Codes lassen direkte Rückschlüsse auf Diagnosen zu (z.B. antiretrovirale Therapie → HIV). Rezeptdaten sind daher de facto Gesundheitsdaten gem. Art. 9 DSGVO, auch wenn nur PZN erfasst wird.",
+                  "articles": ["Art. 9 DSGVO", "§ 300 SGB V", "AMVV § 2"]
+                },
+                "anonymization": [
+                  { "method": "ATC-Grobkodierung", "description": "Veröffentlichung auf 3. ATC-Ebene (therapeutische Untergruppe), nicht auf Einzelpräparat-Ebene." },
+                  { "method": "Datensparsamkeit", "description": "Für Abrechnungszwecke: keine Diagnosen im Rezept speichern, nur Indikationsbezug über Sonderkennzeichen." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

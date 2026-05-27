@@ -3,7 +3,7 @@ import { initControls }      from './controls.js';
 import { openSidebar, closeSidebar } from './modal.js';
 import { loadMain, loadSector }      from './dataLoader.js';
 import { state, patchState }         from './state.js';
-import { applyOpennessColors }        from './utils.js';
+import { applyOpennessColors, esc }   from './utils.js';
 import { buildSearchIndex, initSearch } from './search.js';
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
@@ -20,6 +20,7 @@ const levelMaxEl    = document.getElementById('level-max');
 const tooltip       = document.getElementById('tooltip');
 const filterBar     = document.getElementById('filter-bar');
 const filterToggle  = document.getElementById('filter-toggle');
+const filterCount   = document.getElementById('filter-count');
 const onboarding    = document.getElementById('onboarding');
 
 // ── Init ──────────────────────────────────────────────────────────────────────
@@ -74,11 +75,15 @@ function applyFilter() {
   const atL4 = currentLevel() === 4;
   if (!atL4 || filterState.openness === null) {
     renderer.setDimmedIds(new Set());
+    filterCount.hidden = true;
     return;
   }
+  const visible = state.currentTiles.filter(t => tileMatchesFilter(t));
   renderer.setDimmedIds(new Set(
     state.currentTiles.filter(t => !tileMatchesFilter(t)).map(t => t.id)
   ));
+  filterCount.textContent = `${visible.length} von ${state.currentTiles.length}`;
+  filterCount.hidden = false;
 }
 
 function tileMatchesFilter(tile) {
@@ -418,6 +423,3 @@ function slugify(str) {
   return String(str).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
-function esc(str = '') {
-  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}

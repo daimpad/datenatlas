@@ -1,4 +1,4 @@
-import { applyOpennessColors } from './utils.js';
+import { applyOpennessColors, esc } from './utils.js';
 
 // ── Index building ─────────────────────────────────────────────────────────────
 
@@ -50,7 +50,11 @@ export function initSearch({ indexPromise, onNavigate }) {
     else          closeSearch();
   });
 
-  inputEl.addEventListener('input', () => render(query()));
+  let _debounce = null;
+  inputEl.addEventListener('input', () => {
+    clearTimeout(_debounce);
+    _debounce = setTimeout(() => render(query()), 120);
+  });
 
   inputEl.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeSearch();
@@ -111,6 +115,3 @@ export function initSearch({ indexPromise, onNavigate }) {
   return { close: closeSearch };
 }
 
-function esc(s = '') {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}

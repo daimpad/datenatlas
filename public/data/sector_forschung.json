@@ -21,21 +21,21 @@
               "name": "Studierendenregister",
               "color": "#7d3c98",
               "details": {
-                "description": "Vollständige Immatrikulationsdaten: Name, Matrikelnummer, Studiengang, Semester, Prüfungsleistungen, Anschrift, Kontakt, Immatrikulationsstatus und ggf. Förderdaten (BAföG-Bescheinigung).",
-                "openDataPotential": {
-                  "score": "Niedrig",
-                  "scoreValue": 1,
-                  "explanation": "Individuelle Studiendaten sind nicht veröffentlichbar. Aggregierte Hochschulstatistiken (Studierendenzahl nach Fach, Abbruchquoten, Erfolgsquoten) sind von Destatis bereits als Open Data verfügbar und wissenschaftlich wertvoll."
+                "description": "Vollständige Immatrikulationsdaten: Name, Matrikelnummer, Studiengang, Semester, Prüfungsleistungen, Anschrift, Kontakt, Immatrikulationsstatus und ggf. Förderdaten (BAföG-Bescheinigung). Identifiziert Studierende eindeutig über die gesamte Studienzeit.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Individuelle Studiendaten mit Prüfungsergebnissen und Förderstatus sind nicht veröffentlichbar. Aggregierte Hochschulstatistiken (Studierende nach Fachbereich, Abschlussquoten) sind über Destatis und das Statistisches Bundesamt als Open Data abrufbar."
                 },
-                "dsgvoRisk": {
-                  "level": "Hoch",
-                  "riskClass": "risk-high",
-                  "explanation": "Prüfungsergebnisse sind personenbezogene Daten. Matrikelnummer ist dauerhafter Identifikator. BAföG-Daten können wirtschaftliche Situation offenbaren (Art. 9 analog). Hochschulgesetz der Länder enthält spezifische Regelungen. Datenweitergabe an Dritte (z.B. Arbeitgeber) nur mit Einwilligung.",
-                  "articles": ["Art. 6 DSGVO", "Art. 17 DSGVO", "Landeshochschulgesetze", "BAföG § 41"]
-                },
-                "anonymization": [
-                  { "method": "Aggregation", "description": "Veröffentlichung als Fachbereichsstatistik: Durchschnittsnoten, Studiendauer, Abbrecherquote — stets für Kohorten ≥ 20 Personen." },
-                  { "method": "Pseudonymisierung", "description": "Längsschnittstudien (z.B. Bildungsforschung) mit pseudonymisierten Matrikelnummern, die außerhalb der Hochschule nicht aufgelöst werden können." }
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Studierendenverwaltung", "description": "Stammdaten für alle Verwaltungsprozesse: Einschreibung, Rückmeldung, Exmatrikulation, Bescheinigungen." },
+                  { "method": "Prüfungsorganisation", "description": "Verknüpfung mit Prüfungsanmeldungen, Terminplanung und Notenverwaltung." }
                 ]
               }
             },
@@ -45,21 +45,21 @@
               "name": "Prüfungsleistungen",
               "color": "#7d3c98",
               "details": {
-                "description": "Notendatenbank aller erbrachten Prüfungsleistungen: Matrikelnummer, Modul, Note, Datum, Prüfer:in, Versuchsnummer, Bestanden/Nicht-bestanden.",
-                "openDataPotential": {
-                  "score": "Mittel",
-                  "scoreValue": 2,
-                  "explanation": "Aggregierte Prüfungsstatistiken (Bestehensquoten pro Modul, Notenverteilung) sind wichtige Qualitätsindikatoren für Hochschulen und können Studienreformen anstoßen. Vollständige Anonymisierung auf Modul-Ebene ermöglicht sinnvolle Veröffentlichung."
+                "description": "Notendatenbank aller erbrachten Prüfungsleistungen: Matrikelnummer, Modul, Note, Datum, Prüfer:in, Versuchsnummer, Bestanden/Nicht-bestanden. Aggregiert liefern diese Daten wichtige Qualitätsindikatoren für Studiengänge.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Prüfungsstatistiken (Bestehensquoten, Notenverteilung nach Modul) können veröffentlicht werden, wenn keine Kohortengröße unter 10 Personen ausgewiesen wird. Wichtige Qualitätsindikatoren für Akkreditierungen und Studienreformen."
                 },
-                "dsgvoRisk": {
-                  "level": "Hoch",
-                  "riskClass": "risk-high",
-                  "explanation": "Noten können in kleinen Kursen re-identifizierend sein (wenige Studierende pro Modul). Prüfungsordnungen der Bundesländer regeln Akteneinsicht und Aufbewahrungspflichten (i.d.R. 5 Jahre nach Abschluss). Matrikelnummer als Schlüssel besonders zu schützen.",
-                  "articles": ["Art. 6 DSGVO", "Art. 15 DSGVO", "Prüfungsordnungen", "BDSG § 22"]
-                },
-                "anonymization": [
-                  { "method": "Aggregation", "description": "Veröffentlichung nur auf Modul-Ebene mit Notenverteilung als Histogramm. Keine individuellen Noten oder Matrikelnummern." },
-                  { "method": "Zellsuppression", "description": "Module mit weniger als 10 Prüflingen: Notenverteilung wird nicht veröffentlicht, nur Gesamtbestehensquote." }
+                "theme":       { "code": "TH_03", "label": "Bildung & Jugend" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Qualitätssicherung im Studium", "description": "Bestehensquoten und Notenverteilungen sind Kernindikatoren für Studiengangsreviews und Akkreditierungsverfahren." },
+                  { "method": "Bildungsforschung", "description": "Längsschnittdaten zu Studienerfolg liefern wichtige Erkenntnisse zur Wirksamkeit verschiedener Lehrformate." }
                 ]
               }
             }
@@ -78,22 +78,21 @@
               "name": "Probandendaten",
               "color": "#7d3c98",
               "details": {
-                "description": "Daten aus wissenschaftlichen Studien mit menschlichen Probanden: Einwilligungsformulare, Messungen (physiologische, psychologische, behaviorale Daten), Pseudonym-Code und Beobachtungsprotokolle.",
-                "openDataPotential": {
-                  "score": "Mittel",
-                  "scoreValue": 2,
-                  "explanation": "Anonymisierte Forschungsdatensätze ('Open Research Data') sind zentrales Anliegen der Open-Science-Bewegung. FAIR-Prinzipien (Findable, Accessible, Interoperable, Reusable) fordern offene Daten. Repositorien wie Zenodo oder PANGAEA ermöglichen sicheres Sharing anonymisierter Datensätze."
+                "description": "Daten aus wissenschaftlichen Studien mit menschlichen Probanden: Einwilligungsformulare, Messungen (physiologische, psychologische, behaviorale Parameter), Pseudonym-Code und Beobachtungsprotokolle. Verarbeitung nach Ethikvotum und Informed Consent.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Biomedizinische Rohdaten sind auch nach Pseudonymisierung durch Merkmalskombinationen re-identifizierbar. Veröffentlichung nur als synthetische Datensätze oder über akkreditierte Forschungsdatenzentren (GESIS, ZA) nach Disclosure-Risk-Assessment. Open Research Data ist das Ziel — aber mit hohen Schutzhürden."
                 },
-                "dsgvoRisk": {
-                  "level": "Sehr hoch",
-                  "riskClass": "risk-veryhigh",
-                  "explanation": "Biomedizinische Forschungsdaten fallen unter Art. 9 DSGVO (Gesundheitsdaten, genetische Daten). Ethikkommission der Hochschule muss zustimmen. Pseudonymisierung ist Standard, aber Re-Identifikationsrisiko durch Kombination von Merkmalen besteht. Informed Consent ist unverzichtbare Bedingung.",
-                  "articles": ["Art. 9 DSGVO", "Art. 89 DSGVO", "AMG § 40", "GCP-Verordnung", "Deklaration von Helsinki"]
-                },
-                "anonymization": [
-                  { "method": "Pseudonymisierung", "description": "Zuordnungsliste (Pseudonym ↔ Identität) wird separat vom Datensatz aufbewahrt, nur beim Studienleiter, nicht in der Datenbank." },
-                  { "method": "Synthetische Daten", "description": "Für Open-Science-Veröffentlichungen: Generierung statistisch äquivalenter synthetischer Datensätze mit GAN-Modellen, die keine echten Probanden representieren." },
-                  { "method": "Daten-Embargo", "description": "Sensible Longitudinaldaten bleiben bis zu 10 Jahre nach Studienende unter Zugangsbeschränkung, danach schrittweise Freigabe nach Ethikprüfung." }
+                "theme":       { "code": "TH_10", "label": "Wissenschaft & Forschung" },
+                "object":      { "code": "OB_02", "label": "Einzelfallbezogene Daten" },
+                "granularity": { "code": "GR_01", "label": "Einzelfall (Mikroebene)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_04", "label": "Geschlossen / Proprietär" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Wissenschaftliche Studien", "description": "Messdaten entstehen im Studienverlauf und werden nach Abschluss für Publikationen und Metaanalysen aufbereitet." },
+                  { "method": "Ethikprüfung & Datenschutz", "description": "Jeder Verwendungsschritt erfordert Ethikvotum, DSFA und Einwilligung der Probanden." }
                 ]
               }
             }
@@ -121,22 +120,21 @@
               "name": "Umfragedaten",
               "color": "#7d3c98",
               "details": {
-                "description": "Rohdaten aus strukturierten Bevölkerungsbefragungen: Antworten auf Fragen zu Meinungen, Verhaltensweisen, sozialen Merkmalen — je nach Studie pseudonym oder anonym erhoben.",
-                "openDataPotential": {
-                  "score": "Hoch",
-                  "scoreValue": 3,
-                  "explanation": "Umfragedaten sozialwissenschaftlicher Forschung (z.B. ALLBUS, SOEP) sind Paradebeispiele erfolgreichen Open Research Data. Wissenschaftliche Datenzentren (GESIS, FDZ) archivieren und verteilen anonymisierte Umfragedaten weltweit. Sehr hoher wissenschaftlicher Sekundärnutzungswert."
+                "description": "Rohdaten aus strukturierten Bevölkerungsbefragungen: Antworten zu Meinungen, Verhaltensweisen, sozialen Merkmalen — je nach Studie pseudonym oder anonym erhoben. Basis für sozialwissenschaftliche Grundlagenforschung (ALLBUS, SOEP, Eurobarometer).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierte Scientific-Use-Files sind Paradebeispiele erfolgreichen Open Research Data (GESIS, FDZ). Nach Disclosure-Risk-Assessment und Anonymisierung seltener Merkmalsausprägungen können Umfragedatensätze als Open Data bereitgestellt werden — mit enormem Sekundärnutzungswert."
                 },
-                "dsgvoRisk": {
-                  "level": "Mittel",
-                  "riskClass": "risk-medium",
-                  "explanation": "Art. 89 DSGVO sieht ausdrückliche Privilegierung für wissenschaftliche Forschung vor. Bei anonymer Erhebung kein Personenbezug. Bei pseudonymisierter Erhebung: DSGVO anwendbar, aber Ausnahmen für Forschung möglich. Ethikvotum und DSFA empfohlen.",
-                  "articles": ["Art. 89 DSGVO", "BDSG § 27", "Art. 6 Abs. 1 lit. e DSGVO"]
-                },
-                "anonymization": [
-                  { "method": "Anonyme Erhebung", "description": "Soweit möglich: Erhebung ohne jeden Personenbezug. Keine IP-Adressen, keine Metadaten, keine Zeitstempel in der Antwortdatei." },
-                  { "method": "Mikrodaten-Anonymisierung", "description": "Für veröffentlichte Scientific-Use-Files: Vergröberung seltener Merkmalsausprägungen, Oberkodierung (Berufsgruppen statt Einzelberufe), Top-Coding bei Einkommensangaben." },
-                  { "method": "Faktische Anonymisierung", "description": "GESIS-Standard: Prüfung auf faktische Anonymität durch Disclosure-Risk-Assessment. Nur Datensätze mit Anonymisierungsgrad > 95% werden als Open Data freigegeben." }
+                "theme":       { "code": "TH_10", "label": "Wissenschaft & Forschung" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Sozialforschung & Erhebung", "description": "Umfragedaten entstehen durch standardisierte Datenerhebungsverfahren und repräsentative Stichprobenplanung." },
+                  { "method": "Datenarchivierung & Nachnutzung", "description": "Archivierung in Forschungsdatenzentren (GESIS, FDZ) für weltweite Sekundärnutzung durch Wissenschaft." }
                 ]
               }
             }

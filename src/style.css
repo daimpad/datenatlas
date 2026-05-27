@@ -486,7 +486,8 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
 #ob-start:hover { opacity: 0.85; }
 
 /* ── Search ── */
-#search-toggle {
+#search-toggle,
+#share-btn {
   width: 34px; height: 34px;
   background: transparent;
   border: 1px solid var(--border);
@@ -500,10 +501,34 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
   transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 #search-toggle:hover,
-#header.search-mode #search-toggle {
+#header.search-mode #search-toggle,
+#share-btn:hover,
+#share-btn.copied {
   background: var(--surface-2);
   color: var(--accent);
   border-color: rgba(88,166,255,0.35);
+}
+
+#share-toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface-2);
+  color: var(--text-1);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-family: var(--font);
+  z-index: 9999;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  animation: toast-in 0.15s ease;
+}
+@keyframes toast-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
 #search-input {

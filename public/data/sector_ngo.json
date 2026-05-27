@@ -606,6 +606,375 @@
           ]
         }
       ]
+    },
+    {
+      "id": "migration-integration",
+      "level": 2,
+      "name": "Migration & Integration",
+      "color": "#2ecc71",
+      "description": "Migrationsberatungsstellen, Willkommensinitiativen und Integrationsnetzwerke, die neu angekommene Menschen begleiten und gesellschaftliche Teilhabe fördern.",
+      "children": [
+        {
+          "id": "beratung-sozialbegleitung",
+          "level": 3,
+          "name": "Beratung & Sozialbegleitung",
+          "color": "#27ae60",
+          "description": "Strukturierte Beratungsleistungen für Menschen mit Migrationshintergrund: Erstorientierung, Asylverfahrensberatung, soziale Begleitung.",
+          "children": [
+            {
+              "id": "migrationsberatungsstatistik",
+              "level": 4,
+              "name": "Migrationsberatungsstatistik",
+              "color": "#27ae60",
+              "details": {
+                "description": "Aggregierte Auswertungen der Migrationsberatungsleistungen: Fallzahlen nach Herkunftsland, Beratungsthema (Aufenthaltsrecht, Arbeit, Wohnen, Sozialleistungen), Beratungsdauer und Verlauf. Kein Personenbezug in den Aggregaten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Fallzahlen auf Kreisebene (Mindestgröße 10 Fälle pro Gruppe) können ohne Personenbezug veröffentlicht werden. Wertvolle Daten für kommunale Integrationsplanung und wissenschaftliche Migrationsforschung."
+                },
+                "theme":       { "code": "TH_09", "label": "Migration & Integration" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Beratung & Betreuung", "description": "Kerndaten jedes Beratungsvorgangs bilden die Grundlage dieser Statistik." },
+                  { "method": "Monitoring & Evaluation", "description": "Regelmäßige Auswertung zur Qualitätssicherung und Ressourcenplanung der Beratungsstelle." }
+                ]
+              }
+            },
+            {
+              "id": "einrichtungsverzeichnis-migration",
+              "level": 4,
+              "name": "Verzeichnis Migrationsberatung",
+              "color": "#27ae60",
+              "details": {
+                "description": "Strukturiertes Verzeichnis aller Migrationsberatungsstellen und Integrationszentren: Träger, Angebotsschwerpunkte (Asyl, Arbeit, Sprache), Zielgruppen, Sprachen, Öffnungszeiten und Kontaktdaten. Grundlage für Wegweiser-Apps und Beratungsvermittlung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Rein institutionelle Daten ohne Personenbezug. Offene Bereitstellung als maschinenlesbare Geodaten erleichtert die Auffindbarkeit für neu angekommene Menschen erheblich — besonders in Kombination mit mehrsprachigen Apps."
+                },
+                "theme":       { "code": "TH_09", "label": "Migration & Integration" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Verzeichnis ist primäres Kommunikationsinstrument, um Ratsuchende zu passenden Anlaufstellen zu führen." },
+                  { "method": "Netzwerkarbeit & Kooperationen", "description": "Gepflegtes Verzeichnis erleichtert Weitervermittlung zwischen Beratungsstellen und fördert Kooperationen." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "sprachfoerderung-bildung",
+          "level": 3,
+          "name": "Sprachförderung & Bildung",
+          "color": "#27ae60",
+          "description": "Integrationskurse, Sprachförderangebote und Bildungsprogramme für Menschen mit Migrationshintergrund.",
+          "children": [
+            {
+              "id": "integrationskurs-statistik",
+              "level": 4,
+              "name": "Integrationskurs-Statistik",
+              "color": "#27ae60",
+              "details": {
+                "description": "Auswertungen zu Integrationskursen (BAMF-gefördert und NGO-eigene): Kursteilnahmen nach Herkunftsregion, Abschlussquoten, Sprachniveaus (GER A1–B1), regionale Verteilung der Kursangebote und Wartezeiten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Statistiken (Teilnahmezahlen, Abschlussquoten nach GER-Niveau und Region) können nach Anonymisierung veröffentlicht werden. BAMF publiziert vergleichbare Bundesdaten bereits — kommunale NGO-Daten ergänzen das Bild auf lokaler Ebene."
+                },
+                "theme":       { "code": "TH_09", "label": "Migration & Integration" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Bildungsarbeit & Veranstaltungen", "description": "Kursteilnahmedaten entstehen im laufenden Kursbetrieb und dienen der Kursplanung und Qualitätssicherung." },
+                  { "method": "Förderantragsstellung", "description": "Teilnahme- und Abschlussstatistiken sind Kernbestandteil von Förder- und Verwendungsnachweisen." }
+                ]
+              }
+            },
+            {
+              "id": "mehrsprachige-bildungsangebote",
+              "level": 4,
+              "name": "Mehrsprachige Bildungsangebote",
+              "color": "#27ae60",
+              "details": {
+                "description": "Katalog mehrsprachiger Bildungs- und Informationsangebote für Menschen mit Migrationshintergrund: Titel, Sprachen, Thema, Format (Präsenz/Online), Zielgruppe, Anbieter, Kosten und Anmeldemodalitäten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Rein institutionelle Programmdaten ohne Personenbezug. Mehrsprachige offene Datensätze (JSON mit Übersetzungen) ermöglichen Integration in kommunale Wegweiser-Apps und erhöhen die Reichweite unter der Zielgruppe erheblich."
+                },
+                "theme":       { "code": "TH_09", "label": "Migration & Integration" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Bildungsarbeit & Veranstaltungen", "description": "Angebotskatalog ist primäres Kommunikationsinstrument für Kursangebote und erster Kontaktpunkt." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Maschinenlesbare mehrsprachige Daten ermöglichen Syndizierung auf Integrationsportalen." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gesundheit-pflege-ngo",
+      "level": 2,
+      "name": "Gesundheit & Pflege (NGO)",
+      "color": "#2ecc71",
+      "description": "Gemeinnützige Pflegedienste, Hospizinitiativen, Selbsthilfegruppen und Gesundheitsaufklärungsprojekte, die vulnerable Menschen in Gesundheitssituationen begleiten.",
+      "children": [
+        {
+          "id": "ambulante-pflege-hospiz",
+          "level": 3,
+          "name": "Ambulante Pflege & Hospiz",
+          "color": "#27ae60",
+          "description": "Ehrenamtliche und semi-professionelle Pflegedienste sowie Hospiz- und Palliativbegleitung durch NGOs.",
+          "children": [
+            {
+              "id": "pflegedienstverzeichnis",
+              "level": 4,
+              "name": "Pflegedienstverzeichnis",
+              "color": "#27ae60",
+              "details": {
+                "description": "Strukturiertes Verzeichnis gemeinnütziger ambulanter Pflegedienste und Hospizeinrichtungen: Träger, Versorgungsgebiet, Leistungsspektrum (Körperpflege, Begleitung, 24h-Bereitschaft), Sprachen, Barrierefreiheit und Kontaktdaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Rein institutionelle Infrastrukturdaten ohne Personenbezug. Veröffentlichung als offenes Verzeichnis erleichtert pflegebedürftigen Menschen und Angehörigen die Suche erheblich — besonders in ländlichen Regionen mit knappen Versorgungskapazitäten."
+                },
+                "theme":       { "code": "TH_04", "label": "Gesundheit" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Verzeichnis ist primäres Mittel zur Auffindbarkeit von Pflegeangeboten für Betroffene und Angehörige." },
+                  { "method": "Netzwerkarbeit & Kooperationen", "description": "Gepflegtes Verzeichnis erleichtert Koordination zwischen Pflegediensten, Krankenhäusern und Sozialdiensten." }
+                ]
+              }
+            },
+            {
+              "id": "versorgungsstatistik-pflege",
+              "level": 4,
+              "name": "Versorgungsstatistik Pflege",
+              "color": "#27ae60",
+              "details": {
+                "description": "Aggregierte Auswertungen ambulanter Pflegeleistungen durch NGOs: Anzahl betreuter Personen (anonymisiert), Pflegegrade, Leistungsarten, Versorgungsvolumen in Stunden und regionale Abdeckung. Grundlage für Bedarfsplanung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Pflegestatistiken ohne Einzelfallbezug können nach Anonymisierung (Mindestgruppengrößen ≥5 pro Pflegegrad und Region) veröffentlicht werden. Wertvolle Grundlage für kommunale Pflegebedarfsplanung und Versorgungsforschung."
+                },
+                "theme":       { "code": "TH_04", "label": "Gesundheit" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Monitoring & Evaluation", "description": "Versorgungsstatistiken messen Reichweite und Qualität der Pflegeleistungen und fließen in Qualitätsberichte ein." },
+                  { "method": "Förderantragsstellung", "description": "Leistungsstatistiken sind Pflichtbestandteil von Verwendungsnachweisen gegenüber öffentlichen Fördergebern." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "gesundheitsaufklaerung",
+          "level": 3,
+          "name": "Gesundheitsaufklärung & Prävention",
+          "color": "#27ae60",
+          "description": "Öffentlichkeitswirksame Präventionskampagnen, Selbsthilfegruppen und Bildungsangebote zu Gesundheitsthemen durch zivilgesellschaftliche Akteure.",
+          "children": [
+            {
+              "id": "praeventionskampagnen-bericht",
+              "level": 4,
+              "name": "Präventionskampagnen-Bericht",
+              "color": "#27ae60",
+              "details": {
+                "description": "Dokumentation öffentlicher Gesundheitskampagnen: Kampagnenthema, Zielgruppe, Reichweite (Medien, Veranstaltungen, Downloads), eingesetzte Mittel und gemessene Wirkung. Kein Personenbezug in Berichten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Kampagnenberichte sind öffentliche Rechenschaftsdokumente ohne Personenbezug. Open-Access-Veröffentlichung schafft Transparenz über eingesetzte Mittel und fördert das Lernen von erfolgreichen Kampagnenformaten."
+                },
+                "theme":       { "code": "TH_04", "label": "Gesundheit" },
+                "object":      { "code": "OB_07", "label": "Mediendaten / Dokumente" },
+                "granularity": { "code": "GR_04", "label": "National" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Kampagnenberichte kommunizieren Wirkung gegenüber Fördergebern und der Fachöffentlichkeit." },
+                  { "method": "Monitoring & Evaluation", "description": "Strukturierte Erfassung der Kampagnenwirkung ist Basis für Optimierung und Wiederholung." }
+                ]
+              }
+            },
+            {
+              "id": "selbsthilfegruppen-verzeichnis",
+              "level": 4,
+              "name": "Selbsthilfegruppen-Verzeichnis",
+              "color": "#27ae60",
+              "details": {
+                "description": "Öffentliches Verzeichnis von Selbsthilfegruppen: Gesundheitsthema, Zielgruppe (Betroffene, Angehörige), Treffen (Ort, Rhythmus), Kontaktweg (anonym oder direkt) und Trägerkontakt. Bewusst ohne personenbezogene Teilnehmerdaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Verzeichnisdaten zu Selbsthilfegruppen sind institutionell — kein Personenbezug von Mitgliedern. Offene maschinenlesbare Bereitstellung erhöht Auffindbarkeit für Menschen in Gesundheitskrisen erheblich. Nationaldatenbank Selbsthilfe (NAKOS) macht dies bereits vor."
+                },
+                "theme":       { "code": "TH_04", "label": "Gesundheit" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Verzeichnis ist primäres Auffindbarkeits-Instrument für Betroffene und Zuweisende (Ärzte, Sozialarbeiter)." },
+                  { "method": "Netzwerkarbeit & Kooperationen", "description": "Gepflegtes Verzeichnis fördert Vernetzung zwischen Gruppen gleicher Themen und Dachverbänden." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sport-freizeit",
+      "level": 2,
+      "name": "Sport & Freizeit",
+      "color": "#2ecc71",
+      "description": "Sportvereine, Freizeitverbände und Jugendeinrichtungen, die Bewegung, Gemeinschaft und gesundheitliche Teilhabe in der Zivilgesellschaft organisieren.",
+      "children": [
+        {
+          "id": "vereins-mitgliederverwaltung",
+          "level": 3,
+          "name": "Vereins- & Mitgliederverwaltung",
+          "color": "#27ae60",
+          "description": "Administrative Daten zu Vereinsstrukturen, Mitgliedschaften und organisatorischen Prozessen im organisierten Sport.",
+          "children": [
+            {
+              "id": "vereinsverzeichnis-sport",
+              "level": 4,
+              "name": "Sportverein-Verzeichnis",
+              "color": "#27ae60",
+              "details": {
+                "description": "Strukturiertes Verzeichnis eingetragener Sportvereine: Name, Rechtsform, Hauptsportarten, Zielgruppen (Kinder, Senioren, Inklusion), Mitgliederzahl (aggregiert), Vereinsadresse und Kontaktdaten. Basis für Sportentwicklungsplanung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Rein institutionelle Daten ohne Personenbezug. Offene Bereitstellung ermöglicht kommunale Sportentwicklungsplanung, Vereinssuchdienste und Analysen zur Sportteilhabe. LSB und DOSB sammeln solche Daten bereits — Open-Data-Bereitstellung würde Nutzbarkeit stark erhöhen."
+                },
+                "theme":       { "code": "TH_08", "label": "Kultur & Medien" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 4,
+                "processes": [
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Vereinsverzeichnis erhöht Auffindbarkeit für Neumitglieder und ist Basis von Vereinssuchdiensten." },
+                  { "method": "Interessenvertretung & Lobbying", "description": "Aggregierte Vereinsdaten belegen gesellschaftliche Bedeutung des organisierten Sports in Sportpolitik-Debatten." }
+                ]
+              }
+            },
+            {
+              "id": "mitgliederstatistik-sport",
+              "level": 4,
+              "name": "Mitgliederstatistik (aggregiert)",
+              "color": "#27ae60",
+              "details": {
+                "description": "Aggregierte Mitgliederstatistiken des organisierten Sports: Mitgliederzahlen nach Sportart, Altersgruppe, Geschlecht und Region. Trendentwicklung über Jahrzehnte. Keine Individualdaten — ausschließlich Verbands- und Kreisebene.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Mitgliederstatistiken auf Kreisverbandsebene können nach Prüfung auf Kleingruppenrisiken veröffentlicht werden. DOSB-Bestandserhebung ist bereits teilweise öffentlich — feinere Aufschlüsselung auf Ortsvereinebene würde Sportteilhabeforschung erheblich stärken."
+                },
+                "theme":       { "code": "TH_08", "label": "Kultur & Medien" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregatdaten" },
+                "granularity": { "code": "GR_03", "label": "Regional (Bundesland)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_05", "label": "Excel (XLSX)" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Monitoring & Evaluation", "description": "Mitgliederentwicklung ist Kernindiktor für Attraktivität und Reichweite des Vereinssports." },
+                  { "method": "Interessenvertretung & Lobbying", "description": "Mitgliederzahlen sind zentrales Argument in Fördergesprächen und sportpolitischen Debatten." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "sportanlagen-infrastruktur",
+          "level": 3,
+          "name": "Sportanlagen & Infrastruktur",
+          "color": "#27ae60",
+          "description": "Daten zu Sportstätten, deren Nutzung und Zugänglichkeit als Grundlage für kommunale Sportinfrastrukturplanung.",
+          "children": [
+            {
+              "id": "sportstaettenverzeichnis",
+              "level": 4,
+              "name": "Sportstättenverzeichnis",
+              "color": "#27ae60",
+              "details": {
+                "description": "Geographisches Verzeichnis öffentlicher und vereinseigener Sportstätten: Typ (Halle, Freibad, Spielfeld), Adresse und Geokoordinaten, Kapazität, Sportarten, Barrierefreiheit, Träger und Buchbarkeit für Vereine.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Sportstättendaten sind öffentliche Infrastrukturinformationen ohne Personenbezug. GeoJSON-Bereitstellung ermöglicht Integration in Stadtportale, Sportstätten-Finder-Apps und kommunale Planungstools. Bundesweit fehlen maschinenlesbare Sportstättenkataster — großes Open-Data-Potenzial."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_04", "label": "Geodaten / Karten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 5,
+                "processes": [
+                  { "method": "Stadtplanung & Entwicklung", "description": "Sportstättenkataster ist Pflichtgrundlage für kommunale Sportentwicklungspläne und Investitionsentscheidungen." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Öffentliches Verzeichnis erleichtert Vereinen und Schulen die Suche und Buchung geeigneter Anlagen." }
+                ]
+              }
+            },
+            {
+              "id": "belegungsstatistik-sportstaetten",
+              "level": 4,
+              "name": "Belegungsstatistik Sportstätten",
+              "color": "#27ae60",
+              "details": {
+                "description": "Aggregierte Auslastungsdaten kommunaler und vereinseigener Sportstätten: Belegungsstunden nach Sportart, Tageszeit, Altersgruppe der Nutzenden und Saison. Grundlage für Kapazitätsplanung und Priorisierung von Sanierungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Belegungsdaten (Stunden je Sportstätte und Zeitraum, ohne Buchungs- oder Personenbezug) können veröffentlicht werden. Wertvolle Grundlage für evidenzbasierte Sportentwicklungsplanung und Priorisierung von Sanierungsbedarfen."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_06", "label": "Zeitreihendaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Ressourcenplanung", "description": "Belegungsanalysen identifizieren Überlastung und Leerzeiten und optimieren die Zuteilung von Hallenzeiten." },
+                  { "method": "Monitoring & Evaluation", "description": "Auslastungstrends belegen Nutzungsintensität und unterstützen Investitionsanträge für neue Anlagen." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

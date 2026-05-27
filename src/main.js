@@ -7,16 +7,19 @@ import { applyRiskColors }           from './utils.js';
 import { buildSearchIndex, initSearch } from './search.js';
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
-const canvas       = document.getElementById('map-canvas');
-const loadingVeil  = document.getElementById('loading-veil');
-const errorState   = document.getElementById('error-state');
-const errorMessage = document.getElementById('error-message');
-const errorRetry   = document.getElementById('error-retry');
-const btnBack      = document.getElementById('btn-back');
-const btnHome      = document.getElementById('btn-home');
-const breadcrumbEl = document.getElementById('breadcrumb');
-const levelNumEl   = document.getElementById('level-number');
-const tooltip      = document.getElementById('tooltip');
+const canvas        = document.getElementById('map-canvas');
+const loadingVeil   = document.getElementById('loading-veil');
+const errorState    = document.getElementById('error-state');
+const errorMessage  = document.getElementById('error-message');
+const errorRetry    = document.getElementById('error-retry');
+const btnBack       = document.getElementById('btn-back');
+const btnHome       = document.getElementById('btn-home');
+const breadcrumbEl  = document.getElementById('breadcrumb');
+const levelNumEl    = document.getElementById('level-number');
+const tooltip       = document.getElementById('tooltip');
+const filterBar     = document.getElementById('filter-bar');
+const filterToggle  = document.getElementById('filter-toggle');
+const onboarding    = document.getElementById('onboarding');
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 const renderer = new IsometricRenderer(canvas);
@@ -25,7 +28,7 @@ initControls({
   canvas,
   renderer,
   onTileClick: handleTileClick,
-  onHover: handleHover,
+  onHover:     handleHover,
 });
 
 btnBack.addEventListener('click', navigateBack);
@@ -33,6 +36,87 @@ btnHome.addEventListener('click', navigateHome);
 
 let _retryFn = null;
 errorRetry.addEventListener('click', () => { hideError(); _retryFn?.(); });
+
+// ── Onboarding ────────────────────────────────────────────────────────────────
+
+const OB_KEY = 'datenatlas_onboarded_v1';
+if (!localStorage.getItem(OB_KEY)) {
+  onboarding.hidden = false;
+} else {
+  onboarding.hidden = true;
+}
+
+document.getElementById('ob-start').addEventListener('click', () => {
+  localStorage.setItem(OB_KEY, '1');
+  onboarding.hidden = true;
+});
+
+// ── Filter ────────────────────────────────────────────────────────────────────
+
+const filterState = { risk: null, openData: null };
+let filterOpen    = false;
+
+filterToggle.addEventListener('click', () => {
+  filterOpen = !filterOpen;
+  filterToggle.classList.toggle('active', filterOpen);
+  // Filter bar only makes sense at level 4 — show/hide respects current level
+  const atL4 = (state.breadcrumb[state.breadcrumb.length - 1]?.level ?? 0) === 4;
+  filterBar.hidden = !(filterOpen && atL4);
+});
+
+// Risk chip group
+document.getElementById('fc-risk').addEventListener('click', e => {
+  const btn = e.target.closest('.fc');
+  if (!btn) return;
+  filterState.risk = btn.dataset.risk || null;
+  setActiveChip('fc-risk', btn);
+  applyFilter();
+});
+
+// Open-data chip group
+document.getElementById('fc-od').addEventListener('click', e => {
+  const btn = e.target.closest('.fc');
+  if (!btn) return;
+  const val = btn.dataset.od;
+  filterState.openData = val === '' ? null : parseInt(val, 10);
+  setActiveChip('fc-od', btn);
+  applyFilter();
+});
+
+function setActiveChip(groupId, activeBtn) {
+  document.getElementById(groupId)
+    .querySelectorAll('.fc')
+    .forEach(b => b.classList.toggle('active', b === activeBtn));
+}
+
+function applyFilter() {
+  const atL4 = (state.breadcrumb[state.breadcrumb.length - 1]?.level ?? 0) === 4;
+
+  // Show/hide filter bar based on level + toggle state
+  filterBar.hidden = !(filterOpen && atL4);
+
+  if (!atL4 || (filterState.risk === null && filterState.openData === null)) {
+    renderer.setDimmedIds(new Set());
+    return;
+  }
+
+  const dimmed = new Set(
+    state.currentTiles
+      .filter(t => !tileMatchesFilter(t))
+      .map(t => t.id)
+  );
+  renderer.setDimmedIds(dimmed);
+}
+
+function tileMatchesFilter(tile) {
+  if (filterState.risk !== null) {
+    if (tile.details?.dsgvoRisk?.riskClass !== filterState.risk) return false;
+  }
+  if (filterState.openData !== null) {
+    if (tile.details?.openDataPotential?.scoreValue !== filterState.openData) return false;
+  }
+  return true;
+}
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
 
@@ -45,7 +129,6 @@ let _mainTiles = [];
     _mainTiles = sectors;
     pushLevel(sectors, { id: null, name: 'Übersicht', level: 0 });
 
-    // Background: pre-load all sectors for search index
     const indexPromise = buildIndexInBackground(sectors);
     initSearch({ indexPromise, onNavigate: navigateToSearchResult });
   } catch (err) {
@@ -61,12 +144,8 @@ async function buildIndexInBackground(mainTiles) {
     mainTiles
       .filter(t => t.subFile)
       .map(async t => {
-        try {
-          const data = await loadSector(t.id);
-          return [t, data];
-        } catch {
-          return null;
-        }
+        try   { return [t, await loadSector(t.id)]; }
+        catch { return null; }
       })
   );
   return buildSearchIndex(mainTiles, pairs.filter(Boolean));
@@ -85,6 +164,7 @@ function pushLevel(tiles, crumb) {
   renderer.setPan(0, 0);
   animateIn(processed);
   updateChrome();
+  applyFilter();
 }
 
 function navigateBack() {
@@ -96,6 +176,7 @@ function navigateBack() {
   renderer.setPan(0, 0);
   animateIn(prev.tiles);
   updateChrome();
+  applyFilter();
 }
 
 function navigateHome() {
@@ -106,6 +187,7 @@ function navigateHome() {
   renderer.setPan(0, 0);
   animateIn(root.tiles);
   updateChrome();
+  applyFilter();
 }
 
 function navigateToCrumb(index) {
@@ -117,18 +199,18 @@ function navigateToCrumb(index) {
   renderer.setPan(0, 0);
   animateIn(target.tiles);
   updateChrome();
+  applyFilter();
 }
 
 function navigateToSearchResult(result) {
   closeSidebar();
-  // Restore full breadcrumb from search result
   state.breadcrumb = result.breadcrumb.map(c => ({ ...c }));
   const last = state.breadcrumb[state.breadcrumb.length - 1];
   patchState({ zoomLevel: last.level, currentTiles: last.tiles, panOffset: { x:0, y:0 } });
   renderer.setPan(0, 0);
   animateIn(last.tiles);
   updateChrome();
-  // Auto-open sidebar for the matched tile
+  applyFilter();
   const target = last.tiles.find(t => t.id === result.tile.id);
   if (target) openSidebar(target);
 }
@@ -158,7 +240,7 @@ async function navigateDeeper(tile) {
       const sectorData = await loadSector(tile.id);
       const children   = sectorData.children ?? [];
       if (children.length) {
-        await animateOut();
+        await animateOut(tile.id);
         pushLevel(children, { id: tile.id, name: tile.name, level: 2 });
       }
     } catch (err) {
@@ -175,7 +257,7 @@ async function navigateDeeper(tile) {
 
   if (tile.children?.length) {
     const nextLevel = (tile.level ?? 1) + 1;
-    await animateOut();
+    await animateOut(tile.id);
     pushLevel(tile.children, { id: tile.id, name: tile.name, level: nextLevel });
   }
 }
@@ -197,13 +279,24 @@ function handleHover(id, clientX, clientY) {
 
 const ANIM_DUR = 280;
 
-function animateOut() {
+// tileId: if given, canvas zooms slightly toward that tile's center while fading out
+function animateOut(tileId) {
+  const center = tileId ? renderer.getTileCenter(tileId) : null;
+  if (center) {
+    canvas.style.transformOrigin = `${center.x}px ${center.y}px`;
+  }
   return new Promise(resolve => {
-    const t0   = performance.now();
+    const t0 = performance.now();
     const step = now => {
       const t = Math.min((now - t0) / ANIM_DUR, 1);
       renderer.setAlpha(1 - easeIn(t));
-      if (t < 1) requestAnimationFrame(step); else resolve();
+      if (center) canvas.style.transform = `scale(${1 + 0.09 * easeIn(t)})`;
+      if (t < 1) requestAnimationFrame(step);
+      else {
+        canvas.style.transform = '';
+        canvas.style.transformOrigin = '';
+        resolve();
+      }
     };
     requestAnimationFrame(step);
   });
@@ -212,7 +305,7 @@ function animateOut() {
 function animateIn(tiles) {
   renderer.setTiles(tiles);
   renderer.setAlpha(0);
-  const t0   = performance.now();
+  const t0 = performance.now();
   const step = now => {
     const t = Math.min((now - t0) / ANIM_DUR, 1);
     renderer.setAlpha(easeOut(t));
@@ -228,11 +321,10 @@ const easeOut = t => 1 - (1 - t) ** 2;
 
 function updateChrome() {
   const crumbs = state.breadcrumb;
-  const depth  = crumbs.length - 1;
 
   levelNumEl.textContent = Math.max(1, crumbs[crumbs.length - 1]?.level ?? 1);
-  btnBack.disabled = depth < 1;
-  btnHome.disabled = depth < 1;
+  btnBack.disabled = crumbs.length <= 1;
+  btnHome.disabled = crumbs.length <= 1;
 
   breadcrumbEl.innerHTML = crumbs.map((c, i) => {
     const isLast = i === crumbs.length - 1;

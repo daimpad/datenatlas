@@ -22,6 +22,8 @@ const filterBar     = document.getElementById('filter-bar');
 const filterToggle  = document.getElementById('filter-toggle');
 const filterCount   = document.getElementById('filter-count');
 const onboarding    = document.getElementById('onboarding');
+const shareBtn      = document.getElementById('share-btn');
+const shareToast    = document.getElementById('share-toast');
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 const renderer = new IsometricRenderer(canvas);
@@ -41,6 +43,74 @@ document.getElementById('ob-start').addEventListener('click', () => {
   localStorage.setItem(OB_KEY, '1');
   onboarding.hidden = true;
 });
+
+// ── Share / deep-link ─────────────────────────────────────────────────────────
+let _hashEnabled = false;
+let _shareTimer  = null;
+
+shareBtn.addEventListener('click', () => {
+  navigator.clipboard.writeText(location.href).then(() => {
+    shareBtn.classList.add('copied');
+    shareToast.hidden = false;
+    clearTimeout(_shareTimer);
+    _shareTimer = setTimeout(() => {
+      shareBtn.classList.remove('copied');
+      shareToast.hidden = true;
+    }, 2000);
+  });
+});
+
+function updateHash() {
+  if (!_hashEnabled) return;
+  const lvl = currentLevel();
+  if (lvl > 4) return;
+  const path = state.breadcrumb
+    .filter(c => c.id != null)
+    .map(c => c.id)
+    .join('/');
+  history.replaceState(null, '', path ? '#' + path : location.pathname);
+}
+
+async function restoreFromHash(hash) {
+  const decoded = decodeURIComponent(hash.replace(/^#/, ''));
+  if (!decoded) return;
+  const segments = decoded.split('/').filter(Boolean);
+  if (!segments.length) return;
+
+  const sectorTile = _mainTiles.find(t => t.id === segments[0]);
+  if (!sectorTile?.subFile) return;
+
+  try {
+    showLoading(true);
+    const sectorData = await loadSector(sectorTile.id);
+    const l2tiles = applyOpennessColors(sectorData.children ?? []);
+    state.breadcrumb.push({ id: sectorTile.id, name: sectorTile.name, level: 2, tiles: l2tiles });
+    if (segments.length === 1) { _finish(2, l2tiles); return; }
+
+    const l2tile = l2tiles.find(t => t.id === segments[1]);
+    if (!l2tile?.children?.length) { _finish(2, l2tiles); return; }
+    const l3tiles = applyOpennessColors(l2tile.children);
+    state.breadcrumb.push({ id: l2tile.id, name: l2tile.name, level: 3, tiles: l3tiles });
+    if (segments.length === 2) { _finish(3, l3tiles); return; }
+
+    const l3tile = l3tiles.find(t => t.id === segments[2]);
+    if (!l3tile?.children?.length) { _finish(3, l3tiles); return; }
+    const l4tiles = applyOpennessColors(l3tile.children);
+    state.breadcrumb.push({ id: l3tile.id, name: l3tile.name, level: 4, tiles: l4tiles });
+    _finish(4, l4tiles);
+  } catch (err) {
+    console.error('URL restore failed:', err);
+  } finally {
+    showLoading(false);
+  }
+
+  function _finish(lvl, tiles) {
+    patchState({ zoomLevel: lvl, currentTiles: tiles, panOffset: { x: 0, y: 0 } });
+    renderer.setTiles(tiles);
+    renderer.setPan(0, 0);
+    updateChrome();
+  }
+}
 
 // ── Filter ────────────────────────────────────────────────────────────────────
 const filterState = { openness: null };
@@ -136,11 +206,18 @@ function processColor(name) {
 let _mainTiles = [];
 
 (async () => {
+  const _initialHash = location.hash;
   try {
     showLoading(true);
     const sectors = await loadMain();
     _mainTiles = sectors;
     pushLevel(sectors, { id: null, name: 'Übersicht', level: 0 });
+
+    if (_initialHash && _initialHash !== '#') {
+      await restoreFromHash(_initialHash);
+    }
+    _hashEnabled = true;
+    updateHash();
 
     const indexPromise = buildIndexInBackground(sectors);
     indexPromise.then(idx => { methodIndex = buildMethodIndex(idx); });
@@ -402,6 +479,8 @@ function updateChrome() {
   breadcrumbEl.querySelectorAll('.crumb:not(.active)').forEach(el => {
     el.addEventListener('click', () => navigateToCrumb(+el.dataset.index));
   });
+
+  updateHash();
 }
 
 // ── Loading / error ───────────────────────────────────────────────────────────

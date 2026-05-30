@@ -134,6 +134,15 @@ function buildDetailSections(d) {
     parts.push(section('&#x2699; Prozessbezug', `<div class="anon-list">${items}</div>`));
   }
 
+  if (d.examples?.length) {
+    const items = d.examples.map(ex => `
+      <a href="${esc(ex.url)}" target="_blank" rel="noopener noreferrer" class="example-item">
+        <span class="example-title">${esc(ex.title)}</span>
+        <span class="example-pub">${esc(ex.publisher)}</span>
+      </a>`).join('');
+    parts.push(section('&#x1F517; Beispieldatensätze', `<div class="example-list">${items}</div>`));
+  }
+
   return parts.join('');
 }
 

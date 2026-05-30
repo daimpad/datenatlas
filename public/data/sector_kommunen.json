@@ -1,0 +1,881 @@
+{
+  "sectorId": "kommunen",
+  "children": [
+    {
+      "id": "stadtplanung-bauen",
+      "level": 2,
+      "name": "Stadtplanung & Bauen",
+      "color": "#1a6b5a",
+      "description": "Kommunale Planungsämter, Baubehörden und Vermessungsämter, die Bauleitpläne, Geodaten und Liegenschaftsinformationen verwalten",
+      "children": [
+        {
+          "id": "bauleitplanung",
+          "level": 3,
+          "name": "Bauleitplanung",
+          "color": "#1abc9c",
+          "description": "Rechtsverbindliche und vorbereitende Planwerke der kommunalen Bodennutzungssteuerung nach BauGB",
+          "children": [
+            {
+              "id": "bebauungsplan",
+              "level": 4,
+              "name": "Bebauungsplan",
+              "color": "#27ae60",
+              "details": {
+                "description": "Rechtsverbindliche Festsetzungen für die städtebauliche Ordnung im Plangebiet: Nutzungsart, Maß der baulichen Nutzung, überbaubare Flächen und Erschließung. Häufigster Datensatztyp im kommunalen Open-Data-Bereich — bereits von 221 Kommunen als Open Data publiziert (14.252 Datensätze im Musterdatenkatalog V6).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Bebauungspläne sind amtliche Planwerke ohne Personenbezug. Die weitflächige Veröffentlichungspraxis (221 Kommunen) belegt rechtliche und technische Unbedenklichkeit. Lizenz überwiegend dl-zero-de/2.0 und CC0."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_03", "label": "XML" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Stadtplanung & Entwicklung", "description": "Bebauungspläne sind das zentrale Steuerungsinstrument der kommunalen Bodennutzung — Grundlage für Baugenehmigungen und Investitionsentscheidungen." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Bürgerbeteiligungsverfahren und Einspruchsrechte setzen voraus, dass Pläne öffentlich und digital zugänglich sind." }
+                ]
+              }
+            },
+            {
+              "id": "flaechennutzungsplan",
+              "level": 4,
+              "name": "Flächennutzungsplan",
+              "color": "#27ae60",
+              "details": {
+                "description": "Vorbereitender Bauleitplan, der die beabsichtigte Art der Bodennutzung für das gesamte Gemeindegebiet in Grundzügen darstellt. Unterscheidet Wohn-, Gewerbe-, Grün- und Verkehrsflächen. Grundlage für die Ableitung verbindlicher Bebauungspläne (155 Kommunen, 531 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Flächennutzungspläne sind öffentlich ausgelegte Planwerke ohne Personenbezug. Veröffentlichung erhöht Planungstransparenz und erleichtert die Bürgerbeteiligung."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_04", "label": "PDF" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Stadtplanung & Entwicklung", "description": "Der FNP steuert die langfristige Siedlungsentwicklung und ist Pflichtgrundlage für alle Bebauungspläne." },
+                  { "method": "Planung & Steuerung", "description": "Kommunale Fachplanungen (Verkehr, Grünflächen, Gewerbe) orientieren sich am FNP als übergeordnetem Rahmen." }
+                ]
+              }
+            },
+            {
+              "id": "orthofoto",
+              "level": 4,
+              "name": "Orthofoto",
+              "color": "#27ae60",
+              "details": {
+                "description": "Entzerrte Luftbilder mit Maßstabstreue und Georeferenzierung, die das Gemeindegebiet vollflächig abdecken. Werden für Planungsgrundlagen, Grünflächenanalysen und Infrastrukturerfassung genutzt. 104 Kommunen stellen Orthofotos als Open Data bereit (1.812 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Luftbilder des öffentlichen Raums enthalten keinen datenschutzrechtlich relevanten Personenbezug bei üblichen Auflösungen. Landesvermessungsämter und Kommunen veröffentlichen Orthofotos bereits weit verbreitet unter CC0 oder dl-zero."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Stadtplanung & Entwicklung", "description": "Orthofotos sind Basisgeodaten für alle raumbezogenen Planungsvorhaben, von der Grünflächenanalyse bis zur Verkehrsplanung." },
+                  { "method": "Forschung & Analyse", "description": "Wissenschaftliche Studien zu Versiegelung, Klimaanpassung und Stadtentwicklung nutzen Orthofotos als Primärdatenquelle." }
+                ]
+              }
+            },
+            {
+              "id": "liegenschaft-satzung",
+              "level": 4,
+              "name": "Liegenschaftssatzung",
+              "color": "#27ae60",
+              "details": {
+                "description": "Örtliche Bauvorschriften, Abrundungssatzungen und sonstige liegenschaftsbezogene Satzungen nach §34 BauGB. Ergänzen Bebauungspläne für Randbereiche oder regeln besondere Gestaltungsanforderungen. 200 Kommunen stellen Satzungen als Open Data bereit (1.176 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Satzungen sind Rechtsvorschriften, die im Amtsblatt veröffentlicht werden müssen. Digitale Open-Data-Bereitstellung ist eine Erweiterung bestehender Publikationspflichten ohne Datenschutzhürden."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Verwaltung & Compliance", "description": "Satzungen bilden die Rechtsgrundlage für Baugenehmigungsentscheidungen und Widerspruchsverfahren." },
+                  { "method": "Stadtplanung & Entwicklung", "description": "Liegenschaftssatzungen ergänzen das Planungsinstrumentarium für die Steuerung der Innenentwicklung." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "liegenschaft-geodaten",
+          "level": 3,
+          "name": "Liegenschaft & Geodaten",
+          "color": "#1abc9c",
+          "description": "Amtliche Geobasisdaten, Liegenschaftskataster und Stadtpläne als Grundlage für raumbezogene Auswertungen",
+          "children": [
+            {
+              "id": "stadtplan",
+              "level": 4,
+              "name": "Stadtplan",
+              "color": "#27ae60",
+              "details": {
+                "description": "Digitaler Stadtplan mit Straßennetz, Gebäuden, Sehenswürdigkeiten und öffentlichen Einrichtungen. Dient der Bürgerinformation, Navigation und als Basisgeodatum für verknüpfte Fachkarten. 52 Kommunen stellen Stadtpläne als Open Data bereit (316 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Stadtpläne bilden den öffentlichen Raum ab und enthalten keinen Personenbezug. Sie sind typischerweise bereits über kommunale Geoportale zugänglich und können ohne Einschränkungen als Open Data veröffentlicht werden."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Stadtpläne sind Basisinfrastruktur für kommunale Websites, Tourismusportale und Bürgerservices." },
+                  { "method": "Stadtplanung & Entwicklung", "description": "Aktuelle Stadtplandaten ermöglichen raumbezogene Analysen für Infrastrukturplanung und Folgenabschätzungen." }
+                ]
+              }
+            },
+            {
+              "id": "liegenschaftskataster",
+              "level": 4,
+              "name": "Liegenschaftskataster",
+              "color": "#d4a017",
+              "details": {
+                "description": "Amtliches Verzeichnis aller Grundstücke mit Geometrie, Nutzungsart und Eigentümerdaten (ALK/ALKIS). Grundlage für Baugenehmigungen, Steuerfestsetzung und Grundstücksverkehr. 42 Kommunen stellen Teilauszüge als Open Data bereit (191 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Das Liegenschaftskataster enthält Eigentümernamen als personenbezogene Daten (§ 12 VermKatG). Geometrie und Nutzungsartkategorien ohne Eigentümerangaben können nach Anonymisierung als Open Data veröffentlicht werden. Vereinzelte Kommunen stellen bereits anonymisierte Auszüge bereit."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Verwaltung & Compliance", "description": "Das Kataster ist Pflichtgrundlage für Baugenehmigungsverfahren, Erschließungsbeiträge und Grunderwerbsteuer." },
+                  { "method": "Stadtplanung & Entwicklung", "description": "Flächennutzungsanalysen und Innenentwicklungspotenziale lassen sich aus anonymisierten Katasterdaten ableiten." }
+                ]
+              }
+            },
+            {
+              "id": "grundstuecksbewertung",
+              "level": 4,
+              "name": "Grundstücksbewertung",
+              "color": "#d4a017",
+              "details": {
+                "description": "Bodenrichtwerte und Kaufpreissammlungen der Gutachterausschüsse für Grundstückswerte: Lagewerte je Bodenrichtwertzone, Kauffälle nach Lage und Nutzung. 22 Kommunen stellen Bewertungsdaten als Open Data bereit (223 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Bodenrichtwerte (zonenbezogene Aggregate) können ohne Einschränkungen publiziert werden. Einzelne Kauffälle enthalten Transaktionspreise, die bei kleinen Gebieten Rückschlüsse auf Personen ermöglichen könnten. Aggregation auf Zonenebene oder Mindestfallzahlen ermöglichen sichere Veröffentlichung."
+                },
+                "theme":       { "code": "TH_06", "label": "Wirtschaft & Arbeit" },
+                "object":      { "code": "OB_05", "label": "Finanzdaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Forschung & Analyse", "description": "Wohnungsmarktforschung und Stadtentwicklungsstudien benötigen Bodenrichtwerte als Grundlage für Preis- und Trendanalysen." },
+                  { "method": "Planung & Steuerung", "description": "Kommunale Bodenpolitik und Vorkaufsrechtsentscheidungen stützen sich auf aktuelle Bodenrichtwerte." }
+                ]
+              }
+            },
+            {
+              "id": "strassenverzeichnis",
+              "level": 4,
+              "name": "Straßenverzeichnis",
+              "color": "#27ae60",
+              "details": {
+                "description": "Vollständiges georeferenziertes Verzeichnis aller Straßen, Wege und Plätze im Gemeindegebiet mit Postleitzahlen, Ortsteilen und amtlichen Straßenschlüsseln. Basisinfrastruktur für Adresssuche, Routenplanung und räumliche Analysen. 103 Kommunen veröffentlichen Straßenverzeichnisse (1.576 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Straßenverzeichnisse bilden ausschließlich den öffentlichen Raum ab und enthalten keinen Personenbezug. Sie sind typischerweise bereits über Geoportale zugänglich und werden unter dl-by-de/2.0 oder CC0 veröffentlicht."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Verwaltung & Compliance", "description": "Adressregister und Straßenverzeichnis sind Pflichtgrundlage für Melderegister, Ordnungsbehörden und Notfallkoordination." },
+                  { "method": "Datenerhebung & Statistik", "description": "Georeferenzierte Adressen ermöglichen räumliche Aggregationen von Einwohnerdaten, Fallzahlen und Infrastrukturstandorten." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mobilitaet-verkehr",
+      "level": 2,
+      "name": "Mobilität & Verkehr",
+      "color": "#117a65",
+      "description": "Kommunale Verkehrsämter, ÖPNV-Aufgabenträger und Straßenbauämter, die Mobilitätsdaten und Verkehrsinfrastruktur verwalten",
+      "children": [
+        {
+          "id": "oepnv-kfz",
+          "level": 3,
+          "name": "ÖPNV & Kfz-Verkehr",
+          "color": "#1abc9c",
+          "description": "Öffentlicher Nahverkehr, motorisierter Individualverkehr und ruhender Verkehr im Stadtgebiet",
+          "children": [
+            {
+              "id": "oepnv-liniennetz",
+              "level": 4,
+              "name": "ÖPNV-Liniennetz & Fahrplandaten",
+              "color": "#27ae60",
+              "details": {
+                "description": "Fahrplandaten des öffentlichen Nahverkehrs im GTFS-Format: Linien, Haltestellen, Abfahrtszeiten, Routen und Betriebskalender. Ermöglicht Routenplaner, Fahrgastinformationssysteme und Mobilitätsanalysen. 41 Kommunen und Verbünde stellen GTFS-Daten bereit (351 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "ÖPNV-Fahrplandaten enthalten keinen Personenbezug und sind für Routenplaner-Integrations erforderlich. Viele Verbünde (HVV Hamburg, VRR Rhein-Ruhr) veröffentlichen GTFS-Daten bereits als Open Data."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_06", "label": "Zeitreihen" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Beratung & Begleitung", "description": "GTFS-Daten sind Grundlage für Fahrgast-Apps, Routenplaner und Mobilitätsberatungsportale." },
+                  { "method": "Planung & Steuerung", "description": "Kommunale Aufgabenträger nutzen Fahrplandaten zur Angebotssteuerung und Vertaktungsoptimierung." }
+                ]
+              }
+            },
+            {
+              "id": "kfz-parkplatz",
+              "level": 4,
+              "name": "Parkraumdaten",
+              "color": "#27ae60",
+              "details": {
+                "description": "Standorte, Kapazitäten, Öffnungszeiten und Echtzeitauslastung von Parkhäusern und P+R-Anlagen. Umfasst auch Behindertenparkplätze und Kurzzeitparkzonen. 45 Kommunen veröffentlichen Parkraumdaten (200 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Parkplatzdaten bilden öffentliche Infrastruktur ab und enthalten keinen Personenbezug. Echtzeitdaten zur Auslastung verbessern die Verkehrssteuerung und reduzieren Parksuchverkehr."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_03", "label": "Verzeichnis / Register" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Beratung & Begleitung", "description": "Parkraum-Apps und Navigationssysteme nutzen Echtzeitdaten zur Lenkung des Parksuchverkehrs." },
+                  { "method": "Planung & Steuerung", "description": "Parkraumdaten fließen in Verkehrskonzepte und die Planung von Mobilitätsknotenpunkten ein." }
+                ]
+              }
+            },
+            {
+              "id": "kfz-messung",
+              "level": 4,
+              "name": "Kfz-Verkehrsmessung",
+              "color": "#27ae60",
+              "details": {
+                "description": "Automatisierte Zählung des motorisierten Individualverkehrs an Dauermess- und Kurzzeitzählstellen: Fahrzeugvolumen, Geschwindigkeit, Fahrzeugklassen und Tagesganglinien. 37 Kommunen stellen Verkehrszähldaten bereit (211 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Verkehrszähldaten sind aggregierte Messungen ohne Fahrzeug- oder Personenbezug. Sie werden häufig für Verkehrsentwicklungsberichte, Luftreinhaltepläne und Lärmaktionspläne benötigt."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_06", "label": "Zeitreihen" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Monitoring & Evaluation", "description": "Verkehrszähldaten dokumentieren Entwicklungen im Mobilitätsverhalten und die Wirksamkeit von Verkehrsmaßnahmen." },
+                  { "method": "Planung & Steuerung", "description": "Straßenausbau, Signalprogramme und Lärmschutzmaßnahmen werden auf Basis von Zähldaten geplant und bewertet." }
+                ]
+              }
+            },
+            {
+              "id": "kfz-fahrzeugzulassung",
+              "level": 4,
+              "name": "Kfz-Zulassungsstatistik",
+              "color": "#d4a017",
+              "details": {
+                "description": "Aggregierte Statistiken zu zugelassenen Kraftfahrzeugen im Zulassungsbezirk: Bestand nach Fahrzeugklasse, Antriebsart (E-Mobilität), Alter und Nutzungsart. Grundlage für Klimaschutz-Monitoring und Ladeinfrastrukturplanung. 30 Kommunen veröffentlichen Zulassungsstatistiken (110 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Einzelne Zulassungsdaten sind personenbezogen (Halterdaten). Aggregierte Statistiken auf Bezirksebene ohne Halterangaben können ohne Einschränkungen veröffentlicht werden. Die Kraftfahrtbundesamt-Statistiken bilden das Vorbild für datenschutzkonforme Aggregation."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregat" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Umwelt- & Klimaschutz", "description": "E-Mobilitäts-Anteile aus Zulassungsstatistiken belegen den Fortschritt der Verkehrswende und leiten Ladeinfrastrukturbedarfe ab." },
+                  { "method": "Datenerhebung & Statistik", "description": "Kommunale Klimaschutzkonzepte und Luftreinhalteberichte nutzen Zulassungsstatistiken als Emissionsgrundlage." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "radverkehr",
+          "level": 3,
+          "name": "Radverkehr",
+          "color": "#1abc9c",
+          "description": "Infrastruktur, Nutzungsmessung und Ladeinfrastruktur für den nicht-motorisierten und elektrischen Radverkehr",
+          "children": [
+            {
+              "id": "radwege-routen",
+              "level": 4,
+              "name": "Radwege & Radrouten",
+              "color": "#27ae60",
+              "details": {
+                "description": "Georeferenziertes Netz aller Radwege, Radschutzstreifen, Fahrradstraßen und ausgeschilderten Radrouten im Stadtgebiet mit Wegekategorien und Oberflächenqualitäten. 38 Kommunen stellen Radwegedaten als Open Data bereit (192 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Radwegenetze bilden öffentliche Infrastruktur ab ohne Personenbezug. Sie sind Grundlage für Fahrrad-Routing-Apps und Nahverkehrsplanung. Viele Kommunen veröffentlichen sie unter CC0 oder dl-zero-de."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Beratung & Begleitung", "description": "Radwegnetzdaten speisen Fahrrad-Routing-Dienste und ermöglichen sicherheitsoptimierte Routenempfehlungen für Pendler." },
+                  { "method": "Stadtplanung & Entwicklung", "description": "Lückenanalysen im Radwegenetz bilden die Grundlage für kommunale Radverkehrskonzepte und Fördermittelanträge." }
+                ]
+              }
+            },
+            {
+              "id": "rad-zaehlung",
+              "level": 4,
+              "name": "Radzählung & Dauerzählstellen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Dauerhafte und temporäre Zählung des Radverkehrs an definierten Knotenpunkten: Tages-, Wochen- und Jahresganglinien. Ermöglicht Monitoring der Radverkehrsentwicklung und Wirkungskontrolle von Fördermaßnahmen. 20 Kommunen stellen Radzähldaten bereit (183 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Automatische Radzählungen erfassen nur Fahrzeugvolumen, keinen Personenbezug. Städte wie Dortmund und München veröffentlichen Dauerzählstellendaten bereits unter CC0 oder dl-zero."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_06", "label": "Zeitreihen" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Monitoring & Evaluation", "description": "Radzähldaten dokumentieren die Verkehrswende und ermöglichen den Vergleich mit Förderzielwerten des Nationalen Radverkehrsplans." },
+                  { "method": "Forschung & Analyse", "description": "Wissenschaftliche Studien zur Mobilitätswende nutzen Dauerzählstellendaten für Verlagerungsanalysen und Klimaberechnungen." }
+                ]
+              }
+            },
+            {
+              "id": "rad-ladestationen",
+              "level": 4,
+              "name": "E-Bike-Ladestationen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Georeferenzierte Standorte öffentlicher E-Bike-Ladestationen und Fahrradservicepunkte mit Steckertypen, Kapazitäten und Betreiberangaben. 24 Kommunen stellen Ladestationsdaten als Open Data bereit (121 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Standortdaten öffentlicher Ladeinfrastruktur enthalten keinen Personenbezug und sind Pflichtbestandteil kommunaler Mobilitätspläne. Veröffentlichung unterstützt die Förderung des E-Radverkehrs."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Umwelt- & Klimaschutz", "description": "Ladeinfrastrukturdaten belegen den Ausbaustand der E-Mobilität und fließen in Klimaschutzzwischenberichte ein." },
+                  { "method": "Beratung & Begleitung", "description": "Mobilitätsberatungs-Apps für Pendler und Touristen benötigen aktuelle Ladeinfrastrukturdaten für Routenplanung." }
+                ]
+              }
+            },
+            {
+              "id": "unfall-statistik-verkehr",
+              "level": 4,
+              "name": "Unfallstatistik Verkehr",
+              "color": "#d4a017",
+              "details": {
+                "description": "Aggregierte Auswertung polizeilich erfasster Verkehrsunfälle: Unfallhäufungsstellen, Unfalltypen, Schwere und beteiligte Verkehrsteilnehmer. Grundlage für Gefahrenpunktbeseitigung und Sicherheitsaudits. 30 Kommunen stellen Unfallstatistiken als Open Data bereit (65 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Einzelfalldaten zu Verkehrsunfällen können trotz räumlicher Aggregation bei seltenen Unfallkonstellationen Rückschlüsse auf beteiligte Personen ermöglichen. Aggregation auf Straßenabschnittsebene mit Mindestfallzahl 5 und Weglassen von Unfallbeteiligtenmerkmalen ermöglicht sichere Veröffentlichung."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregat" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Stadtplanung & Entwicklung", "description": "Unfallhäufungsstellen fließen in Straßenumbauplanungen, Schutzstreifen-Programme und Tempo-30-Entscheidungen ein." },
+                  { "method": "Monitoring & Evaluation", "description": "Jährliche Unfallstatistiken messen die Wirksamkeit von Verkehrssicherheitsmaßnahmen und informieren die Öffentlichkeit." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gesellschaft-demografie",
+      "level": 2,
+      "name": "Gesellschaft & Demografie",
+      "color": "#0e6655",
+      "description": "Kommunale Statistikstellen, Sozial- und Jugendämter, die Bevölkerungs- und Sozialstrukturdaten sowie Einrichtungsverzeichnisse pflegen",
+      "children": [
+        {
+          "id": "bevoelkerungsstruktur",
+          "level": 3,
+          "name": "Bevölkerungsstruktur",
+          "color": "#1abc9c",
+          "description": "Statistische Auswertungen zur Bevölkerungszusammensetzung, Demografie und sozialen Lage im Gemeindegebiet",
+          "children": [
+            {
+              "id": "einwohnerzahl",
+              "level": 4,
+              "name": "Einwohnerzahl",
+              "color": "#27ae60",
+              "details": {
+                "description": "Amtliche Einwohnerzahl nach Haupt- und Nebenwohnsitz, gegliedert nach Alter, Geschlecht, Staatsangehörigkeit und Stadtbezirk. Grundlage für Finanzausgleich, Wahlkreiseinteilung und kommunale Planung. 47 Kommunen stellen Einwohnerzahlen als Open Data bereit (480 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Einwohnerzahlen auf Ortsteil- oder Stadtteilebene enthalten keinen Personenbezug und werden von vielen Statistikämtern bereits im Jahresturnus veröffentlicht. Das Statistische Bundesamt empfiehlt eine Mindestfallzahl von 3 pro Zelle."
+                },
+                "theme":       { "code": "TH_01", "label": "Soziales & Wohlfahrt" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregat" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Datenerhebung & Statistik", "description": "Einwohnerzahlen sind Pflichtstatistik für den kommunalen Finanzausgleich, Wahlkreiseinteilung und Infrastrukturbedarfsberechnungen." },
+                  { "method": "Planung & Steuerung", "description": "Bevölkerungsprognosen für Schul-, Kita- und Pflegeinfrastruktur beruhen auf aktuellen Einwohnerzahlen als Ausgangsbasis." }
+                ]
+              }
+            },
+            {
+              "id": "demografiebericht",
+              "level": 4,
+              "name": "Demografiebericht",
+              "color": "#27ae60",
+              "details": {
+                "description": "Periodischer Bericht zur demografischen Entwicklung der Kommune: Altersstruktur, Wanderungssaldo, Geburten- und Sterberaten sowie Projektionen. 32 Kommunen stellen Demografieberichte als Open Data bereit (175 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Demografieberichte sind aggregierte Analysen ohne Personenbezug, die für eine breite Öffentlichkeit erstellt werden. Viele Kommunen veröffentlichen sie bereits auf ihren Websites oder Open-Data-Portalen."
+                },
+                "theme":       { "code": "TH_01", "label": "Soziales & Wohlfahrt" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregat" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Planung & Steuerung", "description": "Demografische Projektionen steuern kommunale Investitionsentscheidungen in Bildungs-, Gesundheits- und Pflegeinfrastruktur." },
+                  { "method": "Forschung & Analyse", "description": "Wissenschaftliche Studien zur Stadtentwicklung und sozialen Segregation nutzen Demografiedaten als Grundlage." }
+                ]
+              }
+            },
+            {
+              "id": "vornamen-statistik",
+              "level": 4,
+              "name": "Vornamen-Statistik",
+              "color": "#27ae60",
+              "details": {
+                "description": "Ranglisten der häufigsten Vornamen von Neugeborenen nach Geschlecht und Jahr, erhoben aus Geburtsregistern. Zeigt kulturelle und sprachliche Diversität der Bevölkerung. 35 Kommunen stellen Vornamenstatistiken als Open Data bereit (269 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Vornamensranglisten enthalten keinen Personenbezug — es werden keine Namen mit konkreten Personen verknüpft. Städte wie Dortmund, Berlin und Köln veröffentlichen diese Statistiken seit Jahren als beliebte Open-Data-Datensätze."
+                },
+                "theme":       { "code": "TH_01", "label": "Soziales & Wohlfahrt" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregat" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 1,
+                "processes": [
+                  { "method": "Datenerhebung & Statistik", "description": "Vornamenstatistiken sind ein niedrigschwelliger Einstieg in kommunale Open Data und zeigen kulturelle Wandlungsprozesse der Stadtgesellschaft." },
+                  { "method": "Forschung & Analyse", "description": "Migrationsforscher und Soziologen nutzen Vornamenverteilungen als Indikator für Integrationsprozesse und demographischen Wandel." }
+                ]
+              }
+            },
+            {
+              "id": "haushaltszusammensetzung",
+              "level": 4,
+              "name": "Haushaltszusammensetzung",
+              "color": "#27ae60",
+              "details": {
+                "description": "Statistische Auswertung der Haushaltstypen im Stadtgebiet: Einpersonenhaushalte, Familien, Alleinerziehende, Haushaltsgröße und Wohnfläche nach Stadtbezirk. Grundindikator für Wohnbedarfsanalysen und Sozialhilfeplanung. 30 Kommunen stellen Haushaltsdaten als Open Data bereit (121 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Haushaltszusammensetzungen auf Stadtteilebene enthalten keinen Personenbezug. Bei ausreichend kleiner räumlicher Einheit ist die Mindestfallzahlregel zu beachten — ab Stadtteilebene sind die Daten in der Regel unbedenklich."
+                },
+                "theme":       { "code": "TH_01", "label": "Soziales & Wohlfahrt" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregat" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Planung & Steuerung", "description": "Wohnungsbedarfsanalysen und kommunale Wohnraumkonzepte nutzen Haushaltsdaten für die Bedarfsprojektion nach Wohnungstypen." },
+                  { "method": "Finanzierung & Förderung", "description": "Sozialhilfeplanung und Wohngeldbewilligungen basieren auf Haushaltszusammensetzungen als Bedarfsindikatoren." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "soziale-einrichtungen",
+          "level": 3,
+          "name": "Soziale Einrichtungen",
+          "color": "#1abc9c",
+          "description": "Standorte und Angebote sozialer, bildungsbezogener und gemeinschaftlicher Einrichtungen im Stadtgebiet",
+          "children": [
+            {
+              "id": "kita-standorte",
+              "level": 4,
+              "name": "Kita-Standorte",
+              "color": "#27ae60",
+              "details": {
+                "description": "Georeferenzierte Standorte von Kindertageseinrichtungen, Kinderkrippen und Tagespflegestellen mit Trägerangaben, Platzkapazitäten, Altersgruppen und Öffnungszeiten. 178 Kommunen stellen Kita-Standortdaten als Open Data bereit (220 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Kita-Standortdaten sind institutionenbezogene Informationen ohne Kinderpersonenbezug. Sie sind für Elternportale und Bedarfsplanungen unerlässlich und werden von fast allen Ländern und vielen Kommunen bereits veröffentlicht."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Forschung" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Planung & Steuerung", "description": "Kita-Bedarfsplanung und Ausbausteuerung nach dem KiQuTG nutzen Standortdaten für Versorgungsanalysen nach Stadtbezirken." },
+                  { "method": "Beratung & Begleitung", "description": "Elternberatungsportale und Kitafinder-Apps benötigen aktuelle Standort- und Platzdaten für Belegungs- und Wartelistenmanagement." }
+                ]
+              }
+            },
+            {
+              "id": "schulangebot",
+              "level": 4,
+              "name": "Schulangebot & Schulstandorte",
+              "color": "#27ae60",
+              "details": {
+                "description": "Verzeichnis aller Schulstandorte mit Schulform, Trägerstatus, Einzugsbereichen und Schülerzahlen je Abschlussart. Umfasst auch Abschlussquoten und Schulabgängerstatistiken. 68 Kommunen veröffentlichen Schuldaten als Open Data (128 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Schulstandortdaten und aggregierte Schülerzahlen nach Schulform sind institutionenbezogene Informationen ohne Personenbezug. Einzelschulstatistiken sollten erst ab einer Mindestklassengröße veröffentlicht werden, um Rückschlüsse auf einzelne Schüler zu vermeiden."
+                },
+                "theme":       { "code": "TH_03", "label": "Bildung & Forschung" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Bildung & Qualifizierung", "description": "Schulstandortkarten und Einzugsgebiete helfen Eltern bei der Schulwahl und ermöglichen eine bedarfsorientierte Ressourcenplanung." },
+                  { "method": "Planung & Steuerung", "description": "Demographischer Wandel und Schulentwicklungsplanungen greifen auf aggregierte Schülerzahlen und Standortdaten zurück." }
+                ]
+              }
+            },
+            {
+              "id": "spielplaetze",
+              "level": 4,
+              "name": "Spielplatz-Standorte",
+              "color": "#27ae60",
+              "details": {
+                "description": "Georeferenzierte Standorte öffentlicher Spielplätze und Spielstätten mit Ausstattungsmerkmalen, Alterseignung und Flächengröße. 179 Kommunen stellen Spielplatzdaten als Open Data bereit (287 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Spielplatzstandorte bilden ausschließlich öffentliche Infrastruktur ohne Personenbezug ab. Viele Kommunen veröffentlichen diese Daten als niedrigschwelligen Einstieg ins kommunale Open Data."
+                },
+                "theme":       { "code": "TH_01", "label": "Soziales & Wohlfahrt" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 1,
+                "processes": [
+                  { "method": "Stadtplanung & Entwicklung", "description": "Spielplatzstandorte fließen in Freiflächenkonzepte, Grünflächenplanungen und Einzugsgebietsanalysen der Jugendhilfeplanung ein." },
+                  { "method": "Öffentlichkeitsarbeit & Kommunikation", "description": "Spielplatzkarten und -finder-Apps sind beliebte kommunale Bürgerservices, die Open Data direkt in Mehrwertanwendungen übersetzen." }
+                ]
+              }
+            },
+            {
+              "id": "migrationshintergrund",
+              "level": 4,
+              "name": "Migrationshintergrund-Statistik",
+              "color": "#d4a017",
+              "details": {
+                "description": "Aggregierte Statistiken zum Anteil der Bevölkerung mit Migrationshintergrund nach Stadtbezirk, Altersgruppe und Herkunftsregion. Grundlage für Integrationsmonitoring und die Planung sozialer Dienste. 24 Kommunen stellen Migrationsdaten als Open Data bereit (129 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Migrationshintergrunddaten auf Stadtteilebene können bei kleinen Bevölkerungsgruppen bestimmter Herkunftsregionen zu Identifizierbarkeit führen. Aggregation auf größere Einheiten (Stadtbezirk, nicht Block) und Zusammenfassung kleiner Herkunftsgruppen zu Regionalkategorien ermöglichen eine sichere Veröffentlichung."
+                },
+                "theme":       { "code": "TH_09", "label": "Migration & Integration" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregat" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Planung & Steuerung", "description": "Kommunale Integrationskonzepte und Sprachkursbedarfsplanungen nutzen Migrationsdaten für die Standortentscheidung sozialer Dienste." },
+                  { "method": "Datenerhebung & Statistik", "description": "Integrations- und Stadtentwicklungsberichte vergleichen Stadtteile anhand des Migrationshintergrunds als soziodemographischem Indikator." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "umwelt-klima",
+      "level": 2,
+      "name": "Umwelt & Klima",
+      "color": "#0a5344",
+      "description": "Kommunale Umwelt- und Klimaschutzämter, Grünflächenämter und Energieversorgungsunternehmen der Daseinsvorsorge",
+      "children": [
+        {
+          "id": "naturschutz-freiraum",
+          "level": 3,
+          "name": "Naturschutz & Freiraum",
+          "color": "#1abc9c",
+          "description": "Schutzgebiete, Grünflächen und Gewässerdaten als Grundlage für kommunalen Naturschutz und klimaangepasste Stadtentwicklung",
+          "children": [
+            {
+              "id": "gruenflaechen",
+              "level": 4,
+              "name": "Grünflächen & Grünflächenkataster",
+              "color": "#27ae60",
+              "details": {
+                "description": "Georeferenziertes Kataster aller kommunalen Grünflächen: Parks, Straßenbegleitgrün, Friedhöfe und öffentliche Sportanlagen mit Flächengröße, Nutzungsart und Pflegekategorien. 52 Kommunen stellen Grünflächendaten als Open Data bereit (238 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Grünflächenkataster bilden ausschließlich öffentliche Flächen ohne Personenbezug ab. Veröffentlichung ermöglicht Hitzeinseln-Analysen, Biodiversitätsstudien und Bürgerinformation. Städte wie Berlin und Hamburg veröffentlichen diese Daten bereits."
+                },
+                "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Umwelt- & Klimaschutz", "description": "Grünflächenkataster sind Grundlage für Hitzeinseln-Analysen, Klimaanpassungspläne und die Berechnung von Ökosystemleistungen." },
+                  { "method": "Stadtplanung & Entwicklung", "description": "Freiflächenkonzepte und Grünordnungspläne nutzen Grünflächendaten zur Sicherung der urbanen Lebensqualität." }
+                ]
+              }
+            },
+            {
+              "id": "naturschutzgebiete",
+              "level": 4,
+              "name": "Naturschutzgebiete",
+              "color": "#27ae60",
+              "details": {
+                "description": "Geometrien und Steckbriefe aller förmlich ausgewiesenen Naturschutzgebiete, Landschaftsschutzgebiete und Natura-2000-Gebiete im Gemeindegebiet mit Schutzzweck und Verordnungstext. 46 Kommunen stellen Schutzgebietsdaten als Open Data bereit (126 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Schutzgebietsgeometrien und -verordnungen sind amtliche Planwerke ohne Personenbezug, die öffentlich ausliegen müssen. EU-Berichtspflichten (Habitat-Richtlinie) setzen die Bereitstellung als Geodaten bereits voraus."
+                },
+                "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Umwelt- & Klimaschutz", "description": "Schutzgebietsdaten sind Pflichtgrundlage für Eingriffsregelungen, Umweltverträglichkeitsprüfungen und Biotopverbundplanungen." },
+                  { "method": "Forschung & Analyse", "description": "Biodiversitätsforscher und Landschaftsökologen nutzen Schutzgebietsdaten für Habitatkonnektivitätsanalysen und Artenschutzstudien." }
+                ]
+              }
+            },
+            {
+              "id": "ausgleichsflaechen",
+              "level": 4,
+              "name": "Ausgleichs- & Kompensationsflächen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Georeferenziertes Verzeichnis aller Ausgleichs- und Kompensationsflächen nach §15 BNatSchG: Lage, Flächengröße, Eingriff, Maßnahmentyp und Pflegezustand. 42 Kommunen stellen Ausgleichsflächendaten als Open Data bereit (155 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Ausgleichsflächenkataster sind Planwerke ohne Personenbezug. Die Veröffentlichung ermöglicht die Überprüfung der Eingriffsregelung durch Öffentlichkeit und Fachbehörden und entspricht dem Transparenzgebot im Umweltrecht."
+                },
+                "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
+                "object":      { "code": "OB_04", "label": "Geodaten" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Verwaltung & Compliance", "description": "Ausgleichsflächenkataster sind Pflichtdokumentation der kommunalen Naturschutzbehörde zur Überwachung der Kompensationspflichten aus Baugenehmigungen." },
+                  { "method": "Umwelt- & Klimaschutz", "description": "Monitoring des Zustands von Ausgleichsflächen sichert den ökologischen Wirkungsnachweis und die Qualität der Kompensationsmaßnahmen." }
+                ]
+              }
+            },
+            {
+              "id": "gewaesser-pegelstand",
+              "level": 4,
+              "name": "Gewässer-Pegelstände",
+              "color": "#27ae60",
+              "details": {
+                "description": "Zeitreihen der Wasserstände und Abflüsse an Pegelstationen kommunaler und Landesgewässer: Messwerte, Alarmwerte und historische Ganglinien. 29 Kommunen stellen Pegeldaten als Open Data bereit (254 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Pegeldaten sind Umweltmessdaten ohne Personenbezug, die für Hochwasserwarndienste und Gewässerbewirtschaftung essenziell sind. Bundes- und Landesbehörden (BfG, Landesbehörden) veröffentlichen Pegelstände bereits in Echtzeit."
+                },
+                "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
+                "object":      { "code": "OB_06", "label": "Zeitreihen" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Monitoring & Evaluation", "description": "Pegelstandsmessdaten sind Echtzeit-Grundlage für kommunale Hochwasserwarnsysteme und Katastrophenschutzpläne." },
+                  { "method": "Umwelt- & Klimaschutz", "description": "Langzeitreihen von Pegelständen dokumentieren den Klimawandel-Einfluss auf den Wasserhaushalt und informieren die Gewässerentwicklungsplanung." }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "energie-ressourcen",
+          "level": 3,
+          "name": "Energie & Ressourcen",
+          "color": "#1abc9c",
+          "description": "Daten zur kommunalen Energieversorgung, Umweltmessung und Ressourcenwirtschaft als Grundlage für die Klimawende",
+          "children": [
+            {
+              "id": "stromversorgung",
+              "level": 4,
+              "name": "Stromlastprofile",
+              "color": "#27ae60",
+              "details": {
+                "description": "Standardlastprofile und aggregierte Stromverbrauchsmessungen aus kommunalen Verteilnetzen: Erzeugungs- und Verbrauchskurven nach Tageszeit, Saison und Kundengruppe. 16 Kommunen stellen Lastprofildaten als Open Data bereit (288 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Standardlastprofile und aggregierte Netzverbrauchsdaten enthalten keinen Personenbezug (kein Smart-Meter-Einzelanschluss). Sie sind nach §12 NAV und EU-Energieeffizienzrichtlinie zur Transparenz im Netzbetrieb vorgesehen."
+                },
+                "theme":       { "code": "TH_07", "label": "Infrastruktur & Mobilität" },
+                "object":      { "code": "OB_06", "label": "Zeitreihen" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Umwelt- & Klimaschutz", "description": "Lastprofildaten ermöglichen die Optimierung dezentraler Erzeugungsanlagen und die Planung von Speicherinfrastruktur für die Energiewende." },
+                  { "method": "Ressourcenplanung", "description": "Netzplanung und Kapazitätsausbau im Verteilnetz basieren auf Lastprofilen als Grundlage für Netzbelastungsberechnungen." }
+                ]
+              }
+            },
+            {
+              "id": "radioaktivitaet",
+              "level": 4,
+              "name": "Radioaktivitätsmessung",
+              "color": "#27ae60",
+              "details": {
+                "description": "Kontinuierliche Messdaten von Gamma-Ortsdosisleistungs-Stationen (ODL) und Grundwasserüberwachungsstellen in der Umgebung von Kernanlagen und im regulären Umweltmonitoring. 35 Kommunen und Landesbehörden stellen Messdaten bereit (200 Datensätze im Musterdatenkatalog).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Radioaktivitätsmessdaten sind standortbezogene Umweltmessungen ohne Personenbezug. Das BfS veröffentlicht ODL-Messwerte bereits in Echtzeit auf OpenData.bfs.de — kommunale Messnetze sollten diesem Vorbild folgen."
+                },
+                "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
+                "object":      { "code": "OB_06", "label": "Zeitreihen" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }, { "code": "FT_02", "label": "JSON / GeoJSON" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Monitoring & Evaluation", "description": "Radioaktivitätsmessdaten sind Pflichtbestandteil des kommunalen Umweltmonitorings im Umfeld von Kernanlagen und Sondermülldeponien." },
+                  { "method": "Umwelt- & Klimaschutz", "description": "Langfristige Strahlungsmessdaten ermöglichen die Detektion von Anomalien und dienen als Frühwarnsystem im Katastrophenschutz." }
+                ]
+              }
+            },
+            {
+              "id": "abfallmenge",
+              "level": 4,
+              "name": "Abfallmenge & Entsorgungsstatistik",
+              "color": "#27ae60",
+              "details": {
+                "description": "Kommunale Abfallstatistiken: Gesamtabfallmengen nach Fraktionen (Restmüll, Wertstoffe, Bio, Sperrmüll), Erfassungsquoten und Recyclingquoten nach Stadtbezirk oder Abfuhrgebiet. 39 Kommunen stellen Abfalldaten als Open Data bereit (Musterdatenkatalog: Abfallmenge).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Abfallmengen auf Gebietsebene enthalten keinen Personenbezug. Die Veröffentlichung unterstützt Klimaschutzziele und ermöglicht den Vergleich kommunaler Recyclingquoten — ein wichtiger Transparenzindikator."
+                },
+                "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregat" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_01", "label": "CC0 (Public Domain)" },
+                "relevance": 2,
+                "processes": [
+                  { "method": "Umwelt- & Klimaschutz", "description": "Abfallmengenstatistiken belegen den Fortschritt der Kreislaufwirtschaft und fließen in kommunale Klimabilanzen und Nachhaltigkeitsberichte ein." },
+                  { "method": "Datenerhebung & Statistik", "description": "Abfalldaten sind Pflichtbestandteil der bundesweiten Abfallstatistik nach KrWG und ermöglichen interkommunale Benchmarks." }
+                ]
+              }
+            },
+            {
+              "id": "energiebericht",
+              "level": 4,
+              "name": "Energiebericht",
+              "color": "#27ae60",
+              "details": {
+                "description": "Periodischer kommunaler Energiebericht mit Endenergieverbräuchen kommunaler Liegenschaften, Strombezug aus erneuerbaren Energien, CO₂-Emissionen und Maßnahmenumsetzungsstand. 56 Kommunen stellen Energieberichte als Open Data bereit (Musterdatenkatalog: Energiebericht).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Kommunale Energieberichte aggregieren Verbrauchsdaten gebäudebezogen und enthalten keinen Personenbezug. Die Veröffentlichung als Open Data ist explizites Ziel des Klimaschutzgesetzes des Bundes (KSG) und zahlreicher Landesklimagesetze."
+                },
+                "theme":       { "code": "TH_02", "label": "Umwelt & Klima" },
+                "object":      { "code": "OB_01", "label": "Statistik / Aggregat" },
+                "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
+                "format":      [{ "code": "FT_04", "label": "PDF" }, { "code": "FT_01", "label": "CSV" }],
+                "license":     { "code": "LI_02", "label": "CC BY 4.0" },
+                "relevance": 3,
+                "processes": [
+                  { "method": "Umwelt- & Klimaschutz", "description": "Energieberichte sind die zentrale Rechenschaftspflicht kommunaler Klimaschutzmanager und Grundlage für CO₂-Minderungsprogramme." },
+                  { "method": "Monitoring & Evaluation", "description": "Jährliche Energieberichte ermöglichen die Überprüfung kommunaler Klimaschutzziele und die Anpassung von Maßnahmenprogrammen." }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

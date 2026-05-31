@@ -1,4 +1,5 @@
 import { IsometricRenderer } from './renderer.js';
+import { initWizard }        from './wizard.js';
 import { initControls }      from './controls.js';
 import { openSidebar, closeSidebar } from './modal.js';
 import { loadMain, loadSector }      from './dataLoader.js';
@@ -31,6 +32,7 @@ const imClose       = document.getElementById('im-close');
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 const renderer = new IsometricRenderer(canvas);
+initWizard();
 
 initControls({ canvas, renderer, onTileClick: handleTileClick, onHover: handleHover });
 

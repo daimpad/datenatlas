@@ -266,8 +266,32 @@
         <a href="https://nozilla.de/datenschutz/" target="_blank" rel="noopener">Datenschutz</a>
         <a href="https://nozilla.de/kontakt/" target="_blank" rel="noopener">Kontakt</a>
       </nav>
+      <button id="open-data-btn" title="Schritt-für-Schritt: Daten als Open Data veröffentlichen">Daten öffnen →</button>
       <a id="footer-brand" href="https://nozilla.de" target="_blank" rel="noopener">nozilla | bits &amp; bytes mit ❤</a>
     </footer>
+
+    <!-- "Daten öffnen" Wizard Modal -->
+    <div id="wizard-modal" role="dialog" aria-modal="true" aria-label="Daten öffnen – Schritt-für-Schritt" hidden>
+      <div class="wz-card">
+        <button id="wz-close" title="Schließen" aria-label="Schließen">✕</button>
+
+        <div class="wz-progress-wrap">
+          <div class="wz-progress-track">
+            <div id="wz-progress-fill" class="wz-progress-fill"></div>
+          </div>
+          <span id="wz-step-label" class="wz-step-label">Schritt 1 von 5</span>
+        </div>
+
+        <div id="wz-body" class="wz-body">
+          <!-- populated by wizard.js -->
+        </div>
+
+        <div class="wz-footer">
+          <button id="wz-back" class="wz-btn wz-btn--ghost" hidden>← Zurück</button>
+          <button id="wz-next" class="wz-btn wz-btn--primary" disabled>Weiter →</button>
+        </div>
+      </div>
+    </div>
 
   </div>
   <script type="module" src="/src/main.js"></script>

@@ -3244,6 +3244,1206 @@
           ]
         }
       ]
+    },
+    {
+      "id": "industrie",
+      "level": 2,
+      "name": "Industrie",
+      "color": "#d35400",
+      "description": "Produzierendes Gewerbe: Maschinenbau, Chemie, Automobilindustrie, Metallverarbeitung und andere industrielle Fertigungsbetriebe",
+      "children": [
+        {
+          "id": "produktion_fertigung",
+          "level": 3,
+          "name": "Produktion & Fertigung",
+          "color": "#e67e22",
+          "description": "Industrielle Herstellung von Gütern, inklusive Maschinenbedienung, Qualitätskontrolle und Logistik in der Produktion",
+          "children": [
+            {
+              "id": "produktionsstatistiken",
+              "level": 4,
+              "name": "Produktionsstatistiken",
+              "color": "#d4a017",
+              "details": {
+                "description": "Aggregierte Produktionsdaten: Stückzahlen, Auslastung der Maschinen, Durchlaufzeiten, Ausschussquoten und Produktivitätskennzahlen pro Schicht, Tag oder Monat. Daten sind nicht produkt- oder kundenspezifisch, sondern auf Ebene von Produktgruppen aggregiert.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Produktionsstatistiken können Wettbewerbsrelevanz haben, insbesondere wenn sie detaillierte Kapazitäts- oder Effizienzdaten enthalten. Nach Aggregation auf Branchenebene und Entfernung betriebsinterner Details sind die Daten für Marktanalysen und Benchmarking nutzbar."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Standort)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Produktionsplanung",
+                    "description": "Produktionsstatistiken helfen, Engpässe zu erkennen, Kapazitäten auszulasten und Liefertermine einzuhalten."
+                  },
+                  {
+                    "method": "Qualitätsmanagement",
+                    "description": "Daten fließen in die kontinuierliche Verbesserung von Produktionsprozessen ein."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Produktionsdaten Statistisches Bundesamt",
+                    "url": "https://www.destatis.de/dataset/produktion",
+                    "publisher": "Statistisches Bundesamt"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "maschinenauslastung",
+              "level": 4,
+              "name": "Maschinenauslastung & Wartung",
+              "color": "#d4a017",
+              "details": {
+                "description": "Daten zur Auslastung von Produktionsmaschinen: Betriebsstunden, Stillstandszeiten, Wartungsintervalle, Energieverbrauch pro Maschine und Instandhaltungskosten. Enthält keine herstellerspezifischen oder vertraulichen Details.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Maschinenauslastungsdaten können Rückschlüsse auf Produktionskapazitäten und Effizienz geben. Nach Aggregation und Entfernung betriebsinterner Details sind die Daten für Branchenvergleiche nutzbar."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Standort)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Instandhaltung",
+                    "description": "Auslastungsdaten helfen, Wartungspläne zu optimieren und Ausfallzeiten zu minimieren."
+                  },
+                  {
+                    "method": "Energieeffizienz",
+                    "description": "Daten werden für die Identifizierung von Einsparpotenzialen im Energieverbrauch genutzt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "qualitaetszertifikate",
+              "level": 4,
+              "name": "Qualitätszertifikate & Normen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Öffentlich zugängliche Zertifikate und Konformitätserklärungen: ISO-Zertifizierungen, CE-Kennzeichen, Branchenstandards und Prüfberichte. Enthält keine vertraulichen oder unternehmensspezifischen Details.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Qualitätszertifikate sind für die Transparenz und das Vertrauen in Produkte relevant. Da sie öffentlich zugänglich sind und keine vertraulichen Daten enthalten, können sie direkt als Open Data veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_03",
+                  "label": "Verzeichnis / Register"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Compliance & Zertifizierung",
+                    "description": "Zertifikate dienen als Nachweis für die Einhaltung von Qualitätsstandards und sind Grundlage für den Marktzugang."
+                  },
+                  {
+                    "method": "Kundenkommunikation",
+                    "description": "Zertifikate werden für Marketingzwecke und zur Kundeninformation genutzt."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Zertifikatsdatenbank DQS",
+                    "url": "https://www.dqs.de/zertifikatssuche",
+                    "publisher": "DQS"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "forschung_entwicklung",
+          "level": 3,
+          "name": "Forschung & Entwicklung",
+          "color": "#e67e22",
+          "description": "Industrielle Forschung, Produktentwicklung und Innovation in Unternehmen",
+          "children": [
+            {
+              "id": "funde_projektverzeichnis",
+              "level": 4,
+              "name": "F&E-Projektverzeichnis",
+              "color": "#27ae60",
+              "details": {
+                "description": "Verzeichnis aller Forschungs- und Entwicklungsprojekte: Projekttitel, Laufzeit, Budget, beteiligte Abteilungen und Projektziele (ohne vertrauliche Details). Enthält keine patentierten oder geheimen Informationen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "F&E-Projektverzeichnisse sind für die Transparenz von Innovationsaktivitäten relevant. Da sie keine vertraulichen oder patentierten Details enthalten, können sie direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_03",
+                  "label": "Verzeichnis / Register"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Innovationsmanagement",
+                    "description": "Projektverzeichnisse helfen, Ressourcen für F&E zu planen und Doppelarbeit zu vermeiden."
+                  },
+                  {
+                    "method": "Wissensmanagement",
+                    "description": "Daten fließen in die Dokumentation und Weitergabe von Wissen innerhalb des Unternehmens ein."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "F&E-Projekte Bundesministerium für Bildung und Forschung",
+                    "url": "https://www.bmbf.de/forschung",
+                    "publisher": "BMBF"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "patente_schutzrechte",
+              "level": 4,
+              "name": "Patente & Schutzrechte",
+              "color": "#d4a017",
+              "details": {
+                "description": "Aggregierte Daten zu Patenten und Schutzrechten: Anzahl der angemeldeten Patente pro Jahr, Technologiebereiche, Laufzeiten und Lizenzierungsaktivitäten. Enthält keine detaillierten Patentinhalte oder vertraulichen Erfindungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Patentdaten können Wettbewerbsrelevanz haben, insbesondere wenn sie technologische Schwerpunkte oder Innovationskraft zeigen. Nach Aggregation und Entfernung unternehmensspezifischer Details sind die Daten für Branchenanalysen nutzbar."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_03",
+                  "label": "Verzeichnis / Register"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "IP-Management",
+                    "description": "Patentdaten helfen, den Schutz geistigen Eigentums zu verwalten und Lizenzierungsmöglichkeiten zu identifizieren."
+                  },
+                  {
+                    "method": "Forschung & Entwicklung",
+                    "description": "Daten fließen in die strategische Ausrichtung der F&E-Aktivitäten ein."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Patentstatistik DPMA",
+                    "url": "https://register.dpma.de/patente",
+                    "publisher": "Deutsches Patent- und Markenamt"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "innovationskennzahlen",
+              "level": 4,
+              "name": "Innovationskennzahlen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Öffentliche Innovationsindikatoren: Anzahl der neuen Produkte pro Jahr, F&E-Quote (Anteil der F&E-Ausgaben am Umsatz), Anzahl der angemeldeten Patente und Kooperationen mit Hochschulen oder Forschungsinstituten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Innovationskennzahlen sind für die Bewertung der Innovationskraft von Unternehmen und Branchen relevant. Da sie auf öffentlich verfügbaren Daten basieren, können sie direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Strategische Planung",
+                    "description": "Innovationskennzahlen helfen, die Wettbewerbsfähigkeit zu bewerten und strategische Entscheidungen zu treffen."
+                  },
+                  {
+                    "method": "Förderanträge",
+                    "description": "Daten fließen in Anträge für Förderprogramme (z. B. für Innovationsförderung) ein."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Innovationsberichte Statistisches Bundesamt",
+                    "url": "https://www.destatis.de/dataset/innovationen",
+                    "publisher": "Statistisches Bundesamt"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "handwerk",
+      "level": 2,
+      "name": "Handwerk",
+      "color": "#d35400",
+      "description": "Handwerksbetriebe aller Gewerke: Baugewerbe, Metallverarbeitung, Holzverarbeitung, Elektrohandwerk, Sanitär-Heizung-Klima und andere",
+      "children": [
+        {
+          "id": "auftragsmanagement",
+          "level": 3,
+          "name": "Auftragsmanagement",
+          "color": "#e67e22",
+          "description": "Bearbeitung von Kundenaufträgen, von der Anfrage über die Kalkulation bis zur Abrechnung",
+          "children": [
+            {
+              "id": "auftragsstatistiken",
+              "level": 4,
+              "name": "Auftragsstatistiken",
+              "color": "#d4a017",
+              "details": {
+                "description": "Aggregierte Daten zu Handwerksaufträgen: Anzahl der Aufträge, durchschnittlicher Auftragswert, Bearbeitungsdauer, Kundenbranchen und regionale Verteilung. Daten sind nicht kundenspezifisch, sondern nach Gewerken aggregiert.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Auftragsstatistiken können Wettbewerbsrelevanz haben, insbesondere wenn sie detaillierte Umsatz- oder Margendaten enthalten. Nach Aggregation auf Gewerkeebene sind die Daten für Marktanalysen nutzbar."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Auftragsabwicklung",
+                    "description": "Statistiken helfen, die Auslastung zu planen und Engpässe in der Kapazität zu erkennen."
+                  },
+                  {
+                    "method": "Kalkulation & Angebotserstellung",
+                    "description": "Daten fließen in die Preiskalkulation und die Erstellung von Angeboten ein."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Handwerksstatistik ZDH",
+                    "url": "https://www.zdh.de/statistik",
+                    "publisher": "Zentralverband des Deutschen Handwerks"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kapazitaetsplanung",
+              "level": 4,
+              "name": "Kapazitätsplanung & Ressourcen",
+              "color": "#d4a017",
+              "details": {
+                "description": "Daten zur Auslastung von Handwerksbetrieben: verfügbare Arbeitskräfte, Maschinenauslastung, Materialbestände und Termintreue. Enthält keine betriebsinternen oder vertraulichen Details.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Kapazitätsdaten können für die Planung von Aufträgen und die Identifizierung von Engpässen genutzt werden. Nach Aggregation sind die Daten für Branchenanalysen nutzbar."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Betrieb)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Auftragsmanagement",
+                    "description": "Kapazitätsdaten helfen, Aufträge realistisch zu planen und Termine einzuhalten."
+                  },
+                  {
+                    "method": "Personalplanung",
+                    "description": "Daten fließen in die Einsatzplanung der Mitarbeiter:innen ein."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kundenfeedback",
+              "level": 4,
+              "name": "Kundenfeedback & Qualitätssicherung",
+              "color": "#27ae60",
+              "details": {
+                "description": "Aggregierte Kundenbewertungen und Qualitätsdaten: Zufriedenheitswerte, Beschwerdequoten, Nachbesserungsraten und Zertifizierungen (z. B. Handwerksmeisterbrief). Enthält keine personenbezogenen Daten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Kundenfeedback und Qualitätsdaten sind für die Transparenz und das Vertrauen in Handwerksleistungen relevant. Da sie anonymisiert sind, können sie direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Betrieb)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Feedbackdaten helfen, die Qualität der Handwerksleistungen kontinuierlich zu verbessern."
+                  },
+                  {
+                    "method": "Kundengewinnung",
+                    "description": "Positive Bewertungen werden für Marketingzwecke genutzt."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "handwerksrollen_meisterbetriebe",
+          "level": 3,
+          "name": "Handwerksrollen & Meisterbetriebe",
+          "color": "#e67e22",
+          "description": "Verwaltung der Handwerksrollen, Meisterprüfungen und Betriebserlaubnisse",
+          "children": [
+            {
+              "id": "handwerksverzeichnis",
+              "level": 4,
+              "name": "Handwerksverzeichnis",
+              "color": "#27ae60",
+              "details": {
+                "description": "Öffentliches Verzeichnis aller Handwerksbetriebe: Name, Adresse, Gewerk, Betriebsgröße, Meister:innen und Kontaktdaten. Enthält nur öffentlich zugängliche Informationen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Handwerksverzeichnisse sind für die Auffindbarkeit von Handwerksbetrieben und die Transparenz des Marktes relevant. Da sie öffentlich zugänglich sind, können sie direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_03",
+                  "label": "Verzeichnis / Register"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Betriebsvermittlung",
+                    "description": "Verzeichnisse helfen, Handwerksbetriebe für Kundenaufträge oder Kooperationen zu vermitteln."
+                  },
+                  {
+                    "method": "Markttransparenz",
+                    "description": "Daten erhöhen die Transparenz über das Angebot an Handwerksleistungen in einer Region."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Handwerksrolldatenbank HWK",
+                    "url": "https://www.hwk.de/handwerksrolle",
+                    "publisher": "Handwerkskammern"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "meisterpruefungen",
+              "level": 4,
+              "name": "Meisterprüfungen & Qualifikationen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Statistiken zu Meisterprüfungen: Anzahl der Prüfungen pro Jahr, Bestehensquoten, Altersverteilung der Prüflinge und Gewerkeverteilung. Enthält keine personenbezogenen Daten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Meisterprüfungsstatistiken sind für die Bewertung der Qualifikationsentwicklung im Handwerk relevant. Da sie anonymisiert sind, können sie direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bildung & Nachwuchsförderung",
+                    "description": "Statistiken helfen, den Bedarf an Meister:innen zu identifizieren und Förderprogramme zu planen."
+                  },
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Daten fließen in die Bewertung der Qualifikationsstandards ein."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Meisterprüfungsstatistik DIHK",
+                    "url": "https://www.dihk.de/meisterpruefung",
+                    "publisher": "DIHK"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landwirtschaft",
+      "level": 2,
+      "name": "Landwirtschaft",
+      "color": "#d35400",
+      "description": "Primärer Sektor: Ackerbau, Viehzucht, Forstwirtschaft, Gartenbau und Fischerei",
+      "children": [
+        {
+          "id": "anbau_ernte",
+          "level": 3,
+          "name": "Anbau & Ernte",
+          "color": "#e67e22",
+          "description": "Pflanzenbau, Ernteverfahren und Ertragsmanagement in der Landwirtschaft",
+          "children": [
+            {
+              "id": "ertragsdaten",
+              "level": 4,
+              "name": "Ertragsdaten",
+              "color": "#27ae60",
+              "details": {
+                "description": "Öffentliche Ertragsstatistiken: Hektarerträge pro Kulturpflanze (Weizen, Mais, Raps etc.), Erntequalität, Wetterabhängigkeiten und regionale Unterschiede. Daten stammen aus amtlichen Statistiken oder landwirtschaftlichen Verbänden.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Ertragsdaten sind für die Bewertung der landwirtschaftlichen Produktivität und für Marktanalysen relevant. Da sie auf öffentlich verfügbaren Statistiken basieren, können sie direkt veröffentlicht werden."
+                },
+                "theme": {"code": "TH_02", "label": "Umwelt & Klima"},
+                "object": {"code": "OB_01", "label": "Statistik / Aggregatdaten"},
+                "granularity": {"code": "GR_03", "label": "Regional (Bundesland)"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_02", "label": "JSON"}],
+                "license": {"code": "LI_01", "label": "CC0 (Public Domain)"},
+                "relevance": 5,
+                "processes": [
+                  {"method": "Anbauplanung", "description": "Ertragsdaten helfen, Anbaustrategien zu optimieren."},
+                  {"method": "Marktprognosen", "description": "Daten fließen in die Vorhersage von Erntevolumen ein."}
+                ],
+                "examples": [{"title": "Ertragsstatistik Destatis", "url": "https://www.destatis.de/landwirtschaft", "publisher": "Statistisches Bundesamt"}]
+              }
+            },
+            {
+              "id": "marktpreise_agrar",
+              "level": 4,
+              "name": "Marktpreise für Agrarprodukte",
+              "color": "#27ae60",
+              "details": {
+                "description": "Tages- oder Wochenpreise für landwirtschaftliche Produkte: Getreide, Milch, Fleisch, Obst und Gemüse an Großmärkten oder Börsen. Daten stammen aus öffentlichen Marktberichten.",
+                "openness": {"class": "OP_01", "label": "Grün — sofort publizierbar"},
+                "theme": {"code": "TH_06", "label": "Wirtschaft & Arbeit"},
+                "object": {"code": "OB_05", "label": "Finanzdaten / Berichte"},
+                "granularity": {"code": "GR_04", "label": "National"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_02", "label": "JSON"}],
+                "license": {"code": "LI_01", "label": "CC0 (Public Domain)"},
+                "relevance": 5,
+                "processes": [
+                  {"method": "Vermarktung", "description": "Marktpreise helfen, den optimalen Verkaufszeitpunkt zu bestimmen."},
+                  {"method": "Einkauf", "description": "Daten fließen in die Kalkulation von Futtermittelkosten ein."}
+                ],
+                "examples": [{"title": "Agrarmarktpreise BMEL", "url": "https://www.bmel.de/agrarmarktpreise", "publisher": "BMEL"}]
+              }
+            },
+            {
+              "id": "subventionen_landwirtschaft",
+              "level": 4,
+              "name": "Subventionen & Fördergelder",
+              "color": "#d4a017",
+              "details": {
+                "description": "Aggregierte Daten zu landwirtschaftlichen Subventionen: EU-Agrarsubventionen, nationale Förderprogramme, Höhe der Zahlungen pro Region (anonymisiert).",
+                "openness": {"class": "OP_02", "label": "Gelb — nach Aufbereitung publizierbar"},
+                "theme": {"code": "TH_06", "label": "Wirtschaft & Arbeit"},
+                "object": {"code": "OB_05", "label": "Finanzdaten / Berichte"},
+                "granularity": {"code": "GR_03", "label": "Regional (Bundesland)"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_05", "label": "Excel"}],
+                "license": {"code": "LI_02", "label": "CC BY 4.0"},
+                "relevance": 4,
+                "processes": [
+                  {"method": "Fördermanagement", "description": "Subventionsdaten helfen, Förderanträge korrekt zu stellen."},
+                  {"method": "Politikberatung", "description": "Aggregierte Daten fließen in die Bewertung von Förderprogrammen ein."}
+                ],
+                "examples": [{"title": "Agrarsubventionen EU", "url": "https://ec.europa.eu/agriculture", "publisher": "EU-Kommission"}]
+              }
+            }
+          ]
+        },
+        {
+          "id": "tierhaltung_vermarktung",
+          "level": 3,
+          "name": "Tierhaltung & Vermarktung",
+          "color": "#e67e22",
+          "description": "Haltung von Nutztieren, Tiergesundheit und Vermarktung tierischer Produkte",
+          "children": [
+            {
+              "id": "bestandsdaten_tiere",
+              "level": 4,
+              "name": "Bestandsdaten Nutztiere",
+              "color": "#27ae60",
+              "details": {
+                "description": "Aggregierte Bestandsdaten: Anzahl der gehaltenen Tiere pro Art (Rinder, Schweine, Geflügel), Altersstruktur, Zuchtlinien und regionale Verteilung.",
+                "openness": {"class": "OP_01", "label": "Grün — sofort publizierbar"},
+                "theme": {"code": "TH_04", "label": "Gesundheit & Pflege"},
+                "object": {"code": "OB_01", "label": "Statistik / Aggregatdaten"},
+                "granularity": {"code": "GR_03", "label": "Regional (Bundesland)"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_02", "label": "JSON"}],
+                "license": {"code": "LI_01", "label": "CC0 (Public Domain)"},
+                "relevance": 4,
+                "processes": [
+                  {"method": "Tiergesundheit", "description": "Bestandsdaten helfen, Seuchenausbrüche frühzeitig zu erkennen."},
+                  {"method": "Marktanalyse", "description": "Daten fließen in die Prognose von Fleisch- und Milchmärkten ein."}
+                ],
+                "examples": [{"title": "Tierbestandsstatistik Destatis", "url": "https://www.destatis.de/tierbestand", "publisher": "Statistisches Bundesamt"}]
+              }
+            },
+            {
+              "id": "bio_landwirtschaft",
+              "level": 4,
+              "name": "Biologische Landwirtschaft",
+              "color": "#27ae60",
+              "details": {
+                "description": "Daten zur biologischen Landwirtschaft: Anzahl der Bio-Betriebe, Anbauflächen nach Kulturart, Zertifizierungen (EU-Bio-Siegel, Demeter etc.).",
+                "openness": {"class": "OP_01", "label": "Grün — sofort publizierbar"},
+                "theme": {"code": "TH_02", "label": "Umwelt & Klima"},
+                "object": {"code": "OB_03", "label": "Verzeichnis / Register"},
+                "granularity": {"code": "GR_03", "label": "Regional (Bundesland)"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_02", "label": "JSON"}],
+                "license": {"code": "LI_01", "label": "CC0 (Public Domain)"},
+                "relevance": 4,
+                "processes": [
+                  {"method": "Zertifizierung", "description": "Daten helfen, die Einhaltung der Bio-Richtlinien zu überwachen."},
+                  {"method": "Marktforschung", "description": "Bio-Daten fließen in die Analyse der Nachfrage ein."}
+                ],
+                "examples": [{"title": "Bio-Markt Daten BÖLW", "url": "https://www.oekolandbau.de/markt", "publisher": "BÖLW"}]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tourismus",
+      "level": 2,
+      "name": "Tourismus",
+      "color": "#d35400",
+      "description": "Beherbergung, Gastronomie, Reiseveranstalter und touristische Dienstleistungen",
+      "children": [
+        {
+          "id": "beherbergung_gastronomie",
+          "level": 3,
+          "name": "Beherbergung & Gastronomie",
+          "color": "#e67e22",
+          "description": "Hotels, Pensionen, Ferienwohnungen, Restaurants und Cafés",
+          "children": [
+            {
+              "id": "gaestezahlen",
+              "level": 4,
+              "name": "Gästezahlen & Auslastung",
+              "color": "#27ae60",
+              "details": {
+                "description": "Aggregierte Übernachtungszahlen: Anzahl der Gäste, Übernachtungen, Auslastungsquote, durchschnittliche Aufenthaltsdauer und Herkunft der Gäste.",
+                "openness": {"class": "OP_01", "label": "Grün — sofort publizierbar"},
+                "theme": {"code": "TH_07", "label": "Infrastruktur & Mobilität"},
+                "object": {"code": "OB_01", "label": "Statistik / Aggregatdaten"},
+                "granularity": {"code": "GR_02", "label": "Lokal (Gemeinde/Kreis)"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_02", "label": "JSON"}],
+                "license": {"code": "LI_01", "label": "CC0 (Public Domain)"},
+                "relevance": 5,
+                "processes": [
+                  {"method": "Tourismusplanung", "description": "Gästezahlen helfen, die touristische Infrastruktur zu planen."},
+                  {"method": "Marketing", "description": "Daten fließen in die Entwicklung von Werbekampagnen ein."}
+                ],
+                "examples": [{"title": "Tourismusstatistik DTV", "url": "https://www.deutschertourismusverband.de/statistik", "publisher": "DTV"}]
+              }
+            },
+            {
+              "id": "umsatzstatistik_tourismus",
+              "level": 4,
+              "name": "Umsatzstatistik Tourismus",
+              "color": "#d4a017",
+              "details": {
+                "description": "Aggregierte Umsatzdaten: Umsatz pro Beherbergungsbetrieb, durchschnittliche Preise pro Übernachtung, Umsatzentwicklung nach Saison und Region.",
+                "openness": {"class": "OP_02", "label": "Gelb — nach Aufbereitung publizierbar"},
+                "theme": {"code": "TH_06", "label": "Wirtschaft & Arbeit"},
+                "object": {"code": "OB_01", "label": "Statistik / Aggregatdaten"},
+                "granularity": {"code": "GR_03", "label": "Regional (Bundesland)"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_05", "label": "Excel"}],
+                "license": {"code": "LI_02", "label": "CC BY 4.0"},
+                "relevance": 4,
+                "processes": [
+                  {"method": "Preisgestaltung", "description": "Umsatzdaten helfen, Preise für Übernachtungen zu optimieren."},
+                  {"method": "Investitionsentscheidungen", "description": "Daten fließen in die Bewertung der Rentabilität von Tourismusprojekten ein."}
+                ]
+              }
+            },
+            {
+              "id": "bewertungen_tourismus",
+              "level": 4,
+              "name": "Bewertungen & Gästefeedback",
+              "color": "#27ae60",
+              "details": {
+                "description": "Aggregierte Bewertungen von Beherbergungsbetrieben: Durchschnittsnoten, häufige Kritikpunkte, Empfehlungsraten. Daten sind anonymisiert.",
+                "openness": {"class": "OP_01", "label": "Grün — sofort publizierbar"},
+                "theme": {"code": "TH_07", "label": "Infrastruktur & Mobilität"},
+                "object": {"code": "OB_01", "label": "Statistik / Aggregatdaten"},
+                "granularity": {"code": "GR_02", "label": "Lokal (Betrieb)"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_02", "label": "JSON"}],
+                "license": {"code": "LI_01", "label": "CC0 (Public Domain)"},
+                "relevance": 4,
+                "processes": [
+                  {"method": "Qualitätsmanagement", "description": "Bewertungen helfen, die Qualität der touristischen Angebote zu verbessern."},
+                  {"method": "Marketing", "description": "Positive Bewertungen werden für Werbezwecke genutzt."}
+                ],
+                "examples": [{"title": "Bewertungsdaten Booking.com", "url": "https://www.booking.com/reviews", "publisher": "Booking.com"}]
+              }
+            }
+          ]
+        },
+        {
+          "id": "reiseveranstalter_tourismusmarketing",
+          "level": 3,
+          "name": "Reiseveranstalter & Tourismusmarketing",
+          "color": "#e67e22",
+          "description": "Reisebüros, Veranstalter von Pauschalreisen und touristische Marketingorganisationen",
+          "children": [
+            {
+              "id": "buchungsstatistiken",
+              "level": 4,
+              "name": "Buchungsstatistiken",
+              "color": "#d4a017",
+              "details": {
+                "description": "Aggregierte Buchungsdaten: Anzahl der gebuchten Reisen, beliebte Reiseziele, Buchungszeiträume, Stornierungsquoten. Enthält keine kundenbezogenen Daten.",
+                "openness": {"class": "OP_02", "label": "Gelb — nach Aufbereitung publizierbar"},
+                "theme": {"code": "TH_07", "label": "Infrastruktur & Mobilität"},
+                "object": {"code": "OB_01", "label": "Statistik / Aggregatdaten"},
+                "granularity": {"code": "GR_04", "label": "National"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_02", "label": "JSON"}],
+                "license": {"code": "LI_02", "label": "CC BY 4.0"},
+                "relevance": 4,
+                "processes": [
+                  {"method": "Reiseplanung", "description": "Buchungsdaten helfen, Reiseangebote an die Nachfrage anzupassen."},
+                  {"method": "Marktforschung", "description": "Daten fließen in die Analyse von Reisetrends ein."}
+                ]
+              }
+            },
+            {
+              "id": "tourismusmarketing",
+              "level": 4,
+              "name": "Tourismusmarketing & Kampagnen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Öffentliche Daten zu Tourismusmarketing: Kampagnenbudgets, Zielgruppen, genutzte Kanäle und Messung des Erfolgs. Enthält keine vertraulichen Details.",
+                "openness": {"class": "OP_01", "label": "Grün — sofort publizierbar"},
+                "theme": {"code": "TH_07", "label": "Infrastruktur & Mobilität"},
+                "object": {"code": "OB_01", "label": "Statistik / Aggregatdaten"},
+                "granularity": {"code": "GR_03", "label": "Regional (Bundesland)"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_02", "label": "JSON"}],
+                "license": {"code": "LI_01", "label": "CC0 (Public Domain)"},
+                "relevance": 4,
+                "processes": [
+                  {"method": "Marketingstrategie", "description": "Daten helfen, die Effektivität von Marketingkampagnen zu bewerten."},
+                  {"method": "Fördermittelverwendung", "description": "Marketingdaten fließen in die Berichterstattung über die Verwendung öffentlicher Fördergelder ein."}
+                ],
+                "examples": [{"title": "Tourismusmarketing DTV", "url": "https://www.deutschertourismusverband.de/marketing", "publisher": "DTV"}]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transport_logistik",
+      "level": 2,
+      "name": "Transport & Logistik",
+      "color": "#d35400",
+      "description": "Gütertransport, Speditionen, Frachtunternehmen und logistische Dienstleistungen",
+      "children": [
+        {
+          "id": "frachtmanagement",
+          "level": 3,
+          "name": "Frachtmanagement",
+          "color": "#e67e22",
+          "description": "Organisation und Abwicklung von Gütertransporten auf Straße, Schiene, Wasser und in der Luft",
+          "children": [
+            {
+              "id": "transportvolumen",
+              "level": 4,
+              "name": "Transportvolumen & Frachtmengen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Aggregierte Daten zum Transportvolumen: Menge der transportierten Güter (in Tonnen oder Tonnekilometern), Transportmittel (LKW, Bahn, Schiff, Flugzeug) und Transportwege. Daten stammen aus amtlichen Statistiken oder Branchenverbänden.",
+                "openness": {"class": "OP_01", "label": "Grün — sofort publizierbar"},
+                "theme": {"code": "TH_07", "label": "Infrastruktur & Mobilität"},
+                "object": {"code": "OB_01", "label": "Statistik / Aggregatdaten"},
+                "granularity": {"code": "GR_04", "label": "National"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_02", "label": "JSON"}],
+                "license": {"code": "LI_01", "label": "CC0 (Public Domain)"},
+                "relevance": 5,
+                "processes": [
+                  {"method": "Logistikplanung", "description": "Transportvolumen hilft, Kapazitäten zu planen und Engpässe zu erkennen."},
+                  {"method": "Marktanalyse", "description": "Daten fließen in die Analyse von Transportmärkten ein."}
+                ],
+                "examples": [{"title": "Transportstatistik Destatis", "url": "https://www.destatis.de/transport", "publisher": "Statistisches Bundesamt"}]
+              }
+            },
+            {
+              "id": "transportkosten",
+              "level": 4,
+              "name": "Transportkosten & Tarife",
+              "color": "#d4a017",
+              "details": {
+                "description": "Durchschnittliche Transportkosten pro Kilometer oder Tonne, Tarifstrukturen (z. B. für Speditionen oder Frachtführer) und Kostenentwicklung über die Zeit. Enthält keine unternehmensspezifischen Daten.",
+                "openness": {"class": "OP_02", "label": "Gelb — nach Aufbereitung publizierbar"},
+                "theme": {"code": "TH_06", "label": "Wirtschaft & Arbeit"},
+                "object": {"code": "OB_05", "label": "Finanzdaten / Berichte"},
+                "granularity": {"code": "GR_04", "label": "National"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_05", "label": "Excel"}],
+                "license": {"code": "LI_02", "label": "CC BY 4.0"},
+                "relevance": 4,
+                "processes": [
+                  {"method": "Preiskalkulation", "description": "Transportkosten helfen, Preise für Logistikdienstleistungen zu kalkulieren."},
+                  {"method": "Wettbewerbsanalyse", "description": "Daten fließen in den Vergleich mit Mitbewerbern ein."}
+                ]
+              }
+            },
+            {
+              "id": "flottenmanagement",
+              "level": 4,
+              "name": "Flottenmanagement",
+              "color": "#27ae60",
+              "details": {
+                "description": "Daten zum Fuhrpark: Anzahl der Fahrzeuge, Fahrzeugtypen, Auslastung, Wartungsintervalle und Kraftstoffverbrauch. Enthält keine unternehmensspezifischen oder vertraulichen Details.",
+                "openness": {"class": "OP_01", "label": "Grün — sofort publizierbar"},
+                "theme": {"code": "TH_07", "label": "Infrastruktur & Mobilität"},
+                "object": {"code": "OB_01", "label": "Statistik / Aggregatdaten"},
+                "granularity": {"code": "GR_02", "label": "Lokal (Standort)"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_02", "label": "JSON"}],
+                "license": {"code": "LI_01", "label": "CC0 (Public Domain)"},
+                "relevance": 4,
+                "processes": [
+                  {"method": "Flottenoptimierung", "description": "Daten helfen, den Fuhrpark effizient zu verwalten."},
+                  {"method": "Nachhaltigkeit", "description": "Flottendaten fließen in die Berechnung der CO₂-Bilanz ein."}
+                ],
+                "examples": [{"title": "Flottenmanagement DSLV", "url": "https://www.dslv.org/flottenmanagement", "publisher": "DSLV"}]
+              }
+            }
+          ]
+        },
+        {
+          "id": "routenplanung",
+          "level": 3,
+          "name": "Routenplanung & Navigation",
+          "color": "#e67e22",
+          "description": "Optimierung von Transportrouten, Tourenplanung und Navigationsdienste",
+          "children": [
+            {
+              "id": "routenoptimierung",
+              "level": 4,
+              "name": "Routenoptimierung",
+              "color": "#27ae60",
+              "details": {
+                "description": "Daten zur Optimierung von Transportrouten: Fahrzeiten, Distanzen, Kraftstoffverbrauch, Mautkosten und Lieferfenster. Enthält keine unternehmensspezifischen oder vertraulichen Details.",
+                "openness": {"class": "OP_01", "label": "Grün — sofort publizierbar"},
+                "theme": {"code": "TH_07", "label": "Infrastruktur & Mobilität"},
+                "object": {"code": "OB_01", "label": "Statistik / Aggregatdaten"},
+                "granularity": {"code": "GR_04", "label": "National"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_02", "label": "JSON/GeoJSON"}],
+                "license": {"code": "LI_01", "label": "CC0 (Public Domain)"},
+                "relevance": 5,
+                "processes": [
+                  {"method": "Logistikoptimierung", "description": "Routendaten helfen, Transportwege effizienter zu gestalten."},
+                  {"method": "Kostenreduktion", "description": "Optimierte Routen senken Kraftstoffverbrauch und Transportkosten."}
+                ],
+                "examples": [{"title": "Routenplanung DSLV", "url": "https://www.dslv.org/routenplanung", "publisher": "DSLV"}]
+              }
+            },
+            {
+              "id": "verkehrsdaten",
+              "level": 4,
+              "name": "Echtzeit-Verkehrsdaten",
+              "color": "#27ae60",
+              "details": {
+                "description": "Öffentliche Echtzeit-Verkehrsdaten: Staus, Baustellen, Wetterbedingungen und Unfälle. Daten stammen aus öffentlichen Quellen oder Verkehrsinformationsdiensten.",
+                "openness": {"class": "OP_01", "label": "Grün — sofort publizierbar"},
+                "theme": {"code": "TH_07", "label": "Infrastruktur & Mobilität"},
+                "object": {"code": "OB_06", "label": "Zeitreihendaten"},
+                "granularity": {"code": "GR_04", "label": "National"},
+                "format": [{"code": "FT_02", "label": "JSON"}],
+                "license": {"code": "LI_01", "label": "CC0 (Public Domain)"},
+                "relevance": 5,
+                "processes": [
+                  {"method": "Routenplanung", "description": "Echtzeit-Verkehrsdaten helfen, Staus zu umfahren und Lieferzeiten einzuhalten."},
+                  {"method": "Kundenservice", "description": "Daten fließen in die Information von Kunden über Lieferverzögerungen ein."}
+                ],
+                "examples": [{"title": "Verkehrsdaten BASt", "url": "https://www.bast.de/verkehrsdaten", "publisher": "BASt"}]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "energieversorgung",
+      "level": 2,
+      "name": "Energieversorgung",
+      "color": "#d35400",
+      "description": "Erzeugung, Verteilung und Handel von Energie: Strom, Gas, Wasser und Fernwärme",
+      "children": [
+        {
+          "id": "stromerzeugung_verteilung",
+          "level": 3,
+          "name": "Stromerzeugung & -verteilung",
+          "color": "#e67e22",
+          "description": "Erzeugung von Strom aus verschiedenen Energiequellen und Verteilung über Netze",
+          "children": [
+            {
+              "id": "stromerzeugung_daten",
+              "level": 4,
+              "name": "Stromerzeugungsdaten",
+              "color": "#27ae60",
+              "details": {
+                "description": "Öffentliche Daten zur Stromerzeugung: Erzeugungsmenge pro Energiequelle (Kohle, Gas, Wind, Solar, Wasser, Atomkraft), Auslastung der Kraftwerke und CO₂-Emissionen. Daten stammen aus Netzbetreiberberichten oder amtlichen Statistiken.",
+                "openness": {"class": "OP_01", "label": "Grün — sofort publizierbar"},
+                "theme": {"code": "TH_02", "label": "Umwelt & Klima"},
+                "object": {"code": "OB_01", "label": "Statistik / Aggregatdaten"},
+                "granularity": {"code": "GR_04", "label": "National"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_02", "label": "JSON"}],
+                "license": {"code": "LI_01", "label": "CC0 (Public Domain)"},
+                "relevance": 5,
+                "processes": [
+                  {"method": "Energieplanung", "description": "Stromerzeugungsdaten helfen, den Mix der Energiequellen zu optimieren."},
+                  {"method": "Klimaschutz", "description": "Daten fließen in die Berechnung der CO₂-Bilanz und Klimaschutzmaßnahmen ein."}
+                ],
+                "examples": [{"title": "Stromerzeugung SMARD", "url": "https://www.smard.de", "publisher": "Bundesnetzagentur"}]
+              }
+            },
+            {
+              "id": "netzauslastung",
+              "level": 4,
+              "name": "Netzauslastung & Engpässe",
+              "color": "#d4a017",
+              "details": {
+                "description": "Daten zur Auslastung der Stromnetze: aktuelle Netzlast, Engpassmanagement, Redispatch-Maßnahmen und Netzausbauprojekte. Enthält keine betriebsinternen oder vertraulichen Details.",
+                "openness": {"class": "OP_02", "label": "Gelb — nach Aufbereitung publizierbar"},
+                "theme": {"code": "TH_07", "label": "Infrastruktur & Mobilität"},
+                "object": {"code": "OB_01", "label": "Statistik / Aggregatdaten"},
+                "granularity": {"code": "GR_03", "label": "Regional (Netzgebiet)"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_02", "label": "JSON"}],
+                "license": {"code": "LI_02", "label": "CC BY 4.0"},
+                "relevance": 4,
+                "processes": [
+                  {"method": "Netzbetrieb", "description": "Netzauslastungsdaten helfen, Engpässe zu erkennen und den Netzausbau zu planen."},
+                  {"method": "Marktkommunikation", "description": "Daten fließen in die Information von Marktteilnehmern über Netzengpässe ein."}
+                ],
+                "examples": [{"title": "Netzauslastung Tennet", "url": "https://www.tennet.eu/netzauslastung", "publisher": "Tennet"}]
+              }
+            },
+            {
+              "id": "strompreise",
+              "level": 4,
+              "name": "Strompreise & Tarife",
+              "color": "#27ae60",
+              "details": {
+                "description": "Öffentliche Strompreisdaten: Börsenstrompreise (z. B. EEX), Endkundenpreise, Netzentgelte, EEG-Umlage und Steuern. Daten stammen aus öffentlichen Quellen oder Marktplattformen.",
+                "openness": {"class": "OP_01", "label": "Grün — sofort publizierbar"},
+                "theme": {"code": "TH_06", "label": "Wirtschaft & Arbeit"},
+                "object": {"code": "OB_05", "label": "Finanzdaten / Berichte"},
+                "granularity": {"code": "GR_04", "label": "National"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_02", "label": "JSON"}],
+                "license": {"code": "LI_01", "label": "CC0 (Public Domain)"},
+                "relevance": 5,
+                "processes": [
+                  {"method": "Preisgestaltung", "description": "Strompreise helfen, Tarife für Endkunden zu kalkulieren."},
+                  {"method": "Marktanalyse", "description": "Daten fließen in die Analyse der Strommärkte ein."}
+                ],
+                "examples": [{"title": "Strompreise SMARD", "url": "https://www.smard.de/strompreise", "publisher": "Bundesnetzagentur"}]
+              }
+            }
+          ]
+        },
+        {
+          "id": "gas_wasserversorgung",
+          "level": 3,
+          "name": "Gas- & Wasserversorgung",
+          "color": "#e67e22",
+          "description": "Versorgung mit Erdgas, Biogas, Trinkwasser und Abwasserentsorgung",
+          "children": [
+            {
+              "id": "gasverbrauch_daten",
+              "level": 4,
+              "name": "Gasverbrauch & Netzdaten",
+              "color": "#27ae60",
+              "details": {
+                "description": "Aggregierte Daten zum Gasverbrauch: Verbrauchsmenge pro Region, Gasqualität, Netzdruck und Versorgungsengpässe. Enthält keine betriebsinternen oder vertraulichen Details.",
+                "openness": {"class": "OP_01", "label": "Grün — sofort publizierbar"},
+                "theme": {"code": "TH_07", "label": "Infrastruktur & Mobilität"},
+                "object": {"code": "OB_01", "label": "Statistik / Aggregatdaten"},
+                "granularity": {"code": "GR_03", "label": "Regional (Netzgebiet)"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_02", "label": "JSON"}],
+                "license": {"code": "LI_01", "label": "CC0 (Public Domain)"},
+                "relevance": 4,
+                "processes": [
+                  {"method": "Netzplanung", "description": "Gasverbrauchsdaten helfen, den Netzausbau zu planen."},
+                  {"method": "Versorgungssicherheit", "description": "Daten fließen in die Bewertung der Versorgungssicherheit ein."}
+                ],
+                "examples": [{"title": "Gasnetzdaten BNetzA", "url": "https://www.bundesnetzagentur.de/gasnetz", "publisher": "Bundesnetzagentur"}]
+              }
+            },
+            {
+              "id": "wasserversorgung_abwasser",
+              "level": 4,
+              "name": "Wasserversorgung & Abwasser",
+              "color": "#27ae60",
+              "details": {
+                "description": "Daten zur Trinkwasserversorgung und Abwasserentsorgung: Wasserverbrauch pro Region, Wasserqualität, Abwasseraufbereitung und Kläranlagenauslastung. Enthält keine personenbezogenen Daten.",
+                "openness": {"class": "OP_01", "label": "Grün — sofort publizierbar"},
+                "theme": {"code": "TH_02", "label": "Umwelt & Klima"},
+                "object": {"code": "OB_01", "label": "Statistik / Aggregatdaten"},
+                "granularity": {"code": "GR_02", "label": "Lokal (Gemeinde/Kreis)"},
+                "format": [{"code": "FT_01", "label": "CSV"}, {"code": "FT_02", "label": "JSON"}],
+                "license": {"code": "LI_01", "label": "CC0 (Public Domain)"},
+                "relevance": 4,
+                "processes": [
+                  {"method": "Ressourcenmanagement", "description": "Wasserdaten helfen, die Trinkwasserversorgung sicherzustellen."},
+                  {"method": "Umweltschutz", "description": "Daten fließen in die Überwachung der Wasserqualität und Abwasserbehandlung ein."}
+                ],
+                "examples": [{"title": "Wasserstatistik BDEW", "url": "https://www.bdew.de/wasser", "publisher": "BDEW"}]
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

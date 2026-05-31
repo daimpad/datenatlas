@@ -50,7 +50,7 @@ function buildContent(tile, hasExplore = false, exploreLabel = 'Erkunden') {
 
   const exploreBtn = hasExplore
     ? `<button id="sb-explore-btn" class="sb-explore-btn">
-         ${esc(exploreLabel)} <span class="sb-explore-arrow">→</span>
+         ${esc(exploreLabel)} <i class="fa-solid fa-arrow-right sb-explore-arrow"></i>
        </button>`
     : '';
 
@@ -88,37 +88,37 @@ function buildContent(tile, hasExplore = false, exploreLabel = 'Erkunden') {
 function buildDetailSections(d) {
   const parts = [];
 
-  parts.push(section('&#x1F4CB; Beschreibung', `<p>${esc(d.description)}</p>`));
+  parts.push(section('<i class="fa-solid fa-file-lines"></i> Beschreibung', `<p>${esc(d.description)}</p>`));
 
   if (d.openness) {
     const op = d.openness;
     const opClass = op.class === 'OP_01' ? 'op-gruen' : op.class === 'OP_02' ? 'op-gelb' : 'op-rot';
     const opIcon  = op.class === 'OP_01' ? '●' : op.class === 'OP_02' ? '◑' : '○';
-    parts.push(section('&#x1F513; Öffnungsklasse', `
+    parts.push(section('<i class="fa-solid fa-lock-open"></i> Öffnungsklasse', `
       <div class="openness-pill ${opClass}">${opIcon} ${esc(op.label)}</div>
       <p>${esc(op.explanation)}</p>`));
   }
 
   const metaItems = [];
-  if (d.theme)       metaItems.push({ label: d.theme.label,       icon: '🏷' });
-  if (d.object)      metaItems.push({ label: d.object.label,      icon: '📦' });
-  if (d.granularity) metaItems.push({ label: d.granularity.label, icon: '🔍' });
+  if (d.theme)       metaItems.push({ label: d.theme.label });
+  if (d.object)      metaItems.push({ label: d.object.label });
+  if (d.granularity) metaItems.push({ label: d.granularity.label });
   if (d.format?.length) {
-    d.format.forEach(f => metaItems.push({ label: f.label, icon: '📄' }));
+    d.format.forEach(f => metaItems.push({ label: f.label }));
   }
-  if (d.license)     metaItems.push({ label: d.license.label,     icon: '⚖' });
+  if (d.license)     metaItems.push({ label: d.license.label });
   if (metaItems.length) {
     const chips = metaItems.map(m =>
       `<span class="meta-chip">${m.label}</span>`
     ).join('');
-    parts.push(section('&#x1F4CB; Metadaten', `<div class="meta-chips">${chips}</div>`));
+    parts.push(section('<i class="fa-solid fa-circle-info"></i> Metadaten', `<div class="meta-chips">${chips}</div>`));
   }
 
   if (d.relevance != null) {
     const dots = [1,2,3,4,5].map(i =>
       `<span class="rel-dot${i <= d.relevance ? ' on' : ''}"></span>`
     ).join('');
-    parts.push(section('&#x2B50; Relevanz', `
+    parts.push(section('<i class="fa-solid fa-star"></i> Relevanz', `
       <div class="rel-row">
         <div class="rel-dots">${dots}</div>
         <span class="rel-label">${d.relevance} / 5</span>
@@ -131,7 +131,7 @@ function buildDetailSections(d) {
         <span class="anon-tag">${esc(p.method)}</span>
         <span class="anon-text">${esc(p.description)}</span>
       </div>`).join('');
-    parts.push(section('&#x2699; Prozessbezug', `<div class="anon-list">${items}</div>`));
+    parts.push(section('<i class="fa-solid fa-gear"></i> Prozessbezug', `<div class="anon-list">${items}</div>`));
   }
 
   if (d.examples?.length) {
@@ -140,7 +140,7 @@ function buildDetailSections(d) {
         <span class="example-title">${esc(ex.title)}</span>
         <span class="example-pub">${esc(ex.publisher)}</span>
       </a>`).join('');
-    parts.push(section('&#x1F517; Beispieldatensätze', `<div class="example-list">${items}</div>`));
+    parts.push(section('<i class="fa-solid fa-link"></i> Beispieldatensätze', `<div class="example-list">${items}</div>`));
   }
 
   return parts.join('');

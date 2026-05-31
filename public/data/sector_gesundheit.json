@@ -163,6 +163,176 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "fallzahlen-diagnose",
+              "level": 4,
+              "name": "Fallzahlen nach Diagnose & DRG",
+              "color": "#d4a017",
+              "details": {
+                "description": "Aggregierte Fallzahlen nach ICD-10-Diagnose und DRG-Fallpauschalen aus dem Krankenhausreport.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "DRG-Statistik Destatis",
+                    "url": "https://www.gbe-bund.de/dataset/drg-statistik-krankenhaus",
+                    "publisher": "Destatis"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "verweildauer",
+              "level": 4,
+              "name": "Verweildauer & Bettenauslastung",
+              "color": "#d4a017",
+              "details": {
+                "description": "Durchschnittliche Verweildauern und Bettenauslastungsquoten nach Fachabteilung und Diagnosegruppe.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Krankenhaus-Report",
+                    "url": "https://mcloud.de/krankenhaus-report-daten",
+                    "publisher": "Wissenschaftliches Institut der AOK"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "entlassmanagement",
+              "level": 4,
+              "name": "Entlassmanagement & Verlegungsstatistik",
+              "color": "#c0392b",
+              "details": {
+                "description": "Daten zu Entlassmodi (nach Hause, Reha, Pflegeeinrichtung), Überleitungsprozessen und Rückverlegungsquoten.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nicht publizierbar",
+                  "explanation": "Daten unterliegen Schutzregelungen und sind nicht für die Öffentlichkeit bestimmt."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Entlassmanagement-Statistik",
+                    "url": "https://mcloud.de/entlassmanagement-krankenhaus",
+                    "publisher": "GKV-Spitzenverband"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -318,6 +488,180 @@
                   {
                     "method": "Datenerhebung & Statistik",
                     "description": "Meldepflichtige Tumoren werden auf Basis der Pathologiebefunde an die Landeskrebsregister übermittelt (Krebsregistergesetz der Länder)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bildgebung-auslastung",
+              "level": 4,
+              "name": "Bildgebung & Gerätenutzung",
+              "color": "#d4a017",
+              "details": {
+                "description": "Auslastungsdaten zu bildgebenden Geräten: Untersuchungsvolumen, Wartezeiten, Kapazitätsauslastung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Bildgebungs-Statistik",
+                    "url": "https://mcloud.de/bildgebung-medizin",
+                    "publisher": "Deutsche Röntgengesellschaft"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "laborstatistik",
+              "level": 4,
+              "name": "Labor- & Schnellteststatistik",
+              "color": "#27ae60",
+              "details": {
+                "description": "Aggregierte Laborstatistiken: Anzahl Tests, Positivrate, Turnaround-Zeit nach Erregertyp.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "PCR-Teststatistik RKI",
+                    "url": "https://www.rki.de/dataset/laborstatistik",
+                    "publisher": "Robert Koch-Institut"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "antibiotikaresistenz",
+              "level": 4,
+              "name": "Antibiotikaresistenz & MRSA-Daten",
+              "color": "#27ae60",
+              "details": {
+                "description": "Surveillance-Daten zu Antibiotikaresistenzen (MRSA, ESBL, VRE) aus dem nationalen Resistenzmonitoring.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "ARS-Antibiotikaresistenz-Surveillance",
+                    "url": "https://ars.rki.de/dataset/resistenzdaten",
+                    "publisher": "Robert Koch-Institut"
                   }
                 ]
               }
@@ -485,6 +829,180 @@
                   {
                     "method": "Planung & Steuerung",
                     "description": "Regionale Impfquoten nach Altersgruppe ermöglichen die gezielte Planung von Aufholimpfkampagnen und Ressourcenallokation."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "operationsstatistik",
+              "level": 4,
+              "name": "Operationsstatistik & Eingriffszahlen",
+              "color": "#d4a017",
+              "details": {
+                "description": "Aggregierte Eingriffszahlen nach OPS-Klassifikation, Fachabteilung und Komplexität aus der DRG-Statistik.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "OPS-Statistik Destatis",
+                    "url": "https://www.gbe-bund.de/dataset/ops-eingriffe",
+                    "publisher": "Destatis"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "komplikationsrate",
+              "level": 4,
+              "name": "Komplikations- & Mortalitätsrate",
+              "color": "#d4a017",
+              "details": {
+                "description": "Rates unerwünschter Ereignisse, Komplikationen und krankenhausassoziierter Mortalität nach IQTIG-Indikatoren.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Qualitätsbericht Krankenhaus IQTIG",
+                    "url": "https://www.iqtig.org/dataset/qualitaetsbericht",
+                    "publisher": "IQTIG"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "readmissionsrate",
+              "level": 4,
+              "name": "Wiederaufnahme- & Rehospitalisierungsrate",
+              "color": "#d4a017",
+              "details": {
+                "description": "Raten ungeplanter 30-Tage-Wiederaufnahmen nach Diagnose und Indexaufenthalt.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Readmissions-Statistik AOK",
+                    "url": "https://mcloud.de/readmissions-aok",
+                    "publisher": "Wissenschaftliches Institut der AOK"
                   }
                 ]
               }
@@ -659,6 +1177,180 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "erreger-surveillance",
+              "level": 4,
+              "name": "Erregersurveillance & Genomsequenzierung",
+              "color": "#27ae60",
+              "details": {
+                "description": "Sequenzdaten und Typisierungsergebnisse aus der molekularen Erreger-Surveillance (z.B. SARS-CoV-2, Influenza).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Zeitreihendaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_06",
+                    "label": "RDF / Linked Data"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "SARS-CoV-2 Sequenzdaten",
+                    "url": "https://www.rki.de/dataset/sars-cov2-sequenzen",
+                    "publisher": "Robert Koch-Institut"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "nosokomiale-infektionen",
+              "level": 4,
+              "name": "Nosokomiale Infektionen & Krankenhaushygiene",
+              "color": "#d4a017",
+              "details": {
+                "description": "Raten im Krankenhaus erworbener Infektionen (Harnwegsinfekte, Pneumonien, Wundinfektionen, MRSA).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "KISS-Nosokomialdaten",
+                    "url": "https://www.nrz-hygiene.de/dataset/nosokomial-statistik",
+                    "publisher": "NRZ für Krankenhaushygiene"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ausbruchs-meldungen",
+              "level": 4,
+              "name": "Ausbruchsmeldungen & Epidemiemanagement",
+              "color": "#27ae60",
+              "details": {
+                "description": "Dokumentation und anonymisierte Berichte zu Ausbruchsuntersuchungen nach IfSG aus Gemeinschaftseinrichtungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Mediendaten / Dokumente"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Ausbruchsberichte RKI",
+                    "url": "https://www.rki.de/dataset/ausbruchsberichte",
+                    "publisher": "Robert Koch-Institut"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -818,6 +1510,416 @@
                   {
                     "method": "Planung & Steuerung",
                     "description": "Kommunen nutzen Daten zu sozialen Determinanten für die integrierte Stadt- und Gesundheitsplanung in sozial benachteiligten Quartieren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "chronische-erkrankungen",
+              "level": 4,
+              "name": "Chronische Erkrankungen & Prävalenz",
+              "color": "#27ae60",
+              "details": {
+                "description": "Prävalenzschätzungen zu Diabetes, Herz-Kreislauf-Erkrankungen, COPD und Krebs auf Kreisebene.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Chronische Erkrankungen GBE",
+                    "url": "https://www.gbe-bund.de/dataset/chronische-erkrankungen",
+                    "publisher": "Destatis/RKI"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vorsorge-teilnahme",
+              "level": 4,
+              "name": "Vorsorgeuntersuchungen & Früherkennungsraten",
+              "color": "#27ae60",
+              "details": {
+                "description": "Teilnahmeraten zu Krebsfrüherkennungs-, Mutter-Kind- und Zahnvorsorgeuntersuchungen nach Altersgruppe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Vorsorge-Inanspruchnahme GBE",
+                    "url": "https://www.gbe-bund.de/dataset/vorsorge-teilnahme",
+                    "publisher": "Gesundheitsberichterstattung des Bundes"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gesundheitsziele",
+              "level": 4,
+              "name": "Gesundheitsziele & Indikatorenreport",
+              "color": "#27ae60",
+              "details": {
+                "description": "Indikatorengestützter Bericht zum Stand der kommunalen Gesundheitsziele (z.B. Stärkung der Gesundheitskompetenz).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Mediendaten / Dokumente"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Gesundheitsziele NRW",
+                    "url": "https://ckan.open.nrw.de/dataset/gesundheitsziele-nrw",
+                    "publisher": "Land NRW"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "praevention-frueherkennnung",
+          "level": 3,
+          "name": "Prävention & Gesundheitsförderung",
+          "color": "#1abc9c",
+          "children": [
+            {
+              "id": "suchtpraevention",
+              "level": 4,
+              "name": "Suchtprävention & Drogenhilfe",
+              "color": "#27ae60",
+              "details": {
+                "description": "Daten zu Suchtberatungsstellen, Drogenkonsumräumen, Behandlungsplätzen und Präventionsprogrammen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Suchtdaten Hamburg",
+                    "url": "http://suche.transparenz.hamburg.de/dataset/suchtdaten-hamburg",
+                    "publisher": "Freie und Hansestadt Hamburg"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "krebsregister",
+              "level": 4,
+              "name": "Krebsregister & Krebsinzidenz",
+              "color": "#27ae60",
+              "details": {
+                "description": "Daten aus epidemiologischen Krebsregistern: Neuerkrankungen, Mortalität und Überlebensdaten nach Tumorentität.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Krebsregister Bayern",
+                    "url": "https://open.bydata.de/api/hub/repo/datasets/krebsregister-bayern",
+                    "publisher": "Bayerisches Krebsregister"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "psychische-gesundheit",
+              "level": 4,
+              "name": "Psychische Gesundheit & Versorgungsangebote",
+              "color": "#27ae60",
+              "details": {
+                "description": "Prävalenzdaten psychischer Erkrankungen, Versorgungsangebote und Inanspruchnahme psychosozialer Dienste.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Psychische Gesundheit GBE",
+                    "url": "https://www.gbe-bund.de/dataset/psychische-gesundheit",
+                    "publisher": "Gesundheitsberichterstattung des Bundes"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gesundheitsfoerderung-programme",
+              "level": 4,
+              "name": "Gesundheitsförderungsprogramme & Evaluation",
+              "color": "#27ae60",
+              "details": {
+                "description": "Dokumentation und Evaluationsergebnisse kommunaler Gesundheitsförderungsprogramme.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Mediendaten / Dokumente"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Gesundheitsförderung NRW",
+                    "url": "https://ckan.open.nrw.de/dataset/gesundheitsfoerderung-nrw",
+                    "publisher": "Land NRW"
                   }
                 ]
               }
@@ -988,6 +2090,180 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "notruf-statistik",
+              "level": 4,
+              "name": "Notruf-Aufkommen & Einsatzleitstelle",
+              "color": "#27ae60",
+              "details": {
+                "description": "Zeitreihen zu Notrufaufkommen (110/112/116117) nach Tages- und Jahreszeit sowie Einsatzart.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Sicherheit & Ordnung"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Zeitreihendaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Notruf-Statistik Hamburg",
+                    "url": "http://suche.transparenz.hamburg.de/dataset/notruf-statistik-hamburg",
+                    "publisher": "Freie und Hansestadt Hamburg"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hilfsfrist-monitoring",
+              "level": 4,
+              "name": "Hilfsfrist-Monitoring & Erreichbarkeitsanalyse",
+              "color": "#27ae60",
+              "details": {
+                "description": "Einhalte-Quoten der gesetzlichen Hilfsfristen im Rettungsdienst nach Einsatzgebiet und Rettungsdienstbereich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Sicherheit & Ordnung"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Hilfsfrist-Daten NRW",
+                    "url": "https://ckan.open.nrw.de/dataset/hilfsfrist-rettungsdienst-nrw",
+                    "publisher": "Land NRW"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "triage-statistik",
+              "level": 4,
+              "name": "Triage-Statistik Notaufnahme",
+              "color": "#d4a017",
+              "details": {
+                "description": "Verteilung der Triage-Kategorien (MTS/ESI) in Notaufnahmen nach Tageszeit, Wochentag und Diagnosegruppe.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Notaufnahme-Triage Sachsen",
+                    "url": "https://geoportal.sachsen.de/md/triage-statistik",
+                    "publisher": "Freistaat Sachsen"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1147,6 +2423,180 @@
                   {
                     "method": "Qualitätssicherung",
                     "description": "Registerauswertungen sind Grundlage für die Zertifizierung und Rezertifizierung von Traumazentren durch die Deutsche Gesellschaft für Unfallchirurgie."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "notaufnahme-qualitaet",
+              "level": 4,
+              "name": "Notaufnahme-Qualitätsindikatoren",
+              "color": "#d4a017",
+              "details": {
+                "description": "IQTIG-Qualitätsindikatoren für Notaufnahmen: Wartezeit bis Arztkontakt, Compliance mit Leitlinien, Mortalität.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "IQTIG Notaufnahme-QI",
+                    "url": "https://www.iqtig.org/dataset/notaufnahme-qualitaet",
+                    "publisher": "IQTIG"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "patientenzufriedenheit",
+              "level": 4,
+              "name": "Patientenzufriedenheit & Befragungsdaten",
+              "color": "#d4a017",
+              "details": {
+                "description": "Aggregierte Ergebnisse strukturierter Patientenzufriedenheitsbefragungen nach Fachabteilung und Dimension.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Patientenzufriedenheit AOK",
+                    "url": "https://mcloud.de/patientenzufriedenheit-aok",
+                    "publisher": "Wissenschaftliches Institut der AOK"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "versorgungsatlas",
+              "level": 4,
+              "name": "Versorgungsatlas & Erreichbarkeitsanalyse",
+              "color": "#27ae60",
+              "details": {
+                "description": "Karten zur räumlichen Verteilung medizinischer Versorger und Erreichbarkeitsanalysen für die Bevölkerung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Geodaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Versorgungsatlas Deutschland",
+                    "url": "https://www.versorgungsatlas.de/dataset/versorgungsdaten",
+                    "publisher": "Zentralinstitut KBV"
                   }
                 ]
               }

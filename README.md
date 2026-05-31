@@ -1,317 +1,307 @@
 # ◈ Datenatlas
 
-> **Interaktiver Explorer der Open-Data-Landschaft der Zivilgesellschaft**
+**Welche Daten besitzt unsere Gesellschaft, und wie offen könnten sie sein?**
 
-Datenatlas visualisiert, welche Daten NGOs und zivilgesellschaftliche Organisationen besitzen — und wie offen diese Daten potenziell sind. Auf einer isometrischen Karte navigiert man von gesellschaftlichen Sektoren bis zu einzelnen Datentypen, erhält Öffnungsklassen-Bewertungen und kann verknüpfte Prozesse cross-sektoral erkunden.
+Der Datenatlas macht sichtbar, welche Daten Behörden, Unternehmen, NGOs, Forschungseinrichtungen und andere Organisationen in Deutschland täglich erzeugen. Auf einer interaktiven isometrischen Karte lassen sich über 1 300 Datentypen quer durch 8 gesellschaftliche Sektoren erkunden.
 
-```
-◈ Datenatlas
-  └── NGO                        (Sektor · Ebene 1)
-        └── Soziale Dienste            (Organisation · Ebene 2)
-              └── Beratung & Hilfeplanung    (Aktivität · Ebene 3)
-                    └── Beratungsstatistik         (Datentyp · Ebene 4 · OP_02 Gelb)
-                          └── Beratung & Sozialarbeit    (Prozess · Ebene 5)
-                                └── Beratungsstatistik NGO     (Cross-Sektor · Ebene 6)
-```
+**→ [datenatlas.de](https://datenatlas.de)**
 
 ---
 
-## Features
+## Was ist der Datenatlas?
 
-| Feature | Beschreibung |
-|---|---|
-| **Isometrische Karte** | Canvas-basierter Renderer mit Painter's Algorithm, Viewport-Culling und Hover-Highlighting |
-| **4+∞-Ebenen-Navigation** | Sektor → Organisation → Aktivität → Datentyp → Prozess → Cross-Sektor-Datentypen → … |
-| **Öffnungsklassen-Farbcode** | Ebene-4-Kacheln leuchten in Grün / Gelb / Rot nach Öffnungsklasse |
-| **Persistente Legende** | Farbkodierung immer sichtbar unten rechts auf der Karte |
-| **Prozess-Navigation** | L4-Datentypen → L5-Prozesse → L6-Cross-Sektor-Datentypen → zurück zu L5 … (unbegrenzt) |
-| **Volltext-Suche** | Alle Sektoren werden im Hintergrund vorgeladen; Suche nach Name, Beschreibung, Pfad |
-| **Öffnungsklasse-Filter** | Datentypen nach Grün / Gelb / Rot filtern; nicht passende Kacheln als Ghost |
-| **Detail-Sidebar** | Pro Datentyp: Öffnungsklasse-Pill, Metadaten-Chips (Thema, Objekt, Format, Lizenz), Prozessbezüge |
-| **Zoom-Animation** | Drill-Down zoomt via CSS-Transform in Richtung der geklickten Kachel |
-| **Onboarding** | Erster-Besuch-Overlay mit Farbcode-Erklärung und Bedienungs-Hints, localStorage-persistent |
-| **Fehlerbehandlung** | Overlay mit Retry-Button bei fehlgeschlagenem Datenladen |
+Viele wertvolle Datensätze existieren bereits, sind aber nicht öffentlich zugänglich, kaum bekannt oder gelten fälschlicherweise als zu sensibel für eine Veröffentlichung. Der Datenatlas kartiert dieses Potenzial:
+
+- Er zeigt, **was** für Daten wo entstehen
+- Er bewertet, **wie offen** diese Daten potenziell sind
+- Er erklärt, **welche Prozesse** diese Daten nutzen, und welche anderen Organisationen ähnliche Daten haben
+- Er bietet einen **Schritt-für-Schritt-Leitfaden**, wie Organisationen ihre Daten als Open Data veröffentlichen können
 
 ---
 
-## Sektoren & Datentiefe
+## Navigation
 
-Aktuell sind **6 Sektoren** enthalten:
+Der Atlas ist in vier Tiefenebenen gegliedert:
 
-| Sektor | Farbe | Schwerpunkt |
+```
+Staat und Verwaltung          ← Ebene 1: Sektor
+  └── Statistisches Amt       ← Ebene 2: Organisation
+        └── Statistikproduktion    ← Ebene 3: Aktivität
+              └── Bevölkerungsstatistik   ← Ebene 4: Datentyp  🟢
+```
+
+| Ebene | Was Sie sehen | Wie weiter |
 |---|---|---|
-| **NGO** | `#2ecc71` | Wohlfahrt, Umwelt, Migration, Gesundheit, Sport — 7 Organisationstypen, 28+ Datentypen |
-| **Behörde** | `#3498db` | Meldewesen, Ordnungsamt, Statistik |
-| **Wirtschaft** | `#e67e22` | Handel, Finanzen, Personalwesen |
-| **Forschung** | `#9b59b6` | Hochschulen, Studien, Umfragen |
-| **Gesundheit** | `#e74c3c` | Kliniken, Praxen, Labore |
-| **Infrastruktur** | `#1abc9c` | Energie, Wasser, Mobilität |
+| **1 Sektor** | Die 8 gesellschaftlichen Bereiche als Kachelgruppe | Kachel anklicken |
+| **2 Organisation** | Organisationstypen innerhalb des Sektors | Kachel anklicken |
+| **3 Aktivität** | Was diese Organisation tut | Kachel anklicken |
+| **4 Datentyp** | Konkrete Datensätze mit Bewertung und Metadaten | Kachel anklicken für Details |
+
+Auf **Ebene 4** zeigt ein Klick auf eine Kachel die vollständige Detailansicht: Beschreibung, Öffnungsklasse, Themenfeld, Format, Lizenz und verknüpfte Prozesse.
 
 ---
 
 ## Öffnungsklassen
 
-Jeder Datentyp (Ebene 4) trägt eine von drei Öffnungsklassen:
+Jeder Datentyp trägt eine Farbbewertung, die anzeigt, wie leicht er als Open Data veröffentlicht werden könnte:
 
-| Klasse | Code | Kachelfarbe | Bedeutung |
-|---|---|---|---|
-| Grün | `OP_01` | `#27ae60` | Sofort publizierbar — kein oder minimaler Aufbereitungsbedarf |
-| Gelb | `OP_02` | `#d4a017` | Nach Aufbereitung publizierbar — Anonymisierung / Aggregation nötig |
-| Rot | `OP_03` | `#c0392b` | Nur Metadaten — Inhalt zu sensibel für Veröffentlichung |
+| Farbe | Bedeutung |
+|---|---|
+| 🟢 **Grün** | Sofort publizierbar — kein oder minimaler Aufbereitungsbedarf |
+| 🟡 **Gelb** | Nach Aufbereitung publizierbar — Anonymisierung oder Aggregation nötig |
+| 🔴 **Rot** | Nur Metadaten veröffentlichbar — Inhalt ist zu sensibel |
+
+Der **Öffnungsklasse-Filter** (Trichter-Symbol oben rechts) blendet auf Ebene 4 alle Kacheln einer bestimmten Klasse hervor. So lässt sich z. B. schnell sehen, welche Daten eines Sektors sofort veröffentlicht werden könnten.
 
 ---
 
-## Schnellstart
+## Sektoren
 
-### Voraussetzungen
+| Sektor | Schwerpunkt |
+|---|---|
+| 🔵 **Staat und Verwaltung** | Bundesbehörden, Landesämter, Kommunen, Justiz, Zoll |
+| ⚫ **Wirtschaft** | Unternehmen, Handelsorganisationen, privatwirtschaftliche Akteure |
+| 🟣 **Wissenschaft und Forschung** | Universitäten, Forschungsinstitute, Akademien |
+| 🔷 **Bildung** | Schulen, Kitas, Volkshochschulen, Weiterbildungseinrichtungen |
+| 🟪 **Zivilgesellschaft** | NGOs, Vereine, Stiftungen, gemeinnützige Einrichtungen |
+| 🩷 **Medien und Kultur** | Öffentlich-rechtliche Medien, Presse, Kulturbetriebe |
+| 🔲 **Infrastruktur** | Stadtwerke, Verkehrsbetriebe, kritische Versorgungsinfrastruktur |
+| 🟣 **Gesundheit** | Krankenhäuser, Praxen, Pflegeeinrichtungen, Laboratorien |
+
+---
+
+## Features
+
+### Erkunden
+
+- **Isometrische Karte** — alle Kacheln eines Levels auf einem Blick, frei verschiebbar und zoombar
+- **Pan & Zoom** — Karte mit der Maus ziehen, Scroll-Wheel oder Pinch-to-Zoom auf Touch-Geräten
+- **Drill-Down-Animation** — beim Klicken zoomt die Ansicht in Richtung der gewählten Kachel
+- **Zurück-Navigation** — Pfeil-Button oder Breadcrumb-Leiste oben navigiert stufenweise zurück
+
+### Suchen und Filtern
+
+- **Volltext-Suche** (Lupe oben rechts) — durchsucht Namen, Beschreibungen und Pfade über alle Sektoren hinweg; alle Sektordateien werden beim ersten Start im Hintergrund geladen
+- **Öffnungsklasse-Filter** (Trichter oben rechts) — auf Ebene 4 aktiv; nicht passende Kacheln werden als Ghost-Tiles ausgeblendet
+
+### Details und Verknüpfungen
+
+- **Detail-Sidebar** — pro Datentyp: Öffnungsklassenbewertung mit Begründung, Thema, Objekt, Granularität, Format, Lizenz und Prozessverknüpfungen
+- **Prozess-Navigation** — von einem Datentyp aus lassen sich verknüpfte Prozesse öffnen; von dort aus erscheinen alle Datentypen, die diesen Prozess nutzen, auch sektorübergreifend
+
+### Teilen
+
+- **Teilen-Button** (Ketten-Symbol) — kopiert den Link zur aktuellen Navigationstiefe; jede Ebene hat eine eigene URL, die direkt aufgerufen werden kann
+
+### Daten öffnen
+
+- **Wizard "Daten öffnen"** (Button in der Fußzeile) — ein 5-stufiger interaktiver Leitfaden für Organisationen, die ihre Daten als Open Data veröffentlichen möchten. Lizenz- und Publikationsempfehlungen passen sich an Sektor, Datenart und Rechtslage an.
+
+---
+
+## Datenstruktur
+
+Alle Daten liegen als statische JSON-Dateien unter `public/data/`. Es gibt keine Datenbank und kein Backend — der Atlas läuft vollständig im Browser.
+
+### Aufbau
+
+Jeder Sektor hat eine eigene Datei (`sector_*.json`), die die komplette Hierarchie von Ebene 2 bis 4 enthält. Die Startseite (`main.json`) listet nur die 8 Sektoren.
+
+### Datentyp-Eintrag (Ebene 4)
+
+Jeder Datentyp enthält neben Name und Beschreibung strukturierte Metadaten:
+
+| Feld | Bedeutung | Beispiel |
+|---|---|---|
+| `openness.class` | Öffnungsklasse | `OP_01` (grün), `OP_02` (gelb), `OP_03` (rot) |
+| `theme` | Themenfeld | Gesundheit, Bildung, Finanzen, Umwelt … |
+| `object` | Art der Daten | Personenbezogene Daten, Geodaten, Messwerte … |
+| `granularity` | Detailtiefe | Einzelereignis, aggregiert, kleinräumig … |
+| `format` | Dateiformat | CSV, JSON, GeoJSON, XML … |
+| `license` | Lizenz | CC0, CC BY 4.0, Datenlizenz Deutschland … |
+| `relevance` | Gesellschaftliche Relevanz | Skala 1–5 |
+| `processes` | Verknüpfte Prozesse | Methodenname + Beschreibung |
+
+---
+
+<details>
+<summary><strong>Technische Dokumentation (für Entwickler)</strong></summary>
+
+<br>
+
+## Voraussetzungen
 
 - Node.js ≥ 18
 - npm ≥ 9
 
-### Installation & Entwicklung
+## Lokale Entwicklung
 
 ```bash
 git clone https://github.com/daimpad/datenatlas.git
 cd datenatlas
 npm install
-npm run dev
+npm run dev        # Dev-Server unter http://localhost:5173
+npm run build      # Produktionsbuild → dist/
+npm run preview    # Lokale Vorschau des Builds
 ```
-
-Die App ist dann unter `http://localhost:5173` erreichbar.
-
-### Produktionsbuild
-
-```bash
-npm run build     # Ausgabe in dist/
-npm run preview   # Lokale Vorschau des Builds
-```
-
----
 
 ## Architektur
 
 ```
-datenatlas/
-├── index.html                  # App-Shell, Onboarding, Filter-Bar, Legende
-├── src/
-│   ├── main.js                 # Orchestrierung: Navigation, Animation, Filter, Suche
-│   ├── renderer.js             # Canvas-Renderer (isometrisch, Culling, Dimming)
-│   ├── controls.js             # Maus- und Touch-Events (Pan, Click, Hover)
-│   ├── modal.js                # Detail-Sidebar (Öffnen/Schließen/Befüllen)
-│   ├── dataLoader.js           # JSON-Fetch für main.json und Sektordateien
-│   ├── search.js               # Suchindex-Aufbau + Such-UI
-│   ├── utils.js                # applyOpennessColors(), OPENNESS_COLORS, esc(), safeColor()
-│   ├── state.js                # Shared State + patchState()
-│   └── style.css               # Design Tokens, Komponenten-CSS (Dark Mode)
-└── public/data/
-    ├── main.json               # Sektorübersicht (Ebene 1)
-    ├── sector_ngo.json         # NGO-Datenbaum (Ebene 2–4)
-    ├── sector_behoerde.json
-    ├── sector_wirtschaft.json
-    ├── sector_forschung.json
-    ├── sector_gesundheit.json
-    └── sector_infrastruktur.json
+src/
+  main.js         — App-Bootstrap, Navigation, Breadcrumb, Onboarding-Modal
+  renderer.js     — Isometrischer Kachel-Renderer (Canvas-basiert)
+  wizard.js       — "Daten öffnen"-Wizard (5-Schritt-Modal)
+  style.css       — CSS-Variablen, Layout, Modal-Styles
+public/
+  data/           — Taxonomie-JSON-Dateien (eine pro Sektor + main.json)
+  fonts/          — Lokale Font-Assets
+index.html        — Single-Page-Shell
+scripts/
+  validate-data.js — Daten-Validator
 ```
 
-### Rendering-Pipeline
+**Tile-Dimensionen (×1,5-Skalierung):** W=240, H=120, D=42
 
-```
-state.currentTiles
-  → applyOpennessColors()   # Ebene-4-Farbe aus openness.class (OP_01/02/03)
-  → renderer.setTiles()     # Gitter-Layout (sqrt-basiert, col/row)
-  → _draw() pro Frame       # Painter's Algorithm (col+row aufsteigend)
-      → _isVisible()        # Viewport-Culling (Bounding-Box vs. Canvas)
-      → _drawTile()         # 3 Flächen + Label + Hover/Pulse/Dimming
-```
+## Sektordateien
 
----
+| Datei | Sektor | Farbe |
+|---|---|---|
+| `sector_staat.json` | Staat & Verwaltung | `#1e5799` |
+| `sector_wirtschaft.json` | Wirtschaft | `#2c3e50` |
+| `sector_wissenschaft.json` | Wissenschaft & Forschung | `#4527a0` |
+| `sector_bildung.json` | Bildung | `#0284c7` |
+| `sector_zivilgesellschaft.json` | Zivilgesellschaft | `#6d28d9` |
+| `sector_medien.json` | Medien und Kultur | `#be185d` |
+| `sector_infrastruktur.json` | Infrastruktur | `#1a2332` |
+| `sector_gesundheit.json` | Gesundheit | `#7e22ce` |
 
-## Datenmodell
+> **Wichtig:** Die Farben `#27ae60`, `#d4a017` und `#c0392b` sind für Öffnungsklassen reserviert und dürfen nicht als Sektorfarben verwendet werden.
 
-Alle Daten liegen als statische JSON-Dateien unter `public/data/`.
+## L4-Node-Format
 
-### Ebene 1 — Sektor (`main.json`)
-
-```jsonc
+```json
 {
-  "id": "ngo",
-  "level": 1,
-  "name": "NGO",
-  "color": "#2ecc71",
-  "subFile": "sector_ngo.json",   // lazy-loaded bei Navigation
-  "description": "..."
-}
-```
-
-### Ebene 2 — Organisation
-
-```jsonc
-{
-  "id": "soziale-dienste",
-  "level": 2,
-  "name": "Soziale Dienste",
-  "color": "#27ae60",
-  "description": "...",
-  "children": [ /* Ebene-3-Aktivitäten */ ]
-}
-```
-
-### Ebene 3 — Aktivität
-
-```jsonc
-{
-  "id": "beratung-hilfeplanung",
-  "level": 3,
-  "name": "Beratung & Hilfeplanung",
-  "color": "#1abc9c",
-  "description": "...",
-  "children": [ /* Ebene-4-Datentypen */ ]
-}
-```
-
-### Ebene 4 — Datentyp (vollständiges Beispiel)
-
-```jsonc
-{
-  "id": "beratungsstatistik",
+  "id": "unique-kebab-case-id",
   "level": 4,
-  "name": "Beratungsstatistik",
-  "color": "#27ae60",   // wird durch applyOpennessColors() aus openness.class gesetzt
+  "name": "Anzeigename des Datentyps",
+  "color": "#4527a0",
   "details": {
-
-    "description": "Aggregierte Auswertungen aller erbrachten Beratungsleistungen …",
-
+    "description": "Beschreibung des Datensatzes",
     "openness": {
-      "class": "OP_02",                           // OP_01 | OP_02 | OP_03
-      "label": "Gelb — nach Aufbereitung publizierbar",
-      "explanation": "Begründung, warum diese Klasse vergeben wurde …"
+      "class": "OP_01",
+      "label": "Sofort publizierbar",
+      "explanation": "Begründung der Offenheitsklasse"
     },
-
-    "theme":       { "code": "TH_01", "label": "Soziales & Wohlfahrt" },
-    "object":      { "code": "OB_01", "label": "Statistik / Aggregat" },
-    "granularity": { "code": "GR_02", "label": "Lokal (Gemeinde/Kreis)" },
-    "format":      { "code": "FT_01", "label": "CSV" },
-    "license":     { "code": "LI_02", "label": "CC BY 4.0" },
-    "relevance":   2,   // 0–3: gesellschaftliche Relevanz der Öffnung
-
+    "theme":       { "code": "TH_01" },
+    "object":      { "code": "OB_01" },
+    "granularity": { "code": "GR_01" },
+    "format": [
+      { "code": "FT_01", "label": "CSV" }
+    ],
+    "license": { "code": "LI_01" },
+    "relevance": 5,
     "processes": [
-      {
-        "method": "Beratung & Sozialarbeit",
-        "description": "Planungsgrundlage für Kapazitäts- und Bedarfssteuerung …"
-      }
-      // weitere verknüpfte Prozesse …
+      { "method": "Methode", "description": "Beschreibung" }
     ]
   }
 }
 ```
 
----
+**Häufige Fehler:**
+- `"openness": { "code": "OP_01" }` ist falsch — muss `"class"` heißen, nicht `"code"`
+- `"formats": [...]` ist falsch — muss `"format"` (Singular) heißen
+- Kein `"details"`-Wrapper vergessen
 
 ## Vokabular-Codes
 
-### `voc_openness` — Öffnungsklasse
+### Öffnungsklasse (`details.openness.class`)
+| Code | Farbe | Bedeutung |
+|---|---|---|
+| `OP_01` | `#27ae60` | Sofort publizierbar |
+| `OP_02` | `#d4a017` | Nach Aufbereitung publizierbar |
+| `OP_03` | `#c0392b` | Nur Metadaten publizierbar |
 
-| Code | Bedeutung |
+### Thema (`details.theme.code`)
+| Code | Thema |
 |---|---|
-| `OP_01` | Sofort publizierbar |
-| `OP_02` | Nach Aufbereitung publizierbar |
-| `OP_03` | Nur Metadaten |
+| `TH_01` | Gesundheit |
+| `TH_02` | Bildung |
+| `TH_03` | Soziales |
+| `TH_04` | Wirtschaft |
+| `TH_05` | Verwaltung |
+| `TH_06` | Umwelt |
+| `TH_07` | Finanzen |
+| `TH_08` | Recht |
+| `TH_09` | Natur/Biodiversität |
+| `TH_10` | Wissenschaft/Technik |
 
-### `voc_theme` — Themenfeld
-
-| Code | Bedeutung |
+### Objekttyp (`details.object.code`)
+| Code | Typ |
 |---|---|
-| `TH_01` | Soziales & Wohlfahrt |
-| `TH_02` | Umwelt & Klima |
-| `TH_03` | Bildung & Forschung |
-| `TH_04` | Gesundheit & Pflege |
-| `TH_05` | Demokratie & Zivilgesellschaft |
-| `TH_06` | Wirtschaft & Arbeit |
-| `TH_07` | Infrastruktur & Mobilität |
-| `TH_08` | Kultur & Sport |
-| `TH_09` | Migration & Integration |
-| `TH_10` | Wissenschaft & Technik |
-
-### `voc_object` — Datenobjekt
-
-| Code | Bedeutung |
-|---|---|
-| `OB_01` | Statistik / Aggregat |
-| `OB_02` | Einzelfall / Vorgang |
-| `OB_03` | Verzeichnis / Register |
-| `OB_04` | Geodaten |
-| `OB_05` | Finanzdaten |
-| `OB_06` | Zeitreihen |
-| `OB_07` | Mediendaten |
+| `OB_01` | Personenbezogene Daten |
+| `OB_02` | Textdokumente |
+| `OB_03` | Finanzdaten |
+| `OB_04` | Messungen / Sensordaten |
+| `OB_05` | Geodaten |
+| `OB_06` | Mediendaten |
+| `OB_07` | Transaktionsdaten |
 | `OB_08` | Metadaten |
 
-### `voc_format` — Dateiformat
+### Granularität (`details.granularity.code`)
+| Code | Granularität |
+|---|---|
+| `GR_01` | Einzelereignis / Rohdaten |
+| `GR_02` | Aggregiert (zeitlich oder räumlich) |
+| `GR_03` | Kleinräumig (Stadtteil / Gemeinde) |
+| `GR_04` | Individuell / Mikrodaten |
 
-| Code | Bedeutung |
+### Format (`details.format[].code`)
+| Code | Format |
 |---|---|
 | `FT_01` | CSV |
-| `FT_02` | JSON / GeoJSON |
-| `FT_03` | XML |
-| `FT_04` | PDF |
-| `FT_05` | Excel |
-| `FT_06` | RDF / Linked Data |
+| `FT_02` | JSON |
+| `FT_03` | NetCDF / HDF5 |
+| `FT_04` | XML |
+| `FT_05` | GeoJSON |
+| `FT_06` | Shapefile |
 
-### `voc_granularity` — Granularität
-
-| Code | Bedeutung |
+### Lizenz (`details.license.code`)
+| Code | Lizenz |
 |---|---|
-| `GR_01` | Einzelfall |
-| `GR_02` | Lokal (Gemeinde/Kreis) |
-| `GR_03` | Regional (Bundesland) |
-| `GR_04` | National |
-
-### `voc_license` — Lizenz
-
-| Code | Bedeutung |
-|---|---|
-| `LI_01` | CC0 (Public Domain) |
+| `LI_01` | CC0 / Public Domain |
 | `LI_02` | CC BY 4.0 |
-| `LI_03` | CC BY-SA 4.0 |
-| `LI_04` | Geschlossen / proprietär |
+| `LI_03` | Datenlizenz Deutschland |
+| `LI_04` | Proprietär / Restriktiv |
 
----
+## Validierung
 
-## Neuen Sektor hinzufügen
+Vor jedem Commit validieren:
 
-1. **`public/data/main.json`** — Eintrag ergänzen:
-   ```json
-   {
-     "id": "bildung",
-     "level": 1,
-     "name": "Bildung",
-     "color": "#f39c12",
-     "subFile": "sector_bildung.json",
-     "description": "Schulen, Hochschulen und Bildungseinrichtungen"
-   }
-   ```
+```bash
+node scripts/validate-data.js
+```
 
-2. **`public/data/sector_bildung.json`** anlegen — Struktur analog zu `sector_ngo.json`:
-   - `sectorId` entspricht der `id` aus `main.json`
-   - `children` enthält Ebene-2-Organisationen mit verschachtelten Ebene-3- und Ebene-4-Einträgen
-   - Ebene-4-Einträge benötigen ein vollständiges `details`-Objekt mit `openness`, `theme`, `object`, `format`, `license`, `relevance` und `processes`
+Ziel: **0 Warnings, 0 Errors**
 
-3. Kein weiterer Code nötig — der Sektor wird automatisch in der Karte angezeigt und in den Suchindex aufgenommen.
+## Deployment (GitHub Pages)
 
----
+```bash
+npm run build
 
-## Technologie
+git checkout gh-pages
+cp dist/index.html .
+cp dist/assets/* assets/
+git add index.html assets/
+git commit -m "Deploy: ..."
+git push origin gh-pages
+git checkout claude/datenatlas-isometric-explorer-gmnfV
+```
 
-| Bereich | Technologie |
-|---|---|
-| Rendering | HTML5 Canvas 2D API |
-| Framework | Kein Framework — Vanilla JavaScript (ES Modules) |
-| Build | [Vite](https://vitejs.dev/) |
-| Schriften | Inter (UI), JetBrains Mono (Labels, Code) via Google Fonts |
-| Datenhaltung | Statische JSON-Dateien (kein Backend, kein Build-Schritt für Daten) |
-| Deployment | GitHub Pages (CI/CD via GitHub Actions bei Push auf `main`) |
+</details>
 
 ---
 
 ## Lizenz
 
-[MIT](LICENSE)
+[MIT](LICENSE) · [datenatlas.de](https://datenatlas.de) · von [nozilla](https://nozilla.de)

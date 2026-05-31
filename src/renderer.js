@@ -62,9 +62,9 @@ export class IsometricRenderer {
     this.tiles  = [];       // [{id,name,color,col,row,...}]
     this.cols   = 0;
     this.rows   = 0;
-    this.W      = 160;      // tile diamond width
-    this.H      = 80;       // tile diamond height (= W/2)
-    this.D      = 28;       // box depth (side face height)
+    this.W      = 240;      // tile diamond width
+    this.H      = 120;      // tile diamond height (= W/2)
+    this.D      = 42;       // box depth (side face height)
     this.pan    = { x: 0, y: 0 };
     this.hov    = null;     // hovered tile id
     this.alpha  = 1;        // global fade (0-1) for transitions

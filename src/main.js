@@ -40,7 +40,7 @@ let _retryFn = null;
 errorRetry.addEventListener('click', () => { hideError(); _retryFn?.(); });
 
 // ── Onboarding ────────────────────────────────────────────────────────────────
-const OB_KEY = 'datenatlas_onboarded_v1';
+const OB_KEY = 'datenatlas_onboarded_v2';
 onboarding.hidden = !!localStorage.getItem(OB_KEY);
 document.getElementById('ob-start').addEventListener('click', () => {
   localStorage.setItem(OB_KEY, '1');

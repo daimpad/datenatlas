@@ -146,7 +146,7 @@ export function initWizard() {
       <h2 class="wz-h">Wer sind Sie?</h2>
       <p class="wz-p">Damit dieser Leitfaden die richtigen Empfehlungen gibt, brauchen wir einen kurzen Kontext. Die Antworten steuern, welche Lizenz- und Publikationswege in den nächsten Schritten erscheinen.</p>
 
-      <h3 class="wz-subh">In welchem Bereich sind Sie tätig?</h3>
+      <h3 class="wz-subh">1. In welchem Bereich sind Sie tätig?</h3>
       <div class="wz-opts wz-opts--2">
         ${opt('sector','public',   '🏛', 'Öffentliche Verwaltung',      'Behörden, Ämter, staatliche Einrichtungen auf Bundes-, Landes- oder kommunaler Ebene.',            st.sector === 'public')}
         ${opt('sector','civil',    '🤝', 'Zivilgesellschaft & NGOs',     'Vereine, Verbände, gemeinnützige Organisationen, soziale Träger.',                                  st.sector === 'civil')}
@@ -154,7 +154,7 @@ export function initWizard() {
         ${opt('sector','private',  '🏢', 'Privatwirtschaft',             'Unternehmen, die aus eigener Initiative oder gesetzlicher Anforderung Daten öffnen.',              st.sector === 'private')}
       </div>
 
-      <h3 class="wz-subh">Welcher Schritt ist das für Sie?</h3>
+      <h3 class="wz-subh">2. Welcher Schritt ist das für Sie?</h3>
       <div class="wz-opts wz-opts--2">
         ${opt('first','true',  '🌱', 'Erstmalige Datenöffnung',     'Wir haben bislang keine Open Data veröffentlicht und möchten damit beginnen.',  st.firstTime === true)}
         ${opt('first','false', '📈', 'Bestehendes Angebot erweitern', 'Wir veröffentlichen bereits Daten und möchten Umfang oder Qualität ausbauen.', st.firstTime === false)}
@@ -166,18 +166,18 @@ export function initWizard() {
   // ── Step 2 — Datensatz-Auswahl ────────────────────────────────────────────
   function renderS2() {
     const prompts = [
-      { label: 'Nachfrage erkennbar',     text: 'Es gibt Hinweise, dass Externe — Journalisten, Entwickler, Forschende — diese Daten bereits nachgefragt haben oder nutzen würden.' },
-      { label: 'Öffentliche Finanzierung', text: 'Die Erhebung dieser Daten wurde mit öffentlichen Mitteln oder im Rahmen eines öffentlichen Auftrags finanziert.' },
-      { label: 'Mehrwert für Dritte',      text: 'Dritte könnten auf Basis dieser Daten eigene Produkte, Dienste oder Analysen entwickeln, die über unsere Möglichkeiten hinausgehen.' },
-      { label: 'Geringe Aufbereitungskosten', text: 'Die Daten können ohne aufwändige Bearbeitung — Anonymisierung, Format­konvertierung, Rechtsklärung — bereitgestellt werden.' },
-      { label: 'Vergleichbare Praxis',     text: 'Andere Organisationen ähnlichen Typs haben vergleichbare Daten bereits veröffentlicht, ohne negative Konsequenzen zu berichten.' },
+      { label: 'Nachfrage erkennbar',        text: 'Es gibt Hinweise, dass Externe (Journalisten, Entwickler, Forschende) diese Daten bereits nachgefragt haben oder nutzen würden.' },
+      { label: 'Öffentliche Finanzierung',   text: 'Die Erhebung dieser Daten wurde mit öffentlichen Mitteln oder im Rahmen eines öffentlichen Auftrags finanziert.' },
+      { label: 'Mehrwert für Dritte',        text: 'Dritte könnten auf Basis dieser Daten eigene Produkte, Dienste oder Analysen entwickeln, die über unsere Möglichkeiten hinausgehen.' },
+      { label: 'Geringe Aufbereitungskosten', text: 'Die Daten können ohne aufwändige Bearbeitung (Anonymisierung, Formatkonvertierung, Rechtsklärung) bereitgestellt werden.' },
+      { label: 'Vergleichbare Praxis',       text: 'Andere Organisationen ähnlichen Typs haben vergleichbare Daten bereits veröffentlicht, ohne negative Konsequenzen zu berichten.' },
     ];
 
     const checks = prompts.map((p, i) => `
       <label class="wz-check-row">
         <input type="checkbox" class="wz-check" data-idx="${i}" ${st.stage2checks.has(i) ? 'checked' : ''}>
         <span class="wz-check-body">
-          <strong class="wz-check-label">${p.label}</strong>
+          <strong class="wz-check-label">${i + 1}. ${p.label}</strong>
           <span class="wz-check-text">${p.text}</span>
         </span>
       </label>
@@ -187,14 +187,14 @@ export function initWizard() {
     el.innerHTML = `
       <h2 class="wz-h">Welche Daten öffnen?</h2>
       <p class="wz-p">Der häufigste Fehler bei der Datenpublikation ist nicht zu viel Offenheit, sondern das Veröffentlichen von Daten, die niemanden interessieren. Ein guter Start ist klein und gezielt: ein einziger Datensatz, der echten Bedarf deckt, ist wertvoller als zwanzig Datensätze, die ungelesen bleiben.</p>
-      <p class="wz-p">Gehen Sie die folgenden Punkte durch und haken Sie ab, was auf Ihren geplanten Datensatz zutrifft. Es gibt kein Minimum — die Liste hilft Ihnen, die Entscheidung zu strukturieren.</p>
+      <p class="wz-p">Gehen Sie die folgenden Punkte durch und haken Sie ab, was auf Ihren geplanten Datensatz zutrifft. Es gibt kein Minimum; die Liste hilft Ihnen, die Entscheidung zu strukturieren.</p>
 
       <h3 class="wz-subh">Selbsteinschätzung</h3>
       <div class="wz-checks">${checks}</div>
 
       <div class="wz-hint">
         <span class="wz-hint-icon">💡</span>
-        <span><strong>Lieber zu früh als zu spät.</strong> Daten müssen nicht perfekt sein, um nützlich zu sein. Veröffentlichen Sie früh, sammeln Sie Feedback und verbessern Sie iterativ — nicht umgekehrt.</span>
+        <span><strong>Lieber zu früh als zu spät.</strong> Daten müssen nicht perfekt sein, um nützlich zu sein. Veröffentlichen Sie früh, sammeln Sie Feedback und verbessern Sie iterativ, nicht umgekehrt.</span>
       </div>
     `;
     return el;
@@ -207,15 +207,15 @@ export function initWizard() {
       <h2 class="wz-h">Wie offen sind Ihre Daten rechtlich?</h2>
       <p class="wz-p">Bevor technische Fragen geklärt werden, muss die Rechtslage stimmen. Welche Lizenz passt, hängt wesentlich davon ab, <em>was</em> Sie veröffentlichen.</p>
 
-      <h3 class="wz-subh">Worum handelt es sich bei Ihren Daten hauptsächlich?</h3>
+      <h3 class="wz-subh">1. Worum handelt es sich bei Ihren Daten hauptsächlich?</h3>
       <div class="wz-opts wz-opts--2">
-        ${opt('dtype','factual',   '📊', 'Fakten &amp; Informationen',       'Geodaten, statistische Messwerte, Rohdaten, Sensormessungen — Inhalte, die die Realität abbilden, ohne redaktionelle Formung.',           st.dataType === 'factual')}
+        ${opt('dtype','factual',   '📊', 'Fakten &amp; Informationen',       'Geodaten, statistische Messwerte, Rohdaten, Sensormessungen. Inhalte, die die Realität abbilden, ohne redaktionelle Formung.',           st.dataType === 'factual')}
         ${opt('dtype','creative',  '📝', 'Gestaltete oder kuratierte Inhalte', 'Berichte, redaktionell ausgewählte Datenbankeinträge, Publikationen, kommentierte Datensätze mit erkennbarer eigener Schöpfung.',        st.dataType === 'creative')}
       </div>
 
       <div id="wz-s3-branch"></div>
 
-      <h3 class="wz-subh" id="wz-rights-h" style="display:none">Besitzen Sie die notwendigen Rechte?</h3>
+      <h3 class="wz-subh" id="wz-rights-h" style="display:none">2. Besitzen Sie die notwendigen Rechte?</h3>
       <div class="wz-opts wz-opts--3" id="wz-rights-opts" style="display:none">
         ${opt('rights','yes',     '✅', 'Ja',               'Die Daten wurden von unserer Organisation selbst erhoben oder wir halten alle relevanten Nutzungsrechte.',       st.hasRights === 'yes')}
         ${opt('rights','unclear', '❓', 'Nicht sicher',     'Teile der Daten stammen aus Drittquellen oder die Rechtslage ist intern noch nicht vollständig geprüft.',        st.hasRights === 'unclear')}
@@ -238,14 +238,14 @@ export function initWizard() {
     if (st.dataType === 'factual') {
       branch.innerHTML = `
         <div class="wz-info-box">
-          <h4 class="wz-info-title">Fakten sind urheberrechtsfrei — aber schützen Sie trotzdem weniger.</h4>
-          <p class="wz-p">Reine Fakten — Messwerte, Koordinaten, statistische Zählungen — sind in Deutschland und der EU urheberrechtlich nicht schutzfähig. Das klingt gut, bedeutet aber auch: Wer diese Daten nutzt, braucht <em>keine</em> Erlaubnis. Eine restrictive Lizenz wäre rechtlich unwirksam und würde Nutzer nur verwirren.</p>
-          <p class="wz-p">Die richtige Strategie: Verwenden Sie <strong>CC0 (Public Domain Dedication)</strong> oder den <strong>Public Domain Mark</strong>. Damit signalisieren Sie explizit, dass Sie auf alle Rechtsansprüche verzichten — auch auf Datenbankrechte, die in der EU separat bestehen können.</p>
+          <h4 class="wz-info-title">Fakten sind urheberrechtsfrei, bieten aber weniger Schutz.</h4>
+          <p class="wz-p">Reine Fakten (Messwerte, Koordinaten, statistische Zählungen) sind in Deutschland und der EU urheberrechtlich nicht schutzfähig. Das klingt gut, bedeutet aber auch: Wer diese Daten nutzt, braucht <em>keine</em> Erlaubnis. Eine restrictive Lizenz wäre rechtlich unwirksam und würde Nutzer nur verwirren.</p>
+          <p class="wz-p">Die richtige Strategie: Verwenden Sie <strong>CC0 (Public Domain Dedication)</strong> oder den <strong>Public Domain Mark</strong>. Damit signalisieren Sie explizit, dass Sie auf alle Rechtsansprüche verzichten, auch auf Datenbankrechte, die in der EU separat bestehen können.</p>
           <div class="wz-license-card wz-license-card--highlight">
             <strong>Empfehlung: CC0</strong>
             <span>Kein Vorbehalt, keine Namensnennungspflicht, maximale Wiederverwendbarkeit. Ermöglicht kommerzielle Nutzung, Integration in andere Systeme und automatische Verarbeitung ohne rechtliche Hürden.</span>
           </div>
-          <p class="wz-p wz-note">⚠️ <strong>Datenbankrecht (EU):</strong> Wenn Sie erhebliche Investitionen in die Zusammenstellung oder Pflege der Datenbank gesteckt haben, können <em>sui generis</em>-Datenbankrechte entstehen — auch wenn die Inhalte selbst gemeinfrei sind. CC0 deckt auch diese ab.</p>
+          <p class="wz-p wz-note">⚠️ <strong>Datenbankrecht (EU):</strong> Wenn Sie erhebliche Investitionen in die Zusammenstellung oder Pflege der Datenbank gesteckt haben, können <em>sui generis</em>-Datenbankrechte entstehen, auch wenn die Inhalte selbst gemeinfrei sind. CC0 deckt auch diese ab.</p>
         </div>
       `;
     } else if (st.dataType === 'creative') {
@@ -259,7 +259,7 @@ export function initWizard() {
           <div class="wz-license-grid">
             ${licenseOpt('CC0',     'CC0 / Public Domain',       'Kein Vorbehalt. Vollständiger Rechtsklang für alle Zwecke, kommerziell und nicht-kommerziell.',       'Keine Namensnennungspflicht. Maximale Kompatibilität mit anderen Daten.',    st.license === 'CC0')}
             ${licenseOpt('CC_BY',   'CC BY 4.0',                 'Nutzung für alle Zwecke erlaubt, solange die Quelle genannt wird.',                                    'Einfach und weitverbreitet. Gute Wahl für Forschungsdaten und Berichte.',    st.license === 'CC_BY')}
-            ${licenseOpt('CC_BY_SA','CC BY-SA 4.0',              'Nutzung erlaubt bei Namensnennung <em>und</em> Weitergabe unter gleicher Lizenz (Share-alike).',       'Stellt sicher, dass Ableitungen offen bleiben — aber erzeugt Kompatibilitätsprobleme.',  st.license === 'CC_BY_SA')}
+            ${licenseOpt('CC_BY_SA','CC BY-SA 4.0',              'Nutzung erlaubt bei Namensnennung <em>und</em> Weitergabe unter gleicher Lizenz (Share-alike).',       'Stellt sicher, dass Ableitungen offen bleiben, erzeugt aber Kompatibilitätsprobleme.',  st.license === 'CC_BY_SA')}
             ${isPublic ? licenseOpt('DLD', 'Datenlizenz Deutschland', 'Behördenspezifische Lizenz nach DL-DE-BY 2.0 oder DL-DE-Zero 2.0.',                              'Für deutsche Behörden etabliert. Nachteil: geringere internationale Sichtbarkeit als CC-Lizenzen.',  st.license === 'DLD') : ''}
           </div>
           ${isPublic ? `<p class="wz-p wz-note">💡 <strong>Für Behörden:</strong> Die Datenlizenz Deutschland ist im deutschen Kontext anerkannt, schränkt aber internationale Anschlussfähigkeit ein. Für überregionale Nachnutzung sind CC-Lizenzen die bessere Wahl.</p>` : ''}
@@ -275,7 +275,7 @@ export function initWizard() {
     rightsOpts.style.display = show ? '' : 'none';
 
     if (st.hasRights === 'unclear') {
-      rightsNote.innerHTML = `<div class="wz-warn">Empfehlung: Klären Sie die Rechtslage vor der Veröffentlichung intern oder durch eine Rechtsberatung. Im Zweifel lieber abwarten als zu publizieren — eine fehlerhafte Veröffentlichung ist schwerer zu korrigieren als eine verzögerte.</div>`;
+      rightsNote.innerHTML = `<div class="wz-warn">Empfehlung: Klären Sie die Rechtslage vor der Veröffentlichung intern oder durch eine Rechtsberatung. Im Zweifel lieber abwarten als zu publizieren; eine fehlerhafte Veröffentlichung ist schwerer zu korrigieren als eine verzögerte.</div>`;
       rightsNote.style.display = '';
     } else if (st.hasRights === 'no') {
       rightsNote.innerHTML = `<div class="wz-warn wz-warn--error">Sie können diese Daten in der vorliegenden Form nicht öffnen. Klären Sie zunächst mit dem Rechteinhaber, ob eine Sublizenz oder Übertragung möglich ist.</div>`;
@@ -289,10 +289,10 @@ export function initWizard() {
   // ── Step 4 — Technische Offenheit ─────────────────────────────────────────
   function renderS4() {
     const sectorRec = {
-      public:   { icon: '🗃', title: 'Datenkatalog + Bulk-Download', text: 'Öffentliche Verwaltungen sollten Daten primär über offizielle Datenkataloge (z. B. GovData.de) bereitstellen. Ein maschinenlesbarer Bulk-Download ist die Grundlage — APIs können ergänzend folgen, ersetzen aber nicht die rohen Dateien.', methods: ['catalog', 'own'] },
-      civil:    { icon: '🌐', title: 'Community-Plattform + Bulk-Download', text: 'NGOs profitieren davon, Daten über bereits etablierte Community-Plattformen zu teilen — dort ist die relevante Nutzergruppe bereits aktiv. Stellen Sie immer auch einen direkten Dateidownload bereit.', methods: ['platform', 'own'] },
+      public:   { icon: '🗃', title: 'Datenkatalog + Bulk-Download', text: 'Öffentliche Verwaltungen sollten Daten primär über offizielle Datenkataloge (z. B. GovData.de) bereitstellen. Ein maschinenlesbarer Bulk-Download ist die Grundlage; APIs können ergänzend folgen, ersetzen aber nicht die rohen Dateien.', methods: ['catalog', 'own'] },
+      civil:    { icon: '🌐', title: 'Community-Plattform + Bulk-Download', text: 'NGOs profitieren davon, Daten über bereits etablierte Community-Plattformen zu teilen, dort ist die relevante Nutzergruppe bereits aktiv. Stellen Sie immer auch einen direkten Dateidownload bereit.', methods: ['platform', 'own'] },
       research: { icon: '📂', title: 'Fachrepositorium + Bulk-Download', text: 'Forschungsdaten gehören in disziplinspezifische Repositorien wie Zenodo, PANGAEA oder GESIS. Diese garantieren dauerhafte Erreichbarkeit, DOI-Vergabe und fachkundige Auffindbarkeit.', methods: ['repo', 'own'] },
-      private:  { icon: '⚙️', title: 'API + Bulk-Download', text: 'Unternehmen stellen Daten häufig per API bereit. Wichtig: Eine API ersetzt keinen Bulk-Download. Bieten Sie immer auch die Rohdaten als downloadbare Datei an — nicht alle Nutzer haben die technischen Mittel für API-Integration.', methods: ['api', 'own'] },
+      private:  { icon: '⚙️', title: 'API + Bulk-Download', text: 'Unternehmen stellen Daten häufig per API bereit. Wichtig: Eine API ersetzt keinen Bulk-Download. Bieten Sie immer auch die Rohdaten als downloadbare Datei an, nicht alle Nutzer haben die technischen Mittel für API-Integration.', methods: ['api', 'own'] },
     };
     const rec = sectorRec[st.sector] || sectorRec.public;
 
@@ -309,25 +309,25 @@ export function initWizard() {
         </div>
       </div>
 
-      <h3 class="wz-subh">Welches Format verwenden Sie?</h3>
+      <h3 class="wz-subh">1. Welches Format verwenden Sie?</h3>
       <div class="wz-format-grid">
         <div class="wz-format-card wz-format-card--good">
           <strong>✅ Empfohlen</strong>
-          <span>CSV, JSON, XML, TSV, GeoJSON — maschinenlesbar, offen, weitverbreitet</span>
+          <span>CSV, JSON, XML, TSV, GeoJSON: maschinenlesbar, offen, weitverbreitet</span>
         </div>
         <div class="wz-format-card wz-format-card--bad">
           <strong>⛔ Ungeeignet</strong>
-          <span>PDF, DOCX, XLS (ohne CSV-Export) — nicht maschinenlesbar oder proprietär</span>
+          <span>PDF, DOCX, XLS (ohne CSV-Export): nicht maschinenlesbar oder proprietär</span>
         </div>
       </div>
 
-      <h3 class="wz-subh">Wie stellen Sie die Daten bereit?</h3>
+      <h3 class="wz-subh">2. Wie stellen Sie die Daten bereit?</h3>
       <div class="wz-opts wz-opts--2">
         ${opt('publish','catalog',  '🗃', 'Datenkatalog',          'Eintrag in einen zentralen oder sektorspezifischen Open-Data-Katalog (GovData, CKAN-Instanz).',  st.publishMethod === 'catalog')}
         ${opt('publish','repo',     '📂', 'Fachrepositorium',      'Plattform wie Zenodo, PANGAEA, GESIS oder ein disziplinspezifisches Archiv.',                   st.publishMethod === 'repo')}
         ${opt('publish','platform', '🌐', 'Community-Plattform',   'GitHub, Figshare, Kaggle, Hugging Face oder ähnliche öffentlich zugängliche Plattformen.',      st.publishMethod === 'platform')}
         ${opt('publish','api',      '⚙️', 'API (ergänzend)',        'REST- oder OData-API zusätzlich zum Bulk-Download. Nicht als alleinige Publikationsform.',       st.publishMethod === 'api')}
-        ${opt('publish','own',      '🖥', 'Eigene Website',         'Download direkt von der eigenen Website — einfach zu starten, aber schwieriger auffindbar.',    st.publishMethod === 'own')}
+        ${opt('publish','own',      '🖥', 'Eigene Website',         'Download direkt von der eigenen Website, einfach zu starten, aber schwieriger auffindbar.',    st.publishMethod === 'own')}
       </div>
 
       <div class="wz-hint">
@@ -341,10 +341,10 @@ export function initWizard() {
   // ── Step 5 — Auffindbarkeit & Nächste Schritte ────────────────────────────
   function renderS5() {
     const catalogRec = {
-      public:   ['govdata.de — nationales Open-Data-Portal für Behörden', 'Landesportale (Berlin: daten.berlin.de, NRW: open.nrw.de, etc.)'],
-      civil:    ['datahub.io — sektor­übergreifende Open-Data-Plattform', 'OpenDataNetwork.org — Community-Verzeichnis'],
-      research: ['Zenodo (zenodo.org) — generalistisches Forschungsrepositorium', 'PANGAEA (pangaea.de) — Geo- und Umweltwissenschaften', 'GESIS (gesis.org) — Sozialwissenschaften'],
-      private:  ['datahub.io — kommerzielle und nicht-kommerzielle Datensätze', 'Kaggle Datasets — Machine-Learning-Community'],
+      public:   ['govdata.de: nationales Open-Data-Portal für Behörden', 'Landesportale (Berlin: daten.berlin.de, NRW: open.nrw.de, etc.)'],
+      civil:    ['<a href="https://datenatlas-zivilgesellschaft.de/de/start/" target="_blank" rel="noopener">datenatlas-zivilgesellschaft.de</a>: Open-Data-Portal für Zivilgesellschaft', 'OpenDataNetwork.org: Community-Verzeichnis'],
+      research: ['Zenodo (zenodo.org): generalistisches Forschungsrepositorium', 'PANGAEA (pangaea.de): Geo- und Umweltwissenschaften', 'GESIS (gesis.org): Sozialwissenschaften'],
+      private:  ['datahub.io: kommerzielle und nicht-kommerzielle Datensätze', 'Kaggle Datasets: Machine-Learning-Community'],
     };
     const catalogs = catalogRec[st.sector] || catalogRec.public;
 
@@ -357,35 +357,35 @@ export function initWizard() {
     const el = div('wz-step');
     el.innerHTML = `
       <h2 class="wz-h">Auffindbarkeit &amp; nächste Schritte</h2>
-      <p class="wz-p">Die größte Herausforderung nach der Veröffentlichung ist nicht die Technik — es ist die Entdeckbarkeit. Open Data, das niemand findet, erzeugt keinen Mehrwert. Auffindbarkeit ist ein strukturelles Problem: Sie entsteht durch Vernetzung, Metadaten und aktive Kommunikation.</p>
+      <p class="wz-p">Die größte Herausforderung nach der Veröffentlichung ist nicht die Technik, es ist die Entdeckbarkeit. Open Data, das niemand findet, erzeugt keinen Mehrwert. Auffindbarkeit ist ein strukturelles Problem: Sie entsteht durch Vernetzung, Metadaten und aktive Kommunikation.</p>
 
-      <h3 class="wz-subh">Empfohlene Kataloge für Ihren Bereich</h3>
+      <h3 class="wz-subh">1. Empfohlene Kataloge für Ihren Bereich</h3>
       <ul class="wz-catalog-list">
         ${catalogs.map(c => `<li>${c}</li>`).join('')}
       </ul>
 
-      <h3 class="wz-subh">Jetzt sofort tun</h3>
+      <h3 class="wz-subh">2. Jetzt sofort tun</h3>
       <ul class="wz-todo">
         <li><label><input type="checkbox"> Metadaten vollständig ausfüllen: Titel, Beschreibung, Aktualisierungsrhythmus, Kontakt, Lizenz</label></li>
         <li><label><input type="checkbox"> Datensatz in mindestens einem der oben genannten Kataloge registrieren</label></li>
         <li><label><input type="checkbox"> Zwei bis drei mögliche Nutzer persönlich ansprechen: Journalisten, Entwickler, Forschende im Themenbereich</label></li>
-        <li><label><input type="checkbox"> Aktualisierungsplan intern festlegen — wer pflegt die Daten, wie oft?</label></li>
+        <li><label><input type="checkbox"> Aktualisierungsplan intern festlegen: wer pflegt die Daten, wie oft?</label></li>
         <li><label><input type="checkbox"> Eine einfache Landingpage oder README mit Nutzungshinweisen erstellen</label></li>
       </ul>
 
       <div class="wz-hint">
         <span class="wz-hint-icon">👥</span>
-        <span><strong>Nutzer früh einbeziehen.</strong> Infomediäre — Menschen, die Rohdaten in nutzbare Produkte verwandeln — sind wertvoller als Marketing. Suchen Sie früh den Kontakt zu Journalisten, zivilgesellschaftlichen Datenteams und Entwicklern, die Ihren Datensatz kennen.</span>
+        <span><strong>Nutzer früh einbeziehen.</strong> Infomediäre (Menschen, die Rohdaten in nutzbare Produkte verwandeln) sind wertvoller als Marketing. Suchen Sie früh den Kontakt zu Journalisten, zivilgesellschaftlichen Datenteams und Entwicklern, die Ihren Datensatz kennen.</span>
       </div>
 
       <h3 class="wz-subh" style="margin-top:24px">Ihre Zusammenfassung</h3>
       <div class="wz-summary" id="wz-summary">
         ${summaryRow('Sektor',          sectorLabel[st.sector])}
         ${summaryRow('Erfahrung',       st.firstTime ? 'Erstmalige Datenöffnung' : 'Erweiterung bestehender Open Data')}
-        ${summaryRow('Datenart',        dtLabel[st.dataType] || '—')}
-        ${summaryRow('Rechtslage',      rightsLabel[st.hasRights] || '—')}
+        ${summaryRow('Datenart',        dtLabel[st.dataType])}
+        ${summaryRow('Rechtslage',      rightsLabel[st.hasRights])}
         ${(st.license ? summaryRow('Lizenz', licLabel[st.license]) : '')}
-        ${summaryRow('Publikationsweg', pubLabel[st.publishMethod] || '—')}
+        ${summaryRow('Publikationsweg', pubLabel[st.publishMethod])}
         ${summaryRow('Selbstcheck',     `${st.stage2checks.size} von 5 Kriterien bestätigt`)}
       </div>
     `;

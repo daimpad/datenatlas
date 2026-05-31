@@ -232,7 +232,7 @@ export class IsometricRenderer {
     if (dimmed) {
       ctx.save();
       ctx.globalAlpha *= 0.18;
-      color = '#2e333b';
+      color = '#c8b8e8';
     }
 
     const brightFactor = (hovered ? 1.35 : 1.0) + pulse * 0.55;

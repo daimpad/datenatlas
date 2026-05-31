@@ -19,11 +19,23 @@ export function safeColor(color, fallback = '#4a5568') {
   return /^#[0-9a-fA-F]{3,8}$/.test(color) ? color : fallback;
 }
 
-// Override level-4 tile colors with their Öffnungsklasse color
-export function applyOpennessColors(tiles) {
+// Apply the full color concept:
+//   L1 — keep sector color (distinct per sector)
+//   L2/L3 — override with sectorColor (monochrome within a sector)
+//   L4/L6 — override with openness color (semantic: green/yellow/red)
+export function applyTileColors(tiles, sectorColor = null) {
   return tiles.map(t => {
-    if (t.level !== 4) return t;
-    const oc = t.details?.openness?.class;
-    return oc && OPENNESS_COLORS[oc] ? { ...t, color: OPENNESS_COLORS[oc] } : t;
+    const lvl = t.level ?? 0;
+    if (lvl === 4 || lvl === 6) {
+      const oc = t.details?.openness?.class;
+      if (oc && OPENNESS_COLORS[oc]) return { ...t, color: OPENNESS_COLORS[oc] };
+    }
+    if ((lvl === 2 || lvl === 3) && sectorColor) {
+      return { ...t, color: sectorColor };
+    }
+    return t;
   });
 }
+
+// Backward-compat alias (L1 overview still calls this without a sector color)
+export const applyOpennessColors = (tiles) => applyTileColors(tiles);

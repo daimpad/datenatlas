@@ -3,7 +3,7 @@ import { initControls }      from './controls.js';
 import { openSidebar, closeSidebar } from './modal.js';
 import { loadMain, loadSector }      from './dataLoader.js';
 import { state, patchState }         from './state.js';
-import { applyOpennessColors, esc }   from './utils.js';
+import { applyTileColors, applyOpennessColors, esc } from './utils.js';
 import { buildSearchIndex, initSearch } from './search.js';
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
@@ -24,6 +24,7 @@ const filterCount   = document.getElementById('filter-count');
 const onboarding    = document.getElementById('onboarding');
 const shareBtn      = document.getElementById('share-btn');
 const shareToast    = document.getElementById('share-toast');
+const logoEl        = document.getElementById('logo');
 const infoBtn       = document.getElementById('info-btn');
 const infoModal     = document.getElementById('info-modal');
 const imClose       = document.getElementById('im-close');
@@ -35,15 +36,14 @@ initControls({ canvas, renderer, onTileClick: handleTileClick, onHover: handleHo
 
 btnBack.addEventListener('click', navigateBack);
 btnHome.addEventListener('click', navigateHome);
+logoEl.addEventListener('click', navigateHome);
 
 let _retryFn = null;
 errorRetry.addEventListener('click', () => { hideError(); _retryFn?.(); });
 
 // ── Onboarding ────────────────────────────────────────────────────────────────
-const OB_KEY = 'datenatlas_onboarded_v1';
-onboarding.hidden = !!localStorage.getItem(OB_KEY);
+// Always show on every page load — no localStorage
 document.getElementById('ob-start').addEventListener('click', () => {
-  localStorage.setItem(OB_KEY, '1');
   onboarding.hidden = true;
 });
 
@@ -94,21 +94,22 @@ async function restoreFromHash(hash) {
 
   try {
     showLoading(true);
+    const sc = sectorTile.color;                          // sector color for L2/L3
     const sectorData = await loadSector(sectorTile.id);
-    const l2tiles = applyOpennessColors(sectorData.children ?? []);
-    state.breadcrumb.push({ id: sectorTile.id, name: sectorTile.name, level: 2, tiles: l2tiles });
+    const l2tiles = applyTileColors(sectorData.children ?? [], sc);
+    state.breadcrumb.push({ id: sectorTile.id, name: sectorTile.name, level: 2, tiles: l2tiles, sectorColor: sc });
     if (segments.length === 1) { _finish(2, l2tiles); return; }
 
     const l2tile = l2tiles.find(t => t.id === segments[1]);
     if (!l2tile?.children?.length) { _finish(2, l2tiles); return; }
-    const l3tiles = applyOpennessColors(l2tile.children);
-    state.breadcrumb.push({ id: l2tile.id, name: l2tile.name, level: 3, tiles: l3tiles });
+    const l3tiles = applyTileColors(l2tile.children, sc);
+    state.breadcrumb.push({ id: l2tile.id, name: l2tile.name, level: 3, tiles: l3tiles, sectorColor: sc });
     if (segments.length === 2) { _finish(3, l3tiles); return; }
 
     const l3tile = l3tiles.find(t => t.id === segments[2]);
     if (!l3tile?.children?.length) { _finish(3, l3tiles); return; }
-    const l4tiles = applyOpennessColors(l3tile.children);
-    state.breadcrumb.push({ id: l3tile.id, name: l3tile.name, level: 4, tiles: l4tiles });
+    const l4tiles = applyTileColors(l3tile.children, sc);
+    state.breadcrumb.push({ id: l3tile.id, name: l3tile.name, level: 4, tiles: l4tiles, sectorColor: sc });
     _finish(4, l4tiles);
   } catch (err) {
     console.error('URL restore failed:', err);
@@ -223,7 +224,7 @@ let _mainTiles = [];
     showLoading(true);
     const sectors = await loadMain();
     _mainTiles = sectors;
-    pushLevel(sectors, { id: null, name: 'Übersicht', level: 0 });
+    pushLevel(sectors, { id: null, name: 'Alle Sektoren', level: 0 });
 
     if (_initialHash && _initialHash !== '#') {
       await restoreFromHash(_initialHash);
@@ -259,8 +260,12 @@ function currentLevel() {
 }
 
 function pushLevel(tiles, crumb) {
-  const processed = applyOpennessColors(tiles);
-  state.breadcrumb.push({ ...crumb, tiles: processed });
+  // Inherit sectorColor from crumb or from the nearest ancestor that has one
+  const sectorColor = crumb.sectorColor
+    ?? state.breadcrumb.slice().reverse().find(c => c.sectorColor)?.sectorColor
+    ?? null;
+  const processed = applyTileColors(tiles, sectorColor);
+  state.breadcrumb.push({ ...crumb, tiles: processed, sectorColor });
   patchState({ zoomLevel: crumb.level ?? state.zoomLevel, currentTiles: processed, panOffset: { x:0, y:0 } });
   renderer.setPan(0, 0);
   animateIn(processed);
@@ -365,7 +370,7 @@ async function navigateDeeper(tile) {
       const children = data.children ?? [];
       if (children.length) {
         await animateOut(tile.id);
-        pushLevel(children, { id: tile.id, name: tile.name, level: 2 });
+        pushLevel(children, { id: tile.id, name: tile.name, level: 2, sectorColor: tile.color });
       }
     } catch (err) {
       console.error(err);

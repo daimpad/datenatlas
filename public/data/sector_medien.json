@@ -3339,6 +3339,1263 @@
           ]
         }
       ]
+    },
+    {
+      "id": "privatrundfunk",
+      "level": 2,
+      "name": "Privatrundfunk und Kommerzielle Medien",
+      "color": "#1e5799",
+      "description": "Private TV- und Radiosender, kommerzielle Streaming-Dienste und digitaler Werbemarkt",
+      "children": [
+        {
+          "id": "privates-fernsehen",
+          "level": 3,
+          "name": "Privates Fernsehen",
+          "color": "#1e5799",
+          "description": "Einschaltquoten, Marktanteile und Wirtschaftsdaten privater TV-Sender",
+          "children": [
+            {
+              "id": "privat-tv-quoten",
+              "level": 4,
+              "name": "Einschaltquoten Privatfernsehen",
+              "color": "#1e5799",
+              "details": {
+                "description": "Tägliche Marktanteile und Einschaltquoten privater TV-Sender (RTL, ProSieben, Sat.1, Vox, kabel eins) aus dem AGF/GfK-Fernsehpanel. Aufgeschlüsselt nach Sendung, Zeitslot und Zielgruppe (14–49 Jahre).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Wöchentliche Top-Listen werden veröffentlicht. Vollständige tägliche Quoten sind kostenpflichtige GfK-Lizenzdaten."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Zeitreihe (täglich/wöchentlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "Restriktiv (proprietär)"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "AGF-Panel (ca. 5.500 Haushalte) wird auf TV-Bevölkerung hochgerechnet und nach Zielgruppe segmentiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "privat-tv-marktanteile",
+              "level": 4,
+              "name": "Marktanteile Privatsender (Zeitreihe)",
+              "color": "#1e5799",
+              "details": {
+                "description": "Monatliche und jährliche Marktanteile privater Senderfamilien (RTL-Gruppe, ProSiebenSat.1) im deutschen TV-Markt. Wichtigster Indikator für den Wettbewerb zwischen öffentlich-rechtlichem und privatem Fernsehen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "AGF veröffentlicht monatliche Marktanteilsübersichten kostenfrei."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Struktur"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Sendermarktanteile werden monatlich aus dem GfK-Fernsehpanel aggregiert und nach Senderfamilien zusammengefasst"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "privat-tv-umsaetze",
+              "level": 4,
+              "name": "Umsätze und Ergebnisse Privatsender",
+              "color": "#1e5799",
+              "details": {
+                "description": "Jahresumsätze, EBITDA und Beschäftigte der börsennotierten privaten Sender-Gruppen (RTL Group, ProSiebenSat.1 Media SE). Enthält Werbeerlöse, Streamingeinnahmen und Produktionsumsätze.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Börsennotierte Unternehmen veröffentlichen Geschäftsberichte mit vollständigen Finanzdaten."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Geschäftsberichtsdaten werden nach Segment (TV, Streaming, Produktion) aufgeschlüsselt"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "privat-tv-programmstruktur",
+              "level": 4,
+              "name": "Programmstruktur Privatsender",
+              "color": "#1e5799",
+              "details": {
+                "description": "Sendezeitenanteile privater TV-Sender nach Programmsparte (Information, Unterhaltung, Werbung, Teleshopping). Grundlage für Programmaufsicht durch die Landesmedienanstalten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Landesmedienanstalten führen Programmstrukturanalysen durch und publizieren die Ergebnisse."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Struktur"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Sendeminuten werden nach Programmkategorie codiert und als Anteile am Gesamtprogramm ausgewiesen"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "privat-tv-jugendschutz",
+              "level": 4,
+              "name": "Jugendschutzbeschwerden Privatfernsehen",
+              "color": "#1e5799",
+              "details": {
+                "description": "Anzahl der bei den Landesmedienanstalten eingegangenen Beschwerden über Jugendschutz-Verstöße im Privatfernsehen sowie Bußgelder und Sanktionen. Aus Jahresberichten der Medienanstalten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Jahresberichte der Landesmedienanstalten sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Ereignis"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Beschwerden werden nach Sender, Sendung und Verstoßart aggregiert und mit Sanktionsentscheidung dokumentiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "privat-tv-werbeumsatz",
+              "level": 4,
+              "name": "TV-Werbeerlöse gesamt",
+              "color": "#1e5799",
+              "details": {
+                "description": "Brutto- und Netto-Werbeeinnahmen des deutschen TV-Markts (öffentlich-rechtlich und privat) nach Buchungskanal, Produktkategorie und Zeitraum. Erhoben von Nielsen und Statista.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Bruttodaten publiziert Nielsen; Nettodaten auf Anfrage oder über Verbände."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "Restriktiv (proprietär)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Nielsen erfasst alle gebuchten Werbeminuten und monetarisiert sie mit Listenpreisen"
+                  }
+                ],
+                "examples": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "privater-hoerfunk",
+          "level": 3,
+          "name": "Privater Hörfunk und DAB+",
+          "color": "#1e5799",
+          "description": "Reichweiten, Frequenzen und Wirtschaftsdaten privater Radiosender",
+          "children": [
+            {
+              "id": "privatradio-reichweiten",
+              "level": 4,
+              "name": "Privatradio-Reichweiten (ma-Studie)",
+              "color": "#1e5799",
+              "details": {
+                "description": "Wöchentliche Hörer- und Tagesreichweiten privater Radiosender aus der Media-Analyse (ma) des AGMA. Enthält Verweildauer, Hörgewohnheiten nach Altersgruppe und Sender-Marktanteile je Bundesland.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Kerndaten werden über die AGMA kommuniziert. Vollständige Rohdaten erfordern eine ma-Lizenz."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "Restriktiv (proprietär)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Telefonbefragung (ca. 70.000 Personen/Jahr) wird nach Sender und Zielgruppe aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "ukw-frequenzbelegung",
+              "level": 4,
+              "name": "UKW-Frequenzbelegung und -zuteilung",
+              "color": "#1e5799",
+              "details": {
+                "description": "Verzeichnis aller in Deutschland vergebenen UKW-Frequenzen mit Standort, Sendeleistung, Inhaber und Versorgungsgebiet. Wird von der Bundesnetzagentur geführt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Frequenzverzeichnis der Bundesnetzagentur ist öffentlich und maschinenlesbar zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Struktur"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "Einzelobjekt/Einzelfall"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "JSON/XML/API"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Frequenzzuteilungen werden nach Standort, Inhaber und Versorgungsgebiet registriert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "dab-verbreitung",
+              "level": 4,
+              "name": "DAB+ Verbreitung und Empfänger",
+              "color": "#1e5799",
+              "details": {
+                "description": "Verbreitung der digitalen Radioempfänger (DAB+) in deutschen Haushalten sowie Anzahl verfügbarer DAB+-Programme im Bundesmux und Regionalmuxen. Aus Jahresbericht der Bayerischen Landeszentrale für neue Medien.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "BLM und Digitalradio Deutschland publizieren Verbreitungsberichte."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Verkaufszahlen von DAB+-Geräten und Haushaltsbefragungen werden zu Verbreitungsquoten zusammengeführt"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "privatradio-umsaetze",
+              "level": 4,
+              "name": "Privatradio-Umsätze und Werbemärkte",
+              "color": "#1e5799",
+              "details": {
+                "description": "Jahresumsätze und Werbeinnahmen privater Radiosender nach Bundesland und Reichweite. Aus Jahresbericht der Arbeitsgemeinschaft Privater Rundfunk (APR) und Landesmedienanstalten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Aggregierte Marktdaten werden publiziert. Einzelsender-Umsätze sind nicht öffentlich."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Verbandsmeldungen der privaten Sender werden nach Bundesland und Sendernetzgröße aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "lokalradio-verzeichnis",
+              "level": 4,
+              "name": "Lokalradio-Sender-Verzeichnis",
+              "color": "#1e5799",
+              "details": {
+                "description": "Vollständiges Verzeichnis aller zugelassenen lokalen und regionalen Privatradiosender in Deutschland mit Lizenzgebiet, Eigentümer und Sendeweg (UKW/DAB+/Online). Daten der Landesmedienanstalten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Landesmedienanstalten führen und publizieren öffentliche Senderverzeichnisse."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Struktur"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "Einzelobjekt/Einzelfall"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "JSON/XML/API"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Lizenzierte Sender werden nach Empfangsweg, Gebiet und Veranstalter klassifiziert"
+                  }
+                ],
+                "examples": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "digitaler-werbemarkt",
+          "level": 3,
+          "name": "Digitaler Werbemarkt",
+          "color": "#1e5799",
+          "description": "Online-Werbeeinnahmen, programmatische Buchungen und Influencer-Marketing",
+          "children": [
+            {
+              "id": "online-werbemarkt",
+              "level": 4,
+              "name": "Online-Werbemarkt (IVW/OWM)",
+              "color": "#1e5799",
+              "details": {
+                "description": "Brutto-Werbeausgaben im deutschen Online-Markt nach Formaten (Display, Search, Social, Video, Native) aus der OWM/Nielsen-Erhebung und dem BVDW-Umsatzatlas. Zeigt die Verschiebung der Werbegelder von Print zu Digital.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "BVDW veröffentlicht Halbjahres- und Jahresumsatzdaten für den Online-Werbemarkt."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Werbebuchungsdaten werden über Vermarkter-Meldungen und Nielsen-Erhebung aggregiert und nach Werbeformat ausgewiesen"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "ivw-online-reichweiten",
+              "level": 4,
+              "name": "Online-Reichweiten (IVW Digital)",
+              "color": "#1e5799",
+              "details": {
+                "description": "Monatliche Visits, Page Impressions und Unique Users der wichtigsten deutschen Online-Angebote aus der IVW-Digital-Messung. Grundlage für Online-Vermarktung und Mediapläne.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "IVW Digital publiziert monatlich Reichweitendaten für alle Mitglieder kostenlos."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "Excel"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Server-Logfiles der Mitglieder werden nach IVW-Richtlinien bereinigt und zu Monatsstatistiken aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "programmatic-advertising",
+              "level": 4,
+              "name": "Programmatic Advertising Volumen",
+              "color": "#1e5799",
+              "details": {
+                "description": "Volumen und Anteile programmatisch gehandelter Online-Werbeflächen in Deutschland nach Buchungsart (Open Auction, Private Marketplace, Preferred Deal) und Gerät. Aus BVDW-Programmatic-Studie.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "BVDW publiziert aggregierte Marktanteile jährlich. Transaktionsdaten einzelner DSPs/SSPs sind nicht öffentlich."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Plattform-Transaktionsdaten werden durch Marktforschungsbefragung ergänzt und zu Marktanteilsschätzungen aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "influencer-marketing",
+              "level": 4,
+              "name": "Influencer-Marketing-Ausgaben",
+              "color": "#1e5799",
+              "details": {
+                "description": "Ausgaben deutscher Unternehmen für Influencer-Marketing auf Instagram, YouTube, TikTok und anderen Plattformen. Aus Influencer-Marketing-Studien des BVDW und Goldmedia.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Marktforschungsberichte werden publiziert. Einzelkampagnen-Daten unterliegen Geheimhaltung."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Unternehmens- und Agenturbefragungen werden zu Gesamtmarktvolumen aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "cookie-einwilligungen",
+              "level": 4,
+              "name": "Cookie-Einwilligungsquoten und Consent-Management",
+              "color": "#1e5799",
+              "details": {
+                "description": "Durchschnittliche Opt-in-Quoten für Werbe-Cookies auf deutschen Online-Angeboten nach Branche und Consent-Management-Plattform. Relevant für DSGVO-Compliance und Werbezielgruppen-Planung.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten",
+                  "explanation": "Einwilligungsquoten sind interne Geschäftsdaten der Verlage und CMP-Anbieter. Nur aggregierte Branchenwerte werden publiziert."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "Restriktiv (proprietär)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Plattform-seitige Consent-Logs werden aggregiert und anonymisiert; nur Branchendurchschnitte sind publizierbar"
+                  }
+                ],
+                "examples": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sportmedien",
+      "level": 2,
+      "name": "Sportmedien und Unterhaltungsrechte",
+      "color": "#1e5799",
+      "description": "Medienrechte, Sportberichterstattung und Unterhaltungsformate",
+      "children": [
+        {
+          "id": "sportmedienrechte",
+          "level": 3,
+          "name": "Sportmedienrechte und -berichterstattung",
+          "color": "#1e5799",
+          "description": "Vergabe, Wert und Nutzung von Medienrechten an Sportveranstaltungen",
+          "children": [
+            {
+              "id": "bundesliga-medienrechte",
+              "level": 4,
+              "name": "Bundesliga TV- und Streamingrechte",
+              "color": "#1e5799",
+              "details": {
+                "description": "Erlöse aus der nationalen und internationalen Vermarktung der Bundesliga-Medienrechte durch die DFL Deutsche Fußball Liga. Aufschlüsselung nach Rechtepaketen (Pay-TV, Free-TV, Streaming, Auslandsrechte) und Verteilungsschlüssel.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "DFL publiziert Gesamterlöse und Verteilungsschlüssel; Einzelvertragsdetails sind vertraulich."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "Einzelobjekt/Einzelfall"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Rechtepakete werden nach Übertragungsweg, Exklusivität und Geltungsgebiet klassifiziert; Erlöse werden nach Vereinsschlüssel verteilt"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "DFL Medienerlöse",
+                    "publisher": "Deutsche Fußball Liga",
+                    "url": "https://www.dfl.de"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sport-streaming-nutzung",
+              "level": 4,
+              "name": "Sport-Streaming-Nutzung",
+              "color": "#1e5799",
+              "details": {
+                "description": "Zuschauerzahlen und Verweildauer bei Sport-Livestreams (DAZN, Sky, MagentaSport, ARD/ZDF-Mediathek) in Deutschland. Indikator für den Wandel der Sportrezeption von linear zu digital.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Plattformen veröffentlichen selektiv Nutzerzahlen für Presseberichte. Vollständige Daten sind proprietär."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "Restriktiv (proprietär)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Streaming-Metriken werden von Marktforschungsinstituten aus Panel-Messungen und Plattformangaben zusammengeführt"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "paytv-sport-abonnenten",
+              "level": 4,
+              "name": "Pay-TV-Sport-Abonnenten",
+              "color": "#1e5799",
+              "details": {
+                "description": "Abonnentenzahlen und Churn-Raten von sport-fokussierten Pay-TV-Diensten (Sky, DAZN, MagentaSport) in Deutschland. Wichtige Kennzahl für die Zahlungsbereitschaft bei Sportinhalten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Börsennotierte Anbieter berichten in Quartalsberichten. Nicht börsennotierte Dienste veröffentlichen selektiv."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "Restriktiv (proprietär)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Abonnentenmeldungen aus Geschäftsberichten werden nach Dienst und Quartal konsolidiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "sport-sendezeiten",
+              "level": 4,
+              "name": "Sportberichterstattung Sendezeiten",
+              "color": "#1e5799",
+              "details": {
+                "description": "Sendeminuten für Sportberichterstattung in ARD, ZDF und Privatsendern nach Sportart, Geschlecht der Athleten und Sendeplatz. Aus Inhaltsanalysen des Deutschen Olympischen Sportbundes (DOSB) und Medienforschung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "DOSB und Universitäten publizieren regelmäßig Inhaltsanalysen zur Sportberichterstattung."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Ereignis"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Sendungen werden nach Sportart, Athletengeschlecht und Berichtsformat manuell und automatisiert codiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "sportrechte-international",
+              "level": 4,
+              "name": "Internationale Sportrechte — TV-Auslandserlöse",
+              "color": "#1e5799",
+              "details": {
+                "description": "Erlöse aus internationalen Übertragungsrechten für deutsche Sportligen (Bundesliga, Handball-Bundesliga, DEL) nach Region und Abnehmer. Wachstumsindikator für die internationale Reichweite deutscher Sportprodukte.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Ligen veröffentlichen Gesamtvolumen internationaler Rechteerlöse. Länderdetails sind vertraulich."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Internationale Rechtevergaben werden nach Region und Übertragungsweg aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "unterhaltungsformate",
+          "level": 3,
+          "name": "Unterhaltungs- und Entertainmentmedien",
+          "color": "#1e5799",
+          "description": "Reality-TV, Serien, Filmproduktion und Comedy-Formate",
+          "children": [
+            {
+              "id": "reality-tv-ratings",
+              "level": 4,
+              "name": "Reality- und Casting-Format-Reichweiten",
+              "color": "#1e5799",
+              "details": {
+                "description": "Einschaltquoten und Marktanteile von Reality-TV- und Casting-Formaten (Castingshows, Doku-Soaps, Gameshows) auf privaten und öffentlich-rechtlichen Sendern. Aus AGF-GfK-Daten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Quotenlisten für Top-Formate werden publiziert. Vollständige Zeitreihen sind GfK-Lizenzdaten."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Zeitreihe (täglich/wöchentlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "Restriktiv (proprietär)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "GfK-Panel-Messung wird auf Zielgruppe 14–49 Jahre ausgewertet und nach Formattyp kategorisiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "serienproduktion-national",
+              "level": 4,
+              "name": "Deutsche Serienproduktionen",
+              "color": "#1e5799",
+              "details": {
+                "description": "Anzahl, Budget und Beschäftigte bei deutschen Serienproduktionen für TV und Streaming nach Produktionsort und Auftraggeber (ÖRR, Private, Streaming-Dienste). Aus FFA-Produktionsstatistik und Bundesregierungs-Kreativwirtschaftsbericht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "FFA und BMWK publizieren Produktionsstatistiken mit Projektzahlen und Investitionsvolumen."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Struktur"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Produktionsmeldungen bei der FFA werden nach Auftraggeber, Produktionsort und Budget aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "lachen-comedy-medien",
+              "level": 4,
+              "name": "Comedy und Late-Night-Reichweiten",
+              "color": "#1e5799",
+              "details": {
+                "description": "Einschaltquoten und Streaming-Abrufe für Comedy-Formate und Late-Night-Shows (ZDF Magazin Royale, Neo Magazin Royale, heute-show, extra 3). Aus AGF/GfK und Mediathek-Statistiken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Öffentlich-rechtliche Top-Abruflisten sind frei zugänglich. GfK-Quoten für ausgewählte Sendungen werden regelmäßig kommuniziert."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Zeitreihe (täglich/wöchentlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "TV-Panel-Messung und Mediathek-Serverlog werden nach Sendungsformat ausgewertet"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "filmpreise-statistik",
+              "level": 4,
+              "name": "Filmpreise und Awards-Statistik",
+              "color": "#1e5799",
+              "details": {
+                "description": "Vergabe nationaler und internationaler Filmpreise (Deutscher Filmpreis, Grimme-Preis, Oscar-Nominierungen) an deutsche Produktionen nach Genre, Produktionsgesellschaft und Bundesland. Indikatoren für Qualität und internationale Sichtbarkeit des deutschen Films.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Preisträger-Datenbanken sind öffentlich; FFA und BKM führen Statistiken zu preisgekrönten deutschen Produktionen."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Ereignis"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "Einzelobjekt/Einzelfall"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "JSON/XML/API"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Preisverleihungen werden nach Preisgattung, Genre, Produktionsjahr und Bundesland erfasst"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "streaming-original-investitionen",
+              "level": 4,
+              "name": "Streaming-Original-Investitionen in Deutschland",
+              "color": "#1e5799",
+              "details": {
+                "description": "Investitionen internationaler Streaming-Dienste (Netflix, Amazon, Apple, Disney+) in deutsche Original-Produktionen nach Standort und Produktionsart. Aus BKM-Filmwirtschaftsberichten und Industrie-Studien.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "BKM und FFA publizieren aggregierte Investitionssummen. Einzelprojekt-Budgets sind vertraulich."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Produktionsstandortmeldungen und Steuerförderanträge werden zu Investitionsvolumen aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

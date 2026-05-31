@@ -327,6 +327,529 @@
               }
             }
           ]
+        },
+        {
+          "id": "lager_logistik",
+          "level": 3,
+          "name": "Lager & Logistik",
+          "color": "#e67e22",
+          "description": "Lagerverwaltung, Bestandsmanagement und Logistikprozesse für den Warenfluss im Einzelhandel",
+          "children": [
+            {
+              "id": "lagerbestandsdaten",
+              "level": 4,
+              "name": "Lagerbestandsdaten",
+              "color": "#d4a017",
+              "details": {
+                "description": "Aggregierte Bestandsdaten aller Lagerstandorte: Artikelnummern, aktuelle Menge, Mindestbestand, maximale Kapazität, Umschlagshäufigkeit und Lagerdauer. Grundlage für Disposition, Nachbestellungen und Lageroptimierung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Lagerbestandsdaten enthalten keine personenbezogenen Informationen, aber detaillierte Artikel- und Mengenangaben können Wettbewerbsrelevanz haben. Nach Aggregation auf Produktkategorieebene und Entfernung standortspezifischer Details sind die Daten für Lieferkettenanalysen und Marktforschung nutzbar."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Disposition & Bestellmanagement",
+                    "description": "Lagerbestandsdaten steuern automatisierte Nachbestellungen und verhindern Lieferengpässe oder Überbestände."
+                  },
+                  {
+                    "method": "Logistik & Supply Chain",
+                    "description": "Aggregierte Bestandsdaten werden mit Lieferanten geteilt, um Just-in-Time-Lieferungen zu koordinieren."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Lagerbestandsdaten Handelsverband",
+                    "url": "https://mcloud.de/lagerbestandsdaten-handel",
+                    "publisher": "Handelsverband Deutschland"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lieferkettenstatistik",
+              "level": 4,
+              "name": "Lieferkettenstatistik",
+              "color": "#27ae60",
+              "details": {
+                "description": "Statistiken zur Lieferkette: Lieferzeiten, Transportvolumen, Lieferantenbewertungen, Transportkosten und CO₂-Bilanz pro Lieferung. Erfasst werden auch Störungen wie Verzögerungen oder Qualitätsmängel.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Lieferkettenstatistiken ohne unternehmensspezifische Details oder vertragliche Geheimhaltungsverpflichtungen können als Open Data veröffentlicht werden. Besonders relevant für Nachhaltigkeitsberichte und Logistikoptimierung auf Branchenebene."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Zeitreihendaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Logistik & Supply Chain",
+                    "description": "Lieferkettenstatistiken helfen, Engpässe frühzeitig zu erkennen und alternative Lieferanten zu identifizieren."
+                  },
+                  {
+                    "method": "Nachhaltigkeit & Compliance",
+                    "description": "CO₂-Bilanzen und Transportdaten fließen in Nachhaltigkeitsberichte und Klimaschutzmaßnahmen ein."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Lieferketten-Dashboard Bundesumweltamt",
+                    "url": "https://www.umweltbundesamt.de/daten/lieferketten",
+                    "publisher": "Umweltbundesamt"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "retourenmanagement",
+              "level": 4,
+              "name": "Retourenmanagement",
+              "color": "#c0392b",
+              "details": {
+                "description": "Detaillierte Daten zu Retouren: Artikel, Menge, Rückgabegrund (z. B. Defekt, falsche Größe, Nichtgefallen), Kunden-ID (falls verknüpft) und Bearbeitungsstatus. Enthält oft personenbezogene Informationen und Rückschlüsse auf Produktqualität.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Retourendaten können Rückschlüsse auf individuelle Kund:innen und deren Kaufverhalten ziehen. Auch aggregierte Daten können sensible Produktqualitätsprobleme offenlegen. Nur hochgradig anonymisierte Statistiken (z. B. Retourenquote pro Produktkategorie) sind für interne Analysen nutzbar."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Einzelfall / Vorgang"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Retourendaten helfen, Produktmängel zu identifizieren und die Qualität zu verbessern."
+                  },
+                  {
+                    "method": "Kundenservice",
+                    "description": "Schnelle Bearbeitung von Retouren erhöht die Kundenzufriedenheit und reduziert Beschwerden."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "verkauf_marketing",
+          "level": 3,
+          "name": "Verkauf & Marketing",
+          "color": "#e67e22",
+          "description": "Verkaufsstrategien, Marketingkampagnen und Analyse des Kundenverhaltens im Einzelhandel",
+          "children": [
+            {
+              "id": "verkaufsstatistik_produktgruppe",
+              "level": 4,
+              "name": "Verkaufsstatistik nach Produktgruppe",
+              "color": "#d4a017",
+              "details": {
+                "description": "Aggregierte Verkaufszahlen nach Produktgruppen, Kategorien und Zeiträumen: Umsatz, Menge, durchschnittlicher Preis, Wachstumsraten und Saisonality. Daten sind nicht personenbezogen, aber produkt- und standortspezifisch.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Verkaufsstatistiken enthalten keine personenbezogenen Daten, aber detaillierte Umsatz- und Mengenangaben können Wettbewerbsrelevanz haben. Nach Aggregation auf Branchenebene und Entfernung standortspezifischer Details sind die Daten für Marktanalysen nutzbar."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Sortimentsplanung",
+                    "description": "Verkaufsstatistiken helfen, das Sortiment an die Nachfrage anzupassen und unrentable Produkte zu identifizieren."
+                  },
+                  {
+                    "method": "Marktforschung",
+                    "description": "Aggregierte Daten werden für Branchenberichte und Trendanalysen genutzt."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Verkaufsstatistik Einzelhandel",
+                    "url": "https://mcloud.de/verkaufsstatistik-handel",
+                    "publisher": "Statistisches Bundesamt"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "preisgestaltung_rabatte",
+              "level": 4,
+              "name": "Preisgestaltung & Rabattaktionen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Öffentlich zugängliche Preisinformationen: Reguläre Verkaufspreise, Aktionspreise, Rabattstaffeln, Sonderangebote und Preisvergleiche mit Wettbewerbern. Enthält keine internen Kalkulationsdaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Preisinformationen sind für Kund:innen öffentlich einsehbar und können als Open Data veröffentlicht werden. Besonders relevant für Preisvergleichsportale und Verbraucherinformation."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_03",
+                  "label": "Verzeichnis / Register"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Marketing & Verkaufsförderung",
+                    "description": "Preisgestaltung und Rabattaktionen steuern die Nachfrage und fördern den Absatz."
+                  },
+                  {
+                    "method": "Wettbewerbsanalyse",
+                    "description": "Preisvergleiche helfen, die eigene Positionierung im Markt zu bewerten."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Preisvergleichsportal",
+                    "url": "https://www.idealo.de",
+                    "publisher": "Idealo"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "online_shop_analytik",
+              "level": 4,
+              "name": "Online-Shop-Analytik",
+              "color": "#c0392b",
+              "details": {
+                "description": "Detaillierte Nutzerdaten aus Online-Shops: Seitenaufrufe, Klickpfade, Verweildauer, Conversion-Raten, Abbruchquoten im Checkout und individuelle Nutzerprofile (falls registriert). Enthält oft personenbezogene Daten und Verhaltensmuster.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Online-Shop-Analytik ermöglicht detaillierte Rückschlüsse auf individuelles Nutzerverhalten und Präferenzen. Auch aggregierte Daten können personenbezogene Informationen enthalten (z. B. durch IP-Adressen oder Cookies). Nur hochgradig anonymisierte Statistiken sind für interne Analysen nutzbar."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Einzelfall / Vorgang"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Digitales Marketing",
+                    "description": "Online-Shop-Analytik steuert gezielte Werbekampagnen und personalisierte Produktempfehlungen."
+                  },
+                  {
+                    "method": "UX-Optimierung",
+                    "description": "Nutzerverhalten wird analysiert, um die Benutzerfreundlichkeit des Shops zu verbessern."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "filialmanagement",
+          "level": 3,
+          "name": "Filialmanagement",
+          "color": "#e67e22",
+          "description": "Steuerung und Optimierung von Filialstandorten, Öffnungszeiten und Ressourcen im stationären Einzelhandel",
+          "children": [
+            {
+              "id": "filialstandorte_oeffnungszeiten",
+              "level": 4,
+              "name": "Filialstandorte & Öffnungszeiten",
+              "color": "#27ae60",
+              "details": {
+                "description": "Verzeichnis aller Filialstandorte mit Adresse, Öffnungszeiten, Kontaktinformationen, Barrierefreiheit und verfügbaren Dienstleistungen (z. B. Click & Collect, Beratung). Enthält keine internen Geschäftsgeheimnisse.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Filialstandorte und Öffnungszeiten sind öffentlich zugängliche Informationen, die für Kund:innen und Verbraucherportale relevant sind. Veröffentlichung als Open Data erhöht die Auffindbarkeit und Transparenz."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_03",
+                  "label": "Verzeichnis / Register"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Kundenkommunikation",
+                    "description": "Filialstandorte und Öffnungszeiten sind Grundlage für Kundenservice und lokale Marketingmaßnahmen."
+                  },
+                  {
+                    "method": "Standortplanung",
+                    "description": "Daten helfen, neue Filialen strategisch zu platzieren und das Filialnetz zu optimieren."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Filialverzeichnis Einzelhandel",
+                    "url": "https://www.einzelhandel.de/filialsuche",
+                    "publisher": "Handelsverband Deutschland"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fussgaengerfrequenz",
+              "level": 4,
+              "name": "Fußgängerfrequenz vor Filialen",
+              "color": "#d4a017",
+              "details": {
+                "description": "Anonymisierte Zählungen der Fußgängerfrequenz vor Filialen: Datum, Uhrzeit, Anzahl der Passant:innen, Wetterbedingungen und besondere Ereignisse (z. B. Märkte). Daten werden ohne Personenbezug erhoben.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Fußgängerfrequenzdaten enthalten keine personenbezogenen Informationen, aber detaillierte standortspezifische Daten können Wettbewerbsrelevanz haben. Nach Aggregation auf Stadt- oder Regionsebene sind die Daten für Stadtplanung und Handelsanalysen nutzbar."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Zeitreihendaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Standortanalyse",
+                    "description": "Fußgängerfrequenzdaten helfen, die Attraktivität von Filialstandorten zu bewerten."
+                  },
+                  {
+                    "method": "Marketing & Promotion",
+                    "description": "Hohe Fußgängerfrequenzen sind ideal für gezielte Werbeaktionen und Promotions."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Fußgängerfrequenz Stadt Köln",
+                    "url": "https://mcloud.de/fussgaengerfrequenz-koeln",
+                    "publisher": "Stadt Köln"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "energieverbrauch_filiale",
+              "level": 4,
+              "name": "Energieverbrauch pro Filiale",
+              "color": "#27ae60",
+              "details": {
+                "description": "Energieverbrauchsdaten pro Filiale: Strom-, Gas-, Wasserverbrauch, CO₂-Emissionen, Energieeffizienzklasse und Maßnahmen zur Energieeinsparung. Daten werden monatlich oder jährlich erfasst.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Energieverbrauchsdaten sind für Nachhaltigkeitsberichte und Klimaschutzmaßnahmen relevant. Veröffentlichung als Open Data fördert Transparenz und Benchmarking in der Branche."
+                },
+                "theme": {
+                  "code": "TH_02",
+                  "label": "Umwelt & Klima"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Nachhaltigkeit & Compliance",
+                    "description": "Energieverbrauchsdaten fließen in Nachhaltigkeitsberichte und Klimaschutzmaßnahmen ein."
+                  },
+                  {
+                    "method": "Kostenmanagement",
+                    "description": "Daten helfen, Energieeffizienzmaßnahmen zu identifizieren und Kosten zu senken."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Energieverbrauch Einzelhandel",
+                    "url": "https://mcloud.de/energieverbrauch-handel",
+                    "publisher": "Bundesumweltamt"
+                  }
+                ]
+              }
+            }
+          ]
         }
       ]
     },

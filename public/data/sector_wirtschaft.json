@@ -2767,6 +2767,483 @@
           ]
         }
       ]
+    },
+    {
+      "id": "handel_grosshandel",
+      "level": 2,
+      "name": "Handel & Großhandel",
+      "color": "#d35400",
+      "description": "Großhändler, Importeure und Handelsketten, die Waren in großen Mengen einkaufen und an Einzelhändler oder Gewerbekunden vertreiben",
+      "children": [
+        {
+          "id": "einkauf_beschaffung",
+          "level": 3,
+          "name": "Einkauf & Beschaffung",
+          "color": "#e67e22",
+          "description": "Strategische Beschaffung von Rohstoffen, Halbfertigwaren und Fertigprodukten für den Weiterverkauf",
+          "children": [
+            {
+              "id": "lieferantenverzeichnis",
+              "level": 4,
+              "name": "Lieferantenverzeichnis",
+              "color": "#27ae60",
+              "details": {
+                "description": "Öffentliches Verzeichnis aller Lieferanten mit Kontaktdaten, Produktportfolios, Lieferbedingungen und Zertifizierungen (z. B. ISO, Bio, Fair Trade). Enthält keine vertraglichen Geheimhaltungsvereinbarungen oder interne Konditionen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Lieferantenverzeichnisse sind oft öffentlich zugänglich und können für Marktanalysen, Lieferkettenoptimierung und neue Geschäftsbeziehungen genutzt werden. Keine personenbezogenen oder vertraulichen Daten enthalten."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_03",
+                  "label": "Verzeichnis / Register"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Lieferantenmanagement",
+                    "description": "Verzeichnis dient als Grundlage für die Auswahl und Bewertung von Lieferanten sowie für Compliance-Prüfungen."
+                  },
+                  {
+                    "method": "Einkauf & Beschaffung",
+                    "description": "Lieferantendaten helfen, alternative Bezugsquellen zu identifizieren und Risiken in der Lieferkette zu minimieren."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Lieferantenverzeichnis Bundesweit",
+                    "url": "https://mcloud.de/lieferantenverzeichnis",
+                    "publisher": "Bundesamt für Wirtschaft"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "einkaufsvolumen_konditionen",
+              "level": 4,
+              "name": "Einkaufsvolumen & Konditionen",
+              "color": "#d4a017",
+              "details": {
+                "description": "Aggregierte Einkaufsdaten: Volumen pro Lieferant, Produktgruppe und Zeitraum, durchschnittliche Einkaufspreise, Rabattstaffeln und Zahlungsbedingungen. Daten sind nicht lieferantenspezifisch, sondern kategorial aggregiert.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Einkaufsvolumen und Konditionen können Wettbewerbsrelevanz haben. Nach Aggregation auf Branchenebene und Entfernung unternehmensspezifischer Details sind die Daten für Marktanalysen und Benchmarking nutzbar."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Einkauf & Beschaffung",
+                    "description": "Einkaufsvolumen und Konditionen steuern die Verhandlungsstrategie mit Lieferanten und helfen, Kosteneinsparungen zu identifizieren."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Aggregierte Daten fließen in die Budgetplanung und Preiskalkulation ein."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "rohstoffpreisentwicklung",
+              "level": 4,
+              "name": "Rohstoffpreisentwicklung",
+              "color": "#27ae60",
+              "details": {
+                "description": "Historische und aktuelle Marktpreise für Rohstoffe, Halbfertigwaren und wichtige Handelsgüter (z. B. Metalle, Kunststoffe, Agrarprodukte). Daten stammen aus öffentlichen Börsen, Handelsplattformen oder Marktberichten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Rohstoffpreise sind öffentlich zugängliche Marktdaten, die für Analysen, Prognosen und strategische Entscheidungen genutzt werden können. Keine unternehmensspezifischen oder vertraulichen Informationen enthalten."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Zeitreihendaten"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Einkauf & Beschaffung",
+                    "description": "Rohstoffpreise helfen, den optimalen Einkaufszeitpunkt zu bestimmen und Preisrisiken zu managen."
+                  },
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Historische Preisdaten werden für Trendanalysen und Prognosemodelle genutzt."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Rohstoffpreise London Metal Exchange",
+                    "url": "https://www.lme.com/Metals/Minor-metals",
+                    "publisher": "London Metal Exchange"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "vertrieb_logistik",
+          "level": 3,
+          "name": "Vertrieb & Logistik",
+          "color": "#e67e22",
+          "description": "Distribution von Waren an Kunden, inklusive Transport, Lagerung und Auslieferung",
+          "children": [
+            {
+              "id": "vertriebsstatistik_region",
+              "level": 4,
+              "name": "Vertriebsstatistik nach Region",
+              "color": "#d4a017",
+              "details": {
+                "description": "Aggregierte Vertriebsdaten nach Region: Umsatz, Menge, Kundenanzahl und Wachstumsraten. Daten sind nicht kundenspezifisch, sondern regional aggregiert und enthalten keine personenbezogenen Informationen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Vertriebsstatistiken können Wettbewerbsrelevanz haben, insbesondere wenn sie standortspezifisch sind. Nach Aggregation auf Bundesland- oder nationale Ebene sind die Daten für Marktanalysen und strategische Planung nutzbar."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Vertrieb & Vertriebskanäle",
+                    "description": "Vertriebsstatistiken helfen, regionale Unterschiede zu identifizieren und Vertriebsstrategien anzupassen."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Daten fließen in die Ressourcenplanung und Zielvorgaben für Vertriebsteams ein."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "transportkosten_routenoptimierung",
+              "level": 4,
+              "name": "Transportkosten & Routenoptimierung",
+              "color": "#27ae60",
+              "details": {
+                "description": "Daten zu Transportkosten, Fahrtrouten, Auslastung von Transportmitteln und CO₂-Emissionen pro Transport. Enthält keine unternehmensspezifischen oder vertraulichen Logistikdaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Transportkosten und Routenoptimierung sind für Logistikanalysen und Nachhaltigkeitsberichte relevant. Öffentliche Daten können für Benchmarking und Best Practices genutzt werden."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Logistik & Supply Chain",
+                    "description": "Transportdaten helfen, Routen zu optimieren, Kosten zu senken und die CO₂-Bilanz zu verbessern."
+                  },
+                  {
+                    "method": "Nachhaltigkeit & Compliance",
+                    "description": "CO₂-Emissionen werden für Nachhaltigkeitsberichte und Klimaschutzmaßnahmen erfasst."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Transportdaten Bundesamt für Logistik",
+                    "url": "https://mcloud.de/transportdaten",
+                    "publisher": "Bundesamt für Logistik"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "digitalwirtschaft_ecommerce",
+      "level": 2,
+      "name": "Digitalwirtschaft & E-Commerce",
+      "color": "#d35400",
+      "description": "Online-Plattformen, digitale Marktplätze und E-Commerce-Unternehmen mit digitalen Geschäftsmodellen",
+      "children": [
+        {
+          "id": "online_plattformen",
+          "level": 3,
+          "name": "Online-Plattformen",
+          "color": "#e67e22",
+          "description": "Betrieb von digitalen Plattformen für Handel, Dienstleistungen und soziale Interaktion",
+          "children": [
+            {
+              "id": "nutzerstatistik_anonymisiert",
+              "level": 4,
+              "name": "Nutzerstatistik (anonymisiert)",
+              "color": "#d4a017",
+              "details": {
+                "description": "Aggregierte Nutzerdaten: Anzahl der aktiven Nutzer, Sitzungsdauer, Seitenaufrufe, Gerätetypen und geografische Verteilung (auf Landesebene). Daten sind vollständig anonymisiert und enthalten keine personenbezogenen Informationen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierte Nutzerstatistiken können für Marktanalysen und Trendforschung genutzt werden. Nach Aggregation und Entfernung aller personenbezogenen Merkmale sind die Daten für externe Analysen geeignet."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Marktforschung",
+                    "description": "Nutzerstatistiken helfen, Zielgruppen zu verstehen und Marketingstrategien anzupassen."
+                  },
+                  {
+                    "method": "Produktentwicklung",
+                    "description": "Daten fließen in die Entwicklung neuer Features und die Optimierung der Benutzererfahrung ein."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "transaktionsvolumen_ecommerce",
+              "level": 4,
+              "name": "Transaktionsvolumen E-Commerce",
+              "color": "#27ae60",
+              "details": {
+                "description": "Öffentliche Statistiken zum E-Commerce-Umsatz: Anzahl der Transaktionen, Umsatzvolumen, durchschnittlicher Warenkorbwert und Wachstumsraten nach Branche und Zeitraum. Daten stammen aus Marktforschungsberichten und öffentlichen Quellen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Transaktionsvolumen im E-Commerce sind öffentlich zugängliche Marktdaten, die für Analysen und Prognosen genutzt werden können. Keine unternehmensspezifischen oder vertraulichen Informationen enthalten."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Marktforschung",
+                    "description": "Transaktionsdaten helfen, Markttrends zu identifizieren und Wachstumschancen zu erkennen."
+                  },
+                  {
+                    "method": "Strategische Planung",
+                    "description": "Daten fließen in die langfristige Geschäftsplanung und Investitionsentscheidungen ein."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "E-Commerce-Umsatz Statistisches Bundesamt",
+                    "url": "https://www.destatis.de/dataset/ecommerce-umsatz",
+                    "publisher": "Statistisches Bundesamt"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bewertungen_rezensionen",
+              "level": 4,
+              "name": "Bewertungen & Rezensionen",
+              "color": "#c0392b",
+              "details": {
+                "description": "Kundenbewertungen und Produktrezensionen: Sternebewertungen, Textkommentare, Bewertungsdatum und ggf. Nutzer-ID (pseudonymisiert). Enthält subjektive Meinungen und kann Rückschlüsse auf individuelle Nutzer ziehen.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Bewertungen und Rezensionen enthalten oft personenbezogene Meinungen und können Rückschlüsse auf individuelle Nutzer ziehen. Auch aggregierte Bewertungen können vertrauliche Informationen über Produktqualität oder Kundenzufriedenheit enthalten. Nur hochgradig anonymisierte Statistiken sind für interne Analysen nutzbar."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Einzelfall / Vorgang"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Kundenservice",
+                    "description": "Bewertungen helfen, die Kundenzufriedenheit zu messen und Verbesserungspotenziale zu identifizieren."
+                  },
+                  {
+                    "method": "Produktentwicklung",
+                    "description": "Rezensionen liefern direktes Feedback zu Produkten und können für die Weiterentwicklung genutzt werden."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

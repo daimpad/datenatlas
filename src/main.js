@@ -24,6 +24,7 @@ const filterCount   = document.getElementById('filter-count');
 const onboarding    = document.getElementById('onboarding');
 const shareBtn      = document.getElementById('share-btn');
 const shareToast    = document.getElementById('share-toast');
+const logoEl        = document.getElementById('logo');
 const infoBtn       = document.getElementById('info-btn');
 const infoModal     = document.getElementById('info-modal');
 const imClose       = document.getElementById('im-close');
@@ -35,6 +36,7 @@ initControls({ canvas, renderer, onTileClick: handleTileClick, onHover: handleHo
 
 btnBack.addEventListener('click', navigateBack);
 btnHome.addEventListener('click', navigateHome);
+logoEl.addEventListener('click', navigateHome);
 
 let _retryFn = null;
 errorRetry.addEventListener('click', () => { hideError(); _retryFn?.(); });
@@ -224,7 +226,7 @@ let _mainTiles = [];
     showLoading(true);
     const sectors = await loadMain();
     _mainTiles = sectors;
-    pushLevel(sectors, { id: null, name: 'Übersicht', level: 0 });
+    pushLevel(sectors, { id: null, name: 'Alle Sektoren', level: 0 });
 
     if (_initialHash && _initialHash !== '#') {
       await restoreFromHash(_initialHash);

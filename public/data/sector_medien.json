@@ -1,0 +1,3344 @@
+{
+  "sectorId": "medien",
+  "children": [
+    {
+      "id": "oer",
+      "level": 2,
+      "name": "Öffentlich-rechtlicher Rundfunk",
+      "color": "#c0392b",
+      "description": "ARD, ZDF, Deutschlandradio und Landesrundfunkanstalten",
+      "children": [
+        {
+          "id": "reichweite-forschung",
+          "level": 3,
+          "name": "Reichweitenforschung",
+          "color": "#c0392b",
+          "description": "Nutzungs- und Reichweitenmessung für TV, Radio und Streaming",
+          "children": [
+            {
+              "id": "tv-reichweite",
+              "level": 4,
+              "name": "TV-Einschaltquoten",
+              "color": "#c0392b",
+              "details": {
+                "description": "Tägliche Einschaltquoten öffentlich-rechtlicher TV-Sender nach Sendung, Uhrzeit und Altersgruppe. Erhoben durch GfK-Panel (ca. 5.000 Haushalte) und hochgerechnet auf die Gesamtbevölkerung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Grundlegende Quartalszahlen werden von ARD/ZDF veröffentlicht. Detaillierte Sendungsdaten sind GfK-Lizenzdaten und nur für Marktpartner zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Zeitreihe (täglich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "Restriktiv (proprietär)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Paneldaten werden auf Gesamtbevölkerung hochgerechnet und nach Altersgruppen aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "hoerfunk-reichweite",
+              "level": 4,
+              "name": "Hörfunk-Reichweiten",
+              "color": "#c0392b",
+              "details": {
+                "description": "Wöchentliche Reichweiten öffentlich-rechtlicher Radiosender (ARD-Landesrundfunkanstalten, Deutschlandradio) aus der Media-Analyse. Angaben zu Tagesreichweite, Verweildauer und Hörerzahlen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Jahresberichte mit Reichweitendaten werden publiziert. Rohdaten der Media-Analyse sind lizenzpflichtig."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich/jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "Restriktiv (proprietär)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Media-Analyse-Daten werden nach Sender, Region und Zielgruppe zusammengefasst"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "mediathek-nutzung",
+              "level": 4,
+              "name": "Mediathek-Abrufzahlen",
+              "color": "#c0392b",
+              "details": {
+                "description": "Abrufzahlen der öffentlich-rechtlichen Mediatheken (ARD Mediathek, ZDF Mediathek) nach Sendung, Genre und Zeitraum. Enthält keine personenbezogenen Nutzerdaten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Top-Abruf-Listen werden regelmäßig publiziert. Vollständige Zeitreihendaten sind nicht öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Zeitreihe (täglich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "Restriktiv (proprietär)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Serverlogeintragungen werden zu anonymisierten Abrufstatistiken aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "podcast-nutzung-oer",
+              "level": 4,
+              "name": "Podcast-Nutzung ÖRR",
+              "color": "#c0392b",
+              "details": {
+                "description": "Downloadzahlen und Abonnentenzahlen der Podcasts von ARD, ZDF und Deutschlandradio nach Sendungsformat und Themenbereich. Indikator für die digitale Reichweitenstrategie des öffentlich-rechtlichen Rundfunks.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Jahresberichte enthalten Podcast-Abrufzahlen; vollständige Zeitreihen je Episode sind nicht öffentlich."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Zeitreihe (monatlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Hosting-Plattform-Metriken werden nach Sendungsformat und Monat zusammengefasst"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "news-app-nutzung",
+              "level": 4,
+              "name": "Nachrichten-App-Nutzung",
+              "color": "#c0392b",
+              "details": {
+                "description": "Aktive Nutzerzahlen der Nachrichten-Apps öffentlich-rechtlicher Sender (ARD-Hauptstadtstudio-App, tagesschau-App, ZDFheute) nach Plattform (iOS/Android) und Region.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Quartalszahlen werden in Berichten erwähnt; vollständige Nutzerdaten unterliegen Datenschutz."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (quartalsweise)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "App-Store-Daten und eigene Analysedaten werden aggregiert und ohne Personenbezug ausgewertet"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "medienkonvergenz-nutzung",
+              "level": 4,
+              "name": "Crossmediale Mediennutzung",
+              "color": "#c0392b",
+              "details": {
+                "description": "Überschneidungen und Ergänzungen linearer und non-linearer Nutzung öffentlich-rechtlicher Angebote aus der ARD/ZDF-Massenkommunikationsstudie. Erscheint alle fünf Jahre.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Massenkommunikationsstudien werden vollständig publiziert."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Repräsentative Bevölkerungsbefragung wird mit Gerätemessungen verknüpft und nach Altersgruppe ausgewertet"
+                  }
+                ],
+                "examples": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "rundfunk-finanzen",
+          "level": 3,
+          "name": "Finanzierung und Haushalt",
+          "color": "#c0392b",
+          "description": "Einnahmen, Ausgaben und Haushalte der öffentlich-rechtlichen Rundfunkanstalten",
+          "children": [
+            {
+              "id": "rundfunkbeitrag-einnahmen",
+              "level": 4,
+              "name": "Rundfunkbeitrag-Einnahmen",
+              "color": "#c0392b",
+              "details": {
+                "description": "Jährliche Einnahmen aus dem Rundfunkbeitrag nach Anstalt und Beitragskonten. Enthält Daten zu Befreiungen, Ermäßigungen und Beitragsschuldnern (anonymisiert). Grundlage für KEF-Berichte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "KEF-Berichte und Jahresabschlüsse der Rundfunkanstalten sind öffentlich zugänglich. Die Einnahmedaten werden transparent publiziert."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Finanzen & Steuern"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Beitragskonten werden nach Befreiungsgrund und Region aggregiert ohne Personenbezug"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "rundfunk-programmkosten",
+              "level": 4,
+              "name": "Programmkosten und Ausgaben",
+              "color": "#c0392b",
+              "details": {
+                "description": "Ausgabenstruktur der Rundfunkanstalten nach Programmsparten (Information, Unterhaltung, Sport), Personal, Technik und Verwaltung. Wird im Rahmen der KEF-Prüfung transparent gemacht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "KEF-Berichte und Jahresberichte enthalten detaillierte Ausgabendaten. Öffentlich zugänglich als gesetzliche Verpflichtung."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Finanzen & Steuern"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Ausgaben werden nach Spartensystematik des KEF klassifiziert und geprüft"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "rundfunk-werbeumsaetze",
+              "level": 4,
+              "name": "Werbeumsätze und Sponsoring",
+              "color": "#c0392b",
+              "details": {
+                "description": "Einnahmen aus Werbung und Sponsoring der kommerziellen Tochtergesellschaften (ARD Werbung SALES & SERVICES, ZDF Werbefernsehen). Öffentlich-rechtliche Sender haben begrenzte Werbezeiten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Jahresumsätze werden in Geschäftsberichten ausgewiesen. Detaillierte Buchungsdaten und Einzelverträge sind nicht öffentlich."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Finanzen & Steuern"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "Restriktiv (proprietär)"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Werbeumsätze werden nach Sender und Quartal aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "kef-bericht",
+              "level": 4,
+              "name": "KEF-Finanzbedarf-Bericht",
+              "color": "#c0392b",
+              "details": {
+                "description": "Berichte der Kommission zur Ermittlung des Finanzbedarfs der Rundfunkanstalten (KEF) zur Bedarfsanmeldung und Prüfung des Rundfunkbeitrags. Erscheint im Zweijahresturnus als Grundlage für die Beitragsperiode.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "KEF-Berichte sind vollständig öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Finanzen & Steuern"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Finanzbedarfsanmeldungen der Anstalten werden geprüft, bereinigt und nach Bedarfsarten klassifiziert"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "KEF-Berichte",
+                    "publisher": "Kommission zur Ermittlung des Finanzbedarfs der Rundfunkanstalten",
+                    "url": "https://www.kef-online.de"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "rundfunkbeitrag-befreiungen",
+              "level": 4,
+              "name": "Beitragsbefreiungen und -ermäßigungen",
+              "color": "#c0392b",
+              "details": {
+                "description": "Anzahl der Haushalte mit Befreiung oder Ermäßigung vom Rundfunkbeitrag nach Befreiungsgrund (ALG-II-Bezug, Schwerbehinderung, BAföG) und Bundesland. Aggregierte Daten des Beitragsservice.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Jahresbericht des Beitragsservice enthält Befreiungsstatistiken."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Finanzen & Steuern"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Person"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Beitragskonten mit Befreiungsstatus werden nach Befreiungsgrund und Region aggregiert ohne Personenbezug"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "rundfunk-pensionsrueckstellungen",
+              "level": 4,
+              "name": "Pensionsverpflichtungen und Rückstellungen",
+              "color": "#c0392b",
+              "details": {
+                "description": "Pensionsrückstellungen und Versorgungsverpflichtungen der öffentlich-rechtlichen Rundfunkanstalten gegenüber Beamten und versorgungsberechtigten Mitarbeitern. Strukturell bedeutsame Kostenposition in KEF-Berichten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Enthalten in Jahresabschlüssen und KEF-Berichten."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Finanzen & Steuern"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Aktuarielle Berechnung der Pensionsverpflichtungen wird nach Anstalt und Versorgungstyp ausgewiesen"
+                  }
+                ],
+                "examples": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "programm-statistik",
+          "level": 3,
+          "name": "Programmstruktur und -analyse",
+          "color": "#c0392b",
+          "description": "Strukturelle Analyse der Sendeinhalte und -zeiten nach Sparten und Themen",
+          "children": [
+            {
+              "id": "programmstruktur",
+              "level": 4,
+              "name": "Programmstruktur-Analyse",
+              "color": "#c0392b",
+              "details": {
+                "description": "Verteilung der Sendungen auf Programmsparten (Information, Kultur, Unterhaltung, Sport, Bildung) pro Sender und Zeitraum. Grundlage für Programmkritik und Legitimationsdebatte öffentlich-rechtlicher Medien.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Programmstrukturanalysen werden von Medienforschungsinstituten (z.B. Hans-Bredow-Institut) und den Anstalten selbst publiziert."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Ereignis"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Sendungen werden nach Spartenklassifikation kategorisiert und Sendezeiten zugeordnet"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "barrierefreiheit-rundfunk",
+              "level": 4,
+              "name": "Barrierefreiheit im Rundfunk",
+              "color": "#c0392b",
+              "details": {
+                "description": "Anteil untertitelter, audiodeskribierter und in Gebärdensprache übersetzter Sendungen je Sender. Relevant für die Umsetzung des Barrierefreiheitsstärkungsgesetzes im Rundfunk.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Berichte zur Barrierefreiheit werden als gesetzliche Verpflichtung publiziert."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Struktur"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Sendungen werden nach Art der Barrierefreiheitsmaßnahme kategorisiert und Quoten berechnet"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "nachrichtenthemen",
+              "level": 4,
+              "name": "Nachrichtenthemen-Analyse",
+              "color": "#c0392b",
+              "details": {
+                "description": "Thematische Analyse von Nachrichtensendungen (Tagesschau, heute) nach Themenkategorien und Regionen. Wird durch automatisierte Inhaltsanalyse und manuelle Codierung erfasst.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Medienforschungsstudien mit aggregierten Ergebnissen sind publiziert. Rohtranskripte und Vollcodierungen sind für Forschung zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Zeitreihe (täglich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "Restriktiv (proprietär)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Nachrichtenbeiträge werden nach Ressort, Thema und Sendungskontext codiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "diversitaet-berichterstattung",
+              "level": 4,
+              "name": "Diversität und Repräsentation im Programm",
+              "color": "#c0392b",
+              "details": {
+                "description": "Anteile von Frauen, Personen mit Migrationsgeschichte und weiteren Gruppen vor und hinter der Kamera in öffentlich-rechtlichen Sendungen. Aus Diversitätsberichten der Rundfunkanstalten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "ARD, ZDF und Landesanstalten publizieren Diversitätsberichte."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Person"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Manuelle und automatisierte Inhaltsanalyse ordnet Personen nach sichtbaren Diversitätsmerkmalen"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "jugendmedienschutz-kennzeichnungen",
+              "level": 4,
+              "name": "Jugendschutz-Kennzeichnungen",
+              "color": "#c0392b",
+              "details": {
+                "description": "Anzahl der Sendungen je Altersfreigabe-Kategorie (ohne Einschränkung, ab 6, ab 12, ab 16, ab 18) und Sendeplatz bei öffentlich-rechtlichen Sendern. Grundlage für Aufsicht durch Medienanstalten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Jahresberichte der Medienanstalten enthalten Kennzeichnungsstatistiken."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Ereignis"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Sendungen werden nach FSK/FSF-Kennzeichnung kategorisiert und nach Sendezeit ausgewertet"
+                  }
+                ],
+                "examples": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "printmedien",
+      "level": 2,
+      "name": "Printmedien und Verlage",
+      "color": "#d35400",
+      "description": "Tageszeitungen, Zeitschriften und Buchverlage",
+      "children": [
+        {
+          "id": "auflagenstatistik",
+          "level": 3,
+          "name": "Auflagen und Reichweiten",
+          "color": "#d35400",
+          "description": "Verbreitete Auflage und Leserreichweiten von Zeitungen und Zeitschriften",
+          "children": [
+            {
+              "id": "tageszeitungsauflage",
+              "level": 4,
+              "name": "Tageszeitungsauflagen (IVW)",
+              "color": "#d35400",
+              "details": {
+                "description": "Verbreitete Auflage aller IVW-geprüften Tageszeitungen nach Quartal. Enthält Daten zu verkaufter, verbreiteter und digitaler Auflage je Titel. Wichtiger Indikator für Pressekonzentration und lokale Informationsversorgung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "IVW veröffentlicht quartalsweise Auflagendaten für alle Mitgliedstitel kostenlos online."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Struktur"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (quartalsweise)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "Excel"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Auflagendaten werden von der IVW geprüft, aggregiert und nach Titelkategorien veröffentlicht"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "IVW Auflagenliste Tageszeitungen",
+                    "publisher": "Informationsgemeinschaft zur Feststellung der Verbreitung von Werbeträgern e.V.",
+                    "url": "https://www.ivw.de"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zeitschriftenauflage",
+              "level": 4,
+              "name": "Zeitschriftenauflagen und -reichweiten",
+              "color": "#d35400",
+              "details": {
+                "description": "IVW-Auflagendaten für Publikumszeitschriften und Fachpresse. Ergänzt durch Leserreichweiten aus der Media-Analyse (ma), die Mehrfachnutzung eines Exemplars berücksichtigt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "IVW-Quartalsdaten sind öffentlich. Ma-Reichweitendaten erfordern eine Lizenz."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Struktur"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (quartalsweise)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "IVW-Prüfung der gemeldeten Auflagenzahlen, Hochrechnung der Leserschaftsdaten aus Panel-Befragung"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "digital-abonnements",
+              "level": 4,
+              "name": "Digital-Abonnements und E-Paper",
+              "color": "#d35400",
+              "details": {
+                "description": "Anteil digitaler Abonnements (Apps, E-Paper, Web-Zugänge) am Gesamtabsatz von Zeitungen und Zeitschriften. Indikator für den digitalen Transformationsfortschritt der Verlagsbranche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "IVW erfasst seit 2014 digitale Auflagenbestandteile und publiziert diese mit den regulären Quartalsdaten."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Struktur"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (quartalsweise)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Digitale Abonnementzahlen werden nach Kanal (App, E-Paper, Web) und Preismodell aufgeschlüsselt"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "lokalzeitungen-konzentration",
+              "level": 4,
+              "name": "Lokale Presselandschaft und Konzentration",
+              "color": "#d35400",
+              "details": {
+                "description": "Anzahl der Zeitungstitel mit eigenständiger Lokalredaktion je Kreisgebiet sowie Eigentümerkonzentration im deutschen Zeitungsmarkt. Indikator für lokale Medienvielfalt. Erhoben durch BDZV und Medienforschung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "BDZV publiziert Titelstatistik; Konzentrationsberichte der Landesmedienanstalten sind öffentlich."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Struktur"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Zeitungstitel werden nach Verlagsgruppe, Eigenständigkeit der Redaktion und Verbreitungsgebiet kategorisiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "anzeigenblatt-auflage",
+              "level": 4,
+              "name": "Anzeigenblätter und Wochenzeitungen",
+              "color": "#d35400",
+              "details": {
+                "description": "Verbreitete Auflage kostenlos verteilter Anzeigenblätter und Wochenzeitungen (IVW-geprüft). Wichtig für die Reichweite lokaler Werbung und als Komplement zu Abonnementzeitungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "IVW-Quartalsausweis für Anzeigenblätter ist frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Struktur"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (quartalsweise)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Verteilnachweise der Verlage werden von IVW geprüft und nach Vertriebsart (Haushalt, Auslage) ausgewiesen"
+                  }
+                ],
+                "examples": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "pressewirtschaft",
+          "level": 3,
+          "name": "Wirtschaftsdaten der Presse",
+          "color": "#d35400",
+          "description": "Umsätze, Beschäftigung und Marktstruktur der Verlagsbranche",
+          "children": [
+            {
+              "id": "verlagsumsaetze",
+              "level": 4,
+              "name": "Verlagsumsätze und -struktur",
+              "color": "#d35400",
+              "details": {
+                "description": "Jahresumsätze der Verlage nach Sparte (Tagespresse, Zeitschriften, Buchverlag) aus der amtlichen Statistik. Beinhaltet Angaben zu Betriebsgrößenklassen und regionaler Verteilung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Statistisches Bundesamt veröffentlicht Umsatz- und Beschäftigungsdaten der Verlagsbranche im Rahmen der Unternehmensstrukturstatistik."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "Excel"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Umsatzdaten aus Unternehmensregister werden nach WZ-Klasse 58 (Verlagswesen) aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "beschaeftigung-verlagswesen",
+              "level": 4,
+              "name": "Beschäftigung im Verlagswesen",
+              "color": "#d35400",
+              "details": {
+                "description": "Sozialversicherungspflichtig Beschäftigte in Verlagen und Medienunternehmen nach Berufsgruppen (Redakteure, Volontäre, Techniker, Vertrieb). Daten der Bundesagentur für Arbeit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "BA-Beschäftigungsstatistiken sind über Statistik-Service der Bundesagentur für Arbeit frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Person"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "Excel"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Beschäftigungsdaten werden nach WZ-Code 58/60 und Berufsklassifikation aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "anzeigenmarkt",
+              "level": 4,
+              "name": "Anzeigenmarkt und Werbeausgaben",
+              "color": "#d35400",
+              "details": {
+                "description": "Brutto-Werbeausgaben in Print-Medien (Tageszeitungen, Zeitschriften, Anzeigenblätter) aus der Nielsen-Werbemarkterhebung. Zeigt den Strukturwandel der Werbeeinnahmen hin zu digitalen Medien.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Aggregierte Marktanteile und Jahresentwicklungen werden vom BVDA und ZAW publiziert. Detaillierte Buchungsdaten sind lizenzpflichtig."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "Restriktiv (proprietär)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Nielsen-Erhebung sammelt Buchungsdaten und aggregiert zu Bruttowerbeausgaben nach Mediagattung"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "pressefoerderung-bund-laender",
+              "level": 4,
+              "name": "Presseförderung und Zustellsubventionen",
+              "color": "#d35400",
+              "details": {
+                "description": "Staatliche Fördermaßnahmen für Presseverlage (Zustellkostenbeihilfen, MwSt-Befreiung, direkte Förderung) auf Bundes- und Länderebene. Politisch diskutiertes Instrument zur Sicherung lokaler Medienvielfalt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Bundesratsdrucksachen und Länder-Haushalte weisen Presseförderbeträge aus."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Finanzen & Steuern"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Haushaltsansätze für Presseförderung werden nach Förderinstrument und Empfängergruppe aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "journalismus-ausbildung",
+              "level": 4,
+              "name": "Journalismus-Ausbildung und Volontariate",
+              "color": "#d35400",
+              "details": {
+                "description": "Anzahl der Volontäre und Ausbildungsplätze in Redaktionen, Ausbildungszentren und Journalistenschulen. Indikator für Nachwuchsgewinnung in der Medienbranche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "DJV und ver.di publizieren Ausbildungsstatistiken. BA-Ausbildungsdaten sind öffentlich."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Person"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Ausbildungsverträge nach WZ 58/60 und Ausbildungsberuf werden zentral über die BA erfasst"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "mediastartups",
+              "level": 4,
+              "name": "Medien-Start-ups und Neugründungen",
+              "color": "#d35400",
+              "details": {
+                "description": "Neugründungen von Medienunternehmen (digitale Nachrichtenangebote, Newsletter-Verlage, Podcast-Produktionen) nach Bundesland und Geschäftsmodell. Aus Mediastart-up-Monitor und Gründungsstatistiken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Netzwerk Recherche und Mediastart-up-Monitor publizieren Erhebungen kostenfrei."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Struktur"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Neugründungen werden nach Geschäftsmodell, Finanzierungsform und redaktionellem Schwerpunkt klassifiziert"
+                  }
+                ],
+                "examples": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "pressekonzentration",
+          "level": 3,
+          "name": "Medienkonzentration und -vielfalt",
+          "color": "#d35400",
+          "description": "Eigentümerstrukturen, Marktkonzentration und Versorgungsdichte im Pressemarkt",
+          "children": [
+            {
+              "id": "verlagsgruppen-marktanteile",
+              "level": 4,
+              "name": "Marktanteile großer Verlagsgruppen",
+              "color": "#d35400",
+              "details": {
+                "description": "Auflagenmarktanteile der größten Verlagsgruppen (Axel Springer, Funke, Madsack, DuMont) im deutschen Zeitungsmarkt. Indikator für Pressekonzentration und horizontale Integration.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "KEK und BDZV publizieren Marktanteilsdaten."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Struktur"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "IVW-Auflagendaten werden Verlagsgruppen zugeordnet und Marktanteile berechnet"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "medienweisser-flecken",
+              "level": 4,
+              "name": "Lokalzeitungs-Versorgungslücken",
+              "color": "#d35400",
+              "details": {
+                "description": "Regionen ohne eigenständige lokale Tageszeitung (sogenannte 'weiße Flecken' der Medienversorgung) nach Kreisebene. Relevant für Medienpolitik und Förderentscheidungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Medienanstalten und Bertelsmann-Stiftung publizieren Versorgungsanalysen."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Struktur"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "JSON/XML/API"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Zeitungstitel werden Kreisgebieten zugeordnet; Kreise ohne eigenständige Lokalredaktion werden identifiziert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "rundfunklizenzierung",
+              "level": 4,
+              "name": "Rundfunk-Lizenzierungen und Zulassungen",
+              "color": "#d35400",
+              "details": {
+                "description": "Zugelassene private TV- und Radiosender je Bundesland mit Zulassungsgebiet, Veranstalter und Zulassungsstatus. Daten der Landesmedienanstalten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Landesmedienanstalten führen öffentliche Verzeichnisse zugelassener Rundfunkanbieter."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Struktur"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "Einzelobjekt"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "JSON/XML/API"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Zulassungsdaten werden nach Veranstalter, Lizenzgebiet und Sendeweg kategorisiert"
+                  }
+                ],
+                "examples": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kulturbetriebe",
+      "level": 2,
+      "name": "Kulturbetriebe und Kulturwirtschaft",
+      "color": "#8e44ad",
+      "description": "Museen, Theater, Kinos sowie Förderinstitutionen und Kulturwirtschaft",
+      "children": [
+        {
+          "id": "museen",
+          "level": 3,
+          "name": "Museen und Ausstellungen",
+          "color": "#8e44ad",
+          "description": "Besuchszahlen, Sammlungsbestände und Förderstrukturen von Museen",
+          "children": [
+            {
+              "id": "museumsbesucher",
+              "level": 4,
+              "name": "Museumsbesucher-Statistik",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Jährliche Besuchszahlen aller deutschen Museen, Gedenkstätten und Ausstellungshäuser aus der Museumsstatistik des Instituts für Museumsforschung. Aufgeschlüsselt nach Bundesland, Museumstyp und Eintrittspreisstruktur.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Institut für Museumsforschung (Staatliche Museen zu Berlin) publiziert jährlich vollständige Museumsstatistik als Open Data."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Eintrittszählung der Museen wird zentral gesammelt und nach Museumstyp und Bundesland aggregiert"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Statistische Gesamterhebung an den Museen der BRD",
+                    "publisher": "Institut für Museumsforschung, SMB",
+                    "url": "https://www.smb.museum/museen-einrichtungen/institut-fuer-museumsforschung/"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sammlungskataster",
+              "level": 4,
+              "name": "Sammlungsbestände und -register",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Erfassung der Objekte in öffentlichen Museumssammlungen (Deutsche Digitale Bibliothek, museum-digital). Enthält Metadaten zu Objekttyp, Entstehungsjahr, Provenienz und Digitalisierungsstatus.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Deutsche Digitale Bibliothek stellt Metadaten der Sammlungsobjekte unter offener Lizenz bereit. Museum-digital veröffentlicht Objektdaten unter CC-Lizenzen."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Objekt/Sache"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "Einzelobjekt"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "JSON/XML/API"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Standardisierung",
+                    "description": "Sammlungsdaten werden in Lido-XML-Standard überführt und via API bereitgestellt"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Deutsche Digitale Bibliothek — Museen",
+                    "publisher": "Deutsche Digitale Bibliothek",
+                    "url": "https://www.deutsche-digitale-bibliothek.de"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "museumsfoerderung",
+              "level": 4,
+              "name": "Museumsförderung öffentliche Hand",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Öffentliche Zuwendungen an staatliche und kommunale Museen aus Haushalten von Bund, Ländern und Kommunen. Grundlage für Kulturfinanzierungsberichte des Bundes.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Kulturfinanzbericht des Statistischen Bundesamts enthält öffentliche Kulturausgaben nach Kulturbereich und Gebietskörperschaft."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "Excel"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Haushaltsdaten nach Funktionenplan 0 werden nach Kulturbereich und Trägerebene aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "bibliotheksstatistik",
+              "level": 4,
+              "name": "Öffentliche Bibliotheken — Statistik",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Jahresstatistik öffentlicher Bibliotheken: Bestandseinheiten, Entleihungen, Neuerwerbungen, Besuche und digitale Nutzung (E-Medien, Onleihe). Erstellt durch die Deutsche Bibliotheksstatistik (DBS) des Hochschulbibliothekszentrums NRW.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Deutsche Bibliotheksstatistik (DBS) ist vollständig als Open Data zugänglich."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Ereignis"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "JSON/XML/API"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Bibliotheken melden Jahresstatistiken elektronisch; DBS aggregiert nach Trägerschaft, Gemeindegröße und Bundesland"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Deutsche Bibliotheksstatistik",
+                    "publisher": "Hochschulbibliothekszentrum NRW (hbz)",
+                    "url": "https://www.bibliotheksstatistik.de"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "denkmalschutz-objekte",
+              "level": 4,
+              "name": "Denkmalschutz-Verzeichnisse",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Denkmallisten der Bundesländer mit eingetragenen Bau-, Boden- und Gartendenkmalen inkl. Standort, Beschreibung und Schutzstatus. Basis für Bauplanung und Kulturerhalt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Mehrere Bundesländer publizieren Denkmallisten als Open Data (z.B. NRW, Bayern, Berlin)."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Objekt/Sache"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "Einzelobjekt"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "JSON/XML/API"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Denkmale werden nach Denkmalart, Epochen und Schutzstatus klassifiziert und georeferenziert"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Denkmalliste NRW",
+                    "publisher": "LVR-Amt für Denkmalpflege im Rheinland",
+                    "url": "https://www.denkmalliste.LVR.de"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "darstellende-kuenste",
+          "level": 3,
+          "name": "Darstellende und Tonende Künste",
+          "color": "#8e44ad",
+          "description": "Theater, Konzerte, Oper und Kino — Besuchszahlen und Strukturdaten",
+          "children": [
+            {
+              "id": "theater-statistik",
+              "level": 4,
+              "name": "Theaterstatistik",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Vorstellungen, Besuche, Platzauslastung und Finanzierung öffentlicher und privater Theater aus der Theaterstatistik des Deutschen Bühnenvereins. Umfasst Schauspiel, Oper, Tanz und Musiktheater.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Deutscher Bühnenverein publiziert jährlich die Bundestheaterstatistik mit detaillierten Kennzahlen."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Ereignis"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Spielplan- und Besuchsdaten aller Mitgliedtheater werden nach Sparte, Bundesland und Trägerschaft aggregiert"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Bundestheaterstatistik",
+                    "publisher": "Deutscher Bühnenverein",
+                    "url": "https://www.buehnenverein.de/de/publikationen-und-statistiken"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "konzert-statistik",
+              "level": 4,
+              "name": "Konzert- und Veranstaltungsstatistik",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Besucher- und Veranstaltungszahlen für Konzerte (klassisch und populär), Festivals und öffentliche Musikveranstaltungen. Quellen: Statistik des Deutschen Musikrats und Kulturfinanzberichte.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Aggregierte Jahresberichte werden publiziert. Einzelveranstaltungsdaten sind nicht zentral erfasst."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Ereignis"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Veranstaltungs- und Besuchsdaten aus Verbandsmeldungen werden zu nationalen Kennzahlen aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "kino-statistik",
+              "level": 4,
+              "name": "Kinostatistik und Besucherzahlen",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Kinobesuche, Leinwandanzahl, Umsätze und Marktanteile nach Filmproduktionsland aus der Kinostatistik der Filmförderungsanstalt (FFA). Umfasst Daten zu Arthouse-Kinos, Multiplexen und kommunalen Kinos.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "FFA publiziert jährlich umfangreiche Kinostatistiken kostenfrei auf ihrer Website."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Kassendaten der Kinos werden über das FFA-Meldesystem erfasst und zu Branchenstatistiken aggregiert"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Kinostatistik",
+                    "publisher": "Filmförderungsanstalt (FFA)",
+                    "url": "https://www.ffa.de/kinostatistik.html"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "festival-statistik",
+              "level": 4,
+              "name": "Kultur- und Musikfestivals",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Besucher-, Auftritts- und Umsatzzahlen von Kulturevents und Musikfestivals in Deutschland. Aus Eventim-/VDK-Statistiken und Marktforschungsberichten. Wichtig für Tourismuswirtschaft und Städtemarketing.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Verbands- und Branchenberichte enthalten aggregierte Festivalzahlen; Einzelveranstaltungen sind nicht zentral erfasst."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Ereignis"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Besucherzählungen der Veranstalter und Ticketing-Daten werden nach Eventtyp und Region aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "bibliotheken-veranstaltungen",
+              "level": 4,
+              "name": "Kulturveranstaltungen in Bibliotheken",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Anzahl und Art der Veranstaltungen (Lesungen, Workshops, Ausstellungen) in öffentlichen Bibliotheken nach Zielgruppe und Format. Teil der Deutschen Bibliotheksstatistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "DBS erfasst Veranstaltungsstatistiken als Pflichtfeld."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Ereignis"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Veranstaltungsmeldungen der Bibliotheken werden nach Format und Zielgruppe aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "welterbe-tourismus",
+              "level": 4,
+              "name": "UNESCO-Welterbe und Kulturtourismus",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Besucherzahlen und touristische Wertschöpfung an deutschen UNESCO-Welterbestätten (46 Stätten). Aus Berichten der Kultusministerkonferenz und DZT-Kulturtourismus-Studien.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "KMK und DZT publizieren Welterbe-Statistiken."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Besuchsmeldungen der Stätten werden zentral bei der KMK gesammelt und zu Jahresstatistiken zusammengefasst"
+                  }
+                ],
+                "examples": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "kulturfoerderung-bundes",
+          "level": 3,
+          "name": "Kulturförderung und -finanzierung",
+          "color": "#8e44ad",
+          "description": "Öffentliche und private Kulturförderung, Film-, Buch- und Musikförderung",
+          "children": [
+            {
+              "id": "bund-kulturfoerderung",
+              "level": 4,
+              "name": "Kulturausgaben der öffentlichen Hand",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Öffentliche Kulturausgaben von Bund, Ländern und Gemeinden nach Kulturbereich (Museen, Theater, Bibliotheken, Denkmalschutz, sonstige Kulturförderung). Aus dem Kulturfinanzbericht des Statistischen Bundesamts.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Kulturfinanzbericht erscheint zweijährlich und ist frei zugänglich. Datenbasis sind Haushaltsstatistiken der öffentlichen Hand."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "Excel"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Haushaltsdaten werden nach Funktionenplan-Position 0 (Allgemeine Dienste, Kultur) konsolidiert"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Kulturfinanzbericht",
+                    "publisher": "Statistisches Bundesamt / Statistische Ämter des Bundes und der Länder",
+                    "url": "https://www.destatis.de"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "filmfoerderung",
+              "level": 4,
+              "name": "Filmförderentscheidungen",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Förderentscheidungen der Filmförderungsanstalt (FFA), des DFFF und der Länder-Filmförderungen. Enthält Projektbezeichnung, Fördersumme, Produktionsland und Genre. Grundlage für Transparenz öffentlicher Filmfinanzierung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "FFA veröffentlicht Förderentscheidungen auf ihrer Website. DFFF-Daten werden vom BKM publiziert."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "Einzelfall"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Personenbezogene Daten der Antragsteller werden vor Veröffentlichung entfernt; nur juristische Personen und Projekttitel verbleiben"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Förderentscheidungen FFA",
+                    "publisher": "Filmförderungsanstalt (FFA)",
+                    "url": "https://www.ffa.de"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buchmarkt-statistik",
+              "level": 4,
+              "name": "Buchmarkt und Verlagsstatistik",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Umsätze, Titelproduktion und Verkaufszahlen des deutschen Buchmarkts nach Genre und Vertriebsweg aus den Jahrbüchern des Börsenvereins des Deutschen Buchhandels.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Branchenzahlen werden jährlich im Buch und Buchhandel in Zahlen publiziert. Einzeltiteldaten sind nicht öffentlich."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "Restriktiv (proprietär)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "GfK-Panel-Kaufdaten und Verlagsmeldungen werden zu Marktstatistiken aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "laender-kulturfoerderung",
+              "level": 4,
+              "name": "Kulturförderung der Bundesländer",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Ausgaben der Bundesländer für Kultureinrichtungen und -förderung nach Kulturbereich (Theater, Museen, Bibliotheken, Denkmalschutz, Sonstiges). Aus dem Kulturfinanzbericht der Statistischen Ämter.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Kulturfinanzbericht enthält Länderausgaben nach Kulturbereich."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Finanzen & Steuern"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "Excel"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Länderhaushalte werden nach Funktionenplan 0 nach Kulturbereich aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "kulturstiftungen",
+              "level": 4,
+              "name": "Kulturstiftungen und private Förderung",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Anzahl, Vermögen und Förderschwerpunkte kulturell aktiver Stiftungen in Deutschland. Aus dem Stiftungsverzeichnis des Bundesverbands Deutscher Stiftungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Stiftungsverzeichnis ist öffentlich zugänglich; Stiftungsstatistik wird jährlich publiziert."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Stiftungen werden nach Förderzweck, Vermögensklasse und Stiftungstyp kategorisiert"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Stiftungsstatistik",
+                    "publisher": "Bundesverband Deutscher Stiftungen",
+                    "url": "https://www.stiftungen.org"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "musikfoerderung",
+              "level": 4,
+              "name": "Musikförderung und Musikwirtschaft",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Öffentliche Förderung der Musikwirtschaft (Musikfonds, Initiative Musik, Fonds Darstellende Künste) sowie Umsatz- und Beschäftigungsdaten der deutschen Musikbranche (GVL/GEMA-Statistiken).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Initiative Musik und Musikfonds veröffentlichen Förderlisten. GEMA publiziert Jahresbericht."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Förderentscheidungen und GEMA-Ausschüttungsdaten werden nach Genre und Bundesland aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "kulturelles-erbe",
+          "level": 3,
+          "name": "Kulturelles Erbe und Archive",
+          "color": "#8e44ad",
+          "description": "Immaterielles Kulturerbe, Archive und digitale Kulturüberlieferung",
+          "children": [
+            {
+              "id": "immaterielles-kulturerbe",
+              "level": 4,
+              "name": "Immaterielles Kulturerbe (UNESCO)",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Verzeichnis des immateriellen Kulturerbes in Deutschland gemäß der UNESCO-Konvention: Bräuche, Darstellungskünste, Naturwissen, handwerkliche Techniken. Bundesweites Verzeichnis der KMK.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Nationales Verzeichnis des immateriellen Kulturerbes ist öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Objekt/Sache"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "Einzelobjekt"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "JSON/XML/API"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Kulturpraktiken werden nach UNESCO-Domänen kategorisiert und auf Bundeslandebene verortet"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Nationales Verzeichnis immaterielles Kulturerbe",
+                    "publisher": "Deutsche UNESCO-Kommission",
+                    "url": "https://www.unesco.de/kultur-und-natur/immaterielles-kulturerbe"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bundesarchiv-bestaende",
+              "level": 4,
+              "name": "Bundesarchiv-Bestände und -Zugänglichkeit",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Umfang und thematische Verteilung der Archivbestände im Bundesarchiv (Koblenz, Berlin-Lichterfelde, Freiburg) nach Bestandsgruppe und Erschließungsstatus. Indikator für historische Überlieferung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Bundesarchiv publiziert Bestandsübersichten und stellt Findmittel online bereit."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Objekt/Sache"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "JSON/XML/API"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Archivgut wird nach Bestandsgruppe, Entstehungszeitraum und Erschließungsgrad klassifiziert"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Bundesarchiv Bestandsübersicht",
+                    "publisher": "Bundesarchiv",
+                    "url": "https://www.bundesarchiv.de"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "digitalisierung-kulturerbe",
+              "level": 4,
+              "name": "Digitalisierungsgrad des Kulturerbes",
+              "color": "#8e44ad",
+              "details": {
+                "description": "Anteil digitalisierter Bestände in Museen, Archiven und Bibliotheken. Fortschrittsberichte zur Nationalen Strategie der Kulturgutdigitalisierung (Kompetenznetzwerk Deutsche Digitale Bibliothek).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "DDB und Bundesregierung publizieren Fortschrittsberichte zur Digitalisierungsstrategie."
+                },
+                "theme": {
+                  "code": "TH_09",
+                  "label": "Kultur & Freizeit"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Objekt/Sache"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Digitalisierungsquoten werden von Einrichtungen gemeldet und nach Bestandstyp und Bundesland aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "digitalmedien",
+      "level": 2,
+      "name": "Digitale Medien und Plattformen",
+      "color": "#2980b9",
+      "description": "Online-Nutzungsforschung, Soziale Medien und digitale Kreativwirtschaft",
+      "children": [
+        {
+          "id": "online-nutzung",
+          "level": 3,
+          "name": "Online-Nutzungsforschung",
+          "color": "#2980b9",
+          "description": "Verbreitung und Nutzung von Internet, sozialen Medien und Streaming-Diensten",
+          "children": [
+            {
+              "id": "internet-nutzungsstatistik",
+              "level": 4,
+              "name": "Internet-Nutzungsstatistik (D21)",
+              "color": "#2980b9",
+              "details": {
+                "description": "Jährliche Befragungsdaten zur Internetnutzung in Deutschland: Zugangsquoten, Gerätetypen, Aktivitäten und digitale Kompetenz nach Altersgruppe, Bildung und Region. Erhoben durch Initiative D21 und TNS Infratest.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "D21-Digitalindex wird jährlich als kostenloser Download bereitgestellt. Aggregierte Daten sind frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Repräsentative Bevölkerungsbefragung (n > 30.000), Hochrechnung auf Bevölkerungsebene"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "D21-Digitalindex",
+                    "publisher": "Initiative D21",
+                    "url": "https://initiatived21.de/d21-digital-index"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "social-media-verbreitung",
+              "level": 4,
+              "name": "Social-Media-Nutzung (aggregiert)",
+              "color": "#2980b9",
+              "details": {
+                "description": "Aggregierte Nutzungszahlen sozialer Netzwerke in Deutschland (monatlich aktive Nutzer nach Plattform, Altersgruppe und Nutzungsintensität). Quellen: Plattformselbstauskünfte und Befragungsstudien.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Plattformen veröffentlichen Nutzerzahlen für Werbepartner; unabhängige Verifikation ist eingeschränkt. Befragungsdaten sind offen zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (quartalsweise)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "Restriktiv (proprietär)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Plattformseitige Nutzerdaten werden nach Altersgruppe und Gerät aggregiert und mit Befragungsdaten validiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "streaming-nutzung",
+              "level": 4,
+              "name": "Streaming-Dienste und Video-on-Demand",
+              "color": "#2980b9",
+              "details": {
+                "description": "Abonnentenzahlen und Nutzungsintensität von Video- und Musik-Streaming-Diensten in Deutschland. Indikator für den Wandel der Mediennutzung weg von linearen Angeboten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — aggregiert verfügbar",
+                  "explanation": "Marktforschungsdaten (GfK, Goldmedia) sind lizenzpflichtig; einzelne Kennzahlen werden in Presseberichten und Jahresberichten publiziert."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (quartalsweise)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "Restriktiv (proprietär)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Panel-Messung und Plattformangaben werden zu Marktanteilen aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "podcast-markt",
+              "level": 4,
+              "name": "Podcast-Markt Deutschland",
+              "color": "#2980b9",
+              "details": {
+                "description": "Anzahl aktiver Podcasts, Episodenabrufe und Werbeeinnahmen im deutschen Podcast-Markt. Aus Podcastmarkt-Studien von Goldmedia, Bitkom und der ARD/ZDF-Onlinestudie.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Podcast-Marktberichte von Bitkom und ARD/ZDF sind kostenlos verfügbar."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Tracking-Daten der Podcast-Hoster und Befragungsdaten werden zu Marktüberblicken aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "desinformation-monitoring",
+              "level": 4,
+              "name": "Desinformations- und Faktenchek-Statistik",
+              "color": "#2980b9",
+              "details": {
+                "description": "Anzahl überprüfter Falschmeldungen und Faktenchecks durch deutsche Redaktionen (Correctiv, dpa Faktencheck, ARD Faktenfinder). Indikator für das Ausmaß von Desinformation im deutschen Informationsraum.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Faktenchecker publizieren ihre Ergebnisse offen; Datenbanken sind durchsuchbar."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Ereignis"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "JSON/XML/API"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Falschmeldungen werden nach Verbreitung, Thema und Herkunft klassifiziert und mit Quellennachweisen dokumentiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "nachrichtenvertrauen",
+              "level": 4,
+              "name": "Medienvertrauen und Nachrichtennutzung",
+              "color": "#2980b9",
+              "details": {
+                "description": "Vertrauen der Bevölkerung in verschiedene Medientypen (öffentlich-rechtlich, privat, online) aus dem Reuters Digital News Report und der Langzeitstudie Medienvertrauen der Uni Mainz.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Reuters Institute und Uni Mainz publizieren Studien als freie Downloads."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Repräsentative Bevölkerungsbefragung; Vertrauensindizes werden nach Medientyp und Demografika aggregiert"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Reuters Digital News Report",
+                    "publisher": "Reuters Institute for the Study of Journalism",
+                    "url": "https://reutersinstitute.politics.ox.ac.uk"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "kreativwirtschaft",
+          "level": 3,
+          "name": "Kreativwirtschaft und Kulturwirtschaft",
+          "color": "#2980b9",
+          "description": "Beschäftigung, Umsätze und Strukturdaten der Kultur- und Kreativwirtschaft",
+          "children": [
+            {
+              "id": "kreativwirtschaft-beschaeftigung",
+              "level": 4,
+              "name": "Beschäftigung in der Kreativwirtschaft",
+              "color": "#2980b9",
+              "details": {
+                "description": "Sozialversicherungspflichtig und geringfügig Beschäftigte sowie Selbständige in den elf Teilmärkten der Kultur- und Kreativwirtschaft (BMWi-Definition). Zeitreihe aus Monitoringberichten der Bundesregierung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Monitoring-Berichte zur Kultur- und Kreativwirtschaft werden vom BMWi/BMWK kostenlos publiziert."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Person"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "Excel"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Beschäftigungsdaten aus BA-Statistik und Mikrozensus werden nach KKW-Teilmarktdefinition aggregiert"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Monitoring zu ausgewählten wirtschaftlichen Eckdaten der KKW",
+                    "publisher": "Bundesministerium für Wirtschaft und Klimaschutz",
+                    "url": "https://www.bmwk.de/kreativwirtschaft"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "digitale-kulturwirtschaft",
+              "level": 4,
+              "name": "Digitale Kulturwirtschaft — Umsätze",
+              "color": "#2980b9",
+              "details": {
+                "description": "Umsätze digitaler Teilmärkte der Kreativwirtschaft (Softwareindustrie, Computerspiele, digitale Musik, E-Books) nach Unternehmensgrößenklasse. Aus dem Monitoring der Kultur- und Kreativwirtschaft.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Monitoring-Bericht enthält Umsatzangaben nach Teilmarkt und ist frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Umsatzdaten aus Unternehmensregister und Verbandsmeldungen werden nach Teilmarkt aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "computerspiele-markt",
+              "level": 4,
+              "name": "Computerspiele-Markt",
+              "color": "#2980b9",
+              "details": {
+                "description": "Umsätze, Nutzerzahlen und Marktanteile der deutschen Computerspielbranche nach Plattform (PC, Konsole, Mobile) und Genre. Daten des game — Verband der deutschen Games-Branche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "game-Jahresreport mit Kerndaten ist frei zugänglich. Detaillierte Marktstudien sind kostenpflichtig."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "Eingeschränkt offen"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "GfK-Handelspanel und Verbandsmeldungen werden zu Marktstatistiken zusammengeführt"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Jahresreport der deutschen Games-Branche",
+                    "publisher": "game — Verband der deutschen Games-Branche",
+                    "url": "https://www.game.de"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "werbebranche",
+              "level": 4,
+              "name": "Werbe- und Kommunikationsbranche",
+              "color": "#2980b9",
+              "details": {
+                "description": "Umsätze und Beschäftigte in Werbeagenturen, PR-Agenturen und der Kommunikationsbranche. Aus dem Monitoring der Kultur- und Kreativwirtschaft sowie ZAW-Jahrbüchern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "BMWK-Monitoring und ZAW-Jahrbuch sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Umsatz- und Beschäftigungsdaten nach WZ 73 (Werbung und Marktforschung) werden aus Unternehmensregister aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "musik-streaming-einnahmen",
+              "level": 4,
+              "name": "Musikstreaming und -verwertungseinnahmen",
+              "color": "#2980b9",
+              "details": {
+                "description": "Einnahmen aus Musikstreaming, Downloads und physischen Tonträgern im deutschen Musikmarkt. Aus den Jahreswirtschaftsberichten des Bundesverbands Musikindustrie (BVMI).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "BVMI publiziert jährlich Musikwirtschaftsbericht mit vollständigen Marktdaten."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "GEMA/GVL-Ausschüttungsdaten und Handelspanel-Verkaufszahlen werden nach Vertriebsweg aggregiert"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Musikwirtschaftsbericht",
+                    "publisher": "Bundesverband Musikindustrie (BVMI)",
+                    "url": "https://www.bvmi.de"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "esports-statistik",
+              "level": 4,
+              "name": "E-Sports-Markt und -Veranstaltungen",
+              "color": "#2980b9",
+              "details": {
+                "description": "Zuschauerzahlen, Preisgelder und Umsätze im deutschen E-Sports-Bereich. Aus E-Sports-Studien von game und Newzoo. Relevanter Teilmarkt der digitalen Kreativwirtschaft mit starkem Wachstum.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "game-Verband und Newzoo publizieren E-Sports-Marktberichte."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Verhalten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Turnierpreisgelder, Streaming-Zuschauerzahlen und Umfragedaten werden zu Marktberichten zusammengeführt"
+                  }
+                ],
+                "examples": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "plattformregulierung",
+          "level": 3,
+          "name": "Plattformregulierung und Medienmärkte",
+          "color": "#2980b9",
+          "description": "DSA-Compliance, Algorithmen-Transparenz und Regulierungsberichterstattung",
+          "children": [
+            {
+              "id": "dsa-transparenzberichte",
+              "level": 4,
+              "name": "DSA-Transparenzberichte großer Plattformen",
+              "color": "#2980b9",
+              "details": {
+                "description": "Halbjährliche Transparenzberichte sehr großer Online-Plattformen (VLOP) und Suchmaschinen nach Digital Services Act: Anzahl gemeldeter Inhalte, Moderationsentscheidungen, Beschwerden und aktive Nutzer in der EU.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "DSA verpflichtet VLOP zur Veröffentlichung von Transparenzberichten; Berichte sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Struktur"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "JSON/XML/API"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Moderationsdaten werden nach Inhaltskategorie, Entscheidungstyp und Ursprungsland klassifiziert"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "DSA Transparency Database",
+                    "publisher": "European Commission / DSA",
+                    "url": "https://transparency.dsa.ec.europa.eu"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bundesnetzagentur-medien",
+              "level": 4,
+              "name": "Medienmarkt-Monitoring der Regulierungsbehörden",
+              "color": "#2980b9",
+              "details": {
+                "description": "Marktbeobachtungsberichte der Landesmedienanstalten und KEK zu Medienkonzentration, Plattformmacht und Meinungsvielfalt im deutschen Rundfunk- und Mediensystem.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "KEK und Landesmedienanstalten publizieren Konzentrationsberichte als gesetzliche Aufgabe."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Struktur"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (jährlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Medienunternehmen werden nach Eigentümerstruktur und Reichweite analysiert; Konzentrationsindikatoren werden berechnet"
+                  }
+                ],
+                "examples": []
+              }
+            },
+            {
+              "id": "algorithmen-beschwerdestatistik",
+              "level": 4,
+              "name": "Plattform-Beschwerdeverfahren und -entscheidungen",
+              "color": "#2980b9",
+              "details": {
+                "description": "Gemeldete und bearbeitete Beschwerden gegen Moderationsentscheidungen von Plattformen (Löschungen, Sperrungen) nach Artikel 17 DSA. Daten aus Transparenzberichten und dem DSA-Transparenzregister.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — offen verfügbar",
+                  "explanation": "Transparenzregister und Plattformberichte sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Kommunikation & Medien"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Ereignis"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Zeitreihe (monatlich)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "JSON/XML/API"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "Offen (dl-de/by-2-0)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Beschwerdemeldungen werden nach Inhaltskategorie, Plattform und Entscheidungsausgang aggregiert"
+                  }
+                ],
+                "examples": []
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

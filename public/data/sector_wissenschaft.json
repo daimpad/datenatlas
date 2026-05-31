@@ -1,0 +1,2559 @@
+{
+  "sectorId": "wissenschaft",
+  "children": [
+    {
+      "id": "universitaet",
+      "level": 2,
+      "name": "Universität",
+      "color": "#8e44ad",
+      "description": "Staatliche Hochschule mit Forschungs- und Lehrauftrag, eigener Verwaltung und Drittmittelprojekten",
+      "children": [
+        {
+          "id": "studierenden_verwaltung",
+          "level": 3,
+          "name": "Studierende verwalten",
+          "color": "#9b59b6",
+          "description": "Immatrikulation, Prüfungsverwaltung und akademische Dokumentation der Studierenden",
+          "children": [
+            {
+              "id": "studierendenregister",
+              "level": 4,
+              "name": "Studierendenregister",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Vollständige Immatrikulationsdaten: Name, Matrikelnummer, Studiengang, Semester, Prüfungsleistungen, Anschrift, Kontakt, Immatrikulationsstatus und ggf. Förderdaten (BAföG-Bescheinigung). Identifiziert Studierende eindeutig über die gesamte Studienzeit.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Individuelle Studiendaten mit Prüfungsergebnissen und Förderstatus sind nicht veröffentlichbar. Aggregierte Hochschulstatistiken (Studierende nach Fachbereich, Abschlussquoten) sind über Destatis und das Statistisches Bundesamt als Open Data abrufbar."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Jugend"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Einzelfallbezogene Daten"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Verwaltung & Compliance",
+                    "description": "Stammdaten für alle Verwaltungsprozesse: Einschreibung, Rückmeldung, Exmatrikulation, Bescheinigungen."
+                  },
+                  {
+                    "method": "Verwaltung & Compliance",
+                    "description": "Verknüpfung mit Prüfungsanmeldungen, Terminplanung und Notenverwaltung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pruefungsleistungen",
+              "level": 4,
+              "name": "Prüfungsleistungen",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Notendatenbank aller erbrachten Prüfungsleistungen: Matrikelnummer, Modul, Note, Datum, Prüfer:in, Versuchsnummer, Bestanden/Nicht-bestanden. Aggregiert liefern diese Daten wichtige Qualitätsindikatoren für Studiengänge.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Prüfungsstatistiken (Bestehensquoten, Notenverteilung nach Modul) können veröffentlicht werden, wenn keine Kohortengröße unter 10 Personen ausgewiesen wird. Wichtige Qualitätsindikatoren für Akkreditierungen und Studienreformen."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Jugend"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Bestehensquoten und Notenverteilungen sind Kernindikatoren für Studiengangsreviews und Akkreditierungsverfahren."
+                  },
+                  {
+                    "method": "Bildung & Qualifizierung",
+                    "description": "Längsschnittdaten zu Studienerfolg liefern wichtige Erkenntnisse zur Wirksamkeit verschiedener Lehrformate."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "absolventenverbleib",
+              "level": 4,
+              "name": "Absolventenverbleib",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Ergebnisse aus Absolventenverbleibstudien: Berufseinstieg, Gehalt nach Fachbereich und Abschluss, Übergang in Promotion oder Weiterbildung. Daten werden aggregiert und anonymisiert erhoben, sodass kein Personenbezug nach der Aufbereitung verbleibt.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Absolventenverbleibstudien liefern wertvolle aggregierte Informationen zur Arbeitsmarktintegration von Hochschulabsolvent:innen. Nach vollständiger Anonymisierung sind die Ergebnisse als Open Data veröffentlichbar und unterstützen die Hochschulberichterstattung und Studienberatung."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Jugend"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Standardisierte Befragungen von Absolvent:innen 1–3 Jahre nach Studienabschluss zu Berufseinstieg, Gehalt und Weiterbeschäftigung."
+                  },
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Aggregierte Verbleibsdaten fließen in Akkreditierungsberichte und Qualitätssicherung der Studiengänge ein."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lehrveranstaltungsstatistik",
+              "level": 4,
+              "name": "Lehrveranstaltungsstatistik",
+              "color": "#d4a017",
+              "details": {
+                "description": "Statistiken zu Lehrveranstaltungen nach Typ (Vorlesung, Seminar, Übung), Belegung und Raumauslastung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Lehrstatistik Destatis",
+                    "url": "https://www.destatis.de/dataset/hochschulstatistik",
+                    "publisher": "Destatis"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "studienabbrecher",
+              "level": 4,
+              "name": "Studienabbruch- & Wechselquoten",
+              "color": "#27ae60",
+              "details": {
+                "description": "Studienabbruch- und Studienwechselquoten nach Studienfach, Hochschule und Hochschultyp.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "DZHW Studienabbruchstudie",
+                    "url": "https://mcloud.de/studienabbruch-dzhw",
+                    "publisher": "Deutsches Zentrum für Hochschul- und Wissenschaftsforschung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "internationale-studierende",
+              "level": 4,
+              "name": "Internationale Studierende & ERASMUS",
+              "color": "#27ae60",
+              "details": {
+                "description": "Herkunftsländer, Studienanteile und Mobilitätsdaten internationaler Studierender inkl. ERASMUS-Statistiken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "ERASMUS-Statistik DAAD",
+                    "url": "https://mcloud.de/erasmus-statistik-daad",
+                    "publisher": "Deutscher Akademischer Austauschdienst"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "forschungsprojekte",
+          "level": 3,
+          "name": "Forschung betreiben",
+          "color": "#9b59b6",
+          "description": "Drittmittelprojekte, Labordaten, Studiendurchführung und Publikationsverwaltung",
+          "children": [
+            {
+              "id": "probanden_daten",
+              "level": 4,
+              "name": "Probandendaten",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Daten aus wissenschaftlichen Studien mit menschlichen Probanden: Einwilligungsformulare, Messungen (physiologische, psychologische, behaviorale Parameter), Pseudonym-Code und Beobachtungsprotokolle. Verarbeitung nach Ethikvotum und Informed Consent.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Biomedizinische Rohdaten sind auch nach Pseudonymisierung durch Merkmalskombinationen re-identifizierbar. Veröffentlichung nur als synthetische Datensätze oder über akkreditierte Forschungsdatenzentren (GESIS, ZA) nach Disclosure-Risk-Assessment. Open Research Data ist das Ziel — aber mit hohen Schutzhürden."
+                },
+                "theme": {
+                  "code": "TH_10",
+                  "label": "Wissenschaft & Forschung"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Einzelfallbezogene Daten"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Messdaten entstehen im Studienverlauf und werden nach Abschluss für Publikationen und Metaanalysen aufbereitet."
+                  },
+                  {
+                    "method": "Verwaltung & Compliance",
+                    "description": "Jeder Verwendungsschritt erfordert Ethikvotum, DSFA und Einwilligung der Probanden."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "forschungsrohdaten",
+              "level": 4,
+              "name": "Forschungsrohdaten",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Messdaten und Laborwerte aus experimentellen Forschungsprojekten: Sensormessungen, Laborergebnisse, Simulationsdaten und Beobachtungsreihen. Aufbereitung und Bereitstellung erfolgen nach den FAIR-Prinzipien (Findable, Accessible, Interoperable, Reusable) nach Anonymisierung personenbeziehbarer Parameter.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Messdaten und Laborwerte können nach FAIR-konformer Aufbereitung und Anonymisierung etwaiger personenbezogener Merkmale als Open Research Data veröffentlicht werden. Forschungsförderer wie DFG und EU verlangen zunehmend die Bereitstellung von Rohdaten in Repositorien wie Zenodo oder Dryad."
+                },
+                "theme": {
+                  "code": "TH_10",
+                  "label": "Wissenschaft & Forschung"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Messdaten / Sensordaten"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF / Dokument"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "CC BY-SA 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Systematische Messung und Protokollierung von Experimenten gemäß Versuchsplan und Ethikvotum."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Aufbereitung der Rohdaten mit umfassenden Metadaten und Ablage in zertifizierten Repositorien für Nachnutzbarkeit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "publikationsdaten",
+              "level": 4,
+              "name": "Publikationsdaten",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Metadaten von Forschungspublikationen: Titel, Autor:innen, DOI, Zeitschrift, Erscheinungsjahr, Abstract, Fördermittelgeber und Fachgebietskategorisierung. Publikationsmetadaten sind vollständig offen und bilden die Grundlage für Bibliometrie und Forschungsevaluation.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Metadaten von Forschungspublikationen enthalten keine schützenswerten Informationen und sind vollständig offen zugänglich. Plattformen wie Crossref, OpenAlex und ORCID stellen diese Daten als Open Data bereit und unterstützen so die Transparenz wissenschaftlicher Produktion."
+                },
+                "theme": {
+                  "code": "TH_10",
+                  "label": "Wissenschaft & Forschung"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Dokumente & Texte"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 / Public Domain"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Publikationsmetadaten werden für institutionelle Forschungsberichte, Rankings und Drittmittelberichte genutzt."
+                  },
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Systematische Auswertung von Zitationsnetzwerken und Publikationsoutput für Forschungsevaluation und Strategieentwicklung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "drittmittelstatistik",
+              "level": 4,
+              "name": "Drittmittelstatistik & Förderstruktur",
+              "color": "#27ae60",
+              "details": {
+                "description": "Drittmitteleinnahmen nach Hochschule, Fächergruppe und Geldgeber (DFG, EU, Bund, Wirtschaft).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Drittmittelstatistik Destatis",
+                    "url": "https://www.destatis.de/dataset/drittmittel-hochschulen",
+                    "publisher": "Destatis"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "patentanmeldungen-hs",
+              "level": 4,
+              "name": "Hochschulpatente & Technologietransfer",
+              "color": "#27ae60",
+              "details": {
+                "description": "Patentanmeldungen, erteilte Patente und Lizenzierungen aus der Hochschulforschung nach Technologiefeld.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Hochschulpatente DPMA",
+                    "url": "https://mcloud.de/hochschulpatente-dpma",
+                    "publisher": "Deutsches Patent- und Markenamt"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "forschungsfoerderung",
+              "level": 4,
+              "name": "Forschungsförderstatistik (DFG/BMBF/EU)",
+              "color": "#27ae60",
+              "details": {
+                "description": "Bewilligte Förderprojekte und -volumen von DFG, BMBF und EU-Rahmenprogrammen nach Hochschule und Fach.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "DFG-Förderatlas",
+                    "url": "https://www.dfg.de/foerderatlas",
+                    "publisher": "Deutsche Forschungsgemeinschaft"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "wissenstransfer-innovation",
+          "level": 3,
+          "name": "Wissenstransfer & Innovation",
+          "color": "#1abc9c",
+          "children": [
+            {
+              "id": "spinoff-statistik",
+              "level": 4,
+              "name": "Ausgründungen & Spin-offs",
+              "color": "#27ae60",
+              "details": {
+                "description": "Statistiken zu Unternehmensgründungen aus Hochschulen: Anzahl, Branchen, Überlebensquoten, Beschäftigung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Spinoff-Statistik Stifterverband",
+                    "url": "https://mcloud.de/spinoff-statistik",
+                    "publisher": "Stifterverband für die Deutsche Wissenschaft"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "technologietransfer-lizenzen",
+              "level": 4,
+              "name": "Technologietransfer & Lizenzeinnahmen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Einnahmen aus Patentlizenzen, Know-how-Transfer und Forschungsaufträgen der Wirtschaft.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Technologietransfer-Bericht",
+                    "url": "https://mcloud.de/technologietransfer-hochschulen",
+                    "publisher": "Hochschulrektorenkonferenz"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hs-wirtschaft-kooperation",
+              "level": 4,
+              "name": "Hochschul-Wirtschafts-Kooperationen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Verzeichnis und Statistik kooperativer Forschungsprojekte, Auftragsprojekte und Verbundforschung mit Unternehmen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_03",
+                  "label": "Verzeichnis & Register"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Kooperationsbarometer Stifterverband",
+                    "url": "https://mcloud.de/kooperationsbarometer-hochschule-wirtschaft",
+                    "publisher": "Stifterverband"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "forschungsinstitut",
+      "level": 2,
+      "name": "Forschungsinstitut",
+      "color": "#8e44ad",
+      "description": "Außeruniversitäre Forschungseinrichtung (z.B. Fraunhofer, Helmholtz) mit anwendungsorientierter Forschung",
+      "children": [
+        {
+          "id": "datenerhebung",
+          "level": 3,
+          "name": "Feldforschung",
+          "color": "#9b59b6",
+          "description": "Erhebung von Beobachtungs-, Mess- und Umfragedaten im Feld",
+          "children": [
+            {
+              "id": "umfragedaten",
+              "level": 4,
+              "name": "Umfragedaten",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Rohdaten aus strukturierten Bevölkerungsbefragungen: Antworten zu Meinungen, Verhaltensweisen, sozialen Merkmalen — je nach Studie pseudonym oder anonym erhoben. Basis für sozialwissenschaftliche Grundlagenforschung (ALLBUS, SOEP, Eurobarometer).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierte Scientific-Use-Files sind Paradebeispiele erfolgreichen Open Research Data (GESIS, FDZ). Nach Disclosure-Risk-Assessment und Anonymisierung seltener Merkmalsausprägungen können Umfragedatensätze als Open Data bereitgestellt werden — mit enormem Sekundärnutzungswert."
+                },
+                "theme": {
+                  "code": "TH_10",
+                  "label": "Wissenschaft & Forschung"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Umfragedaten entstehen durch standardisierte Datenerhebungsverfahren und repräsentative Stichprobenplanung."
+                  },
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Archivierung in Forschungsdatenzentren (GESIS, FDZ) für weltweite Sekundärnutzung durch Wissenschaft."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "geodaten_messung",
+              "level": 4,
+              "name": "Geodaten Messung",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Umweltmessdaten aus Felderhebungen: Klimadaten, Bodenproben, Gewässerqualität, Luftschadstoffmessungen und Biodiversitätserfassungen mit räumlicher Georeferenzierung. Erhebungen erfolgen nach standardisierten Protokollen für internationale Vergleichbarkeit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Umweltmessdaten im Feld enthalten in der Regel keinen Personenbezug und können unmittelbar als Open Data bereitgestellt werden. Internationale Initiativen wie GBIF, Copernicus und OpenStreetMap zeigen, wie Geodaten vollständig offen geteilt werden können und enormen gesellschaftlichen Mehrwert schaffen."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Umwelt & Klima"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Messdaten / Sensordaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal / Kommunal"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_06",
+                    "label": "Shapefile / Geodaten"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 / Public Domain"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Systematische Messung von Umweltparametern an definierten Standorten mit kalibrierten Messgeräten und GPS-Referenzierung."
+                  },
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Integration in nationale und europäische Geodateninfrastrukturen (INSPIRE, GDI-DE) zur überregionalen Nachnutzung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "interviewprotokolle",
+              "level": 4,
+              "name": "Interviewprotokolle",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Qualitative Rohdaten aus leitfadengestützten Interviews und Fokusgruppen: Transkripte, Feldnotizen, Audioaufnahmen und Kodierschemata. Interviewprotokolle enthalten häufig direkt identifizierende Informationen wie Namen, Ortsangaben und persönliche Lebensumstände.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Qualitative Interviewdaten enthalten auch nach Pseudonymisierung häufig re-identifizierbare Informationen durch spezifische Lebensumstände, Ortsangaben oder seltene Merkmalskombinationen. Eine Veröffentlichung der Rohdaten ist in der Regel nicht möglich; nur Metadaten und aggregierte Analyseergebnisse können geteilt werden."
+                },
+                "theme": {
+                  "code": "TH_10",
+                  "label": "Wissenschaft & Forschung"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Einzelfallbezogene Daten"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF / Dokument"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Durchführung und Transkription leitfadengestützter Interviews gemäß Ethikvotum und informierter Einwilligung der Interviewpartner:innen."
+                  },
+                  {
+                    "method": "Verwaltung & Compliance",
+                    "description": "Langzeitspeicherung unter strengen Zugriffskontrollen; nur aggregierte Analyseergebnisse und Methodenberichte werden publiziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "paneldaten-metadaten",
+              "level": 4,
+              "name": "Panel- & Längsschnittstudien",
+              "color": "#d4a017",
+              "details": {
+                "description": "Metadaten zu Panel- und Kohortenstudien: Stichproben, Erhebungswellen, Schwundquoten, Fragebogeninhalte.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_08",
+                  "label": "Metadaten"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_06",
+                    "label": "RDF / Linked Data"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "SOEP-Panelstudie",
+                    "url": "https://www.diw.de/soep",
+                    "publisher": "DIW Berlin / SOEP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "experimentaldaten",
+              "level": 4,
+              "name": "Experimentaldaten & Labordokumentation",
+              "color": "#d4a017",
+              "details": {
+                "description": "Strukturierte Dokumentation von Labordaten: Versuchsaufbau, Messwerte, Kalibrierungsparameter, Fehlercodes.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Einzelfallbezogene Daten"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Forschungsdaten Physik",
+                    "url": "https://www.zenodo.org/communities/physics",
+                    "publisher": "CERN Zenodo"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "registerforschung",
+              "level": 4,
+              "name": "Registerbasierte Forschungsdaten",
+              "color": "#c0392b",
+              "details": {
+                "description": "Verknüpfte Verwaltungsdaten aus Renten-, Kranken- und Bildungsregistern für zugangsbeschränkte Forschungsnutzung.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nicht publizierbar",
+                  "explanation": "Daten unterliegen Schutzregelungen und sind nicht für die Öffentlichkeit bestimmt."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Einzelfallbezogene Daten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Linked Employer-Employee Data (LIAB)",
+                    "url": "https://fdz.iab.de/de/FDZ_Individual_Data/LIAB.aspx",
+                    "publisher": "IAB-Forschungsdatenzentrum"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "statistisches_amt",
+      "level": 2,
+      "name": "Statistisches Amt",
+      "color": "#6c3483",
+      "description": "Amtliche Statistikbehörde für Bevölkerungs-, Wirtschafts- und Sozialstatistiken auf Landes- und Bundesebene",
+      "children": [
+        {
+          "id": "amtliche_statistiken",
+          "level": 3,
+          "name": "Amtliche Statistikproduktion",
+          "color": "#7d3c98",
+          "description": "Produktion und Veröffentlichung amtlicher Statistiken zu Bevölkerung, Wirtschaft und sozialen Verhältnissen",
+          "children": [
+            {
+              "id": "mikrozensus_daten",
+              "level": 4,
+              "name": "Mikrozensus-Daten",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Scientific-Use-Files des Mikrozensus: stark anonymisierte Einzelfalldaten zu Haushalt, Erwerb, Bildung und Einkommen auf Basis der 1-Prozent-Stichprobe der Bevölkerung. Freigabe erfolgt nach umfassendem Disclosure-Risk-Assessment durch das Statistische Bundesamt.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Mikrozensus-Scientific-Use-Files sind nach Anonymisierung und Disclosure-Risk-Assessment für wissenschaftliche Zwecke zugänglich, jedoch nur nach Vertragsabschluss mit dem Statistischen Bundesamt. Sie sind Paradebeispiele für den kontrollierten Zugang zu hochwertigen Einzelfalldaten im deutschen Datensystem."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Bevölkerung & Gesellschaft"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Einzelfallbezogene Daten"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "CC BY-SA 4.0"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Gesetzlich vorgeschriebene Stichprobenerhebung bei 1% der deutschen Bevölkerung zu soziodemografischen Merkmalen."
+                  },
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Systematische Prüfung und Anonymisierung der Einzelfalldaten vor Freigabe als Scientific-Use-File für die Wissenschaft."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wirtschaftsstatistiken",
+              "level": 4,
+              "name": "Wirtschaftsstatistiken",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Amtliche Wirtschaftsstatistiken: Bruttoinlandsprodukt, Verbraucherpreisindizes, Außenhandelsdaten, Unternehmensregister-Aggregate und Konjunkturindikatoren. Diese Kerndaten der volkswirtschaftlichen Gesamtrechnung werden vollständig offen bereitgestellt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Wirtschaftsstatistiken wie BIP, Preisindizes und Außenhandelsdaten sind vollständig offen und werden vom Statistischen Bundesamt (Destatis) sowie Eurostat kostenlos bereitgestellt. Als Kerndaten für Wirtschaftspolitik und Forschung haben sie größten gesellschaftlichen Nutzen und keinerlei Schutzwürdigkeit."
+                },
+                "theme": {
+                  "code": "TH_05",
+                  "label": "Wirtschaft & Finanzen"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 / Public Domain"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Systematische Berechnung wirtschaftlicher Kennzahlen nach international harmonisierten Standards (ESVG, SNA)."
+                  },
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Regelmäßige Veröffentlichung aktueller Wirtschaftsdaten für Politik, Wirtschaft und Öffentlichkeit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "regionalatlanten",
+              "level": 4,
+              "name": "Regionalatlanten",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Geodaten-basierte Regionalkarten aus amtlicher Statistik: kleinräumige Indikatoren zu Demografie, Wirtschaft und Infrastruktur auf Gemeinde- und Kreisebene. Die Regionalatlanten der Statistischen Ämter verbinden statistische Daten mit geographischer Visualisierung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Regionalatlanten und kleinräumige Statistiken auf Gemeinde- und Kreisebene enthalten aggregierte Daten ohne Personenbezug und sind vollständig offen zugänglich. Sie sind wichtige Werkzeuge für Raumplanung, Kommunalpolitik und Regionalforschung."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Bevölkerung & Gesellschaft"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Geodaten / Karten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal / Kommunal"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_06",
+                    "label": "Shapefile / Geodaten"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 / Public Domain"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Aggregierung amtlicher Statistiken auf Gemeinde- und Kreisebene mit Georeferenzierung für kartographische Darstellung."
+                  },
+                  {
+                    "method": "Stadtplanung & Entwicklung",
+                    "description": "Regionalatlanten dienen als Datengrundlage für Flächennutzungspläne, Infrastrukturplanung und Fördermittelvergabe."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "preisstatistiken",
+              "level": 4,
+              "name": "Preisstatistiken & Inflationsmessung",
+              "color": "#27ae60",
+              "details": {
+                "description": "Verbraucherpreisindex (VPI), Erzeugerpreisindex, Baupreisindex und Importpreise aus amtlicher Statistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Finanzen & Haushalt"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Zeitreihendaten"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "VPI-Zeitreihe Destatis",
+                    "url": "https://www.destatis.de/dataset/verbraucherpreisindex",
+                    "publisher": "Destatis"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "umwelt-oekonomische-gesamtrechnung",
+              "level": 4,
+              "name": "Umwelt-ökonomische Gesamtrechnung",
+              "color": "#27ae60",
+              "details": {
+                "description": "Satellitenkonten zur Umwelt-ökonomischen Gesamtrechnung (UGR): Energie-, Emissionen- und Materialflusskonten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_02",
+                  "label": "Umwelt & Klima"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "UGR Destatis",
+                    "url": "https://www.destatis.de/dataset/umweltoekonomische-gesamtrechnung",
+                    "publisher": "Destatis"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bildungsstatistik-bund",
+              "level": 4,
+              "name": "Bildungsstatistik des Bundes",
+              "color": "#27ae60",
+              "details": {
+                "description": "Bundesweite Bildungsstatistiken: Schüler-, Studierenden- und Absolventenzahlen, Bildungsausgaben, PISA-Ergebnisse.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Bildungsbericht Deutschland",
+                    "url": "https://mcloud.de/bildungsbericht-bundesministerium",
+                    "publisher": "Autorengruppe Bildungsberichterstattung"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "zensus_daten",
+          "level": 3,
+          "name": "Zensus & Volkszählung",
+          "color": "#7d3c98",
+          "description": "Daten aus dem Zensus zur Bevölkerung, Gebäude- und Wohnungsbestand sowie Erwerbstätigkeit",
+          "children": [
+            {
+              "id": "volkszaehlung_aggregate",
+              "level": 4,
+              "name": "Volkszählung Aggregate",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Aggregierte Zensus-Ergebnisse auf Gemeindeebene: Bevölkerungszahl, Altersstruktur, Staatsangehörigkeit, Religionszugehörigkeit und Haushaltsgröße nach Anonymisierung. Grundlage für Bevölkerungsfortschreibung, kommunale Planungen und Finanzmittelzuweisungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Zensus-Daten auf Gemeindeebene erfordern eine sorgfältige Anonymisierung kleiner Zellen (Mindestfallzahlen), bevor sie veröffentlicht werden können. Nach diesem Schritt sind sie vollständig offen und unverzichtbare Grundlage für Kommunalstatistik und Bedarfsplanung."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Bevölkerung & Gesellschaft"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal / Kommunal"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Zusammenführung von Melderegistern, Bundesagentur-Daten und Stichprobenerhebungen zur vollständigen Bevölkerungserfassung."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Zensus-Aggregate sind Pflichtdatengrundlage für Finanzausgleich, Schulbedarfsplanung und kommunale Infrastrukturentscheidungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gebaeude_wohnungszaehlung",
+              "level": 4,
+              "name": "Gebäude- und Wohnungszählung",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Ergebnisse der Gebäude- und Wohnungszählung: Anzahl und Art der Gebäude, Wohnungen nach Größe und Baujahr, Heizungsart, Eigentumsform und Leerstandsquoten auf Gemeindeebene. Unverzichtbare Datenbasis für Wohnungsmarktanalysen und Klimaschutzplanungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Gebäude- und Wohnungszählungsdaten auf aggregierter Gemeindeebene enthalten keinen Personenbezug und sind vollständig offen zugänglich. Sie bilden eine unverzichtbare Grundlage für Wohnungsmarktpolitik, Klimaschutzplanung und Stadtentwicklung."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Bevölkerung & Gesellschaft"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal / Kommunal"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_06",
+                    "label": "Shapefile / Geodaten"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 / Public Domain"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Systematische Erfassung des Gebäude- und Wohnungsbestands als Grundlage für Mietpreisanalysen und Leerstandsmonitoring."
+                  },
+                  {
+                    "method": "Umwelt- & Klimaschutz",
+                    "description": "Heizungsart und Baujahr der Gebäude sind Schlüsseldaten für Wärmewendeplanung und Gebäudesanierungsstrategien."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "erwerbstaetigkeitsstatistik",
+              "level": 4,
+              "name": "Erwerbstätigkeitsstatistik",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Aggregierte Daten zur Erwerbstätigkeit aus dem Zensus: Beschäftigungsquoten nach Branche, Berufsgruppe und Region, Selbstständigenanteil sowie Pendlerströme auf Kreisebene. Ermöglicht regionalisierte Arbeitsmarktanalysen und branchenspezifische Strukturvergleiche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Zensus-basierte Erwerbstätigkeitsstatistiken sind vollständig aggregiert und ohne Personenbezug, daher unmittelbar als Open Data verfügbar. Sie ergänzen die laufenden Arbeitsmarktdaten der Bundesagentur für Arbeit um eine umfassende Strukturperspektive."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Arbeit & Soziales"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 / Public Domain"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Auswertung von Beschäftigungsstrukturen nach Branche und Region für Wirtschaftsförderung und Strukturpolitik."
+                  },
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Erfassung und Analyse von Einpendler- und Auspendlerströmen als Grundlage für Verkehrs- und Regionalplanung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wohnungsmarkt-zensus",
+              "level": 4,
+              "name": "Wohnungsmarktdaten aus dem Zensus",
+              "color": "#27ae60",
+              "details": {
+                "description": "Wohnungsdaten aus dem Zensus: Gebäude- und Wohnungstypen, Eigentumsquoten, Belegungs- und Leerstandsquoten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Zensus 2022 Wohnen",
+                    "url": "https://www.zensus2022.de/DE/Ergebnisse/wohnen",
+                    "publisher": "Statistische Ämter des Bundes und der Länder"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pendlerbeziehungen-zensus",
+              "level": 4,
+              "name": "Pendlerbeziehungen & Erwerbsstatistik (Zensus)",
+              "color": "#27ae60",
+              "details": {
+                "description": "Erwerbstätigenstatistik und Pendlerverflechtungen aus dem Registerzensus nach Gemeinde und Wirtschaftszweig.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Zensus 2022 Erwerbstätigkeit",
+                    "url": "https://www.zensus2022.de/DE/Ergebnisse/erwerbstaetigkeit",
+                    "publisher": "Statistische Ämter des Bundes und der Länder"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "konfession-zensus",
+              "level": 4,
+              "name": "Religionszugehörigkeit & Konfessionsstatistik (Zensus)",
+              "color": "#27ae60",
+              "details": {
+                "description": "Anteile der Bevölkerung nach Religionszugehörigkeit auf Gemeindeebene aus dem Zensus.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Zensus 2022 Religion",
+                    "url": "https://www.zensus2022.de/DE/Ergebnisse/religion",
+                    "publisher": "Statistische Ämter des Bundes und der Länder"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "forschungsdatenzentrum",
+      "level": 2,
+      "name": "Forschungsdatenzentrum",
+      "color": "#6c3483",
+      "description": "Akkreditierte Einrichtung zur sicheren Archivierung, Erschließung und Bereitstellung von Forschungsdaten für Sekundäranalysen (z.B. GESIS, FDZ-BA, RDC)",
+      "children": [
+        {
+          "id": "datenarchivierung",
+          "level": 3,
+          "name": "Datenarchivierung & Kuratierung",
+          "color": "#7d3c98",
+          "description": "Langzeitsicherung, Erschließung und Qualitätssicherung von Forschungsdatensätzen für die Nachnutzung",
+          "children": [
+            {
+              "id": "scientific_use_files",
+              "level": 4,
+              "name": "Scientific-Use-Files",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Anonymisierte Forschungsdatensätze für die Wissenschaft: faktisch anonymisierte Mikrodaten aus Bevölkerungsbefragungen, administrativen Datenquellen und Panelstudien. Zugang erfolgt nach Vertragsabschluss und Nachweis wissenschaftlicher Nutzungsabsicht.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Scientific-Use-Files sind nach umfassendem Disclosure-Risk-Assessment anonymisiert und für wissenschaftliche Nutzung freigegeben. Der Zugang ist vertraglich geregelt und auf Forschungszwecke beschränkt — ein etabliertes Modell, das Datenschutz und Forschungsnutzen ausbalanciert."
+                },
+                "theme": {
+                  "code": "TH_10",
+                  "label": "Wissenschaft & Forschung"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Einzelfallbezogene Daten"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03",
+                  "label": "CC BY-SA 4.0"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Systematische Anonymisierung und Dokumentation von Forschungsdatensätzen gemäß internationalen Standards (DDI, Dublin Core)."
+                  },
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Bereitstellung anonymisierter Mikrodaten für Sekundäranalysen nach Vertragsabschluss und Prüfung des Nutzungszwecks."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "metadatenkatalog",
+              "level": 4,
+              "name": "Metadatenkatalog",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Vollständig offener Katalog aller im Forschungsdatenzentrum archivierten Studien: Studienbeschreibung, Erhebungszeitraum, Stichprobengröße, verwendete Instrumente und Verfügbarkeitsstatus. Ermöglicht Forscher:innen die Auffindbarkeit relevanter Datensätze für Sekundäranalysen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Metadaten zu archivierten Studien enthalten keine personenbezogenen Daten und sind vollständig offen zugänglich. Offene Metadatenkataloge wie der von GESIS oder ZA sind unverzichtbar für die Auffindbarkeit von Forschungsdaten und unterstützen das FAIR-Prinzip."
+                },
+                "theme": {
+                  "code": "TH_10",
+                  "label": "Wissenschaft & Forschung"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Dokumente & Texte"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 / Public Domain"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Standardisierte Beschreibung aller Studien mit DDI-konformen Metadaten für nationale und internationale Interoperabilität."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Indexierung in nationalen (da|ra) und internationalen (ICPSR, CESSDA) Katalogen zur globalen Sichtbarkeit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "synthetische_datensaetze",
+              "level": 4,
+              "name": "Synthetische Datensätze",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Künstlich generierte Datensätze, die die statistischen Eigenschaften realer Forschungsdaten nachbilden, ohne echte Personen zu repräsentieren. Synthetische Daten ermöglichen die Entwicklung und Erprobung von Analysemethoden ohne Datenschutzrisiko.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Synthetisch generierte Daten enthalten per Definition keinen Personenbezug und können vollständig offen bereitgestellt werden. Sie sind ein zukunftsweisendes Instrument, das Datenschutz und Forschungsnutzen vereint und die Reproduzierbarkeit wissenschaftlicher Analysen fördert."
+                },
+                "theme": {
+                  "code": "TH_10",
+                  "label": "Wissenschaft & Forschung"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 / Public Domain"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Erzeugung künstlicher Datensätze mit statistischen Modellen (z.B. Sequential Regression Multivariate Imputation), die reale Verteilungen nachbilden."
+                  },
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Bereitstellung synthetischer Daten als Sandbox für Entwicklung und Test neuer Analysemethoden ohne Datenschutzrisiken."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "datenqualitaetsbericht",
+              "level": 4,
+              "name": "Datenqualitätsberichte & Kuratierungslog",
+              "color": "#27ae60",
+              "details": {
+                "description": "Strukturierte Berichte zu Datenqualität, Vollständigkeit, Konsistenzprüfungen und Kuratierungshistorie.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Mediendaten / Dokumente"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "GESIS Datenqualität",
+                    "url": "https://www.gesis.org/datenqualitaet",
+                    "publisher": "GESIS — Leibniz-Institut für Sozialwissenschaften"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "nutzungslizenzen-fdz",
+              "level": 4,
+              "name": "Nutzungslizenzen & Datenzugangsformen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Übersicht der Datenzugangsformen (Public Use File, Scientific Use File, On-Site-Zugang) und Lizenzbedingungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_08",
+                  "label": "Metadaten"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_06",
+                    "label": "RDF / Linked Data"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Datenzugang FDZ BA",
+                    "url": "https://fdz.iab.de/de/FDZ_Data_Access.aspx",
+                    "publisher": "IAB-Forschungsdatenzentrum"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "langzeitarchivierung",
+              "level": 4,
+              "name": "Langzeitarchivierungskonzept & Persistenz",
+              "color": "#27ae60",
+              "details": {
+                "description": "Konzepte und Maßnahmen zur digitalen Langzeitarchivierung: Formatmigration, Checksummen, persistente Identifier (DOI).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Mediendaten / Dokumente"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_06",
+                    "label": "RDF / Linked Data"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Langzeitarchivierung DARIAH",
+                    "url": "https://de.dariah.eu/langzeitarchivierung",
+                    "publisher": "DARIAH-DE"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "datenzugang",
+          "level": 3,
+          "name": "Datenzugang & Nutzungsverwaltung",
+          "color": "#7d3c98",
+          "description": "Verwaltung von Datenzugangsanträgen, Nutzungsverträgen und Zugriffsstatistiken für archivierte Forschungsdaten",
+          "children": [
+            {
+              "id": "nutzungsvertraege",
+              "level": 4,
+              "name": "Nutzungsverträge",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Vertragsdaten der Forschungsdatenzugangs-Nutzer:innen: Name, Institution, Forschungszweck, beantragte Datensätze, Datenschutzverpflichtungen und Zugangszeitraum. Nutzungsverträge sind rechtliche Grundlage für jeden Datenzugang und unterliegen strengem Datenschutz.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Nutzungsvertragsdaten enthalten personenbezogene Daten der Forscher:innen und deren institutionelle Informationen sowie Forschungsdetails. Eine Veröffentlichung ist nicht möglich; aggregierte Nutzungsstatistiken ohne Personenbezug können jedoch transparent gemacht werden."
+                },
+                "theme": {
+                  "code": "TH_10",
+                  "label": "Wissenschaft & Forschung"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Einzelfallbezogene Daten"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF / Dokument"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 1,
+                "processes": [
+                  {
+                    "method": "Verwaltung & Compliance",
+                    "description": "Prüfung von Datenzugangsanträgen auf Wissenschaftlichkeit und Datenschutzkonformität, Abschluss von Nutzungsverträgen."
+                  },
+                  {
+                    "method": "Verwaltung & Compliance",
+                    "description": "Überwachung der Vertragseinhaltung und Durchsetzung von Datenlöschpflichten nach Ablauf des Zugangszeitraums."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zugangshaeufigkeit_statistik",
+              "level": 4,
+              "name": "Zugangshäufigkeit Statistik",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Nutzungsstatistiken pro Datensatz: Anzahl der Downloads, Zugriffshäufigkeiten, Antragszahlen nach Jahr und Fachgebiet sowie Länderherkunft der Nutzenden. Diese aggregierten Daten sind vollständig offen und dienen der Transparenz über die Nachfrage nach Forschungsdaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Nutzungsstatistiken enthalten keinen Personenbezug und können vollständig offen veröffentlicht werden. Sie schaffen Transparenz über die tatsächliche Nutzung archivierten Datenmaterials und sind wichtige Qualitätsindikatoren für Forschungsdatenzentren."
+                },
+                "theme": {
+                  "code": "TH_10",
+                  "label": "Wissenschaft & Forschung"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 / Public Domain"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Automatisierte Erfassung und Aggregation von Zugriffsstatistiken pro Datensatz ohne Speicherung personenbezogener Nutzungsdaten."
+                  },
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Regelmäßige Veröffentlichung von Nutzungsberichten als Nachweis des gesellschaftlichen Mehrwerts der Datenarchivierung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "datennachfrage_analyse",
+              "level": 4,
+              "name": "Datennachfrage-Analyse",
+              "color": "#7d3c98",
+              "details": {
+                "description": "Aggregierte Analyse welche Datensätze am häufigsten nachgefragt werden: Themenfelder mit höchster Nutzungsintensität, Trends in der Forschungsdatennachfrage und Bedarfslücken im Datenangebot. Grundlage für strategische Akquisitionsentscheidungen des Forschungsdatenzentrums.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Nachfrageanalysen ohne Personenbezug sind vollständig offen und schaffen wertvolle Transparenz über Forschungsinteressen und Datenlücken im Wissenschaftssystem. Sie können strategische Datenbeschaffungsentscheidungen anderer Institutionen informieren."
+                },
+                "theme": {
+                  "code": "TH_10",
+                  "label": "Wissenschaft & Forschung"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_04",
+                  "label": "National"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF / Dokument"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 / Public Domain"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Auswertung von Nachfragetrends zur Identifikation von Datenlücken und Priorisierung neuer Akquisitionsprojekte."
+                  },
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Longitudinale Beobachtung von Forschungsinteressen anhand aggregierter Nachfragestatistiken für wissenschaftspolitische Berichterstattung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "remote-access",
+              "level": 4,
+              "name": "Remote-Access & Fernrechenarbeitsplatz",
+              "color": "#d4a017",
+              "details": {
+                "description": "Nutzungsstatistiken und Verfahrensregeln für Remote-Access-Systeme (Secure Data Center, Fernrechenarbeitsplatz).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "RDSC Remote Access",
+                    "url": "https://www.destatis.de/DE/Methoden/RDSC",
+                    "publisher": "Destatis Research Data Centre"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "dsgvo-folgenabschaetzung",
+              "level": 4,
+              "name": "Datenschutz-Folgenabschätzung (DPIA)",
+              "color": "#d4a017",
+              "details": {
+                "description": "Dokumentation von Datenschutz-Folgenabschätzungen für Forschungsprojekte mit personenbezogenen Daten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Mediendaten / Dokumente"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "DPIA-Leitfaden Forschung",
+                    "url": "https://www.bfdi.bund.de/dataset/dpia-leitfaden-forschung",
+                    "publisher": "BfDI"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "datennachfrage-trends",
+              "level": 4,
+              "name": "Datennachfrage & Nutzungsprofile",
+              "color": "#27ae60",
+              "details": {
+                "description": "Statistiken zu Datenzugriffsanfragen: Häufig angefragte Datensätze, Nutzertypen, Forschungszwecke.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Daten sind offen verfügbar und können direkt veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Forschung"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "FDZ-Nutzungsstatistik",
+                    "url": "https://fdz.iab.de/de/FDZ_Nutzungsstatistik.aspx",
+                    "publisher": "IAB-Forschungsdatenzentrum"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

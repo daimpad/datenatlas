@@ -282,6 +282,150 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "bauleitplan-informell",
+              "level": 4,
+              "name": "Informelle Bauleitplanung",
+              "color": "#27ae60",
+              "details": {
+                "description": "Städtebauliche Rahmenpläne, Stadtteilkonzepte und vorbereitende informelle Planwerke außerhalb des formellen B-Plan-Verfahrens.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Informelle Planwerke ohne Personenbezug; kommunale Planungstransparenz."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Mediendaten / Dokumente"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Stadtplanung & Entwicklung",
+                    "description": "Räumliche Planung und städtebauliche Entwicklung."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Strategische und operative Planung auf Basis der Daten."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Kommunikation und Transparenz gegenüber Bevölkerung und Medien."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Planwerk der Gebietskörperschaft Büchen",
+                    "url": "http://registry.gdi-de.org/id/de.sh/5e49c618-ed4f-4086-bd62-7d813b770e49",
+                    "publisher": "Gemeinde Büchen"
+                  },
+                  {
+                    "title": "Bauleitpläne der Stadt Heiligenhaus",
+                    "url": "https://registry.gdi-de.org/id/de.nw/HEILIGENHAUSB01",
+                    "publisher": "Heiligenhaus"
+                  },
+                  {
+                    "title": "Bauleitpläne der Stadt Meerbusch",
+                    "url": "https://registry.gdi-de.org/id/de.nw/MEERBUSCHB01",
+                    "publisher": "Meerbusch"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "grundstueck-gebaeude",
+              "level": 4,
+              "name": "Grundstücks- & Gebäudedaten",
+              "color": "#d4a017",
+              "details": {
+                "description": "Flurstücke, Gebäudegrundrisse und Nutzungsarten aus dem amtlichen Liegenschaftskataster (ALKIS).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — eingeschränkt publizierbar",
+                  "explanation": "Teile unterliegen Datenschutz- oder Nutzungsbeschränkungen der Katasterbehörden."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Geodaten"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verwaltung & Compliance",
+                    "description": "Verwaltungsrechtliche Pflichten und Dokumentation."
+                  },
+                  {
+                    "method": "Stadtplanung & Entwicklung",
+                    "description": "Räumliche Planung und städtebauliche Entwicklung."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Strategische und operative Planung auf Basis der Daten."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Wohnanlage an der Wildeshäuser Straße (Ursprungsplan)",
+                    "url": "https://gdk.gdi-de.org/inspire/srv/eng/xml_iso19139?uuid=5e16b5bf-4f28-4a74-9104-9870a2d3f6b5",
+                    "publisher": "Twistringen"
+                  },
+                  {
+                    "title": "Grafische GEGT intern Kreis Viersen",
+                    "url": "https://registry.gdi-de.org/id/de.nw/edad4859-3540-4884-aaae-5e50f936e25b",
+                    "publisher": "Kreis Viersen"
+                  },
+                  {
+                    "title": "Wohnpark Eickedorf",
+                    "url": "https://gdk.gdi-de.org/inspire/srv/eng/xml_iso19139?uuid=fe53ba2e-29b3-48ab-ac96-26bd9c4b4ec8",
+                    "publisher": "Grasberg"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -817,6 +961,222 @@
               }
             }
           ]
+        },
+        {
+          "id": "bautaetigkeit",
+          "level": 3,
+          "name": "Bautätigkeit & Stadtentwicklung",
+          "color": "#1abc9c",
+          "children": [
+            {
+              "id": "baustellen",
+              "level": 4,
+              "name": "Baustellen & Bauvorhaben",
+              "color": "#27ae60",
+              "details": {
+                "description": "Lage, Zeitraum und Art aktiver Baustellen im Stadtgebiet; Bauvorhaben aus dem Baugenehmigungsverfahren.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Baustellen-Daten werden zur Verkehrs- und Bürgerinformation veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Geodaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Laufende Überwachung und Auswertung relevanter Kennzahlen."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Kommunikation und Transparenz gegenüber Bevölkerung und Medien."
+                  },
+                  {
+                    "method": "Verwaltung & Compliance",
+                    "description": "Verwaltungsrechtliche Pflichten und Dokumentation."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Baustellen tagesaktuell",
+                    "url": "https://mcloud.de/cbf0073e-4803-43fd-b684-69a94e80c51f",
+                    "publisher": "Dortmund"
+                  },
+                  {
+                    "title": "Baustellen",
+                    "url": "https://opendata.stadt-muenster.de/dataset/baustellen",
+                    "publisher": "Münster"
+                  },
+                  {
+                    "title": "Baustellen in Wesel",
+                    "url": "https://opendata.ruhr/dataset/e4d3b973-4b9d-4eb2-afe6-bdb0b017f82b",
+                    "publisher": "Wesel"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sondernutzung",
+              "level": 4,
+              "name": "Sondernutzungserlaubnisse",
+              "color": "#d4a017",
+              "details": {
+                "description": "Genehmigungen zur Sondernutzung öffentlicher Flächen (Außengastronomie, Märkte, Baustelleneinrichtungen).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — eingeschränkt publizierbar",
+                  "explanation": "Einzelgenehmigungen enthalten personenbezogene Antragsdaten; Aggregatveröffentlichung möglich."
+                },
+                "theme": {
+                  "code": "TH_10",
+                  "label": "Bürgerservice"
+                },
+                "object": {
+                  "code": "OB_03",
+                  "label": "Verzeichnis & Register"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Verwaltung & Compliance",
+                    "description": "Verwaltungsrechtliche Pflichten und Dokumentation."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Kommunikation und Transparenz gegenüber Bevölkerung und Medien."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Infoportal Barrierefreiheit - Sonstiges",
+                    "url": "https://geoportal.sachsen.de/md/339258aa-0149-46ee-9b09-40b212196306",
+                    "publisher": "Dresden"
+                  },
+                  {
+                    "title": "Parkscheinautomaten in Koeln 2016",
+                    "url": "https://mcloud.de/878d537e-ec23-4d52-bc3b-763a8538332d",
+                    "publisher": "Köln"
+                  },
+                  {
+                    "title": "Verkehrszählung Boschheideweg",
+                    "url": "https://mcloud.de/c8563e5e-efc6-40db-a440-bf6bf510de92",
+                    "publisher": "Moers"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hundewiesen",
+              "level": 4,
+              "name": "Hundewiesen & Hundeauslaufzonen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Standorte und Ausdehnung ausgewiesener Hundeauslaufgebiete und Hundewiesen im Stadtgebiet.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Standortdaten ohne Personenbezug; werden zur Bürgerinformation veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_02",
+                  "label": "Umwelt & Klima"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Geodaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Laufende Überwachung und Auswertung relevanter Kennzahlen."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Kommunikation und Transparenz gegenüber Bevölkerung und Medien."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Freizeitanlage am Bauernwald 1. Änderung",
+                    "url": "https://www.geoportal.rlp.de/dataset/22a0490e-359e-1529-ad56-c4b6f6c79ad6",
+                    "publisher": "Verbandsgemeinde Jockgrim"
+                  },
+                  {
+                    "title": "Rindsfuss",
+                    "url": "https://www.geoportal.rlp.de/dataset/128cd9c5-9321-683f-8125-9cbf1718e2d5",
+                    "publisher": "Verbandsgemeinde Gerolstein"
+                  },
+                  {
+                    "title": "Augsburg Beteiligungsbericht: Zoologischer Garten Augsburg GmbH",
+                    "url": "https://open.bydata.de/api/hub/repo/datasets/beteiligungsbericht-zoologischer-garten-augsburg-gmbh",
+                    "publisher": "Augsburg"
+                  }
+                ]
+              }
+            }
+          ]
         }
       ]
     },
@@ -1090,6 +1450,210 @@
                     "title": "Rhein-Kreis Neuss: 2019 Fahrzeugbestand",
                     "url": "https://mcloud.de/124b331f-3601-4c66-acb7-a9614cf3f2c6",
                     "publisher": "Neuss"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "verkehrsmessung-bericht",
+              "level": 4,
+              "name": "Verkehrsmessberichte",
+              "color": "#27ae60",
+              "details": {
+                "description": "Berichte zu KFZ-Verkehrszählungen, Geschwindigkeitsmessungen und Belastungsanalysen im Straßennetz.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Berichte ohne Personenbezug frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Laufende Überwachung und Auswertung relevanter Kennzahlen."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Strategische und operative Planung auf Basis der Daten."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Geschwindigkeitsüberwachungen 2019",
+                    "url": "https://opendata.essen.de/dataset/geschwindigkeits%C3%BCberwachungen-2019",
+                    "publisher": "Essen"
+                  },
+                  {
+                    "title": "Straßenverkehrslärm 65-dB(A)-Linie",
+                    "url": "https://geoportal.sachsen.de/md/a22832c1-3a1a-499f-b4d2-a4cacbfb8b36",
+                    "publisher": "Dresden"
+                  },
+                  {
+                    "title": "Fahrrad Verkehrsdaten Koeln 2019",
+                    "url": "https://mcloud.de/7edb3364-f858-45b3-88bf-9d71bb378d17",
+                    "publisher": "Köln"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ev-ladestationen",
+              "level": 4,
+              "name": "E-Auto-Ladestationen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Standorte, Leistung und Betreiber öffentlicher Ladepunkte für Elektrofahrzeuge (Ladesäulenregister).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Bundesnetzagentur veröffentlicht Ladesäulenregister als offene Daten."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Geodaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Laufende Überwachung und Auswertung relevanter Kennzahlen."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Strategische und operative Planung auf Basis der Daten."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "E-Mobility Ladesäulen in Berlin",
+                    "url": "https://datenregister.berlin.de/dataset/4e03a8e4-3b4e-4618-85e7-a008a61d8b16",
+                    "publisher": "Berlin"
+                  },
+                  {
+                    "title": "Deutschland: E-Ladesäulen",
+                    "url": "https://mcloud.de/3bd9c487-add3-483b-a080-d553749a0495",
+                    "publisher": "Neuss"
+                  },
+                  {
+                    "title": "Elektro Ladestandorte Hamburg",
+                    "url": "http://suche.transparenz.hamburg.de/dataset/9a004e71-f33b-4d27-b029-9d29a76a6712",
+                    "publisher": "Hamburg"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "oepnv-vertrieb",
+              "level": 4,
+              "name": "ÖPNV-Vertriebsstellen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Standorte von Ticketverkaufsstellen, Automaten und Service-Centern des öffentlichen Nahverkehrs.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Standortdaten ohne Personenbezug frei verfügbar."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Geodaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Laufende Überwachung und Auswertung relevanter Kennzahlen."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Kommunikation und Transparenz gegenüber Bevölkerung und Medien."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "An der Bahn nach INSPIRE PLU",
+                    "url": "https://gdk.gdi-de.org/inspire/srv/eng/xml_iso19139?uuid=d2867cce-0e23-4d8e-86b5-54ddc05ac526",
+                    "publisher": "Hambergen"
+                  },
+                  {
+                    "title": "Bussheck 1. Aenderung",
+                    "url": "https://www.geoportal.rlp.de/dataset/e19178c3-04af-93ac-7559-1c76c7eea123",
+                    "publisher": "Birkenfeld"
+                  },
+                  {
+                    "title": "ÖPNV Ticketautomaten",
+                    "url": "https://opendata.stadt-muenster.de/dataset/%C3%B6pnv-ticketautomaten",
+                    "publisher": "Münster"
                   }
                 ]
               }
@@ -1910,6 +2474,210 @@
                     "title": "Hauptwohnbevölkerung - Mit Migrationshintergrund in den Stadtbezirken",
                     "url": "https://open-data.dortmund.de/api/v2/catalog/datasets/hauptwohnbevolkerung-mit-migrationshintergrund-in-den-stadtbezirken",
                     "publisher": "Dortmund"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kita-betreuungsplaetze",
+              "level": 4,
+              "name": "Betreuungsplätze Kindertageseinrichtung",
+              "color": "#27ae60",
+              "details": {
+                "description": "Anzahl verfügbarer und belegter Betreuungsplätze nach Altersgruppe, Träger und Stadtteil.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Platzzahlen ohne Personenbezug frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Qualifikation"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Strategische und operative Planung auf Basis der Daten."
+                  },
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Systematische Erhebung und statistische Auswertung."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Kindertagesstätten im Landkreis Ludwigslust-Parchim",
+                    "url": "https://gdk.gdi-de.org/inspire/srv/eng/xml_iso19139?uuid=bc0730b3-9f54-4a97-87c6-7cb1773d52b7",
+                    "publisher": "Landkreis Ludwigslust-Parchim"
+                  },
+                  {
+                    "title": "Familien- und Erwachsenenbildung",
+                    "url": "https://www.geoportal.rlp.de/dataset/dda6039b-99b1-e364-fb9c-9018d4189988",
+                    "publisher": "Trier"
+                  },
+                  {
+                    "title": "Kinderbetreuung und Plätze",
+                    "url": "https://offenedaten-konstanz.de/dataset/kinderbetreuung-und-pl-tze",
+                    "publisher": "Konstanz"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schule-standorte",
+              "level": 4,
+              "name": "Schulstandorte",
+              "color": "#27ae60",
+              "details": {
+                "description": "Lage, Schulform und Träger öffentlicher und privater Schulen im Stadtgebiet.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Schulstandortdaten ohne Personenbezug frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Qualifikation"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Geodaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Strategische und operative Planung auf Basis der Daten."
+                  },
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Systematische Erhebung und statistische Auswertung."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "INSPIRE US Schulstandorte im Landkreis Schmalkalden-Meiningen",
+                    "url": "https://gdk.gdi-de.org/inspire/srv/eng/xml_iso19139?uuid=bfed346d-0fb2-4dac-94cc-a658cbcdc212",
+                    "publisher": "Landkreis Schmalkalden-Meiningen"
+                  },
+                  {
+                    "title": "Sportplatz ostwärts der Hauptschule (1. Änderung)",
+                    "url": "https://gdk.gdi-de.org/inspire/srv/eng/xml_iso19139?uuid=b6970ad6-afd4-4c14-acad-f1c2c9b2c352",
+                    "publisher": "Sulingen"
+                  },
+                  {
+                    "title": "Schulstandorte des Landkreises Saalfeld-Rudolstadt",
+                    "url": "https://gdk.gdi-de.org/inspire/srv/eng/xml_iso19139?uuid=73a8fbc4-0db6-4ec4-9360-19c82112b666",
+                    "publisher": "Landkreis Saalfeld-Rudolstadt"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schule-schuelerzahl",
+              "level": 4,
+              "name": "Schülerstatistik",
+              "color": "#27ae60",
+              "details": {
+                "description": "Anzahl Schülerinnen und Schüler nach Schulform, Jahrgang, Geschlecht und Migrationshintergrund.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Statistische Aggregatdaten ohne Personenbezug veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_03",
+                  "label": "Bildung & Qualifikation"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Systematische Erhebung und statistische Auswertung."
+                  },
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Laufende Überwachung und Auswertung relevanter Kennzahlen."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Schulstatistik Moers für das Schuljahr 2012/2013",
+                    "url": "https://opendata.ruhr/dataset/eef396e9-8acd-4a23-a32b-9ed602ba4942",
+                    "publisher": "Moers"
+                  },
+                  {
+                    "title": "Dormagen: Schülerzahlen nach Klassenstufen",
+                    "url": "https://opendata.rhein-kreis-neuss.de/api/v2/catalog/datasets/dormagen-schuelerzahlen-nach-klassenstufen",
+                    "publisher": "Dormagen"
+                  },
+                  {
+                    "title": "Grundschulbezirke im Bereich der Stadt Elmshorn",
+                    "url": "http://registry.gdi-de.org/id/de.sh/62331b1b-e43a-4b5a-8c28-ccaa3f2ea084",
+                    "publisher": "Elmshorn"
                   }
                 ]
               }
@@ -3410,6 +4178,142 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "wahlkreise",
+              "level": 4,
+              "name": "Wahlkreise & Wahlbezirke",
+              "color": "#27ae60",
+              "details": {
+                "description": "Geometrie und Bezeichnung der Wahlkreise und Stimmbezirke für alle Wahlebenen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Wahlgebietseinteilungen sind amtliche, frei zugängliche Daten."
+                },
+                "theme": {
+                  "code": "TH_05",
+                  "label": "Demokratie & Beteiligung"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Geodaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verwaltung & Compliance",
+                    "description": "Verwaltungsrechtliche Pflichten und Dokumentation."
+                  },
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Systematische Erhebung und statistische Auswertung."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Dormagen: Landtagswahl 2012 Stimmbezirk",
+                    "url": "https://opendata.rhein-kreis-neuss.de/api/v2/catalog/datasets/dormagen-landtagswahl-2012-stimmbezirk",
+                    "publisher": "Dormagen"
+                  },
+                  {
+                    "title": "Datensatz Remscheider Wahlbezirke",
+                    "url": "https://registry.gdi-de.org/id/de.nw/remscheid_wahlbez_da3e82c5-af00-4f78-b102-27aa9c809cf0",
+                    "publisher": "Remscheid"
+                  },
+                  {
+                    "title": "Wahlberechtigte, Wähler/-innen und Briefwähler/-innen seit 1994",
+                    "url": "https://opendata.leipzig.de/dataset/5e0a7a96-75b7-4669-97db-80dd7bc2c27c",
+                    "publisher": "Leipzig"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buergerbeteiligung",
+              "level": 4,
+              "name": "Bürgerbeteiligungsverfahren",
+              "color": "#27ae60",
+              "details": {
+                "description": "Dokumentation laufender und abgeschlossener Bürgerbeteiligungsverfahren, Planungsprozesse und Online-Konsultationen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Beteiligungsverfahren werden aus Transparenzgründen öffentlich dokumentiert."
+                },
+                "theme": {
+                  "code": "TH_05",
+                  "label": "Demokratie & Beteiligung"
+                },
+                "object": {
+                  "code": "OB_07",
+                  "label": "Mediendaten / Dokumente"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Kommunikation und Transparenz gegenüber Bevölkerung und Medien."
+                  },
+                  {
+                    "method": "Netzwerkarbeit & Kooperation",
+                    "description": "Vernetzung mit Partnern und überregionale Abstimmung."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Sportzentrum Worphausen - 1. Änderung nach INSPIRE PLU",
+                    "url": "https://gdk.gdi-de.org/inspire/srv/eng/xml_iso19139?uuid=f6543c44-b9db-4f65-9d66-5fd236dc9ff1",
+                    "publisher": "Lilienthal"
+                  },
+                  {
+                    "title": "Bürgerbeteiligung zur Fortschreibung des Wuppertaler Nahverkehrsplans",
+                    "url": "https://mcloud.de/a6894b25-904e-454d-bd6b-79e687cb1e22",
+                    "publisher": "Wuppertal"
+                  },
+                  {
+                    "title": "Vorlagen - Ratsinformationssystem Stadt Leipzig (OParl)",
+                    "url": "https://opendata.leipzig.de/dataset/248df2af-2fca-4045-8ed7-cf7a1e95ddb3",
+                    "publisher": "Leipzig"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -3680,6 +4584,74 @@
                     "title": "Frauenförderplan 2013 - 2014",
                     "url": "https://opendata.ruhr/dataset/e96e989b-0996-4f7a-ba00-c808e425d2fa",
                     "publisher": "Moers"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "haushalts-produktplan",
+              "level": 4,
+              "name": "Haushalt-Produktplan",
+              "color": "#27ae60",
+              "details": {
+                "description": "Leistungsorientierter Produkthaushalt mit Zielen, Kennzahlen und Mittelansätzen je Produktbereich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Haushaltspläne sind gesetzlich zu veröffentlichende Dokumente."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Finanzen & Haushalt"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Finanzdaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Strategische und operative Planung auf Basis der Daten."
+                  },
+                  {
+                    "method": "Verwaltung & Compliance",
+                    "description": "Verwaltungsrechtliche Pflichten und Dokumentation."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Haushaltsplanung - Ergebnisplanung - Produkte - 2020-2024",
+                    "url": "https://ckan.open.nrw.de/dataset/c6f452c0-9de0-48f8-be77-8342818a085f",
+                    "publisher": "Arnsberg"
+                  },
+                  {
+                    "title": "Bruttoinlandsprodukt und -wertschöpfung (MD1) 2000 ff. Dresden",
+                    "url": "https://opendata.dresden.de/dcat-ap/dataset/de-sn-dresden-bruttoinlandsprodukt_und_-wertschoepfung_md1_2000_ff_dresden",
+                    "publisher": "Dresden"
+                  },
+                  {
+                    "title": "P+R-Anlagen - Belegungsprognosen",
+                    "url": "https://open.bydata.de/api/hub/repo/datasets/https-opendata-muenchen-de-dataset-p-r-anlagen-belegungsprognosen",
+                    "publisher": "München"
                   }
                 ]
               }
@@ -4234,6 +5206,74 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "unfaelle",
+              "level": 4,
+              "name": "Unfallstatistik",
+              "color": "#27ae60",
+              "details": {
+                "description": "Erfasste Verkehrsunfälle mit Ortsangabe, Unfalltyp und Schwere; Grundlage für Verkehrssicherheitsprogramme.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Unfalldaten ohne Personenbezug durch Destatis veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_08",
+                  "label": "Sicherheit & Ordnung"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Laufende Überwachung und Auswertung relevanter Kennzahlen."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Strategische und operative Planung auf Basis der Daten."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Unfallatlas Köln für Geoportale",
+                    "url": "https://offenedaten-koeln.de/dataset/unfallatlas-k%C3%B6ln-f%C3%BCr-geoportale",
+                    "publisher": "Köln"
+                  },
+                  {
+                    "title": "Meerbusch: 2020 Straßenverkehrsunfälle",
+                    "url": "https://mcloud.de/1b2bbb2f-fc7e-4e6c-809e-35df9b280f0c",
+                    "publisher": "Neuss"
+                  },
+                  {
+                    "title": "Straßenverkehrsunfälle",
+                    "url": "https://offenedaten-konstanz.de/dataset/stra-enverkehrsunf-lle",
+                    "publisher": "Konstanz"
+                  }
+                ]
+              }
             }
           ]
         }
@@ -4785,6 +5825,142 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "historische-standorte",
+              "level": 4,
+              "name": "Historische Standorte & Stadtgeschichte",
+              "color": "#27ae60",
+              "details": {
+                "description": "Orte mit historischer Bedeutung, Gedenkstätten und Stationen stadthistorischer Rundgänge.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Kulturhistorische Standortdaten ohne Personenbezug frei verfügbar."
+                },
+                "theme": {
+                  "code": "TH_10",
+                  "label": "Bürgerservice & Verwaltung"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Geodaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Kommunikation und Transparenz gegenüber Bevölkerung und Medien."
+                  },
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Laufende Überwachung und Auswertung relevanter Kennzahlen."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "197     Bookhlozberg (Urschrift)",
+                    "url": "https://gdk.gdi-de.org/inspire/srv/eng/xml_iso19139?uuid=7255e358-901d-49bf-a557-08787bcdc5f0",
+                    "publisher": "Gemeinde Ganderkesee"
+                  },
+                  {
+                    "title": "01002_BP_1014_Urschrift",
+                    "url": "http://registry.gdi-de.org/id/de.sh/e5a5c7aa-b86d-41ca-ac61-17f934d93021",
+                    "publisher": "Kiel"
+                  },
+                  {
+                    "title": "In der Masch (Urschrift)",
+                    "url": "https://gdk.gdi-de.org/inspire/srv/eng/xml_iso19139?uuid=5a457cb0-5aad-4582-84b8-89d12a4204c4",
+                    "publisher": "Lehre"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "stadtmarketing",
+              "level": 4,
+              "name": "Stadtmarketing & Stadtbranding",
+              "color": "#27ae60",
+              "details": {
+                "description": "Daten zu touristischen Angeboten, Gästezahlen, Stadtmarketing-Maßnahmen und kommunaler Außendarstellung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Tourismus- und Marketingdaten werden zur Standortwerbung veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Kommunikation und Transparenz gegenüber Bevölkerung und Medien."
+                  },
+                  {
+                    "method": "Netzwerkarbeit & Kooperation",
+                    "description": "Vernetzung mit Partnern und überregionale Abstimmung."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Bonn in den Städterankings 2012",
+                    "url": "https://opendata.bonn.de/dataset/bonn-den-st%C3%A4dterankings-2012",
+                    "publisher": "Bonn"
+                  },
+                  {
+                    "title": "Diversity Kalender Koeln 2017",
+                    "url": "https://offenedaten-koeln.de/dataset/diversity-kalender-koeln-2017",
+                    "publisher": "Köln"
+                  },
+                  {
+                    "title": "Einrichtungen der Stadt Amberg",
+                    "url": "https://open.bydata.de/api/hub/repo/datasets/einrichtungen-der-stadt-amberg",
+                    "publisher": "Amberg"
+                  }
+                ]
+              }
             }
           ]
         }
@@ -5064,6 +6240,74 @@
                     "title": "Arbeitslose in % 2021",
                     "url": "https://open-data.dortmund.de/api/v2/catalog/datasets/ds-arbeitslose-in-prozent-2021",
                     "publisher": "Dortmund"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wochenmaerkte",
+              "level": 4,
+              "name": "Wochenmärkte & Spezialmärkte",
+              "color": "#27ae60",
+              "details": {
+                "description": "Standorte, Zeiten und Sortiment regelmäßiger Wochen- und Spezialmärkte im Stadtgebiet.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Marktdaten werden zur Bürgerinformation veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Wirtschaft & Arbeit"
+                },
+                "object": {
+                  "code": "OB_03",
+                  "label": "Verzeichnis & Register"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Laufende Überwachung und Auswertung relevanter Kennzahlen."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Kommunikation und Transparenz gegenüber Bevölkerung und Medien."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Zwischen dem neuen Weg und der zehntenfreien Gewanne",
+                    "url": "https://www.geoportal.rlp.de/dataset/3d684790-1662-ed4e-53f9-9cdb1e5fe9d2",
+                    "publisher": "Ortsgemeinde Lambsheim"
+                  },
+                  {
+                    "title": "Wochenmaerkte in Koeln",
+                    "url": "https://mcloud.de/b7b40d13-a475-44d1-9282-aedf97d78ee1",
+                    "publisher": "Köln"
+                  },
+                  {
+                    "title": "Einkaufspark Meyerhoff nach INSPIRE PLU",
+                    "url": "https://gdk.gdi-de.org/inspire/srv/eng/xml_iso19139?uuid=96934ed7-cddb-425e-b56e-5b82d1e484ba",
+                    "publisher": "Osterholz-Scharmbeck"
                   }
                 ]
               }

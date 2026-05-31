@@ -102,14 +102,24 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
   flex: 1;
   position: relative;
   overflow: hidden;
-  /* Isometric dot grid: two offset layers at 120×60 (= W/2 × H/2 of tiles)
-     Primary dots (2 px) sit on the main grid corners; secondary dots (1.5 px)
-     are offset by half a cell, forming the diamond intersection pattern.      */
+  /* Isometric grid: diagonal line families (slope ±0.5, matching tile geometry)
+     plus two sizes of dots — larger at line crossings (axis intersections),
+     smaller at the alternating corners. Cell = W/2 × H/2 = 120 × 60 px.
+     The to-bottom-right / to-bottom-left lines cross exactly at each cell
+     centre (60,30), where the bigger dots sit. Very low opacity overall.    */
   background-image:
-    radial-gradient(circle, rgba(98,0,168,0.10) 2px,   transparent 2px),
-    radial-gradient(circle, rgba(98,0,168,0.05) 1.5px, transparent 1.5px);
-  background-size:     120px 60px, 120px 60px;
-  background-position: 0 0,        60px 30px;
+    radial-gradient(circle, rgba(98,0,168,0.16) 2.5px, transparent 2.5px),
+    radial-gradient(circle, rgba(98,0,168,0.07) 1.2px, transparent 1.2px),
+    linear-gradient(to bottom right,
+      transparent calc(50% - 0.5px),
+      rgba(98,0,168,0.05) 50%,
+      transparent calc(50% + 0.5px)),
+    linear-gradient(to bottom left,
+      transparent calc(50% - 0.5px),
+      rgba(98,0,168,0.05) 50%,
+      transparent calc(50% + 0.5px));
+  background-size:     120px 60px;
+  background-position: 60px 30px, 0 0, 0 0, 0 0;
   background-color: var(--bg);
 }
 
@@ -499,7 +509,7 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
   border: 1px solid var(--border-hi);
   border-radius: 16px;
   padding: 36px 40px;
-  max-width: 560px;
+  max-width: 680px;
   width: 100%;
   max-height: calc(100vh - 32px);
   overflow-y: auto;
@@ -641,7 +651,7 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
   border: 1px solid var(--border-hi);
   border-radius: 16px;
   padding: 28px 36px 32px;
-  max-width: 580px;
+  max-width: 680px;
   width: calc(100% - 32px);
   max-height: calc(100vh - 32px);
   overflow-y: auto;

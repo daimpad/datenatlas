@@ -148,16 +148,16 @@ export function initWizard() {
 
       <h3 class="wz-subh">1. In welchem Bereich sind Sie tätig?</h3>
       <div class="wz-opts wz-opts--2">
-        ${opt('sector','public',   '🏛', 'Öffentliche Verwaltung',      'Behörden, Ämter, staatliche Einrichtungen auf Bundes-, Landes- oder kommunaler Ebene.',            st.sector === 'public')}
-        ${opt('sector','civil',    '🤝', 'Zivilgesellschaft & NGOs',     'Vereine, Verbände, gemeinnützige Organisationen, soziale Träger.',                                  st.sector === 'civil')}
-        ${opt('sector','research', '🔬', 'Forschung & Wissenschaft',     'Universitäten, Forschungsinstitute, Akademien und Förderorganisationen.',                           st.sector === 'research')}
-        ${opt('sector','private',  '🏢', 'Privatwirtschaft',             'Unternehmen, die aus eigener Initiative oder gesetzlicher Anforderung Daten öffnen.',              st.sector === 'private')}
+        ${opt('sector','public',   '<i class="fa-solid fa-landmark"></i>',   'Öffentliche Verwaltung',      'Behörden, Ämter, staatliche Einrichtungen auf Bundes-, Landes- oder kommunaler Ebene.',            st.sector === 'public')}
+        ${opt('sector','civil',    '<i class="fa-solid fa-handshake"></i>',  'Zivilgesellschaft & NGOs',     'Vereine, Verbände, gemeinnützige Organisationen, soziale Träger.',                                  st.sector === 'civil')}
+        ${opt('sector','research', '<i class="fa-solid fa-microscope"></i>', 'Forschung & Wissenschaft',     'Universitäten, Forschungsinstitute, Akademien und Förderorganisationen.',                           st.sector === 'research')}
+        ${opt('sector','private',  '<i class="fa-solid fa-building"></i>',   'Privatwirtschaft',             'Unternehmen, die aus eigener Initiative oder gesetzlicher Anforderung Daten öffnen.',              st.sector === 'private')}
       </div>
 
       <h3 class="wz-subh">2. Welcher Schritt ist das für Sie?</h3>
       <div class="wz-opts wz-opts--2">
-        ${opt('first','true',  '🌱', 'Erstmalige Datenöffnung',     'Wir haben bislang keine Open Data veröffentlicht und möchten damit beginnen.',  st.firstTime === true)}
-        ${opt('first','false', '📈', 'Bestehendes Angebot erweitern', 'Wir veröffentlichen bereits Daten und möchten Umfang oder Qualität ausbauen.', st.firstTime === false)}
+        ${opt('first','true',  '<i class="fa-solid fa-seedling"></i>',    'Erstmalige Datenöffnung',     'Wir haben bislang keine Open Data veröffentlicht und möchten damit beginnen.',  st.firstTime === true)}
+        ${opt('first','false', '<i class="fa-solid fa-chart-line"></i>', 'Bestehendes Angebot erweitern', 'Wir veröffentlichen bereits Daten und möchten Umfang oder Qualität ausbauen.', st.firstTime === false)}
       </div>
     `;
     return el;
@@ -193,7 +193,7 @@ export function initWizard() {
       <div class="wz-checks">${checks}</div>
 
       <div class="wz-hint">
-        <span class="wz-hint-icon">💡</span>
+        <span class="wz-hint-icon"><i class="fa-solid fa-lightbulb"></i></span>
         <span><strong>Lieber zu früh als zu spät.</strong> Daten müssen nicht perfekt sein, um nützlich zu sein. Veröffentlichen Sie früh, sammeln Sie Feedback und verbessern Sie iterativ, nicht umgekehrt.</span>
       </div>
     `;
@@ -209,17 +209,17 @@ export function initWizard() {
 
       <h3 class="wz-subh">1. Worum handelt es sich bei Ihren Daten hauptsächlich?</h3>
       <div class="wz-opts wz-opts--2">
-        ${opt('dtype','factual',   '📊', 'Fakten &amp; Informationen',       'Geodaten, statistische Messwerte, Rohdaten, Sensormessungen. Inhalte, die die Realität abbilden, ohne redaktionelle Formung.',           st.dataType === 'factual')}
-        ${opt('dtype','creative',  '📝', 'Gestaltete oder kuratierte Inhalte', 'Berichte, redaktionell ausgewählte Datenbankeinträge, Publikationen, kommentierte Datensätze mit erkennbarer eigener Schöpfung.',        st.dataType === 'creative')}
+        ${opt('dtype','factual',   '<i class="fa-solid fa-chart-column"></i>', 'Fakten &amp; Informationen',       'Geodaten, statistische Messwerte, Rohdaten, Sensormessungen. Inhalte, die die Realität abbilden, ohne redaktionelle Formung.',           st.dataType === 'factual')}
+        ${opt('dtype','creative',  '<i class="fa-solid fa-file-lines"></i>',   'Gestaltete oder kuratierte Inhalte', 'Berichte, redaktionell ausgewählte Datenbankeinträge, Publikationen, kommentierte Datensätze mit erkennbarer eigener Schöpfung.',        st.dataType === 'creative')}
       </div>
 
       <div id="wz-s3-branch"></div>
 
       <h3 class="wz-subh" id="wz-rights-h" style="display:none">2. Besitzen Sie die notwendigen Rechte?</h3>
       <div class="wz-opts wz-opts--3" id="wz-rights-opts" style="display:none">
-        ${opt('rights','yes',     '✅', 'Ja',               'Die Daten wurden von unserer Organisation selbst erhoben oder wir halten alle relevanten Nutzungsrechte.',       st.hasRights === 'yes')}
-        ${opt('rights','unclear', '❓', 'Nicht sicher',     'Teile der Daten stammen aus Drittquellen oder die Rechtslage ist intern noch nicht vollständig geprüft.',        st.hasRights === 'unclear')}
-        ${opt('rights','no',      '⛔', 'Nein',             'Ein Dritter hält Rechte an diesen Daten und hat einer Weiterveröffentlichung nicht zugestimmt.',                st.hasRights === 'no')}
+        ${opt('rights','yes',     '<i class="fa-solid fa-circle-check"></i>',    'Ja',               'Die Daten wurden von unserer Organisation selbst erhoben oder wir halten alle relevanten Nutzungsrechte.',       st.hasRights === 'yes')}
+        ${opt('rights','unclear', '<i class="fa-solid fa-circle-question"></i>', 'Nicht sicher',     'Teile der Daten stammen aus Drittquellen oder die Rechtslage ist intern noch nicht vollständig geprüft.',        st.hasRights === 'unclear')}
+        ${opt('rights','no',      '<i class="fa-solid fa-ban"></i>',             'Nein',             'Ein Dritter hält Rechte an diesen Daten und hat einer Weiterveröffentlichung nicht zugestimmt.',                st.hasRights === 'no')}
       </div>
       <div id="wz-rights-note" style="display:none"></div>
     `;
@@ -245,7 +245,7 @@ export function initWizard() {
             <strong>Empfehlung: CC0</strong>
             <span>Kein Vorbehalt, keine Namensnennungspflicht, maximale Wiederverwendbarkeit. Ermöglicht kommerzielle Nutzung, Integration in andere Systeme und automatische Verarbeitung ohne rechtliche Hürden.</span>
           </div>
-          <p class="wz-p wz-note">⚠️ <strong>Datenbankrecht (EU):</strong> Wenn Sie erhebliche Investitionen in die Zusammenstellung oder Pflege der Datenbank gesteckt haben, können <em>sui generis</em>-Datenbankrechte entstehen, auch wenn die Inhalte selbst gemeinfrei sind. CC0 deckt auch diese ab.</p>
+          <p class="wz-p wz-note"><i class="fa-solid fa-triangle-exclamation"></i> <strong>Datenbankrecht (EU):</strong> Wenn Sie erhebliche Investitionen in die Zusammenstellung oder Pflege der Datenbank gesteckt haben, können <em>sui generis</em>-Datenbankrechte entstehen, auch wenn die Inhalte selbst gemeinfrei sind. CC0 deckt auch diese ab.</p>
         </div>
       `;
     } else if (st.dataType === 'creative') {
@@ -289,10 +289,10 @@ export function initWizard() {
   // ── Step 4 — Technische Offenheit ─────────────────────────────────────────
   function renderS4() {
     const sectorRec = {
-      public:   { icon: '🗃', title: 'Datenkatalog + Bulk-Download', text: 'Öffentliche Verwaltungen sollten Daten primär über offizielle Datenkataloge (z. B. GovData.de) bereitstellen. Ein maschinenlesbarer Bulk-Download ist die Grundlage; APIs können ergänzend folgen, ersetzen aber nicht die rohen Dateien.', methods: ['catalog', 'own'] },
-      civil:    { icon: '🌐', title: 'Community-Plattform + Bulk-Download', text: 'NGOs profitieren davon, Daten über bereits etablierte Community-Plattformen zu teilen, dort ist die relevante Nutzergruppe bereits aktiv. Stellen Sie immer auch einen direkten Dateidownload bereit.', methods: ['platform', 'own'] },
-      research: { icon: '📂', title: 'Fachrepositorium + Bulk-Download', text: 'Forschungsdaten gehören in disziplinspezifische Repositorien wie Zenodo, PANGAEA oder GESIS. Diese garantieren dauerhafte Erreichbarkeit, DOI-Vergabe und fachkundige Auffindbarkeit.', methods: ['repo', 'own'] },
-      private:  { icon: '⚙️', title: 'API + Bulk-Download', text: 'Unternehmen stellen Daten häufig per API bereit. Wichtig: Eine API ersetzt keinen Bulk-Download. Bieten Sie immer auch die Rohdaten als downloadbare Datei an, nicht alle Nutzer haben die technischen Mittel für API-Integration.', methods: ['api', 'own'] },
+      public:   { icon: '<i class="fa-solid fa-box-archive"></i>', title: 'Datenkatalog + Bulk-Download', text: 'Öffentliche Verwaltungen sollten Daten primär über offizielle Datenkataloge (z. B. GovData.de) bereitstellen. Ein maschinenlesbarer Bulk-Download ist die Grundlage; APIs können ergänzend folgen, ersetzen aber nicht die rohen Dateien.', methods: ['catalog', 'own'] },
+      civil:    { icon: '<i class="fa-solid fa-globe"></i>', title: 'Community-Plattform + Bulk-Download', text: 'NGOs profitieren davon, Daten über bereits etablierte Community-Plattformen zu teilen, dort ist die relevante Nutzergruppe bereits aktiv. Stellen Sie immer auch einen direkten Dateidownload bereit.', methods: ['platform', 'own'] },
+      research: { icon: '<i class="fa-solid fa-folder-open"></i>', title: 'Fachrepositorium + Bulk-Download', text: 'Forschungsdaten gehören in disziplinspezifische Repositorien wie Zenodo, PANGAEA oder GESIS. Diese garantieren dauerhafte Erreichbarkeit, DOI-Vergabe und fachkundige Auffindbarkeit.', methods: ['repo', 'own'] },
+      private:  { icon: '<i class="fa-solid fa-gear"></i>', title: 'API + Bulk-Download', text: 'Unternehmen stellen Daten häufig per API bereit. Wichtig: Eine API ersetzt keinen Bulk-Download. Bieten Sie immer auch die Rohdaten als downloadbare Datei an, nicht alle Nutzer haben die technischen Mittel für API-Integration.', methods: ['api', 'own'] },
     };
     const rec = sectorRec[st.sector] || sectorRec.public;
 
@@ -312,26 +312,26 @@ export function initWizard() {
       <h3 class="wz-subh">1. Welches Format verwenden Sie?</h3>
       <div class="wz-format-grid">
         <div class="wz-format-card wz-format-card--good">
-          <strong>✅ Empfohlen</strong>
+          <strong><i class="fa-solid fa-circle-check"></i> Empfohlen</strong>
           <span>CSV, JSON, XML, TSV, GeoJSON: maschinenlesbar, offen, weitverbreitet</span>
         </div>
         <div class="wz-format-card wz-format-card--bad">
-          <strong>⛔ Ungeeignet</strong>
+          <strong><i class="fa-solid fa-ban"></i> Ungeeignet</strong>
           <span>PDF, DOCX, XLS (ohne CSV-Export): nicht maschinenlesbar oder proprietär</span>
         </div>
       </div>
 
       <h3 class="wz-subh">2. Wie stellen Sie die Daten bereit?</h3>
       <div class="wz-opts wz-opts--2">
-        ${opt('publish','catalog',  '🗃', 'Datenkatalog',          'Eintrag in einen zentralen oder sektorspezifischen Open-Data-Katalog (GovData, CKAN-Instanz).',  st.publishMethod === 'catalog')}
-        ${opt('publish','repo',     '📂', 'Fachrepositorium',      'Plattform wie Zenodo, PANGAEA, GESIS oder ein disziplinspezifisches Archiv.',                   st.publishMethod === 'repo')}
-        ${opt('publish','platform', '🌐', 'Community-Plattform',   'GitHub, Figshare, Kaggle, Hugging Face oder ähnliche öffentlich zugängliche Plattformen.',      st.publishMethod === 'platform')}
-        ${opt('publish','api',      '⚙️', 'API (ergänzend)',        'REST- oder OData-API zusätzlich zum Bulk-Download. Nicht als alleinige Publikationsform.',       st.publishMethod === 'api')}
-        ${opt('publish','own',      '🖥', 'Eigene Website',         'Download direkt von der eigenen Website, einfach zu starten, aber schwieriger auffindbar.',    st.publishMethod === 'own')}
+        ${opt('publish','catalog',  '<i class="fa-solid fa-box-archive"></i>', 'Datenkatalog',          'Eintrag in einen zentralen oder sektorspezifischen Open-Data-Katalog (GovData, CKAN-Instanz).',  st.publishMethod === 'catalog')}
+        ${opt('publish','repo',     '<i class="fa-solid fa-folder-open"></i>', 'Fachrepositorium',      'Plattform wie Zenodo, PANGAEA, GESIS oder ein disziplinspezifisches Archiv.',                   st.publishMethod === 'repo')}
+        ${opt('publish','platform', '<i class="fa-solid fa-globe"></i>',       'Community-Plattform',   'GitHub, Figshare, Kaggle, Hugging Face oder ähnliche öffentlich zugängliche Plattformen.',      st.publishMethod === 'platform')}
+        ${opt('publish','api',      '<i class="fa-solid fa-gear"></i>',         'API (ergänzend)',        'REST- oder OData-API zusätzlich zum Bulk-Download. Nicht als alleinige Publikationsform.',       st.publishMethod === 'api')}
+        ${opt('publish','own',      '<i class="fa-solid fa-display"></i>',      'Eigene Website',         'Download direkt von der eigenen Website, einfach zu starten, aber schwieriger auffindbar.',    st.publishMethod === 'own')}
       </div>
 
       <div class="wz-hint">
-        <span class="wz-hint-icon">⏱</span>
+        <span class="wz-hint-icon"><i class="fa-solid fa-clock"></i></span>
         <span><strong>Lieber heute roh als in sechs Monaten perfekt.</strong> Wartende Nutzer und politisches Momentum gehen verloren. Ein einfacher CSV-Download auf Ihrer Website ist ein legitimer Start.</span>
       </div>
     `;
@@ -374,7 +374,7 @@ export function initWizard() {
       </ul>
 
       <div class="wz-hint">
-        <span class="wz-hint-icon">👥</span>
+        <span class="wz-hint-icon"><i class="fa-solid fa-users"></i></span>
         <span><strong>Nutzer früh einbeziehen.</strong> Infomediäre (Menschen, die Rohdaten in nutzbare Produkte verwandeln) sind wertvoller als Marketing. Suchen Sie früh den Kontakt zu Journalisten, zivilgesellschaftlichen Datenteams und Entwicklern, die Ihren Datensatz kennen.</span>
       </div>
 

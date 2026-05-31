@@ -1,3 +1,12 @@
+/* ── Local Fonts ── */
+@font-face { font-family: 'Inter'; font-weight: 400; font-style: normal; font-display: swap; src: url('/fonts/inter-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-weight: 500; font-style: normal; font-display: swap; src: url('/fonts/inter-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-weight: 600; font-style: normal; font-display: swap; src: url('/fonts/inter-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-weight: 700; font-style: normal; font-display: swap; src: url('/fonts/inter-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400; font-style: normal; font-display: swap; src: url('/fonts/jetbrains-mono-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 600; font-style: normal; font-display: swap; src: url('/fonts/jetbrains-mono-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 700; font-style: normal; font-display: swap; src: url('/fonts/jetbrains-mono-latin-700-normal.woff2') format('woff2'); }
+
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -50,7 +59,9 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
 #logo { display: flex; align-items: center; gap: 8px; flex-shrink: 0; text-decoration: none; cursor: pointer; border-radius: 6px; padding: 4px 6px; margin: -4px -6px; transition: background 0.15s; }
 #logo:hover { background: var(--surface-2); }
 .logo-mark { font-size: 20px; color: var(--accent); }
-.logo-text { font-family: var(--mono); font-weight: 700; font-size: 16px; letter-spacing: -0.5px; color: var(--text-1); }
+.logo-block { display: flex; flex-direction: column; gap: 1px; }
+.logo-text { font-family: var(--mono); font-weight: 700; font-size: 16px; letter-spacing: -0.5px; color: var(--text-1); line-height: 1.2; }
+.logo-sub { font-size: 10px; font-weight: 400; color: var(--text-3); letter-spacing: 0; line-height: 1; }
 
 #breadcrumb {
   flex: 1;
@@ -621,9 +632,12 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
   padding: 12px 14px;
 }
 .im-feat-icon {
-  font-size: 18px;
+  font-size: 16px;
   flex-shrink: 0;
   margin-top: 1px;
+  width: 20px;
+  text-align: center;
+  color: var(--accent);
 }
 .im-feat strong { font-size: 13px; color: var(--text-1); }
 .im-feat div    { font-size: 12px; color: var(--text-2); line-height: 1.5; }
@@ -682,11 +696,12 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
   padding: 10px 12px;
 }
 .ob-icon {
-  font-size: 18px;
+  font-size: 16px;
   width: 32px; height: 32px;
   display: flex; align-items: center; justify-content: center;
   background: var(--surface-3);
   border-radius: 7px;
+  color: var(--accent);
   flex-shrink: 0;
   font-family: var(--mono);
   color: var(--accent);
@@ -1159,7 +1174,7 @@ a#footer-brand:hover { color: var(--accent); }
   border-color: var(--accent);
   background: #6200a80d;
 }
-.wz-opt-icon { font-size: 20px; flex-shrink: 0; line-height: 1.2; margin-top: 1px; }
+.wz-opt-icon { font-size: 18px; flex-shrink: 0; line-height: 1; margin-top: 1px; width: 22px; text-align: center; color: var(--accent); }
 .wz-opt-label { display: block; font-size: 13px; font-weight: 600; color: var(--text-1); margin-bottom: 2px; }
 .wz-opt-desc { display: block; font-size: 11px; color: var(--text-2); line-height: 1.5; }
 .wz-opt-tradeoff { display: block; font-size: 11px; color: var(--accent); line-height: 1.5; margin-top: 4px; font-style: italic; }
@@ -1278,7 +1293,7 @@ a#footer-brand:hover { color: var(--accent); }
   margin-top: 12px;
 }
 .wz-hint strong { color: var(--text-1); }
-.wz-hint-icon { font-size: 16px; flex-shrink: 0; }
+.wz-hint-icon { font-size: 15px; flex-shrink: 0; width: 18px; text-align: center; color: var(--accent); }
 
 /* Warn boxes */
 .wz-warn {

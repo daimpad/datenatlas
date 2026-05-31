@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Datenatlas — Datenlandschaft erkunden</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
   <link rel="stylesheet" href="/src/style.css" />
 </head>
 <body>
@@ -15,7 +13,10 @@
     <header id="header">
       <div id="logo">
         <span class="logo-mark">◈</span>
-        <span class="logo-text">Datenatlas</span>
+        <div class="logo-block">
+          <span class="logo-text">Datenatlas</span>
+          <span class="logo-sub">Open Data Potenziale nach Sektoren</span>
+        </div>
       </div>
 
       <nav id="breadcrumb" aria-label="Navigation">
@@ -113,7 +114,7 @@
 
     <aside id="sidebar" aria-label="Detailansicht" data-open="false">
       <div id="sidebar-scroll">
-        <button id="sidebar-close" title="Schließen" aria-label="Seitenleiste schließen">✕</button>
+        <button id="sidebar-close" title="Schließen" aria-label="Seitenleiste schließen"><i class="fa-solid fa-xmark"></i></button>
         <div id="sidebar-body">
           <!-- populated by JS -->
         </div>
@@ -128,7 +129,7 @@
     <!-- Info / About modal -->
     <div id="info-modal" role="dialog" aria-modal="true" aria-label="Über den Datenatlas" hidden>
       <div class="im-card">
-        <button id="im-close" title="Schließen" aria-label="Schließen">✕</button>
+        <button id="im-close" title="Schließen" aria-label="Schließen"><i class="fa-solid fa-xmark"></i></button>
 
         <div class="im-header">
           <span class="logo-mark">◈</span>
@@ -197,19 +198,19 @@
           <h3 class="im-heading">Funktionen</h3>
           <div class="im-features">
             <div class="im-feat">
-              <span class="im-feat-icon">🔍</span>
+              <span class="im-feat-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
               <div><strong>Volltext-Suche</strong><br>Finde Datentypen über alle Sektoren hinweg. Die Suche berücksichtigt Namen, Beschreibungen und Pfade.</div>
             </div>
             <div class="im-feat">
-              <span class="im-feat-icon">🎛</span>
+              <span class="im-feat-icon"><i class="fa-solid fa-sliders"></i></span>
               <div><strong>Öffnungsklasse-Filter</strong><br>Blende auf Ebene 4 alle Kacheln einer bestimmten Klasse hervor: Grün, Gelb oder Rot.</div>
             </div>
             <div class="im-feat">
-              <span class="im-feat-icon">🔗</span>
+              <span class="im-feat-icon"><i class="fa-solid fa-link"></i></span>
               <div><strong>Teilen</strong><br>Der Teilen-Button kopiert den Link zur aktuellen Ansicht. Jede Navigationstiefe hat eine eigene URL.</div>
             </div>
             <div class="im-feat">
-              <span class="im-feat-icon">⇄</span>
+              <span class="im-feat-icon"><i class="fa-solid fa-arrows-left-right"></i></span>
               <div><strong>Pan &amp; Zoom</strong><br>Ziehe die Karte frei. Auf Touch-Geräten funktioniert Pinch-to-Zoom.</div>
             </div>
           </div>
@@ -244,15 +245,15 @@
         </div>
         <div class="ob-hints">
           <div class="ob-hint">
-            <span class="ob-icon">→</span>
+            <span class="ob-icon"><i class="fa-solid fa-arrow-right"></i></span>
             <div><strong>Klicken</strong><br>Kachel öffnen und tiefer navigieren</div>
           </div>
           <div class="ob-hint">
-            <span class="ob-icon">⇄</span>
+            <span class="ob-icon"><i class="fa-solid fa-arrows-left-right"></i></span>
             <div><strong>Ziehen</strong><br>Karte frei verschieben</div>
           </div>
           <div class="ob-hint">
-            <span class="ob-icon">◎</span>
+            <span class="ob-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
             <div><strong>Suchen</strong><br>Datentypen direkt finden</div>
           </div>
         </div>
@@ -273,7 +274,7 @@
     <!-- "Daten öffnen" Wizard Modal -->
     <div id="wizard-modal" role="dialog" aria-modal="true" aria-label="Daten öffnen – Schritt-für-Schritt" hidden>
       <div class="wz-card">
-        <button id="wz-close" title="Schließen" aria-label="Schließen">✕</button>
+        <button id="wz-close" title="Schließen" aria-label="Schließen"><i class="fa-solid fa-xmark"></i></button>
 
         <div class="wz-progress-wrap">
           <div class="wz-progress-track">

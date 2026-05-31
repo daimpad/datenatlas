@@ -4480,11 +4480,11 @@
       "description": "Kommunale Verkehrsämter, ÖPNV-Aufgabenträger und Straßenbauämter, die Mobilitätsdaten und Verkehrsinfrastruktur verwalten",
       "children": [
         {
-          "id": "oepnv-kfz",
+          "id": "schienen-oepnv",
           "level": 3,
-          "name": "ÖPNV & Kfz-Verkehr",
+          "name": "Schienenpersonennahverkehr",
           "color": "#1abc9c",
-          "description": "Öffentlicher Nahverkehr, motorisierter Individualverkehr und ruhender Verkehr im Stadtgebiet",
+          "description": "Schienengebundener ÖPNV: Liniennetz, Fahrplandaten, Fahrgastzahlen und Barrierefreiheit von S-Bahn, U-Bahn, Straßenbahn und Regionalbahn.",
           "children": [
             {
               "id": "oepnv-liniennetz",
@@ -4550,6 +4550,463 @@
                 ]
               }
             },
+            {
+              "id": "oepnv-fahrgastzahl",
+              "level": 4,
+              "name": "ÖPNV-Fahrgastzahlen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Fahrgastaufkommen im öffentlichen Nahverkehr nach Linie, Haltestelle und Zeitraum.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Aggregierte Fahrgastzahlen ohne Personenbezug; von Verkehrsunternehmen veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Zeitreihendaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Laufende Überwachung und Auswertung relevanter Kennzahlen."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Strategische und operative Planung auf Basis der Daten."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Pendlerverkehr Karlsruhe",
+                    "url": "https://www.mobidata-bw.de/dataset/72006943-2ebe-4b2c-aca2-7a4c3020d1e8",
+                    "publisher": "Karlsruhe"
+                  },
+                  {
+                    "title": "Stadtbuslinien",
+                    "url": "https://www.opendata-hro.de/dataset/3f9c3016-fc26-40af-96d4-f9cd5037ca6d",
+                    "publisher": "Rostock"
+                  },
+                  {
+                    "title": "Verkehr, Straßenbahntrassen",
+                    "url": "https://geoportal.sachsen.de/md/7ab7e83c-23dd-4b15-a5bc-ce9a2e1bde0a",
+                    "publisher": "Dresden"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "oepnv-barrierefreiheit",
+              "level": 4,
+              "name": "ÖPNV-Barrierefreiheit (Aufzüge)",
+              "color": "#27ae60",
+              "details": {
+                "description": "Standorte und Betriebsstatus von Aufzügen und Rolltreppen an Haltestellen und Bahnhöfen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Standort- und Statusdaten ohne Personenbezug; frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Geodaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Laufende Überwachung und Auswertung relevanter Kennzahlen."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Kommunikation und Transparenz gegenüber Bevölkerung und Medien."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Überführungen",
+                    "url": "https://geoportal.sachsen.de/md/e6fa5645-8e52-4ac6-a5a6-ea42a5a8b2ea",
+                    "publisher": "Dresden"
+                  },
+                  {
+                    "title": "Östliche Anbindung Bahnhof (Ursprungsplan)",
+                    "url": "https://gdk.gdi-de.org/inspire/srv/eng/xml_iso19139?uuid=548936dc-1834-4137-b7e5-138df2333f39",
+                    "publisher": "Diepholz"
+                  },
+                  {
+                    "title": "Querungshilfen",
+                    "url": "https://portal-chemnitz.opendata.arcgis.com/datasets/chemnitz::querungshilfen",
+                    "publisher": "Chemnitz"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "spnv-netz",
+              "level": 4,
+              "name": "Schienennetz & Streckeninfrastruktur",
+              "color": "#27ae60",
+              "details": {
+                "description": "Topologie des regionalen Schienennetzes: Gleisverläufe, Streckenabschnitte, Betriebsbahnhöfe und technische Parameter (Elektrifizierung, Streckenklasse). Grundlage für Netzplanung, Kapazitätsanalysen und multimodale Routenplanung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Schienennetz-Geodaten bilden öffentliche Infrastruktur ab und enthalten keinen Personenbezug. Die DB Netz AG veröffentlicht Teile der Netztopologie bereits als Open Data über die Mobilithek."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Geodaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Strecken- und Netztopologie ist Grundlage für Netzentwicklungspläne, Fahrplankonstruktion und Investitionsplanung im Schienenpersonennahverkehr."
+                  },
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Streckendaten ermöglichen die Auswertung von Pünktlichkeit, Kapazitätsauslastung und Infrastrukturzustand auf Linien- und Streckenabschnittsebene."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "haltestellen-schiene",
+              "level": 4,
+              "name": "Bahnhofsdaten & Haltestellenkataster Schiene",
+              "color": "#27ae60",
+              "details": {
+                "description": "Standortdaten aller Bahnhöfe und Haltepunkte im Schienennetz: Koordinaten, Bahnsteigdaten, Ausstattungsmerkmale (Aufzüge, Parkplätze, Fahrradabstellanlagen), Barrierefreiheitsstatus und Betriebsklassifizierung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Haltestellendaten beschreiben öffentliche Infrastruktur ohne Personenbezug. Sie sind Pflichtbestandteil des Nationalen Zugangspunkts (NeTEx-Standard) und werden von DB Station&Service bereits teilweise als Open Data bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_03",
+                  "label": "Verzeichnis / Register"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Beratung & Begleitung",
+                    "description": "Haltestellendaten fließen in Fahrgastinformationssysteme, Routenplaner und Barrierefreiheits-Apps ein."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Ausstattungskataster unterstützt die Priorisierung von Modernisierungs- und Barrierefreiheitsinvestitionen."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "strassen-oepnv",
+          "level": 3,
+          "name": "Straßengebundener ÖPNV",
+          "color": "#1abc9c",
+          "description": "Busverkehr und straßengebundene ÖPNV-Formen: Liniennetz, Haltestellenkataster, Vertriebsstellen und Fahrgastzahlen.",
+          "children": [
+            {
+              "id": "oepnv-vertrieb",
+              "level": 4,
+              "name": "ÖPNV-Vertriebsstellen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Standorte von Ticketverkaufsstellen, Automaten und Service-Centern des öffentlichen Nahverkehrs.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Standortdaten ohne Personenbezug frei verfügbar."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Geodaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Laufende Überwachung und Auswertung relevanter Kennzahlen."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Kommunikation und Transparenz gegenüber Bevölkerung und Medien."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "An der Bahn nach INSPIRE PLU",
+                    "url": "https://gdk.gdi-de.org/inspire/srv/eng/xml_iso19139?uuid=d2867cce-0e23-4d8e-86b5-54ddc05ac526",
+                    "publisher": "Hambergen"
+                  },
+                  {
+                    "title": "Bussheck 1. Aenderung",
+                    "url": "https://www.geoportal.rlp.de/dataset/e19178c3-04af-93ac-7559-1c76c7eea123",
+                    "publisher": "Birkenfeld"
+                  },
+                  {
+                    "title": "ÖPNV Ticketautomaten",
+                    "url": "https://opendata.stadt-muenster.de/dataset/%C3%B6pnv-ticketautomaten",
+                    "publisher": "Münster"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bus-liniennetz",
+              "level": 4,
+              "name": "Busliniennetz & Fahrplandaten",
+              "color": "#27ae60",
+              "details": {
+                "description": "GTFS-Fahrplandaten speziell für den straßengebundenen Busverkehr: Linienverläufe, Haltestellen, Abfahrtszeiten, Umlaufpläne und Betriebskalender für Stadt-, Regional- und Nachtbuslinien.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Bus-GTFS-Daten enthalten keinen Personenbezug und sind Grundlage für Routenplaner und Fahrgastinformationssysteme. Zahlreiche Verkehrsverbünde stellen GTFS-Feeds bereits als Open Data bereit."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Zeitreihen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Beratung & Begleitung",
+                    "description": "Fahrplandaten sind Grundlage für Fahrgastinformationssysteme, Haltestellen-Displays und multimodale Mobilitäts-Apps."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Linienverläufe und Taktfrequenzen werden von kommunalen Aufgabenträgern zur Angebotsoptimierung und Netzentwicklung genutzt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bushaltestellenkataster",
+              "level": 4,
+              "name": "Bushaltestellen-Kataster",
+              "color": "#27ae60",
+              "details": {
+                "description": "Standortdaten aller Bushaltestellen: geografische Koordinaten, Ausstattungsmerkmale (Wetterschutz, Sitzgelegenheiten, digitale Anzeigen), Barrierefreiheitsstatus (taktile Leitsysteme, Bordsteinhöhen) und Eigentumsverhältnisse.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Haltestellenkataster-Daten beschreiben öffentliche Infrastruktur ohne Personenbezug. Sie sind nach dem Nationalen Zugangspunkt (NeTEx) als Open Data bereitzustellen und werden von vielen Kommunen bereits veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Geodaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Haltestellenkataster ermöglicht die systematische Priorisierung von Ausstattungs- und Barrierefreiheitsmaßnahmen."
+                  },
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Zustandsdaten der Haltestellen unterstützen das kommunale Infrastrukturmanagement und die Qualitätskontrolle."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bus-fahrgastzahlen",
+              "level": 4,
+              "name": "Bus-Fahrgastzahlen (liniengenau)",
+              "color": "#27ae60",
+              "details": {
+                "description": "Linienspezifische Fahrgastzählungen im Stadtbusverkehr: Einsteigermengen nach Haltestelle und Zeitperiode, Auslastungsgrade und saisonale Schwankungen. Grundlage für die Netzoptimierung und Betriebsplanung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Linienspezifische Fahrgastzahlen können bei sehr geringem Fahrgastaufkommen Rückschlüsse auf Nutzungsmuster ermöglichen. Aggregierung auf Wochentags-/Stunden-Ebene und Mindestfallzahl-Prüfung empfohlen vor Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Zeitreihen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Fahrgastzahlen dokumentieren die Nutzung des Busnetzes und sind Grundlage für Leistungsberichte gegenüber kommunalen Aufgabenträgern."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Nachfragedaten leiten Entscheidungen über Taktanpassungen, Linienführungen und Fahrzeugeinsatzplanung."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "miv",
+          "level": 3,
+          "name": "Motorisierter Individualverkehr (MIV)",
+          "color": "#1abc9c",
+          "description": "Kfz-Verkehr, Parkraum, Zulassungsstatistiken, Ladeinfrastruktur für E-Fahrzeuge sowie ergänzende Mobilitätsangebote wie Taxi und Carsharing.",
+          "children": [
             {
               "id": "kfz-parkplatz",
               "level": 4,
@@ -4883,210 +5340,6 @@
               }
             },
             {
-              "id": "oepnv-vertrieb",
-              "level": 4,
-              "name": "ÖPNV-Vertriebsstellen",
-              "color": "#27ae60",
-              "details": {
-                "description": "Standorte von Ticketverkaufsstellen, Automaten und Service-Centern des öffentlichen Nahverkehrs.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Grün — sofort publizierbar",
-                  "explanation": "Standortdaten ohne Personenbezug frei verfügbar."
-                },
-                "theme": {
-                  "code": "TH_07",
-                  "label": "Infrastruktur & Mobilität"
-                },
-                "object": {
-                  "code": "OB_04",
-                  "label": "Geodaten"
-                },
-                "granularity": {
-                  "code": "GR_02",
-                  "label": "Lokal (Gemeinde/Kreis)"
-                },
-                "format": [
-                  {
-                    "code": "FT_02",
-                    "label": "JSON / GeoJSON"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01",
-                  "label": "CC0 (Public Domain)"
-                },
-                "relevance": 2,
-                "processes": [
-                  {
-                    "method": "Monitoring & Evaluation",
-                    "description": "Laufende Überwachung und Auswertung relevanter Kennzahlen."
-                  },
-                  {
-                    "method": "Öffentlichkeitsarbeit & Kommunikation",
-                    "description": "Kommunikation und Transparenz gegenüber Bevölkerung und Medien."
-                  }
-                ],
-                "examples": [
-                  {
-                    "title": "An der Bahn nach INSPIRE PLU",
-                    "url": "https://gdk.gdi-de.org/inspire/srv/eng/xml_iso19139?uuid=d2867cce-0e23-4d8e-86b5-54ddc05ac526",
-                    "publisher": "Hambergen"
-                  },
-                  {
-                    "title": "Bussheck 1. Aenderung",
-                    "url": "https://www.geoportal.rlp.de/dataset/e19178c3-04af-93ac-7559-1c76c7eea123",
-                    "publisher": "Birkenfeld"
-                  },
-                  {
-                    "title": "ÖPNV Ticketautomaten",
-                    "url": "https://opendata.stadt-muenster.de/dataset/%C3%B6pnv-ticketautomaten",
-                    "publisher": "Münster"
-                  }
-                ]
-              }
-            },
-            {
-              "id": "oepnv-fahrgastzahl",
-              "level": 4,
-              "name": "ÖPNV-Fahrgastzahlen",
-              "color": "#27ae60",
-              "details": {
-                "description": "Fahrgastaufkommen im öffentlichen Nahverkehr nach Linie, Haltestelle und Zeitraum.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Grün — sofort publizierbar",
-                  "explanation": "Aggregierte Fahrgastzahlen ohne Personenbezug; von Verkehrsunternehmen veröffentlicht."
-                },
-                "theme": {
-                  "code": "TH_07",
-                  "label": "Infrastruktur & Mobilität"
-                },
-                "object": {
-                  "code": "OB_06",
-                  "label": "Zeitreihendaten"
-                },
-                "granularity": {
-                  "code": "GR_02",
-                  "label": "Lokal (Gemeinde/Kreis)"
-                },
-                "format": [
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  },
-                  {
-                    "code": "FT_02",
-                    "label": "JSON / GeoJSON"
-                  }
-                ],
-                "license": {
-                  "code": "LI_02",
-                  "label": "CC BY 4.0"
-                },
-                "relevance": 3,
-                "processes": [
-                  {
-                    "method": "Monitoring & Evaluation",
-                    "description": "Laufende Überwachung und Auswertung relevanter Kennzahlen."
-                  },
-                  {
-                    "method": "Planung & Steuerung",
-                    "description": "Strategische und operative Planung auf Basis der Daten."
-                  }
-                ],
-                "examples": [
-                  {
-                    "title": "Pendlerverkehr Karlsruhe",
-                    "url": "https://www.mobidata-bw.de/dataset/72006943-2ebe-4b2c-aca2-7a4c3020d1e8",
-                    "publisher": "Karlsruhe"
-                  },
-                  {
-                    "title": "Stadtbuslinien",
-                    "url": "https://www.opendata-hro.de/dataset/3f9c3016-fc26-40af-96d4-f9cd5037ca6d",
-                    "publisher": "Rostock"
-                  },
-                  {
-                    "title": "Verkehr, Straßenbahntrassen",
-                    "url": "https://geoportal.sachsen.de/md/7ab7e83c-23dd-4b15-a5bc-ce9a2e1bde0a",
-                    "publisher": "Dresden"
-                  }
-                ]
-              }
-            },
-            {
-              "id": "oepnv-barrierefreiheit",
-              "level": 4,
-              "name": "ÖPNV-Barrierefreiheit (Aufzüge)",
-              "color": "#27ae60",
-              "details": {
-                "description": "Standorte und Betriebsstatus von Aufzügen und Rolltreppen an Haltestellen und Bahnhöfen.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Grün — sofort publizierbar",
-                  "explanation": "Standort- und Statusdaten ohne Personenbezug; frei zugänglich."
-                },
-                "theme": {
-                  "code": "TH_07",
-                  "label": "Infrastruktur & Mobilität"
-                },
-                "object": {
-                  "code": "OB_04",
-                  "label": "Geodaten"
-                },
-                "granularity": {
-                  "code": "GR_02",
-                  "label": "Lokal (Gemeinde/Kreis)"
-                },
-                "format": [
-                  {
-                    "code": "FT_02",
-                    "label": "JSON / GeoJSON"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01",
-                  "label": "CC0 (Public Domain)"
-                },
-                "relevance": 3,
-                "processes": [
-                  {
-                    "method": "Monitoring & Evaluation",
-                    "description": "Laufende Überwachung und Auswertung relevanter Kennzahlen."
-                  },
-                  {
-                    "method": "Öffentlichkeitsarbeit & Kommunikation",
-                    "description": "Kommunikation und Transparenz gegenüber Bevölkerung und Medien."
-                  }
-                ],
-                "examples": [
-                  {
-                    "title": "Überführungen",
-                    "url": "https://geoportal.sachsen.de/md/e6fa5645-8e52-4ac6-a5a6-ea42a5a8b2ea",
-                    "publisher": "Dresden"
-                  },
-                  {
-                    "title": "Östliche Anbindung Bahnhof (Ursprungsplan)",
-                    "url": "https://gdk.gdi-de.org/inspire/srv/eng/xml_iso19139?uuid=548936dc-1834-4137-b7e5-138df2333f39",
-                    "publisher": "Diepholz"
-                  },
-                  {
-                    "title": "Querungshilfen",
-                    "url": "https://portal-chemnitz.opendata.arcgis.com/datasets/chemnitz::querungshilfen",
-                    "publisher": "Chemnitz"
-                  }
-                ]
-              }
-            },
-            {
               "id": "taxistandplaetze",
               "level": 4,
               "name": "Taxistandplätze",
@@ -5150,74 +5403,6 @@
                     "title": "Taxistand",
                     "url": "https://mcloud.de/c8ab03a5-6597-4814-8b14-dac9efd32884",
                     "publisher": "Dortmund"
-                  }
-                ]
-              }
-            },
-            {
-              "id": "schiffsverkehr-anlegestelle",
-              "level": 4,
-              "name": "Schiffsverkehr & Fähranlegestellen",
-              "color": "#27ae60",
-              "details": {
-                "description": "Standorte von Fähranlegestellen, Bootshäfen und Fahrtpläne kommunaler Fährverbindungen.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Grün — sofort publizierbar",
-                  "explanation": "Standort- und Fahrplandaten ohne Personenbezug; frei zugänglich."
-                },
-                "theme": {
-                  "code": "TH_07",
-                  "label": "Infrastruktur & Mobilität"
-                },
-                "object": {
-                  "code": "OB_04",
-                  "label": "Geodaten"
-                },
-                "granularity": {
-                  "code": "GR_02",
-                  "label": "Lokal (Gemeinde/Kreis)"
-                },
-                "format": [
-                  {
-                    "code": "FT_02",
-                    "label": "JSON / GeoJSON"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01",
-                  "label": "CC0 (Public Domain)"
-                },
-                "relevance": 2,
-                "processes": [
-                  {
-                    "method": "Monitoring & Evaluation",
-                    "description": "Laufende Überwachung und Auswertung relevanter Kennzahlen."
-                  },
-                  {
-                    "method": "Öffentlichkeitsarbeit & Kommunikation",
-                    "description": "Kommunikation und Transparenz gegenüber Bevölkerung und Medien."
-                  }
-                ],
-                "examples": [
-                  {
-                    "title": "Landeshafen",
-                    "url": "https://www.geoportal.rlp.de/dataset/0b3038c8-98f3-6ca1-8858-b707fa2dbeba",
-                    "publisher": "Wörth"
-                  },
-                  {
-                    "title": "Niederender Straße - Wassersport nach INSPIRE PLU",
-                    "url": "https://gdk.gdi-de.org/inspire/srv/eng/xml_iso19139?uuid=f9759cfd-759e-480e-afff-c73a2144fd09",
-                    "publisher": "Ritterhude"
-                  },
-                  {
-                    "title": "01001000_BP_Hafenspitze_Nordost_A9_Urschrift",
-                    "url": "http://registry.gdi-de.org/id/de.sh/f6f6c16e-028a-451a-92c6-4e2c4db300fe",
-                    "publisher": "Flensburg"
                   }
                 ]
               }
@@ -5357,7 +5542,16 @@
                   }
                 ]
               }
-            },
+            }
+          ]
+        },
+        {
+          "id": "flugverkehr",
+          "level": 3,
+          "name": "Flugverkehr",
+          "color": "#1abc9c",
+          "description": "Flughafenstandorte, Flugbewegungsstatistiken, Passagierzahlen und Fluglärmkartierung.",
+          "children": [
             {
               "id": "flughafen-standorte",
               "level": 4,
@@ -5458,6 +5652,177 @@
                     "title": "Flugbewegungen Ruhr-Airport",
                     "url": "https://daten.geoportal.ruhr/srv/api/records/472988fa-dfb7-4c23-8389-98d78cfe4e9",
                     "publisher": "Regionalverband Ruhr"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fluglarm-kartierung",
+              "level": 4,
+              "name": "Fluglärmkartierung",
+              "color": "#27ae60",
+              "details": {
+                "description": "Lärmexpositionskarten rund um deutsche Flughäfen gemäß EU-Umgebungslärmrichtlinie (2002/49/EG): Lärmpegelbereiche (Lden, Lnight) als Flächenkartierung, betroffene Einwohnerzahlen und Aktionspläne zur Lärmminderung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Lärmkarten sind nach der EU-Umgebungslärmrichtlinie als öffentlich zugängliche Daten bereitzustellen. Sie enthalten keine personenbezogenen Informationen und werden vom Umweltbundesamt und Ländern bereits veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_06",
+                  "label": "Umwelt"
+                },
+                "object": {
+                  "code": "OB_05",
+                  "label": "Geodaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Umwelt- & Klimaschutz",
+                    "description": "Fluglärmkarten sind Grundlage für Lärmaktionspläne, Schallschutzprogramme und die Ausweisung von Lärmschutzzonen rund um Flughäfen."
+                  },
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Periodische Neukartierung alle fünf Jahre ermöglicht die Bewertung der Lärmschutzmaßnahmen-Wirksamkeit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "passagierstatistik-flug",
+              "level": 4,
+              "name": "Passagierstatistik Luftfahrt",
+              "color": "#27ae60",
+              "details": {
+                "description": "Passagier- und Frachtstatistiken der deutschen Flughäfen: Fluggastzahlen nach Flughafen, Strecke und Airline, Frachttonnagen, Flugbewegungen und Saisonalität. Erhoben vom Statistischen Bundesamt und Luftfahrt-Bundesamt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Flughafenstatistiken sind aggregierte Betriebsdaten ohne Personenbezug. Das Statistische Bundesamt (Destatis) veröffentlicht Luftverkehrsstatistiken als Open Data."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_06",
+                  "label": "Zeitreihen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Passagierstatistiken belegen Verkehrsentwicklungen, Marktanteile und saisonale Schwankungen im Luftverkehr und dienen als Grundlage für Infrastrukturplanung."
+                  },
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Flughafen- und Streckenstatistiken fließen in regionale Wirtschaftsberichte und Klimaschutz-Monitoring (Emissionen des Luftverkehrs) ein."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "schiffsverkehr",
+          "level": 3,
+          "name": "Schiffs- und Fährverkehr",
+          "color": "#1abc9c",
+          "description": "Fähranlegestellen, Häfen, Passagierzahlen, Frachtstatistiken und Wasserstraßeninfrastruktur.",
+          "children": [
+            {
+              "id": "schiffsverkehr-anlegestelle",
+              "level": 4,
+              "name": "Schiffsverkehr & Fähranlegestellen",
+              "color": "#27ae60",
+              "details": {
+                "description": "Standorte von Fähranlegestellen, Bootshäfen und Fahrtpläne kommunaler Fährverbindungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Standort- und Fahrplandaten ohne Personenbezug; frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Geodaten"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Laufende Überwachung und Auswertung relevanter Kennzahlen."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Kommunikation und Transparenz gegenüber Bevölkerung und Medien."
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Landeshafen",
+                    "url": "https://www.geoportal.rlp.de/dataset/0b3038c8-98f3-6ca1-8858-b707fa2dbeba",
+                    "publisher": "Wörth"
+                  },
+                  {
+                    "title": "Niederender Straße - Wassersport nach INSPIRE PLU",
+                    "url": "https://gdk.gdi-de.org/inspire/srv/eng/xml_iso19139?uuid=f9759cfd-759e-480e-afff-c73a2144fd09",
+                    "publisher": "Ritterhude"
+                  },
+                  {
+                    "title": "01001000_BP_Hafenspitze_Nordost_A9_Urschrift",
+                    "url": "http://registry.gdi-de.org/id/de.sh/f6f6c16e-028a-451a-92c6-4e2c4db300fe",
+                    "publisher": "Flensburg"
                   }
                 ]
               }
@@ -5566,6 +5931,53 @@
                     "title": "Schiffsfracht Schleswig-Holstein",
                     "url": "https://opendata.schleswig-holstein.de/dataset/9a7015e8-704f-3d06-a3ae-6b5c11a50",
                     "publisher": "Land Schleswig-Holstein"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wasserstrassen-netz",
+              "level": 4,
+              "name": "Wasserstraßennetz & Pegelstände",
+              "color": "#27ae60",
+              "details": {
+                "description": "Topologie des Binnenwasserstraßennetzes: Streckenverläufe, Schleusenstandorte, Brücken mit lichten Höhen sowie Echtzeit- und historische Pegelstandsmessungen an Gewässern. Grundlage für Schifffahrtsplanung und Hochwassermanagement.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — sofort publizierbar",
+                  "explanation": "Wasserstraßen-Geodaten und Pegelstandsdaten sind öffentliche Infrastruktur- und Umweltdaten ohne Personenbezug. Die Wasserstraßen- und Schifffahrtsverwaltung des Bundes (WSV) stellt Pegelstände und Netzdaten bereits als Open Data bereit."
+                },
+                "theme": {
+                  "code": "TH_07",
+                  "label": "Infrastruktur & Mobilität"
+                },
+                "object": {
+                  "code": "OB_04",
+                  "label": "Messungen / Sensordaten"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelereignis / Rohdaten"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON / GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01",
+                  "label": "CC0 (Public Domain)"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Pegelstands- und Netzdaten steuern die Schleusenlogistik, Schiffsroutenplanung und Sperrungen bei Niedrig- oder Hochwasser."
+                  },
+                  {
+                    "method": "Monitoring & Evaluation",
+                    "description": "Langzeitreihen der Pegelstände dokumentieren hydrologische Veränderungen und die Auswirkungen des Klimawandels auf die Binnenschifffahrt."
                   }
                 ]
               }

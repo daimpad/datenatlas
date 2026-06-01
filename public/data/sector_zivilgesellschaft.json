@@ -206,6 +206,84 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "mitgliederstruktur-sportverband",
+              "level": 4,
+              "name": "Mitgliederstruktur Sportverband",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Mitglieder nach Postleitzahl und Altersgruppe, erhoben durch Landessportbünde.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Datenschutz bei kleinen PLZ-Gruppen beachten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Datenschutzprüfung",
+                    "description": "Aggregierung auf Kreisebene vor Veröffentlichung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "jugendtrainer-qualifikationsregister",
+              "level": 4,
+              "name": "Jugendtrainer-Qualifikationsregister",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Lizenzen und Ausbildungsstand ehrenamtlicher Jugendtrainer nach Sportart und Region.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Keine personenbezogenen Daten, nur Lizenzkategorien."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Zusammenfassung nach Lizenztyp und Bundesland"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -403,6 +481,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "sportanlagennutzungsstatistik",
+              "level": 4,
+              "name": "Sportanlagennutzungsstatistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Belegungsdaten kommunaler Sportstätten durch Vereinssport nach Tageszeit und Saison.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Rein infrastrukturelle Daten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Belegungsoptimierung und Kapazitätsplanung"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -550,6 +667,49 @@
                   {
                     "method": "Bildung & Qualifizierung",
                     "description": "Daten fließen in Trainerausbildung und sportmedizinische Empfehlungen ein."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "veranstaltungskalender-sportverein",
+              "level": 4,
+              "name": "Veranstaltungskalender Sportverein",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Geplante Turniere, Wettkämpfe und Sportevents nach Sportart, Ort und Zielgruppe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Veranstaltungsinformationen."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Kalender-Aggregierung",
+                    "description": "Zusammenführung aus Verbands-APIs"
                   }
                 ]
               }
@@ -759,6 +919,123 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "kulturveranstaltungen-archiv",
+              "level": 4,
+              "name": "Kulturveranstaltungen Archiv",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Vergangene Konzerte und Workshops der letzten 10 Jahre aus Soziokultur-Einrichtungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Archivdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Digitalisierung",
+                    "description": "Übertragung aus analogen Veranstaltungsheften in strukturierte Daten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "publikumsstatistik-kultureinrichtungen",
+              "level": 4,
+              "name": "Publikumsstatistik Kultureinrichtungen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Besucherzahlen von Kulturzentren nach Veranstaltungstyp und Quartal.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Besuchszahlen ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresberichte und Quartalsmeldungen der Kultureinrichtungen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "barrierefreiheit-kulturorte",
+              "level": 4,
+              "name": "Barrierefreiheit Kulturorte",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Geodaten und Bewertungen zur Zugänglichkeit von Kultureinrichtungen für Menschen mit Behinderungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Infrastrukturdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Crowdsourcing",
+                    "description": "Nutzer-Reviews und amtliche Prüfberichte zusammenführen"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -909,6 +1186,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "foerderantragsstatistik-kultur",
+              "level": 4,
+              "name": "Förderantragsstatistik Kultur",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Bewilligte und abgelehnte Kulturförderanträge nach Spartenzugehörigkeit und Fördervolumen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierung kleinerer Einrichtungen erforderlich."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Datenkuratierung",
+                    "description": "Anonymisierung der Antragsteller vor Veröffentlichung"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1056,6 +1372,49 @@
                   {
                     "method": "Netzwerkarbeit & Kooperation",
                     "description": "Gemeinsame Datenbank fördert Vernetzung zwischen Trägern."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sammlungsregister-museum",
+              "level": 4,
+              "name": "Sammlungsregister Museum",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Öffentlich zugängliche Bestandslisten von Gemeinschaftsmuseen und Gedenkstätten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Metadaten zu Sammlungsbeständen ohne Rechtsfragen."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Datenbankexport",
+                    "description": "Objekt-Metadaten aus Museumssoftware exportieren"
                   }
                 ]
               }
@@ -1265,6 +1624,84 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "lernmaterialien-nutzungsstatistik",
+              "level": 4,
+              "name": "Lernmaterialien-Nutzungsstatistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Abruf- und Downloadzahlen offener Bildungsressourcen (OER) nach Fach und Zielgruppe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Anonymisierte Zugriffsstatistiken."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Webanalyse",
+                    "description": "Serverlog-Auswertung der OER-Repositorien"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zertifizierungsstatistik-bildung",
+              "level": 4,
+              "name": "Zertifizierungsstatistik Bildungsangebote",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Akkreditierte Bildungsangebote und vergebene Abschlüsse nach Träger und Fachbereich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Qualifikationsdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Meldungen der Bildungsträger an Akkreditierungsstellen"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1415,6 +1852,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "dropoutquote-sprachkurse",
+              "level": 4,
+              "name": "Dropoutquote Sprachkurse",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Abbrecherquoten bei Integrations- und Sprachkursen nach Region und Träger.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierung notwendig zum Schutz kleiner Kursgruppen."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Zusammenfassung auf Träger- und Regionsebene"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1562,6 +2038,88 @@
                   {
                     "method": "Öffentlichkeitsarbeit & Kommunikation",
                     "description": "Offene Kurskataloge erhöhen Reichweite unter bildungsfernen Zielgruppen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schulungsunterlagen-oer",
+              "level": 4,
+              "name": "Schulungsunterlagen (OER)",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Offene Bildungsmaterialien für politische Bildung und Nachhaltigkeit von Stiftungen und NGOs.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Unter offener Lizenz, Multiplikatoreffekt für Schulen."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Kuratierung",
+                    "description": "Erschließung und Verschlagwortung für Suchmaschinen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "teilnehmerzahlen-volkshochschule",
+              "level": 4,
+              "name": "Teilnehmerzahlen Volkshochschule",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Kursbelegungen und Kursabbrüche nach Fachbereich und Quartal.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Belegungszahlen ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Jahresstatistik",
+                    "description": "Meldungen der VHS-Verbände an Statistikbehörden"
                   }
                 ]
               }
@@ -1721,6 +2279,201 @@
                   {
                     "method": "Bildung & Qualifizierung",
                     "description": "Freizeitangebote haben non-formalen Bildungscharakter für alle Altersgruppen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "materialverleih-inventar",
+              "level": 4,
+              "name": "Materialverleih Inventar",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Liste verleihbarer Ressourcen (Lastenräder, Beamer, Zelte) in Nachbarschaftszentren.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich verfügbare Verleihkataloge."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Datenpflege",
+                    "description": "Regelmäßige Aktualisierung durch Einrichtungen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "reparatur-statistik",
+              "level": 4,
+              "name": "Reparatur-Statistik (Repair Cafés)",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Anzahl reparierter Geräte nach Kategorie und Erfolgsquote in Repair Cafés.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Anonymisierte Aggregatdaten."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Zusammenfassung aus Protokolldaten der Repair Cafés"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "barrierefreie-reiseziele",
+              "level": 4,
+              "name": "Barrierefreie Reiseziele",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Zertifizierte Hotels und Wanderwege nach dem Standard 'Reisen für Alle'.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Zertifizierungsdaten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Georeferenzierung",
+                    "description": "GPS-Koordinaten der zertifizierten Angebote"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vereinsgruendungsstatistik",
+              "level": 4,
+              "name": "Vereinsgründungsstatistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Neugründungen und Auflösungen eingetragener Vereine nach Region und Tätigkeitsbereich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Registereinträge."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Registerauswertung",
+                    "description": "Auswertung des Vereinsregisters beim Amtsgericht"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "seniorenfreizeitangebote",
+              "level": 4,
+              "name": "Seniorenfreizeitangebote",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Aktive Gruppen und Teilnehmerzahlen in Seniorentreffs und Begegnungsstätten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Keine personenbezogenen Daten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Erhebung",
+                    "description": "Jährliche Befragung der Einrichtungsträger"
                   }
                 ]
               }
@@ -1921,6 +2674,123 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ehrenamts-stundenkonto",
+              "level": 4,
+              "name": "Ehrenamts-Stundenkonto",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Geleistete ehrenamtliche Stunden nach Einsatzbereich und Organisation.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Anonymisierte Aggregatdaten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Zeiterfassungssysteme von DRK, AWO und THW"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "jugendtreff-besuchsstatistik",
+              "level": 4,
+              "name": "Jugendtreff-Besuchsstatistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Belegungszeiten und Besuchszahlen offener Jugendarbeit nach Einrichtung und Monat.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Besuchszahlen ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Meldepflicht",
+                    "description": "Träger melden Besuchszahlen an Jugendamt"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "werkzeugbibliothek-inventar",
+              "level": 4,
+              "name": "Werkzeugbibliothek Inventar",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Verleihgeräte und Nutzungsfrequenz öffentlicher Werkzeugbibliotheken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich verfügbare Verleihkataloge."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Datenpflege",
+                    "description": "Laufende Aktualisierung durch Betreiber der Bibliotheken"
+                  }
+                ]
+              }
             }
           ]
         }
@@ -2077,6 +2947,240 @@
                   {
                     "method": "Monitoring & Evaluation",
                     "description": "Aggregierte Hilfeplanstatistiken zeigen Wirksamkeit der Hilfeformen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "beratungsstatistik-wohnungslosenhilfe",
+              "level": 4,
+              "name": "Beratungsstatistik Wohnungslosenhilfe (Jährlich)",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Aggregierte Anzahl der Beratungen nach Monat und Typ durch Diakonie und Caritas.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Oft nur als PDF verfügbar, Datentransfer nötig."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "PDF-Extraktion",
+                    "description": "Digitalisierung aus Jahresberichten in strukturierte Tabellen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "verzeichnis-soziale-einrichtungen",
+              "level": 4,
+              "name": "Verzeichnis Sozialer Einrichtungen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Adressen und Öffnungszeiten von Hilfsangeboten wie Soliguide-Einträge.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Basis für Hilfe-Apps und Navigation."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Crowdsourcing",
+                    "description": "Kooperative Pflege durch Sozialarbeiter und Betroffene"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "meldestelle-diskriminierung",
+              "level": 4,
+              "name": "Meldestelle Diskriminierungsstatistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Statistik gemeldeter Diskriminierungsvorfälle nach Art der Benachteiligung (anonymisiert).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierung aller Beteiligten zwingend."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "k-Anonymity-Verfahren vor Veröffentlichung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "barrierefreiheits-check",
+              "level": 4,
+              "name": "Barrierefreiheits-Check (Crowdsourcing)",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Geodaten zur Rollstuhltauglichkeit von Orten aus Wheelmap und ähnlichen Plattformen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Klassisches Open Data Beispiel."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Crowdsourcing",
+                    "description": "Community-basierte Erhebung über App"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "beratungsstatistik-lsbtiq",
+              "level": 4,
+              "name": "Beratungsstatistik LSBTIQ*",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Aggregierte Themen der Anfragen (Diskriminierung, Rechtsfragen) in LSBTIQ*-Beratungsstellen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Besonderer Schutzbedarf der Betroffenen."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Themenkategorisierung ohne Rückschluss auf Einzelfälle"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schuldnerberatungsstatistik",
+              "level": 4,
+              "name": "Schuldnerberatungsstatistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Fallzahlen und durchschnittliche Schuldenhöhe in Schuldnerberatungsstellen nach Region.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierung zum Schutz der Ratsuchenden."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Statistische Auswertung der Beratungserfassung"
                   }
                 ]
               }
@@ -2586,6 +3690,123 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "gewaessergute-messstellen",
+              "level": 4,
+              "name": "Gewässergüte Messstellen (Citizen Science)",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Von Freiwilligen erhobene Wasserwerte aus BUND- und NABU-Netzwerken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Citizen Science Daten mit Qualitätskontrolle."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Kreuzvalidierung mit offiziellen Messstellen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "tierheim-belegungsdaten",
+              "level": 4,
+              "name": "Tierheim-Belegungsdaten",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Anzahl Tiere nach Art, Vermittlungsdauer und Kapazität der Tierheime.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Keine personenbezogenen Daten."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Monatliche Meldungen an Tierschutzbund"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "luftgute-sensordaten",
+              "level": 4,
+              "name": "Luftgüte-Sensordaten (Dezentral)",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Feinstaub PM10/PM2.5 Werte aus Community-Netzwerken wie luftdaten.info.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Ergänzung zu behördlichen Messnetzen."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Sensor-Kalibrierung",
+                    "description": "Abgleich der Low-Cost-Sensoren mit Referenzgeräten"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -2736,6 +3957,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "baumkataster-pflanzungen",
+              "level": 4,
+              "name": "Baumkataster / Pflanzungen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Positionen neu gepflanzter Bäume aus Bergwaldprojekt und Aufforstungsinitiativen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gut visualisierbar, kein Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Georeferenzierung",
+                    "description": "GPS-Erfassung bei Pflanzaktionen"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -2883,6 +4143,45 @@
                   {
                     "method": "Monitoring & Evaluation",
                     "description": "Ergebnisdaten (Müllmengen, Pflanzungen) sind konkrete Wirkungsnachweise."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "saatgut-bibliothek-liste",
+              "level": 4,
+              "name": "Saatgut-Bibliothek Liste",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Verzeichnis alter Gemüse- und Getreidesorten, die bewahrt und geteilt werden.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Biodiversitätssicherung, kein Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_09"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Katalogisierung",
+                    "description": "Erfassung durch Züchter und Sortenexperten"
                   }
                 ]
               }
@@ -3045,6 +4344,201 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "sanitaetsdienste-einsatzstatistik",
+              "level": 4,
+              "name": "Sanitätsdienste Einsatzstatistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Anzahl Versorgungen bei Großveranstaltungen nach Art der Verletzung (DRK, Malteser, DLRG).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Risikoanalyse für Veranstaltungsplanung."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresberichte der Hilfsorganisationen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "meldestatistik-rettungsdienst",
+              "level": 4,
+              "name": "Meldestatistik Rettungsdienst (Freiwillig)",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Einsätze nach Art, Einsatzgebiet und Hilfeleistung freiwilliger Rettungsdienste.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Datenschutz bei Einzeleinsätzen beachten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Einsatzleitstellen-Protokolle"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ausruestungsregister-thw",
+              "level": 4,
+              "name": "Ausrüstungsregister THW / Freiwillige Feuerwehr",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Fahrzeuge und Geräte ehrenamtlicher Katastrophenschutzeinheiten nach Einheit und Standort.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Infrastrukturdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Registerpflege",
+                    "description": "Laufende Aktualisierung durch Einheitsführer"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hochwasserschutz-einsatzprotokoll",
+              "level": 4,
+              "name": "Hochwasserschutz-Einsatzprotokoll",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Dokumentierte Einsätze und Schutzmaßnahmen bei Hochwasserereignissen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Lagedaten ohne personenbezogene Informationen."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Lagedokumentation",
+                    "description": "Einsatzprotokolle nach Abschluss des Hochwasserereignisses"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "katastrophenschutz-uebungsplan",
+              "level": 4,
+              "name": "Katastrophenschutz-Übungsplan",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Gültige Schutzpläne und Übungsszenarien für Großschadensereignisse nach Schutzart.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Planungsdaten ohne operative Details."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Dokumentation",
+                    "description": "Standardisierung bestehender Planwerke"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -3192,6 +4686,45 @@
                   {
                     "method": "Finanzierung & Förderung",
                     "description": "Qualifizierungsquoten begründen Förderbedarfe für Ausbildungsinfrastruktur."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "uebungsstatistik-feuerwehr",
+              "level": 4,
+              "name": "Übungsstatistik Freiwillige Feuerwehr",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Anzahl Übungen und Teilnehmer je Feuerwehrwehr und Monat.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Kapazitätsdaten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Meldungen der Kreisfeuerwehrverbände"
                   }
                 ]
               }
@@ -3504,6 +5037,49 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "sozialeinrichtungen-traegerverzeichnis",
+              "level": 4,
+              "name": "Sozialeinrichtungen Trägerverzeichnis",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Kirchliche Kitas, Altenheime und Beratungsstellen nach Träger und Region.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Trägerinformationen."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Verzeichnispflege",
+                    "description": "Jährliche Aktualisierung durch Caritasverbände und Diakonie"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -3654,6 +5230,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "oekumenische-aktivitaeten-statistik",
+              "level": 4,
+              "name": "Ökumenische Aktivitäten Statistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Gemeinsame Veranstaltungen und Projekte zwischen verschiedenen Konfessionen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kooperationsdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Berichterstattung",
+                    "description": "Erhebung durch ökumenische Gremien"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -3801,6 +5416,162 @@
                   {
                     "method": "Forschung & Analyse",
                     "description": "Soziologische Analyse der Austrittsursachen ist Grundlage für Reformdiskussionen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kirchenaustrittsstatistik",
+              "level": 4,
+              "name": "Kirchenaustrittsstatistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Anzahl Kirchenaustritte nach Region, Konfession und Quartal.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Statistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Meldung der Kirchenämter an Statistikstellen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "taufstatistik-gemeinde",
+              "level": 4,
+              "name": "Taufstatistik (Gemeinde)",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Taufen, Konfirmationen und Trauungen je Gemeinde und Jahr.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Anonymisierte Sakramentenstatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Meldungen der Gemeindepfarrer an Landeskirchen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gottesdienst-besuchsstatistik",
+              "level": 4,
+              "name": "Gottesdienst-Besuchsstatistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Durchschnittliche Teilnehmerzahlen je Gemeinde und Kirchenjahr.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Besuchszahlen."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Erhebung",
+                    "description": "Zählung durch Messner und Pfarramtssekretariat"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "spendenstatistik-kirchenkollekte",
+              "level": 4,
+              "name": "Spendenstatistik Kirchenkollekte",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Kollekteneinnahmen nach Verwendungszweck und Gemeinde im Jahresverlauf.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Kleingemeinden bei Kleinstbeträgen schützen."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Finanzberichterstattung",
+                    "description": "Meldungen an Kirchensteuerverwaltung"
                   }
                 ]
               }
@@ -3963,6 +5734,162 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "pflegestuetzpunkt-beratungsstatistik",
+              "level": 4,
+              "name": "Pflegestützpunkt-Beratungsstatistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Anfragen und Beratungsthemen in Pflegestützpunkten nach Region und Themenfeld.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierung schützt Einzelratsuchende."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Themenklassifikation",
+                    "description": "Kategorisierung nach Anfragetypologie"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hospiz-kapazitaetsuebersicht",
+              "level": 4,
+              "name": "Hospiz-Kapazitätsübersicht",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Belegung und Wartelisten stationärer und ambulanter Hospize nach Region.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierung der Belegungsebene."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Monatliche Kapazitätsmeldungen der Hospize"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ehrenamtlicher-krankentransport",
+              "level": 4,
+              "name": "Ehrenamtlicher Krankentransport Statistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Fahrten und versorgte Personen durch ehrenamtliche Fahrdienste nach Region.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierung schützt Patientendaten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Fahrtdokumentation",
+                    "description": "Elektronische Fahrtenbücher der Fahrdienste"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ehrenamts-begleitung-daten",
+              "level": 4,
+              "name": "Ehrenamtliche Sterbebegleitung Statistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Anzahl ehrenamtlicher Begleiter und betreuter Sterbender in Hospizdiensten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierung schützt individuelle Begleitungen."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresberichte der Hospizdienste"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4113,6 +6040,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "gesundheitsfoerderung-statistik",
+              "level": 4,
+              "name": "Gesundheitsförderungs-Statistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Teilnehmerzahlen und Wirkungsmaße in Präventionsprogrammen zivilgesellschaftlicher Träger.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Programmstatistiken."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Evaluation",
+                    "description": "Standardisierte Wirkungsmessung nach gängigen Evaluationsrahmen"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4260,6 +6226,49 @@
                   {
                     "method": "Monitoring & Evaluation",
                     "description": "Kontaktvolumen zeigt gesellschaftliche Nachfrage nach psychosozialer Unterstützung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "patientenberatung-report",
+              "level": 4,
+              "name": "Patientenberatungsstellen Report",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Jahresberichte unabhängiger Patientenberatungsstellen zu Beschwerden und Beratungsthemen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Anonymisierte Aggregatdaten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Berichtsaufbereitung",
+                    "description": "Textextraktion und Standardisierung aus PDF-Jahresberichten"
                   }
                 ]
               }
@@ -4422,6 +6431,205 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "strukturdaten-sozialunternehmen",
+              "level": 4,
+              "name": "Strukturdaten Sozialunternehmen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Mitarbeiterzahl und Wirkungsbereich gemeinwohlorientierter Firmen nach SEND e.V.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Wirtschaftsfaktor Social Entrepreneurship."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Erhebung",
+                    "description": "Jährliche Selbstauskunft der Mitgliedsunternehmen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "spendenmarkt-monitor",
+              "level": 4,
+              "name": "Spendenmarkt-Monitor",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Aggregiertes Spendenvolumen nach Themenzweck im Jahresverlauf (DZI, Spendenrat).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Fundraising-Benchmark für die Branche."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Zusammenführung aus Spendenzweckberichten der Träger"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mitgliederstatistik-genossenschaft",
+              "level": 4,
+              "name": "Mitgliederstatistik Genossenschaft",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Mitgliederentwicklung und Beteiligungshöhe in eingetragenen Genossenschaften.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Registerinformationen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Registerauswertung",
+                    "description": "Auswertung des Genossenschaftsregisters"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wohlfahrtsverband-jahresbericht",
+              "level": 4,
+              "name": "Wohlfahrtsverband Jahresbericht",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Aggregierte Kennzahlen der großen Wohlfahrtsverbände (AWO, Caritas, Diakonie).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bereits publizierte Jahresberichte."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "PDF-Extraktion",
+                    "description": "Digitalisierung aus Jahresberichten in strukturierte Tabellen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "impact-messung-nonprofit",
+              "level": 4,
+              "name": "Impact-Messung Nonprofit",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Soziale und ökonomische Wirkungsmessungen von Non-Profit-Organisationen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Methodenvielfalt erschwert Vergleichbarkeit."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Standardisierung",
+                    "description": "Social Return on Investment (SROI) als Bewertungsrahmen"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4569,6 +6777,162 @@
                   {
                     "method": "Forschung & Analyse",
                     "description": "Berichte sind Grundlage für policy-relevante Forschung und Advocacy."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "crowdfunding-statistik-zivilgesellschaft",
+              "level": 4,
+              "name": "Crowdfunding-Statistik Zivilgesellschaft",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Projekte und Finanzierungsvolumen zivilgesellschaftlicher Crowdfunding-Kampagnen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich zugängliche Plattformdaten."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Plattformanalyse",
+                    "description": "Auswertung öffentlicher Daten von Betterplace, Startnext etc."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "social-media-nutzung-ngos",
+              "level": 4,
+              "name": "Social-Media-Nutzung NGOs",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Reichweite und Engagement-Raten der Social-Media-Kanäle von NGOs.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Metriken der Plattformen."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Social-Media-Monitoring",
+                    "description": "Automatisierte Auswertung öffentlicher Profildaten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buergerinitiative-datenbank",
+              "level": 4,
+              "name": "Bürgerinitiative-Datenbank",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Aktive Bürgerinitiativen nach Region, Themenfeld und Gründungsjahr.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich tätige Organisationen."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Verzeichnispflege",
+                    "description": "Kooperative Pflege durch Aktivisten und Forscher"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ehrenamts-zeitbank-eintraege",
+              "level": 4,
+              "name": "Ehrenamts-Zeitbank Einträge",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Stundenkonten und Tauschstatistiken in Zeitbanken für gegenseitige Nachbarschaftshilfe.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierung schützt individuelle Nutzerdaten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Monatliche Auswertung der Zeitbank-Software"
                   }
                 ]
               }
@@ -4731,6 +7095,84 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "wissenschaftskommunikation-statistik",
+              "level": 4,
+              "name": "Wissenschaftskommunikation-Statistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Veranstaltungen und Teilnehmerzahlen von Science Slams und Citizen-Science-Festivals.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Veranstaltungsdaten."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jährliche Erhebung durch Wissenschaft im Dialog"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "foerderstatistik-forschungspreise",
+              "level": 4,
+              "name": "Förderstatistik Forschungspreise",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Preise und Stipendien für Bürgerforschung nach Fachgebiet und Fördervolumen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Preisvergabe-Informationen."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Zusammenführung aus Stiftungsdatenbanken"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4881,6 +7323,84 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "open-science-publikationen",
+              "level": 4,
+              "name": "Open-Science-Publikationen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Frei zugängliche wissenschaftliche Veröffentlichungen pro Institution und Fachgebiet.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Open-Access-Pflicht bei öffentlich geförderten Projekten."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bibliometrie",
+                    "description": "Auswertung von DOAJ, Zenodo und institutionellen Repositorien"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "forschungsdaten-repositorien",
+              "level": 4,
+              "name": "Forschungsdaten-Repositorien",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Öffentlich verfügbare Datensätze nach Wissenschaftsdisziplin und Datenschutzklasse.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bereits zur Nachnutzung freigegebene Daten."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Indexierung",
+                    "description": "Harvesting aus re3data und DataCite"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -5028,6 +7548,84 @@
                   {
                     "method": "Bildung & Qualifizierung",
                     "description": "Bürgerwissenschaftliche Beteiligung fördert Wissenschaftskommunikation und -verständnis."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buergerforschungs-projektliste",
+              "level": 4,
+              "name": "Bürgerforschungs-Projektliste",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Aktive Citizen Science Projekte nach Themenfeld, Plattform und Beteiligungsgrad.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Projektdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Zusammenführung aus Bürgerschaffende, SciStarter etc."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wissenstransfer-aktivitaeten",
+              "level": 4,
+              "name": "Wissenstransfer-Aktivitäten",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Kooperationsprojekte zwischen Wissenschaft und Gesellschaft nach Hochschule und Thema.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Projektinformationen."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Erhebung",
+                    "description": "Jährliche Befragung der Hochschul-Transferstellen"
                   }
                 ]
               }
@@ -5187,6 +7785,45 @@
                   {
                     "method": "Öffentlichkeitsarbeit & Kommunikation",
                     "description": "Lange Wartezeiten sind quantitative Belege für unzureichende Beratungskapazitäten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "remittances-diaspora-daten",
+              "level": 4,
+              "name": "Remittances-Daten (Diaspora)",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Geldsendungen in Partnerländer durch diasporische Organisationen nach Region und Herkunftsland.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierung schützt individuelle Geldtransfers."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Geldtransferdienstleister auf Aggregatebene"
                   }
                 ]
               }
@@ -5490,6 +8127,201 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "foerderdatenbank-grants",
+              "level": 4,
+              "name": "Förderdatenbank (Grants)",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Liste geförderter Projekte und Fördervolumen nach dem 360Giving-Standard.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "360Giving-Standard für maximale Interoperabilität."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Datenstandardisierung",
+                    "description": "Transformation in 360Giving-Datenformat"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "humanitaere-hilfe-statistik",
+              "level": 4,
+              "name": "Humanitäre Hilfe Statistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Ausgaben und erreichte Begünstigte nach Einsatzregion und Hilfsart.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Projektberichte der Hilfsorganisationen."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Zusammenführung aus OCHA Financial Tracking Service"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "volontaer-einsatz-statistik",
+              "level": 4,
+              "name": "Volontär-Einsatz-Statistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Auslandseinsätze von Freiwilligen nach Zielland, Dauer und Trägerprogramm.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Anonymisierte Einsatzstatistiken."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresberichte von weltwärts, ASA und ähnlichen Programmen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "entwicklungshilfe-monitoring",
+              "level": 4,
+              "name": "Entwicklungshilfe-Monitoring",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Projektziele und Zielerreichungsgrade in der Entwicklungszusammenarbeit nach Land.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bereits in IATI-Standard veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "IATI-Harvesting",
+                    "description": "Auswertung des International Aid Transparency Initiative-Standards"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "partnerschafts-projekte-verzeichnis",
+              "level": 4,
+              "name": "Partnerschafts-Projekte-Verzeichnis",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Städtepartnerschaften und NGO-Kooperationen mit zivilgesellschaftlichen Partnern weltweit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Vertragsbeziehungen."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung kommunaler Partnerschaftsregister"
+                  }
+                ]
+              }
             }
           ]
         }
@@ -5649,6 +8481,162 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "transparenzbericht-finanzfluesse",
+              "level": 4,
+              "name": "Transparenzbericht Finanzflüsse",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Einnahmen und Ausgaben zivilgesellschaftlicher Organisationen nach Kategorien.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Initiative Transparente Zivilgesellschaft als Standard."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aufbereitung",
+                    "description": "Standardisierung der Finanzberichte für maschinenlesbare Veröffentlichung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "positionspapiere-korpus",
+              "level": 4,
+              "name": "Positionspapiere Korpus",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Sammlung von Stellungnahmen und Policy-Papieren zivilgesellschaftlicher Verbände.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Positionspapiere für NLP-Auswertung geeignet."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "NLP-Analyse",
+                    "description": "Text-Mining zur Identifikation politischer Themenagenden"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wahlbeobachtungs-protokolle",
+              "level": 4,
+              "name": "Wahlbeobachtungsprotokolle",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Strukturierte Berichte über Unregelmäßigkeiten bei Wahlen von Wahlbeobachtern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Stärkung demokratischer Integrität."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Strukturierung",
+                    "description": "Einheitliches Schema für Beobachtungsberichte"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "petitionsthemen-cluster",
+              "level": 4,
+              "name": "Petitionsthemen-Cluster",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Analyse von Petitionstexten und Unterzeichnerzahlen nach Region und Thema.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Stimmungsbild der Bevölkerung als öffentliche Daten."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "NLP-Clustering",
+                    "description": "Automatische Themengruppierung mittels Topic Modeling"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -5799,6 +8787,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "hate-speech-monitoring",
+              "level": 4,
+              "name": "Hate Speech Monitoring",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Anzahl und Art gemeldeter Hasskommentare auf Plattformen durch Monitoring-Organisationen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Digitale Zivilgesellschaft als Gegengewicht zu Hass."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Monitoring",
+                    "description": "Automatisierte Erfassung mit Keyword-Klassifikation"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -5946,6 +8973,45 @@
                   {
                     "method": "Monitoring & Evaluation",
                     "description": "Testergebnisse dokumentieren Qualitätsniveau auf dem deutschen Markt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fahrradklima-test-daten",
+              "level": 4,
+              "name": "Fahrradklima-Test Daten",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Umfrageergebnisse zur Fahrradfreundlichkeit nach Städten aus dem ADFC-Fahrradklima-Test.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Wichtiges Werkzeug für Stadtentwicklung und Radverkehrspolitik."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Indexberechnung",
+                    "description": "Aggregierung der Umfragewerte nach Städtegröße"
                   }
                 ]
               }
@@ -6108,6 +9174,123 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "berufsverbands-mitgliederstatistik",
+              "level": 4,
+              "name": "Berufsverbands-Mitgliederstatistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Mitgliederentwicklung nach Verband, Region und Qualifikationsstufe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Mitgliederzahlen der Verbände."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Jahresstatistik",
+                    "description": "Meldungen der Mitgliedsverbände an Dachverband"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lobby-transparenzbericht",
+              "level": 4,
+              "name": "Lobby-Transparenzbericht",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Gespräche und Kontakte von Berufsverbänden mit politischen Entscheidern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Transparenzregister-Pflicht."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Registerpflege",
+                    "description": "Meldungen an EU- und Bundestags-Transparenzregister"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "weiterbildungsstatistik-verbaende",
+              "level": 4,
+              "name": "Weiterbildungsstatistik Verbände",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Schulungsangebote und Teilnehmerzahlen in Berufs- und Wirtschaftsverbänden.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Bildungsdaten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresberichte der Bildungswerke der Verbände"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6258,6 +9441,84 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "branchenkonjunkturbericht",
+              "level": 4,
+              "name": "Branchenkonjunkturbericht",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Aggregierte Wirtschaftslage und Prognosen für Verbandsmitglieder nach Branche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Konjunkturdaten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Umfrageauswertung",
+                    "description": "Monatliche Mitgliederbefragungen der Wirtschaftsverbände"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "arbeitsmarkt-stimmungsbarometer",
+              "level": 4,
+              "name": "Arbeitsmarkt-Stimmungsbarometer",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Einstellungsabsichten und Beschäftigungsklima aus Verbandsumfragen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Prognosen ohne Unternehmensbezug."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Panelumfrage",
+                    "description": "Quartalsweise Befragung der Verbandsmitglieder"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6405,6 +9666,45 @@
                   {
                     "method": "Forschung & Analyse",
                     "description": "Daten sind Grundlage für international vergleichende Arbeitsbeziehungsforschung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "tarifvertragsregister",
+              "level": 4,
+              "name": "Tarifvertragsregister",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Gültige Tarifverträge nach Branche, Region und Laufzeit aus dem BMAS-Register.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliches Tarifregister bereits zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Registerauswertung",
+                    "description": "Automatisierter Import aus dem Tarifregister des BMAS"
                   }
                 ]
               }
@@ -6567,6 +9867,84 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "freie-software-gemeindeprojekte",
+              "level": 4,
+              "name": "Freie Software Gemeindeprojekte",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Open-Source-Anwendungen für kommunale und gemeinschaftliche Nutzung nach Kategorie.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bereits unter freier Lizenz verfügbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Katalogisierung",
+                    "description": "Erfassung über Code-Repositories und Open-Source-Verzeichnisse"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buerger-energieprojekte-statistik",
+              "level": 4,
+              "name": "Bürger-Energieprojekte Statistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Leistung und Einspeisung von Bürgerenergiewerken nach Energieträger und Region.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Netzdaten der Bundesnetzagentur."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung des Marktstammdatenregisters"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6717,6 +10095,88 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "tauschboersen-statistik",
+              "level": 4,
+              "name": "Tauschbörsen Statistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Güter und Dienstleistungen nach Kategorie und Region in zivilgesellschaftlichen Tauschbörsen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Anonymisierte Tauschvorgangsdaten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Plattformstatistiken der Tauschbörsen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wohnprojekte-verzeichnis",
+              "level": 4,
+              "name": "Gemeinschaftliche Wohnprojekte Verzeichnis",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Genossenschaftliche und kollektive Wohnprojekte nach Stadt und Rechtsform.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Informationen zu alternativen Wohnformen."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Georeferenzierung",
+                    "description": "Adresskoordinierung der Projekte"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6864,6 +10324,88 @@
                   {
                     "method": "Forschung & Analyse",
                     "description": "Daten sind Grundlage für sozialpolitische Forschung und Interventionsplanung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gemeinschaftsgarten-verzeichnis",
+              "level": 4,
+              "name": "Gemeinschaftsgarten Verzeichnis",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Urbane Gemeinschaftsgärten mit Fläche, Standort und Mitgliederzahl.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich zugängliche Gartenprojekte."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Georeferenzierung",
+                    "description": "Koordinatenerfassung durch Gartennetzwerke"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "solidarische-landwirtschaft-betriebe",
+              "level": 4,
+              "name": "Solidarische Landwirtschaft (CSA) Betriebe",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Aktive CSA-Betriebe nach Region mit Mitgliederzahl und Anbaufläche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Mitgliederliste des CSA-Netzwerks."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Erhebung",
+                    "description": "Jahreserhebung des CSA-Netzwerk Deutschland"
                   }
                 ]
               }
@@ -7026,6 +10568,123 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "community-radio-statistik",
+              "level": 4,
+              "name": "Community-Radio Sendezeitenstatistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Ausgestrahlte Formate und Hörerzahlen nichtkommerzieller Lokalradios.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich zugängliche Sendedaten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Erhebung",
+                    "description": "Jährliche Meldung an Landesmedienanstalten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buerger-journalismus-statistik",
+              "level": 4,
+              "name": "Bürgerjournalismus-Plattform Statistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Beiträge, Autoren und Reichweite von Bürgerjournalismus-Plattformen nach Region.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Plattformstatistiken."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Webanalyse",
+                    "description": "Aggregierung öffentlicher Plattformstatistiken"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "nachrichtenvielfalt-index",
+              "level": 4,
+              "name": "Nachrichtenvielfalt-Index",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Anzahl und Diversität lokaler Medienangebote nach Region und Trägertyp.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich erforschte Medienlandschaft."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Medienforschung",
+                    "description": "Jährliche Erhebung durch Medienvielfalts-Monitore"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -7176,6 +10835,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "medienkompetenz-training-daten",
+              "level": 4,
+              "name": "Medienkompetenz-Training Daten",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Teilnehmende und Bildungseinrichtungen in Medienkompetenzprogrammen nach Altersgruppe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Teilnehmerzahlen."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jährliche Erhebung der Medienpädagogischen Verbände"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -7323,6 +11021,88 @@
                   {
                     "method": "Netzwerkarbeit & Kooperation",
                     "description": "Monitoring koordiniert zivilgesellschaftliche Beteiligung an netzpolitischen Verfahren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "faktenchecking-datenbank",
+              "level": 4,
+              "name": "Faktenchecking Datenbank",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Geprüfte Behauptungen aus Politik und Gesellschaft mit Bewertungen und Belegen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Informationen zur Demokratiepflege."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "NLP-Analyse",
+                    "description": "Automatisierte Klassifikation von Behauptungen nach Faktenlage"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "digitale-inklusion-statistik",
+              "level": 4,
+              "name": "Digitale Inklusion Statistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Internetnutzungsquoten und Unterstützungsangebote für digitale Teilhabe nach Altersgruppe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Sozialstatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung des Digital Index und ähnlicher Erhebungen"
                   }
                 ]
               }

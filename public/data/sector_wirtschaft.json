@@ -6701,6 +6701,2062 @@
           ]
         }
       ]
+    },
+    {
+      "id": "baugewerbe",
+      "level": 2,
+      "name": "Baugewerbe",
+      "color": "#d35400",
+      "description": "Bauunternehmen, Projektentwickler und Bauwirtschaft im Hoch-, Tief- und Ausbaubereich",
+      "children": [
+        {
+          "id": "hochbau-wohnungsbau",
+          "level": 3,
+          "name": "Hochbau & Wohnungsbau",
+          "color": "#e67e22",
+          "description": "Baugenehmigungen, Fertigstellungen und Marktdaten im Wohn- und Gewerbebau",
+          "children": [
+            {
+              "id": "baugenehmigungen",
+              "level": 4,
+              "name": "Baugenehmigungsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Erteilte Baugenehmigungen nach Gebäudeart, Wohneinheiten und Bundesland (Destatis)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Amtliche Statistik ohne Personenbezug"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Destatis-Bautätigkeit",
+                    "description": "Monatliche Bautätigkeitsstatistik Code 31121"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "baufertigstellungen",
+              "level": 4,
+              "name": "Baufertigstellungsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Fertiggestellte Wohnungen und Gebäude nach Gebäudeart und Region",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Fertigstellungsstatistik ohne Projektbezug"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Destatis-Fertigstellungen",
+                    "description": "Jährliche Bautätigkeitsstatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "baupreisindex",
+              "level": 4,
+              "name": "Baupreisindex",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Preisindizes für Wohngebäude, Bürogebäude und Straßenbau (Destatis)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht Preisindizes als Open Data"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Destatis-Preise",
+                    "description": "Monatliche Erhebung der Baupreisindizes"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wohnungsleerstand",
+              "level": 4,
+              "name": "Wohnungsleerstand & Wohnungsmarkt",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Leerstandsquoten, Mietpreise und Angebotsdaten auf dem Wohnungsmarkt",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Marktdaten publizierbar"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Marktdatenanalyse",
+                    "description": "Auswertung aus empirica, IWU und Inseratedatenbanken"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "tiefbau-infrastrukturbau",
+          "level": 3,
+          "name": "Tiefbau & Infrastrukturbau",
+          "color": "#e67e22",
+          "description": "Straßen-, Schienen- und Leitungsbau, Auftragsvolumen und Bauzustand",
+          "children": [
+            {
+              "id": "tiefbau-auftragseingang",
+              "level": 4,
+              "name": "Auftragseingang Tiefbau",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Auftragsvolumen im Straßen-, Kanal- und Leitungsbau nach Auftraggeber",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht Bauvolumenstatistik"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Destatis-Bauhauptgewerbe",
+                    "description": "Monatliche Statistik Bauhauptgewerbe"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "baumaengel-schäden",
+              "level": 4,
+              "name": "Baumängel & Schadensregister",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Dokumentierte Baumängel, Gewährleistungsansprüche und Schadensstatistiken",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Mängelstatistik ohne Auftragnehmer-Identifikation"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Gutachterauswertung",
+                    "description": "Statistische Auswertung von Bausachverständigenberichten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bauwirtschaft-umsatz",
+              "level": 4,
+              "name": "Umsatz Bauhauptgewerbe",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Gesamtumsatz des Bauhauptgewerbes nach Bausparte und Betriebsgröße",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht Umsatzstatistik des Baugewerbes"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Destatis-Baugewerbe",
+                    "description": "Jährliche Strukturerhebung Baugewerbe"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "bau-konjunktur",
+          "level": 3,
+          "name": "Baukonjunktur & Marktstruktur",
+          "color": "#e67e22",
+          "description": "Konjunkturindizes, Unternehmenszahl und Beschäftigung in der Bauwirtschaft",
+          "children": [
+            {
+              "id": "ifo-bauklima",
+              "level": 4,
+              "name": "ifo-Geschäftsklimaindex Bau",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatlicher Konjunkturindikator für Stimmung und Erwartungen der Bauunternehmen",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ifo publiziert aggregierten Konjunkturindex"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "ifo-Konjunkturumfrage",
+                    "description": "Monatliche Unternehmensbefragung des ifo-Instituts"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bauunternehmen-struktur",
+              "level": 4,
+              "name": "Unternehmensstruktur Bauwirtschaft",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl Betriebe, Beschäftigte und Umsatz nach Betriebsgröße und Gewerk",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis Strukturstatistik"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Unternehmensregister",
+                    "description": "Auswertung Statistisches Unternehmensregister"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bauinsolvenz",
+              "level": 4,
+              "name": "Insolvenzen Baugewerbe",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl und Schuldenvolumen von Unternehmensinsolvenzen in der Bauwirtschaft",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Insolvenzstatistik ist öffentlich"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Destatis-Insolvenzen",
+                    "description": "Monatliche Insolvenzstatistik nach Wirtschaftszweig"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landwirtschaft-ernaehrung",
+      "level": 2,
+      "name": "Landwirtschaft & Ernährungswirtschaft",
+      "color": "#d35400",
+      "description": "Landwirtschaftliche Betriebe, Lebensmittelverarbeitung und Agrarmärkte",
+      "children": [
+        {
+          "id": "landwirtschaftliche-betriebe",
+          "level": 3,
+          "name": "Landwirtschaftliche Betriebe & Produktion",
+          "color": "#e67e22",
+          "description": "Betriebsstrukturen, Erntemengen und Tierhaltungsdaten aus amtlicher Agrarstatistik",
+          "children": [
+            {
+              "id": "agrarstrukturerhebung",
+              "level": 4,
+              "name": "Agrarstrukturerhebung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Betriebsanzahl, Flächennutzung und Arbeitskräfte landwirtschaftlicher Betriebe (Destatis)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Amtliche Agrarstrukturerhebung – aggregierte Betriebsdaten"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Destatis-Landwirtschaft",
+                    "description": "Dreijährliche Agrarstrukturerhebung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "erntemengen",
+              "level": 4,
+              "name": "Erntemengen & Anbauflächen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Geerntete Mengen und Anbauflächen nach Fruchtart und Bundesland",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Amtliche Ernteberichterstattung ist öffentlich"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Ernte- und Betriebsbericht",
+                    "description": "Monatliche Schnellberichte der Statistischen Landesämter"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "tierhaltung-bestand",
+              "level": 4,
+              "name": "Viehbestand & Tierhaltung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl Tiere nach Tierart, Haltungsform und Betriebsgröße",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Viehzählungsdaten ohne Betriebsbezug"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Viehzählung",
+                    "description": "Halbjährliche Viehbestandserhebung nach Agrarstatistikgesetz"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflanzenschutzmittel-einsatz",
+              "level": 4,
+              "name": "Pflanzenschutzmitteleinsatz",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verkaufte Mengen und Anwendungsflächen von Pflanzenschutzmitteln nach Wirkstoffgruppe",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BVL veröffentlicht Absatzstatistik für Pflanzenschutzmittel"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BVL-Absatzstatistik",
+                    "description": "Jährliche Statistik über den Absatz von Pflanzenschutzmitteln"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "lebensmittelverarbeitung",
+          "level": 3,
+          "name": "Lebensmittelverarbeitung & Ernährungsindustrie",
+          "color": "#e67e22",
+          "description": "Produktionsdaten, Unternehmenszahlen und Außenhandel der deutschen Ernährungsindustrie",
+          "children": [
+            {
+              "id": "ernaehrungsindustrie-produktion",
+              "level": 4,
+              "name": "Produktion Ernährungsindustrie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Produktionsmengen und -werte nach Ernährungszweig (Fleisch, Milch, Backwaren etc.)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht Produktionsstatistik"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Destatis-Produktion",
+                    "description": "Monatliche Produktionsstatistik im Verarbeitenden Gewerbe"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lebensmittel-aussenhandel",
+              "level": 4,
+              "name": "Lebensmittel-Außenhandel",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Export- und Importmengen/-werte nach Warengruppe und Handelspartner",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Außenhandelsstatistik ist öffentlich zugänglich"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Destatis-Außenhandel",
+                    "description": "Genesis-Online Außenhandelsstatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lebensmittel-kontrolle",
+              "level": 4,
+              "name": "Lebensmittelkontrolle & Beanstandungsquoten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Ergebnisse amtlicher Lebensmittelkontrollen und Beanstandungsquoten nach Betriebsart",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BVL veröffentlicht nationalen Kontrollbericht"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BVL-Kontrollbericht",
+                    "description": "Nationaler Rückstandskontrollplan und Lebensmittelkontrollbericht"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "agrarmaerkte-preise",
+          "level": 3,
+          "name": "Agrarmärkte & Preise",
+          "color": "#e67e22",
+          "description": "Erzeugerpreise, Marktberichte und Förderdaten der deutschen Landwirtschaft",
+          "children": [
+            {
+              "id": "erzeugerpreise-landwirtschaft",
+              "level": 4,
+              "name": "Erzeugerpreise Landwirtschaft",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatliche Erzeugerpreise für landwirtschaftliche Produkte (Getreide, Milch, Fleisch)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "AMI und Destatis veröffentlichen Marktpreise"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "AMI-Marktbericht",
+                    "description": "Wöchentliche Marktberichte der Agrarmarkt Informations-GmbH"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "eu-agrarfoerderung",
+              "level": 4,
+              "name": "EU-Agrarförderung (INVEKOS)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Auszahlungen von EU-Direktzahlungen und Agrarumweltmaßnahmen nach Empfänger",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EU-Transparenzpflicht: Empfänger ab 1.250 € müssen veröffentlicht werden"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "EU-Transparenzportal",
+                    "description": "Jährliche Veröffentlichung auf Agrar-Transparenz.de"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bioprodukte-markt",
+              "level": 4,
+              "name": "Bioprodukte & Ökolandbau-Markt",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Umsatz, Fläche und Betriebszahlen im ökologischen Landbau",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BÖLW und AMI veröffentlichen Marktdaten"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BÖLW-Branchenreport",
+                    "description": "Jährlicher Bio-Branchenreport des BÖLW"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gastgewerbe-tourismus",
+      "level": 2,
+      "name": "Gastgewerbe & Tourismus",
+      "color": "#d35400",
+      "description": "Hotels, Gastronomie, Reiseveranstalter und touristische Infrastruktur",
+      "children": [
+        {
+          "id": "beherbergungsgewerbe",
+          "level": 3,
+          "name": "Beherbergungsgewerbe",
+          "color": "#e67e22",
+          "description": "Übernachtungszahlen, Bettenkapazitäten und Auslastung von Beherbergungsbetrieben",
+          "children": [
+            {
+              "id": "uebernachtungsstatistik",
+              "level": 4,
+              "name": "Übernachtungsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Ankünfte und Übernachtungen nach Betriebsart, Herkunftsland und Region (Destatis)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Amtliche Beherbergungsstatistik ohne Gästebezug"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Destatis-Beherbergung",
+                    "description": "Monatliche Beherbergungsstatistik ab 10 Betten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hotelbelegung",
+              "level": 4,
+              "name": "Hotelbelegungsrate & RevPAR",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Auslastungsgrad, Zimmerrate (ADR) und Revenue per Available Room nach Segment",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Kennzahlen ohne Einzelbetriebsdaten publizierbar"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "STR-Marktdaten",
+                    "description": "Auswertung der STR-Hotel-Benchmarking-Datenbank"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "camping-freizeitparks",
+              "level": 4,
+              "name": "Camping & Freizeitanlagen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Übernachtungen und Auslastung auf Campingplätzen und in Freizeitparks",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Amtliche Statistik ab Mindestgröße"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Destatis-Camping",
+                    "description": "Jahresstatistik Campingplätze"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "gastronomie-markt",
+          "level": 3,
+          "name": "Gastronomie",
+          "color": "#e67e22",
+          "description": "Umsatz, Betriebszahlen und Konjunktur der deutschen Gastronomiebranche",
+          "children": [
+            {
+              "id": "gastronomie-umsatz",
+              "level": 4,
+              "name": "Gastronomie-Umsatz",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatlicher Umsatz der Gastronomie nach Betriebsart (Restaurant, Imbiss, Catering)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht Umsatzstatistik des Gastgewerbes"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Destatis-Gastgewerbe",
+                    "description": "Monatliche Umsatzstatistik Gastgewerbe"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "dehoga-konjunktur",
+              "level": 4,
+              "name": "DEHOGA-Konjunkturbericht",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Stimmungsindikator und Umsatzentwicklung aus DEHOGA-Mitgliederbefragung",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DEHOGA veröffentlicht aggregierten Konjunkturbericht"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "DEHOGA-Befragung",
+                    "description": "Quartalsweise Mitgliederbefragung des Deutschen Hotel- und Gaststättenverbands"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lebensmittelhygiene-gastro",
+              "level": 4,
+              "name": "Lebensmittelhygiene-Kontrollen Gastronomie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Ergebnisse von Hygienekontrollen in gastronomischen Betrieben nach Bundesland",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Amtliche Kontrollberichte ohne Betriebsidentifikation publizierbar"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Veterinär-Kontrollberichte",
+                    "description": "Jahresberichte der Veterinärämter"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "tourismus-reisewirtschaft",
+          "level": 3,
+          "name": "Tourismus & Reisewirtschaft",
+          "color": "#e67e22",
+          "description": "Reiseveranstalter, Incoming-Tourismus und touristische Kennzahlen",
+          "children": [
+            {
+              "id": "incoming-tourismus",
+              "level": 4,
+              "name": "Incoming-Tourismus Deutschland",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Internationale Ankünfte und Ausgaben ausländischer Gäste in Deutschland (DZT)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DZT und UNWTO veröffentlichen Tourismuszahlen"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "DZT-Marktforschung",
+                    "description": "Jährliche Marktforschungsberichte der Deutschen Zentrale für Tourismus"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "reiseveranstalter-markt",
+              "level": 4,
+              "name": "Reiseveranstalter-Marktdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Umsätze, Kundenzahlen und Marktanteile der deutschen Reiseveranstalter",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Marktdaten publizierbar"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "DRV-Statistik",
+                    "description": "Jahresstatistik des Deutschen Reiseverbands"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "tourismus-beschaeftigung",
+              "level": 4,
+              "name": "Beschäftigung im Tourismus",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Sozialversicherungspflichtig Beschäftigte in tourismusrelevanten Wirtschaftszweigen",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BA-Beschäftigungsstatistik ist öffentlich"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BA-Beschäftigungsstatistik",
+                    "description": "Auswertung nach WZ-Code Gastgewerbe und Reisebüros"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "energiewirtschaft-privat",
+      "level": 2,
+      "name": "Energiewirtschaft",
+      "color": "#d35400",
+      "description": "Private Energieversorgungsunternehmen, Strombörse, Gashandel und erneuerbare Energien",
+      "children": [
+        {
+          "id": "stromerzeugung-handel",
+          "level": 3,
+          "name": "Stromerzeugung & -handel",
+          "color": "#e67e22",
+          "description": "Erzeugungskapazitäten, Börsenpreise und Verbrauchsdaten des deutschen Strommarkts",
+          "children": [
+            {
+              "id": "stromerzeugung-energietraeger",
+              "level": 4,
+              "name": "Stromerzeugung nach Energieträger",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Bruttostromerzeugung nach Kraftwerkstyp (Kohle, Gas, Wind, Solar) in TWh",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "AGEB und BNetzA veröffentlichen Erzeugungsstatistik"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "SMARD-API",
+                    "description": "Abruf über Bundesnetzagentur SMARD-Plattform"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "boersenstrompreis",
+              "level": 4,
+              "name": "Börsenstrompreise (EPEX SPOT)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Day-Ahead- und Intraday-Strompreise an der Europäischen Strombörse EPEX",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EPEX SPOT veröffentlicht Marktpreise"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "EPEX-API",
+                    "description": "Stündliche Preisabfrage über EPEX SPOT Marktdaten-API"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "netzentgelte-strom",
+              "level": 4,
+              "name": "Netzentgelte Strom",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Netzentgelte der deutschen Übertragungsnetzbetreiber und Verteilnetzbetreiber nach Region",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BNetzA veröffentlicht Netzentgelte als Open Data"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "BNetzA-Netzentgelte",
+                    "description": "Jährliche Veröffentlichung genehmigter Netzentgelte"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "co2-emissionshandel",
+              "level": 4,
+              "name": "CO₂-Emissionshandel (ETS)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Zuteilungen, Emissionsberichte und Zertifikatspreise im EU-Emissionshandelssystem",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EUTL-Datenbank ist öffentlich zugänglich"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "EUTL-Register",
+                    "description": "Abruf aus EU Transaction Log der Europäischen Kommission"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "erneuerbare-energien-markt",
+          "level": 3,
+          "name": "Erneuerbare Energien",
+          "color": "#e67e22",
+          "description": "Einspeisedaten, Anlagenregister und Vergütungen für Wind-, Solar- und Biomasseanlagen",
+          "children": [
+            {
+              "id": "marktstammdatenregister",
+              "level": 4,
+              "name": "Marktstammdatenregister (MaStR)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Vollständiges Register aller Energieerzeugungsanlagen in Deutschland mit Leistung und Standort",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gesetzlich vorgeschriebenes öffentliches Register (EnWG § 111e)"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "MaStR-API",
+                    "description": "Download über BNetzA Marktstammdatenregister-API"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "eeg-einspeisedaten",
+              "level": 4,
+              "name": "EEG-Einspeisedaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Eingespeiste Strommengen und EEG-Vergütungen nach Anlagenart und Netzbetreiber",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BNetzA veröffentlicht EEG-Anlagendaten"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "SMARD-EEG",
+                    "description": "Auswertung der SMARD-Transparenzplattform"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "windenergie-leistung",
+              "level": 4,
+              "name": "Windenergie-Einspeisung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Stündliche Windstromeinspeisung der vier Regelzonen nach Onshore/Offshore",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ENTSO-E und BNetzA SMARD veröffentlichen Einspeisedaten"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "ENTSO-E-Transparenz",
+                    "description": "Abruf über ENTSO-E Transparency Platform API"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pv-solarstrom",
+              "level": 4,
+              "name": "Photovoltaik-Einspeisung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Stündliche Photovoltaik-Einspeisung nach Region und kumulierte installierte Leistung",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "SMARD-Plattform stellt Solareinspeisedaten bereit"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "SMARD-Solar",
+                    "description": "Auswertung BNetzA SMARD stündliche Solareinspeisung"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "gasversorgung-privat",
+          "level": 3,
+          "name": "Gasversorgung & Wärmemarkt",
+          "color": "#e67e22",
+          "description": "Gaspreise, Speicherfüllstände und Fernwärmeversorgung privater Versorger",
+          "children": [
+            {
+              "id": "gasspeicher-fuellstand",
+              "level": 4,
+              "name": "Gasspeicher-Füllstände",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Tägliche Füllstände der deutschen Erdgasspeicher nach Speicheranlage (GIE AGSI)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "GIE veröffentlicht tägliche Speicherdaten"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "AGSI-API",
+                    "description": "Täglicher Abruf über GIE AGSI+ API"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gasboersenpreis",
+              "level": 4,
+              "name": "Gasbörsenprei (THE/TTF)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Erdgaspreise an den Handelspunkten THE (Deutschland) und TTF (Europa)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Börsenpreise sind öffentlich zugänglich"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "ICE-Marktdaten",
+                    "description": "Tägliche Abfrage der ICE-Terminmarktpreise"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fernwaerme-preise",
+              "level": 4,
+              "name": "Fernwärme-Preise & Versorgungsgebiete",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Fernwärmepreise und Versorgungsgebiete kommunaler und privater Fernwärmebetreiber",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Preisstatistik publizierbar; Monopolstruktur erfordert Transparenz"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "AGFW-Statistik",
+                    "description": "Auswertung AGFW-Branchenreport Fernwärme"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "handwerk",
+      "level": 2,
+      "name": "Handwerk",
+      "color": "#d35400",
+      "description": "Handwerksbetriebe, Handwerksunternehmen und handwerkliche Dienstleistungserbringer",
+      "children": [
+        {
+          "id": "handwerk-struktur-betriebe",
+          "level": 3,
+          "name": "Handwerksbetriebe & Unternehmensstruktur",
+          "color": "#e67e22",
+          "description": "Betriebszahlen, Beschäftigung und Umsatz im deutschen Handwerk",
+          "children": [
+            {
+              "id": "handwerksrolle",
+              "level": 4,
+              "name": "Handwerksrolle & Betriebsverzeichnis",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Eingetragene Handwerksbetriebe nach Gewerk, Rechtsform und Region",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Handwerksrolle ist öffentliches Register"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "ZDH-Statistik",
+                    "description": "Jahresstatistik des Zentralverbands des Deutschen Handwerks"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "handwerk-beschaeftigung",
+              "level": 4,
+              "name": "Beschäftigung im Handwerk",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Sozialversicherungspflichtig Beschäftigte in Handwerksbetrieben nach Gewerk",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BA-Beschäftigungsstatistik nach Wirtschaftszweig"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "BA-Beschäftigungsstatistik",
+                    "description": "Auswertung nach Handwerks-WZ-Codes"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "handwerk-umsatz",
+              "level": 4,
+              "name": "Umsatz Handwerk",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Gesamtumsatz der Handwerksbranchen nach Gewerk und Betriebsgröße",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ZDH und Destatis veröffentlichen Handwerksstatistik"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Destatis-Handwerk",
+                    "description": "Vierjährliche Handwerkszählung und Jahreserhebung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "handwerk-ausbildung",
+              "level": 4,
+              "name": "Ausbildungsverhältnisse Handwerk",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Neu abgeschlossene und bestehende Ausbildungsverträge nach Ausbildungsberuf",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ZDH veröffentlicht Ausbildungsstatistik"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "ZDH-Ausbildungsstatistik",
+                    "description": "Jährliche Berufsausbildungsstatistik des Handwerks"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "handwerk-konjunktur",
+          "level": 3,
+          "name": "Handwerkskonjunktur & Auftragslage",
+          "color": "#e67e22",
+          "description": "Konjunkturindikatoren, Auftragseingang und Geschäftslage im Handwerk",
+          "children": [
+            {
+              "id": "handwerk-konjunkturbericht",
+              "level": 4,
+              "name": "Handwerks-Konjunkturbericht",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Quartalsweise Konjunkturberichte der Handwerkskammern zu Geschäftslage und -erwartungen",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ZDH und Handwerkskammern veröffentlichen Konjunkturberichte"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "ZDH-Konjunkturumfrage",
+                    "description": "Quartalsweise Mitgliederbefragung durch Handwerkskammern"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "handwerk-auftragsbestand",
+              "level": 4,
+              "name": "Auftragsbestand & Kapazitätsauslastung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Auftragsreichweite in Wochen und Kapazitätsauslastung nach Handwerksgruppe",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierter Konjunkturindikator ohne Betriebsdaten"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "ifo-Handwerksbefragung",
+                    "description": "Vierteljährliche Handwerksbefragung des ifo-Instituts"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "handwerk-insolvenz",
+              "level": 4,
+              "name": "Insolvenzen Handwerk",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl und Gläubigerforderungen bei Handwerksinsolvenzen nach Gewerk",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Insolvenzstatistik ist öffentlich"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Destatis-Insolvenzen",
+                    "description": "Auswertung Insolvenzstatistik nach WZ-Code Handwerk"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

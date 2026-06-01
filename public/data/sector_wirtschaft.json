@@ -10091,6 +10091,1905 @@
           ]
         }
       ]
+    },
+    {
+      "id": "versicherungswirtschaft",
+      "level": 2,
+      "name": "Versicherungswirtschaft",
+      "color": "#d35400",
+      "children": [
+        {
+          "id": "krankenversicherung",
+          "level": 3,
+          "name": "Krankenversicherungen",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "kv-versichertenstruktur",
+              "level": 4,
+              "name": "Versichertenstruktur GKV/PKV",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Alters- und Geschlechtsstruktur der Versicherten in gesetzlicher und privater Krankenversicherung – Grundlage für Risikostrukturausgleich und Versorgungsplanung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Versichertenstatistiken ohne Personenbezug sind nach Anonymisierung veröffentlichbar."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Zusammenfassung der Versichertendaten nach Altersgruppe, Geschlecht und Kassentyp."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kv-leistungsausgaben",
+              "level": 4,
+              "name": "Leistungsausgaben Krankenversicherung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Statistische Auswertungen der Leistungsausgaben gesetzlicher Krankenversicherungen nach Leistungsbereich (Arzt, Krankenhaus, Arzneimittel).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Finanzdaten ohne Bezug zu Einzelversicherten sind aggregiert veröffentlichbar."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Auswertung",
+                    "description": "Leistungsausgaben nach Kassenart und Leistungsbereich gegliedert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kv-beitragssaetze",
+              "level": 4,
+              "name": "Beitragssätze und Zusatzbeiträge GKV",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Entwicklung der allgemeinen und kassenindividuellen Zusatzbeitragssätze der gesetzlichen Krankenversicherung über Zeit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Beitragssätze sind gesetzlich veröffentlichungspflichtige Tarifinformationen."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Beitragssatzentwicklung je GKV-Kasse über mehrere Jahrzehnte."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kv-krankenhausabrechnungen",
+              "level": 4,
+              "name": "Krankenhausabrechnungsdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Diagnose- und Abrechnungsdaten (DRG-Statistik) aus stationären Krankenhausbehandlungen — Basis für Morbiditätsanalysen.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Krankenhausabrechnungsdaten enthalten sensible Gesundheitsinformationen; nur Metadaten ohne Patientenbezug publizierbar."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Entfernung aller Patientenidentifikatoren vor jeglicher Weitergabe."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kv-morbiditaetsstruktur",
+              "level": 4,
+              "name": "Morbiditätsstruktur der Versicherten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Häufigkeitsverteilung von Diagnosen und chronischen Erkrankungen in der GKV-Bevölkerung — relevant für Versorgungsplanung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Diagnosedaten werden auf Kassenebene aggregiert und anonymisiert veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "ICD-Kodierung",
+                    "description": "Klassifikation nach ICD-10 und Aggregierung auf Diagnosegruppen."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "lebensversicherung",
+          "level": 3,
+          "name": "Lebensversicherungen",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "lv-bestandsstatistik",
+              "level": 4,
+              "name": "Bestandsstatistik Lebensversicherung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl und Volumen der in Deutschland bestehenden Lebensversicherungsverträge – aufgeteilt nach Produktart (Risikoleben, Kapitallebensversicherung, Rentenversicherung).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Marktstatistiken des GDV werden nach Anonymisierung der Einzelverträge veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Marktstatistik",
+                    "description": "Aggregierung der Vertragsbestände durch den Gesamtverband der Deutschen Versicherungswirtschaft (GDV)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lv-neugeschaeft",
+              "level": 4,
+              "name": "Neugeschäftsdaten Lebensversicherung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Statistik zu neu abgeschlossenen Lebensversicherungsverträgen: Stückzahl, Versicherungssumme, Beitragszahlungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Neugeschäftsdaten ohne Personenbezug sind nach Aufbereitung durch den GDV publizierbar."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Auswertung",
+                    "description": "Quartalsweise Erfassung des Neugeschäfts nach Produktkategorie."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lv-renditen-garantien",
+              "level": 4,
+              "name": "Garantiezinsen und Überschussbeteiligung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Entwicklung der gesetzlichen Höchstrechnungszinssätze und der tatsächlichen Überschussbeteiligung der Lebensversicherer.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Garantiezinssätze sind BaFin-regulierte und öffentlich zugängliche Tarifinformationen."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Regulierungsdaten",
+                    "description": "BaFin-Vorgaben zu Rechnungszins und Mindestüberschussbeteiligung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lv-stornoquoten",
+              "level": 4,
+              "name": "Storno- und Rückkaufsquoten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anteil vorzeitig aufgelöster oder rückgekaufter Lebensversicherungsverträge — Indikator für Kundenzufriedenheit und Marktentwicklung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Stornodaten werden auf Branchenebene aggregiert und anonymisiert publiziert."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Branchenstatistik",
+                    "description": "Erfassung der Stornoquoten durch GDV auf Jahresbasis."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lv-kapitalanlagen",
+              "level": 4,
+              "name": "Kapitalanlageportfolio Lebensversicherung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Zusammensetzung der Kapitalanlagen der deutschen Lebensversicherer: Anleihen, Aktien, Immobilien, alternative Investments.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Kapitalanlageberichte werden aggregiert nach BaFin-Aufsichtsrecht veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Portfolioanalyse",
+                    "description": "Aufschlüsselung der Kapitalanlagen nach Assetklasse und Laufzeit."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "sachversicherung",
+          "level": 3,
+          "name": "Sachversicherungen & Haftpflicht",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "sach-schadenstatistik",
+              "level": 4,
+              "name": "Schadenstatistik Sachversicherungen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl, Schadenshöhe und Ursachen gemeldeter Schadensfälle in Hausrat-, Wohngebäude- und Kfz-Versicherungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Schadensstatistiken werden auf Branchenebene aggregiert ohne Einzelfall-Personenbezug publiziert."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "GDV-Statistik",
+                    "description": "Aggregierung gemeldeter Schäden durch den Gesamtverband der Deutschen Versicherungswirtschaft."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sach-naturkatastrophen",
+              "level": 4,
+              "name": "Naturkatastrophen-Schadensdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Versicherte Schäden durch Naturereignisse (Sturm, Überschwemmung, Hagel, Erdbeben) – relevant für Klimawandeladaption und Risikomodellierung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Schadendaten nach Naturereigniskategorie sind ohne Personenbezug direkt publizierbar."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Geokodierung",
+                    "description": "Zuordnung der Schadenereignisse zu Gemeinden und Klimaregionen für räumliche Analysen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sach-kfz-statistik",
+              "level": 4,
+              "name": "Kfz-Versicherungsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Bestand, Beiträge und Schadenkennzahlen der Kfz-Haftpflicht- und Kaskoversicherungen in Deutschland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kfz-Marktstatistiken ohne Bezug zu einzelnen Versicherungsnehmern sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Marktstatistik",
+                    "description": "Jährliche Auswertung des Kfz-Versicherungsmarkts durch den GDV."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sach-praemienentwicklung",
+              "level": 4,
+              "name": "Prämienentwicklung Sachversicherungen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Zeitreihe der durchschnittlichen Versicherungsprämien in den wichtigsten Sachversicherungssparten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Prämienstatistiken sind Marktinformationen ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Preisindex",
+                    "description": "Berechnung von Prämienindizes nach Versicherungssparte und Zeitraum."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sach-betrugsstatistik",
+              "level": 4,
+              "name": "Versicherungsbetrug Statistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl und Schadenshöhe aufgedeckter Versicherungsbetrugsfälle in Deutschland – Dunkelzifferanalysen des GDV.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Betrugsstatistiken werden anonymisiert und ohne Täterbezug auf Branchenebene veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Dunkelzifferanalyse",
+                    "description": "Hochrechnung aufgedeckter Betrugsfälle auf das geschätzte Gesamtvolumen."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unternehmensdienstleistungen",
+      "level": 2,
+      "name": "Unternehmensdienstleistungen",
+      "color": "#d35400",
+      "children": [
+        {
+          "id": "wirtschaftspruefung-beratung",
+          "level": 3,
+          "name": "Wirtschaftsprüfung & Unternehmensberatung",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "wp-jahresabschlusspruefung",
+              "level": 4,
+              "name": "Jahresabschlussprüfungsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Statistik zu Jahresabschlussprüfungen: Anzahl geprüfter Unternehmen, Prüfungsurteile (uneingeschränkt, eingeschränkt, versagt), Branchenverteilung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Prüfungsstatistiken ohne Bezug zu einzelnen Unternehmen sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "WPK-Statistik",
+                    "description": "Auswertung der Prüfungsurteile durch die Wirtschaftsprüferkammer (WPK)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wp-beratungsmarkt",
+              "level": 4,
+              "name": "Beratungsmarkt Deutschland",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Marktvolumen, Beschäftigte und Wachstumsraten der Unternehmensberatungsbranche in Deutschland nach Beratungsfeldern.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "BDU-Branchenstatistiken werden aggregiert und ohne Unternehmensbezug publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "BDU-Studie",
+                    "description": "Jährliche Branchenerhebung des Bundesverbands Deutscher Unternehmensberater (BDU)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wp-insolvenzberatung",
+              "level": 4,
+              "name": "Insolvenzberatung und Sanierungsdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl und Volumen betreuter Insolvenz- und Sanierungsverfahren durch Wirtschaftsprüfer und Berater – Indikator für wirtschaftliche Krisenentwicklungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Insolvenzberatungsdaten werden aggregiert ohne Einzelunternehmensbezug veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Zusammenfassung der Verfahren nach Branche, Unternehmensgröße und Region."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wp-compliance-audits",
+              "level": 4,
+              "name": "Compliance und Interne Revision",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Statistiken zu Compliance-Verstößen, internen Audit-Befunden und Anti-Korruptionsmaßnahmen in deutschen Unternehmen.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Compliance-Audit-Berichte sind unternehmensinterne Dokumente; nur anonymisierte Metadaten publizierbar."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Entfernung aller Unternehmens- und Personenidentifikatoren aus Audit-Befunden."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wp-digitalisierungsindex",
+              "level": 4,
+              "name": "Digitalisierungsindex Mittelstand",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche Erhebung zum Stand der Digitalisierung in deutschen KMU durch Beratungsunternehmen und Verbände.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Branchenindizes und Studien ohne Einzelunternehmensbezug sind unmittelbar publizierbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Indexberechnung",
+                    "description": "Gewichtete Aggregierung der Digitalisierungsindikatoren zu einem Gesamtindex."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "marktforschung",
+          "level": 3,
+          "name": "Marktforschung & Meinungsforschung",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "mf-konsumklima",
+              "level": 4,
+              "name": "Konsumklima-Index",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatlicher Konsumklima-Index (GfK/NIM) auf Basis repräsentativer Haushaltsbefragungen — Indikator für private Konsumneigung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Indexwerte ohne Personenbezug sind marktöffentliche Informationen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Indexaggregierung",
+                    "description": "Berechnung des Konsumklima-Index aus Teilindikatoren für Einkommenserwartung, Anschaffungsneigung und Konjunkturerwartung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mf-marktanteile",
+              "level": 4,
+              "name": "Marktanteils- und Marktvolumendaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Branchenspezifische Marktanteile, Marktvolumina und Marktwachstumsraten — Grundlage für Investitions- und Strategieentscheidungen.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Detaillierte Marktanteilsdaten sind proprietäre Forschungsprodukte; nur Metadaten ohne Unternehmensbezug publizierbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Marktmodellierung",
+                    "description": "Hochrechnung von Stichprobendaten auf Gesamtmarktvolumina mittels Paneldaten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mf-mediennutzung",
+              "level": 4,
+              "name": "Mediennutzungs-Reichweitendaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Reichweiten- und Nutzungsstatistiken für Print, TV, Online und Radio — Grundlage für Mediaplanung und Werbepreise (AWA, agof, Allensbacher).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Reichweitenstatistiken werden aggregiert ohne Einzelpersonenbezug durch Marktforschungsinstitute publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Panel-Hochrechnung",
+                    "description": "Übertragung der Panel-Nutzungsdaten auf die Gesamtbevölkerung durch Gewichtungsverfahren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mf-politbarometer",
+              "level": 4,
+              "name": "Politische Meinungsumfragen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Regelmäßige Wahlabsichts- und Zufriedenheitsbefragungen (ZDF-Politbarometer, ARD-DeutschlandTrend) als gesellschaftliche Stimmungsindizes.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Umfrageergebnisse ohne Einzelpersonenbezug werden standardmäßig publiziert."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Repräsentativbefragung",
+                    "description": "Gewichtete Hochrechnung von Stichprobenergebnissen auf die wahlberechtigte Bevölkerung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mf-preismonitoring",
+              "level": 4,
+              "name": "Preismonitoring und Preisindizes",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Systematische Marktpreiserhebungen für Produkt- und Dienstleistungskategorien durch Marktforschungsinstitute — Grundlage für Preisvergleiche.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Preisindizes werden nach Bereinigung von Einzelunternehmensreferenzen publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Preiserhebung",
+                    "description": "Systematische Erfassung von Marktpreisen in definierten Produktkategorien und Handelskanälen."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "rechts-steuerberatung",
+          "level": 3,
+          "name": "Rechts- & Steuerberatung",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "rs-anwaltsmarkt",
+              "level": 4,
+              "name": "Anwaltsmarktstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl zugelassener Rechtsanwälte, Kanzleistrukturen, Umsätze und Rechtsgebietsverteilung in Deutschland (BRAK-Statistik).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BRAK-Marktstatistiken ohne Einzelkanzleibezug sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "BRAK-Erfassung",
+                    "description": "Jährliche Erhebung durch die Bundesrechtsanwaltskammer (BRAK)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "rs-steuerberatungsmarkt",
+              "level": 4,
+              "name": "Steuerberatungsmarkt",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl zugelassener Steuerberater, Kanzleivolumen und Umsätze der Steuerberatungsbranche in Deutschland (BStBK-Statistik).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Branchenstatistiken ohne Mandantenbezug sind durch die Bundeskammer öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "BStBK-Erhebung",
+                    "description": "Jährliche Berufsstatistik der Bundessteuerberaterkammer (BStBK)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "rs-rechtsschutzversicherung",
+              "level": 4,
+              "name": "Rechtsschutzversicherungsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Bestand, Schadenhäufigkeit und Leistungsausgaben der Rechtsschutzversicherungen — Indikator für Streitkultur und Rechtsdurchsetzungskosten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Versicherungsmarktdaten ohne Versicherungsnehmer-Bezug sind nach Aufbereitung publizierbar."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "GDV-Statistik",
+                    "description": "Erfassung der Rechtsschutzsparte durch den Gesamtverband der Deutschen Versicherungswirtschaft."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "rs-vertragsrecht-streitwerte",
+              "level": 4,
+              "name": "Streitwertstatistik zivilrechtlicher Verfahren",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verteilung der Streitwerte in zivilrechtlichen Verfahren — relevant für Rechtsberatungsmarktanalysen und Zugangsgerechtigkeit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Streitwertstatistiken aus Gerichtsverfahren sind öffentliche Justizstatistiken."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Justizstatistik",
+                    "description": "Auswertung der Streitwertverteilung durch Statistisches Bundesamt und Länder."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "rs-insolvenzrecht",
+              "level": 4,
+              "name": "Insolvenzrechtsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl und Volumina von Insolvenzverfahren nach Art (Regelinsolvenz, Verbraucherinsolvenz, Eigenverwaltung) und Branche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Insolvenzstatistiken sind öffentliche Justiz- und Wirtschaftsstatistiken des Statistischen Bundesamts."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Destatis-Auswertung",
+                    "description": "Monatliche Insolvenzstatistik des Statistischen Bundesamts nach Schuldnertyp und Branche."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pharmaindustrie",
+      "level": 2,
+      "name": "Pharmaindustrie & Medizintechnik",
+      "color": "#d35400",
+      "children": [
+        {
+          "id": "arzneimittelzulassung",
+          "level": 3,
+          "name": "Arzneimittelzulassung & -markt",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "pharma-zulassungsstatistik",
+              "level": 4,
+              "name": "Arzneimittelzulassungsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl neuer Arzneimittelzulassungen, Zulassungszeiten und therapeutische Bereiche — erhoben durch BfArM und EMA.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Zulassungsstatistiken sind regulatorische Pflichtpublikationen der Arzneimittelbehörden."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "BfArM-Register",
+                    "description": "Erfassung aller Zulassungen im öffentlichen Arzneimittelinformationssystem AMIS."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pharma-arzneimittelverbrauch",
+              "level": 4,
+              "name": "Arzneimittelverbrauchsdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verordnungshäufigkeit und Absatz von Arzneimitteln nach ATC-Klassifikation auf Bundesebene — Grundlage für Versorgungsforschung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Verordnungsdaten werden ohne Patienten- und Arztzuordnung auf Wirkstoffebene aggregiert."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "ATC-Klassifikation",
+                    "description": "Zuordnung der Arzneimittel zum Anatomisch-Therapeutisch-Chemischen Klassifikationssystem."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pharma-marktdaten",
+              "level": 4,
+              "name": "Pharmamarktdaten Umsatz & Einheiten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Branchenstatistiken zu Umsatz und abgesetzten Einheiten des deutschen Pharmamarkts nach Therapiegebiet (vfa, BAH, Destatis).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Marktdaten ohne Unternehmensbezug sind öffentliche Brancheninformationen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Marktmonitoring",
+                    "description": "Regelmäßige Marktdatenerhebung durch Branchenverbände vfa und BAH."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pharma-preisbildung",
+              "level": 4,
+              "name": "Nutzenbewertung und Preisverhandlungen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Ergebnisse der frühen Nutzenbewertung nach AMNOG (G-BA) und Erstattungsbetragsverhandlungen zwischen GKV-Spitzenverband und Herstellern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "AMNOG-Bewertungen und Erstattungsbeträge sind gesetzlich publizierungspflichtig."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "G-BA-Beschluss",
+                    "description": "Veröffentlichung der Nutzenbewertungsbeschlüsse und Erstattungsbeträge auf G-BA-Website."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pharma-lieferengpaesse",
+              "level": 4,
+              "name": "Lieferengpassmeldungen Arzneimittel",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Gemeldete Lieferengpässe für Humanarzneimittel beim BfArM — Ursachen, betroffene Wirkstoffe, Engpassdauer.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Lieferengpassmeldungen sind im öffentlichen BfArM-Register einsehbar und für Versorgungssicherheit relevant."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "BfArM-Register",
+                    "description": "Kontinuierliche Aktualisierung der Lieferengpass-Datenbank durch BfArM-Meldepflicht."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "klinische-studien",
+          "level": 3,
+          "name": "Klinische Studien & Forschung",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "ks-studienregister",
+              "level": 4,
+              "name": "Klinisches Studienregister Deutschland",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Registrierungen klinischer Prüfungen in Deutschland (DRKS, EudraCT) — Phase, Indikation, Sponsor, Studienstatus.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Klinische Studienregistrierungen sind internationale Transparenzpflicht (WHO-ICTRP)."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "DRKS-Register",
+                    "description": "Erfassung im Deutschen Register Klinischer Studien (DRKS) an der Universität Freiburg."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ks-studienergebnisse",
+              "level": 4,
+              "name": "Studienresultate und Publikationsdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Veröffentlichte Ergebnisse klinischer Studien deutscher Sponsoren — Wirksamkeit, Sicherheit, unerwünschte Ereignisse.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Studienergebnisse werden nach Abschluss als Zusammenfassung veröffentlicht; Rohdaten bleiben proprietär."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Ergebnispublikation",
+                    "description": "Strukturierte Ergebnisberichterstattung gemäß EU-Clinical-Trials-Regulation."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ks-adverse-events",
+              "level": 4,
+              "name": "Vigilanz- und Nebenwirkungsdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Meldungen unerwünschter Arzneimittelwirkungen (UAW) und schwerwiegender unerwünschter Ereignisse an das BfArM.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Vigilanzdaten werden aggregiert und anonymisiert als Sicherheitsberichte veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "BfArM-Vigilanz",
+                    "description": "Meldesystem für UAW mit Aggregierung zu periodischen Sicherheitsberichten (PSUR)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ks-r-d-ausgaben",
+              "level": 4,
+              "name": "FuE-Ausgaben Pharmaindustrie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Forschungs- und Entwicklungsausgaben der Pharmaindustrie in Deutschland — aufgeteilt nach Entwicklungsphase, Therapiegebiet und Unternehmenstyp.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Branchenausgaben für FuE werden durch vfa und Stifterverband öffentlich publiziert."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "vfa-Statistik",
+                    "description": "Jährliche Erhebung der FuE-Ausgaben durch den Verband Forschender Arzneimittelhersteller (vfa)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ks-patent-innovationen",
+              "level": 4,
+              "name": "Patentanmeldungen Pharma & Biotech",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl und Technologiefelder pharmazeutischer und biotechnologischer Patentanmeldungen in Deutschland (DPMA, EPA).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Patentanmeldungen sind öffentliche Schutzrechtsinformationen."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "DPMA-Register",
+                    "description": "Auswertung der Patentdatenbank des Deutschen Patent- und Markenamts (DPMA)."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "medizintechnik",
+          "level": 3,
+          "name": "Medizintechnik & Diagnostik",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "mt-marktvolumen",
+              "level": 4,
+              "name": "Marktvolumen Medizintechnik Deutschland",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Umsatz, Exportquoten und Beschäftigte der deutschen Medizintechnikbranche nach Produktkategorien (BVMed, Spectaris).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Branchenstatistiken ohne Unternehmensbezug sind öffentliche Marktinformationen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BVMed-Statistik",
+                    "description": "Jährliche Branchenerhebung des Bundesverbands Medizintechnologie (BVMed)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mt-zulassungen",
+              "level": 4,
+              "name": "Medizinproduktezulassungen und CE-Kennzeichnung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl und Klassifikation zugelassener Medizinprodukte in Deutschland — Klasse I bis III nach MDR (EU 2017/745).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Produktzulassungen und CE-Zertifizierungen sind regulatorische Transparenzpflichten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "EUDAMED-Register",
+                    "description": "Erfassung in der europäischen Medizinproduktedatenbank EUDAMED."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mt-vigilanz-vorfaelle",
+              "level": 4,
+              "name": "Vigilanzmeldungen Medizinprodukte",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Gemeldete Vorkommnisse und schwerwiegende unerwünschte Ereignisse im Zusammenhang mit Medizinprodukten (BfArM-MPSV).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Vigilanzdaten werden aggregiert und nach BfArM-Auswertung als Sicherheitsberichte veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BfArM-MPSV",
+                    "description": "Meldesystem für Medizinprodukte-Vorkommnisse nach Medizinprodukte-Sicherheitsplanverordnung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mt-digitale-gesundheitsanwendungen",
+              "level": 4,
+              "name": "Digitale Gesundheitsanwendungen (DiGA)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verzeichnis und Nutzungsdaten zugelassener Digitaler Gesundheitsanwendungen (Apps auf Rezept) — BfArM-DiGA-Verzeichnis.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Das DiGA-Verzeichnis mit Zulassungsstatus und Nutzungsvoraussetzungen ist öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "BfArM-DiGA",
+                    "description": "Pflege des öffentlichen DiGA-Verzeichnisses durch das Bundesinstitut für Arzneimittel und Medizinprodukte."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mt-export-import",
+              "level": 4,
+              "name": "Export/Import Medizintechnik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Außenhandelsstatistiken der deutschen Medizintechnik — wichtigste Exportmärkte, Handelsbilanzen und Zollstatistiken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Außenhandelsstatistiken sind öffentliche Daten von Destatis und GTAI."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Destatis-Außenhandel",
+                    "description": "Auswertung der Außenhandelsstatistik nach HS-Codes für Medizintechnikprodukte."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

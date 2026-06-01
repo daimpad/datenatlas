@@ -5391,499 +5391,6 @@
       ]
     },
     {
-      "id": "klinisches-forschungszentrum",
-      "level": 2,
-      "name": "Klinisches Forschungszentrum & Universitätsklinikum",
-      "color": "#4527a0",
-      "description": "Klinische Studienforschung, Biobanken, Registerstudien und translationale Medizindaten",
-      "children": [
-        {
-          "id": "klinische-studien-management",
-          "level": 3,
-          "name": "Klinische Studienforschung",
-          "color": "#4527a0",
-          "description": "Studienregister, Arzneimittelstudien, Patientenrekrutierung und Ethikvoten",
-          "children": [
-            {
-              "id": "klinische-studien-register",
-              "level": 4,
-              "name": "Klinisches Studienregister",
-              "color": "#4527a0",
-              "details": {
-                "description": "Registrierungsdaten klinischer Studien aus DRKS (Deutsches Register Klinischer Studien) und ClinicalTrials.gov: Studientyp, Phase, Indikation, Sponsor, Teilnehmerzahl, Studienstatus und Ergebnisveröffentlichungsstatus.",
-                "openness": {
-                  "label": "Grün — öffentliches Pflichtregister",
-                  "explanation": "Internationale WHO-Standards verlangen die Registrierung klinischer Studien vor Beginn. DRKS und ClinicalTrials.gov sind vollständig öffentlich und über APIs abrufbar.",
-                  "class": "OP_01"
-                },
-                "theme": {
-                  "code": "TH_08"
-                },
-                "object": {
-                  "code": "OB_03"
-                },
-                "granularity": {
-                  "code": "GR_04"
-                },
-                "format": [
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 5,
-                "processes": [
-                  {
-                    "method": "Studienmethodik",
-                    "description": "Studienregister verhindern selektive Ergebnisveröffentlichung (Publication Bias) durch Vorabregistrierung des Studiendesigns."
-                  },
-                  {
-                    "method": "Regulierung",
-                    "description": "Zulassungsbehörden (BfArM, EMA) nutzen Registereinträge für die Überwachung laufender Studien."
-                  }
-                ]
-              }
-            },
-            {
-              "id": "arzneimittelstudien-ergebnisse",
-              "level": 4,
-              "name": "Arzneimittelstudien-Ergebnisdaten",
-              "color": "#4527a0",
-              "details": {
-                "description": "Primäre und sekundäre Endpunktergebnisse klinischer Phasen-I-IV-Studien für Arzneimittelzulassungsverfahren. Nach EU-Verordnung 536/2014 veröffentlichungspflichtig im EU-Register.",
-                "openness": {
-                  "label": "Gelb — nach Zulassung veröffentlichungspflichtig",
-                  "explanation": "EU-Verordnung 536/2014 verpflichtet zur Veröffentlichung von Studienergebnissen im EU-Studienregister; laufende Studien bleiben vertraulich.",
-                  "class": "OP_02"
-                },
-                "theme": {
-                  "code": "TH_08"
-                },
-                "object": {
-                  "code": "OB_01"
-                },
-                "granularity": {
-                  "code": "GR_04"
-                },
-                "format": [
-                  {
-                    "code": "FT_04",
-                    "label": "PDF"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_02"
-                },
-                "relevance": 5,
-                "processes": [
-                  {
-                    "method": "Arzneimittelzulassung",
-                    "description": "Klinische Studiendaten sind Grundlage für Zulassungsanträge bei BfArM und EMA."
-                  },
-                  {
-                    "method": "Metaanalyse",
-                    "description": "Veröffentlichte Studienrohdaten ermöglichen unabhängige Metaanalysen und Therapiebewertungen durch IQWIG und HTA-Institutionen."
-                  }
-                ]
-              }
-            },
-            {
-              "id": "patientenrekrutierung-statistik",
-              "level": 4,
-              "name": "Patientenrekrutierungs-Statistik",
-              "color": "#4527a0",
-              "details": {
-                "description": "Aggregierte Daten zu Rekrutierungsraten, Abbruchquoten, Screening-Verhältnissen und demographischen Merkmalen eingeschlossener Patient:innen nach Studienphase.",
-                "openness": {
-                  "label": "Gelb — aggregiert publizierbar",
-                  "explanation": "Rekrutierungsstatistiken ohne Einzelfallbezug können in Methodenberichten veröffentlicht werden. Sie informieren Planung zukünftiger Studien und Verbesserung von Rekrutierungsstrategien.",
-                  "class": "OP_02"
-                },
-                "theme": {
-                  "code": "TH_08"
-                },
-                "object": {
-                  "code": "OB_01"
-                },
-                "granularity": {
-                  "code": "GR_03"
-                },
-                "format": [
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  },
-                  {
-                    "code": "FT_05",
-                    "label": "Excel (XLSX)"
-                  }
-                ],
-                "license": {
-                  "code": "LI_02"
-                },
-                "relevance": 4,
-                "processes": [
-                  {
-                    "method": "Studienplanung",
-                    "description": "Rekrutierungsstatistiken informieren realistische Zeitplanung und Stichprobengrößenkalkulation zukünftiger Studien."
-                  },
-                  {
-                    "method": "Zentrenauswahl",
-                    "description": "Klinische Forschungsnetze nutzen Rekrutierungsdaten zur Identifikation leistungsstarker Studienzentren."
-                  }
-                ]
-              }
-            },
-            {
-              "id": "adverse-events-daten",
-              "level": 4,
-              "name": "Unerwünschte Ereignisse (Adverse Events)",
-              "color": "#4527a0",
-              "details": {
-                "description": "Aggregierte Daten zu unerwünschten Ereignissen (UE), schwerwiegenden UE und unerwarteten Ereignissen aus klinischen Studien. Basis für Sicherheitsdossiers und Pharmakovigilanz.",
-                "openness": {
-                  "label": "Rot — Patientenschutz und Betriebsgeheimnis",
-                  "explanation": "AE-Daten auf Einzelfallebene sind medizinische Geheimnisse; aggregierte Sicherheitsdaten in Behördenberichten (PSUR, DSUR) sind nach Zulassung teilweise öffentlich.",
-                  "class": "OP_03"
-                },
-                "theme": {
-                  "code": "TH_08"
-                },
-                "object": {
-                  "code": "OB_02"
-                },
-                "granularity": {
-                  "code": "GR_03"
-                },
-                "format": [
-                  {
-                    "code": "FT_04",
-                    "label": "PDF"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_04"
-                },
-                "relevance": 5,
-                "processes": [
-                  {
-                    "method": "Pharmakovigilanz",
-                    "description": "AE-Meldungen sind Pflichtbestandteil laufender Sicherheitsüberwachung; BfArM und EMA aggregieren zu Signaldatenbanken."
-                  },
-                  {
-                    "method": "Risikomanagement",
-                    "description": "Schwerwiegende AE lösen Meldepflichten und ggf. Studienunterbrechungen durch DSMB aus."
-                  }
-                ]
-              }
-            },
-            {
-              "id": "ethikvoten-register",
-              "level": 4,
-              "name": "Ethikvoten-Register",
-              "color": "#4527a0",
-              "details": {
-                "description": "Verzeichnis der Votierungen von Ethikkommissionen: Studienart, Votumsdatum und -ergebnis (positiv/negativ/bedingt) ohne studienindividuelle Inhalte. Transparenz des Ethikvotierungsprozesses.",
-                "openness": {
-                  "label": "Gelb — Verfahrensstatistiken publizierbar",
-                  "explanation": "Aggregierte Statistiken zu Ethikvoten (Anzahl, Branche, Ergebnis) können veröffentlicht werden; individuelle Studieninhalte im Antrag sind vertraulich.",
-                  "class": "OP_02"
-                },
-                "theme": {
-                  "code": "TH_08"
-                },
-                "object": {
-                  "code": "OB_03"
-                },
-                "granularity": {
-                  "code": "GR_03"
-                },
-                "format": [
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  },
-                  {
-                    "code": "FT_05",
-                    "label": "Excel (XLSX)"
-                  }
-                ],
-                "license": {
-                  "code": "LI_02"
-                },
-                "relevance": 4,
-                "processes": [
-                  {
-                    "method": "Ethikaufsicht",
-                    "description": "Ethikkommissionen prüfen die ethische Vertretbarkeit von Studien vor Beginn; Register dokumentieren Umfang und Ergebnisse dieser Prüfung."
-                  },
-                  {
-                    "method": "Qualitätssicherung",
-                    "description": "Statistiken zu Anforderungsquoten und Ablehnungsgründen informieren Verbesserungen in Studienprotokollen und Antragsprozessen."
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "id": "biobank-management",
-          "level": 3,
-          "name": "Biobank & Biologische Probensammlungen",
-          "color": "#4527a0",
-          "description": "Biobanken-Katalog, Genomik-Metadaten, Probenqualität und Seltene-Erkrankungen-Register",
-          "children": [
-            {
-              "id": "biobank-katalog",
-              "level": 4,
-              "name": "Biobank-Katalog",
-              "color": "#4527a0",
-              "details": {
-                "description": "Metadaten des nationalen Biobanken-Registers der German Biobank Alliance (GBA): Probentypen, Kollektionsgrößen, Diagnosen, Verarbeitungsstandards und Zugangsvoraussetzungen.",
-                "openness": {
-                  "label": "Grün — öffentlicher Metadatenkatalog",
-                  "explanation": "Der GBA-Biobanken-Katalog und BBMRI-ERIC European Collection sind öffentlich zugänglich, um wissenschaftliche Kollaborationen zu erleichtern.",
-                  "class": "OP_01"
-                },
-                "theme": {
-                  "code": "TH_08"
-                },
-                "object": {
-                  "code": "OB_08"
-                },
-                "granularity": {
-                  "code": "GR_04"
-                },
-                "format": [
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 4,
-                "processes": [
-                  {
-                    "method": "Forschungsplanung",
-                    "description": "Biobanken-Metadaten ermöglichen Forschenden die Prüfung, ob geeignete Probensammlungen für ihre Studie verfügbar sind."
-                  },
-                  {
-                    "method": "BBMRI-Netzwerk",
-                    "description": "Deutsche Biobanken sind Teil des europäischen BBMRI-ERIC-Netzwerks; Metadaten werden harmonisiert europaweit bereitgestellt."
-                  }
-                ]
-              }
-            },
-            {
-              "id": "probanden-einwilligungen",
-              "level": 4,
-              "name": "Probandeneinwilligungsdaten",
-              "color": "#4527a0",
-              "details": {
-                "description": "Strukturierte Einwilligungsformulare (Broad Consent nach Nationaler Forschungsplattform MII, MIABIS-Standard) aus Biobank-Projekten: Umfang, Widerrufsmöglichkeiten.",
-                "openness": {
-                  "label": "Rot — individueller Datenschutz",
-                  "explanation": "Individuelle Einwilligungsdaten sind personenbezogene Gesundheitsdaten; nur Einwilligungsmodelle und -statistiken (Broad-Consent-Rate) können publiziert werden.",
-                  "class": "OP_03"
-                },
-                "theme": {
-                  "code": "TH_08"
-                },
-                "object": {
-                  "code": "OB_02"
-                },
-                "granularity": {
-                  "code": "GR_01"
-                },
-                "format": [
-                  {
-                    "code": "FT_04",
-                    "label": "PDF"
-                  }
-                ],
-                "license": {
-                  "code": "LI_04"
-                },
-                "relevance": 3,
-                "processes": [
-                  {
-                    "method": "Datenschutz-Compliance",
-                    "description": "Einwilligungsverwaltung ist rechtliche Voraussetzung für jede Biobank-Nutzung nach DSGVO und Bundesdatenschutzgesetz."
-                  },
-                  {
-                    "method": "Interoperabilität",
-                    "description": "Standardisierte Einwilligungsmodelle (MII-Broad-Consent) ermöglichen studienübergreifende Datennutzung in Medizininformatik-Projekten."
-                  }
-                ]
-              }
-            },
-            {
-              "id": "genomik-metadaten",
-              "level": 4,
-              "name": "Genomik-Metadaten",
-              "color": "#4527a0",
-              "details": {
-                "description": "Metadaten zu genomischen Datensätzen aus Sequenzierungsprojekten: Plattform, Sequenzierungstiefe, Abdeckung, Populationsgruppe, Krankheitsphänotyp und Referenzgenom-Version.",
-                "openness": {
-                  "label": "Gelb — Metadaten ohne Sequenzrohdaten",
-                  "explanation": "Genomik-Metadaten ohne Sequenzrohdaten sind über GA4GH-konforme Metadatenkataloge (GHGA) publizierbar; Rohdaten erfordern kontrollierten Zugang.",
-                  "class": "OP_02"
-                },
-                "theme": {
-                  "code": "TH_08"
-                },
-                "object": {
-                  "code": "OB_08"
-                },
-                "granularity": {
-                  "code": "GR_04"
-                },
-                "format": [
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_02"
-                },
-                "relevance": 4,
-                "processes": [
-                  {
-                    "method": "Genomforschung",
-                    "description": "Metadaten ermöglichen Datendiscovery in nationalen und internationalen Genomdatennetzen (GHGA, EGA)."
-                  },
-                  {
-                    "method": "FAIR-Genomdaten",
-                    "description": "Standardisierte Metadaten nach GA4GH-Schema sind Grundvoraussetzung für föderierte Analysen ohne Rohdatentransfer."
-                  }
-                ]
-              }
-            },
-            {
-              "id": "probenqualitaet",
-              "level": 4,
-              "name": "Probenqualitätsdaten",
-              "color": "#4527a0",
-              "details": {
-                "description": "Laborqualitätsindikatoren für biologische Proben: Hämolyserate, Thau-Gefrier-Zyklen, Lagerungstemperatur, Zeit bis zur Verarbeitung und Analysierbarkeit.",
-                "openness": {
-                  "label": "Gelb — Qualitätsparameter publizierbar",
-                  "explanation": "Probenqualitätsparameter ohne Verbindung zu Spenderdaten können veröffentlicht werden und verbessern die Vergleichbarkeit von Biobank-Studien.",
-                  "class": "OP_02"
-                },
-                "theme": {
-                  "code": "TH_08"
-                },
-                "object": {
-                  "code": "OB_05"
-                },
-                "granularity": {
-                  "code": "GR_02"
-                },
-                "format": [
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  },
-                  {
-                    "code": "FT_05",
-                    "label": "Excel (XLSX)"
-                  }
-                ],
-                "license": {
-                  "code": "LI_02"
-                },
-                "relevance": 3,
-                "processes": [
-                  {
-                    "method": "Qualitätssicherung",
-                    "description": "Probenqualitätsdaten werden nach SPREC-Standard dokumentiert, um Vergleichbarkeit zwischen Biobanken sicherzustellen."
-                  },
-                  {
-                    "method": "Studienplanung",
-                    "description": "Qualitätsdaten helfen Forscher:innen bei der Auswahl geeigneter Proben für ihre Analysemethoden."
-                  }
-                ]
-              }
-            },
-            {
-              "id": "seltene-erkrankungen-register",
-              "level": 4,
-              "name": "Register Seltener Erkrankungen",
-              "color": "#4527a0",
-              "details": {
-                "description": "Pseudonymisierte Daten zu seltenen Erkrankungen: Erkrankungshäufigkeit, durchschnittliche Diagnoseversatzzeit, verfügbare Therapien und Behandlungsergebnisse aus deutschen SE-Registern.",
-                "openness": {
-                  "label": "Rot — besonders schützenswerte Gesundheitsdaten",
-                  "explanation": "Daten zu seltenen Erkrankungen sind aufgrund kleiner Fallzahlen auch nach Pseudonymisierung re-identifizierbar. Zugang nur über akkreditierte Forschungsdatenzentren nach strengem Prüfprozess.",
-                  "class": "OP_03"
-                },
-                "theme": {
-                  "code": "TH_08"
-                },
-                "object": {
-                  "code": "OB_02"
-                },
-                "granularity": {
-                  "code": "GR_04"
-                },
-                "format": [
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  },
-                  {
-                    "code": "FT_03",
-                    "label": "XML"
-                  }
-                ],
-                "license": {
-                  "code": "LI_04"
-                },
-                "relevance": 5,
-                "processes": [
-                  {
-                    "method": "Seltene-Erkrankungen-Forschung",
-                    "description": "Register ermöglichen Studien, die aufgrund der geringen Prävalenz nur mit multinationalen Kollaborationen möglich sind."
-                  },
-                  {
-                    "method": "Versorgungsforschung",
-                    "description": "Diagnoseversatz-Daten sind wichtige Indikatoren für Verbesserungspotentiale in der Diagnose und Therapie seltener Erkrankungen."
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "wirtschaftsforschungsinstitut",
       "level": 2,
       "name": "Wirtschafts- und Sozialforschungsinstitut",
@@ -7367,503 +6874,6 @@
       ]
     },
     {
-      "id": "naturwiss-messnetz",
-      "level": 2,
-      "name": "Naturwissenschaftliches Messnetz & Observatorium",
-      "color": "#4527a0",
-      "description": "Erdbeobachtung, Atmosphärenmessungen, Geodäsie und astronomische Observatorien als Echtzeit-Datenerzeuger",
-      "children": [
-        {
-          "id": "erdsystem-beobachtung",
-          "level": 3,
-          "name": "Erdsystem-Beobachtung & Umweltmonitoring",
-          "color": "#4527a0",
-          "description": "Seismologie, Geomagnetismus, Atmosphären- und Gewässermessungen, Fernerkundung",
-          "children": [
-            {
-              "id": "seismologische-daten",
-              "level": 4,
-              "name": "Seismologische Messdaten",
-              "color": "#4527a0",
-              "details": {
-                "description": "Erdbebenwellendaten, Seismizitätskataloge und Stationsmetadaten aus dem deutschen Seismologischen Netz (GEOFON/GFZ Potsdam, BGR): Magnitude, Tiefe, Epizentrums-Koordinaten.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Grün — GEOFON-Daten offen",
-                  "explanation": "GEOFON und IRIS stellen Seismogramme und Erdbebenkataloge unmittelbar als Open Data bereit. FAIR-Infrastruktur nach INSPIRE."
-                },
-                "theme": {
-                  "code": "TH_07"
-                },
-                "object": {
-                  "code": "OB_05"
-                },
-                "granularity": {
-                  "code": "GR_04"
-                },
-                "format": [
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 4,
-                "processes": [
-                  {
-                    "method": "Erdbeben-Frühwarnung",
-                    "description": "Echtzeitseismogramme sind Grundlage für Erdbeben-Frühwarnsysteme und Tsunami-Warndienste."
-                  },
-                  {
-                    "method": "Georisikobewertung",
-                    "description": "Seismizitätskataloge informieren Bauvorschriften und Standortwahl für Infrastrukturprojekte."
-                  }
-                ]
-              }
-            },
-            {
-              "id": "atmosphaerenmessungen",
-              "level": 4,
-              "name": "Atmosphärische Spurengasmessungen",
-              "color": "#4527a0",
-              "details": {
-                "description": "Konzentrationen von CO₂, CH₄, N₂O, O₃ und weiteren Spurengasen aus deutschen ICOS-Stationen und DWD-Klimaobservatorien mit stündlicher Zeitauflösung.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Grün — ICOS-Netzwerk-Daten offen",
-                  "explanation": "ICOS-Daten werden nach Qualitätsprüfung als Open Data auf dem ICOS Carbon Portal bereitgestellt."
-                },
-                "theme": {
-                  "code": "TH_07"
-                },
-                "object": {
-                  "code": "OB_05"
-                },
-                "granularity": {
-                  "code": "GR_03"
-                },
-                "format": [
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 5,
-                "processes": [
-                  {
-                    "method": "Klimamonitoring",
-                    "description": "Atmosphärische Messungen sind unverzichtbare Grundlage für Treibhausgasbilanzen und Klimaprojektionen."
-                  },
-                  {
-                    "method": "Politikberatung",
-                    "description": "ICOS-Daten liefern Evidenz für Klimaschutzfortschritte unter dem Pariser Abkommen."
-                  }
-                ]
-              }
-            },
-            {
-              "id": "fernerkundungsdaten",
-              "level": 4,
-              "name": "Fernerkundungs- und Satellitendaten",
-              "color": "#4527a0",
-              "details": {
-                "description": "Multispektrale und Radar-Satellitenaufnahmen für Landnutzungs-, Vegetations-, Schneebedeckungs- und Überschwemmungsmonitoring aus Copernicus-Programm (Sentinel-Satelliten).",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Grün — Copernicus-Daten frei",
-                  "explanation": "Copernicus-Sentinel-Daten sind per EU-Mandat vollständig frei und kostenlos über Copernicus Open Access Hub zugänglich."
-                },
-                "theme": {
-                  "code": "TH_07"
-                },
-                "object": {
-                  "code": "OB_06"
-                },
-                "granularity": {
-                  "code": "GR_04"
-                },
-                "format": [
-                  {
-                    "code": "FT_06",
-                    "label": "Shapefile / Geodaten"
-                  },
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 5,
-                "processes": [
-                  {
-                    "method": "Landnutzungsmonitoring",
-                    "description": "Sentinel-Daten ermöglichen flächendeckendes Monitoring von Landnutzungsänderungen für EU-Agrarpolitik."
-                  },
-                  {
-                    "method": "Katastrophenschutz",
-                    "description": "Radar-Daten liefern Echtzeitinformationen bei Hochwasser, Waldbränden und anderen Naturkatastrophen."
-                  }
-                ]
-              }
-            },
-            {
-              "id": "grundwasser-monitoring",
-              "level": 4,
-              "name": "Grundwasser-Monitoring-Daten",
-              "color": "#4527a0",
-              "details": {
-                "description": "Grundwasserstände, -entnahmeraten und Qualitätsparameter (Nitrat, Pestizide, pH) aus dem deutschen Grundwasserüberwachungsnetz nach LAWA-Vorgaben.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Grün — LAWA-Daten offen",
-                  "explanation": "LAWA koordiniert Wasserdatenaustausch; Grundwasserdaten sind über ELWAS und Länder-Portale zugänglich."
-                },
-                "theme": {
-                  "code": "TH_07"
-                },
-                "object": {
-                  "code": "OB_05"
-                },
-                "granularity": {
-                  "code": "GR_02"
-                },
-                "format": [
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 4,
-                "processes": [
-                  {
-                    "method": "Wasserschutz",
-                    "description": "Grundwassermonitoring ist rechtliche Pflicht nach EU-Wasserrahmenrichtlinie und Grundlage für Bewirtschaftungspläne."
-                  },
-                  {
-                    "method": "Klimafolgenanpassung",
-                    "description": "Grundwassertrends zeigen Auswirkungen verändernder Niederschlagsmuster und Entnahmedynamiken."
-                  }
-                ]
-              }
-            },
-            {
-              "id": "geomagnetismus-daten",
-              "level": 4,
-              "name": "Geomagnetismus- und Ionosphärendaten",
-              "color": "#4527a0",
-              "details": {
-                "description": "Messungen des Erdmagnetfelds (Intensität, Neigung, Deklination) und ionosphärischer Parameter aus deutschen Observatorien (GFZ, DWD, BKG) — stündliche bis tägliche Auflösung.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Grün — INTERMAGNET-Daten offen",
-                  "explanation": "Deutsche Geomagnetismus-Observatorien sind Mitglied von INTERMAGNET; alle Daten werden frei bereitgestellt."
-                },
-                "theme": {
-                  "code": "TH_07"
-                },
-                "object": {
-                  "code": "OB_05"
-                },
-                "granularity": {
-                  "code": "GR_04"
-                },
-                "format": [
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 3,
-                "processes": [
-                  {
-                    "method": "Weltraumwetter",
-                    "description": "Geomagnetische Störungen beeinflussen Satelliten, Stromnetze und Navigationssysteme — Monitoring ist kritische Infrastrukturaufgabe."
-                  },
-                  {
-                    "method": "Navigation",
-                    "description": "Präzisions-GPS-Korrekturdaten erfordern genaue Modelle des Erdmagnetfelds."
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "id": "astronomie-geodaesie",
-          "level": 3,
-          "name": "Astronomie, Geodäsie & Meeresforschung",
-          "color": "#4527a0",
-          "description": "Sternkataloge, Erdvermessung, Radioastronomie und ozeanografische Messungen",
-          "children": [
-            {
-              "id": "astronomische-kataloge",
-              "level": 4,
-              "name": "Astronomische Kataloge und Beobachtungsdaten",
-              "color": "#4527a0",
-              "details": {
-                "description": "Sternkataloge, Spektraldaten, Photometrie und Positionsmessungen aus deutschen Observatorien (MPIfR Bonn, AIP Potsdam, Hamburger Sternwarte) — Zugang über VizieR und ADS.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Grün — astronomische Daten traditionell offen",
-                  "explanation": "Astronomische Daten sind seit Jahrzehnten offen; internationale Datenarchive wie VizieR und MAST sind vollständig öffentlich."
-                },
-                "theme": {
-                  "code": "TH_10"
-                },
-                "object": {
-                  "code": "OB_05"
-                },
-                "granularity": {
-                  "code": "GR_04"
-                },
-                "format": [
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 3,
-                "processes": [
-                  {
-                    "method": "Grundlagenforschung",
-                    "description": "Offene Datenpolitik in der Astronomie ermöglicht globale Kollaborationen wie Event Horizon Telescope."
-                  },
-                  {
-                    "method": "Citizen Science",
-                    "description": "Offene Katalogdaten ermöglichen Bürgerwissenschafts-Projekte wie Galaxy Zoo und Variable Star Observer."
-                  }
-                ]
-              }
-            },
-            {
-              "id": "geodaetische-referenzdaten",
-              "level": 4,
-              "name": "Geodätische Referenzdaten",
-              "color": "#4527a0",
-              "details": {
-                "description": "Präzisionsvermessungen der Erdoberfläche aus SAPOS-GNSS-Referenzstationsnetzwerken, Schweremessungen (BSH, BKG) und VLBI-Daten für Bezugsrahmendefinitionen.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Grün — amtliche Geodäsiedaten offen",
-                  "explanation": "BKG und Bundesländer stellen amtliche Geodätische Referenzpunkte als Open Data bereit. SAPOS-Korrekturdaten sind kostenpflichtig."
-                },
-                "theme": {
-                  "code": "TH_07"
-                },
-                "object": {
-                  "code": "OB_05"
-                },
-                "granularity": {
-                  "code": "GR_04"
-                },
-                "format": [
-                  {
-                    "code": "FT_06",
-                    "label": "Shapefile / Geodaten"
-                  },
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 4,
-                "processes": [
-                  {
-                    "method": "Infrastrukturvermessung",
-                    "description": "Geodätische Referenzpunkte sind Grundlage jeder präzisen Vermessung für Bau, Kataster und Navigation."
-                  },
-                  {
-                    "method": "Klimafolgen",
-                    "description": "GNSS-Zeitreihen messen Landhebungen/-senkungen und Meeresspiegeländerungen als Klimafolgen-Indikatoren."
-                  }
-                ]
-              }
-            },
-            {
-              "id": "radioastronomie-daten",
-              "level": 4,
-              "name": "Radioastronomische Beobachtungsdaten",
-              "color": "#4527a0",
-              "details": {
-                "description": "Signaldaten aus dem Radioteleskop Effelsberg (MPIfR Bonn) für Pulsar-, Galaxien- und Kosmologie-Forschung — archiviert im MPIfR-Archiv und NVAS.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Grün — nach Embargo-Frist offen",
-                  "explanation": "Radioastronomische Daten werden nach Ablauf der Sperrfrist (typisch 18–24 Monate) in offenen Archiven bereitgestellt."
-                },
-                "theme": {
-                  "code": "TH_10"
-                },
-                "object": {
-                  "code": "OB_05"
-                },
-                "granularity": {
-                  "code": "GR_04"
-                },
-                "format": [
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 3,
-                "processes": [
-                  {
-                    "method": "Grundlagenforschung",
-                    "description": "Radioteleskop-Daten liefern einzigartige Informationen über entfernte Galaxien, Pulsare und kosmische Strahlung."
-                  },
-                  {
-                    "method": "VLBI-Netzwerk",
-                    "description": "Effelsberg ist Teil des europäischen VLBI-Netzwerks (EVN) für Hochpräzisionsmessungen mit Millibogensekunden-Auflösung."
-                  }
-                ]
-              }
-            },
-            {
-              "id": "sonnenwetter",
-              "level": 4,
-              "name": "Sonnenwetter- und Weltraumwetterdaten",
-              "color": "#4527a0",
-              "details": {
-                "description": "Sonnenfleckenaktivität, koronale Massenauswürfe (CME), solare Röntgenflüsse und geomagnetische Sturmindices aus nationalen und ESA/NASA-Messnetzen.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Grün — Space-Weather-Dienste offen",
-                  "explanation": "DWD-Sonnenwetterdienst und ESA Space Weather Service stellen Daten als Open Data und Echtzeit-APIs bereit."
-                },
-                "theme": {
-                  "code": "TH_07"
-                },
-                "object": {
-                  "code": "OB_05"
-                },
-                "granularity": {
-                  "code": "GR_04"
-                },
-                "format": [
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 4,
-                "processes": [
-                  {
-                    "method": "Infrastrukturschutz",
-                    "description": "Starke Sonnenstürme können Stromnetzausfälle, Satellitenausfälle und GPS-Störungen verursachen — Früherkennung ist kritisch."
-                  },
-                  {
-                    "method": "Luftfahrt",
-                    "description": "Weltraumwetterwarnungen schützen Crew und Avionik bei Polarrouten vor erhöhter kosmischer Strahlung."
-                  }
-                ]
-              }
-            },
-            {
-              "id": "meeresforschungsdaten",
-              "level": 4,
-              "name": "Ozeanografische Messdaten",
-              "color": "#4527a0",
-              "details": {
-                "description": "Meeresoberflächentemperaturen, Salzgehalte, Strömungsprofile und Meeresspiegel aus deutschen Forschungsschiffen (Polarstern/AWI, GEOMAR) und ARGO-Treibbojen.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Grün — PANGAEA-Datenpublikation",
-                  "explanation": "AWI und GEOMAR publizieren Meeresdaten via PANGAEA (Publisher for Earth & Environmental Science Data) vollständig offen."
-                },
-                "theme": {
-                  "code": "TH_07"
-                },
-                "object": {
-                  "code": "OB_05"
-                },
-                "granularity": {
-                  "code": "GR_04"
-                },
-                "format": [
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 4,
-                "processes": [
-                  {
-                    "method": "Klimaforschung",
-                    "description": "Ozeantemperaturen und -strömungen sind zentrale Klimavariablen für Klimamodelle und -projektionen."
-                  },
-                  {
-                    "method": "Meeresschutz",
-                    "description": "Ozeanographische Messdaten unterstützen Bewirtschaftungspläne für Marine Protected Areas und Fischerei-Management."
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "digitale-forschungsinfrastruktur",
       "level": 2,
       "name": "Digitale Forschungsinfrastruktur (NFDI & HPC)",
@@ -9333,11 +8343,1730 @@
       ]
     },
     {
-      "id": "medizinische-forschung",
+      "id": "rechtswiss-institut",
       "level": 2,
-      "name": "Medizinische Forschung und Klinische Studien",
+      "name": "Rechtswissenschaftliches Institut",
       "color": "#4527a0",
       "children": [
+        {
+          "id": "rechts-empirik",
+          "level": 3,
+          "name": "Empirische Rechtsforschung und Justizstatistik",
+          "color": "#4527a0",
+          "children": [
+            {
+              "id": "gerichts-urteilsdatenbanken",
+              "level": 4,
+              "name": "Gerichtsurteile und Rechtsprechungsdatenbanken",
+              "color": "#4527a0",
+              "details": {
+                "description": "Strukturierte Rechtsprechungsdatenbanken mit Urteilstexten, Leitsätzen und Metadaten zu Rechtsgebieten und Instanzen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gerichtsurteile öffentlich; strukturierte Metadaten offen bereitstellbar."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "NLP-Urteilsanalyse",
+                    "description": "Named-Entity-Recognition und Relation-Extraction aus Urteilstexten"
+                  },
+                  {
+                    "method": "Zitationsnetzwerk",
+                    "description": "Graph-Analyse der gegenseitigen Bezugnahme von Entscheidungen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "strafverfolgungsstatistik",
+              "level": 4,
+              "name": "Strafverfolgungsstatistik",
+              "color": "#4527a0",
+              "details": {
+                "description": "Polizeiliche Kriminalstatistik, Strafverfolgungsstatistik, Strafvollzugsstatistik auf Delikts- und Bevölkerungsebene.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kriminalstatistiken nach §163 StPO als amtliche Statistik offen."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Hellfeldstudie",
+                    "description": "Analyse registrierter Delikte im Vergleich zu Dunkelfeldstudien"
+                  },
+                  {
+                    "method": "Regressions­analyse",
+                    "description": "Sozioökonomische Determinanten von Kriminalitätsraten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-tech-daten",
+              "level": 4,
+              "name": "Legal-Tech und NLP-Rechtsdaten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Aufbereitete Rechtstextkorpora für maschinelles Lernen: Gesetze, Urteile, Verträge für NLP und KI-Rechtsanwendungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rechtstexte nach Strukturierung und Qualitätsprüfung als Trainings-Korpora."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BERT-Fine-Tuning",
+                    "description": "Domänenspezifisches Fine-Tuning von Sprachmodellen auf Rechtstexten"
+                  },
+                  {
+                    "method": "Argumentation-Mining",
+                    "description": "Erkennung von Prämissen, Schlussfolgerungen in juristischer Argumentation"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "regulierungs-daten",
+          "level": 3,
+          "name": "Regulierungsforschung und Policy-Daten",
+          "color": "#4527a0",
+          "children": [
+            {
+              "id": "regulierungsfolgenabschaetzung",
+              "level": 4,
+              "name": "Regulierungsfolgenabschätzungs-Daten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Empirische Daten zu wirtschaftlichen Auswirkungen von Regulierung: Compliance-Kosten, Marktstruktur, Innovationswirkung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "RFA-Daten nach Bereinigung für Politikfolgenforschung zugänglich."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Differenz-in-Differenzen",
+                    "description": "Quasi-experimentelle Identifikation von Regulierungseffekten"
+                  },
+                  {
+                    "method": "Unternehmensumfrage",
+                    "description": "Befragung regulierter Unternehmen zu Compliance-Kosten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "komparatives-verfassungsrecht",
+              "level": 4,
+              "name": "Komparatives Verfassungsrecht Daten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Vergleichende Verfassungsdatenbank: Verfassungstexte, Verfassungsänderungen, institutionelle Arrangements weltweit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Verfassungstexte und komparative Indizes offen in CCP/Comparative Constitutions Project."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Textvergleich",
+                    "description": "Automatische Ähnlichkeitsanalyse von Verfassungstexten"
+                  },
+                  {
+                    "method": "Indikatorbildung",
+                    "description": "Kodierung institutioneller Verfassungsmerkmale"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "datenschutz-compliance",
+              "level": 4,
+              "name": "Datenschutz und Compliance-Forschungsdaten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Fallstudien, Bußgeldentscheidungen, Compliance-Bewertungen im DSGVO-Kontext für Rechtskonformitätsforschung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DSGVO-Bußgeldentscheidungen öffentlich; strukturierte Analyse offen."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Fallkodierung",
+                    "description": "Systematische Kodierung von DPA-Entscheidungen nach Verletzungstyp"
+                  },
+                  {
+                    "method": "Sanktionsanalyse",
+                    "description": "Determinanten von Bußgeldhöhe und Regulierungsintensität"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "messnetz-observatorium-astronomie",
+      "level": 2,
+      "name": "Messnetz, Observatorium & Astronomie",
+      "color": "#4527a0",
+      "description": "Naturwissenschaftliche Messnetze, Umweltobservatorien, astronomische Institute und Sternwarten",
+      "children": [
+        {
+          "id": "erdsystem-beobachtung",
+          "level": 3,
+          "name": "Erdsystem-Beobachtung & Umweltmonitoring",
+          "color": "#4527a0",
+          "description": "Seismologie, Geomagnetismus, Atmosphären- und Gewässermessungen, Fernerkundung",
+          "children": [
+            {
+              "id": "seismologische-daten",
+              "level": 4,
+              "name": "Seismologische Messdaten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Erdbebenwellendaten, Seismizitätskataloge und Stationsmetadaten aus dem deutschen Seismologischen Netz (GEOFON/GFZ Potsdam, BGR): Magnitude, Tiefe, Epizentrums-Koordinaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — GEOFON-Daten offen",
+                  "explanation": "GEOFON und IRIS stellen Seismogramme und Erdbebenkataloge unmittelbar als Open Data bereit. FAIR-Infrastruktur nach INSPIRE."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Erdbeben-Frühwarnung",
+                    "description": "Echtzeitseismogramme sind Grundlage für Erdbeben-Frühwarnsysteme und Tsunami-Warndienste."
+                  },
+                  {
+                    "method": "Georisikobewertung",
+                    "description": "Seismizitätskataloge informieren Bauvorschriften und Standortwahl für Infrastrukturprojekte."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "atmosphaerenmessungen",
+              "level": 4,
+              "name": "Atmosphärische Spurengasmessungen",
+              "color": "#4527a0",
+              "details": {
+                "description": "Konzentrationen von CO₂, CH₄, N₂O, O₃ und weiteren Spurengasen aus deutschen ICOS-Stationen und DWD-Klimaobservatorien mit stündlicher Zeitauflösung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — ICOS-Netzwerk-Daten offen",
+                  "explanation": "ICOS-Daten werden nach Qualitätsprüfung als Open Data auf dem ICOS Carbon Portal bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Klimamonitoring",
+                    "description": "Atmosphärische Messungen sind unverzichtbare Grundlage für Treibhausgasbilanzen und Klimaprojektionen."
+                  },
+                  {
+                    "method": "Politikberatung",
+                    "description": "ICOS-Daten liefern Evidenz für Klimaschutzfortschritte unter dem Pariser Abkommen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fernerkundungsdaten",
+              "level": 4,
+              "name": "Fernerkundungs- und Satellitendaten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Multispektrale und Radar-Satellitenaufnahmen für Landnutzungs-, Vegetations-, Schneebedeckungs- und Überschwemmungsmonitoring aus Copernicus-Programm (Sentinel-Satelliten).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — Copernicus-Daten frei",
+                  "explanation": "Copernicus-Sentinel-Daten sind per EU-Mandat vollständig frei und kostenlos über Copernicus Open Access Hub zugänglich."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_06",
+                    "label": "Shapefile / Geodaten"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Landnutzungsmonitoring",
+                    "description": "Sentinel-Daten ermöglichen flächendeckendes Monitoring von Landnutzungsänderungen für EU-Agrarpolitik."
+                  },
+                  {
+                    "method": "Katastrophenschutz",
+                    "description": "Radar-Daten liefern Echtzeitinformationen bei Hochwasser, Waldbränden und anderen Naturkatastrophen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "grundwasser-monitoring",
+              "level": 4,
+              "name": "Grundwasser-Monitoring-Daten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Grundwasserstände, -entnahmeraten und Qualitätsparameter (Nitrat, Pestizide, pH) aus dem deutschen Grundwasserüberwachungsnetz nach LAWA-Vorgaben.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — LAWA-Daten offen",
+                  "explanation": "LAWA koordiniert Wasserdatenaustausch; Grundwasserdaten sind über ELWAS und Länder-Portale zugänglich."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Wasserschutz",
+                    "description": "Grundwassermonitoring ist rechtliche Pflicht nach EU-Wasserrahmenrichtlinie und Grundlage für Bewirtschaftungspläne."
+                  },
+                  {
+                    "method": "Klimafolgenanpassung",
+                    "description": "Grundwassertrends zeigen Auswirkungen verändernder Niederschlagsmuster und Entnahmedynamiken."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "geomagnetismus-daten",
+              "level": 4,
+              "name": "Geomagnetismus- und Ionosphärendaten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Messungen des Erdmagnetfelds (Intensität, Neigung, Deklination) und ionosphärischer Parameter aus deutschen Observatorien (GFZ, DWD, BKG) — stündliche bis tägliche Auflösung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — INTERMAGNET-Daten offen",
+                  "explanation": "Deutsche Geomagnetismus-Observatorien sind Mitglied von INTERMAGNET; alle Daten werden frei bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Weltraumwetter",
+                    "description": "Geomagnetische Störungen beeinflussen Satelliten, Stromnetze und Navigationssysteme — Monitoring ist kritische Infrastrukturaufgabe."
+                  },
+                  {
+                    "method": "Navigation",
+                    "description": "Präzisions-GPS-Korrekturdaten erfordern genaue Modelle des Erdmagnetfelds."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "observationsastronomie-geodaesie",
+          "level": 3,
+          "name": "Observationsastronomie & Geodäsie",
+          "color": "#5e35b1",
+          "description": "Astronomische Beobachtungskataloge, geodätische Referenzdaten, Spektroskopie und Sonnenwetter",
+          "children": [
+            {
+              "id": "astronomische-kataloge",
+              "level": 4,
+              "name": "Astronomische Kataloge und Beobachtungsdaten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Sternkataloge, Spektraldaten, Photometrie und Positionsmessungen aus deutschen Observatorien (MPIfR Bonn, AIP Potsdam, Hamburger Sternwarte) — Zugang über VizieR und ADS.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — astronomische Daten traditionell offen",
+                  "explanation": "Astronomische Daten sind seit Jahrzehnten offen; internationale Datenarchive wie VizieR und MAST sind vollständig öffentlich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Grundlagenforschung",
+                    "description": "Offene Datenpolitik in der Astronomie ermöglicht globale Kollaborationen wie Event Horizon Telescope."
+                  },
+                  {
+                    "method": "Citizen Science",
+                    "description": "Offene Katalogdaten ermöglichen Bürgerwissenschafts-Projekte wie Galaxy Zoo und Variable Star Observer."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "geodaetische-referenzdaten",
+              "level": 4,
+              "name": "Geodätische Referenzdaten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Präzisionsvermessungen der Erdoberfläche aus SAPOS-GNSS-Referenzstationsnetzwerken, Schweremessungen (BSH, BKG) und VLBI-Daten für Bezugsrahmendefinitionen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — amtliche Geodäsiedaten offen",
+                  "explanation": "BKG und Bundesländer stellen amtliche Geodätische Referenzpunkte als Open Data bereit. SAPOS-Korrekturdaten sind kostenpflichtig."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_06",
+                    "label": "Shapefile / Geodaten"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Infrastrukturvermessung",
+                    "description": "Geodätische Referenzpunkte sind Grundlage jeder präzisen Vermessung für Bau, Kataster und Navigation."
+                  },
+                  {
+                    "method": "Klimafolgen",
+                    "description": "GNSS-Zeitreihen messen Landhebungen/-senkungen und Meeresspiegeländerungen als Klimafolgen-Indikatoren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "radioastronomie-daten",
+              "level": 4,
+              "name": "Radioastronomische Beobachtungsdaten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Signaldaten aus dem Radioteleskop Effelsberg (MPIfR Bonn) für Pulsar-, Galaxien- und Kosmologie-Forschung — archiviert im MPIfR-Archiv und NVAS.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — nach Embargo-Frist offen",
+                  "explanation": "Radioastronomische Daten werden nach Ablauf der Sperrfrist (typisch 18–24 Monate) in offenen Archiven bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Grundlagenforschung",
+                    "description": "Radioteleskop-Daten liefern einzigartige Informationen über entfernte Galaxien, Pulsare und kosmische Strahlung."
+                  },
+                  {
+                    "method": "VLBI-Netzwerk",
+                    "description": "Effelsberg ist Teil des europäischen VLBI-Netzwerks (EVN) für Hochpräzisionsmessungen mit Millibogensekunden-Auflösung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sonnenwetter",
+              "level": 4,
+              "name": "Sonnenwetter- und Weltraumwetterdaten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Sonnenfleckenaktivität, koronale Massenauswürfe (CME), solare Röntgenflüsse und geomagnetische Sturmindices aus nationalen und ESA/NASA-Messnetzen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — Space-Weather-Dienste offen",
+                  "explanation": "DWD-Sonnenwetterdienst und ESA Space Weather Service stellen Daten als Open Data und Echtzeit-APIs bereit."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Infrastrukturschutz",
+                    "description": "Starke Sonnenstürme können Stromnetzausfälle, Satellitenausfälle und GPS-Störungen verursachen — Früherkennung ist kritisch."
+                  },
+                  {
+                    "method": "Luftfahrt",
+                    "description": "Weltraumwetterwarnungen schützen Crew und Avionik bei Polarrouten vor erhöhter kosmischer Strahlung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "meeresforschungsdaten",
+              "level": 4,
+              "name": "Ozeanografische Messdaten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Meeresoberflächentemperaturen, Salzgehalte, Strömungsprofile und Meeresspiegel aus deutschen Forschungsschiffen (Polarstern/AWI, GEOMAR) und ARGO-Treibbojen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Grün — PANGAEA-Datenpublikation",
+                  "explanation": "AWI und GEOMAR publizieren Meeresdaten via PANGAEA (Publisher for Earth & Environmental Science Data) vollständig offen."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Klimaforschung",
+                    "description": "Ozeantemperaturen und -strömungen sind zentrale Klimavariablen für Klimamodelle und -projektionen."
+                  },
+                  {
+                    "method": "Meeresschutz",
+                    "description": "Ozeanographische Messdaten unterstützen Bewirtschaftungspläne für Marine Protected Areas und Fischerei-Management."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "photometrische-kataloge",
+              "level": 4,
+              "name": "Photometrische Sternkataloge",
+              "color": "#4527a0",
+              "details": {
+                "description": "Präzisionsphoto­metrie in mehreren Wellenlängenbändern für Millionen Sterne und Galaxien (z.B. Gaia-ähnliche Surveys).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Astronomische Katalogdaten standardmäßig in CDS/VizieR offen publiziert."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "CCD-Photometrie",
+                    "description": "Point-Spread-Function-Photometrie mit Daophot/Source Extractor"
+                  },
+                  {
+                    "method": "Kalibration",
+                    "description": "Photometrische Kalibration gegen Standardsterne und Gaia-Katalog"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "spektroskopische-daten",
+              "level": 4,
+              "name": "Spektroskopische Beobachtungsdaten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Optische und nahinfrarote Spektren von Sternen, Galaxien und Quasaren für Rotverschiebung, Chemie und Kinematik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Astronomische Spektren nach ESO-Pipeline offen im Archiv zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "NetCDF"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Echellespektrograph",
+                    "description": "Hochauflösende Spektroskopie R>50000 für Radialgeschwindigkeit"
+                  },
+                  {
+                    "method": "Rotverschiebungsmessung",
+                    "description": "Cross-Korrelation mit Vorlagen für präzise Redshiftbestimmung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zeitreihenanalyse-variabilitaet",
+              "level": 4,
+              "name": "Lichtkurven und Variabilitätsanalyse",
+              "color": "#4527a0",
+              "details": {
+                "description": "Zeitserienphoto­metrie für variable Sterne, Exo­planeten­transit­daten, Supernovae und transiente Phänomene.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Lichtkurvens­daten für Klassifikation und Habitabilitätsstudien offen."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Lomb-Scargle-Periodogramm",
+                    "description": "Periodensuche in ungleichmäßig abgetasteten Zeitreihen"
+                  },
+                  {
+                    "method": "Box-Least-Squares",
+                    "description": "Transitsignalsuche für Exoplanetendetektion"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "astrometrie-eigenbeweg",
+              "level": 4,
+              "name": "Astrometrie und Eigenbewegungskataloge",
+              "color": "#4527a0",
+              "details": {
+                "description": "Präzisionsastrometrie: Positionen, Eigenbewegungen und Parallaxen für Entfernungsbestimmung und kinematische Analyse.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Astrometrische Katalogdaten weltweit in IAU-Archiven offen zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "VLBI-Astrometrie",
+                    "description": "Differentielle VLBI für Mikrobogensekunden-Positionsgenauigkeit"
+                  },
+                  {
+                    "method": "Bahnintegration",
+                    "description": "N-Körper-Simulation für Langzeitbahndynamik im Sonnensystem"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "theoretische-kosmologie",
+          "level": 3,
+          "name": "Theoretische Astrophysik und Kosmologie",
+          "color": "#4527a0",
+          "children": [
+            {
+              "id": "kosmologische-simulationen",
+              "level": 4,
+              "name": "Kosmologische N-Körper-Simulationen",
+              "color": "#4527a0",
+              "details": {
+                "description": "Dunkle-Materie- und Hydro­dynamik­simulationen für Strukturentstehung: Halos, Filamente, kosmische Großstruktur.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Simulationsdaten (Snapshot-Dateien, Merger-Trees) in öffentlichen Archiven."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "NetCDF"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "SPH/AMR-Hydrodynamik",
+                    "description": "Smoothed-Particle-Hydrodynamics und Adaptive-Mesh-Refinement"
+                  },
+                  {
+                    "method": "Friends-of-Friends",
+                    "description": "Halos-Finder-Algorithmus für Teilchencluster-Identifikation"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gravitationswellen-daten",
+              "level": 4,
+              "name": "Gravitationswellen-Ereigniskataloge",
+              "color": "#4527a0",
+              "details": {
+                "description": "Detektierte Gravitationswellensignale aus kompakten Binärsystemen (BBH, BNS, NSBH) mit Quellenparametern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "LIGO/Virgo-Gravitationswellendaten nach Embargo offen auf GWOSC publiziert."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Matched-Filtering",
+                    "description": "Kreuzkorrelation mit Wellenform-Templates für Signalextraktion"
+                  },
+                  {
+                    "method": "Bayes-Parameterabschätzung",
+                    "description": "MCMC/Nested-Sampling für Quellen-Parameterbestimmung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "stellar-evolution-modelle",
+              "level": 4,
+              "name": "Stellare Entwicklungsmodelle",
+              "color": "#4527a0",
+              "details": {
+                "description": "Theoretische Sternevolutionsmodelle (Isochrone, Sternwinde, Nukleosynthese) für verschiedene Massen und Metallizitäten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Stellare Gitter in MIST/PARSEC-Datenbanken offen zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "MESA-Sternentwicklung",
+                    "description": "Modules for Experiments in Stellar Astrophysics für 1D-Sternevolution"
+                  },
+                  {
+                    "method": "Isochroenkonstruktion",
+                    "description": "Interpolation auf Isochrone konstanten Alters im HRD"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "exoplaneten-atmosphaeren",
+              "level": 4,
+              "name": "Exoplaneten-Atmosphärendaten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Transmissions- und Emissionsspektren von Exoplanetennatmosphären (JWST, Ariel, Hubble WFC3) für Kompositionsanalyse.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Exoplaneten-Spektraldaten nach Proprietätsperiode in Exo.MAST offen."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "NetCDF"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Transitspektroskopie",
+                    "description": "Differenzielle Spektroskopie während Planetentransit"
+                  },
+                  {
+                    "method": "Atmosphären-Retrieval",
+                    "description": "Bayesianische Inversionsanalyse für Temperaturprofil und Häufigkeiten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kosmische-strahlung",
+              "level": 4,
+              "name": "Kosmische Strahlung und Teilchenastrophysik",
+              "color": "#4527a0",
+              "details": {
+                "description": "Energiespektren, Komposition und Anisotropie kosmischer Strahlung aus Luftschauerexperimenten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kosmische-Strahlung-Spektra in KASCADE/Auger-Open-Data zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Luftschauer-Rekonstruktion",
+                    "description": "Geometrische und Energierekonstruktion aus Detektorarrays"
+                  },
+                  {
+                    "method": "Kompositionsanalyse",
+                    "description": "Xmax-Verteilungen für Elementhäufigkeitsschätzung"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "medizinische-forschung-klinik",
+      "level": 2,
+      "name": "Medizinische Forschung & Klinische Studien",
+      "color": "#4527a0",
+      "description": "Universitätskliniken, klinische Studien, Biobanken, Epidemiologie und medizinische Registerdaten",
+      "children": [
+        {
+          "id": "klinische-studien-management",
+          "level": 3,
+          "name": "Klinische Studienforschung",
+          "color": "#4527a0",
+          "description": "Studienregister, Arzneimittelstudien, Patientenrekrutierung und Ethikvoten",
+          "children": [
+            {
+              "id": "klinische-studien-register",
+              "level": 4,
+              "name": "Klinisches Studienregister",
+              "color": "#4527a0",
+              "details": {
+                "description": "Registrierungsdaten klinischer Studien aus DRKS (Deutsches Register Klinischer Studien) und ClinicalTrials.gov: Studientyp, Phase, Indikation, Sponsor, Teilnehmerzahl, Studienstatus und Ergebnisveröffentlichungsstatus.",
+                "openness": {
+                  "label": "Grün — öffentliches Pflichtregister",
+                  "explanation": "Internationale WHO-Standards verlangen die Registrierung klinischer Studien vor Beginn. DRKS und ClinicalTrials.gov sind vollständig öffentlich und über APIs abrufbar.",
+                  "class": "OP_01"
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Studienmethodik",
+                    "description": "Studienregister verhindern selektive Ergebnisveröffentlichung (Publication Bias) durch Vorabregistrierung des Studiendesigns."
+                  },
+                  {
+                    "method": "Regulierung",
+                    "description": "Zulassungsbehörden (BfArM, EMA) nutzen Registereinträge für die Überwachung laufender Studien."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "arzneimittelstudien-ergebnisse",
+              "level": 4,
+              "name": "Arzneimittelstudien-Ergebnisdaten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Primäre und sekundäre Endpunktergebnisse klinischer Phasen-I-IV-Studien für Arzneimittelzulassungsverfahren. Nach EU-Verordnung 536/2014 veröffentlichungspflichtig im EU-Register.",
+                "openness": {
+                  "label": "Gelb — nach Zulassung veröffentlichungspflichtig",
+                  "explanation": "EU-Verordnung 536/2014 verpflichtet zur Veröffentlichung von Studienergebnissen im EU-Studienregister; laufende Studien bleiben vertraulich.",
+                  "class": "OP_02"
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Arzneimittelzulassung",
+                    "description": "Klinische Studiendaten sind Grundlage für Zulassungsanträge bei BfArM und EMA."
+                  },
+                  {
+                    "method": "Metaanalyse",
+                    "description": "Veröffentlichte Studienrohdaten ermöglichen unabhängige Metaanalysen und Therapiebewertungen durch IQWIG und HTA-Institutionen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "patientenrekrutierung-statistik",
+              "level": 4,
+              "name": "Patientenrekrutierungs-Statistik",
+              "color": "#4527a0",
+              "details": {
+                "description": "Aggregierte Daten zu Rekrutierungsraten, Abbruchquoten, Screening-Verhältnissen und demographischen Merkmalen eingeschlossener Patient:innen nach Studienphase.",
+                "openness": {
+                  "label": "Gelb — aggregiert publizierbar",
+                  "explanation": "Rekrutierungsstatistiken ohne Einzelfallbezug können in Methodenberichten veröffentlicht werden. Sie informieren Planung zukünftiger Studien und Verbesserung von Rekrutierungsstrategien.",
+                  "class": "OP_02"
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Studienplanung",
+                    "description": "Rekrutierungsstatistiken informieren realistische Zeitplanung und Stichprobengrößenkalkulation zukünftiger Studien."
+                  },
+                  {
+                    "method": "Zentrenauswahl",
+                    "description": "Klinische Forschungsnetze nutzen Rekrutierungsdaten zur Identifikation leistungsstarker Studienzentren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "adverse-events-daten",
+              "level": 4,
+              "name": "Unerwünschte Ereignisse (Adverse Events)",
+              "color": "#4527a0",
+              "details": {
+                "description": "Aggregierte Daten zu unerwünschten Ereignissen (UE), schwerwiegenden UE und unerwarteten Ereignissen aus klinischen Studien. Basis für Sicherheitsdossiers und Pharmakovigilanz.",
+                "openness": {
+                  "label": "Rot — Patientenschutz und Betriebsgeheimnis",
+                  "explanation": "AE-Daten auf Einzelfallebene sind medizinische Geheimnisse; aggregierte Sicherheitsdaten in Behördenberichten (PSUR, DSUR) sind nach Zulassung teilweise öffentlich.",
+                  "class": "OP_03"
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Pharmakovigilanz",
+                    "description": "AE-Meldungen sind Pflichtbestandteil laufender Sicherheitsüberwachung; BfArM und EMA aggregieren zu Signaldatenbanken."
+                  },
+                  {
+                    "method": "Risikomanagement",
+                    "description": "Schwerwiegende AE lösen Meldepflichten und ggf. Studienunterbrechungen durch DSMB aus."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ethikvoten-register",
+              "level": 4,
+              "name": "Ethikvoten-Register",
+              "color": "#4527a0",
+              "details": {
+                "description": "Verzeichnis der Votierungen von Ethikkommissionen: Studienart, Votumsdatum und -ergebnis (positiv/negativ/bedingt) ohne studienindividuelle Inhalte. Transparenz des Ethikvotierungsprozesses.",
+                "openness": {
+                  "label": "Gelb — Verfahrensstatistiken publizierbar",
+                  "explanation": "Aggregierte Statistiken zu Ethikvoten (Anzahl, Branche, Ergebnis) können veröffentlicht werden; individuelle Studieninhalte im Antrag sind vertraulich.",
+                  "class": "OP_02"
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Ethikaufsicht",
+                    "description": "Ethikkommissionen prüfen die ethische Vertretbarkeit von Studien vor Beginn; Register dokumentieren Umfang und Ergebnisse dieser Prüfung."
+                  },
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Statistiken zu Anforderungsquoten und Ablehnungsgründen informieren Verbesserungen in Studienprotokollen und Antragsprozessen."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "biobank-management",
+          "level": 3,
+          "name": "Biobank & Biologische Probensammlungen",
+          "color": "#4527a0",
+          "description": "Biobanken-Katalog, Genomik-Metadaten, Probenqualität und Seltene-Erkrankungen-Register",
+          "children": [
+            {
+              "id": "biobank-katalog",
+              "level": 4,
+              "name": "Biobank-Katalog",
+              "color": "#4527a0",
+              "details": {
+                "description": "Metadaten des nationalen Biobanken-Registers der German Biobank Alliance (GBA): Probentypen, Kollektionsgrößen, Diagnosen, Verarbeitungsstandards und Zugangsvoraussetzungen.",
+                "openness": {
+                  "label": "Grün — öffentlicher Metadatenkatalog",
+                  "explanation": "Der GBA-Biobanken-Katalog und BBMRI-ERIC European Collection sind öffentlich zugänglich, um wissenschaftliche Kollaborationen zu erleichtern.",
+                  "class": "OP_01"
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschungsplanung",
+                    "description": "Biobanken-Metadaten ermöglichen Forschenden die Prüfung, ob geeignete Probensammlungen für ihre Studie verfügbar sind."
+                  },
+                  {
+                    "method": "BBMRI-Netzwerk",
+                    "description": "Deutsche Biobanken sind Teil des europäischen BBMRI-ERIC-Netzwerks; Metadaten werden harmonisiert europaweit bereitgestellt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "probanden-einwilligungen",
+              "level": 4,
+              "name": "Probandeneinwilligungsdaten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Strukturierte Einwilligungsformulare (Broad Consent nach Nationaler Forschungsplattform MII, MIABIS-Standard) aus Biobank-Projekten: Umfang, Widerrufsmöglichkeiten.",
+                "openness": {
+                  "label": "Rot — individueller Datenschutz",
+                  "explanation": "Individuelle Einwilligungsdaten sind personenbezogene Gesundheitsdaten; nur Einwilligungsmodelle und -statistiken (Broad-Consent-Rate) können publiziert werden.",
+                  "class": "OP_03"
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "PDF"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Datenschutz-Compliance",
+                    "description": "Einwilligungsverwaltung ist rechtliche Voraussetzung für jede Biobank-Nutzung nach DSGVO und Bundesdatenschutzgesetz."
+                  },
+                  {
+                    "method": "Interoperabilität",
+                    "description": "Standardisierte Einwilligungsmodelle (MII-Broad-Consent) ermöglichen studienübergreifende Datennutzung in Medizininformatik-Projekten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "genomik-metadaten",
+              "level": 4,
+              "name": "Genomik-Metadaten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Metadaten zu genomischen Datensätzen aus Sequenzierungsprojekten: Plattform, Sequenzierungstiefe, Abdeckung, Populationsgruppe, Krankheitsphänotyp und Referenzgenom-Version.",
+                "openness": {
+                  "label": "Gelb — Metadaten ohne Sequenzrohdaten",
+                  "explanation": "Genomik-Metadaten ohne Sequenzrohdaten sind über GA4GH-konforme Metadatenkataloge (GHGA) publizierbar; Rohdaten erfordern kontrollierten Zugang.",
+                  "class": "OP_02"
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Genomforschung",
+                    "description": "Metadaten ermöglichen Datendiscovery in nationalen und internationalen Genomdatennetzen (GHGA, EGA)."
+                  },
+                  {
+                    "method": "FAIR-Genomdaten",
+                    "description": "Standardisierte Metadaten nach GA4GH-Schema sind Grundvoraussetzung für föderierte Analysen ohne Rohdatentransfer."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "probenqualitaet",
+              "level": 4,
+              "name": "Probenqualitätsdaten",
+              "color": "#4527a0",
+              "details": {
+                "description": "Laborqualitätsindikatoren für biologische Proben: Hämolyserate, Thau-Gefrier-Zyklen, Lagerungstemperatur, Zeit bis zur Verarbeitung und Analysierbarkeit.",
+                "openness": {
+                  "label": "Gelb — Qualitätsparameter publizierbar",
+                  "explanation": "Probenqualitätsparameter ohne Verbindung zu Spenderdaten können veröffentlicht werden und verbessern die Vergleichbarkeit von Biobank-Studien.",
+                  "class": "OP_02"
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Probenqualitätsdaten werden nach SPREC-Standard dokumentiert, um Vergleichbarkeit zwischen Biobanken sicherzustellen."
+                  },
+                  {
+                    "method": "Studienplanung",
+                    "description": "Qualitätsdaten helfen Forscher:innen bei der Auswahl geeigneter Proben für ihre Analysemethoden."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "seltene-erkrankungen-register",
+              "level": 4,
+              "name": "Register Seltener Erkrankungen",
+              "color": "#4527a0",
+              "details": {
+                "description": "Pseudonymisierte Daten zu seltenen Erkrankungen: Erkrankungshäufigkeit, durchschnittliche Diagnoseversatzzeit, verfügbare Therapien und Behandlungsergebnisse aus deutschen SE-Registern.",
+                "openness": {
+                  "label": "Rot — besonders schützenswerte Gesundheitsdaten",
+                  "explanation": "Daten zu seltenen Erkrankungen sind aufgrund kleiner Fallzahlen auch nach Pseudonymisierung re-identifizierbar. Zugang nur über akkreditierte Forschungsdatenzentren nach strengem Prüfprozess.",
+                  "class": "OP_03"
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Seltene-Erkrankungen-Forschung",
+                    "description": "Register ermöglichen Studien, die aufgrund der geringen Prävalenz nur mit multinationalen Kollaborationen möglich sind."
+                  },
+                  {
+                    "method": "Versorgungsforschung",
+                    "description": "Diagnoseversatz-Daten sind wichtige Indikatoren für Verbesserungspotentiale in der Diagnose und Therapie seltener Erkrankungen."
+                  }
+                ]
+              }
+            }
+          ]
+        },
         {
           "id": "klinische-studien-register",
           "level": 3,
@@ -9823,324 +10552,161 @@
       ]
     },
     {
-      "id": "astronomisches-institut",
+      "id": "bundesforschungsanstalten",
       "level": 2,
-      "name": "Astronomisches Institut und Sternwarte",
+      "name": "Bundesforschungsanstalten",
       "color": "#4527a0",
+      "description": "Bundesinstitute mit gesetzlichem Forschungsauftrag: BfR, Julius Kühn-Institut, Thünen-Institut, PTB, BAM",
       "children": [
         {
-          "id": "beobachtungsastronomie",
+          "id": "lebensmittelsicherheit-risikobewertung",
           "level": 3,
-          "name": "Beobachtungsastronomie und Survey-Daten",
-          "color": "#4527a0",
+          "name": "Lebensmittelsicherheit & Risikobewertung",
+          "color": "#5e35b1",
+          "description": "Risikobewertungen, Rückstandsmonitoring und Verbraucherschutzdaten des BfR und BVL",
           "children": [
             {
-              "id": "photometrische-kataloge",
+              "id": "bfr-risikobewertungen",
               "level": 4,
-              "name": "Photometrische Sternkataloge",
-              "color": "#4527a0",
+              "name": "BfR-Risikobewertungen",
+              "color": "#3d1a87",
               "details": {
-                "description": "Präzisionsphoto­metrie in mehreren Wellenlängenbändern für Millionen Sterne und Galaxien (z.B. Gaia-ähnliche Surveys).",
+                "description": "Wissenschaftliche Stellungnahmen und Risikobewertungen zu Lebensmitteln, Chemikalien und Produkten",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "Astronomische Katalogdaten standardmäßig in CDS/VizieR offen publiziert."
+                  "explanation": "BfR veröffentlicht alle Gutachten und Stellungnahmen"
                 },
                 "theme": {
-                  "code": "TH_10"
+                  "code": "TH_01"
                 },
                 "object": {
-                  "code": "OB_04"
+                  "code": "OB_02"
                 },
                 "granularity": {
-                  "code": "GR_01"
+                  "code": "GR_02"
                 },
                 "format": [
-                  {
-                    "code": "FT_04",
-                    "label": "XML"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 4,
-                "processes": [
-                  {
-                    "method": "CCD-Photometrie",
-                    "description": "Point-Spread-Function-Photometrie mit Daophot/Source Extractor"
-                  },
-                  {
-                    "method": "Kalibration",
-                    "description": "Photometrische Kalibration gegen Standardsterne und Gaia-Katalog"
-                  }
-                ]
-              }
-            },
-            {
-              "id": "spektroskopische-daten",
-              "level": 4,
-              "name": "Spektroskopische Beobachtungsdaten",
-              "color": "#4527a0",
-              "details": {
-                "description": "Optische und nahinfrarote Spektren von Sternen, Galaxien und Quasaren für Rotverschiebung, Chemie und Kinematik.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Astronomische Spektren nach ESO-Pipeline offen im Archiv zugänglich."
-                },
-                "theme": {
-                  "code": "TH_10"
-                },
-                "object": {
-                  "code": "OB_04"
-                },
-                "granularity": {
-                  "code": "GR_01"
-                },
-                "format": [
-                  {
-                    "code": "FT_03",
-                    "label": "NetCDF"
-                  },
-                  {
-                    "code": "FT_04",
-                    "label": "XML"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 4,
-                "processes": [
-                  {
-                    "method": "Echellespektrograph",
-                    "description": "Hochauflösende Spektroskopie R>50000 für Radialgeschwindigkeit"
-                  },
-                  {
-                    "method": "Rotverschiebungsmessung",
-                    "description": "Cross-Korrelation mit Vorlagen für präzise Redshiftbestimmung"
-                  }
-                ]
-              }
-            },
-            {
-              "id": "radioastronomie-daten",
-              "level": 4,
-              "name": "Radioastronomische Beobachtungsdaten",
-              "color": "#4527a0",
-              "details": {
-                "description": "Radiokontinuum- und Liniendaten (HI, CO, Maser) aus Einzelteleskopen und Interferometern (VLBI).",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Radioastronomische Daten über NRAO/ESO-Archive offen verfügbar."
-                },
-                "theme": {
-                  "code": "TH_10"
-                },
-                "object": {
-                  "code": "OB_04"
-                },
-                "granularity": {
-                  "code": "GR_01"
-                },
-                "format": [
-                  {
-                    "code": "FT_03",
-                    "label": "NetCDF"
-                  },
-                  {
-                    "code": "FT_04",
-                    "label": "XML"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 4,
-                "processes": [
-                  {
-                    "method": "Apertur-Synthese",
-                    "description": "Fourier-Rekonstruktion von Interferometerdaten mit CASA/AIPS"
-                  },
-                  {
-                    "method": "HI-Linienkartierung",
-                    "description": "21-cm-Emissiosnkartierung für Galaktische Struktur und Rotationskurven"
-                  }
-                ]
-              }
-            },
-            {
-              "id": "zeitreihenanalyse-variabilitaet",
-              "level": 4,
-              "name": "Lichtkurven und Variabilitätsanalyse",
-              "color": "#4527a0",
-              "details": {
-                "description": "Zeitserienphoto­metrie für variable Sterne, Exo­planeten­transit­daten, Supernovae und transiente Phänomene.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Lichtkurvens­daten für Klassifikation und Habitabilitätsstudien offen."
-                },
-                "theme": {
-                  "code": "TH_10"
-                },
-                "object": {
-                  "code": "OB_04"
-                },
-                "granularity": {
-                  "code": "GR_01"
-                },
-                "format": [
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  },
                   {
                     "code": "FT_02",
                     "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
                   }
                 ],
                 "license": {
-                  "code": "LI_01"
+                  "code": "LI_02"
                 },
-                "relevance": 4,
+                "relevance": 5,
                 "processes": [
                   {
-                    "method": "Lomb-Scargle-Periodogramm",
-                    "description": "Periodensuche in ungleichmäßig abgetasteten Zeitreihen"
-                  },
-                  {
-                    "method": "Box-Least-Squares",
-                    "description": "Transitsignalsuche für Exoplanetendetektion"
+                    "method": "BfR-Publikationsdatenbank",
+                    "description": "Systematische Auswertung veröffentlichter Risikobewertungen"
                   }
                 ]
               }
             },
             {
-              "id": "astrometrie-eigenbeweg",
+              "id": "lebensmittel-rueckstands-monitoring",
               "level": 4,
-              "name": "Astrometrie und Eigenbewegungskataloge",
-              "color": "#4527a0",
+              "name": "Lebensmittel-Rückstandsmonitoring",
+              "color": "#3d1a87",
               "details": {
-                "description": "Präzisionsastrometrie: Positionen, Eigenbewegungen und Parallaxen für Entfernungsbestimmung und kinematische Analyse.",
+                "description": "Messwerte zu Pestizid-, Schadstoff- und Kontaminantenrückständen in Lebensmitteln (BVL)",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "Astrometrische Katalogdaten weltweit in IAU-Archiven offen zugänglich."
+                  "explanation": "Nationale Monitoringberichte werden jährlich veröffentlicht"
                 },
                 "theme": {
-                  "code": "TH_10"
+                  "code": "TH_01"
                 },
                 "object": {
                   "code": "OB_04"
                 },
                 "granularity": {
-                  "code": "GR_01"
+                  "code": "GR_02"
                 },
                 "format": [
                   {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
                     "code": "FT_04",
                     "label": "XML"
-                  },
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "BVL-Monitoring",
+                    "description": "Jährlicher nationaler Rückstandskontrollplan"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zoonosen-monitoring",
+              "level": 4,
+              "name": "Zoonosen-Monitoring",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Prävalenz zoonotischer Erreger in Lebensmittelkette (Salmonellen, Campylobacter) – BfR/BVL",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EU-Zoonosenmonitoring ist veröffentlichungspflichtig"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
                   {
                     "code": "FT_01",
                     "label": "CSV"
                   }
                 ],
                 "license": {
-                  "code": "LI_01"
+                  "code": "LI_02"
                 },
-                "relevance": 4,
+                "relevance": 5,
                 "processes": [
                   {
-                    "method": "VLBI-Astrometrie",
-                    "description": "Differentielle VLBI für Mikrobogensekunden-Positionsgenauigkeit"
-                  },
-                  {
-                    "method": "Bahnintegration",
-                    "description": "N-Körper-Simulation für Langzeitbahndynamik im Sonnensystem"
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "id": "theoretische-kosmologie",
-          "level": 3,
-          "name": "Theoretische Astrophysik und Kosmologie",
-          "color": "#4527a0",
-          "children": [
-            {
-              "id": "kosmologische-simulationen",
-              "level": 4,
-              "name": "Kosmologische N-Körper-Simulationen",
-              "color": "#4527a0",
-              "details": {
-                "description": "Dunkle-Materie- und Hydro­dynamik­simulationen für Strukturentstehung: Halos, Filamente, kosmische Großstruktur.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Simulationsdaten (Snapshot-Dateien, Merger-Trees) in öffentlichen Archiven."
-                },
-                "theme": {
-                  "code": "TH_10"
-                },
-                "object": {
-                  "code": "OB_04"
-                },
-                "granularity": {
-                  "code": "GR_01"
-                },
-                "format": [
-                  {
-                    "code": "FT_03",
-                    "label": "NetCDF"
-                  },
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 4,
-                "processes": [
-                  {
-                    "method": "SPH/AMR-Hydrodynamik",
-                    "description": "Smoothed-Particle-Hydrodynamics und Adaptive-Mesh-Refinement"
-                  },
-                  {
-                    "method": "Friends-of-Friends",
-                    "description": "Halos-Finder-Algorithmus für Teilchencluster-Identifikation"
+                    "method": "EFSA-Reporting",
+                    "description": "Meldung an EFSA im Rahmen EU-Zoonosenmonitoring"
                   }
                 ]
               }
             },
             {
-              "id": "gravitationswellen-daten",
+              "id": "bfr-snapp-daten",
               "level": 4,
-              "name": "Gravitationswellen-Ereigniskataloge",
-              "color": "#4527a0",
+              "name": "Schnellwarnsystem RASFF/SNAPP",
+              "color": "#3d1a87",
               "details": {
-                "description": "Detektierte Gravitationswellensignale aus kompakten Binärsystemen (BBH, BNS, NSBH) mit Quellenparametern.",
+                "description": "Lebensmittelsicherheitswarnungen und Produktrückrufe aus dem EU-Schnellwarnsystem",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "LIGO/Virgo-Gravitationswellendaten nach Embargo offen auf GWOSC publiziert."
+                  "explanation": "RASFF-Daten sind öffentlich zugänglich"
                 },
                 "theme": {
-                  "code": "TH_10"
+                  "code": "TH_01"
                 },
                 "object": {
-                  "code": "OB_04"
+                  "code": "OB_02"
                 },
                 "granularity": {
                   "code": "GR_01"
@@ -10161,199 +10727,34 @@
                 "relevance": 5,
                 "processes": [
                   {
-                    "method": "Matched-Filtering",
-                    "description": "Kreuzkorrelation mit Wellenform-Templates für Signalextraktion"
-                  },
-                  {
-                    "method": "Bayes-Parameterabschätzung",
-                    "description": "MCMC/Nested-Sampling für Quellen-Parameterbestimmung"
+                    "method": "RASFF-Portal",
+                    "description": "Tägliche Aktualisierung aus EU-Rapid Alert System for Food and Feed"
                   }
                 ]
               }
             },
             {
-              "id": "stellar-evolution-modelle",
+              "id": "chemikalien-bewertung",
               "level": 4,
-              "name": "Stellare Entwicklungsmodelle",
-              "color": "#4527a0",
+              "name": "Chemikalienbewertung & REACH-Dossiers",
+              "color": "#3d1a87",
               "details": {
-                "description": "Theoretische Sternevolutionsmodelle (Isochrone, Sternwinde, Nukleosynthese) für verschiedene Massen und Metallizitäten.",
+                "description": "Bewertungsdossiers zu Chemikalien im Rahmen der REACH-Verordnung (BfR-Beiträge)",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "Stellare Gitter in MIST/PARSEC-Datenbanken offen zugänglich."
+                  "explanation": "REACH-Dossiers sind öffentlich bei ECHA verfügbar"
                 },
                 "theme": {
-                  "code": "TH_10"
-                },
-                "object": {
-                  "code": "OB_04"
-                },
-                "granularity": {
-                  "code": "GR_01"
-                },
-                "format": [
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  },
-                  {
-                    "code": "FT_04",
-                    "label": "XML"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 3,
-                "processes": [
-                  {
-                    "method": "MESA-Sternentwicklung",
-                    "description": "Modules for Experiments in Stellar Astrophysics für 1D-Sternevolution"
-                  },
-                  {
-                    "method": "Isochroenkonstruktion",
-                    "description": "Interpolation auf Isochrone konstanten Alters im HRD"
-                  }
-                ]
-              }
-            },
-            {
-              "id": "exoplaneten-atmosphaeren",
-              "level": 4,
-              "name": "Exoplaneten-Atmosphärendaten",
-              "color": "#4527a0",
-              "details": {
-                "description": "Transmissions- und Emissionsspektren von Exoplanetennatmosphären (JWST, Ariel, Hubble WFC3) für Kompositionsanalyse.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Exoplaneten-Spektraldaten nach Proprietätsperiode in Exo.MAST offen."
-                },
-                "theme": {
-                  "code": "TH_10"
-                },
-                "object": {
-                  "code": "OB_04"
-                },
-                "granularity": {
-                  "code": "GR_01"
-                },
-                "format": [
-                  {
-                    "code": "FT_03",
-                    "label": "NetCDF"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 4,
-                "processes": [
-                  {
-                    "method": "Transitspektroskopie",
-                    "description": "Differenzielle Spektroskopie während Planetentransit"
-                  },
-                  {
-                    "method": "Atmosphären-Retrieval",
-                    "description": "Bayesianische Inversionsanalyse für Temperaturprofil und Häufigkeiten"
-                  }
-                ]
-              }
-            },
-            {
-              "id": "kosmische-strahlung",
-              "level": 4,
-              "name": "Kosmische Strahlung und Teilchenastrophysik",
-              "color": "#4527a0",
-              "details": {
-                "description": "Energiespektren, Komposition und Anisotropie kosmischer Strahlung aus Luftschauerexperimenten.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Kosmische-Strahlung-Spektra in KASCADE/Auger-Open-Data zugänglich."
-                },
-                "theme": {
-                  "code": "TH_10"
-                },
-                "object": {
-                  "code": "OB_04"
-                },
-                "granularity": {
-                  "code": "GR_01"
-                },
-                "format": [
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  },
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 3,
-                "processes": [
-                  {
-                    "method": "Luftschauer-Rekonstruktion",
-                    "description": "Geometrische und Energierekonstruktion aus Detektorarrays"
-                  },
-                  {
-                    "method": "Kompositionsanalyse",
-                    "description": "Xmax-Verteilungen für Elementhäufigkeitsschätzung"
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "rechtswiss-institut",
-      "level": 2,
-      "name": "Rechtswissenschaftliches Institut",
-      "color": "#4527a0",
-      "children": [
-        {
-          "id": "rechts-empirik",
-          "level": 3,
-          "name": "Empirische Rechtsforschung und Justizstatistik",
-          "color": "#4527a0",
-          "children": [
-            {
-              "id": "gerichts-urteilsdatenbanken",
-              "level": 4,
-              "name": "Gerichtsurteile und Rechtsprechungsdatenbanken",
-              "color": "#4527a0",
-              "details": {
-                "description": "Strukturierte Rechtsprechungsdatenbanken mit Urteilstexten, Leitsätzen und Metadaten zu Rechtsgebieten und Instanzen.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Gerichtsurteile öffentlich; strukturierte Metadaten offen bereitstellbar."
-                },
-                "theme": {
-                  "code": "TH_08"
+                  "code": "TH_06"
                 },
                 "object": {
                   "code": "OB_02"
                 },
                 "granularity": {
-                  "code": "GR_04"
+                  "code": "GR_01"
                 },
                 "format": [
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  },
                   {
                     "code": "FT_04",
                     "label": "XML"
@@ -10365,106 +10766,8 @@
                 "relevance": 4,
                 "processes": [
                   {
-                    "method": "NLP-Urteilsanalyse",
-                    "description": "Named-Entity-Recognition und Relation-Extraction aus Urteilstexten"
-                  },
-                  {
-                    "method": "Zitationsnetzwerk",
-                    "description": "Graph-Analyse der gegenseitigen Bezugnahme von Entscheidungen"
-                  }
-                ]
-              }
-            },
-            {
-              "id": "strafverfolgungsstatistik",
-              "level": 4,
-              "name": "Strafverfolgungsstatistik",
-              "color": "#4527a0",
-              "details": {
-                "description": "Polizeiliche Kriminalstatistik, Strafverfolgungsstatistik, Strafvollzugsstatistik auf Delikts- und Bevölkerungsebene.",
-                "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Kriminalstatistiken nach §163 StPO als amtliche Statistik offen."
-                },
-                "theme": {
-                  "code": "TH_08"
-                },
-                "object": {
-                  "code": "OB_01"
-                },
-                "granularity": {
-                  "code": "GR_02"
-                },
-                "format": [
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  },
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  }
-                ],
-                "license": {
-                  "code": "LI_01"
-                },
-                "relevance": 4,
-                "processes": [
-                  {
-                    "method": "Hellfeldstudie",
-                    "description": "Analyse registrierter Delikte im Vergleich zu Dunkelfeldstudien"
-                  },
-                  {
-                    "method": "Regressions­analyse",
-                    "description": "Sozioökonomische Determinanten von Kriminalitätsraten"
-                  }
-                ]
-              }
-            },
-            {
-              "id": "legal-tech-daten",
-              "level": 4,
-              "name": "Legal-Tech und NLP-Rechtsdaten",
-              "color": "#4527a0",
-              "details": {
-                "description": "Aufbereitete Rechtstextkorpora für maschinelles Lernen: Gesetze, Urteile, Verträge für NLP und KI-Rechtsanwendungen.",
-                "openness": {
-                  "class": "OP_02",
-                  "label": "Nach Aufbereitung publizierbar",
-                  "explanation": "Rechtstexte nach Strukturierung und Qualitätsprüfung als Trainings-Korpora."
-                },
-                "theme": {
-                  "code": "TH_08"
-                },
-                "object": {
-                  "code": "OB_02"
-                },
-                "granularity": {
-                  "code": "GR_04"
-                },
-                "format": [
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  },
-                  {
-                    "code": "FT_04",
-                    "label": "XML"
-                  }
-                ],
-                "license": {
-                  "code": "LI_02"
-                },
-                "relevance": 4,
-                "processes": [
-                  {
-                    "method": "BERT-Fine-Tuning",
-                    "description": "Domänenspezifisches Fine-Tuning von Sprachmodellen auf Rechtstexten"
-                  },
-                  {
-                    "method": "Argumentation-Mining",
-                    "description": "Erkennung von Prämissen, Schlussfolgerungen in juristischer Argumentation"
+                    "method": "ECHA-Dossier-Analyse",
+                    "description": "Auswertung der deutschen Beiträge zu REACH-Bewertungsverfahren"
                   }
                 ]
               }
@@ -10472,28 +10775,158 @@
           ]
         },
         {
-          "id": "regulierungs-daten",
+          "id": "agrar-forstforschung",
           "level": 3,
-          "name": "Regulierungsforschung und Policy-Daten",
-          "color": "#4527a0",
+          "name": "Agrar- & Forstforschung",
+          "color": "#5e35b1",
+          "description": "Landwirtschaftliche Forschungsdaten des Thünen-Instituts und Julius Kühn-Instituts",
           "children": [
             {
-              "id": "regulierungsfolgenabschaetzung",
+              "id": "thuenen-agrarstruktur",
               "level": 4,
-              "name": "Regulierungsfolgenabschätzungs-Daten",
-              "color": "#4527a0",
+              "name": "Agrarstrukturerhebung & Betriebsdaten",
+              "color": "#3d1a87",
               "details": {
-                "description": "Empirische Daten zu wirtschaftlichen Auswirkungen von Regulierung: Compliance-Kosten, Marktstruktur, Innovationswirkung.",
+                "description": "Betriebsstrukturen, Flächennutzung und Einkommenssituation landwirtschaftlicher Betriebe (Thünen)",
                 "openness": {
-                  "class": "OP_02",
-                  "label": "Nach Aufbereitung publizierbar",
-                  "explanation": "RFA-Daten nach Bereinigung für Politikfolgenforschung zugänglich."
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Thünen veröffentlicht Forschungsergebnisse als Open Data"
                 },
                 "theme": {
-                  "code": "TH_08"
+                  "code": "TH_06"
                 },
                 "object": {
-                  "code": "OB_01"
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Thünen-Atlas",
+                    "description": "Geodaten-Portal des Thünen-Instituts"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflanzenschutz-daten",
+              "level": 4,
+              "name": "Pflanzenschutzmittel-Zulassungsdaten",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Zugelassene Pflanzenschutzmittel, Anwendungsgebiete und Wartezeiten (JKI/BVL)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gesetzlich vorgeschriebene Veröffentlichung der Zulassungsdaten"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "BVL-Pflanzenschutz-Register",
+                    "description": "Abruf aus BVL-Pflanzenschutzmittelverzeichnis"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "waldzustandsbericht",
+              "level": 4,
+              "name": "Waldzustandsbericht",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Ergebnisse der jährlichen Waldzustandserhebung: Kronenverlichtung, Schadursachen",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Jährlich veröffentlichter Bericht des BMEL"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Waldinventur-Auswertung",
+                    "description": "Statistische Auswertung der Bundeswaldinventur"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fischerei-daten",
+              "level": 4,
+              "name": "Fischereistatistik & Bestandsmonitoring",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Fangmengen, Bestandsgrößen und Nachhaltigkeitsbewertungen (Thünen-Institut für Seefischerei)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ICES-Bestandsabschätzungen sind öffentlich"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
                 },
                 "granularity": {
                   "code": "GR_02"
@@ -10502,6 +10935,97 @@
                   {
                     "code": "FT_01",
                     "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "ICES-Datenbank",
+                    "description": "Internationale Koordination durch ICES-Arbeitsgruppen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "boden-kohlenstoff",
+              "level": 4,
+              "name": "Boden-Kohlenstoff & Treibhausgasinventar",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Kohlenstoffspeicherung landwirtschaftlicher Böden für nationales THG-Inventar (Thünen)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Nationale Klimaberichterstattung ist öffentlich"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "THG-Inventar",
+                    "description": "Jährliche Berechnung für nationales Treibhausgasinventar"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "metrologie-materialforschung",
+          "level": 3,
+          "name": "Metrologie & Materialforschung",
+          "color": "#5e35b1",
+          "description": "Messnormale, Kalibrierungsdaten und Werkstoffprüfungen von PTB und BAM",
+          "children": [
+            {
+              "id": "ptb-messnormale",
+              "level": 4,
+              "name": "Nationale Messnormale & Kalibrierungsdaten",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Realisierungen der SI-Einheiten und Kalibrierungszertifikate der PTB",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Metrologische Referenzdaten sind öffentlich verfügbar"
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
                   },
                   {
                     "code": "FT_02",
@@ -10509,38 +11033,34 @@
                   }
                 ],
                 "license": {
-                  "code": "LI_02"
+                  "code": "LI_01"
                 },
-                "relevance": 3,
+                "relevance": 4,
                 "processes": [
                   {
-                    "method": "Differenz-in-Differenzen",
-                    "description": "Quasi-experimentelle Identifikation von Regulierungseffekten"
-                  },
-                  {
-                    "method": "Unternehmensumfrage",
-                    "description": "Befragung regulierter Unternehmen zu Compliance-Kosten"
+                    "method": "BIPM-Datenbank",
+                    "description": "Veröffentlichung über BIPM Key Comparison Database"
                   }
                 ]
               }
             },
             {
-              "id": "komparatives-verfassungsrecht",
+              "id": "bam-werkstoffpruefung",
               "level": 4,
-              "name": "Komparatives Verfassungsrecht Daten",
-              "color": "#4527a0",
+              "name": "Werkstoffprüfung & Materialcharakterisierung",
+              "color": "#3d1a87",
               "details": {
-                "description": "Vergleichende Verfassungsdatenbank: Verfassungstexte, Verfassungsänderungen, institutionelle Arrangements weltweit.",
+                "description": "Prüfberichte und Referenzmaterialien der BAM für Sicherheits- und Umweltfragen",
                 "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Verfassungstexte und komparative Indizes offen in CCP/Comparative Constitutions Project."
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Prüfberichte nach Anonymisierung der Auftraggeber publizierbar"
                 },
                 "theme": {
-                  "code": "TH_08"
+                  "code": "TH_10"
                 },
                 "object": {
-                  "code": "OB_02"
+                  "code": "OB_04"
                 },
                 "granularity": {
                   "code": "GR_01"
@@ -10551,6 +11071,45 @@
                     "label": "CSV"
                   },
                   {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BAM-Prüfdatenbank",
+                    "description": "Systematische Erfassung aller Prüfzertifikate"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ptb-zeitnormale",
+              "level": 4,
+              "name": "Atomuhr & Zeitsignale",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Zeitmessungen der PTB-Atomuhren und Ausstrahlung des DCF77-Zeitsignals",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Zeitnormale sind öffentlich zugängliche Infrastruktur"
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
                     "code": "FT_02",
                     "label": "JSON"
                   }
@@ -10561,36 +11120,71 @@
                 "relevance": 3,
                 "processes": [
                   {
-                    "method": "Textvergleich",
-                    "description": "Automatische Ähnlichkeitsanalyse von Verfassungstexten"
-                  },
-                  {
-                    "method": "Indikatorbildung",
-                    "description": "Kodierung institutioneller Verfassungsmerkmale"
+                    "method": "PTB-Zeitdienst",
+                    "description": "Kontinuierliche Ausstrahlung und Online-Zeitserver"
                   }
                 ]
               }
             },
             {
-              "id": "datenschutz-compliance",
+              "id": "bam-gefahrgut",
               "level": 4,
-              "name": "Datenschutz und Compliance-Forschungsdaten",
-              "color": "#4527a0",
+              "name": "Gefahrgut-Zulassungen & Prüfdaten",
+              "color": "#3d1a87",
               "details": {
-                "description": "Fallstudien, Bußgeldentscheidungen, Compliance-Bewertungen im DSGVO-Kontext für Rechtskonformitätsforschung.",
+                "description": "Zulassungen und technische Prüfungen für Transport gefährlicher Güter (BAM)",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "DSGVO-Bußgeldentscheidungen öffentlich; strukturierte Analyse offen."
+                  "explanation": "Zulassungsregister ist öffentlich"
                 },
                 "theme": {
-                  "code": "TH_08"
+                  "code": "TH_06"
                 },
                 "object": {
                   "code": "OB_02"
                 },
                 "granularity": {
-                  "code": "GR_04"
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BAM-Zulassungsregister",
+                    "description": "Abruf aus öffentlichem BAM-Zulassungssystem"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "referenzmaterialien",
+              "level": 4,
+              "name": "Zertifizierte Referenzmaterialien",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Katalog zertifizierter Referenzmaterialien von BAM und PTB für Kalibrierlabore",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Referenzmaterialien-Katalog ist öffentlich"
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
                 },
                 "format": [
                   {
@@ -10603,17 +11197,13 @@
                   }
                 ],
                 "license": {
-                  "code": "LI_01"
+                  "code": "LI_02"
                 },
-                "relevance": 4,
+                "relevance": 3,
                 "processes": [
                   {
-                    "method": "Fallkodierung",
-                    "description": "Systematische Kodierung von DPA-Entscheidungen nach Verletzungstyp"
-                  },
-                  {
-                    "method": "Sanktionsanalyse",
-                    "description": "Determinanten von Bußgeldhöhe und Regulierungsintensität"
+                    "method": "COMAR-Datenbank",
+                    "description": "Internationale Datenbank für Referenzmaterialien"
                   }
                 ]
               }

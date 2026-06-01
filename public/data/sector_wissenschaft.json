@@ -4648,6 +4648,127 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ad-hoc-stellungnahmen-register",
+              "level": 4,
+              "name": "Ad-hoc-Stellungnahmen Register",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Verzeichnis aller veröffentlichten wissenschaftlichen Stellungnahmen nach Thema und Jahr.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bereits auf Akademie-Websites öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Katalogisierung",
+                    "description": "Strukturiertes Harvesting der Akademie-Publikationsserver"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "interdisziplinaere-kommissionen",
+              "level": 4,
+              "name": "Interdisziplinäre Kommissionen Verzeichnis",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Zusammensetzung und Mandate laufender interdisziplinärer Arbeitsgruppen der Akademien.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich besetzte Gremien."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Erhebung",
+                    "description": "Jährliche Aktualisierung durch Akademiesekretariate"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wissenschaftsethik-gutachten",
+              "level": 4,
+              "name": "Wissenschaftsethik-Gutachten Datenbank",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Ethische Bewertungen und Empfehlungen zu Forschungsvorhaben und Technologien.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gutachten werden als Publikationen veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Textanalyse",
+                    "description": "NLP-Klassifikation ethischer Argumente und Empfehlungen"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4889,6 +5010,84 @@
                   {
                     "method": "Qualitätsentwicklung",
                     "description": "Nutzerfeedback und Reichweitenanalysen informieren die kontinuierliche Weiterentwicklung von Kommunikationsformaten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mitgliederprofil-koautorschaft",
+              "level": 4,
+              "name": "Mitgliederprofil Koautorschaftsnetz",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Koautorschaftsnetzwerke zwischen Akademiemitgliedern nach Disziplin.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Publikationsdaten sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Netzwerkanalyse",
+                    "description": "Graphanalyse auf Basis von OpenAlex und CrossRef"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "akademie-jahrbuch-statistik",
+              "level": 4,
+              "name": "Akademie Jahrbuch Statistik",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Aggregierte Kenndaten aus Jahrbüchern: Mitglieder, Preise, Veranstaltungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Jahrbücher sind öffentlich verfügbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "PDF-Extraktion",
+                    "description": "Tabellenextraktion aus Akademie-Jahrbüchern"
                   }
                 ]
               }
@@ -5141,6 +5340,123 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "dfg-bewilligungsstatistik",
+              "level": 4,
+              "name": "DFG Bewilligungsstatistik",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Bewilligte DFG-Anträge nach Fachgebiet, Hochschule und Förderinstrument.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DFG veröffentlicht GEPRIS-Datenbank als Open Data."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "API-Anbindung",
+                    "description": "Harvest aus GEPRIS-API der DFG"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bmbf-foerderprogramme",
+              "level": 4,
+              "name": "BMBF Förderprogramme Übersicht",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Aktive und abgeschlossene BMBF-Förderprogramme mit Volumen und Laufzeiten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Förderprogramme sind öffentlich ausgeschrieben."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Förderdatenbank des BMBF"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "eu-horizon-beteiligung",
+              "level": 4,
+              "name": "EU Horizon Beteiligung Deutschland",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Teilnahme und Fördersummen deutscher Institutionen in EU-Rahmenprogrammen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "CORDIS-Datenbank ist öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "API-Anbindung",
+                    "description": "Harvest aus CORDIS Open Data API"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -5382,6 +5698,84 @@
                   {
                     "method": "IP-Strategie",
                     "description": "Förderinstitutionen nutzen Patentstatistiken zur Weiterentwicklung ihrer Transfer- und IP-Strategien."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "forschungsoutput-foerderprojekte",
+              "level": 4,
+              "name": "Forschungsoutput geförderter Projekte",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Publikationen, Patente und Ausgründungen aus DFG- und BMBF-geförderten Projekten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Ergebnisdaten aus GEPRIS und OpenAlex."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bibliometrie",
+                    "description": "Verknüpfung von Förderdaten mit Publikationsdatenbanken"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "nachwuchsfoerderung-statistik",
+              "level": 4,
+              "name": "Nachwuchsförderung Statistik",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Geförderte Doktoranden und Postdocs nach Förderinstrument und Fachgebiet.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Nachwuchsförderungsdaten."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Zusammenführung aus DFG, Humboldt-Stiftung, DAAD"
                   }
                 ]
               }
@@ -5634,6 +6028,123 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ifo-geschaeftsklima-index",
+              "level": 4,
+              "name": "ifo Geschäftsklima Index Daten",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Monatliche Konjunkturerwartungen und Lagebeurteilungen nach Wirtschaftsbereich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ifo veröffentlicht Indexdaten als Open Data."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Zeitreihe",
+                    "description": "Monatliche Panelbefragung von Unternehmen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bip-nowcasting-modelle",
+              "level": 4,
+              "name": "BIP-Nowcasting Modelle",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Hochfrequente Schätzungen des Bruttoinlandsprodukts vor amtlicher Veröffentlichung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Nowcasting-Modelle werden publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Zeitreihenmodellierung",
+                    "description": "Mixed-Data Sampling (MIDAS) Regression"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "arbeitsmarktprognose-daten",
+              "level": 4,
+              "name": "Arbeitsmarktprognose Daten",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Mittelfristige Beschäftigungsprognosen nach Berufsgruppe und Qualifikation.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "IAB-Prognosen werden veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Ökonometrie",
+                    "description": "Strukturmodelle auf Basis des IAB-Betriebspanels"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -5871,6 +6382,84 @@
                   {
                     "method": "Regionalpolitik",
                     "description": "Regionale Armutsdaten informieren Fördermittelvergabe aus EU-Strukturfonds und nationalen Regionalprogrammen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sozialtransfer-wirkungsanalyse",
+              "level": 4,
+              "name": "Sozialtransfer Wirkungsanalyse",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Kausale Wirkungsschätzungen von Sozialtransfers auf Beschäftigung und Einkommen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Mikrodaten anonymisiert, Ergebnisse öffentlich."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Kausalanalyse",
+                    "description": "Difference-in-Differences auf administrativen Daten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mindestlohn-evaluation-daten",
+              "level": 4,
+              "name": "Mindestlohn Evaluation Datensatz",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Beschäftigungs- und Lohneffekte nach Mindestlohnerhöhungen auf Betriebsebene.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierte Betriebsdaten für Forschungszwecke."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Regression",
+                    "description": "Kausalschätzung via Regression Discontinuity Design"
                   }
                 ]
               }
@@ -6127,6 +6716,123 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "angewandte-forschungsprojekte",
+              "level": 4,
+              "name": "Angewandte Forschungsprojekte Register",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Laufende und abgeschlossene Transferprojekte an HAW nach Branche und Fachbereich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Projektinformationen sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Harvesting",
+                    "description": "Aggregierung aus Hochschul-Projektdatenbanken"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "patente-haw",
+              "level": 4,
+              "name": "Patente und Gebrauchsmuster HAW",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Schutzrechte von Fachhochschulen nach Technologiefeld und Verwertungsstatus.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DPMA-Register ist öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Registerabfrage",
+                    "description": "Automatisierter Abruf aus DPMA DEPATISnet"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "prototypen-demonstratoren",
+              "level": 4,
+              "name": "Prototypen und Demonstratoren Verzeichnis",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Prototypen und Demonstratoren aus HAW-Forschungsprojekten nach Reifegrad.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Nicht alle Details können öffentlich sein."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Katalogisierung",
+                    "description": "Erhebung durch Technologietransferstellen der HAW"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6368,6 +7074,84 @@
                   {
                     "method": "Internationalität",
                     "description": "Anteil internationaler Praxiseinsätze ist Indikator für Internationalisierungsstrategien der HAW."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "duale-studiengaenge-statistik",
+              "level": 4,
+              "name": "Duale Studiengänge Statistik",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Eingeschriebene Studierende in dualen Studienprogrammen nach Fach und Partnerunternehmen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Statistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jährliche Hochschulstatistik der Länder"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "unternehmenskooperationen-haw",
+              "level": 4,
+              "name": "Unternehmenskooperationen HAW",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Partnerunternehmen und Kooperationsformen dualer Studienprogramme.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Partnerlisten der Hochschulen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Web-Scraping",
+                    "description": "Erhebung aus Hochschulwebsites und AusbildungsAtlas"
                   }
                 ]
               }
@@ -6624,6 +7408,123 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ausleihstatistik",
+              "level": 4,
+              "name": "Ausleihstatistik Wissenschaftliche Bibliothek",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Ausleihen nach Medientyp, Fachgebiet und Nutzungsgruppe im Jahresverlauf.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Nutzungsdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresstatistik der Deutschen Bibliotheksstatistik (DBS)"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fernleihe-statistik",
+              "level": 4,
+              "name": "Fernleihe Statistik",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Fernleihbestellungen und Lieferzeiten zwischen wissenschaftlichen Bibliotheken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Bibliotheksverbunddaten."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Verbunddaten des GBV und BVB"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zeitschriften-lizenzen",
+              "level": 4,
+              "name": "Zeitschriften-Lizenzportfolio",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Lizenzierte elektronische Zeitschriften nach Fachgebiet, Verlag und Open-Access-Status.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EZB-Daten sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "API-Anbindung",
+                    "description": "Abfrage der Elektronischen Zeitschriftenbibliothek (EZB)"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6865,6 +7766,84 @@
                   {
                     "method": "Web of Data",
                     "description": "GND-Verknüpfungen mit Wikidata, VIAF und anderen Normdateien schaffen das Fundament des bibliographischen Web of Data."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "repositorium-nutzung",
+              "level": 4,
+              "name": "Repositorium Nutzungsstatistik",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Downloads und Zugriffe auf institutionelle Repositorien nach Dokumenttyp.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Zugriffsstatistiken ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Webanalyse",
+                    "description": "COUNTER-konforme Nutzungsstatistiken der Repositorien"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "digitalisierung-bestand",
+              "level": 4,
+              "name": "Digitalisierungsgrad Bestand",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Anteil digitalisierter historischer Bestände nach Bestandsgruppe und Erscheinungsjahr.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Metadaten der digitalisierten Bestände."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Inventarisierung",
+                    "description": "Erhebung im Rahmen der DFG-Digitalisierungsprogramme"
                   }
                 ]
               }
@@ -7121,6 +8100,123 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "nfdi-konsortien-overview",
+              "level": 4,
+              "name": "NFDI Konsortien Übersicht",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Aktive NFDI-Konsortien nach Disziplin, Fördervolumen und angebotenen Diensten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DFG veröffentlicht NFDI-Informationen."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Zusammenführung aus NFDI-Direktory und DFG-Förderberichten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "forschungsdaten-lizenzen",
+              "level": 4,
+              "name": "Forschungsdaten Lizenzübersicht",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Verfügbare Lizenzen für Forschungsdaten in NFDI-Repositorien nach Datenkategorie.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Lizenzmetadaten."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Harvesting",
+                    "description": "Automatisierter Abruf aus re3data und DataCite"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "persistent-identifier-nutzung",
+              "level": 4,
+              "name": "Persistent Identifier Nutzung",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Vergabe und Nutzung von DOIs, ORCIDs und RORs in der deutschen Forschungslandschaft.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "PID-Metadaten sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "API-Anbindung",
+                    "description": "Abfrage der DataCite und ORCID APIs"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -7362,6 +8458,84 @@
                   {
                     "method": "Infrastruktur-Benchmarking",
                     "description": "DFN-Transfer-Kapazitäten sind Indikator für die digitale Konnektivität der deutschen Wissenschaftslandschaft."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hpc-ressourcennutzung",
+              "level": 4,
+              "name": "HPC Ressourcennutzung",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Rechenkapazitäten und Auslastung nationaler HPC-Systeme nach Forschungsbereich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Kapazitätsdaten ohne Einzelprojektbezug."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Monitoring",
+                    "description": "Automatisiertes Cluster-Monitoring der Rechenzentren"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "cloud-dienste-wissenschaft",
+              "level": 4,
+              "name": "Cloud-Dienste für Wissenschaft",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Verfügbare Cloud-Dienste und Speicherkapazitäten für Forschungsdaten (EOSC, de.NBI).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Dienstkataloge."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Katalogisierung",
+                    "description": "Harvesting aus EOSC-Portal und de.NBI-Dienstverzeichnis"
                   }
                 ]
               }
@@ -7616,6 +8790,88 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "extremereignis-datenbank",
+              "level": 4,
+              "name": "Extremereignis Datenbank",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Dokumentierte Klimaextremereignisse nach Typ, Region und Schadensausmaß.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich zugängliche Katastrophendatenbanken."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Zusammenführung aus Munich Re NatCatSERVICE und ESWD"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vulnerabilitaets-index",
+              "level": 4,
+              "name": "Vulnerabilitäts-Index Regionen",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Verwundbarkeit von Regionen gegenüber Klimawandelfolgen nach Indikator.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "UFZ-Vulnerabilitätsstudien sind veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Indexberechnung",
+                    "description": "Multikriterielle Analyse klimatischer und sozioökonomischer Faktoren"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -7856,6 +9112,123 @@
                   {
                     "method": "Mooring-System",
                     "description": "Verankerte Messsysteme für Langzeitbeobachtung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fliessgewaesser-guete",
+              "level": 4,
+              "name": "Fließgewässergüte Messdaten",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Physikalisch-chemische und biologische Gütemessungen an Fließgewässern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Messnetzdaten der Forschungsinstitute sind öffentlich."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Messung",
+                    "description": "Kontinuierliche Sensorerfassung an Messstationen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mikroplastik-gewaesser",
+              "level": 4,
+              "name": "Mikroplastik in Gewässern",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Konzentrationen von Mikroplastikpartikeln in Oberflächen- und Grundwässern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Umweltforschungsdaten werden publiziert."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Laboranalyse",
+                    "description": "Rasterelektronenmikroskopie und FTIR-Spektroskopie"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "grundwasser-monitoring",
+              "level": 4,
+              "name": "Grundwasser-Monitoring",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Grundwasserstände und Qualitätsparameter aus nationalen Messnetzen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BfG und Länder veröffentlichen Grundwasserdaten."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Zeitreihe",
+                    "description": "Kontinuierliche Pegelstandsmessungen"
                   }
                 ]
               }
@@ -8102,6 +9475,127 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "soep-variablen-dokumentation",
+              "level": 4,
+              "name": "SOEP Variablen Dokumentation",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Codebuch und Variablenübersicht des Sozio-oekonomischen Panels (SOEP).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Dokumentation ist öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Dokumentation",
+                    "description": "Jährliche Aktualisierung durch DIW Datenabteilung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "befragungsmodul-archive",
+              "level": 4,
+              "name": "Befragungsmodul Archive",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Fragebogenmodule und Antwortskalen aus replizierten Sozialwissenschaftsstudien.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Methodeninstrumente werden mit Studien publiziert."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Archivierung",
+                    "description": "Langzeitarchivierung durch GESIS Datenarchiv"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "nonresponse-analyse",
+              "level": 4,
+              "name": "Nonresponse Analyse Datensatz",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Ausfallmuster und Panelmortalität in Längsschnittstudien nach Erhebungswelle.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierung von Haushaltsadressen nötig."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Gewichtung",
+                    "description": "Kalibrierungsgewichte zur Korrektur von Ausfallbias"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -8337,6 +9831,84 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "einkommensungleichheit-zeitreihe",
+              "level": 4,
+              "name": "Einkommensungleichheit Zeitreihe",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Gini-Koeffizienten und Einkommensquintile für Deutschland seit 1990.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis und DIW publizieren Ungleichheitsdaten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Berechnung",
+                    "description": "Gini-Berechnung auf Basis von EVS und SOEP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bildungsungleichheit-indikatoren",
+              "level": 4,
+              "name": "Bildungsungleichheit Indikatoren",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Bildungschancen nach sozialer Herkunft, Migrationshintergrund und Region.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bildungsberichtsdaten werden veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung von PISA, IGLU und nationalen Bildungsberichten"
+                  }
+                ]
+              }
             }
           ]
         }
@@ -8494,6 +10066,205 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "urteilsanalyse-corpus",
+              "level": 4,
+              "name": "Urteilsanalyse Corpus",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Maschinenlesbare Sammlung veröffentlichter Gerichtsurteile nach Rechtsgebiet.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Veröffentlichte Urteile sind öffentliche Dokumente."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "NLP-Analyse",
+                    "description": "Named Entity Recognition und Präzedenzfall-Extraktion"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gesetzgebungsdauer-studie",
+              "level": 4,
+              "name": "Gesetzgebungsdauer Studie",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Zeitdauer vom Gesetzentwurf bis zur Verkündung nach Rechtsbereich und Legislaturperiode.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Parlamentsdaten sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Auswertung der Bundestagsdokumentation"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "normkontrolle-statistik",
+              "level": 4,
+              "name": "Normkontrolle Statistik BVerfG",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Normenkontrollverfahren am Bundesverfassungsgericht nach Rechtsgebiet und Ausgang.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BVerfG veröffentlicht Verfahrensstatistiken."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresstatistik des Bundesverfassungsgerichts"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "rechtsvergleich-datenbank",
+              "level": 4,
+              "name": "Rechtsvergleich Datenbank",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Vergleichende Kodierung nationaler Rechtssysteme nach Rechtsbereich (DCFR-Kategorien).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kodierungen werden in Forschungsprojekten veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Kodierung",
+                    "description": "Manuelle Expertencodierung nach standardisierten Schemas"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "anwaltsmarkt-statistik",
+              "level": 4,
+              "name": "Anwaltsmarkt Statistik",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Zulassungsdaten, Fachgebiete und Kammermitglieder von Rechtsanwälten nach Region.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BRAK veröffentlicht Statistiken."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresstatistik der Bundesrechtsanwaltskammer"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -8640,6 +10411,166 @@
                   {
                     "method": "Sanktionsanalyse",
                     "description": "Determinanten von Bußgeldhöhe und Regulierungsintensität"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buerokratiekosten-messung",
+              "level": 4,
+              "name": "Bürokratiekosten Messung",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Standardkosten und Belastungen für Unternehmen durch Regulierung nach Gesetz.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "NKR-Berichte werden publiziert."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Kostenmessung",
+                    "description": "Standardkostenmodell des Normenkontrollrats"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "compliance-aufwand-monitor",
+              "level": 4,
+              "name": "Compliance-Aufwand Monitor",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Selbstauskunftsdaten von Unternehmen zu Erfüllungsaufwand regulatorischer Anforderungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Unternehmensauskünfte aggregiert."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Umfrage",
+                    "description": "Jährliche Befragung durch Wirtschaftsverbände und NKR"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "regulierungsdichte-index",
+              "level": 4,
+              "name": "Regulierungsdichte Index",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Anzahl und Komplexität aktiver Rechtsnormen nach Rechtsbereich über die Zeit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Rechtsquellen sind analysierbar."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Textanalyse",
+                    "description": "Automatische Analyse des Bundesgesetzblatts"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "evaluationsberichte-gesetze",
+              "level": 4,
+              "name": "Evaluationsberichte Gesetze",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Wirksamkeitsevaluierungen von Bundesgesetzen nach Ressort und Evaluationsmethode.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Evaluationsberichte werden im Bundesanzeiger veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Textklassifikation",
+                    "description": "NLP-Klassifikation nach Evaluationsmethode und Fazit"
                   }
                 ]
               }

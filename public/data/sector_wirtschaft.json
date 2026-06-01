@@ -2767,6 +2767,885 @@
           ]
         }
       ]
+    },
+    {
+      "id": "arztpraxis",
+      "level": 2,
+      "name": "Arztpraxis",
+      "color": "#d35400",
+      "description": "Ambulante medizinische Versorgung in hausärztlichen und fachärztlichen Praxen",
+      "children": [
+        {
+          "id": "behandlungsdokumentation",
+          "level": 3,
+          "name": "Behandlung dokumentieren",
+          "color": "#e67e22",
+          "description": "Elektronische Dokumentation aller ambulanten Arzt-Patienten-Kontakte inkl. Diagnosen und Verordnungen",
+          "children": [
+            {
+              "id": "praxis_patientenakte",
+              "level": 4,
+              "name": "Praxis-Patientenakte",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Ambulante Krankengeschichte: Kontaktdaten, Versicherungsstatus, Beschwerden, Diagnosen (ICD-10), Medikation, Überweisungen, AU-Bescheinigungen und Impfstatus. Aufbewahrungspflicht 10 Jahre. Ärztliche Schweigepflicht (§ 203 StGB) ergänzt DSGVO.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Rot — nur Metadaten publizierbar",
+                  "explanation": "Ambulante Patientenakten fallen unter ärztliche Schweigepflicht und sind vollständig geschützt. Epidemiologisch relevante Aggregatdaten (häufigste Diagnosen, Impfquoten nach Region) werden durch die Kassenärztlichen Vereinigungen auf Bundeslandebene veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_02",
+                  "label": "Einzelfallbezogene Daten"
+                },
+                "granularity": {
+                  "code": "GR_01",
+                  "label": "Einzelfall (Mikroebene)"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Gesundheitsversorgung & Prävention",
+                    "description": "Gesetzlich vorgeschriebene Dokumentation jedes Arzt-Patienten-Kontakts (§ 630f BGB)."
+                  },
+                  {
+                    "method": "Verwaltung & Compliance",
+                    "description": "Abrechnungsrelevante Diagnosen (ICD-Codes) werden in aggregierter Form an die Kassenärztliche Vereinigung übermittelt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "rezeptdaten",
+              "level": 4,
+              "name": "Verschreibungsdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verschreibungsdaten: Patientenidentifikation, verschriebenes Medikament (PZN, ATC-Code), Dosierung, Verordnungsdatum und Arzt-LANR. Grundlage für Kassenabrechnung (§ 300 SGB V). ATC-Codes lassen direkte Rückschlüsse auf Diagnosen zu.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Verschreibungsstatistiken (ATC-Gruppen nach Region und Quartal, ohne Patienten- oder Arztbezug) sind wertvolle Indikatoren für Versorgungsforschung. Das WIdO publiziert den Arzneiverordnungs-Report auf Basis solcher Daten — ein vorbildlicher Open-Data-Ansatz."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Gesundheitsversorgung & Prävention",
+                    "description": "Verschreibungsprozess erzeugt Verordnungsdaten, die direkt an Apotheken und Krankenkassen übermittelt werden."
+                  },
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Aggregierte Verordnungsstatistiken ermöglichen Erkennung von Über-, Unter- und Fehlversorgung auf regionaler Ebene."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "impfdokumentation",
+              "level": 4,
+              "name": "Impfdokumentation",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Aggregierte Impfquoten aus ambulanter Praxisdokumentation: Impfstoffart, Altersgruppe, Region und Quartal ohne Personenbezug. Datengrundlage für die bundesweite Impfsurveillance und Planung von Impfkampagnen durch RKI und Gesundheitsämter.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Impfquoten ohne Personenbezug (nach Altersgruppe und Region) können nach Entfernung aller Identifikatoren als Open Data veröffentlicht werden. Das RKI publiziert bereits solche Auswertungen im Rahmen der KV-Impfsurveillance, weitere Granularität wäre öffentlich wertvoll."
+                },
+                "theme": {
+                  "code": "TH_04",
+                  "label": "Gesundheit"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik / Aggregatdaten"
+                },
+                "granularity": {
+                  "code": "GR_03",
+                  "label": "Regional (Bundesland)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02",
+                  "label": "CC BY 4.0"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Datenerhebung & Statistik",
+                    "description": "Impfquoten aus Praxisdaten fließen in die KV-Impfsurveillance des RKI ein und bilden die Grundlage nationaler Impfstrategie."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Regionale Impfquoten nach Altersgruppe ermöglichen die gezielte Planung von Aufholimpfkampagnen und Ressourcenallokation."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "operationsstatistik",
+              "level": 4,
+              "name": "Operationsstatistik & Eingriffszahlen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Aggregierte Eingriffszahlen nach OPS-Klassifikation, Fachabteilung und Komplexität aus der DRG-Statistik.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "OPS-Statistik Destatis",
+                    "url": "https://www.gbe-bund.de/dataset/ops-eingriffe",
+                    "publisher": "Destatis"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "komplikationsrate",
+              "level": 4,
+              "name": "Komplikations- & Mortalitätsrate",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Rates unerwünschter Ereignisse, Komplikationen und krankenhausassoziierter Mortalität nach IQTIG-Indikatoren.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Qualitätsbericht Krankenhaus IQTIG",
+                    "url": "https://www.iqtig.org/dataset/qualitaetsbericht",
+                    "publisher": "IQTIG"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "readmissionsrate",
+              "level": 4,
+              "name": "Wiederaufnahme- & Rehospitalisierungsrate",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Raten ungeplanter 30-Tage-Wiederaufnahmen nach Diagnose und Indexaufenthalt.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Gelb — mit Aufwand publizierbar",
+                  "explanation": "Daten erfordern Aufbereitung oder rechtliche Klärung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_01",
+                  "label": "Soziales & Wohlfahrt"
+                },
+                "object": {
+                  "code": "OB_01",
+                  "label": "Statistik & Kennzahlen"
+                },
+                "granularity": {
+                  "code": "GR_02",
+                  "label": "Lokal (Gemeinde/Kreis)"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "Excel (XLSX)"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04",
+                  "label": "Geschlossen / Proprietär"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "method",
+                    "description": "description"
+                  },
+                  {
+                    "method": "method",
+                    "description": "description"
+                  }
+                ],
+                "examples": [
+                  {
+                    "title": "Readmissions-Statistik AOK",
+                    "url": "https://mcloud.de/readmissions-aok",
+                    "publisher": "Wissenschaftliches Institut der AOK"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "private-kliniken",
+      "level": 2,
+      "name": "Private Kliniken & Krankenhäuser",
+      "color": "#d35400",
+      "description": "Privatwirtschaftliche Krankenhäuser, Fachkliniken und Rehabilitationseinrichtungen",
+      "children": [
+        {
+          "id": "klinik-patientendaten",
+          "level": 3,
+          "name": "Patientendaten & Abrechnung",
+          "color": "#e67e22",
+          "description": "Patientenverwaltung, DRG-Abrechnung und medizinische Dokumentation",
+          "children": [
+            {
+              "id": "drg-abrechnung",
+              "level": 4,
+              "name": "DRG-Abrechnungsdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Fallbezogene Abrechnungsdaten nach Diagnosis Related Groups",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Enthält hochsensible Patientendaten mit Diagnose- und Behandlungsinformationen"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Pseudonymisierung",
+                    "description": "Entfernung aller direkten Identifikatoren vor Auswertung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "op-planung-privat",
+              "level": 4,
+              "name": "OP-Planungsdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Belegungs- und Operationsplanung in Privatkliniken",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Enthält Patiententermine und medizinische Eingriffsdaten"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Aggregation auf Eingriffskategorie-Ebene für Auswertungen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "qualitaetsbericht-klinik",
+              "level": 4,
+              "name": "Qualitätsbericht (§ 136b SGB V)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährlich verpflichtend veröffentlichter Qualitätsbericht stationärer Einrichtungen",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gesetzlich vorgeschriebene Veröffentlichung, keine personenbezogenen Daten"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Strukturierte Extraktion",
+                    "description": "Parsing der XML-Qualitätsberichte für vergleichende Auswertungen"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "klinik-finanzen",
+          "level": 3,
+          "name": "Finanzen & Kapazitäten",
+          "color": "#e67e22",
+          "description": "Bettenbelegung, Umsatz, Investitionen und Fördermittel privater Kliniken",
+          "children": [
+            {
+              "id": "bettenbelegung-privat",
+              "level": 4,
+              "name": "Bettenbelegungsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Tägliche Bettenbelegungsquoten nach Fachabteilung",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Belegungsdaten ohne Patientenbezug publizierbar"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Zusammenfassung auf Wochenmittelwerte je Abteilung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "klinikumsatz",
+              "level": 4,
+              "name": "Umsatz & Erlösstruktur",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jahresumsatz aufgeschlüsselt nach stationären, ambulanten und Wahlleistungserlösen",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Detaillierte Erlösdaten sind Betriebsgeheimnisse"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Bilanzanalyse",
+                    "description": "Extraktion aus Jahresabschlüssen nach HGB/IFRS"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "foerdermittel-klinik",
+              "level": 4,
+              "name": "Investitionsförderung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "KHG-Fördermittel und öffentliche Investitionszuschüsse an private Kliniken",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Förderdaten sind transparent und veröffentlichungspflichtig"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Datenbankabfrage",
+                    "description": "Abruf aus Förderdatenbanken der Bundesländer"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "private-pflegeeinrichtungen",
+      "level": 2,
+      "name": "Private Pflegeeinrichtungen",
+      "color": "#d35400",
+      "description": "Gewerbliche Pflegeheime, ambulante Pflegedienste und Pflegeimmobilienbetreiber",
+      "children": [
+        {
+          "id": "pflegeheim-betrieb",
+          "level": 3,
+          "name": "Heimdaten & Pflegequoten",
+          "color": "#e67e22",
+          "description": "Belegung, Pflegegrade und Personalschlüssel in stationären Pflegeeinrichtungen",
+          "children": [
+            {
+              "id": "pflegegrad-verteilung",
+              "level": 4,
+              "name": "Pflegegrad-Verteilung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verteilung der Bewohner auf Pflegegrade 1–5 je Einrichtung",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Pflegegradverteilung ohne Personenbezug publizierbar"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Zusammenfassung auf Einrichtungsebene, Entfernung individueller Daten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "personalschluessel-pflege",
+              "level": 4,
+              "name": "Personalschlüssel",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verhältnis Pflegekräfte zu Pflegebedürftigen nach Fachkraftquote",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Pflegequalitäts-Kennzahlen sind öffentlich relevant und nicht personenbezogen"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Berechnung",
+                    "description": "Ermittlung aus Stellenplänen und Belegungsdaten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflegeheim-bewertung",
+              "level": 4,
+              "name": "MDK-Prüfergebnisse",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Ergebnisse der Medizinischen Dienst-Prüfungen (Pflegequali-Transparenzberichte)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gesetzlich vorgeschriebene Veröffentlichung der Pflegequalitätsnoten"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Web-Scraping",
+                    "description": "Extraktion aus Transparenzportalen der Pflegekassen"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "ambulante-pflegedienste",
+          "level": 3,
+          "name": "Ambulante Pflegedienste",
+          "color": "#e67e22",
+          "description": "Leistungsdaten, Abrechnungen und Qualitätskennzahlen ambulanter Pflegedienste",
+          "children": [
+            {
+              "id": "pflegeleistungen-ambulant",
+              "level": 4,
+              "name": "Pflegeleistungsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Erbrachte Pflegeleistungen nach SGB XI, aufgeschlüsselt nach Leistungsart",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Leistungsdaten sind nach Aggregation auf Dienst-Ebene publizierbar"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Pseudonymisierung",
+                    "description": "Entfernung aller Patientenbezüge vor Analyse"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflegekassen-abrechnung",
+              "level": 4,
+              "name": "Pflegekassen-Abrechnung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Abrechnungsdaten der Pflegekassen für ambulante Leistungen",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Direkte Leistungsabrechnungen enthalten sensible Personendaten"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Sekundärdatenanalyse",
+                    "description": "Analyse aggregierter Abrechnungsdaten für Versorgungsforschung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflegedienst-personal",
+              "level": 4,
+              "name": "Personalstruktur Pflegedienst",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Beschäftigungsstruktur, Qualifikationen und Fluktuation in ambulanten Diensten",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Personalstruktur ohne individuelle Mitarbeiterdaten publizierbar"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Zusammenfassung auf Dienstebene nach Qualifikationsgruppen"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -30202,6 +30202,789 @@
           ]
         }
       ]
+    },
+    {
+      "id": "bundeswehr",
+      "level": 2,
+      "name": "Bundeswehr",
+      "color": "#2980b9",
+      "description": "Streitkräfte der Bundesrepublik Deutschland – Geoinformation, Haushalt, Personal und Sanitätsdienst",
+      "children": [
+        {
+          "id": "aGeoBw-geoinformation",
+          "level": 3,
+          "name": "Geoinformation & Kartografie",
+          "color": "#3498db",
+          "description": "Topografische Geodaten, digitale Geländemodelle und geografische Referenzdaten des AGeoBw",
+          "children": [
+            {
+              "id": "topografische-karten-bw",
+              "level": 4,
+              "name": "Topografische Karten (TK-Reihe)",
+              "color": "#2471a3",
+              "details": {
+                "description": "Amtliche topografische Karten im Maßstab 1:25.000 bis 1:250.000 des Amts für Geoinformationswesen der Bundeswehr",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Zivil nutzbare topografische Basiskarten ohne Sicherheitsbeschränkung"
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_06",
+                    "label": "Shapefile"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "AGeoBw-Portal",
+                    "description": "Download aus Geoinformationsportal der Bundeswehr"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "dgm-bundeswehr",
+              "level": 4,
+              "name": "Digitales Geländemodell (DGM-BW)",
+              "color": "#2471a3",
+              "details": {
+                "description": "Hochauflösendes digitales Geländemodell für zivil-militärische Geoinformationsanwendungen",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Zivile Varianten des DGM sind frei verfügbar"
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_03",
+                    "label": "NetCDF / HDF5"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "AGeoBw-GeoServer",
+                    "description": "Abruf über WMS/WFS-Schnittstelle des AGeoBw"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bundeswehr-geoobjekte",
+              "level": 4,
+              "name": "Militärische Geoobjekte & Infrastrukturkataster",
+              "color": "#2471a3",
+              "details": {
+                "description": "Lage und Attribute von Bundeswehrstandorten, Übungsgeländen und militärischer Infrastruktur",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Generalisierte Standortdaten ohne sicherheitsrelevante Details publizierbar"
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Generalisierung",
+                    "description": "Reduktion auf öffentlich bekannte Standortgeneralisiierungen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "geoinformation-katastrophenschutz",
+              "level": 4,
+              "name": "Geoinformationsdaten für Katastrophenschutz",
+              "color": "#2471a3",
+              "details": {
+                "description": "Geografische Grundlagendaten des AGeoBw zur Unterstützung ziviler Katastrophenschutzbehörden",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Zivil-militärische Zusammenarbeit im Bevölkerungsschutz; Daten unklassifiziert"
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_06",
+                    "label": "Shapefile"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "KatS-Datenaustausch",
+                    "description": "Bereitstellung über BBK-Infrastruktur im Rahmen ZMZ-Abkommen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bundeswehr-wetterdaten",
+              "level": 4,
+              "name": "Meteorologische Daten (GeoMet Bw)",
+              "color": "#2471a3",
+              "details": {
+                "description": "Wetterbeobachtungen, -prognosen und Klimadaten des Geophysikalischen Beratungsdienstes der Bundeswehr",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Meteorologische Basisdaten ohne operative Militärrelevanz"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "NetCDF / HDF5"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "WMO-Datenaustausch",
+                    "description": "Austausch über WMO-Protokolle mit DWD und internationalem Netzwerk"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "bundeswehr-haushalt-ruestung",
+          "level": 3,
+          "name": "Verteidigungshaushalt & Rüstung",
+          "color": "#3498db",
+          "description": "Bundeshaushalt Einzelplan 14, Beschaffungsvorhaben des BAAINBw und Rüstungsexportberichte",
+          "children": [
+            {
+              "id": "verteidigungshaushalt",
+              "level": 4,
+              "name": "Bundeshaushalt Einzelplan 14",
+              "color": "#2471a3",
+              "details": {
+                "description": "Öffentliche Ausgaben des Verteidigungsministeriums nach Kapitel, Titel und Haushaltsjahr",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bundeshaushalt ist gesetzlich veröffentlichungspflichtig"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Bundeshaushalt-Online",
+                    "description": "Abruf aus dem Haushaltsinformationssystem des BMF"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ruestungsexportberichte",
+              "level": 4,
+              "name": "Rüstungsexportberichte",
+              "color": "#2471a3",
+              "details": {
+                "description": "Jährlicher Bericht der Bundesregierung über genehmigte und tatsächliche Rüstungsexporte",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Jährlich durch Bundesregierung veröffentlicht"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "BMWK-Bericht",
+                    "description": "Strukturierte Auswertung des jährlichen Rüstungsexportberichts"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "baainbw-vergaben",
+              "level": 4,
+              "name": "BAAINBw Vergabe- & Beschaffungsdaten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Öffentlich ausgeschriebene Beschaffungsvorhaben des Beschaffungsamts der Bundeswehr",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EU-Vergaberichtlinien schreiben Veröffentlichung ab Schwellenwert vor"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "TED-Datenbank",
+                    "description": "Abruf aus EU Tender Electronic Daily und DTVP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "nato-ausgaben",
+              "level": 4,
+              "name": "NATO-Ausgabenquote & Fähigkeitsziele",
+              "color": "#2471a3",
+              "details": {
+                "description": "Deutsche Verteidigungsausgaben im Verhältnis zum BIP und Erfüllungsgrad der NATO-Fähigkeitsziele",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "NATO veröffentlicht Ausgabendaten aller Mitgliedstaaten"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "NATO-Statistik",
+                    "description": "Jährliche NATO-Pressemitteilung zu Verteidigungsausgaben"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bundeswehr-liegenschaften",
+              "level": 4,
+              "name": "Bundeswehr-Liegenschaften & Konversionsflächen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Bestand und Freigabe militärischer Liegenschaften, Konversionsprojekte für zivile Nutzung",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Generalisierte Lageangaben und Konversionspläne publizierbar"
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BImA-Liegenschaften",
+                    "description": "Koordination mit Bundesanstalt für Immobilienaufgaben"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "bundeswehr-personal",
+          "level": 3,
+          "name": "Personalstatistik & Streitkräfteentwicklung",
+          "color": "#3498db",
+          "description": "Personalbestand, Laufbahnstatistiken, Nachwuchsgewinnung und Reservistenstruktur der Bundeswehr",
+          "children": [
+            {
+              "id": "personalbestand-bw",
+              "level": 4,
+              "name": "Personalbestand Bundeswehr",
+              "color": "#2471a3",
+              "details": {
+                "description": "Ist-Stärke der Bundeswehr nach Laufbahngruppe, Teilstreitkraft und Geschlecht",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Personalstatistik ohne Personenbezug; BMVg veröffentlicht regelmäßig"
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "BMVg-Jahresbericht",
+                    "description": "Auswertung des jährlichen Bundeswehr-Personalberichts"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "reservisten-statistik",
+              "level": 4,
+              "name": "Reservistenstatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl und Struktur der Reservistinnen und Reservisten nach Bundesland und Laufbahngruppe",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Zahlen ohne Personenbezug"
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Reservistenverband-Statistik",
+                    "description": "Jahresbericht des Verbands der Reservisten der Deutschen Bundeswehr"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "nachwuchsgewinnung-bw",
+              "level": 4,
+              "name": "Nachwuchsgewinnung & Bewerberdaten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Bewerberzahlen, Einstellungsquoten und demografische Merkmale neuer Bundeswehrangehöriger",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Bewerberstatistik ohne Individualdaten publizierbar"
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Zusammenfassung auf Quartalsbasis nach Teilstreitkraft"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auslandseinsaetze-personal",
+              "level": 4,
+              "name": "Auslandseinsätze – Personaleinsatz",
+              "color": "#2471a3",
+              "details": {
+                "description": "Stärke und Rotationshistorie des deutschen Personals in internationalen Einsätzen",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bundestag genehmigt Einsätze; Stärkemeldungen sind parlamentarisch öffentlich"
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bundestags-Drucksachen",
+                    "description": "Auswertung parlamentarischer Berichte zu Auslandseinsätzen"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "bundeswehr-sanitaet",
+          "level": 3,
+          "name": "Sanitätsdienst & Wehrmedizin",
+          "color": "#3498db",
+          "description": "Gesundheitsdaten des Sanitätsdiensts der Bundeswehr, Tropen- und Einsatzmedizin",
+          "children": [
+            {
+              "id": "bundeswehr-krankenstand",
+              "level": 4,
+              "name": "Krankenstand & Gesundheitsmonitoring Soldaten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Krankheitsursachen, Krankenstandquoten und Arbeitsunfähigkeitstage bei Bundeswehrangehörigen",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Gesundheitsstatistik ohne Personenbezug publizierbar"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Gesundheitsbericht Bw",
+                    "description": "Jährlicher Gesundheitsbericht des Sanitätsdiensts der Bundeswehr"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "tropenmedizin-daten",
+              "level": 4,
+              "name": "Tropenmedizinische Surveillance",
+              "color": "#2471a3",
+              "details": {
+                "description": "Infektionskrankheiten und Impfstatus bei Auslandseinsätzen – Daten des Bernhard-Nocht-Instituts (BMI Bw)",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierte Einsatzgesundheitsdaten nach Aggregation publizierbar"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Einsatzepidemiologie",
+                    "description": "Auswertung des Instituts für Mikrobiologie der Bundeswehr"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bundeswehrkrankenhaus-kapazitaeten",
+              "level": 4,
+              "name": "Bundeswehrkrankenhäuser – Kapazitäten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Bettenzahl, Fachabteilungen und Behandlungskapazitäten der Bundeswehrkrankenhäuser (zivile Mitnutzung)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kapazitätsdaten ohne Patientenbezug; Bundeswehrkrankenhäuser behandeln auch Zivilpatienten"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Krankenhausverzeichnis",
+                    "description": "Aufnahme in DKG-Krankenhausverzeichnis als öffentliche Einrichtung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "einsatzmedizin-forschung",
+              "level": 4,
+              "name": "Einsatzmedizinische Forschungsdaten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anonymisierte medizinische Daten aus Auslandseinsätzen für Traumatologie und Notfallmedizin-Forschung",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Einsatzmedizinische Daten enthalten potentiell sicherheitsrelevante Informationen"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Pseudonymisierung",
+                    "description": "Strenge Anonymisierung vor Weitergabe an Forschungseinrichtungen"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

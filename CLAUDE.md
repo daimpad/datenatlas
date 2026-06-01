@@ -264,10 +264,10 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 |--------|----|----|-----|---------|
 | staat | 29 | 74 | 516 | 17,8 |
 | wirtschaft | 13 | 37 | 208 | 16,0 |
-| wissenschaft | 16 | 43 | 223 | 13,9 |
+| wissenschaft | 16 | 43 | 272 | 17,0 |
 | zivilgesellschaft | 16 | 46 | 240 | 15,0 |
-| medien | 6 | 18 | 92 | 15,3 |
-| **Gesamt** | **80** | **218** | **1.279** | **16,0** |
+| medien | 12 | 36 | 188 | 15,7 |
+| **Gesamt** | **86** | **236** | **1.424** | **16,6** |
 
 ---
 
@@ -311,12 +311,12 @@ Priorität nach Ø L4/L2 (niedrig = dringend). Nach Abschluss abhaken und Statis
 
 - [x] **S-01** `zivilgesellschaft` — Alle 16 L2 auf ≥ 15 L4 (aktuell Ø 9,0) → +96 L4 ✓ (PR #35)
 - [x] **S-02** `wirtschaft` — Legacy-Cleanup (21→13 L2) + alle auf ≥15 L4 → +42 L4, Farbfixes ✓ (PR #36)
-- [ ] **S-03** `wissenschaft` — Alle 16 L2 auf ≥ 15 L4 (aktuell Ø 13,9) → ~+20 L4
-- [ ] **S-04** `medien` — Alle 6 L2 auf ≥ 15 L4 (aktuell Ø 15,3 — knapp) → ~+10 L4
+- [x] **S-03** `wissenschaft` — Alle 16 L2 auf ≥ 15 L4 → +49 L4 ✓ (PR #37)
+- [x] **S-04** `medien` — Alle 12 L2 auf ≥ 15 L4 (Tief+Breit kombiniert) → +95 L4 ✓ (PR #38)
 
 **Phase 2 — Breitenausbau (fehlende L2-Knoten ergänzen)**
 
-- [ ] **S-05** `medien` — 6 → 12 L2: fehlende ÖR-Trägerformen (Deutschlandradio, DPA, ZDF-Tochter etc.)
+- [x] **S-05** `medien` — 7 → 12 L2: Deutschlandradio, ZDF Digital, ARD Online, dpa, Landesmedienanstalten ✓ (PR #38)
 - [ ] **S-06** `staat` — Audit: fehlen Justiz, Zoll, Finanzbehörden, Nachrichtendienste?
 - [ ] **S-07** `wirtschaft` — Audit: fehlen Versicherungen (vertieft), Unternehmensdienstleistungen?
 - [ ] **S-08** `zivilgesellschaft` — Audit: passt die ziviz-16-Struktur noch, oder fehlen Träger?

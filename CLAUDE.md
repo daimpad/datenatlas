@@ -265,9 +265,9 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 | staat | 29 | 74 | 516 | 17,8 |
 | wirtschaft | 16 | 42 | 166 | 10,4 |
 | wissenschaft | 16 | 43 | 223 | 13,9 |
-| zivilgesellschaft | 16 | 46 | 144 | 9,0 |
+| zivilgesellschaft | 16 | 46 | 240 | 15,0 |
 | medien | 6 | 18 | 92 | 15,3 |
-| **Gesamt** | **83** | **223** | **1.141** | **13,7** |
+| **Gesamt** | **83** | **223** | **1.237** | **14,9** |
 
 ---
 
@@ -309,7 +309,7 @@ Priorität nach Ø L4/L2 (niedrig = dringend). Nach Abschluss abhaken und Statis
 
 **Phase 1 — Tiefenausbau (bestehende L2 auf ≥ 15 L4 bringen)**
 
-- [ ] **S-01** `zivilgesellschaft` — Alle 16 L2 auf ≥ 15 L4 (aktuell Ø 9,0) → ~+100 L4
+- [x] **S-01** `zivilgesellschaft` — Alle 16 L2 auf ≥ 15 L4 (aktuell Ø 9,0) → +96 L4 ✓ (PR #35)
 - [ ] **S-02** `wirtschaft` — Alle 16 L2 auf ≥ 15 L4 (aktuell Ø 10,4) → ~+75 L4
 - [ ] **S-03** `wissenschaft` — Alle 16 L2 auf ≥ 15 L4 (aktuell Ø 13,9) → ~+20 L4
 - [ ] **S-04** `medien` — Alle 6 L2 auf ≥ 15 L4 (aktuell Ø 15,3 — knapp) → ~+10 L4

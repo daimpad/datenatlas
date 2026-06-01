@@ -4444,6 +4444,314 @@
           ]
         }
       ]
+    },
+    {
+      "id": "private-bildungstraeger",
+      "level": 2,
+      "name": "Private Bildungsträger",
+      "color": "#d35400",
+      "description": "Privatschulen, Nachhilfeinstitute und kommerzielle Bildungsanbieter",
+      "children": [
+        {
+          "id": "privatschulen",
+          "level": 3,
+          "name": "Privatschulen & Ersatzschulen",
+          "color": "#e67e22",
+          "description": "Staatlich anerkannte Privatschulen in freier Trägerschaft",
+          "children": [
+            {
+              "id": "privatschule-schuelerzahlen",
+              "level": 4,
+              "name": "Schülerzahlen Privatschulen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl Schülerinnen und Schüler an genehmigten Privatschulen nach Schulart",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Schülerzahlen ohne Personenbezug"
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Schulstatistik",
+                    "description": "Amtliche KMK-Statistik inkl. Privatschulen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "privatschule-genehmigung",
+              "level": 4,
+              "name": "Schulgenehmigungs-Register",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Liste genehmigter Privatschulen mit Schulart, Standort und Träger",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliches Genehmigungsregister ohne Personenbezug"
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Registerabfrage",
+                    "description": "Abfrage aus Schulverzeichnissen der Kultusministerien"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schulgebuehren",
+              "level": 4,
+              "name": "Schulgebühren & Finanzierung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Erhobene Schulgebühren und Fördermittelanteile nach Schulart und Träger",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Gebührensätze publizierbar, keine Individualfinanzierung"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Erhebung",
+                    "description": "Befragung und Auswertung öffentlich zugänglicher Informationen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ersatzschul-anerkennung",
+              "level": 4,
+              "name": "Ersatzschul-Anerkennungsstatus",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Genehmigungsstatus (genehmigt/anerkannt) und Auflagenhistorie von Ersatzschulen",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Behördenentscheidungen sind öffentlich"
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Registerabfrage",
+                    "description": "Abfrage Schulaufsichtsdatenbank"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "nachhilfe-tutoring",
+          "level": 3,
+          "name": "Nachhilfe & kommerzielle Bildung",
+          "color": "#e67e22",
+          "description": "Nachhilfeinstitute, Lernstudios und Online-Bildungsplattformen",
+          "children": [
+            {
+              "id": "nachhilfemarkt",
+              "level": 4,
+              "name": "Nachhilfemarkt-Statistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Marktvolumen, Anzahl Anbieter und Schüleranteile im Nachhilfebereich",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Marktdaten nach Aggregation publizierbar"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Marktanalyse",
+                    "description": "Auswertung aus Branchenberichten und Unternehmensregistern"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bildungsplattform-nutzung",
+              "level": 4,
+              "name": "Online-Bildungsplattform-Nutzung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Nutzer- und Kurszahlen kommerzieller E-Learning-Plattformen (DE-Markt)",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Plattformdaten sind proprietär und wettbewerbsrelevant"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Plattformanalyse",
+                    "description": "Auswertung öffentlich zugänglicher Plattformkennzahlen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "qualitaetszertifikate-wb",
+              "level": 4,
+              "name": "Qualitätszertifikate Bildungsanbieter",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "AZAV-Zertifizierungen und Qualitätssiegel für zugelassene Bildungsträger",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliches Zulassungsregister der Bundesagentur für Arbeit"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Registerabfrage",
+                    "description": "Abruf KURSNET/AZAV-Register der BA"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

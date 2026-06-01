@@ -38,18 +38,21 @@ L3  Aktivität      (e.g. Forschungsdatenmanagement)
 L4  Datentyp       (leaf node – the actual data product)
 ```
 
-### Sector Files
+### Active Sector Files (main.json)
 
-| File | Sector | Color |
-|------|--------|-------|
-| `sector_staat.json` | Staat & Verwaltung | `#1e5799` |
-| `sector_wirtschaft.json` | Wirtschaft | `#2c3e50` |
-| `sector_wissenschaft.json` | Wissenschaft & Forschung | `#4527a0` |
-| `sector_bildung.json` | Bildung | `#0284c7` |
-| `sector_zivilgesellschaft.json` | Zivilgesellschaft | `#6d28d9` |
-| `sector_medien.json` | Medien | `#be185d` |
-| `sector_infrastruktur.json` | Infrastruktur | `#1a2332` |
-| `sector_gesundheit.json` | Gesundheit | `#7e22ce` |
+Sektoren sind konsequent nach **Trägertyp** gegliedert (wer produziert die Daten).
+
+| File | Sektor | L1-Color | L2-Color | L3-Color | L4-Color |
+|------|--------|----------|----------|----------|----------|
+| `sector_staat.json` | Staat & Verwaltung | `#1e5799` | `#2980b9` | `#3498db` | `#2471a3` |
+| `sector_wirtschaft.json` | Wirtschaft | `#2c3e50` | `#d35400` | `#e67e22` | `#ca6f1e` |
+| `sector_wissenschaft.json` | Wissenschaft & Forschung | `#4527a0` | `#4527a0` | `#5e35b1` | `#3d1a87` |
+| `sector_zivilgesellschaft.json` | Zivilgesellschaft | `#6d28d9` | `#6d28d9` | `#7c3aed` | `#6d28d9` |
+| `sector_medien.json` | Öffentlich-rechtliche Medien | `#be185d` | `#be185d` | `#db2777` | `#9d174d` |
+
+**Inaktive Dateien** (existieren, sind aber nicht in main.json referenziert):
+`sector_behoerde.json`, `sector_bildung.json`, `sector_forschung.json`,
+`sector_gesundheit.json`, `sector_infrastruktur.json`, `sector_kommunen.json`, `sector_ngo.json`
 
 **CRITICAL**: Sector colors must NEVER be `#27ae60`, `#d4a017`, or `#c0392b` — those are reserved for openness indicators.
 
@@ -253,20 +256,81 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 
 ---
 
-## Current Sector Statistics (as of last expansion)
+## Current Sector Statistics
 
-| Sector | L2 | L3 | L4 |
-|--------|----|----|-----|
-| staat | 13 | 32 | 312 |
-| kommunen | 9 | 24 | 266 |
-| wissenschaft | 17 | 41 | 209 |
-| bildung | 4 | 10 | 58 |
-| medien | 6 | 18 | 92 |
-| gesundheit | 4 | 8 | 46 |
-| infrastruktur | 4 | 9 | 52 |
-| zivilgesellschaft | 7 | 17 | 83 |
-| ngo | 7 | 17 | 83 |
-| wirtschaft | 4 | 7 | 40 |
-| forschung | 4 | 8 | 45 |
-| bildung | 4 | 10 | 58 |
-| **Total** | | | **1332** |
+*Update this table after every expansion sprint.*
+
+| Sektor | L2 | L3 | L4 | Ø L4/L2 |
+|--------|----|----|-----|---------|
+| staat | 29 | 74 | 516 | 17,8 |
+| wirtschaft | 16 | 42 | 166 | 10,4 |
+| wissenschaft | 16 | 43 | 223 | 13,9 |
+| zivilgesellschaft | 16 | 46 | 144 | 9,0 |
+| medien | 6 | 18 | 92 | 15,3 |
+| **Gesamt** | **83** | **223** | **1.141** | **13,7** |
+
+---
+
+## Expansion Roadmap
+
+### Qualitätsziel
+
+Jeder L2-Knoten soll mindestens erreichen:
+- **3 L3-Aktivitäten** (was tut diese Organisation?)
+- **5 L4-Datentypen pro L3** → 15 L4 pro L2 minimum
+- **Kein L4 ohne echte Datenquelle** (konkrete Behörde, API, Register, Studie)
+- **Openness realistisch**: OP_01 nur wenn tatsächlich publizierbar
+
+### Sprint-Format
+
+Jeder Sprint = ein Sektor = ein PR. Ablauf:
+
+```
+1. AUDIT   — python3 -c "..." um L4-Dichte je L2 zu messen
+2. PLAN    — Liste welche L2 < 15 L4 haben + welche L2 fehlen
+3. BUILD   — Python-Skript schreiben, ausführen
+4. VALID   — node scripts/validate-data.js → 0 errors
+5. COMMIT  — git add / commit / push
+6. PR      — mcp__github__create_pull_request
+7. UPDATE  — Statistik-Tabelle oben aktualisieren + Sprint abhaken
+```
+
+### L4-Generierungsprinzipien
+
+Für jeden L2-Knoten (Organisationstyp) systematisch fragen:
+- Was **erhebt** diese Organisation? (Primärdaten)
+- Was **produziert** sie als Output? (Berichte, Statistiken)
+- Was ist **gesetzlich zur Veröffentlichung** verpflichtet?
+- Was ist **für andere Sektoren** wertvoll? (Cross-Sektor-Relevanz)
+
+### Sprint-Backlog
+
+Priorität nach Ø L4/L2 (niedrig = dringend). Nach Abschluss abhaken und Statistiktabelle aktualisieren.
+
+**Phase 1 — Tiefenausbau (bestehende L2 auf ≥ 15 L4 bringen)**
+
+- [ ] **S-01** `zivilgesellschaft` — Alle 16 L2 auf ≥ 15 L4 (aktuell Ø 9,0) → ~+100 L4
+- [ ] **S-02** `wirtschaft` — Alle 16 L2 auf ≥ 15 L4 (aktuell Ø 10,4) → ~+75 L4
+- [ ] **S-03** `wissenschaft` — Alle 16 L2 auf ≥ 15 L4 (aktuell Ø 13,9) → ~+20 L4
+- [ ] **S-04** `medien` — Alle 6 L2 auf ≥ 15 L4 (aktuell Ø 15,3 — knapp) → ~+10 L4
+
+**Phase 2 — Breitenausbau (fehlende L2-Knoten ergänzen)**
+
+- [ ] **S-05** `medien` — 6 → 12 L2: fehlende ÖR-Trägerformen (Deutschlandradio, DPA, ZDF-Tochter etc.)
+- [ ] **S-06** `staat` — Audit: fehlen Justiz, Zoll, Finanzbehörden, Nachrichtendienste?
+- [ ] **S-07** `wirtschaft` — Audit: fehlen Versicherungen (vertieft), Unternehmensdienstleistungen?
+- [ ] **S-08** `zivilgesellschaft` — Audit: passt die ziviz-16-Struktur noch, oder fehlen Träger?
+
+**Phase 3 — Qualitätspass**
+
+- [ ] **S-09** Alle Sektoren — Cross-Sektor-Konsistenz: gleiche Datentypen sektorübergreifend vereinheitlichen
+- [ ] **S-10** Alle Sektoren — Openness-Review: sind OP_01-Einträge wirklich sofort publizierbar?
+
+### Startbefehl
+
+Wenn der Nutzer **"Nächster Sprint"** schreibt:
+1. Nächsten offenen Sprint im Backlog identifizieren
+2. Audit-Script ausführen und Ergebnis zeigen
+3. Plan vorlegen (welche L2 werden wie erweitert)
+4. Nach Bestätigung: bauen, validieren, committen, PR erstellen
+5. Sprint abhaken + Statistiktabelle aktualisieren

@@ -1187,6 +1187,348 @@
               }
             }
           ]
+        },
+        {
+          "id": "versicherungswirtschaft",
+          "level": 3,
+          "name": "Versicherungswirtschaft",
+          "color": "#e67e22",
+          "description": "Prämien, Schadenquoten und Bestandsdaten der deutschen Versicherungsbranche",
+          "children": [
+            {
+              "id": "versicherungspraemien",
+              "level": 4,
+              "name": "Versicherungsprämien-Statistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Gesamte Beitragseinnahmen nach Versicherungssparte (Leben, Kranken, Schaden/Unfall)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "GDV veröffentlicht aggregierte Jahresstatistik"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "GDV-Statistik",
+                    "description": "Jahrbuch des Gesamtverbands der Deutschen Versicherungswirtschaft"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schadenquoten",
+              "level": 4,
+              "name": "Schadenquoten & Leistungsdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Schadenquoten und durchschnittliche Schadenzahlungen nach Versicherungsart",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Schadenstatistik ohne Versichertenangaben"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "GDV-Auswertung",
+                    "description": "Statistische Taschenbücher des GDV"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kfz-versicherung-markt",
+              "level": 4,
+              "name": "Kfz-Versicherungsmarkt",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl Kfz-Verträge, Durchschnittsprämie und Schadenfreiheitsklassen-Verteilung",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Marktstatistik ohne Kundenbezug"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "GDV-Kfz-Statistik",
+                    "description": "Jährliche Kfz-Versicherungsstatistik des GDV"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bav-solvenz",
+              "level": 4,
+              "name": "Solvabilitätskennzahlen (BaFin)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Solvency-II-Kennzahlen, Eigenmittelquoten und Risikoberichte der Versicherer",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BaFin-Aufsichtsdaten sind regulatorisch veröffentlichungspflichtig"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BaFin-SFCR",
+                    "description": "Auswertung der Solvency and Financial Condition Reports"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "kapitalmarkt-wertpapiere",
+          "level": 3,
+          "name": "Kapitalmarkt & Wertpapierhandel",
+          "color": "#e67e22",
+          "description": "Börsenhandel, Wertpapieremissionen und institutionelle Kapitalanlage",
+          "children": [
+            {
+              "id": "boersenhandel-statistik",
+              "level": 4,
+              "name": "Börsenhandelsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Handelsumsätze, Marktkapitalisierung und Anzahl gelisteter Unternehmen (Deutsche Börse)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Börsenstatistiken sind öffentlich"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Deutsche-Börse-Statistik",
+                    "description": "Monatliche Marktstatistik der Deutschen Börse Group"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wertpapieremissionen",
+              "level": 4,
+              "name": "Wertpapieremissionen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Volumen und Struktur neu emittierter Wertpapiere (Aktien, Anleihen, Fonds) in Deutschland",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bundesbank veröffentlicht Wertpapierstatistik"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bundesbank-Wertpapierstatistik",
+                    "description": "Monatliche Statistik Wertpapieremissionen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "investmentfonds",
+              "level": 4,
+              "name": "Investmentfonds-Statistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Fondsvermögen, Mittelzuflüsse und Fondsanzahl nach Fondskategorie (BVI)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BVI veröffentlicht monatliche Marktstatistik"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BVI-Statistik",
+                    "description": "Monatliche Fondsstatistik des Bundesverbands Investment und Asset Management"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "insidertransaktionen",
+              "level": 4,
+              "name": "Insidergeschäfte & Directors' Dealings",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Gemeldete Wertpapiertransaktionen von Führungspersonen börsennotierter Unternehmen",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EU-Marktmissbrauchsverordnung schreibt Veröffentlichung vor"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BaFin-Register",
+                    "description": "Abfrage aus BaFin-Datenbank für Eigengeschäfte"
+                  }
+                ]
+              }
+            }
+          ]
         }
       ]
     },
@@ -3947,6 +4289,1613 @@
                   {
                     "method": "Registerabfrage",
                     "description": "Abruf KURSNET/AZAV-Register der BA"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "industrie-verarbeitendes-gewerbe",
+      "level": 2,
+      "name": "Industrie & verarbeitendes Gewerbe",
+      "color": "#d35400",
+      "description": "Automobilhersteller, Maschinenbau, Chemie- und Pharmaindustrie sowie weitere Industrieunternehmen",
+      "children": [
+        {
+          "id": "automobilindustrie",
+          "level": 3,
+          "name": "Automobilindustrie & Fahrzeugbau",
+          "color": "#e67e22",
+          "description": "Fahrzeugproduktion, Zulassungsdaten, Elektromobilität und Lieferketten der Automobilindustrie",
+          "children": [
+            {
+              "id": "fahrzeugproduktion",
+              "level": 4,
+              "name": "Fahrzeugproduktionsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Produzierte Fahrzeugeinheiten nach Marke, Modell, Antriebsart und Werk",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Produktionszahlen ohne Betriebsgeheimnisse publizierbar"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Monatliche Zusammenfassung aus VDA-Produktionsstatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kfz-zulassungen",
+              "level": 4,
+              "name": "Kfz-Zulassungsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Neuzulassungen und Bestandsdaten nach Fahrzeugklasse, Antrieb und Region (KBA)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich zugängliche KBA-Statistik ohne Personenbezug"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "KBA-Abfrage",
+                    "description": "Download aus Kraftfahrtbundesamt-Statistikportal"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "elektromobilitaet-markt",
+              "level": 4,
+              "name": "Elektromobilitäts-Marktdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Marktanteile, Ladeinfrastruktur-Nutzung und Reichweitendaten für Elektrofahrzeuge",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Marktdaten ohne Kundenbezug publizierbar"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Marktdatenanalyse",
+                    "description": "Auswertung aus BDEW- und KBA-Statistiken"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "automobil-emissionen",
+              "level": 4,
+              "name": "CO₂-Flottenemissionen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Durchschnittliche CO₂-Emissionen je Hersteller-Flotte gemäß EU-Verordnung",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EU-Regulierung schreibt Veröffentlichung vor"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "EU-Register",
+                    "description": "Abruf aus EEA-Fahrzeugemissionsregister"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "automobil-lieferkette",
+              "level": 4,
+              "name": "Lieferkettendaten Automobilzulieferer",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Strukturdaten der Tier-1/2 Zulieferer: Umsatz, Standorte, Abhängigkeiten",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Lieferkettendaten sind strategisch sensibel"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Unternehmensregister",
+                    "description": "Verknüpfung aus Handelsregister und Unternehmensdatenbanken"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "maschinenbau-anlagen",
+          "level": 3,
+          "name": "Maschinenbau & Anlagenbau",
+          "color": "#e67e22",
+          "description": "Produktionsdaten, Export und Innovationskennzahlen des deutschen Maschinenbaus",
+          "children": [
+            {
+              "id": "maschinenbau-auftragseingang",
+              "level": 4,
+              "name": "Auftragseingang Maschinenbau",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatlicher Auftragseingang nach Branche und Absatzmarkt (Inland/Ausland) – VDMA",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "VDMA publiziert aggregierte Konjunkturdaten"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "VDMA-Statistik",
+                    "description": "Monatliche Erhebung des Verbands Deutscher Maschinen- und Anlagenbau"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "maschinenbau-export",
+              "level": 4,
+              "name": "Maschinenexport-Statistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Exportvolumen und Zielländer des deutschen Maschinenbaus nach Produktgruppe",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Außenhandelsstatistik ist öffentlich"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Destatis-Abfrage",
+                    "description": "Abruf aus Genesis-Online Außenhandelsstatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "industrie-patente",
+              "level": 4,
+              "name": "Patentanmeldungen Industrie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Patentanmeldungen beim DPMA nach Technologiefeld und Anmelder",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Patentdaten sind öffentlich zugänglich"
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "DPMA-Register",
+                    "description": "Abfrage aus DEPATISnet-Patentdatenbank"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "industrie-energieverbrauch",
+              "level": 4,
+              "name": "Industrieller Energieverbrauch",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Energieverbrauch verarbeitendes Gewerbe nach Energieträger und Branche",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Energiestatistik ohne Betriebsbezug"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "AG-Energiebilanzen",
+                    "description": "Auswertung der Energiebilanz Deutschland"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "chemie-pharma-industrie",
+          "level": 3,
+          "name": "Chemie & Pharmaindustrie",
+          "color": "#e67e22",
+          "description": "Produktionsdaten, Sicherheitsdatenblätter, Zulassungen und Marktdaten der Chemie- und Pharmabranche",
+          "children": [
+            {
+              "id": "chemieproduktion",
+              "level": 4,
+              "name": "Chemieproduktionsindex",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Produktionsvolumen der Chemieindustrie nach Produktgruppe (VCI-Index)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "VCI publiziert aggregierte Branchenstatistik"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "VCI-Statistik",
+                    "description": "Quartalsweise Erhebung des Verbands der Chemischen Industrie"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "arzneimittelzulassungen",
+              "level": 4,
+              "name": "Arzneimittelzulassungen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Zugelassene Arzneimittel nach Wirkstoff, Indikation und Zulassungsinhaber (BfArM/EMA)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Arzneimittelregister ist gesetzlich veröffentlichungspflichtig"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "BfArM-Register",
+                    "description": "Abruf aus AMIS-Datenbank und EMA-Produktdatenbank"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sicherheitsdatenblaetter",
+              "level": 4,
+              "name": "Sicherheitsdatenblätter Chemikalien",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Strukturierte Sicherheitsdatenblätter nach REACH-Verordnung für Industriechemikalien",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "REACH erfordert öffentliche Verfügbarkeit"
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "ECHA-Datenbank",
+                    "description": "Abruf aus European Chemicals Agency REACH-Datenbank"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pharma-umsatz",
+              "level": 4,
+              "name": "Pharmamarkt-Umsatzdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Arzneimittelumsätze nach ATC-Code, Vertriebsweg und Indikationsgruppe",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Marktdaten ohne Patientenbezug publizierbar"
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "IQVIA-Analyse",
+                    "description": "Auswertung aus Apothekenmarktdaten und GKV-Abrechnungsdaten"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ikt-digitalwirtschaft",
+      "level": 2,
+      "name": "IKT & Digitalwirtschaft",
+      "color": "#d35400",
+      "description": "IT-Unternehmen, Softwareanbieter, Telekommunikationsanbieter und Plattformwirtschaft",
+      "children": [
+        {
+          "id": "it-software-unternehmen",
+          "level": 3,
+          "name": "IT-Dienstleister & Softwareunternehmen",
+          "color": "#e67e22",
+          "description": "Unternehmenskennzahlen, Marktanteile und Beschäftigung in der IT-Branche",
+          "children": [
+            {
+              "id": "it-branchenkennzahlen",
+              "level": 4,
+              "name": "IT-Branchenkennzahlen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Umsatz, Beschäftigung und Wachstumsraten der IT-Branche (Bitkom)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Branchenstatistik öffentlich zugänglich"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Bitkom-Statistik",
+                    "description": "Jährliche Erhebung des Digitalverbands Bitkom"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "software-marktanteile",
+              "level": 4,
+              "name": "Softwaremarkt-Anteile",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Marktanteile nach Softwarekategorie (ERP, CRM, Cloud, Security) in Deutschland",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Marktdaten ohne Betriebsgeheimnisse"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Marktanalyse",
+                    "description": "Auswertung von Gartner/IDC-Marktberichten für DE-Markt"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "it-sicherheitsvorfaelle",
+              "level": 4,
+              "name": "IT-Sicherheitsvorfälle",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Gemeldete Cybersicherheitsvorfälle nach Branche und Vorfalltyp (BSI-Bericht)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Lagebilder ohne Unternehmensbezug"
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "BSI-Lagebericht",
+                    "description": "Jährlicher Bericht zur IT-Sicherheitslage in Deutschland"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "cloud-nutzung",
+              "level": 4,
+              "name": "Cloud-Nutzung Unternehmen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anteil cloudnutzender Unternehmen nach Unternehmensgröße und Dienstart (Eurostat)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Eurostat-Daten öffentlich zugänglich"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Eurostat-IKT-Erhebung",
+                    "description": "Community Survey on ICT usage in enterprises"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "it-investitionen",
+              "level": 4,
+              "name": "IKT-Investitionen der Unternehmen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Investitionsvolumen in IKT-Anlagen nach Wirtschaftsbereich und Bundesland",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht aggregierte Investitionsstatistik"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Volkswirtschaftliche Gesamtrechnung",
+                    "description": "Auswertung VGR-Investitionsdaten"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "telekommunikation",
+          "level": 3,
+          "name": "Telekommunikation & Netzbetreiber",
+          "color": "#e67e22",
+          "description": "Mobilfunk, Festnetz, Breitband und Frequenzverwaltung der privaten Netzbetreiber",
+          "children": [
+            {
+              "id": "mobilfunk-marktdaten",
+              "level": 4,
+              "name": "Mobilfunkmarkt-Daten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Vertragszahlen, Umsätze und ARPU der Mobilfunkanbieter in Deutschland",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Marktdaten publizierbar, keine Kundendaten"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "BNetzA-Marktdaten",
+                    "description": "Auswertung Bundesnetzagentur Telekommunikationsbericht"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "netzabdeckung",
+              "level": 4,
+              "name": "Mobilfunk- und Breitbandabdeckung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Geografische Abdeckung nach Technologie (4G/5G/Glasfaser) aus Versorgungsatlas BNetzA",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BNetzA veröffentlicht Versorgungsatlas als Open Data"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Versorgungsatlas",
+                    "description": "Download aus BNetzA Breitbandatlas"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "datenvolumen-internet",
+              "level": 4,
+              "name": "Internetdatenvolumen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Übertragenes Datenvolumen im deutschen Festnetz und Mobilfunk (DE-CIX, BNetzA)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Netzstatistik ohne Nutzerbezug"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BNetzA-Statistik",
+                    "description": "Jährliche Telekommunikationsstatistik der Bundesnetzagentur"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "frequenzvergabe",
+              "level": 4,
+              "name": "Frequenzvergabe-Register",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Vergebene Funkfrequenzen nach Nutzungsart, Inhaber und Versorgungsgebiet",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Frequenzzuweisungen sind öffentliches Register"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "EMF-Datenbank",
+                    "description": "Abruf aus BNetzA Frequenzzuweisungsplan"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "ecommerce-plattformen",
+          "level": 3,
+          "name": "E-Commerce & Plattformwirtschaft",
+          "color": "#e67e22",
+          "description": "Online-Handel, digitale Marktplätze und Sharing-Economy-Plattformen",
+          "children": [
+            {
+              "id": "ecommerce-umsatz",
+              "level": 4,
+              "name": "E-Commerce-Umsatz",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Online-Handelsumsätze nach Produktkategorie, Kanal (B2C/B2B) und Quartal",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Marktstatistik ohne Kundenbezug"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "bevh-Statistik",
+                    "description": "Erhebung des Bundesverbands E-Commerce und Versandhandel"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "plattform-marktanteile",
+              "level": 4,
+              "name": "Plattform-Marktanteile",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Marktanteile digitaler Plattformen (Marktplätze, App-Stores, soziale Netzwerke) in DE",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Marktdaten publizierbar"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Marktanalyse",
+                    "description": "Auswertung aus Statista und Bitkom-Erhebungen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "digitale-zahlungsverfahren",
+              "level": 4,
+              "name": "Digitale Zahlungsverfahren",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Nutzungsanteile digitaler Zahlungsmethoden (PayPal, Kreditkarte, BNPL) im Onlinehandel",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Transaktionsdaten ohne Kundenbezug"
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Zahlungsstatistik",
+                    "description": "Bundesbank-Zahlungsverkehrsstatistik und EHI-Studie"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "verbraucherschutz-digital",
+              "level": 4,
+              "name": "Verbraucherbeschwerden Digital",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Gemeldete Beschwerden zu Online-Shops, Abo-Fallen und digitalen Diensten (vzbv)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Beschwerdestatistik ohne Personenbezug"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "vzbv-Auswertung",
+                    "description": "Jahresstatistik des Verbraucherzentrale Bundesverbands"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "verkehr-logistik-privat",
+      "level": 2,
+      "name": "Verkehr & Logistik",
+      "color": "#d35400",
+      "description": "Private Verkehrsunternehmen, Speditionen, Fluggesellschaften und Logistikdienstleister",
+      "children": [
+        {
+          "id": "gueterverkehr-speditionen",
+          "level": 3,
+          "name": "Güterverkehr & Speditionen",
+          "color": "#e67e22",
+          "description": "Frachtvolumen, Sendungsdaten und Logistikkennzahlen privater Transport- und Logistikunternehmen",
+          "children": [
+            {
+              "id": "gueterverkehrsstatistik",
+              "level": 4,
+              "name": "Güterverkehrsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Transportleistung nach Verkehrsträger (Straße, Schiene, Wasserstraße) und Güterart",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht aggregierte Güterverkehrsstatistik"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Destatis-Verkehrsstatistik",
+                    "description": "Monatliche Erhebung Güterbeförderung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lkw-mautdaten",
+              "level": 4,
+              "name": "Lkw-Mautdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Mautpflichtige Fahrten auf Bundesstraßen nach Streckenabschnitt und Fahrzeugklasse (Toll Collect)",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Verkehrsmengen ohne Fahrzeugidentifikation"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Toll-Collect-Auswertung",
+                    "description": "Aggregation der Mauterhebungsdaten als Konjunkturindikator"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sendungsvolumen-paket",
+              "level": 4,
+              "name": "Sendungsvolumen Paket & KEP",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl Sendungen, Laufzeiten und Netzauslastung im Paket- und Kurierdienst (Bundesnetzagentur)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BNetzA publiziert KEP-Marktdaten"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BNetzA-KEP-Studie",
+                    "description": "Jährliche KEP-Studie der Bundesnetzagentur"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lagerkapazitaeten",
+              "level": 4,
+              "name": "Lager- & Umschlagkapazitäten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Bestand und Auslastung von Logistikimmobilien und Umschlaganlagen",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Kapazitätsdaten ohne Betriebsgeheimnisse"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Marktanalyse",
+                    "description": "Auswertung aus CBRE/JLL-Logistikmarktberichten"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "luftfahrt-schifffahrt",
+          "level": 3,
+          "name": "Luftfahrt & Schifffahrt",
+          "color": "#e67e22",
+          "description": "Passagier- und Frachtdaten der deutschen Flughäfen, Airlines und Seehäfen",
+          "children": [
+            {
+              "id": "flughafen-statistik",
+              "level": 4,
+              "name": "Flughafenstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Passagierzahlen, Flugbewegungen und Frachtvolumen der deutschen Flughäfen (ADV)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Flughäfen und ADV veröffentlichen Monatsstatistiken"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "ADV-Statistik",
+                    "description": "Monatliche Verkehrsstatistik der Arbeitsgemeinschaft Deutscher Verkehrsflughäfen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "flugverkehr-rohdaten",
+              "level": 4,
+              "name": "Flugverkehrsbewegungen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Echtzeitdaten zu Flugbewegungen, Verspätungen und Routen im deutschen Luftraum",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "OpenSky Network stellt Daten öffentlich bereit"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "ADS-B-Empfang",
+                    "description": "Auswertung ADS-B-Signale via OpenSky Network API"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hafenumschlag",
+              "level": 4,
+              "name": "Hafenumschlag Seehäfen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Containerumschlag und Gütermengen der deutschen Nordseehäfen nach Güterart",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Hafenstatistiken sind öffentlich"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Hafenstatistik",
+                    "description": "Auswertung aus Statistiken des Zentralverbands Deutscher Seehafenbetriebe"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "airline-pünktlichkeit",
+              "level": 4,
+              "name": "Airline-Pünktlichkeitsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Pünktlichkeit, Annullierungsquoten und Beschwerden je Airline (Luftfahrtbundesamt)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Regulatorische Veröffentlichungspflicht gemäß EU-Fluggastrechte"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "LBA-Statistik",
+                    "description": "Auswertung Luftfahrtbundesamt-Beschwerdestatistik"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "personenverkehr-privat",
+          "level": 3,
+          "name": "Privater Personenverkehr",
+          "color": "#e67e22",
+          "description": "Fernbuslinien, Mietwagenunternehmen, Ride-Hailing und private Bahnbetreiber",
+          "children": [
+            {
+              "id": "fernbus-markt",
+              "level": 4,
+              "name": "Fernbusmarkt-Statistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Fahrgastzahlen, Liniennetz und Marktanteile im Fernbusverkehr (BNetzA)",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Regulierungsbehörde publiziert Marktdaten"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BNetzA-Marktbeobachtung",
+                    "description": "Jährliche Marktbeobachtung Fernbusverkehr"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ridehailing-nutzung",
+              "level": 4,
+              "name": "Ride-Hailing & Mobilitätsdienste",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Nutzungszahlen, Fahrtdaten (aggregiert) und Marktanteile digitaler Mobilitätsdienste",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Plattformbetreiber veröffentlichen keine Rohdaten"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Marktanalyse",
+                    "description": "Schätzung aus Presseberichten und Unternehmensangaben"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mietwagen-taxi-genehmigungen",
+              "level": 4,
+              "name": "Taxi- & Mietwagen-Genehmigungen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl genehmigter Taxi- und Mietwagenkonzessionen nach Landkreis",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliches Konzessionsregister"
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Registerabfrage",
+                    "description": "Abfrage kommunaler Genehmigungsregister"
                   }
                 ]
               }

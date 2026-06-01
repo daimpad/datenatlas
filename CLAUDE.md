@@ -262,12 +262,12 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 
 | Sektor | L2 | L3 | L4 | Ø L4/L2 |
 |--------|----|----|-----|---------|
-| staat | 29 | 74 | 516 | 17,8 |
+| staat | 33 | 86 | 643 | 19,5 |
 | wirtschaft | 13 | 37 | 208 | 16,0 |
 | wissenschaft | 16 | 43 | 272 | 17,0 |
 | zivilgesellschaft | 16 | 46 | 240 | 15,0 |
-| medien | 12 | 36 | 188 | 15,7 |
-| **Gesamt** | **86** | **236** | **1.424** | **16,6** |
+| medien | 12 | 35 | 188 | 15,7 |
+| **Gesamt** | **90** | **247** | **1.551** | **17,2** |
 
 ---
 
@@ -317,7 +317,7 @@ Priorität nach Ø L4/L2 (niedrig = dringend). Nach Abschluss abhaken und Statis
 **Phase 2 — Breitenausbau (fehlende L2-Knoten ergänzen)**
 
 - [x] **S-05** `medien` — 7 → 12 L2: Deutschlandradio, ZDF Digital, ARD Online, dpa, Landesmedienanstalten ✓ (PR #38)
-- [ ] **S-06** `staat` — Audit: fehlen Justiz, Zoll, Finanzbehörden, Nachrichtendienste?
+- [x] **S-06** `staat` — Tiefenausbau (29→33 L2, alle ≥15 L4) + Breit: +4 L2 (Justiz, Finanzbehörden, Zoll, Nachrichtendienste) → 516→643 L4 ✓ (PR #39)
 - [ ] **S-07** `wirtschaft` — Audit: fehlen Versicherungen (vertieft), Unternehmensdienstleistungen?
 - [ ] **S-08** `zivilgesellschaft` — Audit: passt die ziviz-16-Struktur noch, oder fehlen Träger?
 

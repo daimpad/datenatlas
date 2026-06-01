@@ -329,6 +329,49 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "parkraum-bewirtschaftung",
+              "level": 4,
+              "name": "Parkraum-Bewirtschaftungsdaten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Auslastung und Einnahmen bewirtschafteter Parkzonen nach Bereich und Monat.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Infrastrukturdaten."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Monatliche Auswertung der Parkscheinautomaten"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -654,6 +697,84 @@
                     "title": "Gewerbeuntersagungen Sachsen",
                     "url": "https://geoportal.sachsen.de/md/gewerbeuntersagungen",
                     "publisher": "Freistaat Sachsen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gewerbeanmeldungen-abmeldungen",
+              "level": 4,
+              "name": "Gewerbeanmeldungen und -abmeldungen",
+              "color": "#2471a3",
+              "details": {
+                "description": "An- und Abmeldungen von Gewerbetrieben nach Branche, Rechtsform und Nationalität.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht Gewerbemeldungsstatistik."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Monatliche Meldungen an Destatis"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ordnungswidrigkeiten-statistik",
+              "level": 4,
+              "name": "Ordnungswidrigkeiten Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Ahndungen nach Art der Ordnungswidrigkeit, Höhe des Bußgelds und Bereich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Statistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresauswertung der Ordnungsamt-Verwaltungssoftware"
                   }
                 ]
               }
@@ -994,6 +1115,123 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "einwohnerzahl-prognose",
+              "level": 4,
+              "name": "Einwohnerzahl Prognose",
+              "color": "#2471a3",
+              "details": {
+                "description": "Bevölkerungsvorausberechnungen auf Gemeindeebene nach Altersgruppe und Szenario.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Statistische Ämter veröffentlichen Prognosen."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Modellierung",
+                    "description": "Kohorten-Komponenten-Methode"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "haushaltsstruktur-daten",
+              "level": 4,
+              "name": "Haushaltsstruktur Daten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl und Größe privater Haushalte nach Gemeindetyp.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Mikrozensus-Ergebnisse werden publiziert."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Hochrechnung",
+                    "description": "Mikrozensus-Hochrechnung auf Gemeindeebene"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "migrationshintergrund-statistik",
+              "level": 4,
+              "name": "Statistik Migrationshintergrund",
+              "color": "#2471a3",
+              "details": {
+                "description": "Erfassung von Personen mit Migrationshintergrund in den Einwohnerregistern – Herkunftsland, Aufenthaltsstatus, Staatsangehörigkeit.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Personenbezogene Registerdaten erfordern Aggregierung und Anonymisierung vor der Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Aggregierung auf Gemeindeebene und Entfernung direkter Identifikatoren vor Publikation."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1219,6 +1457,84 @@
                     "title": "Namensänderungen Rostock",
                     "url": "https://www.opendata-hro.de/dataset/namensaenderungen-rostock",
                     "publisher": "Hansestadt Rostock"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "geburten-sterbefaelle",
+              "level": 4,
+              "name": "Geburten und Sterbefälle",
+              "color": "#2471a3",
+              "details": {
+                "description": "Geburten- und Sterbefallzahlen nach Gemeindegebiet und Monat.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Amtliche Statistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Monatliche Meldungen an Statistikbehörden"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "eheschliessungen-scheidungen",
+              "level": 4,
+              "name": "Eheschließungen und Scheidungen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Eheschließungen und rechtskräftige Scheidungen nach Monat und Gemeindegebiet.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Amtliche Statistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Standesamtsmeldungen an statistische Landesämter"
                   }
                 ]
               }
@@ -1559,6 +1875,84 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "abbruchgenehmigungen",
+              "level": 4,
+              "name": "Abbruchgenehmigungen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Erteilte Abbruchgenehmigungen nach Gebäudetyp und Fläche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht Abbruchstatistiken."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Monatliche Meldungen an Statistikbehörden"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "baustopp-verfahren",
+              "level": 4,
+              "name": "Baustopp- und Baueinstellungsverfahren",
+              "color": "#2471a3",
+              "details": {
+                "description": "Statistik zu angeordneten Baustopps und Baueinstellungsverfahren aufgrund von Rechtsverstößen oder Gefahrenlagen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Verwaltungsrechtliche Maßnahmen ohne Personenbezug sind grundsätzlich transparent zu veröffentlichen."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Auswertung",
+                    "description": "Aggregierung der Verfahren nach Gemeinde, Zeitraum und Verstoßkategorie."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1888,6 +2282,49 @@
                     "title": "Bodenrichtwerte NRW",
                     "url": "https://ckan.open.nrw.de/dataset/bodenrichtwerte-nrw",
                     "publisher": "Gutachterausschuss NRW"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bebauungsplan-verzeichnis",
+              "level": 4,
+              "name": "Bebauungsplan Verzeichnis",
+              "color": "#2471a3",
+              "details": {
+                "description": "Rechtskräftige und in Aufstellung befindliche Bebauungspläne mit Geodaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Planwerke nach BauGB."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "GIS",
+                    "description": "Bereitstellung im Geoportal der Kommune"
                   }
                 ]
               }
@@ -2232,6 +2669,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "impfquoten-regional",
+              "level": 4,
+              "name": "Impfquoten Regional",
+              "color": "#2471a3",
+              "details": {
+                "description": "Durchimpfungsraten nach Impfstoff, Altersgruppe und Landkreis.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "RKI veröffentlicht Impfquoten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "KV-Abrechnungsdaten und Impfregisterdaten"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -2557,6 +3033,84 @@
                     "title": "Kammerjäger-Einsätze Wien",
                     "url": "https://data.wien.gv.at/dataset/schaedlingsbekaempfung",
                     "publisher": "Stadt Wien"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "trinkwasserqualitaet-berichte",
+              "level": 4,
+              "name": "Trinkwasserqualität Berichte",
+              "color": "#2471a3",
+              "details": {
+                "description": "Analyseergebnisse der Trinkwasseruntersuchungen nach Parameter und Versorgungsgebiet.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gesundheitsämter veröffentlichen Trinkwasserdaten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Laboranalyse",
+                    "description": "Regelmäßige Probenahmen gemäß TrinkwV"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "laermkartierung",
+              "level": 4,
+              "name": "Lärmkartierung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Lärmbelastungskarten nach EU-Umgebungslärmrichtlinie für Hauptverkehrswege.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Umgebungslärmkarten sind veröffentlichungspflichtig."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "GIS",
+                    "description": "Schallimmissionsberechnungen nach ISO 9613"
                   }
                 ]
               }
@@ -22758,6 +23312,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "vhs-kursthemen-nachfrage",
+              "level": 4,
+              "name": "VHS Kursthemen Nachfrage",
+              "color": "#2471a3",
+              "details": {
+                "description": "Nachfrage und Belegung nach Themenbereichen im VHS-Programm.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "VHS-Statistik wird jährlich publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresstatistik des DIE-Verbunds"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -23091,6 +23684,84 @@
                     "title": "Weiterbildungsatlas Ruhr",
                     "url": "https://opendata.ruhr/dataset/weiterbildungsatlas-ruhr",
                     "publisher": "Regionalverband Ruhr"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vhs-integrationskurse",
+              "level": 4,
+              "name": "VHS Integrationskurse Daten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Teilnehmende, Abschlüsse und Erfolgsquoten in VHS-Integrationskursen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BAMF veröffentlicht Integrationskursdaten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "BAMF-Statistiken zu Integrationskursen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vhs-finanzierung",
+              "level": 4,
+              "name": "VHS Finanzierungsstruktur",
+              "color": "#2471a3",
+              "details": {
+                "description": "Einnahmen aus Teilnehmergebühren, öffentlichen Zuschüssen und Drittmitteln.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Haushaltsöffentlichkeit."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresabschlüsse der VHS-Einrichtungen"
                   }
                 ]
               }
@@ -23431,6 +24102,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "kita-wartelisten",
+              "level": 4,
+              "name": "Kita Wartelisten und Versorgungsquoten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Versorgungsquoten und Wartezeiten für Kitaplätze nach Altersgruppe und Region.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kinder- und Jugendhilfestatistik wird veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Jugendhilfestatistik"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -23760,6 +24470,84 @@
                     "title": "Sprachkitas NRW",
                     "url": "https://ckan.open.nrw.de/dataset/sprachkitas-nrw",
                     "publisher": "Land NRW"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fachkraft-kind-schluessel",
+              "level": 4,
+              "name": "Fachkraft-Kind-Schlüssel",
+              "color": "#2471a3",
+              "details": {
+                "description": "Betreuungsrelationen in Kindertageseinrichtungen nach Altersgruppe und Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht Betreuungsquoten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Kindertagesstatistik des Statistischen Bundesamts"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kita-foerderausgaben",
+              "level": 4,
+              "name": "Kita Förderausgaben",
+              "color": "#2471a3",
+              "details": {
+                "description": "Öffentliche Ausgaben für Kindertagesbetreuung nach Träger und Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Haushalte sind transparent."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Finanz- und Personalstatistik"
                   }
                 ]
               }
@@ -24100,6 +24888,84 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "krankenhaus-qualitaetsbericht",
+              "level": 4,
+              "name": "Krankenhaus Qualitätsbericht",
+              "color": "#2471a3",
+              "details": {
+                "description": "Strukturierte Qualitätsberichte der Krankenhäuser nach Leistungsbereich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Qualitätsberichte sind gesetzlich vorgeschrieben (§137 SGB V)."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Datenbankexport",
+                    "description": "IQTIG veröffentlicht maschinenlesbare Qualitätsberichte"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "krankenhausbettenzahl",
+              "level": 4,
+              "name": "Krankenhausbettenzahl und Auslastung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Aufgestellte Betten und Auslastungsgrad nach Fachabteilung und Krankenhaus.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Krankenhausstatistik des Statistischen Bundesamts."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jährliche Krankenhausstatistik"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -24429,6 +25295,45 @@
                     "title": "ARS-Antibiotikaresistenz-Surveillance",
                     "url": "https://ars.rki.de/dataset/resistenzdaten",
                     "publisher": "Robert Koch-Institut"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "operationsstatistik",
+              "level": 4,
+              "name": "Operationsstatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Häufigkeit dokumentierter OPS-Prozeduren nach Fachabteilung bundesweit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DRG-Statistik wird veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der DRG-Statistik nach §21 KHEntgG"
                   }
                 ]
               }
@@ -25690,6 +26595,84 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "leitstellen-einsatzzahlen",
+              "level": 4,
+              "name": "Leitstellen Einsatzzahlen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Einsatzaufkommen der Rettungsleitstellen nach Einsatztyp und Jahreszeit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Einsatzstatistiken werden publiziert."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresberichte der Rettungsleitstellen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hilfsfrist-erreichung",
+              "level": 4,
+              "name": "Hilfsfrist-Erreichungsquoten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anteil fristgerecht erreichter Einsatzorte nach Rettungsdienstbereich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Qualitätskennzahlen werden veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Berechnung",
+                    "description": "Auswertung der GPS-Einsatzdaten"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -26023,6 +27006,45 @@
                     "title": "Versorgungsatlas Deutschland",
                     "url": "https://www.versorgungsatlas.de/dataset/versorgungsdaten",
                     "publisher": "Zentralinstitut KBV"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "notaufnahme-inanspruchnahme",
+              "level": 4,
+              "name": "Notaufnahme Inanspruchnahme",
+              "color": "#2471a3",
+              "details": {
+                "description": "Fallzahlen und Dringlichkeitsstufen in Krankenhausnotaufnahmen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "AKTIN-Register veröffentlicht aggregierte Daten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung des AKTIN-Notaufnahmeregisters"
                   }
                 ]
               }
@@ -27276,6 +28298,84 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "fahrplan-daten",
+              "level": 4,
+              "name": "Fahrplandaten ÖPNV",
+              "color": "#2471a3",
+              "details": {
+                "description": "Maschinenlesbare Fahrplandaten des ÖPNV nach GTFS-Standard.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ÖPNV-Fahrplandaten als Open Data."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "GTFS-Export",
+                    "description": "Bereitstellung im GTFS-Format über Mobilithek"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pueenktlichkeit-stoerungen",
+              "level": 4,
+              "name": "Pünktlichkeit und Störungen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Pünktlichkeitsquoten und Störungsereignisse nach Linie und Zeitraum.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Qualitätsberichte werden veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Monitoring",
+                    "description": "Auswertung von GPS-Tracking und Leitstellen-Daten"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -27605,6 +28705,45 @@
                     "title": "Ladesäulen-Verfügbarkeit Übersicht",
                     "url": "https://mcloud.de/ladesaeulen-verfuegbarkeit",
                     "publisher": "NOW GmbH"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "e-bus-flotte",
+              "level": 4,
+              "name": "E-Bus Flotte Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl und Anteil elektrisch betriebener Busse im ÖPNV nach Betreiber.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bundesnetzagentur veröffentlicht Ladesäulenregister."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "VDV-Statistiken zur E-Mobilität im ÖPNV"
                   }
                 ]
               }
@@ -27945,6 +29084,88 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "strassenkataster",
+              "level": 4,
+              "name": "Straßenkataster",
+              "color": "#2471a3",
+              "details": {
+                "description": "Klassifizierte Straßen nach Baulastträger, Länge und Zustandsklasse.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kommunales Straßenkataster als Open Data."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "GIS",
+                    "description": "Bereitstellung im kommunalen Geoportal"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "strassenschaeden-daten",
+              "level": 4,
+              "name": "Straßenschäden Daten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Schadensflächen und Zustandsklassen des kommunalen Straßennetzes.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Infrastrukturdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Zustandserfassung",
+                    "description": "Periodische Befahrung mit Messfahrzeug"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -28278,6 +29499,45 @@
                     "title": "Straßenbeleuchtung Frankfurt",
                     "url": "https://offenedaten.frankfurt.de/dataset/strassenbeleuchtung-frankfurt",
                     "publisher": "Stadt Frankfurt am Main"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "brueckenzustand",
+              "level": 4,
+              "name": "Brückenzustand und Prüfberichte",
+              "color": "#2471a3",
+              "details": {
+                "description": "Zustandsnoten und Prüfergebnisse für Brücken nach DIN 1076.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BASt veröffentlicht Brückenstatistiken."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Inspektion",
+                    "description": "Periodische Hauptprüfungen nach DIN 1076"
                   }
                 ]
               }
@@ -28622,6 +29882,84 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "glasfaser-ausbauplanung",
+              "level": 4,
+              "name": "Glasfaser Ausbauplanung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Geplante und in Bau befindliche Glasfaserleitungen nach Gebiet und Zeitplan.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Breitbandatlas der Bundesnetzagentur ist öffentlich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "GIS",
+                    "description": "Bereitstellung im Breitbandatlas"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "foerderprogramme-breitband",
+              "level": 4,
+              "name": "Förderprogramme Breitband",
+              "color": "#2471a3",
+              "details": {
+                "description": "Bewilligte Fördermittel für Breitbandausbau nach Programm, Region und Betreiber.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Förderdaten."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung des Bundesprogramms Breitband"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -28954,6 +30292,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "onlinezugang-register",
+              "level": 4,
+              "name": "Online-Dienste Register (OZG)",
+              "color": "#2471a3",
+              "details": {
+                "description": "Umgesetzungsstatus der OZG-Verwaltungsleistungen nach Behörde und Servicetyp.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "OZG-Dashboard ist öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Monitoring",
+                    "description": "Automatisierter Abruf aus OZG-Umsetzungsmonitoring"
+                  }
+                ]
+              }
             }
           ]
         }
@@ -29132,6 +30509,162 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "foerderschulen-schueler",
+              "level": 4,
+              "name": "Förderschüler nach Förderbedarf",
+              "color": "#2471a3",
+              "details": {
+                "description": "Schüler mit sonderpädagogischem Förderbedarf nach Förderschwerpunkt und Land.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KMK-Statistik wird jährlich publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jährliche KMK-Sonderpädagogikstatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "foerderschulen-schliessungen",
+              "level": 4,
+              "name": "Förderschul-Schließungen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Geschlossene Förderschulen und Schülerumlenkungen nach Bundesland seit 2000.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Strukturdaten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Längsschnittauswertung der KMK-Statistiken"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "inklusion-quote-bundeslaender",
+              "level": 4,
+              "name": "Inklusionsquote Bundesländer",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anteil inklusiv beschulter Kinder mit Förderbedarf nach Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KMK veröffentlicht Inklusionsquoten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Berechnung",
+                    "description": "Verhältnis inklusiv vs. Förderschule je Land"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sonderpaed-lehrkraefte",
+              "level": 4,
+              "name": "Sonderpädagogische Lehrkräfte",
+              "color": "#2471a3",
+              "details": {
+                "description": "Lehrkräfte mit sonderpädagogischer Ausbildung nach Förderschwerpunkt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KMK-Lehrerstatistik ist veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "KMK-Personalstatistik allgemeinbildende Schulen"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -29263,6 +30796,162 @@
                   {
                     "method": "Dokumentenanalyse",
                     "description": "Strukturierte Auswertung von Schulkonzepten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "barrierefreie-schulgebaeude",
+              "level": 4,
+              "name": "Barrierefreie Schulgebäude",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anteil barrierefreier Schulgebäude nach Schultyp und Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Schulgebäudedaten sind öffentlich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Erhebung",
+                    "description": "Schulgebäudekataster der Kommunen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "unterstuetzungsassistenz-stunden",
+              "level": 4,
+              "name": "Unterstützungsassistenz Stunden",
+              "color": "#2471a3",
+              "details": {
+                "description": "Stunden schulischer Assistenz für Schüler mit Behinderungen nach Bedarfskategorie.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Bedarfszahlen ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Jugendamts- und Schulbehördendaten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "inklusion-kostentraeger",
+              "level": 4,
+              "name": "Inklusion Kostenträger",
+              "color": "#2471a3",
+              "details": {
+                "description": "Ausgaben für Eingliederungshilfe im schulischen Bereich nach Träger.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Haushaltsausgaben."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Sozialhilfestatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schulbegleitung-vertraege",
+              "level": 4,
+              "name": "Schulbegleitung Vertragsdaten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl bewilligter Schulbegleitungen nach Region und Förderschwerpunkt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Bewilligungsdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Eingliederungshilfe-Statistik"
                   }
                 ]
               }
@@ -29452,6 +31141,162 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "schulnetz-planung",
+              "level": 4,
+              "name": "Schulnetzplanung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Geplante Schulstandorte, Zusammenschlüsse und Schließungen nach Kommune.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Schulentwicklungspläne sind öffentliche Dokumente."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "GIS",
+                    "description": "Geodaten der Schulstandorte"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schulgenehmigungen",
+              "level": 4,
+              "name": "Schulgenehmigungen und Zulassungen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Genehmigte Schulen in freier Trägerschaft nach Bundesland und Schultyp.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Verwaltungsentscheidungen."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Schulaufsichtsbehörden"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bildungsausgaben-bundeslaender",
+              "level": 4,
+              "name": "Bildungsausgaben Bundesländer",
+              "color": "#2471a3",
+              "details": {
+                "description": "Öffentliche Ausgaben für Bildung nach Bildungsbereich und Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bildungsfinanzbericht wird jährlich veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung des Bildungsfinanzberichts"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lehramtsstudium-statistik",
+              "level": 4,
+              "name": "Lehramtsstudium Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Studierende und Abschlüsse in Lehramtsstudiengängen nach Fach und Schulart.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Hochschulstatistik wird veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Destatis Hochschulstatistik"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -29583,6 +31428,162 @@
                   {
                     "method": "Schulstatistik",
                     "description": "Amtliche KMK-Schulstatistik nach Abschlussarten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pisa-ergebnisse-deutschland",
+              "level": 4,
+              "name": "PISA Ergebnisse Deutschland",
+              "color": "#2471a3",
+              "details": {
+                "description": "Kompetenzmessungen in Lesen, Mathematik und Naturwissenschaft nach Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "PISA-Berichte sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Testung",
+                    "description": "Standardisiertes Kompetenzstufenmodell"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bildungsbericht-indikatoren",
+              "level": 4,
+              "name": "Nationaler Bildungsbericht Indikatoren",
+              "color": "#2471a3",
+              "details": {
+                "description": "Systemindikatorensatz des Nationalen Bildungsberichts nach Bildungsbereich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bildungsbericht wird alle 2 Jahre veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Zusammenführung amtlicher Statistiken"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schulabbrecher-quote",
+              "level": 4,
+              "name": "Schulabbrecher-Quote",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anteil Jugendlicher ohne Hauptschulabschluss nach Bundesland und Hintergrund.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bildungsbericht-Indikator ist öffentlich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Berechnung",
+                    "description": "Berechnung auf Basis der Abgangsstatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bildungsmobilität-studie",
+              "level": 4,
+              "name": "Bildungsmobilitätsstudie",
+              "color": "#2471a3",
+              "details": {
+                "description": "Intergenerationale Bildungsmobilität nach Herkunftsschicht und Schulabschluss.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "NEPS-Daten werden für Forschung bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Längsschnittanalyse",
+                    "description": "NEPS-Paneldaten zu Bildungsverläufen"
                   }
                 ]
               }
@@ -29768,6 +31769,166 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "bestand-systematik",
+              "level": 4,
+              "name": "Bibliotheksbestand nach Systematik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Bibliotheksbestand nach Sachgruppen der Deutschen Bibliotheksstatistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Deutsche Bibliotheksstatistik ist öffentlich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jährliche Deutsche Bibliotheksstatistik (DBS)"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bibliothek-nutzungsstruktur",
+              "level": 4,
+              "name": "Bibliothek Nutzungsstruktur",
+              "color": "#2471a3",
+              "details": {
+                "description": "Aktive Nutzer nach Altersgruppe, Nationalität und Nutzungsart.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Nutzerstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "DBS-Nutzungsstatistiken"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "interlibrary-loan-de",
+              "level": 4,
+              "name": "Fernleihe Statistik Öffentliche Bibliotheken",
+              "color": "#2471a3",
+              "details": {
+                "description": "Bestellungen und Lieferungen im Fernleihsystem öffentlicher Bibliotheken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DBS-Statistik wird veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Verbund-Fernleihdaten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bibliotheks-erreichbarkeit",
+              "level": 4,
+              "name": "Bibliotheks-Erreichbarkeit",
+              "color": "#2471a3",
+              "details": {
+                "description": "Einwohner mit Bibliotheksversorgung in maximal 15 Minuten Entfernung nach Region.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Infrastrukturdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "GIS",
+                    "description": "Isochronenanalyse um Bibliotheksstandorte"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -29891,6 +32052,162 @@
                   {
                     "method": "Kurserfassung",
                     "description": "Strukturierte Erfassung des Kursangebots im Bibliothekssystem"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "e-learning-angebot",
+              "level": 4,
+              "name": "E-Learning Angebot Bibliotheken",
+              "color": "#2471a3",
+              "details": {
+                "description": "Verfügbare digitale Lernressourcen und Datenbanken nach Bibliothekstyp.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich zugängliche Angebotsübersichten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Katalogisierung",
+                    "description": "Manuelle Erhebung bei Bibliotheksverbünden"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "open-access-bestand",
+              "level": 4,
+              "name": "Open-Access-Bestand Bibliothek",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anteil und Umfang frei zugänglicher Medien im Bestand öffentlicher Bibliotheken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "OA-Metadaten sind öffentlich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Harvesting",
+                    "description": "Automatisierter Abruf aus Bibliothekskatalogen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "makerspaces-ausstattung",
+              "level": 4,
+              "name": "Makerspaces und Ausstattung",
+              "color": "#2471a3",
+              "details": {
+                "description": "3D-Drucker, Schneideplotter und andere Makerspace-Geräte in Bibliotheken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Ausstattungsinformationen."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Erhebung",
+                    "description": "Befragung der Bibliotheken durch dbv"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "e-learning-nutzungsdaten",
+              "level": 4,
+              "name": "E-Learning-Plattform Nutzungsdaten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Nutzungsstatistiken zu digitalen Lernplattformen und E-Learning-Angeboten öffentlicher Bibliotheken – Zugriffe, Abschlussquoten, Themenbereiche.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Nutzungsdaten werden aggregiert und anonymisiert, um Rückschlüsse auf Einzelpersonen auszuschließen."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Zusammenfassung der Plattformdaten nach Nutzungstyp und Zeitraum ohne Personenbezug."
                   }
                 ]
               }
@@ -30072,6 +32389,162 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "meisterpruefungen-statistik",
+              "level": 4,
+              "name": "Meisterprüfungen Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Abgelegte und bestandene Meisterprüfungen nach Gewerk und Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BIBB veröffentlicht Berufsbildungsstatistik."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "BIBB-Datenreport zum Berufsbildungsbericht"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "aufstiegsfortbildung-foerderung",
+              "level": 4,
+              "name": "Aufstiegsfortbildung Förderung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Geförderte Personen und Darlehen nach Aufstiegs-BAföG und Berufsgruppe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BMBF veröffentlicht AFBG-Statistik."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Aufstiegsfortbildungsförderstatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "weiterbildungsatlas-daten",
+              "level": 4,
+              "name": "Weiterbildungsatlas Daten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Weiterbildungsbeteiligung und -angebote nach Region und Altersgruppe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Weiterbildungsatlas des BIBB ist öffentlich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "BIBB-AES und Weiterbildungserhebungen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "betriebliche-ausbildungsvertraege",
+              "level": 4,
+              "name": "Betriebliche Ausbildungsverträge",
+              "color": "#2471a3",
+              "details": {
+                "description": "Neu abgeschlossene Ausbildungsverträge nach Branche, Beruf und Region.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BIBB veröffentlicht Datenreport Berufsbildung."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Berufsbildungsstatistik"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -30195,6 +32668,162 @@
                   {
                     "method": "Kammererfassung",
                     "description": "Erfassung im Kammerprüfungsverwaltungssystem"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ihk-pruefungsstatistik",
+              "level": 4,
+              "name": "IHK Prüfungsstatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Angemeldete, zugelassene und bestandene IHK-Abschlussprüfungen nach Beruf.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DIHK veröffentlicht Prüfungsstatistik."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der DIHK-Prüfungsstatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "handwerkskammer-mitglieder",
+              "level": 4,
+              "name": "Handwerkskammer Mitgliederstatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Eingetragene Betriebe nach Gewerk und Kammerbezirk.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Handwerksrolle ist öffentliches Register."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Registerauswertung",
+                    "description": "Auswertung der Handwerksrolle"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "anerkannte-auslaendische-abschluesse",
+              "level": 4,
+              "name": "Anerkannte ausländische Abschlüsse",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anerkennungsverfahren beruflicher Auslandsabschlüsse nach Herkunftsland und Beruf.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Anerkennungsstatistik wird veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Anerkennungsberatungsstatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zertifikatslehrgaenge-register",
+              "level": 4,
+              "name": "Zertifikatslehrgänge Register",
+              "color": "#2471a3",
+              "details": {
+                "description": "Akkreditierte Zertifikatslehrgänge nach Träger, Fachbereich und Region.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Zulassungsverzeichnisse."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Datenpflege",
+                    "description": "Laufende Aktualisierung durch Akkreditierungsstellen"
                   }
                 ]
               }
@@ -30978,6 +33607,2494 @@
                   {
                     "method": "Pseudonymisierung",
                     "description": "Strenge Anonymisierung vor Weitergabe an Forschungseinrichtungen"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justizbehörden",
+      "level": 2,
+      "name": "Justizbehörden",
+      "color": "#2980b9",
+      "children": [
+        {
+          "id": "gerichte-statistik",
+          "level": 3,
+          "name": "Gerichte Statistik",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "gerichtsverfahren-statistik",
+              "level": 4,
+              "name": "Gerichtsverfahren Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Erledigte Verfahren nach Gerichtstyp, Instanz und Rechtsgebiet.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Statistisches Bundesamt veröffentlicht Justizstatistik."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jährliche Justizstatistik des Statistischen Bundesamts"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "verfahrensdauer-zivilrecht",
+              "level": 4,
+              "name": "Verfahrensdauer Zivilrecht",
+              "color": "#2471a3",
+              "details": {
+                "description": "Durchschnittliche Verfahrensdauer in Zivilsachen nach Instanz und Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Justizstatistik ist öffentlich."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Geschäftsstellenstatistiken der Gerichte"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "rechtsprechungsdatenbank",
+              "level": 4,
+              "name": "Rechtsprechungsdatenbank",
+              "color": "#2471a3",
+              "details": {
+                "description": "Veröffentlichte Gerichtsurteile nach Rechtsgebiet und Instanz.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Urteile sind öffentliche Dokumente."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Harvesting",
+                    "description": "Automatisierter Abruf aus juris und openJur"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "richter-beisitzer-statistik",
+              "level": 4,
+              "name": "Richter Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Hauptamtliche Richter nach Gerichtstyp, Altersstruktur und Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Personalstatistik der Justiz."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Justizpersonalstatistik der Länder"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "insolvenzverfahren-statistik",
+              "level": 4,
+              "name": "Insolvenzverfahren Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Beantragte und eröffnete Insolvenzverfahren nach Schuldnertyp und Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht Insolvenzstatistik monatlich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Monatliche Insolvenzstatistik des Statistischen Bundesamts"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "staatsanwaltschaften",
+          "level": 3,
+          "name": "Staatsanwaltschaften",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "strafverfahren-erledigungen",
+              "level": 4,
+              "name": "Strafverfahren Erledigungen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Eingestellte, angeklagte und eingestellte Strafverfahren nach Deliktart.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Staatsanwaltschaftsstatistik wird veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jährliche Staatsanwaltschaftsstatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "anklagequoten",
+              "level": 4,
+              "name": "Anklagequoten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anteil angeklagter Beschuldigter nach Deliktbereich und Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Verfahrensstatistik."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Berechnung",
+                    "description": "Auswertung der Staatsanwaltschaftsstatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wirtschaftsstrafverfahren",
+              "level": 4,
+              "name": "Wirtschaftsstrafverfahren",
+              "color": "#2471a3",
+              "details": {
+                "description": "Verfahren wegen Wirtschaftsstraftaten nach Deliktkategorie und Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BKA und Statistisches Bundesamt veröffentlichen Daten."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Polizeiliche Kriminalstatistik und Justizstatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zeugenschutz-programme",
+              "level": 4,
+              "name": "Zeugenschutzmaßnahmen Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Personen unter Zeugenschutz nach Art der Maßnahme (anonymisiert, aggregiert).",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Operativdetails sind geheimhaltungsbedürftig."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Nur aggregierte Jahresangaben ohne Einzelfälle"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "rechtshilfe-international",
+              "level": 4,
+              "name": "Internationale Rechtshilfe",
+              "color": "#2471a3",
+              "details": {
+                "description": "Eingehende und ausgehende Rechtshilfeersuchen nach Zielland und Art.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Statistik ohne Verfahrensbezug."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresbericht zur internationalen Rechtshilfe des BMJ"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "strafvollzug-bewaehrung",
+          "level": 3,
+          "name": "Strafvollzug und Bewährung",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "gefangenenzahl-anstalten",
+              "level": 4,
+              "name": "Gefangenenzahl Strafvollzugsanstalten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Belegte Haftplätze nach Anstalt, Vollzugsart und Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Strafvollzugsstatistik wird veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jährliche Strafvollzugsstatistik der Länder"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "rueckfallstatistik",
+              "level": 4,
+              "name": "Rückfallstatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Rückfallquoten nach Deliktart, Alter bei Verurteilung und Vollzugsform.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KFN und BZR veröffentlichen Rückfallstudien."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Längsschnitt",
+                    "description": "Auswertung des Bundeszentralregisters"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bewaehrungsauflagen",
+              "level": 4,
+              "name": "Bewährungsauflagen Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Art und Häufigkeit verhängter Bewährungsauflagen nach Delikt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Strafvollstreckungsstatistik."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Justizstatistik der Länder"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vollzugslockerungen",
+              "level": 4,
+              "name": "Vollzugslockerungen und Resozialisierung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Gewährte Vollzugslockerungen nach Art und Missbrauchsquote.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Vollzugsstatistik."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Strafvollzugsstatistiken der Bundesländer"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auslaender-strafvollzug",
+              "level": 4,
+              "name": "Ausländische Gefangene Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anteil ausländischer Strafgefangener nach Staatsangehörigkeit und Delikt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Strafvollzugsstatistik ist veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Strafvollzugsstatistik"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "finanzbehörden",
+      "level": 2,
+      "name": "Finanzbehörden",
+      "color": "#2980b9",
+      "children": [
+        {
+          "id": "steuerstatistik",
+          "level": 3,
+          "name": "Steuerstatistik",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "steuereinnahmen-arten",
+              "level": 4,
+              "name": "Steuereinnahmen nach Steuerarten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Aufkommen aus Einkommen-, Körperschaft-, Umsatz- und anderen Steuern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BMF veröffentlicht Steuereinnahmen monatlich."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Monatliche Steuereinnahmen-Statistik des BMF"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lohnsteuerstatistik",
+              "level": 4,
+              "name": "Lohnsteuerstatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Steuerpflichtige und Einkommensverteilung auf Basis der Lohnsteueranmeldungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht Lohnsteuerstatistik."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "3-jährliche Lohnsteuerstatistik des Destatis"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "unternehmenssteuerstatistik",
+              "level": 4,
+              "name": "Unternehmenssteuerstatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Körperschaftsteueraufkommen und effektive Steuerquoten nach Branche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Steuerstatistik des Statistischen Bundesamts."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Körperschaftsteuerstatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "steuerfahndung-ergebnisse",
+              "level": 4,
+              "name": "Steuerfahndung Ergebnisse",
+              "color": "#2471a3",
+              "details": {
+                "description": "Mehrsteuerfeststellungen und Verfahren der Steuerfahndung nach Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BMF veröffentlicht Steuerfahndungsstatistik."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jährliche Steuerfahndungsstatistik des BMF"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "steuergerechtigkeit-indikatoren",
+              "level": 4,
+              "name": "Steuergerechtigkeit Indikatoren",
+              "color": "#2471a3",
+              "details": {
+                "description": "Effektive Steuersätze nach Einkommensgruppe und Unternehmenstyp.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Berechnungen auf Basis öffentlicher Statistiken."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Berechnung",
+                    "description": "Mikrosimulationsmodelle auf Steuerstatistiken"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "bundesrechnungshof-berichte",
+          "level": 3,
+          "name": "Bundesrechnungshof",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "jahresbericht-brh",
+              "level": 4,
+              "name": "Jahresbericht Bundesrechnungshof",
+              "color": "#2471a3",
+              "details": {
+                "description": "Beanstandungen und Empfehlungen des BRH nach Ressort und Prüfgebiet.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Jahresberichte werden dem Bundestag vorgelegt und veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "PDF-Extraktion",
+                    "description": "Strukturierte Auswertung der BRH-Jahresberichte"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sonderberichte-brh",
+              "level": 4,
+              "name": "Sonderberichte BRH",
+              "color": "#2471a3",
+              "details": {
+                "description": "Berichte zu spezifischen Prüfthemen nach § 99 BHO.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Sonderberichte sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Dokumentenanalyse",
+                    "description": "Auswertung veröffentlichter Sonderberichte"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "subventionsbericht",
+              "level": 4,
+              "name": "Subventionsbericht Bundesregierung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Subventionen des Bundes nach Wirtschaftsbereich und Förderinstrument.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Subventionsbericht wird alle 2 Jahre veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung des Subventionsberichts"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "foerdermittelverwendung",
+              "level": 4,
+              "name": "Fördermittel Verwendungsnachweis",
+              "color": "#2471a3",
+              "details": {
+                "description": "Geprüfte Verwendungsnachweise für Bundesförderprogramme nach Ressort.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierung von Einzelempfängern."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Prüfung",
+                    "description": "Stichprobenartige Prüfung durch BRH-Prüfer"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "it-projekte-bund",
+              "level": 4,
+              "name": "IT-Projekte Bund Monitoring",
+              "color": "#2471a3",
+              "details": {
+                "description": "Große IT-Vorhaben des Bundes nach Projektstatus, Budget und Zeitplan.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "IT-Dashboard des BMI ist öffentlich."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Monitoring",
+                    "description": "Automatisierter Abruf aus IT-Dashboard des Bundes"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "haushalt-schulden",
+          "level": 3,
+          "name": "Haushalt und Schulden",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "bundeshaushalt-einzelplaene",
+              "level": 4,
+              "name": "Bundeshaushalt Einzelpläne",
+              "color": "#2471a3",
+              "details": {
+                "description": "Ausgaben und Einnahmen des Bundeshaushalts nach Einzelplan und Titel.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bundeshaushaltsplan ist öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "XML-Parsing",
+                    "description": "Maschinenlesbarer Bundeshaushalt als Open Data"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "staatsschulden-zeitreihe",
+              "level": 4,
+              "name": "Staatsschulden Zeitreihe",
+              "color": "#2471a3",
+              "details": {
+                "description": "Schuldenstand von Bund, Ländern und Gemeinden nach Schuldenart.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bundesbank und Destatis veröffentlichen Schuldendaten."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Schuldenstatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "steuereinnahmen-prognose",
+              "level": 4,
+              "name": "Steuerschätzung Protokoll",
+              "color": "#2471a3",
+              "details": {
+                "description": "Ergebnisse der amtlichen Steuerschätzung nach Steuerart und Gebietskörperschaft.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BMF veröffentlicht Steuerschätzungsergebnisse."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Protokoll des Arbeitskreises Steuerschätzungen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kommunale-finanzen",
+              "level": 4,
+              "name": "Kommunale Finanzen Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Einnahmen und Ausgaben der Gemeinden nach Aufgabenbereich und Land.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht Gemeindefinanzstatistik."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jährliche Gemeindefinanzstatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schuldenbremse-einhaltung",
+              "level": 4,
+              "name": "Schuldenbremse Einhaltung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Einhaltung der Schuldenbremse nach Gebietskörperschaft und Ausnahmeklauseln.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bundesfinanzministerium veröffentlicht Berichte."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Berechnung",
+                    "description": "Auswertung der Finanzberichte"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zollverwaltung",
+      "level": 2,
+      "name": "Zollverwaltung",
+      "color": "#2980b9",
+      "children": [
+        {
+          "id": "zoll-aussenhandel",
+          "level": 3,
+          "name": "Außenhandel und Einfuhren",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "aussenhandel-gueter",
+              "level": 4,
+              "name": "Außenhandel Güterstatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Ein- und Ausfuhren nach Warengruppe, Herkunfts- und Bestimmungsland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht Außenhandelsstatistik monatlich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Monatliche Außenhandelsstatistik des Destatis"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "einfuhrabgaben",
+              "level": 4,
+              "name": "Einfuhrabgaben und Zollaufkommen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Erhobene Einfuhrabgaben und Zölle nach Warengruppe und Herkunftsland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BMF veröffentlicht Zolleinnahmen."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Zolleinnahmen-Statistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "praeferenzabkommen",
+              "level": 4,
+              "name": "Präferenzabkommen Nutzung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Nutzung von Zollpräferenzen aus EU-Handelsabkommen nach Partner und Warengruppe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EU-Handelsstatistik ist öffentlich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Eurostat-Außenhandelsstatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zollbescheinigungen",
+              "level": 4,
+              "name": "Zollbescheinigungen Daten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Ausgestellte Warenverkehrsbescheinigungen und Ursprungsnachweise.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Bescheinigungsstatistik."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresstatistik der Zollverwaltung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "illegale-einfuhren",
+              "level": 4,
+              "name": "Illegale Einfuhren Aufgriffe",
+              "color": "#2471a3",
+              "details": {
+                "description": "Aufgegriffene illegale Waren (Drogen, Waffen, Tabak) nach Art und Menge.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Zollverwaltung veröffentlicht Jahresberichte."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresbericht der Generalzolldirektion"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "zoll-verbote-beschlagnahmen",
+          "level": 3,
+          "name": "Verbote und Beschlagnahmen",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "produktfaelschungen",
+              "level": 4,
+              "name": "Produktfälschungen Beschlagnahmen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Beschlagnahmte gefälschte Waren nach Produktkategorie und Herkunftsland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Zoll und EUIPO veröffentlichen Fälschungsstatistiken."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresbericht der Generalzolldirektion"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "artenschutz-aufgriffe",
+              "level": 4,
+              "name": "Artenschutz Aufgriffe",
+              "color": "#2471a3",
+              "details": {
+                "description": "Aufgegriffene CITES-geschützte Tiere und Pflanzen nach Art und Herkunft.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BfN und Zoll veröffentlichen Artenschutzstatistiken."
+                },
+                "theme": {
+                  "code": "TH_09"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der CITES-Vollzugsberichte"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schwarzarbeit-kontrollen",
+              "level": 4,
+              "name": "Schwarzarbeit Kontrollen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Kontrollen und Verfahren der Finanzkontrolle Schwarzarbeit nach Branche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Zoll veröffentlicht FKS-Jahresberichte."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresbericht Finanzkontrolle Schwarzarbeit"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bargeldkontrollen",
+              "level": 4,
+              "name": "Bargeldkontrollen am Grenzübergang",
+              "color": "#2471a3",
+              "details": {
+                "description": "Angemeldete und unangemeldete Bargeldbeförderungen nach Grenzübergang.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Statistik."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresstatistik der Zollverwaltung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zoll-beanstandungen-lebensmittel",
+              "level": 4,
+              "name": "Zoll Beanstandungen Lebensmittel",
+              "color": "#2471a3",
+              "details": {
+                "description": "Beanstandete Lebensmittelimporte nach Herkunftsland und Beanstandungsgrund.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BVL veröffentlicht Einfuhrüberwachungsberichte."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung des BVL-RASFF-Systems"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "zoll-personal-infrastruktur",
+          "level": 3,
+          "name": "Personal und Infrastruktur",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "zoll-personal-standorte",
+              "level": 4,
+              "name": "Zoll Personal und Standorte",
+              "color": "#2471a3",
+              "details": {
+                "description": "Beschäftigte, Dienststellen und Hauptzollämter nach Standort.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Informationen der Generalzolldirektion."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresbericht der Generalzolldirektion"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zollhafen-abfertigung",
+              "level": 4,
+              "name": "Zollhafen Abfertigung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Abgefertigte Container und Warensendungen nach Seehäfen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Hafenstatistiken werden veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Hafenstatistik des Statistischen Bundesamts"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "it-systeme-zoll",
+              "level": 4,
+              "name": "IT-Systeme Zoll",
+              "color": "#2471a3",
+              "details": {
+                "description": "Status der EU-Zoll-IT-Modernisierungsprojekte (UCC) in Deutschland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EU-Kommission veröffentlicht UCC-Umsetzungsberichte."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Monitoring",
+                    "description": "Auswertung des EU UCC Work Programme"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "grenzkontroll-statistik",
+              "level": 4,
+              "name": "Grenzkontroll-Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Personenkontrollen und Fahrzeugüberprüfungen an Binnengrenzen nach Grenzübergang.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bundeszoll veröffentlicht aggregierte Kontrolldaten."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresbericht der Bundespolizei und Zoll"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zolllager-register",
+              "level": 4,
+              "name": "Zolllager Register",
+              "color": "#2471a3",
+              "details": {
+                "description": "Zugelassene Zolllager und Freizonen nach Standort und Kapazität.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliches Zolllagerregister."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Registerabfrage",
+                    "description": "Auswertung des EU-Zolllagerregisters"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nachrichtendienste",
+      "level": 2,
+      "name": "Nachrichtendienste (BfV/BND/MAD)",
+      "color": "#2980b9",
+      "children": [
+        {
+          "id": "verfassungsschutzbericht",
+          "level": 3,
+          "name": "Verfassungsschutzberichte",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "verfassungsschutzbericht-bund",
+              "level": 4,
+              "name": "Verfassungsschutzbericht Bund",
+              "color": "#2471a3",
+              "details": {
+                "description": "Erkenntnisse zu extremistischen Bestrebungen nach Phänomenbereich und Personenpotenzial.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BfV veröffentlicht Jahresbericht."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Textanalyse",
+                    "description": "NLP-Klassifikation der Verfassungsschutzberichte"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "landesverfassungsschutzberichte",
+              "level": 4,
+              "name": "Landesverfassungsschutzberichte",
+              "color": "#2471a3",
+              "details": {
+                "description": "Landesspezifische Lagebilder aus den 16 Landesverfassungsschutzberichten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Landesberichte sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Vergleichende Auswertung aller 16 Landesberichte"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "extremistische-organisationen",
+              "level": 4,
+              "name": "Extremistische Organisationen Register",
+              "color": "#2471a3",
+              "details": {
+                "description": "Beobachtete extremistische Organisationen und Netzwerke nach Phänomenbereich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Erwähnung in Verfassungsschutzberichten."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Extraktion",
+                    "description": "NLP-Extraktion aus Verfassungsschutzberichten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "radikalisierungsfaelle",
+              "level": 4,
+              "name": "Radikalisierungsfälle Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Gemeldete und bearbeitete Radikalisierungsfälle nach Phänomenbereich.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Fallzahlen ohne Einzelfälle."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Beratungsstellen-Statistiken"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "v-mann-einsatz-statistik",
+              "level": 4,
+              "name": "V-Mann Einsatz Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Aggregierte Daten zu Verdeckten Quellen nach Phänomenbereich (keine Einzelfälle).",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Operative Details sind Verschlusssache."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Nur aggregierte Jahresangaben in parlamentarischen Berichten"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "spionageabwehr-statistik",
+          "level": 3,
+          "name": "Spionageabwehr Statistik",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "spionagefaelle-statistik",
+              "level": 4,
+              "name": "Spionagefälle Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Bekannt gewordene Spionagefälle nach Zielbereich und Herkunftsland (aggregiert).",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Operative Details sind Verschlusssache."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Nur Angaben aus Jahresberichten und parlamentarischen Anfragen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wirtschaftsspionage-schaden",
+              "level": 4,
+              "name": "Wirtschaftsspionage Schäden",
+              "color": "#2471a3",
+              "details": {
+                "description": "Geschätzte Schäden durch Wirtschaftsspionage und Cyberangriffe nach Branche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BfV veröffentlicht Lageberichte zu Wirtschaftsspionage."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Schätzung",
+                    "description": "Erhebung durch BfV und BSI bei betroffenen Unternehmen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "cyber-abwehr-vorfaelle",
+              "level": 4,
+              "name": "Cyber-Abwehr Vorfälle",
+              "color": "#2471a3",
+              "details": {
+                "description": "Abgewehrte Cyberangriffe auf Regierungsnetze nach Angriffstyp.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Sicherheitsrelevante Details sind Verschlusssache."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Nur aggregierte Zahlen aus BSI-Jahresberichten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auslaendische-einflussnahme",
+              "level": 4,
+              "name": "Ausländische Einflussnahme Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Dokumentierte Desinformationskampagnen und verdeckte Einflussnahmen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BfV-Lageberichte sind öffentlich."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Textanalyse",
+                    "description": "Auswertung öffentlicher Berichte und parlamentarischer Anfragen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "nachrichtendienstliche-zusammenarbeit",
+              "level": 4,
+              "name": "Nachrichtendienstliche Zusammenarbeit",
+              "color": "#2471a3",
+              "details": {
+                "description": "Informationsaustausch mit ausländischen Nachrichtendiensten nach Partnerland (aggregiert).",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Kooperationsdetails sind geheimhaltungsbedürftig."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 1,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Nur allgemeine Angaben aus parlamentarischen Berichten"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "extremismus-statistik",
+          "level": 3,
+          "name": "Extremismus Statistik",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "rechtsextremismus-pks",
+              "level": 4,
+              "name": "Rechtsextremismus PKS-Daten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Politisch motivierte Straftaten aus dem Bereich Rechtsextremismus nach Delikt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BKA veröffentlicht PMK-Statistik jährlich."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Polizeilichen Kriminalstatistik PMK"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "islamismus-faelle",
+              "level": 4,
+              "name": "Islamismus Fallzahlen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Bekannte Islamisten und Gefährder nach Kategorie und Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BfV-Jahresbericht enthält Fallzahlen."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der Verfassungsschutzberichte"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "linksextremismus-daten",
+              "level": 4,
+              "name": "Linksextremismus Daten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Politisch motivierte Straftaten aus dem linksextremen Spektrum nach Deliktart.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BKA PMK-Statistik ist öffentlich."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der PMK-Statistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hasskriminalitaet-statistik",
+              "level": 4,
+              "name": "Hasskriminalität Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Hasskriminalitätsdelikte nach Tatmotivation, Opfergruppe und Delikt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BKA veröffentlicht Hasskriminalitätsstatistik."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Auswertung der BKA-Hasskriminalitätsstatistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "deradikalisierungs-programme",
+              "level": 4,
+              "name": "Deradikalisierungs-Programme",
+              "color": "#2471a3",
+              "details": {
+                "description": "Beratungsfälle und Erfolgsquoten in Aussteiger- und Beratungsprogrammen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Fallzahlen ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregierung",
+                    "description": "Jahresberichte der Beratungsstellen (VPN, Hayat etc.)"
                   }
                 ]
               }

@@ -2,7 +2,7 @@
 
 **Welche Daten besitzt unsere Gesellschaft, und wie offen könnten sie sein?**
 
-Der Datenatlas macht sichtbar, welche Daten Behörden, Unternehmen, NGOs, Forschungseinrichtungen und andere Organisationen in Deutschland täglich erzeugen. Auf einer interaktiven isometrischen Karte lassen sich über 1.500 Datentypen quer durch 5 gesellschaftliche Sektoren erkunden.
+Der Datenatlas macht sichtbar, welche Daten Behörden, Unternehmen, NGOs, Forschungseinrichtungen und andere Organisationen in Deutschland täglich erzeugen. Auf einer interaktiven isometrischen Karte lassen sich über 1.600 Datentypen quer durch 6 gesellschaftliche Sektoren erkunden.
 
 **→ [datenatlas.de](https://datenatlas.de)**
 
@@ -32,7 +32,7 @@ Staat und Verwaltung          ← Ebene 1: Sektor
 
 | Ebene | Was Sie sehen | Wie weiter |
 |---|---|---|
-| **1 Sektor** | Die 5 gesellschaftlichen Bereiche als Kachelgruppe | Kachel anklicken |
+| **1 Sektor** | Die 6 gesellschaftlichen Bereiche als Kachelgruppe | Kachel anklicken |
 | **2 Organisation** | Organisationstypen innerhalb des Sektors | Kachel anklicken |
 | **3 Aktivität** | Was diese Organisation tut | Kachel anklicken |
 | **4 Datentyp** | Konkrete Datensätze mit Bewertung und Metadaten | Kachel anklicken für Details |
@@ -62,8 +62,9 @@ Der **Öffnungsklasse-Filter** (Trichter-Symbol oben rechts) blendet auf Ebene 4
 | 🔵 **Staat und Verwaltung** | Behörden, Ämter, öffentliche Einrichtungen auf Bundes-, Landes- und Kommunalebene | 33 | 643 |
 | ⚫ **Wirtschaft** | Private Unternehmen aller Branchen inkl. Finanz-, Gesundheits- und Infrastrukturdienstleister | 16 | 253 |
 | 🟣 **Wissenschaft und Forschung** | Universitäten, Forschungsinstitute, wissenschaftliche Einrichtungen | 16 | 272 |
-| 🟪 **Zivilgesellschaft** | Vereine, NGOs, Stiftungen — gegliedert nach den 16 Engagementfeldern des ziviz-Monitors | 16 | 240 |
-| 🩷 **Öffentlich-rechtliche Medien** | ARD, ZDF, Landesrundfunkanstalten und weitere öffentlich-rechtliche Medieneinrichtungen | 12 | 188 |
+| 🟪 **Zivilgesellschaft** | Vereine, NGOs, Stiftungen — gegliedert nach den 16 Engagementfeldern des ziviz-Monitors | 17 | 255 |
+| 🩷 **Medien und Kultur** | Öffentlich-rechtliche und private Medien, Verlage, Plattformen, Kultureinrichtungen | 12 | 188 |
+| 🌿 **Religionsgemeinschaften** | Evangelische und katholische Kirche, jüdische Gemeinden, muslimische Gemeinschaften, Freikirchen | 5 | 75 |
 
 ---
 
@@ -102,7 +103,7 @@ Alle Daten liegen als statische JSON-Dateien unter `public/data/`. Es gibt keine
 
 ### Aufbau
 
-Jeder Sektor hat eine eigene Datei (`sector_*.json`), die die komplette Hierarchie von Ebene 2 bis 4 enthält. Die Startseite (`main.json`) listet nur die 5 aktiven Sektoren.
+Jeder Sektor hat eine eigene Datei (`sector_*.json`), die die komplette Hierarchie von Ebene 2 bis 4 enthält. Die Startseite (`main.json`) listet nur die 6 aktiven Sektoren.
 
 ### Datentyp-Eintrag (Ebene 4)
 
@@ -168,7 +169,8 @@ scripts/
 | `sector_wirtschaft.json` | Wirtschaft | `#2c3e50` |
 | `sector_wissenschaft.json` | Wissenschaft & Forschung | `#4527a0` |
 | `sector_zivilgesellschaft.json` | Zivilgesellschaft | `#6d28d9` |
-| `sector_medien.json` | Öffentlich-rechtliche Medien | `#be185d` |
+| `sector_medien.json` | Medien und Kultur | `#be185d` |
+| `sector_religion.json` | Religionsgemeinschaften | `#134e4a` |
 
 > **Wichtig:** Die Farben `#27ae60`, `#d4a017` und `#c0392b` sind für Öffnungsklassen reserviert und dürfen nicht als Sektorfarben verwendet werden.
 

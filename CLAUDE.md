@@ -48,7 +48,7 @@ Sektoren sind konsequent nach **Trägertyp** gegliedert (wer produziert die Date
 | `sector_wirtschaft.json` | Wirtschaft | `#2c3e50` | `#d35400` | `#e67e22` | `#ca6f1e` |
 | `sector_wissenschaft.json` | Wissenschaft & Forschung | `#4527a0` | `#4527a0` | `#5e35b1` | `#3d1a87` |
 | `sector_zivilgesellschaft.json` | Zivilgesellschaft | `#6d28d9` | `#6d28d9` | `#7c3aed` | `#6d28d9` |
-| `sector_medien.json` | Öffentlich-rechtliche Medien | `#be185d` | `#be185d` | `#db2777` | `#9d174d` |
+| `sector_medien.json` | Medien und Kultur | `#be185d` | `#be185d` | `#db2777` | `#9d174d` |
 | `sector_religion.json` | Religionsgemeinschaften | `#134e4a` | `#1a6b65` | `#0f766e` | `#0d5c57` |
 
 **Inaktive Dateien** (existieren, sind aber nicht in main.json referenziert):
@@ -267,7 +267,7 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 | wirtschaft | 16 | 46 | 253 | 15,8 |
 | wissenschaft | 16 | 43 | 272 | 17,0 |
 | zivilgesellschaft | 17 | 49 | 255 | 15,0 |
-| medien | 12 | 35 | 188 | 15,7 |
+| medien & kultur | 12 | 35 | 188 | 15,7 |
 | religion | 5 | 15 | 75 | 15,0 |
 | **Gesamt** | **99** | **274** | **1.686** | **17,0** |
 

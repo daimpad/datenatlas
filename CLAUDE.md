@@ -265,9 +265,9 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 | staat | 33 | 86 | 643 | 19,5 |
 | wirtschaft | 16 | 46 | 253 | 15,8 |
 | wissenschaft | 16 | 43 | 272 | 17,0 |
-| zivilgesellschaft | 16 | 46 | 240 | 15,0 |
+| zivilgesellschaft | 18 | 52 | 270 | 15,0 |
 | medien | 12 | 35 | 188 | 15,7 |
-| **Gesamt** | **93** | **256** | **1.596** | **17,2** |
+| **Gesamt** | **95** | **262** | **1.626** | **17,1** |
 
 ---
 
@@ -319,7 +319,7 @@ Priorität nach Ø L4/L2 (niedrig = dringend). Nach Abschluss abhaken und Statis
 - [x] **S-05** `medien` — 7 → 12 L2: Deutschlandradio, ZDF Digital, ARD Online, dpa, Landesmedienanstalten ✓ (PR #38)
 - [x] **S-06** `staat` — Tiefenausbau (29→33 L2, alle ≥15 L4) + Breit: +4 L2 (Justiz, Finanzbehörden, Zoll, Nachrichtendienste) → 516→643 L4 ✓ (PR #39)
 - [x] **S-07** `wirtschaft` — Breitenausbau: +3 L2 (Versicherungswirtschaft, Unternehmensdienstleistungen, Pharmaindustrie) → 13→16 L2, 208→253 L4 ✓ (PR #40)
-- [ ] **S-08** `zivilgesellschaft` — Audit: passt die ziviz-16-Struktur noch, oder fehlen Träger?
+- [x] **S-08** `zivilgesellschaft` — Audit: ziviz-16 vollständig + Breit: +2 L2 (Wohlfahrtsverbände, Stiftungen) → 16→18 L2, 240→270 L4 ✓ (PR #42)
 
 **Phase 3 — Qualitätspass**
 

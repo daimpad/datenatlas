@@ -323,7 +323,7 @@ Priorität nach Ø L4/L2 (niedrig = dringend). Nach Abschluss abhaken und Statis
 
 **Phase 3 — Qualitätspass**
 
-- [ ] **S-09** Alle Sektoren — Cross-Sektor-Konsistenz: gleiche Datentypen sektorübergreifend vereinheitlichen
+- [x] **S-09** Alle Sektoren — Cross-Sektor-Konsistenz: 636 Farbfehler, 4 interne Duplikate, 9 cross-sektorale ID-Duplikate behoben ✓
 - [ ] **S-10** Alle Sektoren — Openness-Review: sind OP_01-Einträge wirklich sofort publizierbar?
 
 ### Startbefehl

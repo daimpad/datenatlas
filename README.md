@@ -59,11 +59,11 @@ Der **Öffnungsklasse-Filter** (Trichter-Symbol oben rechts) blendet auf Ebene 4
 
 | Sektor | Trägertyp | L2 | L4 |
 |---|---|---|---|
-| 🔵 **Staat und Verwaltung** | Behörden, Ämter, öffentliche Einrichtungen auf Bundes-, Landes- und Kommunalebene | 33 | 643 |
+| 🔵 **Staat und Verwaltung** | Behörden, Ämter, öffentliche Einrichtungen auf Bundes-, Landes- und Kommunalebene | 36 | 690 |
 | ⚫ **Wirtschaft** | Private Unternehmen aller Branchen inkl. Finanz-, Gesundheits- und Infrastrukturdienstleister | 16 | 253 |
-| 🟣 **Wissenschaft und Forschung** | Universitäten, Forschungsinstitute, wissenschaftliche Einrichtungen | 16 | 272 |
+| 🟣 **Wissenschaft und Forschung** | Universitäten, Forschungsinstitute, wissenschaftliche Einrichtungen | 14 | 240 |
 | 🟪 **Zivilgesellschaft** | Vereine, NGOs, Stiftungen — gegliedert nach den 16 Engagementfeldern des ziviz-Monitors | 17 | 255 |
-| 🩷 **Medien und Kultur** | Öffentlich-rechtliche und private Medien, Verlage, Plattformen, Kultureinrichtungen | 12 | 188 |
+| 🩷 **Medien und Kultur** | Öffentlich-rechtliche und private Medien, Verlage, Plattformen, Kultureinrichtungen | 11 | 173 |
 | 🌿 **Religionsgemeinschaften** | Evangelische und katholische Kirche, jüdische Gemeinden, muslimische Gemeinschaften, Freikirchen | 5 | 75 |
 
 ---

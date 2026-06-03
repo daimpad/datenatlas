@@ -263,11 +263,11 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 
 | Sektor | L2 | L3 | L4 | Ø L4/L2 |
 |--------|----|----|-----|---------|
-| staat | 33 | 86 | 643 | 19,5 |
+| staat | 36 | 95 | 690 | 19,2 |
 | wirtschaft | 16 | 46 | 253 | 15,8 |
-| wissenschaft | 16 | 43 | 272 | 17,0 |
+| wissenschaft | 14 | 37 | 240 | 17,1 |
 | zivilgesellschaft | 17 | 49 | 255 | 15,0 |
-| medien & kultur | 12 | 35 | 188 | 15,7 |
+| medien & kultur | 11 | 32 | 173 | 15,7 |
 | religion | 5 | 15 | 75 | 15,0 |
 | **Gesamt** | **99** | **274** | **1.686** | **17,0** |
 

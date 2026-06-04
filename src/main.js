@@ -9,6 +9,7 @@ import { buildSearchIndex, initSearch } from './search.js';
 import { initStats }  from './stats.js';
 import { initExport }   from './export.js';
 import { initRelated, findRelated } from './related.js';
+import { initGenerator } from './generator.js';
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
 const canvas        = document.getElementById('map-canvas');
@@ -243,6 +244,7 @@ let _mainTiles = [];
     initStats({ indexPromise, mainTiles: sectors });
     initExport({ indexPromise });
     initRelated({ indexPromise });
+    initGenerator({ indexPromise, onNavigate: navigateToSearchResult });
   } catch (err) {
     console.error(err);
     showError('Hauptdaten konnten nicht geladen werden.', () => location.reload());

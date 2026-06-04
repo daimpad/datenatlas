@@ -1374,10 +1374,27 @@ a#footer-brand:hover { color: var(--accent); }
 /* ── Responsive ── */
 @media (max-width: 580px) {
   :root { --sidebar-w: 100vw; }
-  .logo-text { display: none; }
+
+  /* Header: show "Datenatlas", hide subtitle; reduce clutter */
+  #header { gap: 8px; padding: 0 10px; }
+  .logo-sub  { display: none; }
   #level-badge { display: none; }
+  #share-btn, #export-btn, #stats-btn { display: none; }
   #openness-legend { display: none; }
+
+  /* Footer: compact to prevent overflow */
   #footer-brand { display: none; }
+  #footer { gap: 8px; padding: 0 8px; }
+  #footer nav { gap: 8px; }
+  #footer nav a { font-size: 10px; }
+  #gen-btn { padding: 5px 8px; font-size: 11px; }
+  #open-data-btn { padding: 5px 8px; font-size: 11px; }
+
+  /* Onboarding: stack hints vertically */
+  .ob-card { padding: 20px; }
+  .ob-hints { grid-template-columns: 1fr; }
+
+  /* Wizard */
   .wz-opts--2 { grid-template-columns: 1fr; }
   .wz-opts--3 { grid-template-columns: 1fr 1fr; }
   .wz-license-grid { grid-template-columns: 1fr; }

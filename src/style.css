@@ -1766,7 +1766,7 @@ a#footer-brand:hover { color: var(--accent); }
   padding-right: 52px;
 }
 .gen-header-icon {
-  font-size: 32px;
+  font-size: 22px;
   line-height: 1;
   flex-shrink: 0;
   width: 52px; height: 52px;
@@ -1774,6 +1774,7 @@ a#footer-brand:hover { color: var(--accent); }
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: 12px;
+  color: var(--accent);
   transition: transform 0.3s var(--ease-out);
 }
 .gen-eyebrow {
@@ -1825,7 +1826,7 @@ a#footer-brand:hover { color: var(--accent); }
   background: #888;
   border: 2px solid rgba(0,0,0,0.10);
   border-radius: 12px;
-  padding: 16px;
+  padding: 16px 20px 16px 16px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -1972,11 +1973,12 @@ a#footer-brand:hover { color: var(--accent); }
 }
 
 @media (max-width: 580px) {
+  #gen-modal { padding: 0; align-items: flex-end; }
+  .gen-card { max-height: 92vh; border-radius: 16px 16px 0 0; width: 100%; }
   .gen-tiles { grid-template-columns: 1fr; }
   .gen-connector { display: none; }
   .gen-header { padding: 20px 20px 16px; padding-right: 48px; }
-  .gen-result { padding: 20px; }
+  .gen-result { padding: 16px 20px; }
   .gen-footer { padding: 14px 20px; flex-wrap: wrap; }
   .gen-hint { display: none; }
-  .gen-card { max-height: 100vh; border-radius: 0; }
 }

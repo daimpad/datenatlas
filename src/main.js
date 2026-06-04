@@ -7,7 +7,8 @@ import { state, patchState }         from './state.js';
 import { applyTileColors, applyOpennessColors, esc } from './utils.js';
 import { buildSearchIndex, initSearch } from './search.js';
 import { initStats }  from './stats.js';
-import { initExport } from './export.js';
+import { initExport }   from './export.js';
+import { initRelated, findRelated } from './related.js';
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
 const canvas        = document.getElementById('map-canvas');
@@ -241,6 +242,7 @@ let _mainTiles = [];
     initSearch({ indexPromise, onNavigate: navigateToSearchResult });
     initStats({ indexPromise, mainTiles: sectors });
     initExport({ indexPromise });
+    initRelated({ indexPromise });
   } catch (err) {
     console.error(err);
     showError('Hauptdaten konnten nicht geladen werden.', () => location.reload());
@@ -346,11 +348,18 @@ function sidebarOpts(tile) {
   }
 
   // L4 or L6 (cross-sector data type): navigate to its linked processes
-  if ((lvl === 4 || lvl === 6) && tile.details?.processes?.length) {
-    return {
-      onExplore: () => navigateDeeper(tile),
-      exploreLabel: 'Verwandte Prozesse erkunden',
+  if (lvl === 4 || lvl === 6) {
+    const sectorId = state.breadcrumb.find(c => c.level === 2)?.id ?? null;
+    const related  = findRelated(tile, sectorId);
+    const opts = {
+      related,
+      onNavigate: navigateToSearchResult,
     };
+    if (tile.details?.processes?.length) {
+      opts.onExplore    = () => navigateDeeper(tile);
+      opts.exploreLabel = 'Verwandte Prozesse erkunden';
+    }
+    return opts;
   }
 
   // L5 (process): navigate to related data types across sectors

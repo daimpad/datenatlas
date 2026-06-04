@@ -11,11 +11,16 @@ document.addEventListener('click', e => {
     closeSidebar();
 });
 
-let _onExplore = null;
+let _onExplore   = null;
+let _onNavigate  = null;
+let _relatedEntries = [];
 
-export function openSidebar(tile, { onExplore, exploreLabel = 'Erkunden' } = {}) {
-  _onExplore = onExplore ?? null;
-  body.innerHTML = buildContent(tile, !!_onExplore, exploreLabel);
+export function openSidebar(tile, { onExplore, exploreLabel = 'Erkunden', related = [], onNavigate = null } = {}) {
+  _onExplore      = onExplore  ?? null;
+  _onNavigate     = onNavigate ?? null;
+  _relatedEntries = related;
+
+  body.innerHTML = buildContent(tile, !!_onExplore, exploreLabel, related);
   sidebar.dataset.open = 'true';
 
   const btn = document.getElementById('sb-explore-btn');
@@ -26,6 +31,13 @@ export function openSidebar(tile, { onExplore, exploreLabel = 'Erkunden' } = {})
       cb();
     }, { once: true });
   }
+
+  body.querySelectorAll('.rel-item[data-idx]').forEach(el => {
+    el.addEventListener('click', () => {
+      const entry = _relatedEntries[+el.dataset.idx];
+      if (entry && _onNavigate) _onNavigate(entry);
+    });
+  });
 }
 
 export function closeSidebar() {
@@ -37,7 +49,7 @@ export function closeSidebar() {
 const LEVEL_LABELS = ['', 'Sektor', 'Organisation', 'Aktivität', 'Datentyp', 'Prozess', 'Datentyp'];
 const BADGE_CLASS  = ['', 'l1',     'l2',           'l3',        'l4',       'l5',      'l6'];
 
-function buildContent(tile, hasExplore = false, exploreLabel = 'Erkunden') {
+function buildContent(tile, hasExplore = false, exploreLabel = 'Erkunden', related = []) {
   const lvl      = tile.level ?? 1;
   const badgeCls = BADGE_CLASS[lvl] ?? 'l4';
   const lvlLabel = LEVEL_LABELS[lvl] ?? 'Ebene';
@@ -67,7 +79,8 @@ function buildContent(tile, hasExplore = false, exploreLabel = 'Erkunden') {
 
   // ── Level 4 or 6 — vollständiger Datentyp ──
   if ((lvl === 4 || lvl === 6) && tile.details) {
-    return strip + header + exploreBtn + buildDetailSections(tile.details);
+    const relSection = related.length ? buildRelatedSection(related) : '';
+    return strip + header + exploreBtn + buildDetailSections(tile.details) + relSection;
   }
 
   // ── Level 1–3 — Zusammenfassung ──
@@ -144,6 +157,19 @@ function buildDetailSections(d) {
   }
 
   return parts.join('');
+}
+
+function buildRelatedSection(entries) {
+  const items = entries.map((e, i) => {
+    const dot  = `<span class="rel-item-dot" style="background:${e.tile.color}"></span>`;
+    const name = `<span class="rel-item-name">${esc(e.tile.name)}</span>`;
+    const path = `<span class="rel-item-path">${esc(e.displayPath)}</span>`;
+    return `<div class="rel-item" data-idx="${i}" role="button" tabindex="0">
+      ${dot}<div class="rel-item-body">${name}${path}</div>
+      <i class="fa-solid fa-arrow-right rel-item-arrow" aria-hidden="true"></i>
+    </div>`;
+  }).join('');
+  return section('<i class="fa-solid fa-circle-nodes"></i> Ähnliche Datensätze', `<div class="rel-list">${items}</div>`);
 }
 
 function section(title, inner) {

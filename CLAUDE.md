@@ -329,6 +329,23 @@ Priorität nach Ø L4/L2 (niedrig = dringend). Nach Abschluss abhaken und Statis
 - [x] **S-10** Alle Sektoren — Openness-Review: 3 OP_03+Freilizenz-Widersprüche behoben; OB_01+OP_01 (364 aggregierte Statistiken) geprüft und korrekt ✓
 - [x] **S-11** `religion` — Breitenausbau: +3 L2 (Orthodoxe Kirchen, Alevitische Gemeinde, Kirchliche Hilfswerke) → 5→8 L2, 75→120 L4 ✓ (PR #41)
 
+**Phase 4 — Feature & Qualitäts-Sprints**
+
+Sprint-Format (Features):
+```
+1. DESIGN  — UI-Skizze / Datenfluss beschreiben
+2. BUILD   — Implementierung in src/
+3. TEST    — Dev-Server, golden path + edge cases
+4. COMMIT  — git add / commit / push
+5. PR      — mcp__github__create_pull_request
+```
+
+- [x] **F-01** Statistik-Dashboard — Öffnungsklassen-Verteilung als Balkendiagramm pro Sektor (Canvas/SVG, Vanilla JS, Button neben Suche/Filter) ✓
+- [ ] **F-02** Export-Funktion — CSV/JSON-Download der sichtbaren L4 (Browser Blob API, kein Backend)
+- [ ] **F-03** Cross-Sektor "Ähnliche Datensätze" — In L4-Detail-Sidebar: bis zu 5 L4 aus anderen Sektoren mit gleichem theme/object-Code
+- [ ] **F-04** Wizard-Optimierung — Kontext-Einstieg aus L4-Detail, sektorspezifische Lizenzempfehlungen, Ergebnis-Checkliste
+- [ ] **F-05** Kommunen Tiefenausbau — +6–8 L2 in sector_staat.json (Stadtverwaltung, Bürgeramt, Bauordnungsamt, Stadtwerke, Gesundheitsamt, Schulamt, Kämmerei, Ordnungsamt) je 15 L4
+
 ### Startbefehl
 
 Wenn der Nutzer **"Nächster Sprint"** schreibt:

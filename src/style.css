@@ -40,7 +40,7 @@
 html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(--text-1); font-family: var(--font); font-size: 14px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
 
 /* ── App shell ── */
-#app { display: flex; flex-direction: column; height: 100vh; }
+#app { display: flex; flex-direction: column; height: 100vh; height: 100dvh; }
 
 /* ── Header ── */
 #header {
@@ -1813,6 +1813,9 @@ a#footer-brand:hover { color: var(--accent); }
   color: var(--text-1);
   font-weight: 400;
 }
+.gen-story p { margin-bottom: 0.85em; }
+.gen-story p:last-child { margin-bottom: 0; }
+.gen-story p:first-child { font-weight: 500; color: var(--accent); }
 
 /* Tile pair */
 .gen-tiles {
@@ -1833,6 +1836,8 @@ a#footer-brand:hover { color: var(--accent); }
   gap: 10px;
   transition: transform 0.15s var(--ease-out), box-shadow 0.15s;
   user-select: none;
+  min-width: 0;
+  overflow: hidden;
 }
 .gen-tile:hover {
   transform: translateY(-3px);
@@ -1972,13 +1977,13 @@ a#footer-brand:hover { color: var(--accent); }
   text-align: center;
 }
 
-@media (max-width: 580px) {
+@media (max-width: 640px) {
   #gen-modal { padding: 0; align-items: flex-end; }
-  .gen-card { max-height: 92vh; border-radius: 16px 16px 0 0; width: 100%; }
+  .gen-card { max-height: 92vh; max-height: 92dvh; border-radius: 16px 16px 0 0; width: 100%; overflow-x: hidden; }
   .gen-tiles { grid-template-columns: 1fr; }
   .gen-connector { display: none; }
   .gen-header { padding: 20px 20px 16px; padding-right: 48px; }
-  .gen-result { padding: 16px 20px; }
+  .gen-result { padding: 16px 20px; overflow-x: hidden; }
   .gen-footer { padding: 14px 20px; flex-wrap: wrap; }
   .gen-hint { display: none; }
 }

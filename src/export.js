@@ -1,0 +1,104 @@
+import { state } from './state.js';
+
+const THEME       = { TH_01:'Gesundheit', TH_02:'Bildung', TH_03:'Soziales', TH_04:'Wirtschaft', TH_05:'Verwaltung', TH_06:'Umwelt', TH_07:'Finanzen', TH_08:'Recht', TH_09:'Natur/Biodiversität', TH_10:'Wissenschaft/Technik' };
+const OBJECT      = { OB_01:'Personenbezogene Daten', OB_02:'Textdokumente', OB_03:'Finanzdaten', OB_04:'Messungen / Sensordaten', OB_05:'Geodaten', OB_06:'Mediendaten', OB_07:'Transaktionsdaten', OB_08:'Metadaten' };
+const GRANULARITY = { GR_01:'Einzelereignis / Rohdaten', GR_02:'Aggregiert', GR_03:'Kleinräumig', GR_04:'Individuell / Mikrodaten' };
+const LICENSE     = { LI_01:'CC0 / Public Domain', LI_02:'CC BY 4.0', LI_03:'Datenlizenz Deutschland', LI_04:'Proprietär / Restriktiv' };
+const FORMAT      = { FT_01:'CSV', FT_02:'JSON', FT_03:'NetCDF / HDF5', FT_04:'XML', FT_05:'GeoJSON', FT_06:'Shapefile' };
+const OPENNESS    = { OP_01:'Sofort publizierbar', OP_02:'Nach Aufbereitung', OP_03:'Nur Metadaten' };
+
+const HEADERS = ['Name','Sektor','Organisation','Aktivität','Öffnungsklasse','Thema','Objekttyp','Granularität','Format','Lizenz','Relevanz','Beschreibung'];
+
+let _index = null;
+
+export function initExport({ indexPromise }) {
+  indexPromise.then(idx => { _index = idx; });
+
+  document.getElementById('export-btn').addEventListener('click', () => {
+    const crumbs = state.breadcrumb;
+    const level  = crumbs[crumbs.length - 1]?.level ?? 0;
+
+    if (level === 4) {
+      exportCurrentView(crumbs);
+    } else if (_index) {
+      exportFullIndex();
+    } else {
+      showToast('Daten werden noch geladen…');
+    }
+  });
+}
+
+function exportCurrentView(crumbs) {
+  const sektor  = crumbs.find(c => c.level === 2)?.name ?? '';
+  const org     = crumbs.find(c => c.level === 3)?.name ?? '';
+  const activity = crumbs.find(c => c.level === 4)?.name ?? '';
+
+  const rows = state.currentTiles
+    .filter(t => t.level === 4 && t.details)
+    .map(t => tileRow(t, sektor, org, activity));
+
+  const slug = slugify(sektor || 'export');
+  download(csvString(rows), `datenatlas-${slug}.csv`);
+}
+
+function exportFullIndex() {
+  const rows = _index
+    .filter(e => e.tile.details)
+    .map(e => {
+      const [sektor, org, activity] = e.displayPath.split(' · ');
+      return tileRow(e.tile, sektor, org, activity);
+    });
+  download(csvString(rows), 'datenatlas-alle-datentypen.csv');
+}
+
+function tileRow(tile, sektor, org, activity) {
+  const d = tile.details ?? {};
+  return [
+    tile.name,
+    sektor,
+    org,
+    activity,
+    OPENNESS[d.openness?.class] ?? d.openness?.class ?? '',
+    THEME[d.theme?.code]       ?? d.theme?.code       ?? '',
+    OBJECT[d.object?.code]     ?? d.object?.code      ?? '',
+    GRANULARITY[d.granularity?.code] ?? d.granularity?.code ?? '',
+    (d.format ?? []).map(f => FORMAT[f.code] ?? f.code).join('; '),
+    LICENSE[d.license?.code]   ?? d.license?.code     ?? '',
+    d.relevance ?? '',
+    d.description ?? '',
+  ];
+}
+
+function csvString(rows) {
+  const lines = [HEADERS, ...rows].map(r =>
+    r.map(f => {
+      const s = String(f ?? '');
+      return (s.includes(',') || s.includes('"') || s.includes('\n'))
+        ? `"${s.replace(/"/g, '""')}"` : s;
+    }).join(',')
+  );
+  return '﻿' + lines.join('\r\n'); // BOM for Excel UTF-8
+}
+
+function download(content, filename) {
+  const blob = new Blob([content], { type: 'text/csv;charset=utf-8;' });
+  const url  = URL.createObjectURL(blob);
+  const a    = Object.assign(document.createElement('a'), { href: url, download: filename });
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
+}
+
+function slugify(s) {
+  return s.toLowerCase().replace(/[äöü]/g, c => ({ ä:'ae', ö:'oe', ü:'ue' }[c] ?? c))
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+function showToast(msg) {
+  const t = document.getElementById('share-toast');
+  if (!t) return;
+  const prev = t.textContent;
+  t.textContent = msg;
+  t.hidden = false;
+  setTimeout(() => { t.hidden = true; t.textContent = prev; }, 2000);
+}

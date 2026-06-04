@@ -6,7 +6,8 @@ import { loadMain, loadSector }      from './dataLoader.js';
 import { state, patchState }         from './state.js';
 import { applyTileColors, applyOpennessColors, esc } from './utils.js';
 import { buildSearchIndex, initSearch } from './search.js';
-import { initStats } from './stats.js';
+import { initStats }  from './stats.js';
+import { initExport } from './export.js';
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
 const canvas        = document.getElementById('map-canvas');
@@ -239,6 +240,7 @@ let _mainTiles = [];
     indexPromise.then(idx => { methodIndex = buildMethodIndex(idx); });
     initSearch({ indexPromise, onNavigate: navigateToSearchResult });
     initStats({ indexPromise, mainTiles: sectors });
+    initExport({ indexPromise });
   } catch (err) {
     console.error(err);
     showError('Hauptdaten konnten nicht geladen werden.', () => location.reload());

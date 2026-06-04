@@ -68,16 +68,12 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
   display: flex;
   align-items: center;
   gap: 0;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: hidden;
   min-width: 0;
-  scrollbar-width: none;
 }
-#breadcrumb::-webkit-scrollbar { display: none; }
 
 .crumb {
-  display: flex;
-  align-items: center;
+  display: block;
   font-size: 13px;
   color: var(--text-2);
   cursor: pointer;
@@ -85,8 +81,8 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
   border-radius: 5px;
   white-space: nowrap;
   transition: color 0.15s, background 0.15s;
-  flex-shrink: 0;
-  max-width: 180px;
+  flex: 0 1 auto;
+  min-width: 2ch;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -1698,40 +1694,26 @@ a#footer-brand:hover { color: var(--accent); }
   .st-card { padding: 24px 20px; }
 }
 
-/* ── Generator button (Neo-Brutalism) ── */
+/* ── Generator button ── */
 #gen-btn {
-  background: var(--text-1);
-  color: #fff;
-  border: 2px solid var(--text-1);
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid rgba(98,0,168,0.45);
   border-radius: 6px;
-  padding: 5px 13px;
+  padding: 6px 14px;
   font-family: var(--font);
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 3px 3px 0 0 var(--accent);
-  transform: translate(-1px, -1px);
-  transition: box-shadow 0.1s ease, transform 0.1s ease;
+  transition: background 0.15s, border-color 0.15s;
   white-space: nowrap;
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: 5px;
-  letter-spacing: 0.2px;
+  gap: 6px;
 }
-#gen-btn:hover {
-  box-shadow: 5px 5px 0 0 var(--accent);
-  transform: translate(-3px, -3px);
-}
-#gen-btn:active {
-  box-shadow: 1px 1px 0 0 var(--accent);
-  transform: translate(1px, 1px);
-}
-#gen-btn.active {
-  box-shadow: 1px 1px 0 0 var(--accent);
-  transform: translate(1px, 1px);
-  opacity: 0.85;
-}
+#gen-btn:hover { background: var(--surface-2); border-color: var(--accent); }
+#gen-btn.active { background: var(--surface-3); border-color: var(--accent); }
 
 /* ── Generator Modal ── */
 #gen-modal {
@@ -1753,13 +1735,13 @@ a#footer-brand:hover { color: var(--accent); }
   background: var(--surface);
   border: 1px solid var(--border-hi);
   border-radius: 16px;
-  max-width: 760px;
+  max-width: 960px;
   width: 100%;
   max-height: calc(100vh - 32px);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 32px 80px rgba(26,15,46,0.30), 6px 6px 0 0 var(--accent);
+  box-shadow: 0 32px 80px rgba(26,15,46,0.30);
 }
 
 #gen-close {
@@ -1840,8 +1822,8 @@ a#footer-brand:hover { color: var(--accent); }
 }
 
 .gen-tile {
-  background: var(--surface-2);
-  border: 2px solid var(--border);
+  background: #888;
+  border: 2px solid rgba(0,0,0,0.10);
   border-radius: 12px;
   padding: 16px;
   cursor: pointer;
@@ -1871,15 +1853,15 @@ a#footer-brand:hover { color: var(--accent); }
   font-family: var(--mono);
   font-size: 10px;
   font-weight: 700;
+  color: rgba(255,255,255,0.75);
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: var(--text-2);
 }
 
 .gen-tile-name {
   font-size: 14px;
   font-weight: 700;
-  color: var(--text-1);
+  color: #fff;
   line-height: 1.3;
   flex: 1;
 }
@@ -1887,17 +1869,20 @@ a#footer-brand:hover { color: var(--accent); }
 .gen-tile-path {
   font-family: var(--mono);
   font-size: 10px;
-  color: var(--text-3);
+  color: rgba(255,255,255,0.70);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  background: rgba(0,0,0,0.15);
+  border-radius: 4px;
+  padding: 3px 7px;
 }
 
 .gen-tile-arrow {
   align-self: flex-end;
   font-size: 11px;
-  color: var(--accent);
-  opacity: 0.7;
+  color: rgba(255,255,255,0.80);
+  opacity: 1;
 }
 
 /* Connector */
@@ -1942,21 +1927,16 @@ a#footer-brand:hover { color: var(--accent); }
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.15s, transform 0.1s;
+  transition: background 0.15s;
   flex-shrink: 0;
-  box-shadow: 3px 3px 0 0 var(--text-1);
-  transform: translate(-1px, -1px);
 }
 .gen-roll-btn:hover {
   background: var(--accent-hi);
-  box-shadow: 4px 4px 0 0 var(--text-1);
-  transform: translate(-2px, -2px);
 }
 .gen-roll-btn:active {
-  box-shadow: 1px 1px 0 0 var(--text-1);
-  transform: translate(1px, 1px);
+  opacity: 0.85;
 }
-.gen-roll-btn:disabled { opacity: 0.5; cursor: not-allowed; box-shadow: none; transform: none; }
+.gen-roll-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
 .gen-roll-icon { font-size: 16px; line-height: 1; }
 .gen-roll-icon.spinning { animation: gen-spin 0.5s ease; }

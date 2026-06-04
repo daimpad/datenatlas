@@ -13,7 +13,7 @@ import { initGenerator } from './generator.js';
 
 // ── Build hash ────────────────────────────────────────────────────────────────
 const _buildHashEl = document.getElementById('build-hash');
-if (_buildHashEl) _buildHashEl.textContent = __BUILD_HASH__;
+if (_buildHashEl) { try { _buildHashEl.textContent = __BUILD_HASH__; } catch { /* raw source, not built */ } }
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
 const canvas        = document.getElementById('map-canvas');

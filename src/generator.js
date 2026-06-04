@@ -14,7 +14,7 @@ export const SCENARIOS = [
   {
     id:    'klimarisiko',
     title: 'Klimarisiko-Karte',
-    icon:  '🌡',
+    icon:  'fa-temperature-half',
     story: 'Was, wenn Kommunen ihren Klimarisiko-Score direkt aus staatlichen Umweltmessdaten und Unternehmens-Finanzkennzahlen berechnen könnten? Diese Fusion macht die wirtschaftliche Verletzlichkeit durch den Klimawandel kleinräumig sichtbar – Grundlage für die erste datengetriebene Klimarisikoversicherung für Städte.',
     a: { sector: 'staat',      theme: 'TH_06' },
     b: { sector: 'wirtschaft', theme: 'TH_07' },
@@ -22,7 +22,7 @@ export const SCENARIOS = [
   {
     id:    'bildungsrendite',
     title: 'Bildungsrendite-Rechner',
-    icon:  '📈',
+    icon:  'fa-chart-line',
     story: 'Wissenschaftliche Längsschnittstudien kennen den Bildungsweg. Unternehmensdaten kennen das Gehalt am Ende. Zusammengeführt entsteht der erste evidenzbasierte Rendite-Rechner für öffentliche Bildungsinvestitionen: Wie viel Steuer zahlt ein Hochschulabgänger mehr als ein Schulabbrecher – und rechtfertigt das die Investition?',
     a: { sector: 'wissenschaft', theme: 'TH_02' },
     b: { sector: 'wirtschaft',   theme: 'TH_04' },
@@ -30,7 +30,7 @@ export const SCENARIOS = [
   {
     id:    'soziale-vulnerabilitaet',
     title: 'Atlas sozialer Vulnerabilität',
-    icon:  '🗺',
+    icon:  'fa-map',
     story: 'Staatliche Sozialdaten kennen die Zahlen. Zivilgesellschaftliche Beratungsstatistiken kennen die Gesichter dahinter. Zusammengeführt entsteht eine granulare Vulnerabilitätskarte, die Hotspots sozialer Notlagen sichtbar macht – bevor sie zu Krisen werden.',
     a: { sector: 'staat',             theme: 'TH_03' },
     b: { sector: 'zivilgesellschaft', theme: 'TH_03' },
@@ -38,7 +38,7 @@ export const SCENARIOS = [
   {
     id:    'unsichtbare-infrastruktur',
     title: 'Unsichtbare Infrastruktur',
-    icon:  '⛪',
+    icon:  'fa-church',
     story: 'Religiöse Gemeinschaften betreiben Kitas, Hospize und Sozialstationen – deren Standorte fließen nie in kommunale Planungsprozesse ein. Geodaten religiöser Einrichtungen, überlagert mit kommunalen Standortdaten, erzeugen die erste Karte der unsichtbaren sozialen Infrastruktur Deutschlands.',
     a: { sector: 'religion', object: 'OB_05' },
     b: { sector: 'staat',    object: 'OB_05' },
@@ -46,7 +46,7 @@ export const SCENARIOS = [
   {
     id:    'biodiversitaet-kapital',
     title: 'Natur vs. Kapital',
-    icon:  '🦋',
+    icon:  'fa-leaf',
     story: 'Was kostet ein Schmetterling? Wissenschaftliche Artenerfassungen und wirtschaftliche Flächennutzungsdaten, erstmals kombiniert, erlauben es, den volkswirtschaftlichen Wert der Biodiversität in Unternehmenskalkulationen zu verankern. Ein erster Schritt zum True-Cost-Accounting.',
     a: { sector: 'wissenschaft', theme: 'TH_09' },
     b: { sector: 'wirtschaft',   theme: 'TH_04' },
@@ -54,7 +54,7 @@ export const SCENARIOS = [
   {
     id:    'medienspiegel-gesellschaft',
     title: 'Medienspiegel der Gesellschaft',
-    icon:  '📰',
+    icon:  'fa-newspaper',
     story: 'Medien beobachten gesellschaftliche Probleme täglich. Staatliche Sozialdaten messen dieselbe Realität in Statistiken. Zusammengeführt entsteht ein Spiegel: Wo berichtet die Öffentlichkeit über soziale Schieflagen, die in der Amtsstatistik längst sichtbar sind – und wo hinkt die Wahrnehmung der Realität hinterher?',
     a: { sector: 'medien', theme: 'TH_03' },
     b: { sector: 'staat',  theme: 'TH_03' },
@@ -62,7 +62,7 @@ export const SCENARIOS = [
   {
     id:    'gesundheitsatlas',
     title: 'Gesundheitsatlas der Ungleichheit',
-    icon:  '🏥',
+    icon:  'fa-hospital',
     story: 'Staatliche Versorgungsdaten zeigen, wo Ärzte sitzen. Zivilgesellschaftliche Beratungsstatistiken zeigen, wo Menschen trotzdem nicht ankommen. Die Lücke zwischen Angebot und Inanspruchnahme zu messen ist der erste Schritt zur Gesundheitsgerechtigkeit.',
     a: { sector: 'staat',             theme: 'TH_01' },
     b: { sector: 'zivilgesellschaft', theme: 'TH_01' },
@@ -70,7 +70,7 @@ export const SCENARIOS = [
   {
     id:    'transparenz-score',
     title: 'Öffentlicher Transparenz-Score',
-    icon:  '⚖️',
+    icon:  'fa-scale-balanced',
     story: 'Kommunale Haushaltsdaten gegen Unternehmens-Finanzberichte: Welcher Sektor legt seine Zahlen ehrlicher offen? Ein sektorübergreifender Transparenz-Index würde Druck auf intransparente Akteure erzeugen – und zeigen, wo Offenheit bereits gelebte Praxis ist.',
     a: { sector: 'staat',      theme: 'TH_07' },
     b: { sector: 'wirtschaft', theme: 'TH_07' },
@@ -78,7 +78,7 @@ export const SCENARIOS = [
   {
     id:    'forschung-praxis',
     title: 'Vom Labor in die Praxis',
-    icon:  '🔬',
+    icon:  'fa-microscope',
     story: 'Wissenschaftliche Erkenntnisse bleiben oft in Journals vergraben. Verknüpft man Forschungsoutput-Daten mit dem tatsächlichen Datenbedarf zivilgesellschaftlicher Bildungsträger, lässt sich messen, welche Forschung gesellschaftlich ankommt – und welche nicht.',
     a: { sector: 'wissenschaft',      theme: 'TH_10' },
     b: { sector: 'zivilgesellschaft', theme: 'TH_02' },
@@ -86,7 +86,7 @@ export const SCENARIOS = [
   {
     id:    'kirchliches-sozialkapital',
     title: 'Kirchliches Sozialkapital',
-    icon:  '🤝',
+    icon:  'fa-handshake',
     story: 'Kirchen und Wohlfahrtsverbände leisten Milliarden an Sozialarbeit, die in keiner staatlichen Statistik als "Investition" erscheint. Kirchliche Sozialdaten gekreuzt mit staatlichen Sozialhilfedaten: der erste Versuch, das religiöse Sozialkapital als messbare volkswirtschaftliche Größe zu erfassen.',
     a: { sector: 'religion', theme: 'TH_03' },
     b: { sector: 'staat',    theme: 'TH_03' },
@@ -94,7 +94,7 @@ export const SCENARIOS = [
   {
     id:    'umwelt-wissenschaft-fusion',
     title: 'Klimawandel im Datenspiegel',
-    icon:  '🌍',
+    icon:  'fa-earth-europe',
     story: 'Staatliche Umweltmessstationen erfassen was passiert. Wissenschaftliche Klimamodelle erklären warum. Diese Fusion bricht Forschungssilos auf: Rohdaten aus Messstationen direkt an Klimamodelle gekoppelt beschleunigen die Erkenntnisproduktion – und machen Behörden zu Forschungspartnern.',
     a: { sector: 'staat',        theme: 'TH_06' },
     b: { sector: 'wissenschaft', theme: 'TH_06' },
@@ -102,7 +102,7 @@ export const SCENARIOS = [
   {
     id:    'recht-medien',
     title: 'Rechtslage im Mediencheck',
-    icon:  '⚖',
+    icon:  'fa-gavel',
     story: 'Welche Gesetze schaffen es in die Schlagzeilen – und welche verändern das Leben still? Staatliche Rechtsdaten gekreuzt mit juristischen Mediendaten erzeugen einen "Legislative Attention Score": ein Frühwarnsystem für demokratische Wissenslücken, das zeigt, wo Justiz und öffentliche Wahrnehmung auseinanderdriften.',
     a: { sector: 'staat',  theme: 'TH_08' },
     b: { sector: 'medien', theme: 'TH_08' },
@@ -171,12 +171,12 @@ function _doRoll() {
 }
 
 function _renderResult({ scenario, entryA, entryB }) {
-  document.getElementById('gen-scenario-icon').textContent  = scenario.icon;
+  document.getElementById('gen-scenario-icon').innerHTML    = `<i class="fa-solid ${scenario.icon}"></i>`;
   document.getElementById('gen-scenario-title').textContent = scenario.title;
   document.getElementById('gen-story').textContent          = scenario.story;
 
   const tilesEl = document.getElementById('gen-tiles');
-  tilesEl.innerHTML = buildTile(entryA, 'a') + '<div class="gen-connector">⚡</div>' + buildTile(entryB, 'b');
+  tilesEl.innerHTML = buildTile(entryA, 'a') + '<div class="gen-connector"><i class="fa-solid fa-bolt"></i></div>' + buildTile(entryB, 'b');
 
   tilesEl.querySelectorAll('.gen-tile').forEach(el => {
     const handler = () => {

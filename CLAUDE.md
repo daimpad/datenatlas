@@ -48,7 +48,8 @@ Sektoren sind konsequent nach **Trägertyp** gegliedert (wer produziert die Date
 | `sector_wirtschaft.json` | Wirtschaft | `#2c3e50` | `#d35400` | `#e67e22` | `#ca6f1e` |
 | `sector_wissenschaft.json` | Wissenschaft & Forschung | `#4527a0` | `#4527a0` | `#5e35b1` | `#3d1a87` |
 | `sector_zivilgesellschaft.json` | Zivilgesellschaft | `#6d28d9` | `#6d28d9` | `#7c3aed` | `#6d28d9` |
-| `sector_medien.json` | Öffentlich-rechtliche Medien | `#be185d` | `#be185d` | `#db2777` | `#9d174d` |
+| `sector_medien.json` | Medien und Kultur | `#be185d` | `#be185d` | `#db2777` | `#9d174d` |
+| `sector_religion.json` | Religionsgemeinschaften | `#134e4a` | `#1a6b65` | `#0f766e` | `#0d5c57` |
 
 **Inaktive Dateien** (existieren, sind aber nicht in main.json referenziert):
 `sector_behoerde.json`, `sector_bildung.json`, `sector_forschung.json`,
@@ -262,12 +263,13 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 
 | Sektor | L2 | L3 | L4 | Ø L4/L2 |
 |--------|----|----|-----|---------|
-| staat | 33 | 86 | 643 | 19,5 |
+| staat | 36 | 95 | 690 | 19,2 |
 | wirtschaft | 16 | 46 | 253 | 15,8 |
-| wissenschaft | 16 | 43 | 272 | 17,0 |
-| zivilgesellschaft | 16 | 46 | 240 | 15,0 |
-| medien | 12 | 35 | 188 | 15,7 |
-| **Gesamt** | **93** | **256** | **1.596** | **17,2** |
+| wissenschaft | 14 | 37 | 240 | 17,1 |
+| zivilgesellschaft | 17 | 49 | 255 | 15,0 |
+| medien & kultur | 11 | 32 | 173 | 15,7 |
+| religion | 5 | 15 | 75 | 15,0 |
+| **Gesamt** | **99** | **274** | **1.686** | **17,0** |
 
 ---
 
@@ -319,12 +321,12 @@ Priorität nach Ø L4/L2 (niedrig = dringend). Nach Abschluss abhaken und Statis
 - [x] **S-05** `medien` — 7 → 12 L2: Deutschlandradio, ZDF Digital, ARD Online, dpa, Landesmedienanstalten ✓ (PR #38)
 - [x] **S-06** `staat` — Tiefenausbau (29→33 L2, alle ≥15 L4) + Breit: +4 L2 (Justiz, Finanzbehörden, Zoll, Nachrichtendienste) → 516→643 L4 ✓ (PR #39)
 - [x] **S-07** `wirtschaft` — Breitenausbau: +3 L2 (Versicherungswirtschaft, Unternehmensdienstleistungen, Pharmaindustrie) → 13→16 L2, 208→253 L4 ✓ (PR #40)
-- [ ] **S-08** `zivilgesellschaft` — Audit: passt die ziviz-16-Struktur noch, oder fehlen Träger?
+- [x] **S-08** `zivilgesellschaft` — Audit: ziviz-16 vollständig + Breit: +2 L2 (Wohlfahrtsverbände, Stiftungen) → 16→18 L2, 240→270 L4 ✓ (PR #42)
 
 **Phase 3 — Qualitätspass**
 
-- [ ] **S-09** Alle Sektoren — Cross-Sektor-Konsistenz: gleiche Datentypen sektorübergreifend vereinheitlichen
-- [ ] **S-10** Alle Sektoren — Openness-Review: sind OP_01-Einträge wirklich sofort publizierbar?
+- [x] **S-09** Alle Sektoren — Cross-Sektor-Konsistenz: 636 Farbfehler, 4 interne Duplikate, 9 cross-sektorale ID-Duplikate behoben ✓
+- [x] **S-10** Alle Sektoren — Openness-Review: 3 OP_03+Freilizenz-Widersprüche behoben; OB_01+OP_01 (364 aggregierte Statistiken) geprüft und korrekt ✓
 
 ### Startbefehl
 

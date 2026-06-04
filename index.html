@@ -49,6 +49,21 @@
         <span id="level-max" class="level-label">/ 4</span>
       </div>
 
+      <button id="export-btn" title="Als CSV exportieren" aria-label="Aktuelle Daten als CSV exportieren">
+        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
+          <path d="M12 16l-4-4h2.5V4h3v8H16l-4 4z" fill="currentColor"/>
+          <path d="M4 18h16v2H4z" fill="currentColor"/>
+        </svg>
+      </button>
+
+      <button id="stats-btn" title="Statistik-Dashboard" aria-label="Öffnungsklassen-Statistik anzeigen">
+        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
+          <rect x="2" y="10" width="4" height="12" rx="1" fill="currentColor"/>
+          <rect x="9" y="5" width="4" height="17" rx="1" fill="currentColor"/>
+          <rect x="16" y="1" width="4" height="21" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+
       <button id="info-btn" title="Über den Datenatlas" aria-label="Infos und Hilfe öffnen">
         <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
           <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
@@ -270,6 +285,22 @@
       <button id="open-data-btn" title="Schritt-für-Schritt: Daten als Open Data veröffentlichen">Daten öffnen →</button>
       <a id="footer-brand" href="https://nozilla.de" target="_blank" rel="noopener">nozilla | bits &amp; bytes mit ❤</a>
     </footer>
+
+    <!-- Statistik-Dashboard Modal -->
+    <div id="stats-modal" role="dialog" aria-modal="true" aria-label="Statistik-Dashboard" hidden>
+      <div class="st-card">
+        <button id="st-close" title="Schließen" aria-label="Schließen"><i class="fa-solid fa-xmark"></i></button>
+
+        <div class="st-card-header">
+          <span class="logo-mark">◈</span>
+          <span class="st-title">Öffnungsklassen-Statistik</span>
+        </div>
+
+        <div id="st-body">
+          <!-- populated by stats.js -->
+        </div>
+      </div>
+    </div>
 
     <!-- "Daten öffnen" Wizard Modal -->
     <div id="wizard-modal" role="dialog" aria-modal="true" aria-label="Daten öffnen – Schritt-für-Schritt" hidden>

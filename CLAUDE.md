@@ -263,13 +263,13 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 
 | Sektor | L2 | L3 | L4 | Ø L4/L2 |
 |--------|----|----|-----|---------|
-| staat | 36 | 95 | 690 | 19,2 |
+| staat | 42 | 113 | 780 | 18,6 |
 | wirtschaft | 16 | 46 | 253 | 15,8 |
 | wissenschaft | 14 | 37 | 240 | 17,1 |
 | zivilgesellschaft | 17 | 49 | 255 | 15,0 |
 | medien & kultur | 11 | 32 | 173 | 15,7 |
-| religion | 5 | 15 | 75 | 15,0 |
-| **Gesamt** | **99** | **274** | **1.686** | **17,0** |
+| religion | 8 | 24 | 120 | 15,0 |
+| **Gesamt** | **108** | **301** | **1.821** | **16,9** |
 
 ---
 
@@ -327,6 +327,24 @@ Priorität nach Ø L4/L2 (niedrig = dringend). Nach Abschluss abhaken und Statis
 
 - [x] **S-09** Alle Sektoren — Cross-Sektor-Konsistenz: 636 Farbfehler, 4 interne Duplikate, 9 cross-sektorale ID-Duplikate behoben ✓
 - [x] **S-10** Alle Sektoren — Openness-Review: 3 OP_03+Freilizenz-Widersprüche behoben; OB_01+OP_01 (364 aggregierte Statistiken) geprüft und korrekt ✓
+- [x] **S-11** `religion` — Breitenausbau: +3 L2 (Orthodoxe Kirchen, Alevitische Gemeinde, Kirchliche Hilfswerke) → 5→8 L2, 75→120 L4 ✓ (PR #41)
+
+**Phase 4 — Feature & Qualitäts-Sprints**
+
+Sprint-Format (Features):
+```
+1. DESIGN  — UI-Skizze / Datenfluss beschreiben
+2. BUILD   — Implementierung in src/
+3. TEST    — Dev-Server, golden path + edge cases
+4. COMMIT  — git add / commit / push
+5. PR      — mcp__github__create_pull_request
+```
+
+- [x] **F-01** Statistik-Dashboard — Öffnungsklassen-Verteilung als Balkendiagramm pro Sektor (Canvas/SVG, Vanilla JS, Button neben Suche/Filter) ✓
+- [x] **F-02** Export-Funktion — CSV/JSON-Download der sichtbaren L4 (Browser Blob API, kein Backend) ✓
+- [x] **F-03** Cross-Sektor "Ähnliche Datensätze" — In L4-Detail-Sidebar: bis zu 5 L4 aus anderen Sektoren mit gleichem theme/object-Code ✓
+- [x] **F-04** Wizard-Optimierung — Kontext-Einstieg aus L4-Detail, sektorspezifische Lizenzempfehlungen, Ergebnis-Checkliste ✓
+- [x] **F-05** Kommunen Tiefenausbau — +6 L2 in sector_staat.json (Stadtverwaltung, Bürgeramt, Schulamt, Kämmerei, Jugendamt, Sozialamt) je 15 L4 → 36→42 L2, 690→780 L4 ✓
 
 ### Startbefehl
 

@@ -11,6 +11,10 @@ import { initExport }   from './export.js';
 import { initRelated, findRelated } from './related.js';
 import { initGenerator } from './generator.js';
 
+// ── Build hash ────────────────────────────────────────────────────────────────
+const _buildHashEl = document.getElementById('build-hash');
+if (_buildHashEl) _buildHashEl.textContent = __BUILD_HASH__;
+
 // ── DOM refs ──────────────────────────────────────────────────────────────────
 const canvas        = document.getElementById('map-canvas');
 const loadingVeil   = document.getElementById('loading-veil');

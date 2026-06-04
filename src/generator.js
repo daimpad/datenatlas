@@ -179,10 +179,12 @@ function _renderResult({ scenario, entryA, entryB }) {
   tilesEl.innerHTML = buildTile(entryA, 'a') + '<div class="gen-connector">⚡</div>' + buildTile(entryB, 'b');
 
   tilesEl.querySelectorAll('.gen-tile').forEach(el => {
-    el.addEventListener('click', () => {
+    const handler = () => {
       const entry = el.dataset.side === 'a' ? entryA : entryB;
       navigateToEntry(entry);
-    });
+    };
+    el.addEventListener('click', handler);
+    el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handler(); } });
   });
 }
 

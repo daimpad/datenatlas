@@ -345,6 +345,7 @@ Sprint-Format (Features):
 - [x] **F-03** Cross-Sektor "Ähnliche Datensätze" — In L4-Detail-Sidebar: bis zu 5 L4 aus anderen Sektoren mit gleichem theme/object-Code ✓
 - [x] **F-04** Wizard-Optimierung — Kontext-Einstieg aus L4-Detail, sektorspezifische Lizenzempfehlungen, Ergebnis-Checkliste ✓
 - [x] **F-05** Kommunen Tiefenausbau — +6 L2 in sector_staat.json (Stadtverwaltung, Bürgeramt, Schulamt, Kämmerei, Jugendamt, Sozialamt) je 15 L4 → 36→42 L2, 690→780 L4 ✓
+- [x] **F-06** Cross-Sektor-Fusion-Generator — 12 Szenarien, Neo-Brutalism Button + Modal, Slot-Machine-Animation, Navigation zu L4-Datentypen ✓
 
 ### Startbefehl
 

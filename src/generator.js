@@ -196,9 +196,9 @@ function buildTile(entry, side) {
     .map(c => c.name);
   const pathStr   = pathParts.join(' · ');
 
-  return `<div class="gen-tile" data-side="${side}" style="border-color:${meta.color}20;border-left:4px solid ${meta.color};" tabindex="0" role="button">
+  return `<div class="gen-tile" data-side="${side}" style="background:${meta.color};border-color:rgba(0,0,0,0.10);" tabindex="0" role="button">
     <div class="gen-tile-sector">
-      <span class="gen-tile-dot" style="background:${meta.color}"></span>
+      <span class="gen-tile-dot" style="background:rgba(255,255,255,0.35)"></span>
       <span class="gen-tile-sector-name">${esc(meta.name)}</span>
     </div>
     <div class="gen-tile-name">${esc(entry.tile.name)}</div>

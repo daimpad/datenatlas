@@ -268,8 +268,8 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 | wissenschaft | 14 | 37 | 240 | 17,1 |
 | zivilgesellschaft | 17 | 49 | 255 | 15,0 |
 | medien & kultur | 11 | 32 | 173 | 15,7 |
-| religion | 5 | 15 | 75 | 15,0 |
-| **Gesamt** | **99** | **274** | **1.686** | **17,0** |
+| religion | 8 | 24 | 120 | 15,0 |
+| **Gesamt** | **102** | **283** | **1.731** | **17,0** |
 
 ---
 
@@ -327,6 +327,7 @@ Priorität nach Ø L4/L2 (niedrig = dringend). Nach Abschluss abhaken und Statis
 
 - [x] **S-09** Alle Sektoren — Cross-Sektor-Konsistenz: 636 Farbfehler, 4 interne Duplikate, 9 cross-sektorale ID-Duplikate behoben ✓
 - [x] **S-10** Alle Sektoren — Openness-Review: 3 OP_03+Freilizenz-Widersprüche behoben; OB_01+OP_01 (364 aggregierte Statistiken) geprüft und korrekt ✓
+- [x] **S-11** `religion` — Breitenausbau: +3 L2 (Orthodoxe Kirchen, Alevitische Gemeinde, Kirchliche Hilfswerke) → 5→8 L2, 75→120 L4 ✓ (PR #41)
 
 ### Startbefehl
 

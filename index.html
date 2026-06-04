@@ -282,9 +282,40 @@
         <a href="https://nozilla.de/datenschutz/" target="_blank" rel="noopener">Datenschutz</a>
         <a href="https://nozilla.de/kontakt/" target="_blank" rel="noopener">Kontakt</a>
       </nav>
+      <button id="gen-btn" title="Cross-Sector Fusion-Generator">⚡ Fusion</button>
       <button id="open-data-btn" title="Schritt-für-Schritt: Daten als Open Data veröffentlichen">Daten öffnen →</button>
       <a id="footer-brand" href="https://nozilla.de" target="_blank" rel="noopener">nozilla | bits &amp; bytes mit ❤</a>
     </footer>
+
+    <!-- Cross-Sector Fusion Generator Modal -->
+    <div id="gen-modal" role="dialog" aria-modal="true" aria-label="Cross-Sector-Fusion-Generator" hidden>
+      <div class="gen-card">
+        <button id="gen-close" title="Schließen" aria-label="Schließen"><i class="fa-solid fa-xmark"></i></button>
+
+        <div class="gen-header">
+          <div class="gen-header-icon" id="gen-scenario-icon">⚡</div>
+          <div class="gen-header-text">
+            <div class="gen-eyebrow">Cross-Sector-Fusion-Generator</div>
+            <div class="gen-scenario-title" id="gen-scenario-title">Lade…</div>
+          </div>
+        </div>
+
+        <div id="gen-result" class="gen-result">
+          <p class="gen-story" id="gen-story"></p>
+          <div class="gen-tiles" id="gen-tiles">
+            <!-- populated by JS -->
+          </div>
+        </div>
+
+        <div class="gen-footer">
+          <span class="gen-hint">Klicke auf eine Kachel um direkt dorthin zu navigieren</span>
+          <button id="gen-roll-btn" class="gen-roll-btn">
+            <span class="gen-roll-icon" id="gen-roll-icon">🎲</span>
+            Neu würfeln
+          </button>
+        </div>
+      </div>
+    </div>
 
     <!-- Statistik-Dashboard Modal -->
     <div id="stats-modal" role="dialog" aria-modal="true" aria-label="Statistik-Dashboard" hidden>

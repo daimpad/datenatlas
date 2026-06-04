@@ -1,5 +1,25 @@
 // ── "Daten öffnen" Step-by-Step Wizard ───────────────────────────────────────
 
+// Atlas sector ID → wizard sector
+const SECTOR_MAP = {
+  staat: 'public', wirtschaft: 'private', wissenschaft: 'research',
+  zivilgesellschaft: 'civil', medien: 'private', religion: 'civil',
+};
+
+// Recommended license per sector × data type
+const LICENSE_REC = {
+  public:   { factual: 'CC0',    creative: 'DLD'   },
+  research: { factual: 'CC0',    creative: 'CC_BY'  },
+  civil:    { factual: 'CC0',    creative: 'CC_BY'  },
+  private:  { factual: 'CC0',    creative: 'CC_BY'  },
+};
+
+let _openWizardWithContext = null;
+
+export function openWizardWithContext(ctx) {
+  _openWizardWithContext?.(ctx);
+}
+
 export function initWizard() {
   const modal    = document.getElementById('wizard-modal');
   const bodyEl   = document.getElementById('wz-body');
@@ -18,17 +38,20 @@ export function initWizard() {
     license:       null,   // 'CC0' | 'CC_BY' | 'CC_BY_SA' | 'DLD'
     hasRights:     null,   // 'yes' | 'unclear' | 'no'
     publishMethod: null,   // 'catalog' | 'repo' | 'platform' | 'api' | 'own'
+    context:       null,   // { tileName, displayPath } when opened from sidebar
   };
 
-  function resetState() {
-    st.step = 1; st.sector = null; st.firstTime = null;
+  function resetState(ctx = null) {
+    st.step = 1; st.firstTime = null;
     st.dataType = null; st.stage2checks = new Set();
     st.license = null; st.hasRights = null; st.publishMethod = null;
+    st.context = ctx ?? null;
+    st.sector = ctx ? (SECTOR_MAP[ctx.sectorId] ?? null) : null;
   }
 
   // ── Open / Close ──────────────────────────────────────────────────────────
-  function openWizard() {
-    resetState();
+  function openWizard(ctx = null) {
+    resetState(ctx);
     modal.hidden = false;
     document.body.style.overflow = 'hidden';
     renderStep();
@@ -39,7 +62,9 @@ export function initWizard() {
     document.body.style.overflow = '';
   }
 
-  openBtn?.addEventListener('click', openWizard);
+  _openWizardWithContext = (ctx) => openWizard(ctx);
+
+  openBtn?.addEventListener('click', () => openWizard(null));
   closeBtn.addEventListener('click', closeWizard);
   modal.addEventListener('click', e => { if (e.target === modal) closeWizard(); });
   document.addEventListener('keydown', e => {
@@ -63,7 +88,7 @@ export function initWizard() {
 
   function canProceed() {
     switch (st.step) {
-      case 1: return st.sector !== null && st.firstTime !== null;
+      case 1: return st.sector !== null && (st.firstTime !== null || st.context !== null);
       case 2: return true;
       case 3: return st.dataType !== null && st.hasRights !== null;
       case 4: return st.publishMethod !== null;
@@ -119,10 +144,22 @@ export function initWizard() {
   function renderStep() {
     const renderers = [null, renderS1, renderS2, renderS3, renderS4, renderS5];
     bodyEl.innerHTML = '';
+    if (st.context) bodyEl.appendChild(renderContextBanner());
     bodyEl.appendChild(renderers[st.step]());
     updateProgress();
     updateNav();
     bodyEl.scrollTop = 0;
+  }
+
+  function renderContextBanner() {
+    const el = document.createElement('div');
+    el.className = 'wz-context-banner';
+    el.innerHTML = `
+      <span class="wz-context-icon">◈</span>
+      <span>Kontext: <strong>${st.context.tileName}</strong>
+        ${st.context.displayPath ? `<span class="wz-context-path">· ${st.context.displayPath}</span>` : ''}
+      </span>`;
+    return el;
   }
 
   function updateProgress() {
@@ -234,6 +271,11 @@ export function initWizard() {
     const rightsOpts = bodyEl.querySelector('#wz-rights-opts');
     const rightsNote = bodyEl.querySelector('#wz-rights-note');
     if (!branch) return;
+
+    // Auto-recommend license based on sector when opened from context
+    if (st.dataType && st.sector && !st.license) {
+      st.license = LICENSE_REC[st.sector]?.[st.dataType] ?? null;
+    }
 
     if (st.dataType === 'factual') {
       branch.innerHTML = `

@@ -11,16 +11,18 @@ document.addEventListener('click', e => {
     closeSidebar();
 });
 
-let _onExplore   = null;
-let _onNavigate  = null;
+let _onExplore      = null;
+let _onNavigate     = null;
+let _onWizard       = null;
 let _relatedEntries = [];
 
-export function openSidebar(tile, { onExplore, exploreLabel = 'Erkunden', related = [], onNavigate = null } = {}) {
+export function openSidebar(tile, { onExplore, exploreLabel = 'Erkunden', related = [], onNavigate = null, onWizard = null } = {}) {
   _onExplore      = onExplore  ?? null;
   _onNavigate     = onNavigate ?? null;
+  _onWizard       = onWizard   ?? null;
   _relatedEntries = related;
 
-  body.innerHTML = buildContent(tile, !!_onExplore, exploreLabel, related);
+  body.innerHTML = buildContent(tile, !!_onExplore, exploreLabel, related, !!_onWizard);
   sidebar.dataset.open = 'true';
 
   const btn = document.getElementById('sb-explore-btn');
@@ -38,6 +40,11 @@ export function openSidebar(tile, { onExplore, exploreLabel = 'Erkunden', relate
       if (entry && _onNavigate) _onNavigate(entry);
     });
   });
+
+  const wizBtn = document.getElementById('sb-wizard-btn');
+  if (wizBtn && _onWizard) {
+    wizBtn.addEventListener('click', () => { _onWizard?.(); }, { once: true });
+  }
 }
 
 export function closeSidebar() {
@@ -49,7 +56,7 @@ export function closeSidebar() {
 const LEVEL_LABELS = ['', 'Sektor', 'Organisation', 'Aktivität', 'Datentyp', 'Prozess', 'Datentyp'];
 const BADGE_CLASS  = ['', 'l1',     'l2',           'l3',        'l4',       'l5',      'l6'];
 
-function buildContent(tile, hasExplore = false, exploreLabel = 'Erkunden', related = []) {
+function buildContent(tile, hasExplore = false, exploreLabel = 'Erkunden', related = [], hasWizard = false) {
   const lvl      = tile.level ?? 1;
   const badgeCls = BADGE_CLASS[lvl] ?? 'l4';
   const lvlLabel = LEVEL_LABELS[lvl] ?? 'Ebene';
@@ -79,8 +86,9 @@ function buildContent(tile, hasExplore = false, exploreLabel = 'Erkunden', relat
 
   // ── Level 4 or 6 — vollständiger Datentyp ──
   if ((lvl === 4 || lvl === 6) && tile.details) {
-    const relSection = related.length ? buildRelatedSection(related) : '';
-    return strip + header + exploreBtn + buildDetailSections(tile.details) + relSection;
+    const relSection    = related.length ? buildRelatedSection(related) : '';
+    const wizardSection = hasWizard ? buildWizardCta() : '';
+    return strip + header + exploreBtn + buildDetailSections(tile.details) + relSection + wizardSection;
   }
 
   // ── Level 1–3 — Zusammenfassung ──
@@ -157,6 +165,16 @@ function buildDetailSections(d) {
   }
 
   return parts.join('');
+}
+
+function buildWizardCta() {
+  return `<div class="sb-wizard-cta">
+    <div class="sb-wizard-cta-text">
+      <strong>Diese Daten veröffentlichen?</strong>
+      <span>Der Schritt-für-Schritt-Leitfaden hilft Ihrer Organisation beim Einstieg in Open Data.</span>
+    </div>
+    <button id="sb-wizard-btn" class="sb-wizard-btn">Daten öffnen →</button>
+  </div>`;
 }
 
 function buildRelatedSection(entries) {

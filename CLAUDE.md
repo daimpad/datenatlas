@@ -343,7 +343,7 @@ Sprint-Format (Features):
 - [x] **F-01** Statistik-Dashboard — Öffnungsklassen-Verteilung als Balkendiagramm pro Sektor (Canvas/SVG, Vanilla JS, Button neben Suche/Filter) ✓
 - [x] **F-02** Export-Funktion — CSV/JSON-Download der sichtbaren L4 (Browser Blob API, kein Backend) ✓
 - [x] **F-03** Cross-Sektor "Ähnliche Datensätze" — In L4-Detail-Sidebar: bis zu 5 L4 aus anderen Sektoren mit gleichem theme/object-Code ✓
-- [ ] **F-04** Wizard-Optimierung — Kontext-Einstieg aus L4-Detail, sektorspezifische Lizenzempfehlungen, Ergebnis-Checkliste
+- [x] **F-04** Wizard-Optimierung — Kontext-Einstieg aus L4-Detail, sektorspezifische Lizenzempfehlungen, Ergebnis-Checkliste ✓
 - [ ] **F-05** Kommunen Tiefenausbau — +6–8 L2 in sector_staat.json (Stadtverwaltung, Bürgeramt, Bauordnungsamt, Stadtwerke, Gesundheitsamt, Schulamt, Kämmerei, Ordnungsamt) je 15 L4
 
 ### Startbefehl

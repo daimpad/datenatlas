@@ -1,5 +1,5 @@
 import { IsometricRenderer } from './renderer.js';
-import { initWizard }        from './wizard.js';
+import { initWizard, openWizardWithContext } from './wizard.js';
 import { initControls }      from './controls.js';
 import { openSidebar, closeSidebar } from './modal.js';
 import { loadMain, loadSector }      from './dataLoader.js';
@@ -349,11 +349,15 @@ function sidebarOpts(tile) {
 
   // L4 or L6 (cross-sector data type): navigate to its linked processes
   if (lvl === 4 || lvl === 6) {
-    const sectorId = state.breadcrumb.find(c => c.level === 2)?.id ?? null;
-    const related  = findRelated(tile, sectorId);
+    const sectorId   = state.breadcrumb.find(c => c.level === 2)?.id ?? null;
+    const related    = findRelated(tile, sectorId);
+    const displayPath = state.breadcrumb
+      .filter(c => c.id != null && c.level >= 2 && c.level <= 3)
+      .map(c => c.name).join(' · ');
     const opts = {
       related,
       onNavigate: navigateToSearchResult,
+      onWizard:   () => openWizardWithContext({ sectorId, tileName: tile.name, displayPath }),
     };
     if (tile.details?.processes?.length) {
       opts.onExplore    = () => navigateDeeper(tile);

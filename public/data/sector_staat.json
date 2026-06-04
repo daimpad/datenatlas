@@ -38305,6 +38305,3852 @@
           ]
         }
       ]
+    },
+    {
+      "id": "stadtverwaltung",
+      "level": 2,
+      "name": "Stadtverwaltung / Gemeindeverwaltung",
+      "color": "#2980b9",
+      "children": [
+        {
+          "id": "stadtverwaltung-allgemein",
+          "level": 3,
+          "name": "Allgemeine Verwaltungsdaten",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "stadtrat-beschluesse",
+              "level": 4,
+              "name": "Stadtratsbeschlüsse",
+              "color": "#2471a3",
+              "details": {
+                "description": "Protokolle und Beschlüsse des Stadtrats inkl. Abstimmungsergebnissen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Stadtratsbeschlüsse sind öffentliche Dokumente."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Digitalisierung",
+                    "description": "Volltext-Indizierung der Protokolle für Suchmaschinen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "haushaltssatzung",
+              "level": 4,
+              "name": "Haushaltssatzung & -plan",
+              "color": "#2471a3",
+              "details": {
+                "description": "Kommunaler Haushaltsplan mit Ertrags- und Aufwandspositionen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gemeindehaushalte sind kraft Gemeindehaushaltsrecht zu veröffentlichen."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Jährliche Aggregation nach Produktbereichen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "organigramm-gemeinde",
+              "level": 4,
+              "name": "Organigramm der Gemeindeverwaltung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Aufbauorganisation der kommunalen Verwaltung mit Zuständigkeiten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Organigramme enthalten keine personenbezogenen Kerndaten."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Führungspositionen ohne private Kontaktdaten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "satzungsregister",
+              "level": 4,
+              "name": "Kommunales Satzungsregister",
+              "color": "#2471a3",
+              "details": {
+                "description": "Alle gültigen Satzungen der Gemeinde (Haupt-, Beitrags-, Gebührensatzungen).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kommunale Satzungen sind ohnehin amtlich zu veröffentlichen."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Texterkennung",
+                    "description": "OCR-basierte Volltextextraktion aus Amtsblatt-PDFs"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "verwaltungsberichte",
+              "level": 4,
+              "name": "Jahresberichte der Verwaltung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Tätigkeits- und Leistungsberichte der Gemeindeverwaltung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Jahresberichte sind öffentlich bestimmte Rechenschaftsdokumente."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Kennzahlenverdichtung aus Fachbereichen"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "stadtverwaltung-buerger",
+          "level": 3,
+          "name": "Bürgerkommunikation & Dienstleistungen",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "buergerbegehren",
+              "level": 4,
+              "name": "Bürgerbegehren und -entscheide",
+              "color": "#2471a3",
+              "details": {
+                "description": "Register der laufenden und abgeschlossenen Bürgerbegehren.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bürgerbeteiligungsverfahren sind öffentliche Vorgänge."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Digitalisierung",
+                    "description": "Strukturierung der Unterschriftenlisten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "dienstleistungsverzeichnis",
+              "level": 4,
+              "name": "Kommunales Dienstleistungsverzeichnis",
+              "color": "#2471a3",
+              "details": {
+                "description": "Katalog aller Verwaltungsdienstleistungen mit Zuständigkeiten und Gebühren.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Dienstleistungsportale verlangen Transparenz über Angebote."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Standardisierung",
+                    "description": "Alignment mit XZuFi-Standard"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sprechzeiten-kontakte",
+              "level": 4,
+              "name": "Öffnungszeiten & Kontaktdaten",
+              "color": "#2471a3",
+              "details": {
+                "description": "Aktuelle Öffnungszeiten aller Dienststellen inkl. Online-Dienste.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Keine personenbezogenen Daten, rein organisatorische Info."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aktualisierung",
+                    "description": "Automatische Synchronisation mit CMS"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "beschwerdemanagement-stats",
+              "level": 4,
+              "name": "Beschwerdemanagement-Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anonymisierte Auswertung von Bürgeranfragen und Beschwerden.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rohdaten personenbezogen; Statistiken nach Anonymisierung freigabefähig."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "k-Anonymität vor Veröffentlichung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "verwaltungsgebühren",
+              "level": 4,
+              "name": "Gebührenordnung & Tarife",
+              "color": "#2471a3",
+              "details": {
+                "description": "Vollständige Gebührenübersicht aller kommunalen Verwaltungsleistungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gebührenordnungen sind kommunalrechtlich transparent zu gestalten."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Standardisierung",
+                    "description": "Strukturierung nach Gebührentatbeständen"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "stadtverwaltung-immobilien",
+          "level": 3,
+          "name": "Kommunale Liegenschaften & Vergabe",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "kommunale-liegenschaften",
+              "level": 4,
+              "name": "Kommunales Liegenschaftsverzeichnis",
+              "color": "#2471a3",
+              "details": {
+                "description": "Kataster der kommunalen Grundstücke und Gebäude mit Nutzungsart.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Teilweise schutzwürdige Sicherheitsinformationen zu Behördengebäuden."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_06",
+                    "label": "Shapefile"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Geodatenverarbeitung",
+                    "description": "Verknüpfung mit Katasterdaten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vergabebekanntmachungen",
+              "level": 4,
+              "name": "Vergabebekanntmachungen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Bekanntmachungen öffentlicher Ausschreibungen und Auftragsvergaben.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EU-Vergaberecht verlangt Transparenz über Ausschreibungen."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Strukturierung",
+                    "description": "Mapping auf OCDS-Standard (Open Contracting Data Standard)"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "foerderprogramme",
+              "level": 4,
+              "name": "Kommunale Förderprogramme",
+              "color": "#2471a3",
+              "details": {
+                "description": "Übersicht der Förderprogramme für Bürger und Unternehmen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Förderrichtlinien sind öffentliche Dokumente."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Jährliche Mittelabrufe und Bewilligungsquoten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "energieverbrauch-gebaeude",
+              "level": 4,
+              "name": "Energieverbrauch kommunaler Gebäude",
+              "color": "#2471a3",
+              "details": {
+                "description": "Energiedaten (Strom, Wärme, Wasser) der Liegenschaften.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Keine personenbezogenen Daten; Klimaberichterstattung erfordert Transparenz."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Messung",
+                    "description": "Smart-Meter-Auslesung und Aggregation je Gebäude"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bauleitplanung-status",
+              "level": 4,
+              "name": "Bauleitplanung-Status",
+              "color": "#2471a3",
+              "details": {
+                "description": "Stand aller laufenden und abgeschlossenen Bauleitplanverfahren.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bauleitpläne unterliegen gesetzlicher Auslegungspflicht."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Geodatenverarbeitung",
+                    "description": "Vektorisierung der Planzeichnungen"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "buergeramt",
+      "level": 2,
+      "name": "Bürgeramt & Bürgerservice",
+      "color": "#2980b9",
+      "children": [
+        {
+          "id": "buergeramt-meldewesen",
+          "level": 3,
+          "name": "Meldewesen & Ausweise",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "meldestatistik",
+              "level": 4,
+              "name": "Meldestatistik (aggregiert)",
+              "color": "#2471a3",
+              "details": {
+                "description": "Statistische Auswertungen von An-, Ab- und Ummeldungen nach Stadtteil.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Bewegungsstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Räumliche Aggregation auf Stadtteilebene; Mikrodaten gesperrt"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bevoelkerungsfortschreibung",
+              "level": 4,
+              "name": "Bevölkerungsfortschreibung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Quartalsmäßige Fortschreibung der Einwohnerzahlen nach Alter und Geschlecht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bevölkerungsstatistik ist standardmäßig offene Verwaltungsdaten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Altersstrukturanalyse; Kleinräumige Auflösung ≥ 500 Einwohner"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "staatsangehoerigkeiten-stat",
+              "level": 4,
+              "name": "Staatsangehörigkeitsstatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Verteilung der Staatsangehörigkeiten der gemeldeten Personen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Statistik; kein Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Zusammenfassung kleiner Gruppen (<5) in 'Sonstige'"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ausweis-wartezeiten",
+              "level": 4,
+              "name": "Wartezeiten Personalausweis/Reisepass",
+              "color": "#2471a3",
+              "details": {
+                "description": "Durchschnittliche Bearbeitungszeiten und Warteschlangendaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Verwaltungsleistungsstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Messung",
+                    "description": "Automatische Zeiterfassung über Terminsystem"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sterbefaelle-geburten",
+              "level": 4,
+              "name": "Sterbefälle und Geburten (Statistik)",
+              "color": "#2471a3",
+              "details": {
+                "description": "Monatliche Statistik zu Geburten, Sterbefällen und Eheschließungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Vitaldaten sind standardmäßige Verwaltungsstatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Monatliche Aggregation; Einzeldaten im Standesamt verschlossen"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "buergeramt-onlinedienste",
+          "level": 3,
+          "name": "Online-Dienste & Digitalisierung",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "online-nutzungsrate",
+              "level": 4,
+              "name": "Online-Nutzungsrate kommunaler Dienste",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anteil der online abgewickelten Verwaltungsleistungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Keine personenbezogenen Daten; Digitalisierungsmonitoring."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Messung",
+                    "description": "Log-Auswertung des Bürgerportals"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "terminsystem-auslastung",
+              "level": 4,
+              "name": "Terminsystem-Auslastung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Buchungsquoten und Kapazitätsauslastung des Online-Terminbuchungssystems.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Kapazitätsdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Tagesgenaue Auslastungsberichte"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "digitale-antragszahlen",
+              "level": 4,
+              "name": "Digitale Antragszahlen je Leistung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Monatliche Anzahl digitaler Anträge nach Leistungsart.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Dienstleistungsstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Monatliche Aggregation nach OZG-Leistungen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "barrierfreiheit-bewertung",
+              "level": 4,
+              "name": "Barrierefreiheitsbewertung Online-Dienste",
+              "color": "#2471a3",
+              "details": {
+                "description": "Ergebnis der WCAG-Konformitätsprüfungen kommunaler Webdienste.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Transparenz über digitale Barrierefreiheit ist gesetzlich vorgeschrieben."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Prüfung",
+                    "description": "Automatisiertes Accessibility-Scanning"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "digitalisierungsindex",
+              "level": 4,
+              "name": "Kommunaler Digitalisierungsindex",
+              "color": "#2471a3",
+              "details": {
+                "description": "Selbstbewertung der digitalen Reife nach Handlungsfeldern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Benchmarking-Daten sind öffentliche Steuerungsinformation."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Standardisierung",
+                    "description": "Alignment mit Digitalisierungsindex DESI auf Kommunalebene"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "buergeramt-sozialleistungen",
+          "level": 3,
+          "name": "Sozialleistungen & Unterstützung",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "wohngeld-statistik",
+              "level": 4,
+              "name": "Wohngeld-Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl der Wohngeld-Anträge und -Bewilligungen nach Stadtbezirk.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Förderstatistik ohne Einzelfallbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Räumliche Aggregation auf Stadtteilebene"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "unterhaltsvorschuss-stat",
+              "level": 4,
+              "name": "Unterhaltsvorschuss-Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Fallzahlen und Rückholquoten beim Unterhaltsvorschuss.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Verwaltungsstatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Keine Einzelfallpublikation"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "elterngeld-antraege",
+              "level": 4,
+              "name": "Elterngeld-Antragsstatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Monatliche Antragszahlen und Bearbeitungsdauer Elterngeld.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Leistungsstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Quartalsaggregation nach Bezugsdauer und Inanspruchnahme"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wohnungslosigkeit-stats",
+              "level": 4,
+              "name": "Wohnungslosigkeits-Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Erfasste Fälle von Wohnungslosigkeit und kommunale Hilfsangebote.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Sensible Sozialstatistik; nach Anonymisierung freigabefähig."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Mindestaggregation auf PLZ-Ebene; kein Einzelfallbezug"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "beratungsstellen-nutzung",
+              "level": 4,
+              "name": "Nutzungsstatistik Beratungsstellen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Inanspruchnahme kommunaler Beratungsangebote (Schuldner-, Suchtberatung etc.).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rückschlüsse auf Personen bei kleinen Stichproben möglich."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Zusammenfassung von Beratungstypen; kein Personenbezug"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "schulamt",
+      "level": 2,
+      "name": "Schulamt & Schulverwaltung",
+      "color": "#2980b9",
+      "children": [
+        {
+          "id": "schulamt-schulentwicklung",
+          "level": 3,
+          "name": "Schulentwicklung & Planung",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "schulentwicklungsplan",
+              "level": 4,
+              "name": "Schulentwicklungsplan",
+              "color": "#2471a3",
+              "details": {
+                "description": "Mittelfristige Planung von Schulstandorten, Kapazitäten und Schularten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Schulentwicklungspläne sind öffentliche Planungsdokumente."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Geodatenverarbeitung",
+                    "description": "Einzugsgebietsanalyse mit GIS"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schuelerprognosen",
+              "level": 4,
+              "name": "Schülerprognosen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Modellbasierte Prognosen der Schülerzahlen nach Schulform und Stadtteil.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Planungsdaten; keine Personendaten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Modellierung",
+                    "description": "Demografiebasierte Prognosemodelle"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ganztags-versorgungsquote",
+              "level": 4,
+              "name": "Ganztagesversorgungsquote",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anteil der Schüler mit Ganztagesplatz nach Schulform und Stadtteil.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Versorgungsquote ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Jährliche Aggregation nach Schuljahr"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "inklusion-quote",
+              "level": 4,
+              "name": "Inklusionsquote",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anteil der Schüler mit sonderpädagogischem Förderbedarf in Regelschulen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bildungsstatistik ohne Einzelfallbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Schuljährliche Auswertung nach Förderschwerpunkt"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schulsozialarbeit-stats",
+              "level": 4,
+              "name": "Schulsozialarbeit-Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Fallzahlen und Interventionen der Schulsozialarbeit.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einzelfälle personenbezogen; Aggregat freigabefähig."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Schulweite Aggregation; keine Personenmerkmale"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "schulamt-ausstattung",
+          "level": 3,
+          "name": "Schulausstattung & IT",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "geraete-ausstattung",
+              "level": 4,
+              "name": "Geräteausstattung Schulen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl digitaler Endgeräte je Schüler nach Schule.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Ausstattungsstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Inventur",
+                    "description": "Jährliche Bestandserhebung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "breitband-schulen",
+              "level": 4,
+              "name": "Breitbandanbindung Schulen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Internetgeschwindigkeit und Anschlussart je Schulstandort.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Infrastrukturdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Messung",
+                    "description": "Regelmäßige Speedtests und ISP-Reporting"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lernmittelfreiheit",
+              "level": 4,
+              "name": "Lernmittelfreiheit-Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Inanspruchnahme der Lernmittelfreiheit nach Einkommensstufe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Sozialstatistik der Bildungsförderung."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Schuljährliche Aggregation"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "it-wartung-kosten",
+              "level": 4,
+              "name": "IT-Wartungskosten Schulen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Ausgaben für IT-Wartung, Lizenzen und Support je Schule.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kostenstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Jährliche Ausgabenerfassung je Schulstandort"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schulcloud-nutzung",
+              "level": 4,
+              "name": "Schulcloud-Nutzungsstatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Aktivitätsdaten der kommunalen Lernplattform (anonymisiert).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Nutzungslogs nach Anonymisierung freigabefähig."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Session-Aggregation ohne Nutzerbezug"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "schulamt-personal",
+          "level": 3,
+          "name": "Schulpersonal & Versorgung",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "lehrkraefte-versorgung",
+              "level": 4,
+              "name": "Lehrkräfteversorgung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Stellenbesetzungsquote und Unterrichtsversorgung je Schulform.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Personalstatistik ohne Einzelpersonenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Schuljährliche Auswertung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schulverpflegung-stats",
+              "level": 4,
+              "name": "Schulverpflegungsstatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl ausgegeber Mittagessen und Nutzungsquoten nach Schule.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Verpflegungsstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Tagesgenaue Zählung und Monatsaggregation"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vertretungsquote",
+              "level": 4,
+              "name": "Vertretungsunterricht-Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anteil des Vertretungsunterrichts am Gesamtunterricht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Unterrichtsstatistik."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Wochengenaue Erhebung und Monatsaggregation"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "foerderbedarf-typen",
+              "level": 4,
+              "name": "Sonderpädagogische Förderbedarfe",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl der Schüler nach Förderschwerpunkt (aggregiert nach Schulform).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Bildungsstatistik; kein Einzelfallbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Mindestaggregation 5 Schüler pro Kategorie"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schulwegelaenge",
+              "level": 4,
+              "name": "Schulweglängenstatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Mittlere Schulwegdistanz nach Schulform und Stadtteil.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Geodaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Geodatenverarbeitung",
+                    "description": "Routenberechnung aus aggregierten Wohnstandortzonen"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kaemmerei",
+      "level": 2,
+      "name": "Kämmerei & Kommunalfinanzen",
+      "color": "#2980b9",
+      "children": [
+        {
+          "id": "kaemmerei-haushalt",
+          "level": 3,
+          "name": "Haushalt & Rechnungswesen",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "jahresabschluss",
+              "level": 4,
+              "name": "Kommunaler Jahresabschluss",
+              "color": "#2471a3",
+              "details": {
+                "description": "Ergebnis- und Finanzrechnung, Bilanz der Kommune.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gemeindehaushalte unterliegen kraft Gemeindeordnung der Offenlegungspflicht."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Rechnungswesen",
+                    "description": "Doppisches Buchhaltungssystem nach NKF/NKHR"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "haushaltsdurchfuehrung",
+              "level": 4,
+              "name": "Haushaltsdurchführung (Quartalsberichte)",
+              "color": "#2471a3",
+              "details": {
+                "description": "Vergleich von Ansatz und Ist-Ausgaben nach Produktbereichen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Haushaltsvollzugsberichte sind öffentliche Steuerungsdokumente."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Quartalsaggregation nach Produktplan"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kassenkredite",
+              "level": 4,
+              "name": "Kassenkredite und Liquidität",
+              "color": "#2471a3",
+              "details": {
+                "description": "Inanspruchnahme von Kassenkrediten und Liquiditätsentwicklung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Finanzierungsdaten der Kommunen sind transparenz-pflichtig."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Berechnung",
+                    "description": "Tagesaktuelle Liquiditätsplanung im Rechnungssystem"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "steuern-einnahmen",
+              "level": 4,
+              "name": "Steuereinnahmen nach Steuerart",
+              "color": "#2471a3",
+              "details": {
+                "description": "Einnahmen aus Gewerbesteuer, Grundsteuer und Gemeindeanteil ESt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Steuerstatistik auf aggregierter Gemeindeebene ohne Steuerpflichtigenbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Jährliche Steuerstatistik aus Steuermessbetragsdaten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hebesaetze",
+              "level": 4,
+              "name": "Hebesätze Grundsteuer & Gewerbesteuer",
+              "color": "#2471a3",
+              "details": {
+                "description": "Aktuelle Hebesätze der kommunalen Realsteuern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Hebesätze sind öffentliche Verwaltungsakte."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Standardisierung",
+                    "description": "Bundesweiter Hebesatzvergleich via Destatis-Format"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "kaemmerei-schulden",
+          "level": 3,
+          "name": "Schulden & Beteiligungen",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "kommunalschulden",
+              "level": 4,
+              "name": "Kommunalschuldenstand",
+              "color": "#2471a3",
+              "details": {
+                "description": "Gesamtschulden der Kommune nach Schuldenart.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kommunale Schuldenstatistik wird jährlich an Destatis gemeldet."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Meldung",
+                    "description": "Jährliche Schuldenmeldung nach §71a GO"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "beteiligungsbericht",
+              "level": 4,
+              "name": "Beteiligungsbericht",
+              "color": "#2471a3",
+              "details": {
+                "description": "Jährlicher Bericht über kommunale Unternehmens- und Eigenbetriebsbeteiligungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Beteiligungsberichte sind nach Gemeindeordnungen offenzulegen."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Konsolidierung der Jahresabschlüsse der Beteiligungsunternehmen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zinsausgaben",
+              "level": 4,
+              "name": "Zinsausgaben und Tilgungsplan",
+              "color": "#2471a3",
+              "details": {
+                "description": "Zins- und Tilgungsplan für aufgenommene Darlehen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Keine personenbezogenen Daten; Haushaltstransparenz."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Berechnung",
+                    "description": "Annuitätenberechnung aus Kreditverträgen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gewerbesteuer-hebesatz-hist",
+              "level": 4,
+              "name": "Gewerbesteuer-Hebesatz Historik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Historische Entwicklung des Gewerbesteuerhebesatzes.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Historische Steuerdaten ohne Steuerpflichtigenbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Archivierung",
+                    "description": "Langzeitarchiv der Ratsbeschlüsse zu Hebesatzänderungen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "investitionsplan",
+              "level": 4,
+              "name": "Mehrjähriger Investitionsplan",
+              "color": "#2471a3",
+              "details": {
+                "description": "Geplante Investitionen nach Produktbereichen für die nächsten 5 Jahre.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Mehrjährige Finanzplanung ist öffentliches Steuerungsinstrument."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Planung",
+                    "description": "Abgleich mit Fördermittelprogrammen"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "kaemmerei-steuern",
+          "level": 3,
+          "name": "Steuern & Abgaben",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "grundsteuerkataster",
+              "level": 4,
+              "name": "Grundsteuerkataster (aggregiert)",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl der Grundsteuerobjekte und Gesamtmessbeträge je Stadtteil.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einzelobjekte personenbezogen; Stadtteilaggregat freigabefähig."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Aggregation auf Stadtteilebene; kein Einzelgrundstücksbezug"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hundesteuer-stats",
+              "level": 4,
+              "name": "Hundesteuer-Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl gemeldeter Hunde und Steueraufkommen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Steuerstatistik ohne Hundehalterbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Jahresgenaue Auszählung aus Steuerregister"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vergnuegungssteuer",
+              "level": 4,
+              "name": "Vergnügungssteuerstatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Einnahmen aus der Vergnügungssteuer nach Veranstaltungsart.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Steuerstatistik ohne Betreiberbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Jährliche Auswertung nach Steuertatbestand"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "beitraege-erschliessung",
+              "level": 4,
+              "name": "Erschließungsbeiträge",
+              "color": "#2471a3",
+              "details": {
+                "description": "Einnahmen aus Erschließungsbeiträgen nach Baugebiet.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einzelne Beitragsbescheide personenbezogen; Gebietsaggregat freigabefähig."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Aggregation auf Erschließungsgebiet; kein Eigentümerbezug"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gebuehrendeckungsgrad",
+              "level": 4,
+              "name": "Gebührendeckungsgrad",
+              "color": "#2471a3",
+              "details": {
+                "description": "Verhältnis von Gebühreneinnahmen zu Vollkosten je Dienstleistungsbereich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kostendeckungsnachweis ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Berechnung",
+                    "description": "Kostenrechnung nach LRHG"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jugendamt",
+      "level": 2,
+      "name": "Jugendamt & Kinder-/Jugendhilfe",
+      "color": "#2980b9",
+      "children": [
+        {
+          "id": "jugendamt-kita",
+          "level": 3,
+          "name": "Kita & Tagespflege",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "kita-platzbedarf",
+              "level": 4,
+              "name": "Kita-Platzbedarfsplanung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Versorgungsquoten und Wartelistenstatistik für Kita-Plätze.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Versorgungsplanung ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Geodatenverarbeitung",
+                    "description": "Einzugsgebietsanalyse für Kita-Standortplanung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kita-traeger",
+              "level": 4,
+              "name": "Kita-Trägerstruktur",
+              "color": "#2471a3",
+              "details": {
+                "description": "Übersicht der Kita-Träger (öffentlich/freie Träger) nach Standort.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Strukturdaten der Kindertagesbetreuung sind öffentlich."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Standardisierung",
+                    "description": "Mapping auf KiTa-Datensatz des BMFSFJ"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "tagespflege-stats",
+              "level": 4,
+              "name": "Tagespflegepersonen-Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl und Qualifikation der zugelassenen Tagespflegepersonen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Betreuungsstatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Jährliche Auswertung nach Qualifikationsstufe"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "betreuungsquote-u3",
+              "level": 4,
+              "name": "Betreuungsquote U3",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anteil der betreuten Kinder unter 3 Jahren an der Altersgruppe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Standard-Indikator der Kinder- und Jugendhilfe."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Quartalsaggregation nach Stadtteil und Trägerart"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kita-kosten",
+              "level": 4,
+              "name": "Kita-Kosten und Elternbeiträge",
+              "color": "#2471a3",
+              "details": {
+                "description": "Durchschnittliche Kita-Kosten und Elternbeitragssätze nach Einkommensgruppe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Tarifdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Standardisierung",
+                    "description": "Alignment mit Kita-Beitragsvergleich der Bertelsmann-Stiftung"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "jugendamt-hilfen",
+          "level": 3,
+          "name": "Hilfen zur Erziehung",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "hze-statistik",
+              "level": 4,
+              "name": "HzE-Fallzahlen (aggregiert)",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl der Hilfen zur Erziehung nach §§27ff. SGB VIII nach Hilfeform.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte KJH-Statistik; Einzelfälle gesperrt."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Keine Einzelfallpublikation; mindestens 5 Fälle pro Zelle"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "familiengerichtshilfe",
+              "level": 4,
+              "name": "Familiengerichtshilfe-Fälle",
+              "color": "#2471a3",
+              "details": {
+                "description": "Fallzahlen der Mitwirkung in Familiensachen nach §50 SGB VIII.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Fallzahl ohne Familienbezug."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Jährliche Auswertung nach Verfahrenstyp"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kindeswohlgefaehrdungen",
+              "level": 4,
+              "name": "Kindeswohlgefährdungsmeldungen (8a)",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl der Meldungen und Einschätzungen nach §8a SGB VIII.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Sensible Kinderschutzdaten; nur nach strenger Anonymisierung."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Regionale Aggregation; keine Einzelfallpublikation"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "jugendhilfe-kosten",
+              "level": 4,
+              "name": "Jugendhilfe-Ausgaben",
+              "color": "#2471a3",
+              "details": {
+                "description": "Gesamtausgaben nach Leistungsart und Träger.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Finanzstatistik ohne Familienbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Jährliche Kostenauswertung nach §98 SGB VIII"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflegefamilien-stats",
+              "level": 4,
+              "name": "Pflegefamilien-Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl der Pflegefamilien und Pflegekinder.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Statistik; keine Einzel-Identifikation möglich."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Mindestaggregation 3 Pflegefamilien pro Zelle"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "jugendamt-praevention",
+          "level": 3,
+          "name": "Prävention & Jugendarbeit",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "jugendeinrichtungen",
+              "level": 4,
+              "name": "Jugendeinrichtungen & Treffs",
+              "color": "#2471a3",
+              "details": {
+                "description": "Geodaten aller kommunalen Jugendeinrichtungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Infrastrukturstandorte ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Geodatenverarbeitung",
+                    "description": "Digitalisierung der Standorte mit Öffnungszeiten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "jugendarbeit-teilnahme",
+              "level": 4,
+              "name": "Jugendarbeit-Teilnahmestatistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl der Jugendlichen in offener Jugendarbeit nach Einrichtungstyp.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Besucherstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Monatliche Besuchererfassung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schulsozialarbeit-plaetze",
+              "level": 4,
+              "name": "Schulsozialarbeiter-Stellen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl und Stellenumfang der Schulsozialarbeit je Schule.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Personalstrukturstatistik ohne Einzelpersonenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Jährliche Stellenübersicht"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "suchtpraevention-massnahmen",
+              "level": 4,
+              "name": "Suchtpräventions-Maßnahmen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Durchgeführte Suchtpräventionskurse und Teilnehmerzahlen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Maßnahmenstatistik."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Jahresbericht Suchtprävention"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "jugendbeteiligung-formate",
+              "level": 4,
+              "name": "Jugendbeteiligungsformate",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl der Jugendforen, -parlamente und Beteiligungsverfahren.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Demokratiestatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Dokumentation",
+                    "description": "Protokolle und Teilnehmerzahlen ohne Namensnennung"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sozialamt",
+      "level": 2,
+      "name": "Sozialamt & Soziale Grundsicherung",
+      "color": "#2980b9",
+      "children": [
+        {
+          "id": "sozialamt-grundsicherung",
+          "level": 3,
+          "name": "Grundsicherung & Sozialhilfe",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "sgb12-fallzahlen",
+              "level": 4,
+              "name": "SGB XII Fallzahlen",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl der Leistungsempfänger nach SGB XII (Sozialhilfe, Grundsicherung).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Sozialstatistik; Einzelfälle gesperrt."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Mindestaggregation 5 Fälle pro Zelle"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sozialhilfe-ausgaben",
+              "level": 4,
+              "name": "Sozialhilfe-Ausgaben",
+              "color": "#2471a3",
+              "details": {
+                "description": "Ausgaben nach Hilfearten (§§37-74 SGB XII) und Träger.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Finanzstatistik; keine Empfängerdaten."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Jährliche Ausgabenauswertung nach Leistungskapitel"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "eingliederungshilfe",
+              "level": 4,
+              "name": "Eingliederungshilfe-Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Fallzahlen und Leistungsarten der Eingliederungshilfe nach SGB IX.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Statistik; Einzelfälle nicht rekonstruierbar."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Mindestaggregation; Alters- und Geschlechtsmerkmale ohne Namenbezug"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflegewohngeld",
+              "level": 4,
+              "name": "Pflegewohngeld-Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl der Pflegewohngeld-Empfänger und Ausgaben.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Förderstatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Quartalsaggregation nach Pflegeeinrichtungstyp"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "rueckforderungen",
+              "level": 4,
+              "name": "Rückforderungsquote Sozialhilfe",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anteil erstatteter Sozialhilfeleistungen durch Erben und Unterhaltspflichtige.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Rückholquote ohne Einzelfallbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Berechnung",
+                    "description": "Jährliche Auswertung aus Buchungsystem"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "sozialamt-pflege",
+          "level": 3,
+          "name": "Pflegeinfrastruktur",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "pflegeeinrichtungen",
+              "level": 4,
+              "name": "Pflegeeinrichtungen-Verzeichnis",
+              "color": "#2471a3",
+              "details": {
+                "description": "Geodaten aller stationären und ambulanten Pflegeeinrichtungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Infrastrukturstandorte ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Geodatenverarbeitung",
+                    "description": "Jährliche Aktualisierung aus Heimverzeichnis"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflegeplanung",
+              "level": 4,
+              "name": "Kommunale Pflegeplanung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Versorgungsbericht zur Pflegeinfrastruktur.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Planungsdokument ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bedarfsanalyse",
+                    "description": "Demografiebasierte Prognose des Pflegebedarfs"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflegequoten",
+              "level": 4,
+              "name": "Pflegequoten nach Altersgruppe",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anteil der Pflegebedürftigen an der Altersgruppe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Pflegestatistik."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Zweijährliche Pflegestatistik nach §109 SGB XI"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kurzzeitpflege-plaetze",
+              "level": 4,
+              "name": "Kurzzeitpflege-Plätze",
+              "color": "#2471a3",
+              "details": {
+                "description": "Verfügbare und belegte Kurzzeitpflegeplätze.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kapazitätsstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Messung",
+                    "description": "Monatliche Erhebung bei Einrichtungen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflegeberatung-nutzung",
+              "level": 4,
+              "name": "Pflegeberatungs-Nutzung",
+              "color": "#2471a3",
+              "details": {
+                "description": "Anzahl der Beratungsgespräche nach §7a SGB XI.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Beratungsstatistik."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Quartalsweise Auswertung aus Beratungssystem"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "sozialamt-integration",
+          "level": 3,
+          "name": "Integration & Teilhabe",
+          "color": "#3498db",
+          "children": [
+            {
+              "id": "migrantenberatung",
+              "level": 4,
+              "name": "Migrationsberatungs-Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Fallzahlen der allgemeinen Migrationsberatung (AMB).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Beratungsstatistik ohne Klientenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Keine personenidentifizierenden Merkmale"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "integrationskurse-stats",
+              "level": 4,
+              "name": "Integrationskurs-Statistik",
+              "color": "#2471a3",
+              "details": {
+                "description": "Teilnehmerzahlen und Abschlussquoten der kommunalen Integrationskurse.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Kursstatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Halbjährliche Auswertung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "behindertenbeauftragte",
+              "level": 4,
+              "name": "Barrierefreiheits-Monitoring",
+              "color": "#2471a3",
+              "details": {
+                "description": "Ergebnisse des kommunalen Barrierefreiheitsmonitorings.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Infrastruktur- und Prozessdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Prüfung",
+                    "description": "Jährliche Vor-Ort-Kontrollen und Onlineprüfung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "obdachlosenunterkuenfte",
+              "level": 4,
+              "name": "Obdachlosenunterkünfte-Kapazität",
+              "color": "#2471a3",
+              "details": {
+                "description": "Bettenzahl und Belegungsquote der kommunalen Obdachlosenunterkünfte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kapazitätsdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Messung",
+                    "description": "Tagesgenaue Belegungserfassung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sozialraumanalyse",
+              "level": 4,
+              "name": "Sozialraumanalyse",
+              "color": "#2471a3",
+              "details": {
+                "description": "Kleinräumige Sozialindikatorenanalyse nach Stadtbezirken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Indexwerte; keine Einzelpersonendaten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Indexbildung",
+                    "description": "Composite-Index aus 8-12 Sozialindikatoren je Stadtteil"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

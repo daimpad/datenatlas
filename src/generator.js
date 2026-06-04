@@ -1,4 +1,5 @@
 // ── Cross-Sector-Fusion-Generator ─────────────────────────────────────────────
+import { esc } from './utils.js';
 
 export const SECTOR_META = {
   staat:             { name: 'Staat & Verwaltung',       color: '#1e5799' },
@@ -8,10 +9,6 @@ export const SECTOR_META = {
   medien:            { name: 'Medien & Kultur',          color: '#be185d' },
   religion:          { name: 'Religionsgemeinschaften',  color: '#134e4a' },
 };
-
-// ── Scenario matrix ───────────────────────────────────────────────────────────
-// Each scenario defines two "arms" (a + b), each filtered by sector + theme or
-// object code. The generator picks one real L4 entry from each arm at random.
 
 export const SCENARIOS = [
   {
@@ -55,10 +52,10 @@ export const SCENARIOS = [
     b: { sector: 'wirtschaft',   theme: 'TH_04' },
   },
   {
-    id:    'medienspiegel-verwaltung',
+    id:    'medienspiegel-gesellschaft',
     title: 'Medienspiegel der Gesellschaft',
     icon:  '📰',
-    story: 'Medien beobachten gesellschaftliche Probleme und Wirtschaft täglich. Staatliche Sozialdaten messen dieselbe Realität in Statistiken. Zusammengeführt entsteht ein Spiegel: Wo berichtet die Öffentlichkeit über soziale Schieflagen, die in der Amtsstatistik längst sichtbar sind – und wo hinkt die Wahrnehmung der Realität hinterher?',
+    story: 'Medien beobachten gesellschaftliche Probleme täglich. Staatliche Sozialdaten messen dieselbe Realität in Statistiken. Zusammengeführt entsteht ein Spiegel: Wo berichtet die Öffentlichkeit über soziale Schieflagen, die in der Amtsstatistik längst sichtbar sind – und wo hinkt die Wahrnehmung der Realität hinterher?',
     a: { sector: 'medien', theme: 'TH_03' },
     b: { sector: 'staat',  theme: 'TH_03' },
   },
@@ -114,32 +111,114 @@ export const SCENARIOS = [
 
 // ── Filter logic ──────────────────────────────────────────────────────────────
 
-let _index    = [];
-let _ready    = false;
+let _index      = [];
+let _ready      = false;
 let _onNavigate = null;
+let _currentResult = null;
 
 export function initGenerator({ indexPromise, onNavigate }) {
   _onNavigate = onNavigate;
   indexPromise.then(idx => { _index = idx; _ready = true; });
+
+  const modal      = document.getElementById('gen-modal');
+  const closeBtn   = document.getElementById('gen-close');
+  const rollBtn    = document.getElementById('gen-roll-btn');
+  const triggerBtn = document.getElementById('gen-btn');
+
+  triggerBtn.addEventListener('click', () => {
+    modal.hidden = false;
+    triggerBtn.classList.add('active');
+    if (!_currentResult) _doRoll();
+  });
+
+  closeBtn.addEventListener('click', () => _close());
+  modal.addEventListener('click', e => { if (e.target === modal) _close(); });
+  rollBtn.addEventListener('click', () => _doRoll());
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) _close(); });
+
+  function _close() {
+    modal.hidden = true;
+    triggerBtn.classList.remove('active');
+  }
+}
+
+function _doRoll() {
+  const result   = document.getElementById('gen-result');
+  const rollIcon = document.getElementById('gen-roll-icon');
+
+  rollIcon.classList.remove('spinning');
+  void rollIcon.offsetWidth;
+  rollIcon.classList.add('spinning');
+  rollIcon.addEventListener('animationend', () => rollIcon.classList.remove('spinning'), { once: true });
+
+  if (!_ready) {
+    result.innerHTML = '<div class="gen-empty">Daten werden noch geladen…</div>';
+    return;
+  }
+
+  result.classList.add('rolling');
+
+  setTimeout(() => {
+    const r = roll();
+    if (r) {
+      _currentResult = r;
+      _renderResult(r);
+    } else {
+      result.innerHTML = '<div class="gen-empty">Kein passendes Szenario gefunden.</div>';
+    }
+    result.classList.remove('rolling');
+  }, 190);
+}
+
+function _renderResult({ scenario, entryA, entryB }) {
+  document.getElementById('gen-scenario-icon').textContent  = scenario.icon;
+  document.getElementById('gen-scenario-title').textContent = scenario.title;
+  document.getElementById('gen-story').textContent          = scenario.story;
+
+  const tilesEl = document.getElementById('gen-tiles');
+  tilesEl.innerHTML = buildTile(entryA, 'a') + '<div class="gen-connector">⚡</div>' + buildTile(entryB, 'b');
+
+  tilesEl.querySelectorAll('.gen-tile').forEach(el => {
+    el.addEventListener('click', () => {
+      const entry = el.dataset.side === 'a' ? entryA : entryB;
+      navigateToEntry(entry);
+    });
+  });
+}
+
+function buildTile(entry, side) {
+  const sectorId  = entry.breadcrumb[1]?.id ?? '';
+  const meta      = SECTOR_META[sectorId] ?? { name: sectorId, color: '#888' };
+  const pathParts = entry.breadcrumb
+    .filter(c => c.id != null && c.level >= 2 && c.level <= 3)
+    .map(c => c.name);
+  const pathStr   = pathParts.join(' · ');
+
+  return `<div class="gen-tile" data-side="${side}" style="border-color:${meta.color}20;border-left:4px solid ${meta.color};" tabindex="0" role="button">
+    <div class="gen-tile-sector">
+      <span class="gen-tile-dot" style="background:${meta.color}"></span>
+      <span class="gen-tile-sector-name">${esc(meta.name)}</span>
+    </div>
+    <div class="gen-tile-name">${esc(entry.tile.name)}</div>
+    <div class="gen-tile-path">${esc(pathStr)}</div>
+    <div class="gen-tile-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+  </div>`;
 }
 
 function pickFromIndex({ sector, theme, object }) {
   const pool = _index.filter(e => {
-    if (e.tile.level !== 4)                            return false;
-    if (e.breadcrumb[1]?.id !== sector)                return false;
-    if (theme  && e.tile.details?.theme?.code  !== theme)  return false;
-    if (object && e.tile.details?.object?.code !== object) return false;
+    if (e.tile.level !== 4)                                    return false;
+    if (e.breadcrumb[1]?.id !== sector)                        return false;
+    if (theme  && e.tile.details?.theme?.code  !== theme)      return false;
+    if (object && e.tile.details?.object?.code !== object)     return false;
     return true;
   });
   if (!pool.length) return null;
   return pool[Math.floor(Math.random() * pool.length)];
 }
 
-// Returns { scenario, entryA, entryB } or null if not ready / no match found
 export function roll() {
   if (!_ready || !_index.length) return null;
-
-  // Shuffle scenario order, then walk it until both arms yield a real match
   const shuffled = [...SCENARIOS].sort(() => Math.random() - 0.5);
   for (const scenario of shuffled) {
     const entryA = pickFromIndex(scenario.a);
@@ -150,5 +229,7 @@ export function roll() {
 }
 
 export function navigateToEntry(entry) {
+  document.getElementById('gen-modal').hidden = true;
+  document.getElementById('gen-btn').classList.remove('active');
   _onNavigate?.(entry);
 }

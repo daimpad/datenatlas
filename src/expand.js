@@ -1,3 +1,13 @@
+// ── Helpers ───────────────────────────────────────────────────────────────────
+
+function escHtml(s) {
+  return String(s ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
 // ── Constants ────────────────────────────────────────────────────────────────
 
 const SECTORS = [
@@ -159,7 +169,7 @@ function renderL2List() {
     card.className = `ex-l2-card ex-l2-${cls}`;
     card.dataset.id = node.id;
     card.innerHTML = `
-      <div class="ex-l2-name">${node.name}</div>
+      <div class="ex-l2-name">${escHtml(node.name)}</div>
       <div class="ex-l2-meta">${cnt} L4 · ${node.children?.length ?? 0} L3</div>
       <div class="ex-bar-wrap"><div class="ex-bar-fill ex-bar-${cls}" style="width:${Math.round(pct*100)}%"></div></div>`;
     card.addEventListener('click', () => selectL2(node, card));
@@ -345,7 +355,7 @@ function validatePaste() {
 
   let parsed;
   try { parsed = JSON.parse(raw); } catch (e) {
-    valOut.innerHTML = `<span class="ex-error">JSON-Fehler: ${e.message}</span>`;
+    valOut.innerHTML = `<span class="ex-error">JSON-Fehler: ${escHtml(e.message)}</span>`;
     return;
   }
 
@@ -360,12 +370,12 @@ function validatePaste() {
   const newIds      = new Set();
 
   parsed.forEach((node, i) => {
-    const idx = `#${i+1} "${node.name ?? '?'}"`;
+    const idx = `#${i+1} &quot;${escHtml(node.name ?? '?')}&quot;`;
 
     if (!node.id)           errors.push(`${idx}: fehlendes "id"`);
-    else if (!/^[a-z0-9-]+$/.test(node.id)) errors.push(`${idx}: id enthält ungültige Zeichen ("${node.id}")`);
-    else if (existingIds.has(node.id))       errors.push(`${idx}: id "${node.id}" bereits vorhanden`);
-    else if (newIds.has(node.id))            errors.push(`${idx}: id "${node.id}" doppelt im neuen Batch`);
+    else if (!/^[a-z0-9-]+$/.test(node.id)) errors.push(`${idx}: id enthält ungültige Zeichen ("${escHtml(node.id)}")`);
+    else if (existingIds.has(node.id))       errors.push(`${idx}: id "${escHtml(node.id)}" bereits vorhanden`);
+    else if (newIds.has(node.id))            errors.push(`${idx}: id "${escHtml(node.id)}" doppelt im neuen Batch`);
     else                                     newIds.add(node.id);
 
     if (node.level !== 4) errors.push(`${idx}: level muss 4 sein`);
@@ -379,23 +389,23 @@ function validatePaste() {
     if (!d.openness)    errors.push(`${idx}: fehlendes details.openness`);
     else {
       if (d.openness.code && !d.openness.class) errors.push(`${idx}: details.openness.code → muss "class" heißen`);
-      else if (!VALID_CODES.openness.has(d.openness.class)) errors.push(`${idx}: ungültiger openness.class "${d.openness.class}"`);
+      else if (!VALID_CODES.openness.has(d.openness.class)) errors.push(`${idx}: ungültiger openness.class "${escHtml(d.openness.class)}"`);
     }
     if (!d.theme?.code)        errors.push(`${idx}: fehlendes details.theme.code`);
-    else if (!VALID_CODES.theme.has(d.theme.code)) errors.push(`${idx}: ungültiger theme.code "${d.theme.code}"`);
+    else if (!VALID_CODES.theme.has(d.theme.code)) errors.push(`${idx}: ungültiger theme.code "${escHtml(d.theme.code)}"`);
     if (!d.object?.code)       errors.push(`${idx}: fehlendes details.object.code`);
-    else if (!VALID_CODES.object.has(d.object.code)) errors.push(`${idx}: ungültiger object.code "${d.object.code}"`);
+    else if (!VALID_CODES.object.has(d.object.code)) errors.push(`${idx}: ungültiger object.code "${escHtml(d.object.code)}"`);
     if (!d.granularity?.code)  errors.push(`${idx}: fehlendes details.granularity.code`);
-    else if (!VALID_CODES.granularity.has(d.granularity.code)) errors.push(`${idx}: ungültiger granularity.code "${d.granularity.code}"`);
+    else if (!VALID_CODES.granularity.has(d.granularity.code)) errors.push(`${idx}: ungültiger granularity.code "${escHtml(d.granularity.code)}"`);
 
     if (d.formats && !d.format) errors.push(`${idx}: "formats" → muss "format" (singular) heißen`);
     if (!Array.isArray(d.format) || d.format.length === 0) errors.push(`${idx}: details.format muss ein nicht-leeres Array sein`);
     else d.format.forEach((f, fi) => {
-      if (!VALID_CODES.format.has(f.code)) errors.push(`${idx}: ungültiger format[${fi}].code "${f.code}"`);
+      if (!VALID_CODES.format.has(f.code)) errors.push(`${idx}: ungültiger format[${fi}].code "${escHtml(f.code)}"`);
     });
 
     if (!d.license?.code) errors.push(`${idx}: fehlendes details.license.code`);
-    else if (!VALID_CODES.license.has(d.license.code)) errors.push(`${idx}: ungültiger license.code "${d.license.code}"`);
+    else if (!VALID_CODES.license.has(d.license.code)) errors.push(`${idx}: ungültiger license.code "${escHtml(d.license.code)}"`);
 
     if (typeof d.relevance !== 'number' || d.relevance < 1 || d.relevance > 10) warnings.push(`${idx}: details.relevance sollte 1–10 sein`);
     if (!Array.isArray(d.processes) || d.processes.length === 0) warnings.push(`${idx}: keine details.processes angegeben`);

@@ -139,6 +139,22 @@ async function restoreFromHash(hash) {
 const filterState = { openness: null };
 let filterOpen    = false;
 
+const _searchInputEl = document.getElementById('search-input');
+const _headerEl      = document.getElementById('header');
+
+function syncFilterToggleVisibility() {
+  const hasQuery = _headerEl.classList.contains('search-mode') && _searchInputEl.value.trim().length > 0;
+  filterToggle.hidden = !hasQuery;
+  if (!hasQuery && filterOpen) {
+    filterOpen = false;
+    filterToggle.classList.remove('active');
+    syncFilterBar();
+  }
+}
+
+_searchInputEl.addEventListener('input', syncFilterToggleVisibility);
+new MutationObserver(syncFilterToggleVisibility).observe(_headerEl, { attributes: true, attributeFilter: ['class'] });
+
 filterToggle.addEventListener('click', () => {
   filterOpen = !filterOpen;
   filterToggle.classList.toggle('active', filterOpen);
@@ -159,25 +175,37 @@ function setActiveChip(groupId, activeBtn) {
 }
 
 function syncFilterBar() {
-  const atL4 = currentLevel() === 4;
-  filterBar.hidden = !(filterOpen && atL4);
+  filterBar.hidden = !filterOpen;
 }
 
 function applyFilter() {
   syncFilterBar();
-  const atL4 = currentLevel() === 4;
-  if (!atL4 || filterState.openness === null) {
-    renderer.setDimmedIds(new Set());
-    filterCount.hidden = true;
-    return;
+  renderer.setDimmedIds(new Set());
+  filterCount.hidden = true;
+
+  if (filterState.openness === null) return;
+
+  // Filter search result items in the dropdown
+  const resultsEl = document.getElementById('search-results');
+  if (!resultsEl.hidden) {
+    let shown = 0, total = 0;
+    resultsEl.querySelectorAll('.sr-item').forEach(el => {
+      const dot = el.querySelector('.sr-dot');
+      // openness class is stored as data attribute by search renderer
+      const opClass = el.dataset.opClass;
+      const match = !opClass || opClass === filterState.openness;
+      el.hidden = !match;
+      total++;
+      if (match) shown++;
+    });
+    filterCount.textContent = `${shown} von ${total}`;
+    filterCount.hidden = false;
   }
-  const visible = state.currentTiles.filter(t => tileMatchesFilter(t));
-  renderer.setDimmedIds(new Set(
-    state.currentTiles.filter(t => !tileMatchesFilter(t)).map(t => t.id)
-  ));
-  filterCount.textContent = `${visible.length} von ${state.currentTiles.length}`;
-  filterCount.hidden = false;
 }
+
+document.getElementById('search-results').addEventListener('search-rendered', () => {
+  if (filterOpen) applyFilter();
+});
 
 function tileMatchesFilter(tile) {
   if (filterState.openness !== null &&

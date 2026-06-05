@@ -24,8 +24,6 @@ const errorRetry    = document.getElementById('error-retry');
 const btnBack       = document.getElementById('btn-back');
 const btnHome       = document.getElementById('btn-home');
 const breadcrumbEl  = document.getElementById('breadcrumb');
-const levelNumEl    = document.getElementById('level-number');
-const levelMaxEl    = document.getElementById('level-max');
 const tooltip       = document.getElementById('tooltip');
 const filterBar     = document.getElementById('filter-bar');
 const filterToggle  = document.getElementById('filter-toggle');
@@ -556,8 +554,6 @@ function updateChrome() {
 
   const lvlDisplay = Math.max(1, lvl);
   const maxDisplay = lvl <= 4 ? '4' : '∞';
-  levelNumEl.textContent = lvlDisplay;
-  levelMaxEl.textContent = lvl <= 4 ? '/ 4' : '/ ∞';
   lovNumber.textContent  = lvlDisplay;
   lovMax.textContent     = maxDisplay;
   btnBack.disabled = crumbs.length <= 1;

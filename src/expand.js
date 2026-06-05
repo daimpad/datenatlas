@@ -182,8 +182,8 @@ function selectL2(node, cardEl) {
   selectedL3 = null;
   document.querySelectorAll('.ex-l2-card').forEach(c => c.classList.remove('selected'));
   cardEl.classList.add('selected');
-  renderL3List(node);
   clearOutputs();
+  renderL3List(node);
 }
 
 function renderL3List(l2) {

@@ -137,7 +137,7 @@ async function loadSector(id) {
   statusEl.textContent = 'Lade Daten…';
   statusEl.className   = 'ex-status';
 
-  const base = import.meta.env.BASE_URL || './';
+  const base = import.meta.env?.BASE_URL ?? './';
   try {
     const res = await fetch(`${base}data/${currentSector.file}`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);

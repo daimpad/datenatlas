@@ -9,4 +9,12 @@ const buildHash = (() => {
 export default defineConfig({
   base: './',
   define: { __BUILD_HASH__: JSON.stringify(buildHash) },
+  build: {
+    rollupOptions: {
+      input: {
+        main:   'index.html',
+        expand: 'expand.html',
+      },
+    },
+  },
 });

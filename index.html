@@ -23,6 +23,12 @@
         <!-- populated by JS -->
       </nav>
 
+      <div id="level-badge" aria-label="Aktuelle Navigationstiefe">
+        <span class="level-label">Ebene</span>
+        <span id="level-number">1</span>
+        <span id="level-max" class="level-label">/ 4</span>
+      </div>
+
       <input id="search-input" type="text" placeholder="Datentyp suchen…" autocomplete="off" aria-label="Suche" />
 
       <button id="search-toggle" title="Suchen" aria-label="Suche öffnen">
@@ -37,17 +43,14 @@
         </svg>
       </button>
 
+      <button id="gen-btn" title="Datenkombinator"><i class="fa-solid fa-shuffle"></i> Datenkombinator</button>
+      <button id="open-data-btn" title="Schritt-für-Schritt: Daten als Open Data veröffentlichen">Daten öffnen →</button>
+
       <button id="share-btn" title="Link kopieren" aria-label="Link zu dieser Ansicht kopieren">
         <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
           <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z" fill="currentColor"/>
         </svg>
       </button>
-
-      <div id="level-badge">
-        <span class="level-label">Ebene</span>
-        <span id="level-number">1</span>
-        <span id="level-max" class="level-label">/ 4</span>
-      </div>
 
       <button id="export-btn" title="Als CSV exportieren" aria-label="Aktuelle Daten als CSV exportieren">
         <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
@@ -56,7 +59,7 @@
         </svg>
       </button>
 
-      <button id="stats-btn" title="Statistik-Dashboard" aria-label="Öffnungsklassen-Statistik anzeigen">
+      <button id="stats-btn" title="Öffnungsklassenstatistik" aria-label="Öffnungsklassen-Statistik anzeigen">
         <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
           <rect x="2" y="10" width="4" height="12" rx="1" fill="currentColor"/>
           <rect x="9" y="5" width="4" height="17" rx="1" fill="currentColor"/>
@@ -64,11 +67,7 @@
         </svg>
       </button>
 
-      <button id="info-btn" title="Über den Datenatlas" aria-label="Infos und Hilfe öffnen">
-        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
-          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
-        </svg>
-      </button>
+      <button id="info-btn" title="Über den Datenatlas" aria-label="Infos und Hilfe öffnen">Mehr erfahren</button>
 
       <button id="more-btn" title="Menü" aria-label="Weitere Optionen" aria-haspopup="dialog">
         <i class="fa-solid fa-ellipsis-vertical" aria-hidden="true"></i>
@@ -90,6 +89,13 @@
 
     <main id="map-wrap">
       <canvas id="map-canvas" aria-label="Isometrische Datenkarte"></canvas>
+
+      <div id="level-overlay" aria-hidden="true">
+        <span class="lov-label">Ebene</span>
+        <span id="lov-number">1</span>
+        <span class="lov-sep">/</span>
+        <span id="lov-max">4</span>
+      </div>
 
       <div id="loading-veil" hidden>
         <div class="spinner"></div>
@@ -249,28 +255,28 @@
         </div>
 
         <h3 class="ob-question">Welche Daten besitzt unsere Gesellschaft und wie offen könnten sie sein?</h3>
+        <p class="ob-body">Behörden, Unternehmen, NGOs und viele andere Organisationen sammeln täglich wertvolle Daten. Der Datenatlas macht sichtbar, welche Daten existieren und wie leicht sie sich als Open Data veröffentlichen ließen.</p>
 
         <div class="ob-legend-row">
           <div class="ob-legend-col">
-            <span class="ob-legend-label">Sektorfarben</span>
-            <div class="ob-sector-swatches">
-              <span class="ob-sw ob-sw--gradient" style="--g-from:#1a3461;--g-to:#2e6db4" title="Staat &amp; Verwaltung"></span>
-              <span class="ob-sw ob-sw--gradient" style="--g-from:#1c2f3e;--g-to:#2d7a9c" title="Wirtschaft"></span>
-              <span class="ob-sw ob-sw--gradient" style="--g-from:#2d1a6e;--g-to:#5e35b1" title="Wissenschaft"></span>
-              <span class="ob-sw ob-sw--gradient" style="--g-from:#4a1a8c;--g-to:#7c3aed" title="Zivilgesellschaft"></span>
-              <span class="ob-sw ob-sw--gradient" style="--g-from:#8b1248;--g-to:#db2777" title="Medien &amp; Kultur"></span>
-              <span class="ob-sw ob-sw--gradient" style="--g-from:#0a3d38;--g-to:#0d9488" title="Religionsgemeinschaften"></span>
+            <span class="ob-legend-label">Unterteilung nach Sektoren</span>
+            <div class="ob-openness-list">
+              <div class="ob-op-item"><span class="ob-sw ob-sw--gradient" style="--g-from:#1a3461;--g-to:#2e6db4"></span><span>Staat &amp; Verwaltung</span></div>
+              <div class="ob-op-item"><span class="ob-sw ob-sw--gradient" style="--g-from:#1c2f3e;--g-to:#2d7a9c"></span><span>Wirtschaft</span></div>
+              <div class="ob-op-item"><span class="ob-sw ob-sw--gradient" style="--g-from:#2d1a6e;--g-to:#5e35b1"></span><span>Wissenschaft &amp; Forschung</span></div>
+              <div class="ob-op-item"><span class="ob-sw ob-sw--gradient" style="--g-from:#4a1a8c;--g-to:#7c3aed"></span><span>Zivilgesellschaft</span></div>
+              <div class="ob-op-item"><span class="ob-sw ob-sw--gradient" style="--g-from:#8b1248;--g-to:#db2777"></span><span>Medien &amp; Kultur</span></div>
+              <div class="ob-op-item"><span class="ob-sw ob-sw--gradient" style="--g-from:#0a3d38;--g-to:#0d9488"></span><span>Religionsgemeinschaften</span></div>
             </div>
-            <span class="ob-legend-hint">Zeigen, zu welchem Sektor eine Kachel gehört</span>
           </div>
           <div class="ob-legend-col">
             <span class="ob-legend-label">Öffnungsklassen</span>
+            <span class="ob-legend-sub">Wie offen könnten Daten sein?</span>
             <div class="ob-openness-list">
-              <div class="ob-op-item"><span class="ol-dot" style="background:#27ae60"></span><span>Grün: sofort publizierbar</span></div>
-              <div class="ob-op-item"><span class="ol-dot" style="background:#d4a017"></span><span>Gelb: nach Aufbereitung</span></div>
-              <div class="ob-op-item"><span class="ol-dot" style="background:#c0392b"></span><span>Rot: nur Metadaten</span></div>
+              <div class="ob-op-item"><span class="ol-dot" style="background:#27ae60"></span><span>Grün: sofort als offene Daten publizierbar</span></div>
+              <div class="ob-op-item"><span class="ol-dot" style="background:#d4a017"></span><span>Gelb: nach Aufbereitung publizierbar</span></div>
+              <div class="ob-op-item"><span class="ol-dot" style="background:#c0392b"></span><span>Rot: nur Metadaten publizierbar</span></div>
             </div>
-            <span class="ob-legend-hint">Zeigen, wie offen Daten sein könnten</span>
           </div>
         </div>
 
@@ -299,8 +305,6 @@
         <a href="https://nozilla.de/datenschutz/" target="_blank" rel="noopener">Datenschutz</a>
         <a href="https://nozilla.de/kontakt/" target="_blank" rel="noopener">Kontakt</a>
       </nav>
-      <button id="gen-btn" title="Datenkombinator"><i class="fa-solid fa-shuffle"></i> Datenkombinator</button>
-      <button id="open-data-btn" title="Schritt-für-Schritt: Daten als Open Data veröffentlichen">Daten öffnen →</button>
       <a id="footer-brand" href="https://nozilla.de" target="_blank" rel="noopener">nozilla | bits &amp; bytes mit ❤</a>
       <span id="build-hash"></span>
     </footer>

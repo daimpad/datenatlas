@@ -75,6 +75,8 @@ export class IsometricRenderer {
     this._pulseT0  = 0;
     this._pulseDur = 260;
 
+    this.focused = null;    // keyboard-focused tile id
+
     this._resize();
     this._loop();
   }
@@ -157,6 +159,10 @@ export class IsometricRenderer {
     return { x: tx, y: ty + (this.H + this.D) / 2 };
   }
 
+  setFocused(id) {
+    if (this.focused !== id) { this.focused = id; this.dirty = true; }
+  }
+
   setDimmedIds(ids) {
     this._dimmed = ids;
     this.dirty   = true;
@@ -208,9 +214,10 @@ export class IsometricRenderer {
     for (const t of sorted) {
       const { tx, ty } = this._tilePos(t.col, t.row);
       if (!this._isVisible(tx, ty)) continue;
-      const pulse  = this._pulseFactor(t.id);
-      const dimmed = this._dimmed?.has(t.id) ?? false;
-      this._drawTile(ctx, tx, ty, t.color, t.name, t.id === this.hov && !dimmed, pulse, t.navigable, dimmed, t.gradient ?? null);
+      const pulse   = this._pulseFactor(t.id);
+      const dimmed  = this._dimmed?.has(t.id) ?? false;
+      const focused = t.id === this.focused && !dimmed;
+      this._drawTile(ctx, tx, ty, t.color, t.name, t.id === this.hov && !dimmed, pulse, t.navigable, dimmed, t.gradient ?? null, focused);
     }
 
     ctx.restore();
@@ -226,7 +233,7 @@ export class IsometricRenderer {
     return { tx, ty };
   }
 
-  _drawTile(ctx, tx, ty, color, label, hovered, pulse = 0, navigable = false, dimmed = false, gradient = null) {
+  _drawTile(ctx, tx, ty, color, label, hovered, pulse = 0, navigable = false, dimmed = false, gradient = null, focused = false) {
     const { W, H, D } = this;
 
     if (dimmed) {
@@ -302,6 +309,19 @@ export class IsometricRenderer {
       ctx.closePath();
       ctx.strokeStyle = rgba('#ffffff', hovered ? 0.6 : pulse * 0.8);
       ctx.lineWidth = hovered ? 2 : 2.5;
+      ctx.stroke();
+    }
+
+    // ── Keyboard focus ring ──
+    if (focused) {
+      ctx.beginPath();
+      ctx.moveTo(tx,       ty - 3        );
+      ctx.lineTo(tx + W/2 + 3, ty + H/2  );
+      ctx.lineTo(tx,       ty + H + 3    );
+      ctx.lineTo(tx - W/2 - 3, ty + H/2  );
+      ctx.closePath();
+      ctx.strokeStyle = 'rgba(255,220,80,0.9)';
+      ctx.lineWidth = 2.5;
       ctx.stroke();
     }
 

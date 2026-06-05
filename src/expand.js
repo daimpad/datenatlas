@@ -19,50 +19,11 @@ const SECTORS = [
   { id: 'religion',          name: 'Religionsgemeinschaften',    file: 'sector_religion.json',          color: '#0a3d38' },
 ];
 
-const VOCAB = {
-  openness: [
-    { code: 'OP_01', label: 'Sofort publizierbar',           color: '#27ae60' },
-    { code: 'OP_02', label: 'Nach Aufbereitung publizierbar', color: '#d4a017' },
-    { code: 'OP_03', label: 'Nur Metadaten publizierbar',    color: '#c0392b' },
-  ],
-  theme: [
-    { code: 'TH_01', label: 'Gesundheit' },        { code: 'TH_02', label: 'Bildung' },
-    { code: 'TH_03', label: 'Soziales' },           { code: 'TH_04', label: 'Wirtschaft' },
-    { code: 'TH_05', label: 'Verwaltung' },         { code: 'TH_06', label: 'Umwelt' },
-    { code: 'TH_07', label: 'Finanzen' },           { code: 'TH_08', label: 'Recht' },
-    { code: 'TH_09', label: 'Natur/Biodiversität' },{ code: 'TH_10', label: 'Wissenschaft/Technik' },
-  ],
-  object: [
-    { code: 'OB_01', label: 'Personenbezogene Daten' }, { code: 'OB_02', label: 'Textdokumente' },
-    { code: 'OB_03', label: 'Finanzdaten' },             { code: 'OB_04', label: 'Messungen / Sensordaten' },
-    { code: 'OB_05', label: 'Geodaten' },                { code: 'OB_06', label: 'Mediendaten' },
-    { code: 'OB_07', label: 'Transaktionsdaten' },       { code: 'OB_08', label: 'Metadaten' },
-  ],
-  granularity: [
-    { code: 'GR_01', label: 'Einzelereignis / Rohdaten' }, { code: 'GR_02', label: 'Aggregiert' },
-    { code: 'GR_03', label: 'Kleinräumig (Stadtteil / Gemeinde)' }, { code: 'GR_04', label: 'Individuell / Mikrodaten' },
-  ],
-  format: [
-    { code: 'FT_01', label: 'CSV' },    { code: 'FT_02', label: 'JSON' },
-    { code: 'FT_03', label: 'NetCDF / HDF5' }, { code: 'FT_04', label: 'XML' },
-    { code: 'FT_05', label: 'GeoJSON' },{ code: 'FT_06', label: 'Shapefile' },
-  ],
-  license: [
-    { code: 'LI_01', label: 'CC0 / Public Domain' }, { code: 'LI_02', label: 'CC BY 4.0' },
-    { code: 'LI_03', label: 'Datenlizenz Deutschland' }, { code: 'LI_04', label: 'Proprietär / Restriktiv' },
-  ],
-};
-
 const MIN_L4 = 15;
 
-const VALID_CODES = {
-  openness:    new Set(['OP_01','OP_02','OP_03']),
-  theme:       new Set(['TH_01','TH_02','TH_03','TH_04','TH_05','TH_06','TH_07','TH_08','TH_09','TH_10']),
-  object:      new Set(['OB_01','OB_02','OB_03','OB_04','OB_05','OB_06','OB_07','OB_08']),
-  granularity: new Set(['GR_01','GR_02','GR_03','GR_04']),
-  format:      new Set(['FT_01','FT_02','FT_03','FT_04','FT_05','FT_06']),
-  license:     new Set(['LI_01','LI_02','LI_03','LI_04']),
-};
+// VOCAB and VALID_CODES are populated after vocabulary.json loads
+let VOCAB = {};
+let VALID_CODES = {};
 
 // ── State ────────────────────────────────────────────────────────────────────
 
@@ -111,6 +72,53 @@ mergeBtn.addEventListener('click',   mergeAndDownload);
 dlSrc.addEventListener('click',      downloadSource);
 dlCtx.addEventListener('click',      downloadContext);
 
+// Load shared vocabulary, then optionally pre-fill from URL params
+const base = import.meta.env?.BASE_URL ?? './';
+fetch(`${base}data/vocabulary.json`)
+  .then(r => r.json())
+  .then(vocab => {
+    VOCAB = vocab;
+    VALID_CODES = Object.fromEntries(
+      Object.entries(vocab).map(([k, items]) => [k, new Set(items.map(i => i.code))])
+    );
+    // Pre-fill from URL params: ?sector=staat&l2=some-id&l3=some-id
+    const params = new URLSearchParams(location.search);
+    const pSector = params.get('sector');
+    const pL2     = params.get('l2');
+    const pL3     = params.get('l3');
+    if (pSector) {
+      sectorSel.value = pSector;
+      loadSector(pSector).then(() => {
+        if (pL2) {
+          l2Sel.value = pL2;
+          selectL2ById(pL2);
+          if (pL3) {
+            l3Sel.value = pL3;
+            selectL3ById(pL3);
+          }
+        }
+      });
+    }
+  })
+  .catch(() => {
+    // vocabulary.json failed — fall back to hardcoded codes so validation still works
+    VOCAB = _VOCAB_FALLBACK;
+    VALID_CODES = _VALID_CODES_FALLBACK;
+  });
+
+// Fallback vocab in case vocabulary.json is unreachable (e.g. local file open)
+const _VOCAB_FALLBACK = {
+  openness:    [{ code:'OP_01',label:'Sofort publizierbar',color:'#27ae60'},{ code:'OP_02',label:'Nach Aufbereitung publizierbar',color:'#d4a017'},{ code:'OP_03',label:'Nur Metadaten publizierbar',color:'#c0392b'}],
+  theme:       [{ code:'TH_01',label:'Gesundheit'},{ code:'TH_02',label:'Bildung'},{ code:'TH_03',label:'Soziales'},{ code:'TH_04',label:'Wirtschaft'},{ code:'TH_05',label:'Verwaltung'},{ code:'TH_06',label:'Umwelt'},{ code:'TH_07',label:'Finanzen'},{ code:'TH_08',label:'Recht'},{ code:'TH_09',label:'Natur/Biodiversität'},{ code:'TH_10',label:'Wissenschaft/Technik'}],
+  object:      [{ code:'OB_01',label:'Personenbezogene Daten'},{ code:'OB_02',label:'Textdokumente'},{ code:'OB_03',label:'Finanzdaten'},{ code:'OB_04',label:'Messungen / Sensordaten'},{ code:'OB_05',label:'Geodaten'},{ code:'OB_06',label:'Mediendaten'},{ code:'OB_07',label:'Transaktionsdaten'},{ code:'OB_08',label:'Metadaten'}],
+  granularity: [{ code:'GR_01',label:'Einzelereignis / Rohdaten'},{ code:'GR_02',label:'Aggregiert'},{ code:'GR_03',label:'Kleinräumig (Stadtteil / Gemeinde)'},{ code:'GR_04',label:'Individuell / Mikrodaten'}],
+  format:      [{ code:'FT_01',label:'CSV'},{ code:'FT_02',label:'JSON'},{ code:'FT_03',label:'NetCDF / HDF5'},{ code:'FT_04',label:'XML'},{ code:'FT_05',label:'GeoJSON'},{ code:'FT_06',label:'Shapefile'}],
+  license:     [{ code:'LI_01',label:'CC0 / Public Domain'},{ code:'LI_02',label:'CC BY 4.0'},{ code:'LI_03',label:'Datenlizenz Deutschland'},{ code:'LI_04',label:'Proprietär / Restriktiv'}],
+};
+const _VALID_CODES_FALLBACK = Object.fromEntries(
+  Object.entries(_VOCAB_FALLBACK).map(([k, items]) => [k, new Set(items.map(i => i.code))])
+);
+
 // ── Data loading ─────────────────────────────────────────────────────────────
 
 async function loadSector(id) {
@@ -137,7 +145,6 @@ async function loadSector(id) {
   statusEl.textContent = 'Lade Daten…';
   statusEl.className   = 'ex-status';
 
-  const base = import.meta.env?.BASE_URL ?? './';
   try {
     const res = await fetch(`${base}data/${currentSector.file}`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -264,6 +271,15 @@ function generatePrompt() {
   const l3info  = selectedL3 ? '' : `\nBestehende L3-Aktivitäten in dieser L2:\n${
     (selectedL2.children || []).map(l3 => `  - ${l3.name} (${countL4(l3)} L4 vorhanden)`).join('\n')}`;
 
+  const vocabLines = Object.entries(VOCAB).map(([key, items]) => {
+    const label = {
+      openness:'Openness (details.openness.class)', theme:'Theme (details.theme.code)',
+      object:'Object (details.object.code)', granularity:'Granularity (details.granularity.code)',
+      format:'Format (details.format[].code)', license:'License (details.license.code)',
+    }[key] ?? key;
+    return `${label}:\n  ${items.map(i => `${i.code}=${i.label}`).join('  ')}`;
+  }).join('\n\n');
+
   const prompt = `Du bist ein Datenexperte für deutsche Verwaltung, Gesellschaft und Wissenschaft.
 
 AUFGABE:
@@ -280,29 +296,7 @@ ${ids.length ? ids.map(i => `  "${i}"`).join('\n') : '  (keine)'}
 
 VOKABULAR (nur diese Codes verwenden):
 
-Openness (details.openness.class):
-  OP_01 = Sofort publizierbar
-  OP_02 = Nach Aufbereitung publizierbar
-  OP_03 = Nur Metadaten publizierbar
-
-Theme (details.theme.code):
-  TH_01=Gesundheit  TH_02=Bildung  TH_03=Soziales  TH_04=Wirtschaft
-  TH_05=Verwaltung  TH_06=Umwelt   TH_07=Finanzen  TH_08=Recht
-  TH_09=Natur/Biodiversität  TH_10=Wissenschaft/Technik
-
-Object (details.object.code):
-  OB_01=Personenbezogene Daten  OB_02=Textdokumente  OB_03=Finanzdaten
-  OB_04=Messungen/Sensordaten   OB_05=Geodaten       OB_06=Mediendaten
-  OB_07=Transaktionsdaten       OB_08=Metadaten
-
-Granularity (details.granularity.code):
-  GR_01=Einzelereignis/Rohdaten  GR_02=Aggregiert  GR_03=Kleinräumig  GR_04=Mikrodaten
-
-Format (details.format[].code):
-  FT_01=CSV  FT_02=JSON  FT_03=NetCDF/HDF5  FT_04=XML  FT_05=GeoJSON  FT_06=Shapefile
-
-License (details.license.code):
-  LI_01=CC0/Public Domain  LI_02=CC BY 4.0  LI_03=Datenlizenz Deutschland  LI_04=Proprietär
+${vocabLines}
 
 PFLICHTSTRUKTUR (exakt so, kein Feld weglassen):
 {
@@ -412,7 +406,7 @@ function validatePaste() {
     if (!d.license?.code) errors.push(`${idx}: fehlendes details.license.code`);
     else if (!VALID_CODES.license.has(d.license.code)) errors.push(`${idx}: ungültiger license.code "${escHtml(d.license.code)}"`);
 
-    if (typeof d.relevance !== 'number' || d.relevance < 1 || d.relevance > 10) warnings.push(`${idx}: details.relevance sollte 1–10 sein`);
+    if (typeof d.relevance !== 'number' || d.relevance < 1 || d.relevance > 5) warnings.push(`${idx}: details.relevance sollte 1–5 sein`);
     if (!Array.isArray(d.processes) || d.processes.length === 0) warnings.push(`${idx}: keine details.processes angegeben`);
   });
 
@@ -476,7 +470,8 @@ function downloadSource() {
 function downloadContext() {
   if (!sectorData) return;
 
-  const vocabText = Object.entries(VOCAB).map(([key, items]) =>
+  const vocabSrc = Object.keys(VOCAB).length ? VOCAB : _VOCAB_FALLBACK;
+  const vocabText = Object.entries(vocabSrc).map(([key, items]) =>
     `### ${key}\n${items.map(i => `${i.code} = ${i.label}`).join('\n')}`
   ).join('\n\n');
 

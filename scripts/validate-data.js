@@ -12,18 +12,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // ---------------------------------------------------------------------------
-// Vocabulary code sets — easy to extend
+// Vocabulary code sets — loaded from shared vocabulary.json
 // ---------------------------------------------------------------------------
-const VOCAB = {
-  openness:    new Set(['OP_01', 'OP_02', 'OP_03']),
-  theme:       new Set(['TH_01', 'TH_02', 'TH_03', 'TH_04', 'TH_05',
-                        'TH_06', 'TH_07', 'TH_08', 'TH_09', 'TH_10']),
-  object:      new Set(['OB_01', 'OB_02', 'OB_03', 'OB_04',
-                        'OB_05', 'OB_06', 'OB_07', 'OB_08']),
-  granularity: new Set(['GR_01', 'GR_02', 'GR_03', 'GR_04']),
-  format:      new Set(['FT_01', 'FT_02', 'FT_03', 'FT_04', 'FT_05', 'FT_06']),
-  license:     new Set(['LI_01', 'LI_02', 'LI_03', 'LI_04']),
-};
+const _vocabRaw = JSON.parse(fs.readFileSync(
+  path.resolve(__dirname, '../public/data/vocabulary.json'), 'utf8'
+));
+const VOCAB = Object.fromEntries(
+  Object.entries(_vocabRaw).map(([key, items]) => [key, new Set(items.map(i => i.code))])
+);
 
 const HEX_COLOR_RE = /^#[0-9a-fA-F]{6}$/;
 const DATA_DIR = path.resolve(__dirname, '../public/data');

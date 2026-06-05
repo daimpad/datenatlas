@@ -83,6 +83,70 @@ mobileSheet.querySelectorAll('.ms-item[data-target]').forEach(btn => {
   });
 });
 
+// ── Canvas keyboard navigation ────────────────────────────────────────────────
+
+canvas.setAttribute('tabindex', '0');
+canvas.setAttribute('aria-label', 'Isometrische Karte – Navigationstasten: Pfeile, Enter, Escape');
+
+let _focusedId = null;
+
+function _setFocus(id) {
+  _focusedId = id;
+  renderer.setFocused(id);
+  if (id) {
+    const tile = state.currentTiles.find(t => t.id === id);
+    if (tile) openSidebar(tile, sidebarOpts(tile));
+  }
+}
+
+canvas.addEventListener('keydown', e => {
+  const tiles = state.currentTiles;
+  if (!tiles.length) return;
+
+  if (e.key === 'Escape') {
+    if (_focusedId) { _setFocus(null); closeSidebar(); }
+    else navigateBack();
+    e.preventDefault();
+    return;
+  }
+
+  if (e.key === 'Enter' || e.key === ' ') {
+    if (_focusedId) {
+      const tile = tiles.find(t => t.id === _focusedId);
+      if (tile) navigateDeeper(tile);
+    }
+    e.preventDefault();
+    return;
+  }
+
+  if (!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Tab'].includes(e.key)) return;
+  e.preventDefault();
+
+  // Determine grid layout from renderer
+  const cols  = renderer.cols;
+  const rows  = renderer.rows;
+  const total = tiles.length;
+
+  let idx = _focusedId ? tiles.findIndex(t => t.id === _focusedId) : -1;
+  if (idx < 0) idx = 0;
+  else {
+    const col = idx % cols;
+    const row = Math.floor(idx / cols);
+    if (e.key === 'ArrowRight' || e.key === 'Tab')       idx = Math.min(total - 1, idx + 1);
+    if (e.key === 'ArrowLeft'  || (e.key === 'Tab' && e.shiftKey)) idx = Math.max(0, idx - 1);
+    if (e.key === 'ArrowDown')  idx = Math.min(total - 1, (row + 1) * cols + col);
+    if (e.key === 'ArrowUp')    idx = Math.max(0,          (row - 1) * cols + col);
+  }
+
+  _setFocus(tiles[idx].id);
+});
+
+// Clear focus when canvas loses keyboard focus
+canvas.addEventListener('blur', () => {
+  _setFocus(null);
+  closeSidebar();
+});
+
 // ── Share / deep-link ─────────────────────────────────────────────────────────
 let _hashEnabled = false;
 let _shareTimer  = null;
@@ -117,29 +181,44 @@ async function restoreFromHash(hash) {
   if (!segments.length) return;
 
   const sectorTile = _mainTiles.find(t => t.id === segments[0]);
-  if (!sectorTile?.subFile) return;
+  if (!sectorTile?.subFile) {
+    showError(`Link ungültig: Sektor „${segments[0]}" nicht gefunden.`, navigateHome);
+    return;
+  }
 
   try {
     showLoading(true);
-    const sc = sectorTile.color;                          // sector color for L2/L3
+    const sc = sectorTile.color;
     const sectorData = await loadSector(sectorTile.id);
+    _indexSector(sectorTile, sectorData);
     const l2tiles = applyTileColors(sectorData.children ?? [], sc);
     state.breadcrumb.push({ id: sectorTile.id, name: sectorTile.name, level: 2, tiles: l2tiles, sectorColor: sc });
     if (segments.length === 1) { _finish(2, l2tiles); return; }
 
     const l2tile = l2tiles.find(t => t.id === segments[1]);
-    if (!l2tile?.children?.length) { _finish(2, l2tiles); return; }
+    if (!l2tile) {
+      _finish(2, l2tiles);
+      showError(`Eintrag „${segments[1]}" nicht gefunden — zeige Sektor.`, hideError);
+      return;
+    }
+    if (!l2tile.children?.length) { _finish(2, l2tiles); return; }
     const l3tiles = applyTileColors(l2tile.children, sc);
     state.breadcrumb.push({ id: l2tile.id, name: l2tile.name, level: 3, tiles: l3tiles, sectorColor: sc });
     if (segments.length === 2) { _finish(3, l3tiles); return; }
 
     const l3tile = l3tiles.find(t => t.id === segments[2]);
-    if (!l3tile?.children?.length) { _finish(3, l3tiles); return; }
+    if (!l3tile) {
+      _finish(3, l3tiles);
+      showError(`Eintrag „${segments[2]}" nicht gefunden — zeige Organisation.`, hideError);
+      return;
+    }
+    if (!l3tile.children?.length) { _finish(3, l3tiles); return; }
     const l4tiles = applyTileColors(l3tile.children, sc);
     state.breadcrumb.push({ id: l3tile.id, name: l3tile.name, level: 4, tiles: l4tiles, sectorColor: sc });
     _finish(4, l4tiles);
   } catch (err) {
     console.error('URL restore failed:', err);
+    showError('Link konnte nicht geladen werden.', navigateHome);
   } finally {
     showLoading(false);
   }
@@ -273,8 +352,43 @@ function processColor(name) {
 // ── Boot ──────────────────────────────────────────────────────────────────────
 let _mainTiles = [];
 
+// Growing search index — sectors are added as they load
+const _liveIndex = [];
+let   _indexResolve;
+// Resolves once ALL sectors have been indexed (for stats/export/related/generator)
+const _fullIndexPromise = new Promise(r => { _indexResolve = r; });
+// Tracks which sector ids have already been indexed
+const _indexedSectors = new Set();
+
+// Index a single already-loaded sector; idempotent
+function _indexSector(sectorTile, sectorData) {
+  if (_indexedSectors.has(sectorTile.id)) return;
+  _indexedSectors.add(sectorTile.id);
+  const newEntries = buildSearchIndex(_mainTiles, [[sectorTile, sectorData]]);
+  _liveIndex.push(...newEntries);
+  methodIndex = buildMethodIndex(_liveIndex);
+}
+
+// Load sectors one by one in the background; prioritize `firstId` if given
+async function _buildIndexLazy(sectors, firstId) {
+  const ordered = firstId
+    ? [sectors.find(t => t.id === firstId), ...sectors.filter(t => t.id !== firstId)].filter(Boolean)
+    : sectors;
+  for (const t of ordered.filter(t => t.subFile)) {
+    try {
+      const data = await loadSector(t.id);
+      _indexSector(t, data);
+    } catch { /* skip failed sectors */ }
+    // yield between each sector so the event loop stays responsive
+    await new Promise(r => setTimeout(r, 0));
+  }
+  _indexResolve(_liveIndex);
+}
+
 (async () => {
   const _initialHash = location.hash;
+  const _firstSector = _initialHash ? _initialHash.replace(/^#/, '').split('/')[0] : null;
+
   try {
     showLoading(true);
     const sectors = await loadMain();
@@ -287,13 +401,14 @@ let _mainTiles = [];
     _hashEnabled = true;
     updateHash();
 
-    const indexPromise = buildIndexInBackground(sectors);
-    indexPromise.then(idx => { methodIndex = buildMethodIndex(idx); });
-    initSearch({ indexPromise, onNavigate: navigateToSearchResult });
-    initStats({ indexPromise, mainTiles: sectors });
-    initExport({ indexPromise });
-    initRelated({ indexPromise });
-    initGenerator({ indexPromise, onNavigate: navigateToSearchResult });
+    // Start background index build after initial render; prioritize current sector
+    setTimeout(() => _buildIndexLazy(sectors, _firstSector), 0);
+
+    initSearch({ indexPromise: _fullIndexPromise, getLiveIndex: () => _liveIndex, onNavigate: navigateToSearchResult });
+    initStats({ indexPromise: _fullIndexPromise, mainTiles: sectors });
+    initExport({ indexPromise: _fullIndexPromise });
+    initRelated({ indexPromise: _fullIndexPromise });
+    initGenerator({ indexPromise: _fullIndexPromise, onNavigate: navigateToSearchResult });
   } catch (err) {
     console.error(err);
     showError('Hauptdaten konnten nicht geladen werden.', () => location.reload());
@@ -302,16 +417,6 @@ let _mainTiles = [];
   }
 })();
 
-async function buildIndexInBackground(mainTiles) {
-  const pairs = await Promise.all(
-    mainTiles.filter(t => t.subFile).map(async t => {
-      try   { return [t, await loadSector(t.id)]; }
-      catch { return null; }
-    })
-  );
-  return buildSearchIndex(mainTiles, pairs.filter(Boolean));
-}
-
 // ── Navigation ────────────────────────────────────────────────────────────────
 
 function currentLevel() {
@@ -319,6 +424,8 @@ function currentLevel() {
 }
 
 function pushLevel(tiles, crumb) {
+  _focusedId = null;
+  renderer.setFocused(null);
   // Inherit sectorColor from crumb or from the nearest ancestor that has one
   const sectorColor = crumb.sectorColor
     ?? state.breadcrumb.slice().reverse().find(c => c.sectorColor)?.sectorColor
@@ -395,7 +502,18 @@ function sidebarOpts(tile) {
 
   // L1–L3: standard drill-down
   if (lvl <= 3 && (tile.children?.length || tile.subFile)) {
-    return { onExplore: () => navigateDeeper(tile), exploreLabel: 'Erkunden' };
+    const opts = { onExplore: () => navigateDeeper(tile), exploreLabel: 'Erkunden' };
+    // L2: offer a direct link to the data expansion tool
+    if (lvl === 2) {
+      const sectorId = state.breadcrumb.find(c => c.level === 2)?.id
+        ?? state.breadcrumb[state.breadcrumb.length - 1]?.id;
+      opts.onExpand = () => {
+        const base = import.meta.env?.BASE_URL ?? './';
+        const url  = `${base}expand.html?sector=${encodeURIComponent(sectorId)}&l2=${encodeURIComponent(tile.id)}`;
+        window.open(url, '_blank');
+      };
+    }
+    return opts;
   }
 
   // L4 or L6 (cross-sector data type): navigate to its linked processes
@@ -437,6 +555,7 @@ async function navigateDeeper(tile) {
     try {
       showLoading(true);
       const data     = await loadSector(tile.id);
+      _indexSector(tile, data);         // index immediately so search works right away
       const children = data.children ?? [];
       if (children.length) {
         await animateOut(tile.id);

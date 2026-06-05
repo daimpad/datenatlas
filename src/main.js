@@ -572,6 +572,10 @@ function updateChrome() {
   updateHash();
 }
 
+function slugify(str) {
+  return String(str).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
 // ── Loading / error ───────────────────────────────────────────────────────────
 
 function showLoading(on) { loadingVeil.hidden = !on; if (on) hideError(); }

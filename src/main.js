@@ -30,6 +30,8 @@ const tooltip       = document.getElementById('tooltip');
 const filterBar     = document.getElementById('filter-bar');
 const filterToggle  = document.getElementById('filter-toggle');
 const filterCount   = document.getElementById('filter-count');
+const lovNumber     = document.getElementById('lov-number');
+const lovMax        = document.getElementById('lov-max');
 const onboarding    = document.getElementById('onboarding');
 const shareBtn      = document.getElementById('share-btn');
 const shareToast    = document.getElementById('share-toast');
@@ -552,8 +554,12 @@ function updateChrome() {
   const crumbs = state.breadcrumb;
   const lvl    = crumbs[crumbs.length - 1]?.level ?? 1;
 
-  levelNumEl.textContent  = Math.max(1, lvl);
-  levelMaxEl.textContent  = lvl <= 4 ? '/ 4' : '/ ∞';
+  const lvlDisplay = Math.max(1, lvl);
+  const maxDisplay = lvl <= 4 ? '4' : '∞';
+  levelNumEl.textContent = lvlDisplay;
+  levelMaxEl.textContent = lvl <= 4 ? '/ 4' : '/ ∞';
+  lovNumber.textContent  = lvlDisplay;
+  lovMax.textContent     = maxDisplay;
   btnBack.disabled = crumbs.length <= 1;
   btnHome.disabled = crumbs.length <= 1;
 

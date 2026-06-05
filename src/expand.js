@@ -11,90 +11,86 @@ function escHtml(s) {
 // ── Constants ────────────────────────────────────────────────────────────────
 
 const SECTORS = [
-  { id: 'staat',            name: 'Staat und Verwaltung',       file: 'sector_staat.json',            color: '#1a3461' },
-  { id: 'wirtschaft',       name: 'Wirtschaft',                 file: 'sector_wirtschaft.json',       color: '#1c2f3e' },
-  { id: 'wissenschaft',     name: 'Wissenschaft und Forschung', file: 'sector_wissenschaft.json',     color: '#2d1a6e' },
-  { id: 'zivilgesellschaft',name: 'Zivilgesellschaft',          file: 'sector_zivilgesellschaft.json',color: '#4a1a8c' },
-  { id: 'medien',           name: 'Medien und Kultur',          file: 'sector_medien.json',           color: '#8b1248' },
-  { id: 'religion',         name: 'Religionsgemeinschaften',    file: 'sector_religion.json',         color: '#0a3d38' },
+  { id: 'staat',             name: 'Staat und Verwaltung',       file: 'sector_staat.json',             color: '#1a3461' },
+  { id: 'wirtschaft',        name: 'Wirtschaft',                 file: 'sector_wirtschaft.json',        color: '#1c2f3e' },
+  { id: 'wissenschaft',      name: 'Wissenschaft und Forschung', file: 'sector_wissenschaft.json',      color: '#2d1a6e' },
+  { id: 'zivilgesellschaft', name: 'Zivilgesellschaft',          file: 'sector_zivilgesellschaft.json', color: '#4a1a8c' },
+  { id: 'medien',            name: 'Medien und Kultur',          file: 'sector_medien.json',            color: '#8b1248' },
+  { id: 'religion',          name: 'Religionsgemeinschaften',    file: 'sector_religion.json',          color: '#0a3d38' },
 ];
 
 const VOCAB = {
   openness: [
-    { code: 'OP_01', label: 'Sofort publizierbar',          color: '#27ae60' },
-    { code: 'OP_02', label: 'Nach Aufbereitung publizierbar',color: '#d4a017' },
-    { code: 'OP_03', label: 'Nur Metadaten publizierbar',   color: '#c0392b' },
+    { code: 'OP_01', label: 'Sofort publizierbar',           color: '#27ae60' },
+    { code: 'OP_02', label: 'Nach Aufbereitung publizierbar', color: '#d4a017' },
+    { code: 'OP_03', label: 'Nur Metadaten publizierbar',    color: '#c0392b' },
   ],
   theme: [
-    { code: 'TH_01', label: 'Gesundheit' },
-    { code: 'TH_02', label: 'Bildung' },
-    { code: 'TH_03', label: 'Soziales' },
-    { code: 'TH_04', label: 'Wirtschaft' },
-    { code: 'TH_05', label: 'Verwaltung' },
-    { code: 'TH_06', label: 'Umwelt' },
-    { code: 'TH_07', label: 'Finanzen' },
-    { code: 'TH_08', label: 'Recht' },
-    { code: 'TH_09', label: 'Natur/Biodiversität' },
-    { code: 'TH_10', label: 'Wissenschaft/Technik' },
+    { code: 'TH_01', label: 'Gesundheit' },        { code: 'TH_02', label: 'Bildung' },
+    { code: 'TH_03', label: 'Soziales' },           { code: 'TH_04', label: 'Wirtschaft' },
+    { code: 'TH_05', label: 'Verwaltung' },         { code: 'TH_06', label: 'Umwelt' },
+    { code: 'TH_07', label: 'Finanzen' },           { code: 'TH_08', label: 'Recht' },
+    { code: 'TH_09', label: 'Natur/Biodiversität' },{ code: 'TH_10', label: 'Wissenschaft/Technik' },
   ],
   object: [
-    { code: 'OB_01', label: 'Personenbezogene Daten' },
-    { code: 'OB_02', label: 'Textdokumente' },
-    { code: 'OB_03', label: 'Finanzdaten' },
-    { code: 'OB_04', label: 'Messungen / Sensordaten' },
-    { code: 'OB_05', label: 'Geodaten' },
-    { code: 'OB_06', label: 'Mediendaten' },
-    { code: 'OB_07', label: 'Transaktionsdaten' },
-    { code: 'OB_08', label: 'Metadaten' },
+    { code: 'OB_01', label: 'Personenbezogene Daten' }, { code: 'OB_02', label: 'Textdokumente' },
+    { code: 'OB_03', label: 'Finanzdaten' },             { code: 'OB_04', label: 'Messungen / Sensordaten' },
+    { code: 'OB_05', label: 'Geodaten' },                { code: 'OB_06', label: 'Mediendaten' },
+    { code: 'OB_07', label: 'Transaktionsdaten' },       { code: 'OB_08', label: 'Metadaten' },
   ],
   granularity: [
-    { code: 'GR_01', label: 'Einzelereignis / Rohdaten' },
-    { code: 'GR_02', label: 'Aggregiert (zeitlich oder räumlich)' },
-    { code: 'GR_03', label: 'Kleinräumig (Stadtteil / Gemeinde)' },
-    { code: 'GR_04', label: 'Individuell / Mikrodaten' },
+    { code: 'GR_01', label: 'Einzelereignis / Rohdaten' }, { code: 'GR_02', label: 'Aggregiert' },
+    { code: 'GR_03', label: 'Kleinräumig (Stadtteil / Gemeinde)' }, { code: 'GR_04', label: 'Individuell / Mikrodaten' },
   ],
   format: [
-    { code: 'FT_01', label: 'CSV' },
-    { code: 'FT_02', label: 'JSON' },
-    { code: 'FT_03', label: 'NetCDF / HDF5' },
-    { code: 'FT_04', label: 'XML' },
-    { code: 'FT_05', label: 'GeoJSON' },
-    { code: 'FT_06', label: 'Shapefile' },
+    { code: 'FT_01', label: 'CSV' },    { code: 'FT_02', label: 'JSON' },
+    { code: 'FT_03', label: 'NetCDF / HDF5' }, { code: 'FT_04', label: 'XML' },
+    { code: 'FT_05', label: 'GeoJSON' },{ code: 'FT_06', label: 'Shapefile' },
   ],
   license: [
-    { code: 'LI_01', label: 'CC0 / Public Domain' },
-    { code: 'LI_02', label: 'CC BY 4.0' },
-    { code: 'LI_03', label: 'Datenlizenz Deutschland' },
-    { code: 'LI_04', label: 'Proprietär / Restriktiv' },
+    { code: 'LI_01', label: 'CC0 / Public Domain' }, { code: 'LI_02', label: 'CC BY 4.0' },
+    { code: 'LI_03', label: 'Datenlizenz Deutschland' }, { code: 'LI_04', label: 'Proprietär / Restriktiv' },
   ],
 };
 
 const MIN_L4 = 15;
 
+const VALID_CODES = {
+  openness:    new Set(['OP_01','OP_02','OP_03']),
+  theme:       new Set(['TH_01','TH_02','TH_03','TH_04','TH_05','TH_06','TH_07','TH_08','TH_09','TH_10']),
+  object:      new Set(['OB_01','OB_02','OB_03','OB_04','OB_05','OB_06','OB_07','OB_08']),
+  granularity: new Set(['GR_01','GR_02','GR_03','GR_04']),
+  format:      new Set(['FT_01','FT_02','FT_03','FT_04','FT_05','FT_06']),
+  license:     new Set(['LI_01','LI_02','LI_03','LI_04']),
+};
+
 // ── State ────────────────────────────────────────────────────────────────────
 
-let sectorData   = null;   // loaded sector JSON
-let currentSector = null;  // SECTORS entry
-let selectedL2   = null;   // L2 node object
-let selectedL3   = null;   // L3 node object or null
+let sectorData    = null;
+let currentSector = null;
+let selectedL2    = null;
+let selectedL3    = null;
 
 // ── DOM refs ─────────────────────────────────────────────────────────────────
 
-const sectorSel   = document.getElementById('sector-sel');
-const l2List      = document.getElementById('l2-list');
-const l3Wrap      = document.getElementById('l3-wrap');
-const l3List      = document.getElementById('l3-list');
-const countInput  = document.getElementById('count-input');
-const genBtn      = document.getElementById('gen-prompt-btn');
-const promptOut   = document.getElementById('prompt-out');
-const copyPrompt  = document.getElementById('copy-prompt-btn');
-const pasteArea   = document.getElementById('paste-area');
-const validateBtn = document.getElementById('validate-btn');
-const valOut      = document.getElementById('val-out');
-const mergeBtn    = document.getElementById('merge-btn');
-const dlSrc       = document.getElementById('dl-source-btn');
-const dlCtx       = document.getElementById('dl-context-btn');
-const coverageBar = document.getElementById('coverage-bar');
+const sectorSel  = document.getElementById('sector-sel');
+const l2Sel      = document.getElementById('l2-sel');
+const l3Sel      = document.getElementById('l3-sel');
+const l3Row      = document.getElementById('l3-row');
+const coverageSt = document.getElementById('coverage-stat');
+const countInput = document.getElementById('count-input');
+const genBtn     = document.getElementById('gen-prompt-btn');
+const promptOut  = document.getElementById('prompt-out');
+const copyPrompt = document.getElementById('copy-prompt-btn');
+const pasteArea  = document.getElementById('paste-area');
+const validateBtn= document.getElementById('validate-btn');
+const valOut     = document.getElementById('val-out');
+const mergeBtn   = document.getElementById('merge-btn');
+const dlSrc      = document.getElementById('dl-source-btn');
+const dlCtx      = document.getElementById('dl-context-btn');
+const statusEl   = document.getElementById('load-status');
+const coverageWrap = document.getElementById('coverage-wrap');
+const coverageList = document.getElementById('coverage-list');
 
 // ── Boot ─────────────────────────────────────────────────────────────────────
 
@@ -106,23 +102,40 @@ SECTORS.forEach(s => {
 });
 
 sectorSel.addEventListener('change', () => loadSector(sectorSel.value));
-genBtn.addEventListener('click', generatePrompt);
+l2Sel.addEventListener('change',     () => selectL2ById(l2Sel.value));
+l3Sel.addEventListener('change',     () => selectL3ById(l3Sel.value));
+genBtn.addEventListener('click',     generatePrompt);
 copyPrompt.addEventListener('click', copyPromptText);
-validateBtn.addEventListener('click', validatePaste);
-mergeBtn.addEventListener('click', mergeAndDownload);
-dlSrc.addEventListener('click', downloadSource);
-dlCtx.addEventListener('click', downloadContext);
+validateBtn.addEventListener('click',validatePaste);
+mergeBtn.addEventListener('click',   mergeAndDownload);
+dlSrc.addEventListener('click',      downloadSource);
+dlCtx.addEventListener('click',      downloadContext);
 
 // ── Data loading ─────────────────────────────────────────────────────────────
 
 async function loadSector(id) {
-  selectedL2 = null;
-  selectedL3 = null;
-  sectorData = null;
+  sectorData  = null;
+  selectedL2  = null;
+  selectedL3  = null;
+  currentSector = SECTORS.find(s => s.id === id);
+
+  l2Sel.innerHTML  = '<option value="">— L2 wählen —</option>';
+  l3Sel.innerHTML  = '<option value="">Alle L3</option>';
+  l2Sel.disabled   = true;
+  l3Sel.disabled   = true;
+  l3Row.hidden     = true;
+  genBtn.disabled  = true;
+  dlSrc.disabled   = true;
+  dlCtx.disabled   = true;
+  coverageSt.textContent = '';
+  coverageWrap.hidden    = true;
+  coverageList.innerHTML = '';
   clearOutputs();
 
-  currentSector = SECTORS.find(s => s.id === id);
-  if (!currentSector) { l2List.innerHTML = ''; return; }
+  if (!currentSector) return;
+
+  statusEl.textContent = 'Lade Daten…';
+  statusEl.className   = 'ex-status';
 
   const base = import.meta.env.BASE_URL || './';
   try {
@@ -130,88 +143,97 @@ async function loadSector(id) {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     sectorData = await res.json();
   } catch (e) {
-    l2List.innerHTML = `<p class="ex-error">Fehler beim Laden: ${e.message}</p>`;
+    statusEl.textContent = `Fehler: ${e.message}`;
+    statusEl.className   = 'ex-status ex-error';
     return;
   }
 
-  renderL2List();
+  statusEl.textContent = '';
+  populateL2Select();
+  renderCoverage();
   dlSrc.disabled = false;
   dlCtx.disabled = false;
 }
 
-// ── L2 / L3 rendering ────────────────────────────────────────────────────────
+// ── Selectors ─────────────────────────────────────────────────────────────────
 
 function countL4(node) {
   if (node.level === 4) return 1;
   return (node.children || []).reduce((s, c) => s + countL4(c), 0);
 }
 
-function renderL2List() {
-  l2List.innerHTML = '';
-  coverageBar.innerHTML = '';
+function populateL2Select() {
+  l2Sel.innerHTML = '<option value="">— L2 wählen —</option>';
+  (sectorData.children || []).forEach(l2 => {
+    const cnt = countL4(l2);
+    const opt = document.createElement('option');
+    opt.value = l2.id;
+    opt.textContent = `${l2.name}  (${cnt} L4)`;
+    l2Sel.appendChild(opt);
+  });
+  l2Sel.disabled = false;
+}
 
+function selectL2ById(id) {
+  selectedL2 = (sectorData?.children || []).find(n => n.id === id) || null;
+  selectedL3 = null;
+
+  l3Sel.innerHTML = '<option value="">Alle L3</option>';
+  l3Row.hidden    = true;
+  l3Sel.disabled  = true;
+  genBtn.disabled = !selectedL2;
+  clearOutputs();
+
+  if (!selectedL2) { coverageSt.textContent = ''; return; }
+
+  const cnt = countL4(selectedL2);
+  const cls = cnt >= MIN_L4 ? 'ex-ok' : cnt >= MIN_L4 * 0.6 ? 'ex-warn' : 'ex-error';
+  coverageSt.innerHTML = `<span class="${cls}">${cnt} L4-Einträge</span> · ${selectedL2.children?.length ?? 0} L3-Aktivitäten`;
+
+  (selectedL2.children || []).forEach(l3 => {
+    const opt = document.createElement('option');
+    opt.value = l3.id;
+    opt.textContent = `${l3.name}  (${countL4(l3)} L4)`;
+    l3Sel.appendChild(opt);
+  });
+  if ((selectedL2.children || []).length) {
+    l3Row.hidden   = false;
+    l3Sel.disabled = false;
+  }
+}
+
+function selectL3ById(id) {
+  selectedL3 = id ? (selectedL2?.children || []).find(n => n.id === id) || null : null;
+  clearOutputs();
+}
+
+// ── Coverage dashboard ────────────────────────────────────────────────────────
+
+function renderCoverage() {
+  coverageList.innerHTML = '';
   const l2nodes = sectorData.children || [];
   const total   = l2nodes.reduce((s, n) => s + countL4(n), 0);
   const below   = l2nodes.filter(n => countL4(n) < MIN_L4).length;
 
-  // Summary
-  const summary = document.createElement('div');
-  summary.className = 'ex-coverage-summary';
-  summary.innerHTML = `<strong>${l2nodes.length}</strong> Organisationen · <strong>${total}</strong> Datentypen (L4) · <span class="${below ? 'ex-warn' : 'ex-ok'}">${below} unter ${MIN_L4}-L4-Ziel</span>`;
-  coverageBar.appendChild(summary);
+  const summary = document.createElement('p');
+  summary.className = 'ex-cov-summary';
+  summary.innerHTML = `<strong>${l2nodes.length}</strong> Org. · <strong>${total}</strong> L4-Einträge · <span class="${below ? 'ex-warn' : 'ex-ok'}">${below} unter ${MIN_L4}-Ziel</span>`;
+  coverageList.appendChild(summary);
 
   l2nodes.forEach(node => {
-    const cnt  = countL4(node);
-    const pct  = Math.min(cnt / MIN_L4, 1);
-    const cls  = cnt >= MIN_L4 ? 'ok' : cnt >= MIN_L4 * 0.6 ? 'warn' : 'bad';
-
-    const card = document.createElement('div');
-    card.className = `ex-l2-card ex-l2-${cls}`;
-    card.dataset.id = node.id;
-    card.innerHTML = `
-      <div class="ex-l2-name">${escHtml(node.name)}</div>
-      <div class="ex-l2-meta">${cnt} L4 · ${node.children?.length ?? 0} L3</div>
+    const cnt = countL4(node);
+    const pct = Math.min(cnt / MIN_L4, 1);
+    const cls = cnt >= MIN_L4 ? 'ok' : cnt >= MIN_L4 * 0.6 ? 'warn' : 'bad';
+    const row = document.createElement('div');
+    row.className = 'ex-cov-row';
+    row.innerHTML = `
+      <span class="ex-cov-name">${escHtml(node.name)}</span>
+      <span class="ex-cov-cnt ex-cov-${cls}">${cnt}</span>
       <div class="ex-bar-wrap"><div class="ex-bar-fill ex-bar-${cls}" style="width:${Math.round(pct*100)}%"></div></div>`;
-    card.addEventListener('click', () => selectL2(node, card));
-    l2List.appendChild(card);
-  });
-}
-
-function selectL2(node, cardEl) {
-  selectedL2 = node;
-  selectedL3 = null;
-  document.querySelectorAll('.ex-l2-card').forEach(c => c.classList.remove('selected'));
-  cardEl.classList.add('selected');
-  clearOutputs();
-  renderL3List(node);
-}
-
-function renderL3List(l2) {
-  l3List.innerHTML = '';
-  const all = document.createElement('div');
-  all.className = 'ex-l3-item selected';
-  all.textContent = 'Alle L3 (gesamte L2)';
-  all.addEventListener('click', () => {
-    selectedL3 = null;
-    document.querySelectorAll('.ex-l3-item').forEach(i => i.classList.remove('selected'));
-    all.classList.add('selected');
-  });
-  l3List.appendChild(all);
-
-  (l2.children || []).forEach(l3 => {
-    const cnt  = countL4(l3);
-    const item = document.createElement('div');
-    item.className = 'ex-l3-item';
-    item.textContent = `${l3.name}  (${cnt} L4)`;
-    item.addEventListener('click', () => {
-      selectedL3 = l3;
-      document.querySelectorAll('.ex-l3-item').forEach(i => i.classList.remove('selected'));
-      item.classList.add('selected');
-    });
-    l3List.appendChild(item);
+    coverageList.appendChild(row);
   });
 
-  l3Wrap.hidden = false;
+  coverageWrap.hidden = false;
 }
 
 // ── Prompt generation ─────────────────────────────────────────────────────────
@@ -226,25 +248,36 @@ function collectExistingIds(node) {
   return ids;
 }
 
-function collectL3Summary(l2) {
-  return (l2.children || []).map(l3 => {
-    const cnt = countL4(l3);
-    return `  - ${l3.name} (${cnt} L4-Einträge vorhanden)`;
-  }).join('\n');
-}
-
 function generatePrompt() {
-  if (!selectedL2) { alert('Bitte zuerst eine L2-Organisation auswählen.'); return; }
+  if (!selectedL2) return;
 
   const target  = selectedL3 || selectedL2;
-  const scope   = selectedL3 ? `L3-Aktivität "${selectedL3.name}" innerhalb der L2-Organisation "${selectedL2.name}"` : `L2-Organisation "${selectedL2.name}"`;
+  const scope   = selectedL3
+    ? `L3-Aktivität "${selectedL3.name}" innerhalb der L2-Organisation "${selectedL2.name}"`
+    : `L2-Organisation "${selectedL2.name}"`;
   const ids     = collectExistingIds(target);
   const count   = parseInt(countInput.value, 10) || 10;
-  const l3info  = selectedL3 ? '' : `\nBestehende L3-Aktivitäten in dieser L2:\n${collectL3Summary(selectedL2)}`;
   const sector  = currentSector.name;
-  const l4color = selectedL2.children?.[0]?.children?.[0]?.color ?? selectedL2.children?.[0]?.color ?? selectedL2.color;
+  const l4color = selectedL2.children?.[0]?.children?.[0]?.color
+               ?? selectedL2.children?.[0]?.color
+               ?? selectedL2.color;
+  const l3info  = selectedL3 ? '' : `\nBestehende L3-Aktivitäten in dieser L2:\n${
+    (selectedL2.children || []).map(l3 => `  - ${l3.name} (${countL4(l3)} L4 vorhanden)`).join('\n')}`;
 
-  const vocabBlock = `
+  const prompt = `Du bist ein Datenexperte für deutsche Verwaltung, Gesellschaft und Wissenschaft.
+
+AUFGABE:
+Generiere exakt ${count} neue L4-Datentyp-Einträge für den Sektor "${sector}", ${scope}.${l3info}
+
+Systematisch fragen:
+1. Was ERHEBT diese Organisation? (Primärdaten)
+2. Was PRODUZIERT sie als Output? (Berichte, Statistiken)
+3. Was ist gesetzlich zur VERÖFFENTLICHUNG verpflichtet?
+4. Was ist für ANDERE SEKTOREN wertvoll? (Cross-Sektor-Relevanz)
+
+BEREITS VORHANDENE IDs (nicht wiederverwenden!):
+${ids.length ? ids.map(i => `  "${i}"`).join('\n') : '  (keine)'}
+
 VOKABULAR (nur diese Codes verwenden):
 
 Openness (details.openness.class):
@@ -269,10 +302,9 @@ Format (details.format[].code):
   FT_01=CSV  FT_02=JSON  FT_03=NetCDF/HDF5  FT_04=XML  FT_05=GeoJSON  FT_06=Shapefile
 
 License (details.license.code):
-  LI_01=CC0/Public Domain  LI_02=CC BY 4.0  LI_03=Datenlizenz Deutschland  LI_04=Proprietär`;
+  LI_01=CC0/Public Domain  LI_02=CC BY 4.0  LI_03=Datenlizenz Deutschland  LI_04=Proprietär
 
-  const structureBlock = `
-PFLICHTSTRUKTUR (jedes Objekt muss exakt so aussehen):
+PFLICHTSTRUKTUR (exakt so, kein Feld weglassen):
 {
   "id": "unique-kebab-case-id",
   "level": 4,
@@ -295,37 +327,19 @@ KRITISCHE FEHLER vermeiden:
 - NICHT "openness": {"code": ...} → muss "class" sein
 - NICHT "formats": [...] → muss "format" (singular)
 - NICHT den "details"-Wrapper weglassen
-- NICHT die Farbe "${l4color}" ändern
-- KEINE reservierten Farben: #27ae60, #d4a017, #c0392b`;
-
-  const existingBlock = ids.length
-    ? `\nBEREITS VORHANDENE IDs (nicht wiederverwenden!):\n${ids.map(i => `  "${i}"`).join('\n')}`
-    : '';
-
-  const prompt = `Du bist ein Datenexperte für deutsche Verwaltung, Gesellschaft und Wissenschaft.
-
-AUFGABE:
-Generiere exakt ${count} neue L4-Datentyp-Einträge für den Sektor "${sector}", ${scope}.${l3info}
-
-Systematisch fragen:
-1. Was ERHEBT diese Organisation? (Primärdaten)
-2. Was PRODUZIERT sie als Output? (Berichte, Statistiken)
-3. Was ist gesetzlich zur VERÖFFENTLICHUNG verpflichtet?
-4. Was ist für ANDERE SEKTOREN wertvoll? (Cross-Sektor-Relevanz)
-${existingBlock}
-${vocabBlock}
-${structureBlock}
+- Farbe "${l4color}" nicht ändern
+- Keine reservierten Farben: #27ae60, #d4a017, #c0392b
 
 AUSGABE:
-Gib ausschließlich ein JSON-Array aus (kein Markdown, kein Kommentar):
+Gib ausschließlich ein JSON-Array aus (kein Markdown, kein Kommentar, kein Codeblock):
 [
   { ...erster Eintrag... },
   { ...zweiter Eintrag... }
 ]`;
 
   promptOut.value = prompt;
-  promptOut.closest('.ex-card').hidden = false;
   copyPrompt.disabled = false;
+  promptOut.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 function copyPromptText() {
@@ -336,15 +350,6 @@ function copyPromptText() {
 }
 
 // ── Validation ────────────────────────────────────────────────────────────────
-
-const VALID_CODES = {
-  openness:    new Set(['OP_01','OP_02','OP_03']),
-  theme:       new Set(['TH_01','TH_02','TH_03','TH_04','TH_05','TH_06','TH_07','TH_08','TH_09','TH_10']),
-  object:      new Set(['OB_01','OB_02','OB_03','OB_04','OB_05','OB_06','OB_07','OB_08']),
-  granularity: new Set(['GR_01','GR_02','GR_03','GR_04']),
-  format:      new Set(['FT_01','FT_02','FT_03','FT_04','FT_05','FT_06']),
-  license:     new Set(['LI_01','LI_02','LI_03','LI_04']),
-};
 
 function validatePaste() {
   valOut.innerHTML = '';
@@ -372,11 +377,11 @@ function validatePaste() {
   parsed.forEach((node, i) => {
     const idx = `#${i+1} &quot;${escHtml(node.name ?? '?')}&quot;`;
 
-    if (!node.id)           errors.push(`${idx}: fehlendes "id"`);
-    else if (!/^[a-z0-9-]+$/.test(node.id)) errors.push(`${idx}: id enthält ungültige Zeichen ("${escHtml(node.id)}")`);
-    else if (existingIds.has(node.id))       errors.push(`${idx}: id "${escHtml(node.id)}" bereits vorhanden`);
-    else if (newIds.has(node.id))            errors.push(`${idx}: id "${escHtml(node.id)}" doppelt im neuen Batch`);
-    else                                     newIds.add(node.id);
+    if (!node.id)                             errors.push(`${idx}: fehlendes "id"`);
+    else if (!/^[a-z0-9-]+$/.test(node.id))  errors.push(`${idx}: id enthält ungültige Zeichen ("${escHtml(node.id)}")`);
+    else if (existingIds.has(node.id))        errors.push(`${idx}: id "${escHtml(node.id)}" bereits vorhanden`);
+    else if (newIds.has(node.id))             errors.push(`${idx}: id "${escHtml(node.id)}" doppelt im Batch`);
+    else                                      newIds.add(node.id);
 
     if (node.level !== 4) errors.push(`${idx}: level muss 4 sein`);
     if (!node.name)        errors.push(`${idx}: fehlendes "name"`);
@@ -388,7 +393,7 @@ function validatePaste() {
     if (!d.description) errors.push(`${idx}: fehlendes details.description`);
     if (!d.openness)    errors.push(`${idx}: fehlendes details.openness`);
     else {
-      if (d.openness.code && !d.openness.class) errors.push(`${idx}: details.openness.code → muss "class" heißen`);
+      if (d.openness.code && !d.openness.class) errors.push(`${idx}: openness.code → muss "class" heißen`);
       else if (!VALID_CODES.openness.has(d.openness.class)) errors.push(`${idx}: ungültiger openness.class "${escHtml(d.openness.class)}"`);
     }
     if (!d.theme?.code)        errors.push(`${idx}: fehlendes details.theme.code`);
@@ -420,7 +425,7 @@ function validatePaste() {
     if (errors.length)   lines.push(`<span class="ex-error">${errors.length} Fehler:</span>\n${errors.map(e => `  ✗ ${e}`).join('\n')}`);
     if (warnings.length) lines.push(`<span class="ex-warn">${warnings.length} Warnungen:</span>\n${warnings.map(w => `  ⚠ ${w}`).join('\n')}`);
     if (errors.length === 0) {
-      lines.push(`<span class="ex-ok">Keine Fehler – ${parsed.length} Einträge können eingefügt werden (trotz Warnungen).</span>`);
+      lines.push(`<span class="ex-ok">Keine Fehler – ${parsed.length} Einträge einfügbar (trotz Warnungen).</span>`);
       mergeBtn.disabled = false;
       mergeBtn.dataset.validated = JSON.stringify(parsed);
     }
@@ -430,25 +435,22 @@ function validatePaste() {
 
 // ── Merge & Download ──────────────────────────────────────────────────────────
 
-function findTargetL3(data, l2id, l3id) {
-  const l2 = (data.children || []).find(n => n.id === l2id);
-  if (!l2) return null;
-  if (!l3id) return l2;
-  return (l2.children || []).find(n => n.id === l3id) || l2;
-}
-
 function mergeAndDownload() {
   if (!mergeBtn.dataset.validated || !sectorData || !selectedL2) return;
 
   const newNodes = JSON.parse(mergeBtn.dataset.validated);
-  const merged   = JSON.parse(JSON.stringify(sectorData)); // deep clone
+  const merged   = JSON.parse(JSON.stringify(sectorData));
 
-  const target = findTargetL3(merged, selectedL2.id, selectedL3?.id);
-  if (!target) { alert('Zielknoten nicht gefunden.'); return; }
+  const l2 = (merged.children || []).find(n => n.id === selectedL2.id);
+  if (!l2) { alert('L2-Knoten nicht gefunden.'); return; }
+
+  let target = l2;
+  if (selectedL3) {
+    target = (l2.children || []).find(n => n.id === selectedL3.id) || l2;
+  }
 
   if (!Array.isArray(target.children)) target.children = [];
 
-  // If target is L2, append to last L3 (or create generic one)
   if (target.level === 2) {
     const lastL3 = target.children[target.children.length - 1];
     if (lastL3) {
@@ -478,32 +480,9 @@ function downloadContext() {
     `### ${key}\n${items.map(i => `${i.code} = ${i.label}`).join('\n')}`
   ).join('\n\n');
 
-  const schemaText = `## L4-Pflichtstruktur
-{
-  "id": "unique-kebab-case-id",
-  "level": 4,
-  "name": "Anzeigename",
-  "color": "#HEXFARBE",
-  "details": {
-    "description": "...",
-    "openness": { "class": "OP_XX", "label": "...", "explanation": "..." },
-    "theme":       { "code": "TH_XX" },
-    "object":      { "code": "OB_XX" },
-    "granularity": { "code": "GR_XX" },
-    "format": [ { "code": "FT_XX", "label": "..." } ],
-    "license":     { "code": "LI_XX" },
-    "relevance": 5,
-    "processes": [ { "method": "...", "description": "..." } ]
-  }
-}`;
-
   const pkg = {
-    meta: {
-      generated: new Date().toISOString(),
-      sector:    currentSector.name,
-      purpose:   'LLM context package for Datenatlas data expansion',
-    },
-    schema:    schemaText,
+    meta:       { generated: new Date().toISOString(), sector: currentSector.name, purpose: 'LLM context package for Datenatlas data expansion' },
+    schema:     '## L4-Pflichtstruktur\n{"id":"unique-kebab-case-id","level":4,"name":"...","color":"#HEX","details":{"description":"...","openness":{"class":"OP_XX","label":"...","explanation":"..."},"theme":{"code":"TH_XX"},"object":{"code":"OB_XX"},"granularity":{"code":"GR_XX"},"format":[{"code":"FT_XX","label":"..."}],"license":{"code":"LI_XX"},"relevance":5,"processes":[{"method":"...","description":"..."}]}}',
     vocabulary: vocabText,
     sectorData: sectorData,
   };
@@ -515,19 +494,15 @@ function downloadJSON(obj, filename) {
   const blob = new Blob([JSON.stringify(obj, null, 2)], { type: 'application/json' });
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
-  a.href     = url;
-  a.download = filename;
-  a.click();
+  a.href = url; a.download = filename; a.click();
   URL.revokeObjectURL(url);
 }
 
 function clearOutputs() {
-  promptOut.value = '';
-  promptOut.closest('.ex-card').hidden = true;
+  promptOut.value     = '';
   copyPrompt.disabled = true;
-  pasteArea.value = '';
-  valOut.innerHTML = '';
-  mergeBtn.disabled = true;
+  pasteArea.value     = '';
+  valOut.innerHTML    = '';
+  mergeBtn.disabled   = true;
   delete mergeBtn.dataset.validated;
-  l3Wrap.hidden = true;
 }

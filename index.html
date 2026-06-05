@@ -23,12 +23,6 @@
         <!-- populated by JS -->
       </nav>
 
-      <div id="level-badge" aria-label="Aktuelle Navigationstiefe">
-        <span class="level-label">Ebene</span>
-        <span id="level-number">1</span>
-        <span id="level-max" class="level-label">/ 4</span>
-      </div>
-
       <input id="search-input" type="text" placeholder="Datentyp suchen…" autocomplete="off" aria-label="Suche" />
 
       <button id="search-toggle" title="Suchen" aria-label="Suche öffnen">
@@ -42,9 +36,6 @@
           <path d="M4 6h16M7 12h10M10 18h4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
         </svg>
       </button>
-
-      <button id="gen-btn" title="Datenkombinator"><i class="fa-solid fa-shuffle"></i> Datenkombinator</button>
-      <button id="open-data-btn" title="Schritt-für-Schritt: Daten als Open Data veröffentlichen">Daten öffnen →</button>
 
       <button id="share-btn" title="Link kopieren" aria-label="Link zu dieser Ansicht kopieren">
         <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
@@ -67,6 +58,8 @@
         </svg>
       </button>
 
+      <button id="gen-btn" title="Daten kombinieren"><i class="fa-solid fa-shuffle"></i> Daten kombinieren</button>
+      <button id="open-data-btn" title="Schritt-für-Schritt: Daten als Open Data veröffentlichen"><i class="fa-solid fa-wand-magic-sparkles"></i> Daten öffnen</button>
       <button id="info-btn" title="Über den Datenatlas" aria-label="Infos und Hilfe öffnen">Mehr erfahren</button>
 
       <button id="more-btn" title="Menü" aria-label="Weitere Optionen" aria-haspopup="dialog">
@@ -386,7 +379,7 @@
         <div class="ms-grid">
           <button class="ms-item" data-target="gen-btn">
             <i class="fa-solid fa-shuffle ms-icon" aria-hidden="true"></i>
-            <span>Datenkombinator</span>
+            <span>Daten kombinieren</span>
           </button>
           <button class="ms-item" data-target="open-data-btn">
             <i class="fa-solid fa-wand-magic-sparkles ms-icon" aria-hidden="true"></i>

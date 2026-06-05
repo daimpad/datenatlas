@@ -210,7 +210,7 @@ export class IsometricRenderer {
       if (!this._isVisible(tx, ty)) continue;
       const pulse  = this._pulseFactor(t.id);
       const dimmed = this._dimmed?.has(t.id) ?? false;
-      this._drawTile(ctx, tx, ty, t.color, t.name, t.id === this.hov && !dimmed, pulse, t.navigable, dimmed);
+      this._drawTile(ctx, tx, ty, t.color, t.name, t.id === this.hov && !dimmed, pulse, t.navigable, dimmed, t.gradient ?? null);
     }
 
     ctx.restore();
@@ -226,19 +226,21 @@ export class IsometricRenderer {
     return { tx, ty };
   }
 
-  _drawTile(ctx, tx, ty, color, label, hovered, pulse = 0, navigable = false, dimmed = false) {
+  _drawTile(ctx, tx, ty, color, label, hovered, pulse = 0, navigable = false, dimmed = false, gradient = null) {
     const { W, H, D } = this;
 
     if (dimmed) {
       ctx.save();
       ctx.globalAlpha *= 0.18;
       color = '#c8b8e8';
+      gradient = null;
     }
 
     const brightFactor = (hovered ? 1.35 : 1.0) + pulse * 0.55;
-    const topColor   = tint(color, brightFactor);
-    const rightColor = tint(color, 0.72);
-    const leftColor  = tint(color, 0.52);
+    const baseColor  = gradient ? gradient.from : color;
+    const topColor   = tint(baseColor, brightFactor);
+    const rightColor = tint(baseColor, 0.80);
+    const leftColor  = tint(baseColor, 0.58);
     const edgeAlpha  = hovered || pulse > 0.1 ? 0.45 : 0.2;
 
     // ── Right face ──
@@ -250,7 +252,7 @@ export class IsometricRenderer {
     ctx.closePath();
     ctx.fillStyle = rightColor;
     ctx.fill();
-    ctx.strokeStyle = rgba(color, edgeAlpha);
+    ctx.strokeStyle = rgba(baseColor, edgeAlpha);
     ctx.lineWidth = 1;
     ctx.stroke();
 
@@ -263,7 +265,7 @@ export class IsometricRenderer {
     ctx.closePath();
     ctx.fillStyle = leftColor;
     ctx.fill();
-    ctx.strokeStyle = rgba(color, edgeAlpha);
+    ctx.strokeStyle = rgba(baseColor, edgeAlpha);
     ctx.stroke();
 
     // ── Top face (diamond) ──
@@ -273,7 +275,18 @@ export class IsometricRenderer {
     ctx.lineTo(tx,       ty + H    );
     ctx.lineTo(tx - W/2, ty + H/2  );
     ctx.closePath();
-    ctx.fillStyle = topColor;
+
+    let topFill;
+    if (gradient) {
+      // Diagonal gradient: upper-left to lower-right of the diamond
+      const grd = ctx.createLinearGradient(tx - W * 0.3, ty, tx + W * 0.3, ty + H);
+      grd.addColorStop(0, tint(gradient.from, brightFactor * 1.1));
+      grd.addColorStop(1, tint(gradient.to,   brightFactor * 0.88));
+      topFill = grd;
+    } else {
+      topFill = topColor;
+    }
+    ctx.fillStyle = topFill;
     ctx.fill();
     ctx.strokeStyle = rgba('#ffffff', edgeAlpha);
     ctx.lineWidth = hovered ? 1.5 : 0.8;
@@ -311,7 +324,7 @@ export class IsometricRenderer {
     // ── Navigable indicator (subtle down-arrow) ──
     if (navigable) {
       ctx.save();
-      ctx.font = `bold 9px Inter, system-ui, sans-serif`;
+      ctx.font = `bold 9px Cabin, system-ui, sans-serif`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillStyle = hovered ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.45)';
@@ -326,7 +339,7 @@ export class IsometricRenderer {
 
   _drawLabel(ctx, cx, cy, maxW, text) {
     ctx.save();
-    ctx.font = 'bold 11px Inter, system-ui, sans-serif';
+    ctx.font = 'bold 11px Cabin, system-ui, sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
 

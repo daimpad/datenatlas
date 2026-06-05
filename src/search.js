@@ -96,7 +96,7 @@ export function initSearch({ indexPromise, onNavigate }) {
   function render(results) {
     if (!results.length) { resultsEl.hidden = true; return; }
     resultsEl.innerHTML = results.map((r, i) => `
-      <div class="sr-item" data-i="${i}">
+      <div class="sr-item" data-i="${i}" data-op-class="${esc(r.tile.details?.openness?.class ?? '')}">
         <span class="sr-dot" style="background:${r.tile.color}"></span>
         <div class="sr-text">
           <span class="sr-name">${esc(r.tile.name)}</span>
@@ -104,6 +104,7 @@ export function initSearch({ indexPromise, onNavigate }) {
         </div>
       </div>`).join('');
     resultsEl.hidden = false;
+    resultsEl.dispatchEvent(new CustomEvent('search-rendered', { bubbles: true }));
     resultsEl.querySelectorAll('.sr-item').forEach(el => {
       el.addEventListener('click', () => {
         closeSearch();

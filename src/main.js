@@ -48,6 +48,12 @@ btnBack.addEventListener('click', navigateBack);
 btnHome.addEventListener('click', navigateHome);
 logoEl.addEventListener('click', navigateHome);
 
+breadcrumbEl.addEventListener('click', e => {
+  const crumb = e.target.closest('.crumb');
+  if (!crumb || crumb.classList.contains('active')) return;
+  navigateToCrumb(+crumb.dataset.index);
+});
+
 let _retryFn = null;
 errorRetry.addEventListener('click', () => { hideError(); _retryFn?.(); });
 
@@ -65,6 +71,17 @@ infoBtn.addEventListener('click', openInfoModal);
 imClose.addEventListener('click', closeInfoModal);
 infoModal.addEventListener('click', e => { if (e.target === infoModal) closeInfoModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && !infoModal.hidden) closeInfoModal(); });
+
+// ── Mobile action sheet ───────────────────────────────────────────────────────
+const mobileSheet = document.getElementById('mobile-sheet');
+document.getElementById('more-btn').addEventListener('click', () => { mobileSheet.hidden = false; });
+mobileSheet.querySelector('.ms-backdrop').addEventListener('click', () => { mobileSheet.hidden = true; });
+mobileSheet.querySelectorAll('.ms-item[data-target]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    mobileSheet.hidden = true;
+    document.getElementById(btn.dataset.target)?.click();
+  });
+});
 
 // ── Share / deep-link ─────────────────────────────────────────────────────────
 let _hashEnabled = false;
@@ -546,10 +563,6 @@ function updateChrome() {
     return `${sep}<span class="crumb ${isLast ? 'active' : ''}" data-index="${i}">${esc(c.name)}</span>`;
   }).join('');
 
-  breadcrumbEl.querySelectorAll('.crumb:not(.active)').forEach(el => {
-    el.addEventListener('click', () => navigateToCrumb(+el.dataset.index));
-  });
-
   updateHash();
 }
 
@@ -566,9 +579,4 @@ function showError(message, retryFn) {
 
 function hideError() { errorState.hidden = true; _retryFn = null; }
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
-
-function slugify(str) {
-  return String(str).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
 

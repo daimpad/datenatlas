@@ -69,6 +69,10 @@
           <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
         </svg>
       </button>
+
+      <button id="more-btn" title="Menü" aria-label="Weitere Optionen" aria-haspopup="dialog">
+        <i class="fa-solid fa-ellipsis-vertical" aria-hidden="true"></i>
+      </button>
     </header>
 
     <div id="filter-bar" hidden aria-label="Filter">
@@ -353,6 +357,40 @@
         <div class="wz-footer">
           <button id="wz-back" class="wz-btn wz-btn--ghost" hidden>← Zurück</button>
           <button id="wz-next" class="wz-btn wz-btn--primary" disabled>Weiter →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile action sheet -->
+    <div id="mobile-sheet" hidden role="dialog" aria-modal="true" aria-label="Menü">
+      <div class="ms-backdrop"></div>
+      <div class="ms-card">
+        <div class="ms-handle" aria-hidden="true"></div>
+        <div class="ms-grid">
+          <button class="ms-item" data-target="gen-btn">
+            <i class="fa-solid fa-shuffle ms-icon" aria-hidden="true"></i>
+            <span>Datenkombinator</span>
+          </button>
+          <button class="ms-item" data-target="open-data-btn">
+            <i class="fa-solid fa-wand-magic-sparkles ms-icon" aria-hidden="true"></i>
+            <span>Daten öffnen</span>
+          </button>
+          <button class="ms-item" data-target="share-btn">
+            <i class="fa-solid fa-link ms-icon" aria-hidden="true"></i>
+            <span>Link teilen</span>
+          </button>
+          <button class="ms-item" data-target="export-btn">
+            <i class="fa-solid fa-download ms-icon" aria-hidden="true"></i>
+            <span>CSV Export</span>
+          </button>
+          <button class="ms-item" data-target="stats-btn">
+            <i class="fa-solid fa-chart-bar ms-icon" aria-hidden="true"></i>
+            <span>Statistik</span>
+          </button>
+          <button class="ms-item" data-target="info-btn">
+            <i class="fa-solid fa-circle-info ms-icon" aria-hidden="true"></i>
+            <span>Über Datenatlas</span>
+          </button>
         </div>
       </div>
     </div>

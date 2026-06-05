@@ -220,9 +220,18 @@ function pickFromIndex({ sector, theme, object }) {
   return pool[Math.floor(Math.random() * pool.length)];
 }
 
+function fisherYates(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 export function roll() {
   if (!_ready || !_index.length) return null;
-  const shuffled = [...SCENARIOS].sort(() => Math.random() - 0.5);
+  const shuffled = fisherYates(SCENARIOS);
   for (const scenario of shuffled) {
     const entryA = pickFromIndex(scenario.a);
     const entryB = pickFromIndex(scenario.b);

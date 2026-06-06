@@ -141,10 +141,10 @@ canvas.addEventListener('keydown', e => {
   _setFocus(tiles[idx].id);
 });
 
-// Clear focus when canvas loses keyboard focus
+// Clear focus ring when canvas loses keyboard focus, but don't close the sidebar
+// (blur fires before the click on sidebar buttons, which would swallow them)
 canvas.addEventListener('blur', () => {
   _setFocus(null);
-  closeSidebar();
 });
 
 // ── Share / deep-link ─────────────────────────────────────────────────────────

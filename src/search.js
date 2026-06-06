@@ -35,14 +35,19 @@ export function buildSearchIndex(mainTiles, sectorPairs) {
 
 // ── UI ─────────────────────────────────────────────────────────────────────────
 
-export function initSearch({ indexPromise, onNavigate }) {
+export function initSearch({ indexPromise, getLiveIndex, onNavigate }) {
   const header    = document.getElementById('header');
   const toggleBtn = document.getElementById('search-toggle');
   const inputEl   = document.getElementById('search-input');
   const resultsEl = document.getElementById('search-results');
 
-  let _index = null;
-  indexPromise.then(idx => { _index = idx; });
+  // Use the live (growing) index for immediate results; full index when resolved
+  let _fullIndex = null;
+  indexPromise.then(idx => { _fullIndex = idx; });
+
+  function _index() {
+    return _fullIndex ?? (getLiveIndex ? getLiveIndex() : []);
+  }
 
   toggleBtn.addEventListener('click', () => {
     const opening = !header.classList.contains('search-mode');
@@ -84,9 +89,10 @@ export function initSearch({ indexPromise, onNavigate }) {
 
   function query() {
     const q = inputEl.value.trim();
-    if (!_index || q.length < 2) return [];
+    const idx = _index();
+    if (!idx.length || q.length < 2) return [];
     const lower = q.toLowerCase();
-    return _index.filter(r =>
+    return idx.filter(r =>
       r.tile.name.toLowerCase().includes(lower) ||
       r.tile.details?.description?.toLowerCase().includes(lower) ||
       r.displayPath.toLowerCase().includes(lower)

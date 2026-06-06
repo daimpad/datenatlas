@@ -14,15 +14,17 @@ document.addEventListener('click', e => {
 let _onExplore      = null;
 let _onNavigate     = null;
 let _onWizard       = null;
+let _onExpand       = null;
 let _relatedEntries = [];
 
-export function openSidebar(tile, { onExplore, exploreLabel = 'Erkunden', related = [], onNavigate = null, onWizard = null } = {}) {
+export function openSidebar(tile, { onExplore, exploreLabel = 'Erkunden', related = [], onNavigate = null, onWizard = null, onExpand = null } = {}) {
   _onExplore      = onExplore  ?? null;
   _onNavigate     = onNavigate ?? null;
   _onWizard       = onWizard   ?? null;
+  _onExpand       = onExpand   ?? null;
   _relatedEntries = related;
 
-  body.innerHTML = buildContent(tile, !!_onExplore, exploreLabel, related, !!_onWizard);
+  body.innerHTML = buildContent(tile, !!_onExplore, exploreLabel, related, !!_onWizard, !!_onExpand);
   sidebar.dataset.open = 'true';
 
   const btn = document.getElementById('sb-explore-btn');
@@ -45,6 +47,11 @@ export function openSidebar(tile, { onExplore, exploreLabel = 'Erkunden', relate
   if (wizBtn && _onWizard) {
     wizBtn.addEventListener('click', () => { _onWizard?.(); }, { once: true });
   }
+
+  const expBtn = document.getElementById('sb-expand-btn');
+  if (expBtn && _onExpand) {
+    expBtn.addEventListener('click', () => { _onExpand?.(); }, { once: true });
+  }
 }
 
 export function closeSidebar() {
@@ -56,7 +63,7 @@ export function closeSidebar() {
 const LEVEL_LABELS = ['', 'Sektor', 'Organisation', 'Aktivität', 'Datentyp', 'Prozess', 'Datentyp'];
 const BADGE_CLASS  = ['', 'l1',     'l2',           'l3',        'l4',       'l5',      'l6'];
 
-function buildContent(tile, hasExplore = false, exploreLabel = 'Erkunden', related = [], hasWizard = false) {
+function buildContent(tile, hasExplore = false, exploreLabel = 'Erkunden', related = [], hasWizard = false, hasExpand = false) {
   const lvl      = tile.level ?? 1;
   const badgeCls = BADGE_CLASS[lvl] ?? 'l4';
   const lvlLabel = LEVEL_LABELS[lvl] ?? 'Ebene';
@@ -103,7 +110,13 @@ function buildContent(tile, hasExplore = false, exploreLabel = 'Erkunden', relat
     ? `<div class="sb-hint">Keine weiteren Inhalte verfügbar.</div>`
     : '';
 
-  return strip + header + meta + exploreBtn + fallback;
+  const expandBtn = hasExpand
+    ? `<button id="sb-expand-btn" class="sb-expand-link">
+         <i class="fa-solid fa-wand-magic-sparkles"></i> Diesen Bereich erweitern
+       </button>`
+    : '';
+
+  return strip + header + meta + exploreBtn + fallback + expandBtn;
 }
 
 function buildDetailSections(d) {

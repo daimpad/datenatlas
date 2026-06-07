@@ -1054,6 +1054,45 @@
                 ],
                 "examples": []
               }
+            },
+            {
+              "id": "e-paper-auflagen",
+              "level": 4,
+              "name": "E-Paper-Auflagen und Digitalabonnements",
+              "color": "#9d174d",
+              "details": {
+                "description": "IVW-gemeldete E-Paper-Auflagen und digitale Abonnementzahlen von Tageszeitungen und Wochenpublikationen. Zeigt den Wandel vom Print- zum Digitalvertrieb im deutschen Pressemarkt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "IVW veröffentlicht E-Paper-Auflagen quartalsmäßig kostenlos auf ivw.de."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Quartalsdaten seit 2010 zusammengeführt, Wachstumsraten und Substitutionseffekte berechnet"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1534,6 +1573,84 @@
                   }
                 ],
                 "examples": []
+              }
+            },
+            {
+              "id": "mediengruppen-beteiligungen",
+              "level": 4,
+              "name": "Mediengruppenübergreifende Beteiligungsstruktur",
+              "color": "#9d174d",
+              "details": {
+                "description": "Verzeichnis der Beteiligungen großer Verlagsgruppen (Funke, Madsack, DuMont) an regionalen und überregionalen Tageszeitungen sowie Digitalmedien. Datengrundlage: Medienkonzentrationsberichte der KEK und Pressemitteilungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Beteiligungsstrukturen sind öffentlich bekannt, aber in strukturierter maschinenlesbarer Form nicht frei verfügbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Recherche",
+                    "description": "Konsolidierung der KEK-Berichte und Handelsregisterdaten zu Beteiligungsgraphen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "regionalzeitungen-marktanteile",
+              "level": 4,
+              "name": "Marktanteile regionaler Tageszeitungen",
+              "color": "#9d174d",
+              "details": {
+                "description": "IVW-basierte Marktanteilsanalyse regionaler und lokaler Tageszeitungstitel nach Verbreitungsgebiet (Bundesland, PLZ-Region). Zeigt Konzentrationstrends im lokalen Pressemarkt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "IVW-Auflagendaten sind öffentlich zugänglich; aggregierte Marktanteilsberechnungen können ohne Einschränkung veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "IVW-Quartalsdaten nach Verbreitungsgebiet zusammengefasst und Marktanteile berechnet"
+                  }
+                ]
               }
             }
           ]
@@ -3374,6 +3491,127 @@
                 ],
                 "examples": []
               }
+            },
+            {
+              "id": "dsa-auflagen-umsetzungsberichte",
+              "level": 4,
+              "name": "DSA-Umsetzungsberichte sehr großer Plattformen",
+              "color": "#9d174d",
+              "details": {
+                "description": "Transparenzberichte der sehr großen Online-Plattformen (VLOP) gemäß EU Digital Services Act: Moderationsentscheidungen, Beschwerden, Compliance-Maßnahmen und Algorithmus-Audits.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DSA verpflichtet VLOPs zur öffentlichen Berichterstattung; Berichte sind frei verfügbar."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Dokumentenanalyse",
+                    "description": "Veröffentlichte Transparenzberichte werden strukturiert ausgewertet und verglichen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "netzwerkdg-beschwerdestatistik",
+              "level": 4,
+              "name": "NetzDG-Beschwerdestatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Halbjährliche Transparenzberichte nach Netzwerkdurchsetzungsgesetz: Anzahl der gemeldeten Inhalte, Löschquoten und Beschwerdeentscheidungen großer sozialer Netzwerke in Deutschland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "NetzDG § 2 verpflichtet Plattformbetreiber zur Veröffentlichung der Berichte; frei downloadbar."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Gemeldete Inhalte werden nach Inhaltskategorie und Löschentscheidung zusammengefasst"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "plattform-empfehlungsalgorithmen",
+              "level": 4,
+              "name": "Plattform-Algorithmus-Audit-Daten",
+              "color": "#9d174d",
+              "details": {
+                "description": "Ergebnisse unabhängiger Algorithmus-Audits bei großen Social-Media-Plattformen gem. DSA Art. 40: Reichweitenverzerrungen, Filterblasen-Metriken, Empfehlungslogiken.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Audit-Berichte werden teils veröffentlicht, teils vertraulich. Aufbereitete Zusammenfassungen sind publizierbar."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Audit-Ergebnisse werden nach Plattform, Algorithmustyp und Risikokategorie strukturiert"
+                  }
+                ]
+              }
             }
           ]
         }
@@ -3905,6 +4143,49 @@
                 ],
                 "examples": []
               }
+            },
+            {
+              "id": "privatradio-frequenzregister",
+              "level": 4,
+              "name": "Frequenzregister privater Hörfunk",
+              "color": "#9d174d",
+              "details": {
+                "description": "Von der Bundesnetzagentur und Landesmedienanstalten geführtes Verzeichnis aller UKW- und DAB+-Frequenzen privater Hörfunksender in Deutschland: Frequenz, Standort, Betreiber, Sendeleistung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Frequenzzuteilungen sind amtliche Daten und unterliegen der Transparenzpflicht; Bundesnetzagentur publiziert diese."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Registerauswertung",
+                    "description": "Frequenzzuteilungsdaten werden nach Bundesland und Sendeleistung strukturiert ausgewertet"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4141,6 +4422,45 @@
                   }
                 ],
                 "examples": []
+              }
+            },
+            {
+              "id": "influencer-werbevermerke",
+              "level": 4,
+              "name": "Influencer-Werbekennzeichnungsstatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Monitoring-Ergebnisse der Landesmedienanstalten zur Werbekennzeichnung bei Influencer-Inhalten auf Instagram, TikTok und YouTube: Anteil gekennzeichneter Werbeposts, häufige Verstöße.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Berichte der Landesmedienanstalten werden veröffentlicht; vollständige Rohdaten der Einzelmessungen sind nicht öffentlich."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Stichprobenerhebung",
+                    "description": "Landesmedienanstalten prüfen Stichproben und publizieren aggregierte Fehlerquoten"
+                  }
+                ]
               }
             }
           ]
@@ -4511,6 +4831,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "sport-sublizenzierungen",
+              "level": 4,
+              "name": "Sport-Sublizenzierungsverträge",
+              "color": "#9d174d",
+              "details": {
+                "description": "Übersicht der Sublizenzierungen von Sportübertragungsrechten in Deutschland: Welche TV-/Streaming-Anbieter erhalten von Rechteinhabern Sublizenzen für welche Sportereignisse und Verwertungsfenster.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Vertragsdetails sind kommerziell vertraulich; Grundstrukturen der Lizenzpyramide werden im KEK-Bericht beschrieben."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Dokumentenanalyse",
+                    "description": "KEK-Berichte und Pressemitteilungen werden zu einer Übersicht der Lizenzstrukturen zusammengeführt"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4823,6 +5182,84 @@
                   {
                     "method": "Monitoring",
                     "description": "Automatisiertes Tracking öffentlicher Sendepläne"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "reality-tv-produktionskosten",
+              "level": 4,
+              "name": "Reality-TV-Produktionskostendaten",
+              "color": "#9d174d",
+              "details": {
+                "description": "Produktionskostenvergleiche für Reality-, Game- und Castingshow-Formate im deutschen Privatfernsehen: Herstellkosten pro Folge, Sendeplatz-Kosten-Effizienz, internationale Formatlizenzen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Kostendetails sind vertraulich; branchenweite Benchmarks werden in FFA- und Branchenberichten publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Benchmarking",
+                    "description": "Öffentliche Jahresberichte und Branchenstudien werden zu Kostenbenchmarks konsolidiert"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "comedy-satire-senderstatistik",
+              "level": 4,
+              "name": "Comedy- und Satiresendungen Statistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Ausstrahlungsstatistik für Comedy- und Satiresendungen im deutschen TV: Sendezeit, Altersfreigaben, Reichweiten und Verweildauer in Mediatheken nach Sender und Format.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Programmdaten und aggregierte Reichweiten werden von Sendern und GfK publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Programmzeitpläne und GfK-Daten werden nach Formattyp zusammengeführt"
                   }
                 ]
               }
@@ -5171,6 +5608,45 @@
                   {
                     "method": "Haushaltsanalyse",
                     "description": "Auswertung der Kulturhaushalte von Bund und Ländern"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "galeriebesucherzahlen",
+              "level": 4,
+              "name": "Galeriebesucherzahlen und Öffnungszeiten",
+              "color": "#9d174d",
+              "details": {
+                "description": "Besucherstatistiken kommerzieller und gemeinnütziger Galerien in Deutschland nach Standort, Ausstellungsformat (Gruppenausstellung, Einzelpräsentation) und Saison.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Galerien erheben Besucherzahlen intern; keine allgemeine Veröffentlichungspflicht. Freiwillige Meldungen an Kulturstatistik-Portale."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Freiwillige Erhebung",
+                    "description": "Galerien melden freiwillig an Branchenportale; Destatis ergänzt mit Kulturwirtschaftsberichten"
                   }
                 ]
               }
@@ -5552,6 +6028,84 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ateliermieten-regional",
+              "level": 4,
+              "name": "Ateliermieten im regionalen Vergleich",
+              "color": "#9d174d",
+              "details": {
+                "description": "Durchschnittliche Mietpreise für Atelierflächen in deutschen Großstädten und Mittelzentren: Preis je m², Flächentyp (Atelier, Gemeinschaftsstudio, Projektraum), Entwicklung seit 2010.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Mietdaten aus Wohnungsmarktberichten und Förderanträgen extrahierbar; keine standardisierte Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Marktanalyse",
+                    "description": "Mietpreisdaten aus Kulturförderanträgen und kommunalen Kulturberichten werden aggregiert"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kuenstler-sozialversicherung",
+              "level": 4,
+              "name": "Künstlersozialversicherung Beitragsstatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährliche Statistik der Künstlersozialkasse (KSK): Anzahl versicherter Bildender Künstler nach Kunstsparte, Einkommensklasse und Bundesland; Beitragsaufkommen und Entwicklungstrend.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KSK veröffentlicht Jahresberichte mit detaillierten Statistiken; Daten sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Jahresstatistik",
+                    "description": "KSK-Jahresberichte werden ausgewertet und nach Kunstsparte und Region aufgeschlüsselt"
+                  }
+                ]
+              }
             }
           ]
         }
@@ -5763,6 +6317,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "dlf-produktionsdaten-eigenproduktion",
+              "level": 4,
+              "name": "DLF Eigenproduktionsanteil und Formatstruktur",
+              "color": "#9d174d",
+              "details": {
+                "description": "Statistische Übersicht des Deutschlandradio-Eigenproduktionsanteils je Programm (DLF, Dlf Kultur, Dlf Nova): Anteil Wortbeiträge, Musiksendungen, Reportagen und Features in Stunden pro Woche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Deutschlandradio veröffentlicht Jahresberichte mit Programmstrukturanalysen; Daten sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Programmanalyse",
+                    "description": "Sendeschemata und Programmberichte werden ausgewertet und nach Format und Sendedauer aggregiert"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -5966,6 +6559,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "dlf-beitragsanteil-berechnung",
+              "level": 4,
+              "name": "Deutschlandradio Rundfunkbeitragsanteil-Berechnung",
+              "color": "#9d174d",
+              "details": {
+                "description": "KEF-basierte Darstellung des Anteils des Deutschlandradio am Rundfunkbeitrag: Beitragsaufkommen, Verteilungsschlüssel zwischen ARD/ZDF/DLF, Entwicklung über Beitragsperioden.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KEF-Berichte und Rundfunkstaatsvertrag sind öffentlich; Berechnungsgrundlagen sind transparent dokumentiert."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Finanzanalyse",
+                    "description": "KEF-Berichte werden ausgewertet und Beitragsanteile nach Periode und Institution aufgeschlüsselt"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6166,6 +6798,45 @@
                   {
                     "method": "Webanalyse",
                     "description": "Sessionbasierte Auswertung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "dlf-app-bewertungen",
+              "level": 4,
+              "name": "Dlf-App Nutzerbewertungen und Versionsdaten",
+              "color": "#9d174d",
+              "details": {
+                "description": "App-Store-Bewertungen (iOS/Android) und Versionsverlauf der Deutschlandradio-Apps (DLF Audiothek): Durchschnittsbewertung, Anzahl Rezensionen, Update-Häufigkeit und Funktionsänderungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "App-Store-Daten sind öffentlich einsehbar; systematische Erhebung und Aggregation ohne Einschränkungen möglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Weberhebung",
+                    "description": "App-Store-APIs und Webseiten werden systematisch ausgelesen und Bewertungsverläufe gespeichert"
                   }
                 ]
               }
@@ -6380,6 +7051,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "zdf-mediathek-empfehlungen",
+              "level": 4,
+              "name": "ZDF Mediathek Empfehlungsstatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Auswertung der Empfehlungsalgorithmen in der ZDF Mediathek: meistempfohlene Genres, Korrelation zwischen Empfehlung und Abruf, saisonale Muster bei redaktionellen Empfehlungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Interne Algorithmendaten sind vertraulich; aggregierte Empfehlungsstatistiken könnten im Rahmen des Rundfunkstaatsvertrags veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Algorithmusauswertung",
+                    "description": "Empfehlungsprotokolle werden aggregiert und auf Muster untersucht ohne personenbezogene Daten"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6583,6 +7293,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "zdf-studios-auftragsvolumen",
+              "level": 4,
+              "name": "ZDF Studios Auftragsvolumen und Lizenzerlöse",
+              "color": "#9d174d",
+              "details": {
+                "description": "Geschäftsdaten der ZDF Studios GmbH (Auslandsvertrieb von ZDF-Produktionen): Lizenzerlöse nach Region, Anzahl verkaufter Formate, Eigenproduktionsanteil am Vertriebskatalog.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "ZDF veröffentlicht Geschäftsberichte der Tochtergesellschaften; detaillierte Vertragsdaten sind vertraulich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Jahresabschlussauswertung",
+                    "description": "Jahresabschlüsse der ZDF Studios werden ausgewertet und Erlöse nach Vertriebsregion aggregiert"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6783,6 +7532,45 @@
                   {
                     "method": "Inhaltsanalyse",
                     "description": "Systematische Herkunftscodierung des Programms"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zdf-barrierefreiheit-sendeminuten",
+              "level": 4,
+              "name": "ZDF Barrierefreiheit: Untertitel und Audiodeskription",
+              "color": "#9d174d",
+              "details": {
+                "description": "Anzahl der mit Untertiteln und Audiodeskription ausgestrahlten Sendeminuten im ZDF-Programm nach Senderkategorie und Genre. Pflichtberichterstattung nach Rundfunkstaatsvertrag §7.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ZDF veröffentlicht Barrierefreiheitsstatistiken im Jahresbericht; Daten sind nach RStV öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Sendungsmonitoring",
+                    "description": "Programmdaten werden nach Barrierefreiheitsmerkmalen ausgewertet und je Monat aggregiert"
                   }
                 ]
               }
@@ -6997,6 +7785,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ard-mediathek-verweildauer",
+              "level": 4,
+              "name": "ARD Mediathek durchschnittliche Verweildauer",
+              "color": "#9d174d",
+              "details": {
+                "description": "Durchschnittliche Verweildauer der Nutzer in der ARD Mediathek nach Inhaltsformat (Spielfilm, Dokumentation, Serie, Nachrichtenbeitrag) und Endgerätetyp (Mobile, Desktop, Smart TV).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Verweildauerdaten werden im ARD-Jahresbericht publiziert; Einzelsitzungsdaten sind nicht öffentlich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Sessionanalyse",
+                    "description": "Server-Logs werden anonymisiert ausgewertet und Verweildauer nach Formattyp und Gerät aggregiert"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -7200,6 +8027,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "tagesschau-videoabrufe",
+              "level": 4,
+              "name": "Tagesschau.de Videoabruf-Statistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Abrufzahlen der Videobeiträge auf tagesschau.de und in der ARD Mediathek nach Thema, Sendedatum und Länge. Zeigt Themenpräferenzen des digitalen Nachrichtenpublikums.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Top-Abruf-Listen werden publiziert; vollständige Zeitreihendaten aller Beiträge sind nicht frei verfügbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Webanalyse",
+                    "description": "Abrufzahlen werden aus internen Analysesystemen extrahiert und nach Thema kategorisiert"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -7400,6 +8266,45 @@
                   {
                     "method": "Serveranalyse",
                     "description": "Auswertung der Streaming-Serverlogs"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ard-audiothek-suchbegriffe",
+              "level": 4,
+              "name": "ARD Audiothek Suchbegriff-Statistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Häufigste Suchbegriffe in der ARD Audiothek: Ranking nach Suchvolumen, Trendthemen, erfolgreiche und erfolglose Suchanfragen. Indikator für Nutzerinteressen und Content-Lücken.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Suchbegriff-Aggregate können ohne Personenbezug veröffentlicht werden; vollständige Suchlogs sind vertraulich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Suchloganalyse",
+                    "description": "Anonymisierte Suchanfragen werden aggregiert und nach Häufigkeit und Thema ausgewertet"
                   }
                 ]
               }
@@ -7614,6 +8519,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "dpa-bilddienst-nutzung",
+              "level": 4,
+              "name": "dpa-Bilddienst Nutzungsstatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Nutzungsstatistik des dpa-Bilddienstes: Anzahl abgerufener Pressefotos nach Thema, Uhrzeit und Abnehmertyp (Tageszeitungen, Online-Portale, TV). Zeigt Nachfragetrends im Pressefotografie-Markt.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Nutzungsdetails sind vertrauliche Geschäftsdaten; aggregierte Trendberichte könnten publiziert werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Zugriffslogeauswertung",
+                    "description": "Serverprotokolle des Bilddienstes werden anonymisiert aggregiert und nach Themenkategorie ausgewertet"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -7817,6 +8761,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "agenturmeldungen-uebernahme",
+              "level": 4,
+              "name": "Agenturmeldungen-Übernahmequote Medien",
+              "color": "#9d174d",
+              "details": {
+                "description": "Anteil der dpa/AFP/Reuters-Meldungen, die von deutschen Online-Medien unverändert oder leicht bearbeitet übernommen werden. Kennzahl für Abhängigkeit des Journalismus von Agenturdiensten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Übernahmequoten werden in Medienstudien (Medienrealität-Studien) erhoben; keine kontinuierlichen öffentlichen Daten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Textähnlichkeitsanalyse",
+                    "description": "Agenturmeldungen und Medienartikel werden algorithmisch auf Übereinstimmungen geprüft"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -8017,6 +9000,49 @@
                   {
                     "method": "NLP-Klassifikation",
                     "description": "Automatische Themenklassifikation"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "faktenchecks-agentur",
+              "level": 4,
+              "name": "Faktenchecks von Nachrichtenagenturen",
+              "color": "#9d174d",
+              "details": {
+                "description": "Statistik der Faktencheck-Meldungen von dpa Faktenfinder, AFP Factcheck und Reuters Fact Check: Anzahl geprüfter Behauptungen, Ergebnis (wahr/falsch/irreführend), Themenbereich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Faktenchecks werden von dpa und AFP öffentlich publiziert; strukturierte Daten können ohne Einschränkung bereitgestellt werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Klassifikation",
+                    "description": "Veröffentlichte Faktenchecks werden nach Thema, Herkunft der Behauptung und Ergebnis kategorisiert"
                   }
                 ]
               }

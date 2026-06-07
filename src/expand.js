@@ -23,7 +23,9 @@ const MIN_L4 = 15;
 
 // VOCAB and VALID_CODES are populated after vocabulary.json loads
 let VOCAB = {};
-let VALID_CODES = {};
+// Pre-initialize with empty Sets so .has() calls in validatePaste never throw
+// even if the user clicks Validate before the fetch resolves
+let VALID_CODES = { openness: new Set(), theme: new Set(), object: new Set(), granularity: new Set(), format: new Set(), license: new Set() };
 
 // ── State ────────────────────────────────────────────────────────────────────
 
@@ -111,7 +113,7 @@ const _VOCAB_FALLBACK = {
   openness:    [{ code:'OP_01',label:'Sofort publizierbar',color:'#27ae60'},{ code:'OP_02',label:'Nach Aufbereitung publizierbar',color:'#d4a017'},{ code:'OP_03',label:'Nur Metadaten publizierbar',color:'#c0392b'}],
   theme:       [{ code:'TH_01',label:'Gesundheit'},{ code:'TH_02',label:'Bildung'},{ code:'TH_03',label:'Soziales'},{ code:'TH_04',label:'Wirtschaft'},{ code:'TH_05',label:'Verwaltung'},{ code:'TH_06',label:'Umwelt'},{ code:'TH_07',label:'Finanzen'},{ code:'TH_08',label:'Recht'},{ code:'TH_09',label:'Natur/Biodiversität'},{ code:'TH_10',label:'Wissenschaft/Technik'}],
   object:      [{ code:'OB_01',label:'Personenbezogene Daten'},{ code:'OB_02',label:'Textdokumente'},{ code:'OB_03',label:'Finanzdaten'},{ code:'OB_04',label:'Messungen / Sensordaten'},{ code:'OB_05',label:'Geodaten'},{ code:'OB_06',label:'Mediendaten'},{ code:'OB_07',label:'Transaktionsdaten'},{ code:'OB_08',label:'Metadaten'}],
-  granularity: [{ code:'GR_01',label:'Einzelereignis / Rohdaten'},{ code:'GR_02',label:'Aggregiert'},{ code:'GR_03',label:'Kleinräumig (Stadtteil / Gemeinde)'},{ code:'GR_04',label:'Individuell / Mikrodaten'}],
+  granularity: [{ code:'GR_01',label:'Einzelereignis / Rohdaten'},{ code:'GR_02',label:'Aggregiert (zeitlich oder räumlich)'},{ code:'GR_03',label:'Kleinräumig (Stadtteil / Gemeinde)'},{ code:'GR_04',label:'Individuell / Mikrodaten'}],
   format:      [{ code:'FT_01',label:'CSV'},{ code:'FT_02',label:'JSON'},{ code:'FT_03',label:'NetCDF / HDF5'},{ code:'FT_04',label:'XML'},{ code:'FT_05',label:'GeoJSON'},{ code:'FT_06',label:'Shapefile'}],
   license:     [{ code:'LI_01',label:'CC0 / Public Domain'},{ code:'LI_02',label:'CC BY 4.0'},{ code:'LI_03',label:'Datenlizenz Deutschland'},{ code:'LI_04',label:'Proprietär / Restriktiv'}],
 };
@@ -387,7 +389,8 @@ function validatePaste() {
     if (!d.description) errors.push(`${idx}: fehlendes details.description`);
     if (!d.openness)    errors.push(`${idx}: fehlendes details.openness`);
     else {
-      if (d.openness.code && !d.openness.class) errors.push(`${idx}: openness.code → muss "class" heißen`);
+      if (d.openness.code) errors.push(`${idx}: openness.code → muss "class" heißen (nicht "code")`);
+      if (!d.openness.class) errors.push(`${idx}: fehlendes openness.class`);
       else if (!VALID_CODES.openness.has(d.openness.class)) errors.push(`${idx}: ungültiger openness.class "${escHtml(d.openness.class)}"`);
     }
     if (!d.theme?.code)        errors.push(`${idx}: fehlendes details.theme.code`);

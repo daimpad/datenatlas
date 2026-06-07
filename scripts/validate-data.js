@@ -18,7 +18,9 @@ const _vocabRaw = JSON.parse(fs.readFileSync(
   path.resolve(__dirname, '../public/data/vocabulary.json'), 'utf8'
 ));
 const VOCAB = Object.fromEntries(
-  Object.entries(_vocabRaw).map(([key, items]) => [key, new Set(items.map(i => i.code))])
+  Object.entries(_vocabRaw)
+    .filter(([, items]) => Array.isArray(items))
+    .map(([key, items]) => [key, new Set(items.map(i => i.code))])
 );
 
 const HEX_COLOR_RE = /^#[0-9a-fA-F]{6}$/;

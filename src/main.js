@@ -104,6 +104,8 @@ canvas.addEventListener('keydown', e => {
   if (!tiles.length) return;
 
   if (e.key === 'Escape') {
+    // Don't steal Escape from the info-modal handler (document keydown) when it's open
+    if (!infoModal.hidden) return;
     if (_focusedId) { _setFocus(null); closeSidebar(); }
     else navigateBack();
     e.preventDefault();
@@ -119,12 +121,11 @@ canvas.addEventListener('keydown', e => {
     return;
   }
 
-  if (!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Tab'].includes(e.key)) return;
+  if (!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)) return;
   e.preventDefault();
 
   // Determine grid layout from renderer
   const cols  = renderer.cols;
-  const rows  = renderer.rows;
   const total = tiles.length;
 
   let idx = _focusedId ? tiles.findIndex(t => t.id === _focusedId) : -1;
@@ -132,10 +133,11 @@ canvas.addEventListener('keydown', e => {
   else {
     const col = idx % cols;
     const row = Math.floor(idx / cols);
-    if (e.key === 'ArrowRight' || e.key === 'Tab')       idx = Math.min(total - 1, idx + 1);
-    if (e.key === 'ArrowLeft'  || (e.key === 'Tab' && e.shiftKey)) idx = Math.max(0, idx - 1);
-    if (e.key === 'ArrowDown')  idx = Math.min(total - 1, (row + 1) * cols + col);
-    if (e.key === 'ArrowUp')    idx = Math.max(0,          (row - 1) * cols + col);
+    if (e.key === 'ArrowRight') idx = Math.min(total - 1, idx + 1);
+    if (e.key === 'ArrowLeft')  idx = Math.max(0, idx - 1);
+    // ArrowDown/Up: only move if the target cell exists in the grid (no wrap to wrong column)
+    if (e.key === 'ArrowDown') { const t = (row + 1) * cols + col; if (t < total) idx = t; }
+    if (e.key === 'ArrowUp')   { const t = (row - 1) * cols + col; if (t >= 0)    idx = t; }
   }
 
   _setFocus(tiles[idx].id);
@@ -311,19 +313,8 @@ function tileMatchesFilter(tile) {
 
 // ── Process index (for L5 → L6 cross-sector lookup) ──────────────────────────
 
-// Map<processName, searchIndexEntry[]>
+// Map<processName, searchIndexEntry[]> — built incrementally in _indexSector
 let methodIndex = null;
-
-function buildMethodIndex(searchIdx) {
-  const mi = new Map();
-  for (const entry of searchIdx) {
-    for (const p of entry.tile.details?.processes ?? []) {
-      if (!mi.has(p.method)) mi.set(p.method, []);
-      mi.get(p.method).push(entry);
-    }
-  }
-  return mi;
-}
 
 // Colors assigned to process categories
 const PROCESS_COLORS = [
@@ -366,7 +357,14 @@ function _indexSector(sectorTile, sectorData) {
   _indexedSectors.add(sectorTile.id);
   const newEntries = buildSearchIndex(_mainTiles, [[sectorTile, sectorData]]);
   _liveIndex.push(...newEntries);
-  methodIndex = buildMethodIndex(_liveIndex);
+  // Incrementally extend methodIndex instead of rebuilding from scratch each time
+  if (!methodIndex) methodIndex = new Map();
+  for (const entry of newEntries) {
+    for (const p of entry.tile.details?.processes ?? []) {
+      if (!methodIndex.has(p.method)) methodIndex.set(p.method, []);
+      methodIndex.get(p.method).push(entry);
+    }
+  }
 }
 
 // Load sectors one by one in the background; prioritize `firstId` if given
@@ -475,6 +473,8 @@ function navigateToCrumb(index) {
 }
 
 function navigateToSearchResult(result) {
+  _focusedId = null;
+  renderer.setFocused(null);
   closeSidebar();
   state.breadcrumb = result.breadcrumb.map(c => ({ ...c }));
   const last = state.breadcrumb[state.breadcrumb.length - 1];

@@ -266,10 +266,10 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 | staat | 42 | 113 | 780 | 18,6 |
 | wirtschaft | 16 | 46 | 253 | 15,8 |
 | wissenschaft | 14 | 37 | 240 | 17,1 |
-| zivilgesellschaft | 17 | 49 | 255 | 15,0 |
+| zivilgesellschaft | 17 | 49 | 357 | 21,0 |
 | medien & kultur | 11 | 32 | 173 | 15,7 |
-| religion | 8 | 24 | 120 | 15,0 |
-| **Gesamt** | **108** | **301** | **1.821** | **16,9** |
+| religion | 8 | 24 | 144 | 18,0 |
+| **Gesamt** | **108** | **301** | **1.947** | **18,0** |
 
 ---
 

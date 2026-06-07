@@ -1,4 +1,5 @@
 // ── "Daten öffnen" Step-by-Step Wizard ───────────────────────────────────────
+import { trapFocus } from './utils.js';
 
 // Atlas sector ID → wizard sector
 const SECTOR_MAP = {
@@ -50,16 +51,21 @@ export function initWizard() {
   }
 
   // ── Open / Close ──────────────────────────────────────────────────────────
+  let _trapCleanup = null;
+
   function openWizard(ctx = null) {
     resetState(ctx);
     modal.hidden = false;
     document.body.style.overflow = 'hidden';
     renderStep();
+    _trapCleanup = trapFocus(modal);
   }
 
   function closeWizard() {
+    _trapCleanup?.(); _trapCleanup = null;
     modal.hidden = true;
     document.body.style.overflow = '';
+    openBtn?.focus();
   }
 
   _openWizardWithContext = (ctx) => openWizard(ctx);

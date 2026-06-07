@@ -50,9 +50,10 @@ Sektoren sind konsequent nach **Trägertyp** gegliedert (wer produziert die Date
 | `sector_zivilgesellschaft.json` | Zivilgesellschaft | `#6d28d9` | `#6d28d9` | `#7c3aed` | `#6d28d9` |
 | `sector_medien.json` | Medien und Kultur | `#be185d` | `#be185d` | `#db2777` | `#9d174d` |
 | `sector_religion.json` | Religionsgemeinschaften | `#134e4a` | `#1a6b65` | `#0f766e` | `#0d5c57` |
+| `sector_bildung.json` | Bildung | `#b45309` | `#b45309` | `#d97706` | `#92400e` |
 
 **Inaktive Dateien** (existieren, sind aber nicht in main.json referenziert):
-`sector_behoerde.json`, `sector_bildung.json`, `sector_forschung.json`,
+`sector_behoerde.json`, `sector_forschung.json`,
 `sector_gesundheit.json`, `sector_infrastruktur.json`, `sector_kommunen.json`, `sector_ngo.json`
 
 **CRITICAL**: Sector colors must NEVER be `#27ae60`, `#d4a017`, or `#c0392b` — those are reserved for openness indicators.
@@ -269,7 +270,8 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 | zivilgesellschaft | 17 | 49 | 357 | 21,0 |
 | medien & kultur | 11 | 32 | 199 | 18,1 |
 | religion | 8 | 24 | 144 | 18,0 |
-| **Gesamt** | **108** | **301** | **2.042** | **18,9** |
+| bildung | 8 | 24 | 144 | 18,0 |
+| **Gesamt** | **116** | **325** | **2.186** | **18,8** |
 
 ---
 
@@ -346,6 +348,7 @@ Sprint-Format (Features):
 - [x] **F-04** Wizard-Optimierung — Kontext-Einstieg aus L4-Detail, sektorspezifische Lizenzempfehlungen, Ergebnis-Checkliste ✓
 - [x] **F-05** Kommunen Tiefenausbau — +6 L2 in sector_staat.json (Stadtverwaltung, Bürgeramt, Schulamt, Kämmerei, Jugendamt, Sozialamt) je 15 L4 → 36→42 L2, 690→780 L4 ✓
 - [x] **F-06** Cross-Sektor-Fusion-Generator — 12 Szenarien, Neo-Brutalism Button + Modal, Slot-Machine-Animation, Navigation zu L4-Datentypen ✓
+- [x] **F-07** Bildung-Sektor aktiviert — 8 L2 × 3 L3 × 6 L4 = 144 L4; Qualitäts- und Accessibility-Pass (trapFocus, WCAG, SEO, Security Headers) ✓
 
 ### Startbefehl
 

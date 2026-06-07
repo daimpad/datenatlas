@@ -1,4 +1,4 @@
-import { esc } from './utils.js';
+import { esc, trapFocus } from './utils.js';
 
 let _index     = null;
 let _mainTiles = null;
@@ -12,10 +12,13 @@ export function initStats({ indexPromise, mainTiles }) {
 
   indexPromise.then(idx => { _index = idx; });
 
+  let _trapCleanup = null;
+
   statsBtn.addEventListener('click', () => {
     render();
     modal.hidden = false;
     statsBtn.classList.add('active');
+    _trapCleanup = trapFocus(modal);
   });
 
   closeBtn.addEventListener('click', close);
@@ -25,8 +28,10 @@ export function initStats({ indexPromise, mainTiles }) {
   });
 
   function close() {
+    _trapCleanup?.(); _trapCleanup = null;
     modal.hidden = true;
     statsBtn.classList.remove('active');
+    statsBtn.focus();
   }
 }
 

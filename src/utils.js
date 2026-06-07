@@ -39,3 +39,27 @@ export function applyTileColors(tiles, sectorColor = null) {
 
 // Backward-compat alias (L1 overview still calls this without a sector color)
 export const applyOpennessColors = (tiles) => applyTileColors(tiles);
+
+// Trap keyboard focus inside el while it's open.
+// Focuses first focusable child immediately (pass initialFocus:false to skip).
+// Returns a cleanup function — call it on close.
+export function trapFocus(el, { initialFocus = true } = {}) {
+  const SEL = 'button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
+  const focusable = () => [...el.querySelectorAll(SEL)];
+
+  function onKeydown(e) {
+    if (e.key !== 'Tab') return;
+    const nodes = focusable();
+    if (!nodes.length) { e.preventDefault(); return; }
+    const first = nodes[0], last = nodes[nodes.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  }
+
+  el.addEventListener('keydown', onKeydown);
+  if (initialFocus) focusable()[0]?.focus();
+  return () => el.removeEventListener('keydown', onKeydown);
+}

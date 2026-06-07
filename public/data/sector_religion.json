@@ -246,6 +246,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ekd-mitglieder-alter-bundesland",
+              "level": 4,
+              "name": "EKD-Kirchenmitglieder nach Altersgruppe und Bundesland",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Erhebung der EKD-Statistik zu Kirchenmitgliedern, aufgeschlüsselt nach Altersgruppen (unter 14, 14–29, 30–59, 60+) und Bundesland. Die Daten werden von den 20 Landeskirchen an das Kirchenamt der EKD gemeldet und im EKD-Statistischen Jahrbuch veröffentlicht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EKD veröffentlicht diese Aggregatdaten bereits im Statistischen Jahrbuch und auf ekd.de; keine personenbezogenen Daten enthalten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Landeskirchliche Meldung",
+                    "description": "Jede Landeskirche übermittelt jährlich ihre Mitgliederzahlen nach Altersklasse an das EKD-Kirchenamt in Hannover."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Zeitreihenvergleich zur Messung säkularer Mitgliedschaftsdynamik und demografischer Verschiebungen innerhalb der evangelischen Kirchengemeinden."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ev-kirchenein-austritte-zeitreihe",
+              "level": 4,
+              "name": "Evangelische Kircheneintritte und -austritte Zeitreihe",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Zeitreihe der Kirchenein- und -austritte in den evangelischen Landeskirchen Deutschlands, erhoben durch das EKD-Kirchenamt und publiziert im Statistischen Jahrbuch der EKD. Enthält auch Übertritts- und Wiederaufnahmezahlen nach Bundesland seit 1990.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Bewegungsdaten ohne Personenbezug; seit Jahren im EKD-Jahrbuch und als Download auf ekd.de verfügbar."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Standesamtliche Meldung",
+                    "description": "Kirchenaustrittszahlen werden von den Standesämtern der Länder an die Landeskirchen gemeldet und dort konsolidiert."
+                  },
+                  {
+                    "method": "Longitudinalanalyse",
+                    "description": "Langzeitvergleich über mehrere Jahrzehnte ermöglicht Prognosen zur Mitgliederentwicklung und Ressourcenplanung der Landeskirchen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -496,6 +586,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ekd-kirchensteuer-landeskirche",
+              "level": 4,
+              "name": "EKD-Kirchensteueraufkommen nach Landeskirche",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährlicher EKD-Finanzbericht mit dem Kirchensteueraufkommen je Landeskirche in Euro, aufgeteilt nach Lohn- und Einkommensteuerkirchgeld. Die Daten basieren auf Abführungsstatistiken der Finanzbehörden der Länder und werden im EKD-Finanzbericht konsolidiert.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gesamtbeträge je Landeskirche sind öffentlich im EKD-Finanzbericht ausgewiesen; keine personenbezogenen Steuerdaten enthalten."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Steuerabführungsstatistik",
+                    "description": "Länderbehörden melden Kirchensteuereinnahmen monatlich an die Landeskirchen; EKD-Kirchenamt aggregiert bundesweit."
+                  },
+                  {
+                    "method": "Pro-Kopf-Normierung",
+                    "description": "Berechnung des Kirchensteueraufkommens je Mitglied für Benchmarking zwischen den Landeskirchen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ev-sozialeinrichtungen-investitionen",
+              "level": 4,
+              "name": "Kirchliche Sozialeinrichtungen Evangelisch — Investitionsvolumen",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Statistik zu Investitionen evangelisch-kirchlicher Sozialeinrichtungen (Krankenhäuser, Pflegeheime, Kindertagesstätten) nach Einrichtungstyp und Bundesland, erhoben durch die Diakonie Deutschland und jährlich im Diakonie-Datenbericht publiziert.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rohdaten enthalten teils betriebswirtschaftlich sensible Einzelangaben; nach Aggregation auf Einrichtungstyp ohne Wettbewerbsrisiko publizierbar."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Jahresabschlussauswertung",
+                    "description": "Diakonie Deutschland wertet Jahresabschlüsse der Mitgliedseinrichtungen aus und aggregiert Investitionsvolumina nach Sektor."
+                  },
+                  {
+                    "method": "Vergleichsindex",
+                    "description": "Normierung der Investitionen je Bett/Platz für Effizienzvergleich zwischen konfessionellen und kommunalen Trägern."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -735,6 +915,96 @@
                   {
                     "method": "DEAE-Statistik",
                     "description": "Deutsche Evangelische Arbeitsgemeinschaft für Erwachsenenbildung erfasst Teilnahmedaten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ev-schulstatistik-schuelerzahlen",
+              "level": 4,
+              "name": "Evangelische Schulstatistik — Schülerzahlen nach Schulform",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Erhebung der Schülerzahlen an evangelischen Schulen in Deutschland, aufgeschlüsselt nach Schulform (Grundschule, Gymnasium, Berufsschule u. a.) und Bundesland. Datenquelle ist das Evangelische Schulwerk Deutschland (ESD) in Zusammenarbeit mit dem Sekretariat der KMK.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Schülerzahlen ohne Personenbezug; KMK und ESD veröffentlichen vergleichbare Schulstatistiken jährlich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Schulträgermeldung",
+                    "description": "Evangelische Schulträger übermitteln jährlich Schülerzahlen an das ESD, das bundesweite Gesamtstatistiken erstellt."
+                  },
+                  {
+                    "method": "KMK-Abgleich",
+                    "description": "Daten werden mit den amtlichen Schulstatistiken der Kultusministerkonferenz abgeglichen und auf Vollständigkeit geprüft."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ekd-medienpraesenzdaten-gottesdienst-tv",
+              "level": 4,
+              "name": "EKD-Medienpräsenz — Gottesdienstübertragungen TV und Radio",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Reichweitendaten evangelischer Gottesdienstübertragungen in ARD, ZDF und Dritten Programmen sowie im Deutschlandfunk, erhoben durch das Gemeinschaftswerk der Evangelischen Publizistik (GEP) auf Basis von AGF/GfK-Fernsehforschung und ARD/ZDF-Hörfunkdaten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "AGF/GfK-Rohdaten sind lizenzpflichtig; aggregierte Sendungsreichweiten können vom GEP ohne Lizenzproblem veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "AGF/GfK-Auswertung",
+                    "description": "Das GEP wertet quartalsweise AGF/GfK-Fernsehpaneldaten auf Sendungsebene aus und extrahiert Reichweiten religiöser Formate."
+                  },
+                  {
+                    "method": "Trenddarstellung",
+                    "description": "Langzeitreihe zeigt Entwicklung der Fernsehreichweite religiöser Sendungen im Zuge wachsender Streaming-Konkurrenz."
                   }
                 ]
               }
@@ -988,6 +1258,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "dbk-sakramentenstatistik-bistum",
+              "level": 4,
+              "name": "DBK-Sakramentenspendungen nach Bistum (Taufen, Firmungen)",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Kirchenstatistik der Deutschen Bischofskonferenz (DBK) zu Sakramentenspendungen — Taufen, Erstkommunionen, Firmungen, Trauungen und Bestattungen — aufgeschlüsselt nach den 27 deutschen Bistümern. Veröffentlicht im Kirchlichen Handbuch (Herder Verlag) und auf dbk.de.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Sakramentenstatistik ohne Personenbezug; DBK veröffentlicht diese Daten seit Jahrzehnten im Kirchlichen Handbuch."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bistumserhebung",
+                    "description": "Jedes Bistum erfasst Sakramentenspendungen auf Pfarreiebene und übermittelt aggregierte Bistumszahlen ans Sekretariat der DBK in Bonn."
+                  },
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Vergleich über Jahrzehnte ermöglicht Rückschlüsse auf religiöse Praxis und demografischen Wandel in der katholischen Kirche Deutschlands."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kath-kirchenaustritte-bistum-zeitreihe",
+              "level": 4,
+              "name": "Katholische Kirchenaustritte nach Bistum — Zeitreihe",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Zeitreihe der Kirchenaustritte in den 27 deutschen Bistümern seit 1990, erhoben durch das Sekretariat der DBK auf Basis standesamtlicher Meldungen der Länder. Daten werden jährlich zusammen mit Eintrittszahlen im DBK-Pressebericht zur Kirchenstatistik veröffentlicht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Austrittszahlen ohne Personenbezug; DBK veröffentlicht diese Daten jährlich im April als Pressemitteilung mit tabellarischem Anhang."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Standesamtdatenübermittlung",
+                    "description": "Einwohnermeldeämter der Länder melden Kirchenaustritte an die Bistümer; DBK konsolidiert bundesweit."
+                  },
+                  {
+                    "method": "Regressionsanalyse",
+                    "description": "Statistische Modellierung zur Identifikation von Treibern des Mitgliederrückgangs (Missbrauchsskandale, demografischer Wandel)."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1234,6 +1594,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "dbk-kirchensteuer-bistum-einnahmen",
+              "level": 4,
+              "name": "DBK-Kirchensteuer und sonstige Einnahmen nach Bistum",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährlicher Finanzbericht der Deutschen Bischofskonferenz mit Kirchensteuereinnahmen sowie sonstigen Erträgen (Vermögensertrag, staatliche Zuschüsse, Spenden) nach Bistum. Daten basieren auf Bistumshaushaltsplänen und werden vom Sekretariat der DBK aggregiert.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einzelbistümer veröffentlichen Haushalte mit unterschiedlicher Tiefe; bundesweite Aggregation erfordert Aufbereitung durch DBK-Sekretariat, da nicht alle Bistümer vollständig transparente Berichte publizieren."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bistumshaushaltsauswertung",
+                    "description": "Sekretariat der DBK wertet publizierte Bistumshaushalte aus und ergänzt durch direkte Abfragen bei den Finanzkammern der Bistümer."
+                  },
+                  {
+                    "method": "Pro-Kopf-Vergleich",
+                    "description": "Normierung der Kirchensteuereinnahmen je Kirchenmitglied nach Bistum ermöglicht interregionalen Wohlstandsvergleich."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "caritas-haushalt-einnahmen-herkunft",
+              "level": 4,
+              "name": "Caritas-Haushalt — Einnahmen nach Herkunft",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jahresstatistik des Deutschen Caritasverbandes (DCV) zu Einnahmen der Caritas-Einrichtungen nach Herkunft (öffentliche Pflegevergütungen, Kirchenmittel, Spenden, EU-Fördermittel), veröffentlicht im DCV-Jahresbericht und dem Statistischen Taschenbuch Caritas.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DCV publiziert Einnahmestrukturen im Jahresbericht; keine sensiblen Einzelangaben enthalten."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verbandsmeldung",
+                    "description": "Diözesan-Caritasverbände melden Haushaltsdaten an den Deutschen Caritasverband in Freiburg, der bundesweit konsolidiert."
+                  },
+                  {
+                    "method": "Finanzierungsstrukturanalyse",
+                    "description": "Auswertung der Abhängigkeit kirchlicher Wohlfahrt von öffentlichen vs. kircheneigenen Mitteln zur Risikoabschätzung."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1473,6 +1923,92 @@
                   {
                     "method": "KBE-Statistik",
                     "description": "Katholische Bundesarbeitsgemeinschaft für Erwachsenenbildung erfasst Kursteilnahmen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kath-schul-kitastatistik-einrichtungen",
+              "level": 4,
+              "name": "Katholische Schul- und Kitastatistik — Einrichtungen bundesweit",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Bundesweite Statistik katholischer Schulen und Kindertageseinrichtungen nach Einrichtungstyp, Träger und Bundesland, erstellt durch das Sekretariat der Deutschen Bischofskonferenz in Kooperation mit dem Verband Katholischer Schulen Freier Träger (VKS) und der KiTa-Fachberatung der Bistümer.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Strukturdaten zu Einrichtungen ohne personenbezogene Daten; vergleichbare KMK-Statistiken für konfessionelle Schulen sind öffentlich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Schulträgerbefragung",
+                    "description": "Bistumliche Schulreferate erfassen Einrichtungsdaten jährlich und leiten an das DBK-Sekretariat weiter."
+                  },
+                  {
+                    "method": "KMK-Abgleich",
+                    "description": "Daten werden mit der amtlichen Schulstatistik der KMK geprüft, um konfessionelle Schulen vollständig zu erfassen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kath-krankenhausstatistik-betten-faelle",
+              "level": 4,
+              "name": "Katholische Krankenhausstatistik — Betten und Behandlungsfälle",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Krankenhausstatistik des Katholischen Krankenhausverbandes Deutschlands (KKVD) zu Bettenzahlen, stationären Behandlungsfällen und Fachabteilungen an den ca. 350 katholischen Krankenhäusern. Ergänzt durch Daten des Statistischen Bundesamtes (Destatis, Krankenhausstatistik).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Kapazitäts- und Fallzahlen sind Bestandteil der öffentlichen Krankenhausstatistik des Destatis; KKVD-Auswertung ergänzt konfessionsspezifische Differenzierung."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Destatis-Krankenhausstatistik-Abgleich",
+                    "description": "KKVD extrahiert katholische Einrichtungen aus der amtlichen Destatis-Krankenhausstatistik und ergänzt verbandseigene Erhebungen."
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Vergleich von Auslastungsgraden und Fallmix zwischen katholischen, evangelischen und kommunalen Krankenhäusern."
                   }
                 ]
               }
@@ -1738,6 +2274,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "zentralrat-mitglieder-bundesland",
+              "level": 4,
+              "name": "Zentralrat der Juden — Gemeindemitglieder nach Bundesland",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Mitgliederstatistik des Zentralrats der Juden in Deutschland, aufgeschlüsselt nach Landesverbänden und Gemeinden. Enthält Mitgliederzahlen, Altersstruktur und Gemeindeanzahl nach Bundesland, veröffentlicht im Jahresbericht des Zentralrats.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Gemeindestatistik ohne Personenbezug; Zentralrat veröffentlicht Mitgliederzahlen regelmäßig in Jahresberichten und Pressemitteilungen."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Landesverbandsmeldung",
+                    "description": "Jüdische Landesverbände melden Mitgliederzahlen ihrer Gemeinden an den Zentralrat der Juden in Berlin."
+                  },
+                  {
+                    "method": "Demografische Auswertung",
+                    "description": "Zentralrat analysiert Altersstruktur und Wachstumsraten der Gemeinden im Kontext von Zuwanderung und natürlicher Bevölkerungsbewegung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "juedische-kontingentfluechtlinge-zeitreihe",
+              "level": 4,
+              "name": "Zuwanderung jüdischer Kontingentflüchtlinge — Zeitreihe BAMF",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Zeitreihe der Zuwanderung jüdischer Kontingentflüchtlinge (Jüdisches Kontingent) aus den Nachfolgestaaten der UdSSR nach Deutschland seit 1990, erhoben vom Bundesamt für Migration und Flüchtlinge (BAMF) und veröffentlicht im BAMF-Migrationsbericht sowie der Bundestagsdrucksache zur Jüdischen Zuwanderung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BAMF veröffentlicht Kontingentdaten in offiziellen Migrationsberichten; keine schutzwürdigen Einzelangaben enthalten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BAMF-Registerauswertung",
+                    "description": "BAMF wertet das Ausländerzentralregister (AZR) auf den Aufenthaltstitel §23 Abs.2 AufenthG (jüdische Kontingente) aus."
+                  },
+                  {
+                    "method": "Längsschnittanalyse",
+                    "description": "Verknüpfung mit Zentralrats-Mitgliederdaten zur Abschätzung der Integrationsquote von Kontingentflüchtlingen in jüdische Gemeinden."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1992,6 +2618,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "arolsen-archives-anfragen-dokumente",
+              "level": 4,
+              "name": "Arolsen Archives — Anfragen und Dokumente nach Jahr",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Statistik der Arolsen Archives (ehemals ITS Bad Arolsen) zu eingegangenen Anfragen von NS-Verfolgten und Angehörigen sowie digitalisierter und herausgegebener Dokumente. Die Daten werden im Jahresbericht der Arolsen Archives publiziert und umfassen Anfragen nach Herkunftsland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Anfrage- und Dokumentenstatistik ohne Personenbezug; Arolsen Archives veröffentlicht diese Daten im Jahresbericht und auf arolsen-archives.org."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Anfrageverwaltungsauswertung",
+                    "description": "Arolsen Archives wertet das interne Anfrageverwaltungssystem aus und differenziert nach Anfragetyp, Herkunftsland und Bearbeitungsstatus."
+                  },
+                  {
+                    "method": "Digitalisierungsfortschritt-Tracking",
+                    "description": "Monatliches Monitoring des Digitalisierungsfortschritts der 30 Millionen Dokumente zu NS-Verfolgung, Zwangsarbeit und Holocaust."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "antisemitismusmeldestellen-vorfaelle-bundesland",
+              "level": 4,
+              "name": "Antisemitismusmeldestellen — Vorfälle nach Bundesland",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Statistik antisemitischer Vorfälle aus den Meldestellen der Bundesländer (RIAS — Recherche- und Informationsstelle Antisemitismus) sowie dem Bundeskriminalamt (BKA, PMK-Statistik). Enthält Vorfallskategorien (Beleidigung, Bedrohung, Angriff, Sachbeschädigung) nach Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "RIAS und BKA veröffentlichen Vorfallsstatistiken jährlich als öffentliche Berichte; keine Personendaten der Opfer enthalten."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "RIAS-Meldestellenauswertung",
+                    "description": "Landes-RIAS-Stellen erfassen Meldungen zivilgesellschaftlicher Beobachter und aggregieren nach Vorfallskategorie und Region."
+                  },
+                  {
+                    "method": "BKA-PMK-Abgleich",
+                    "description": "Abgleich von RIAS-Zivilmeldungen mit polizeilicher PMK-Statistik zur Einschätzung des Dunkelfeldes antisemitischer Straftaten."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -2231,6 +2947,96 @@
                   {
                     "method": "Landeshaushalt-Auswertung",
                     "description": "Systematische Erfassung der Landesförderungen für jüdische Gemeinden."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "staatsleistungen-juedische-gemeinden-bundesland",
+              "level": 4,
+              "name": "Staatsleistungen an jüdische Gemeinden nach Bundesland",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Statistik staatlicher Zuwendungen (Staatsverträge, institutionelle Förderung) an jüdische Gemeinden und Landesverbände nach Bundesland, basierend auf Landeshaushaltsdaten und Berichten der Innenministerien. Ergänzt durch Bundesleistungen nach dem Bundestagsbeschluss zur Förderung jüdischen Lebens.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Haushaltsdaten der Länder sind öffentlich, erfordern aber systematische Extraktion und Aggregation aus verschiedenen Haushaltsplänen."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Haushaltsplananalyse",
+                    "description": "Systematische Auswertung der Einzelpläne der 16 Landeshaushaltspläne nach Zuwendungsempfänger jüdische Gemeinde/Landesverband."
+                  },
+                  {
+                    "method": "Zeitreihenaufbau",
+                    "description": "Aufbau einer Längsschnittdatenbank staatlicher Zuwendungen seit Abschluss der ersten Staatsverträge (ab 1990) zur Trendanalyse."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "foerderprogramme-juedisches-leben-bundesregierung",
+              "level": 4,
+              "name": "Förderprogramme der Bundesregierung für jüdisches Leben",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Statistik zu Bundesförderprogrammen für jüdisches Leben in Deutschland (Bundesinnenministerium, Beauftragte der Bundesregierung für jüdisches Leben), einschließlich Projektanzahl, Fördersummen und Themenfelder. Daten aus Bundeshaushaltsplan Einzelplan 06 sowie BMFSFJ-Förderberichten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bundesförderdaten sind im Bundeshaushaltsplan und auf der Transparenzplattform des Bundes öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Bundeshaushaltsauswertung",
+                    "description": "Extraktion aller Titel mit Zuwendungen an jüdische Organisationen aus dem Bundeshaushaltsplan (Einzelpläne 06 und 17)."
+                  },
+                  {
+                    "method": "Programmwirkungsanalyse",
+                    "description": "Auswertung der Verwendungsnachweise von Bundeszuwendungsempfängern im Bereich jüdisches Leben zur Wirkungsmessung."
                   }
                 ]
               }
@@ -2496,6 +3302,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "moscheegemeinden-erhebung-uni-osnabrueck",
+              "level": 4,
+              "name": "Moscheegemeinden-Erhebung — Trägerverband und Bundesland",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Periodische Erhebung des Instituts für Islamische Theologie (IIT) der Universität Osnabrück zu Moscheegemeinden in Deutschland nach Trägerverband (DITIB, ZMD, IGMG, VMD u. a.) und Bundesland. Ergänzt durch Daten der Deutschen Islam Konferenz (DIK) des Bundesinnenministeriums.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rohdaten der Erhebung enthalten teils Einzelangaben zu Gemeinden; aggregierte Übersichten nach Träger und Land sind publizierbar."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Verbandsbefragung",
+                    "description": "IIT Osnabrück befragt islamische Dachverbände und wertet öffentlich zugängliche Gemeinderegister aus."
+                  },
+                  {
+                    "method": "Geodatenverknüpfung",
+                    "description": "Moscheegemeinden werden georeferenziert, um räumliche Verteilung im Verhältnis zur muslimischen Bevölkerung zu analysieren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "islamischer-religionsunterricht-schueler-bundesland",
+              "level": 4,
+              "name": "Islamischer Religionsunterricht — Schüler nach Bundesland",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Statistik zu Schülerinnen und Schülern im bekenntnisorientierten islamischen Religionsunterricht nach Bundesland, erhoben durch das Sekretariat der Kultusministerkonferenz (KMK). Enthält Angaben zu Unterrichtsmodellen (ordentliches Lehrfach, Schulversuch, DITIB-Unterricht).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KMK veröffentlicht Schülerstatistiken nach Unterrichtsfächern einschließlich Religionsunterricht; keine personenbezogenen Daten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "KMK-Schulstatistik-Extraktion",
+                    "description": "Sekretariat der KMK extrahiert Schülerzahlen im islamischen Religionsunterricht aus den Schulstatistiken der 16 Länder."
+                  },
+                  {
+                    "method": "Bundeslandvergleich",
+                    "description": "Vergleich der Einführungsquoten islamischen Religionsunterrichts nach Bundesland zur Analyse politischer Umsetzungsunterschiede."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -2742,6 +3638,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "einbuergerungsstatistik-muslimisch-herkunftslaender",
+              "level": 4,
+              "name": "Einbürgerungsstatistik — muslimisch geprägte Herkunftsländer",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Einbürgerungsstatistik des Statistischen Bundesamtes (Destatis) zu Einbürgerungen von Personen aus muslimisch geprägten Herkunftsländern (Türkei, Syrien, Afghanistan, Marokko u. a.) nach Bundesland. Quelle: Destatis-Fachserie 1 Reihe 1.1 (Einbürgerungen).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis publiziert Einbürgerungsstatistiken nach Herkunftsland jährlich als offizielle Fachserie; keine Personendaten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Destatis-Fachserienauswertung",
+                    "description": "Destatis aggregiert Einbürgerungsbescheide der Ausländerbehörden nach Staatsangehörigkeit und Bundesland."
+                  },
+                  {
+                    "method": "Herkunftslandklassifikation",
+                    "description": "Klassifikation der Herkunftsländer nach Bevölkerungsanteil muslimischer Glaubensangehöriger gemäß Pew Research Center-Daten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "svr-integrationsbarometer-muslimische-teilhabe",
+              "level": 4,
+              "name": "SVR-Integrationsbarometer — Muslimische Teilhabe Index",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Zweijährliche Befragungsstudie des Sachverständigenrats für Integration und Migration (SVR) zum Integrationsklima in Deutschland, einschließlich Teilhabe-Indikatoren muslimischer Bevölkerungsgruppen in Bildung, Arbeitsmarkt und gesellschaftlichem Leben. Veröffentlicht im SVR-Integrationsbarometer.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "SVR publiziert Ergebnisberichte; Mikrodaten der Befragung sind über GESIS-Datenarchiv für Forschungszwecke zugänglich, erfordern Datenzugangsantrag."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Repräsentativbefragung",
+                    "description": "SVR befragt ca. 14.000 Personen mit und ohne Migrationshintergrund zu Integrationsklima und Teilhabeerfahrungen."
+                  },
+                  {
+                    "method": "Indexkonstruktion",
+                    "description": "Konstruktion eines multidimensionalen Teilhabe-Index aus Subdimensionen (Bildung, Arbeit, Wohnen, Gesellschaft) für muslimische Bevölkerungsgruppen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -2985,6 +3971,92 @@
                   {
                     "method": "KMK-Schulstatistik",
                     "description": "Kultusministerkonferenz erfasst private islamische Schulen und Fördervolumen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ditib-haushalt-moscheebaufoerderung",
+              "level": 4,
+              "name": "DITIB-Haushalt — Einnahmen und Moscheebauförderung",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Finanzstatistik des DITIB-Bundesverbandes zu Einnahmen (Mitgliedsbeiträge, Spenden, türkische Diyanet-Zuweisungen) und Ausgaben für Moscheebau und -sanierung in Deutschland. Quellen sind DITIB-Geschäftsberichte und Transparenzberichte gemäß Vereinsrecht.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "DITIB veröffentlicht keine vollständigen Haushaltsberichte; verfügbare Teilinformationen aus Jahresberichten und Gerichtsverfahren bedürfen Aufbereitung."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Vereinsregisterauswertung",
+                    "description": "Auswertung öffentlich zugänglicher Jahresabschlüsse aus dem Vereinsregister beim zuständigen Amtsgericht Köln."
+                  },
+                  {
+                    "method": "Presseberichtsanalyse",
+                    "description": "Ergänzende Auswertung von Presseberichten und parlamentarischen Anfragen zu DITIB-Finanzierungsstruktur und Diyanet-Zahlungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "staatsfinanzierung-muslimische-wohlfahrtsverbände",
+              "level": 4,
+              "name": "Staatsfinanzierung muslimischer Wohlfahrtsverbände",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Statistik staatlicher Zuwendungen an muslimische Wohlfahrtsorganisationen (z. B. Muslimische Wohlfahrt, AWO-Kooperationen) nach Bundesland und Förderprogramm. Quellen sind Landeshaushalte, BMFSFJ-Förderberichte und Anfragen nach Informationsfreiheitsgesetzen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einzelne Zuwendungsdaten sind in Haushaltsplänen öffentlich; systematische Aggregation nach muslimischem Träger erfordert Datenaufbereitung."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Zuwendungsdatenbankabfrage",
+                    "description": "Abfrage der Zuwendungsdatenbank des Bundes (zuwendungen.bund.de) nach Empfängern mit muslimischem Organisationsbezug."
+                  },
+                  {
+                    "method": "IFG-Anfragenauswertung",
+                    "description": "Systematische Auswertung von IFG-Anfrageergebnissen auf FragdenStaat.de zu muslimischen Förderempfängern."
                   }
                 ]
               }
@@ -3238,6 +4310,92 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "vef-mitgliedergemeinden-gottesdienstbesucher",
+              "level": 4,
+              "name": "VEF — Mitgliedsgemeinden und Gottesdienstbesucher",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Statistik der Vereinigung Evangelischer Freikirchen (VEF) zu Mitgliedsgemeinden und durchschnittlichen Gottesdienstbesuchern der Mitgliedsverbände (BEFG, Methodisten, Heilsarmee u. a.), veröffentlicht im VEF-Jahresbericht und der freikirchlichen Statistikpublikation.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "VEF veröffentlicht Gemeindestatistiken im Jahresbericht; keine personenbezogenen Daten enthalten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verbandsbefragung",
+                    "description": "VEF erhebt jährlich Gemeindeanzahl und Besucherzahlen bei den Mitgliedsverbänden mittels Selbstauskunft."
+                  },
+                  {
+                    "method": "Wachstumsanalyse",
+                    "description": "Vergleich freikirchlicher Mitgliedschaftsentwicklung mit Volkskirchen zur Analyse religionssoziologischer Trends."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "neuapostolische-kirche-mitgliederstatistik",
+              "level": 4,
+              "name": "Neuapostolische Kirche — Mitgliederstatistik Deutschland",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Mitglieder- und Gemeindestatistik der Neuapostolischen Kirche (NAK) Deutschland, veröffentlicht im NAK-Jahresbericht. Enthält Mitgliederzahlen, Gottesdienstbesucher, Entschlafene und Taufzahlen nach Bezirk.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "NAK Deutschland publiziert aggregierte Statistiken im Jahresbericht und auf nak.de; keine Personendaten enthalten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Bezirksmeldung",
+                    "description": "NAK-Bezirke melden Mitglieder- und Gottesdienstdaten an die Kirchenleitung Frankfurt, die bundesweit konsolidiert."
+                  },
+                  {
+                    "method": "Demografischer Trendvergleich",
+                    "description": "Gegenüberstellung von Tauf- und Sterbezahlen zur Analyse der Nettomitgliedschaftsdynamik."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -3484,6 +4642,92 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "freikirchliche-schulen-bawue-bayern-schueler",
+              "level": 4,
+              "name": "Freikirchliche Schulen BaWü/Bayern — Schülerzahlen nach Schulform",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Statistik zu Schülerzahlen an freikirchlich getragenen Schulen in Baden-Württemberg und Bayern (Adventisten-Schulen, BEFG-Schulen), erhoben durch die Kultusministerien der Länder im Rahmen der amtlichen Schulstatistik und veröffentlicht in den Landesschulberichten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Amtliche Schulstatistik der Länder ist öffentlich; freikirchliche Schulen als freie Träger sind darin enthalten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Landesschulstatistik-Extraktion",
+                    "description": "Kultusministerien der Länder erfassen Schulen nach Trägertyp; freikirchliche Schulen werden als Untergruppe der freien Träger identifiziert."
+                  },
+                  {
+                    "method": "Trägeridentifikation",
+                    "description": "Abgleich der Schulliste mit Mitgliederregistern des Bundes Evangelisch-Freikirchlicher Gemeinden und der Adventisten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "diakonische-einrichtungen-freikirchen-sozialstatistik",
+              "level": 4,
+              "name": "Diakonische Einrichtungen Freikirchen — Sozialstatistik",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Statistik sozialer Einrichtungen freikirchlicher Träger (Heilsarmee, Methodisten-Diakonissenwerk, Baptistisches Hilfswerk) nach Einrichtungstyp und Bundesland, zusammengestellt aus Berichten der Diakonie Deutschland und direkten Verbandsmeldungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Daten müssen aus verschiedenen Verbandsberichten zusammengeführt werden; vollständige Aggregation erfordert Aufbereitung."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Jahresberichtsanalyse",
+                    "description": "Auswertung der Jahresberichte freikirchlicher Diakoniewerke zu Einrichtungsbestand, Platzzahlen und Mitarbeitenden."
+                  },
+                  {
+                    "method": "Diakonie-Datenbankabgleich",
+                    "description": "Abgleich mit der Einrichtungsdatenbank der Diakonie Deutschland für freikirchliche Mitglieder des Diakonischen Werkes."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -3727,6 +4971,100 @@
                   {
                     "method": "BMVJ-Präventionsbericht",
                     "description": "Bundesministerium der Justiz erfasst geförderte Radikalisierungspräventionsprojekte."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "interreligioeser-begegnungsstaetten-projektstatistik",
+              "level": 4,
+              "name": "Interreligiöse Begegnungsstätten — BMFSFJ-Projektstatistik",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Statistik zu geförderten interreligiösen Begegnungsprojekten im Rahmen des BMFSFJ-Förderprogramms 'Zusammenhalt durch Teilhabe' und 'Demokratie leben!', einschließlich Projektanzahl, Fördersummen und Themenfelder nach Bundesland. Daten aus BMFSFJ-Förderberichten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BMFSFJ veröffentlicht Förderdaten im Zuwendungsbericht; Bundesförderdaten sind öffentlich auf zuwendungen.bund.de abrufbar."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Zuwendungsdatenbankabfrage",
+                    "description": "Abfrage der Zuwendungsdatenbank des Bundes nach Schlagwörtern 'interreligiös', 'Dialog der Religionen', 'Begegnungsstätte'."
+                  },
+                  {
+                    "method": "Programmwirkungsauswertung",
+                    "description": "Auswertung von Verwendungsnachweisen zur Messung von Reichweite und Wirkung interreligiöser Dialogprojekte."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "runder-tisch-religionen-aktivitaetsbericht",
+              "level": 4,
+              "name": "Runder Tisch der Religionen — Aktivitätsbericht",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Aktivitätsberichte der Runden Tische der Religionen auf Bundes- und Landesebene (z. B. Berliner Rat der Religionen, Hamburger Forum der Religionen), einschließlich Anzahl der Treffen, teilnehmender Gemeinschaften und durchgeführter Projekte. Daten aus Jahresberichten der Gremien.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aktivitätsberichte interreligiöser Gremien sind öffentliche Dokumente ohne schutzbedürftige Inhalte."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Dokumentenauswertung",
+                    "description": "Systematische Auswertung von Jahresberichten und Protokollen der Runden Tische der Religionen in 16 Bundesländern."
+                  },
+                  {
+                    "method": "Aktivitätsindexierung",
+                    "description": "Erstellung eines Aktivitätsindex zur Messung der Intensität interreligiösen Dialogs nach Bundesland und Gemeinschaftstyp."
                   }
                 ]
               }
@@ -3988,6 +5326,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "obk-gemeinden-nationalkirche-bundesland",
+              "level": 4,
+              "name": "OBK — Gemeinden nach Nationalkirche und Bundesland",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Statistik der Orthodoxen Bischofskonferenz in Deutschland (OBK) zu orthodoxen Kirchengemeinden nach Nationalkirche (griechisch, russisch, serbisch, rumänisch u. a.) und Bundesland. Datenquelle ist das OBK-Gemeindeverzeichnis, ergänzt durch Angaben der Arbeitsgemeinschaft Christlicher Kirchen (ACK).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "OBK und ACK veröffentlichen Gemeindeverzeichnisse; aggregierte Übersichten nach Nationalkirche und Land enthalten keine schutzbedürftigen Daten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "OBK-Verzeichnisauswertung",
+                    "description": "Auswertung des OBK-Gemeindeverzeichnisses und Ergänzung durch Webrecherche bei orthodoxen Eparchien in Deutschland."
+                  },
+                  {
+                    "method": "ACK-Abgleich",
+                    "description": "Abgleich der OBK-Daten mit ACK-Mitgliederlisten zur Sicherstellung vollständiger Erfassung aller orthodoxen Gemeinschaften."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "orthodox-gottesdienstbesucher-erhebung-ack",
+              "level": 4,
+              "name": "Orthodoxe Gottesdienstbesucher — Erhebung ACK",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Periodische Erhebung der Arbeitsgemeinschaft Christlicher Kirchen (ACK) zu durchschnittlichen Gottesdienstbesuchern orthodoxer Gemeinden in Deutschland, aufgeschlüsselt nach Nationalkirche. Daten werden im Rahmen der ökumenischen Kirchenstatistik erhoben und im ACK-Jahrbuch publiziert.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "ACK erhebt Daten per Selbstauskunft der Mitgliedskirchen; Vollständigkeit und Vergleichbarkeit erfordern Aufbereitung vor Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Selbstauskunftsbefragung",
+                    "description": "ACK befragt Mitgliedskirchen alle drei Jahre zu Gemeindestrukturen und Gottesdienstbesuchern per standardisiertem Fragebogen."
+                  },
+                  {
+                    "method": "Imputationsverfahren",
+                    "description": "Fehlende Angaben einzelner Nationalkirchen werden auf Basis historischer Wachstumsraten und Bevölkerungsdaten imputiert."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4234,6 +5662,92 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "staatsleistungen-orthodoxe-kirchen-bundesland",
+              "level": 4,
+              "name": "Staatsleistungen an orthodoxe Kirchen nach Bundesland",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Statistik staatlicher Zuwendungen an orthodoxe Kirchen (griechisch-orthodox, serbisch-orthodox, russisch-orthodox u. a.) aus Landes- und Bundeshaushalten, zusammengestellt aus Haushaltsplänen und parlamentarischen Anfragen. Umfasst institutionelle Förderung, Staatsvertragsleistungen und projektgebundene Zuwendungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Haushaltsdaten sind öffentlich, erfordern aber manuelle Extraktion da orthodoxe Kirchen selten explizit als Empfänger ausgewiesen werden."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Haushaltsplanrecherche",
+                    "description": "Systematische Auswertung der Einzelpläne aller 16 Länderhaushalte nach Zuwendungsempfängern mit orthodoxem Kirchenbezug."
+                  },
+                  {
+                    "method": "Parlamentarische-Anfragen-Auswertung",
+                    "description": "Extraktion von Förderdaten aus parlamentarischen Anfragen zur staatlichen Religionsförderung in Bundes- und Landesparlamenten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "foerdermittel-kirchenbau-orthodox",
+              "level": 4,
+              "name": "Fördermittel Kirchenbau orthodoxe Gemeinden",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Statistik öffentlicher und kirchlicher Fördermittel für Bau und Sanierung orthodoxer Kirchengebäude in Deutschland nach Bundesland und Nationalkirche. Datenquellen sind Denkmalschutzförderprogramme der Länder, Deutsche Stiftung Denkmalschutz und Kirchenbauprogramme der Eparchien.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einzelne Förderbescheide sind in Denkmalschutzberichten öffentlich; Aggregation nach orthodoxer Nationalkirche erfordert manuelle Datenaufbereitung."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Denkmalschutzförderauswertung",
+                    "description": "Auswertung von Förderentscheidungen der Landesdenkmalbehörden und der Deutschen Stiftung Denkmalschutz nach Empfänger."
+                  },
+                  {
+                    "method": "Eparchienabfrage",
+                    "description": "Direkte Anfrage bei orthodoxen Eparchien zu Kirchenbauvorhaben und erhaltenen Fördergeldern."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4477,6 +5991,92 @@
                   {
                     "method": "Programmevaluation",
                     "description": "Erfassung durch Träger orthodoxer Jugendbegegnungen und Förderinstitutionen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "orthodox-religionsunterricht-schueler-bundesland",
+              "level": 4,
+              "name": "Orthodoxer Religionsunterricht — Schüler nach Bundesland und Nationalkirche",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Statistik zu Schülerzahlen im orthodoxen Religionsunterricht nach Bundesland und Nationalkirche (griechisch-orthodox in Bayern/BaWü, serbisch-orthodox u. a.), erhoben durch die Kultusministerien der betreffenden Länder im Rahmen der amtlichen Schulstatistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Amtliche Schulstatistiken sind öffentlich; orthodoxer Religionsunterricht ist als ordentliches Schulfach in einigen Ländern in der Schulstatistik erfasst."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "KMK-Statistikauswertung",
+                    "description": "Sekretariat der KMK erfasst Schülerzahlen nach Unterrichtsfach einschließlich orthodoxer Religionskunde in den Ländern Bayern und Baden-Württemberg."
+                  },
+                  {
+                    "method": "Eparchien-Unterrichtserhebung",
+                    "description": "Ergänzende Erhebung bei den Eparchien der Griechisch-Orthodoxen Metropolie und der Serbischen Orthodoxen Diözese zu Schülerzahlen in Pfarrschulen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "orthodox-kulturveranstaltungen-ikonenausstellungen",
+              "level": 4,
+              "name": "Ikonenausstellungen und Kulturveranstaltungen orthodoxer Gemeinden",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Statistik zu Ikonenausstellungen, Konzerten byzantinischer Musik und Kulturveranstaltungen orthodoxer Gemeinden in Deutschland, zusammengestellt aus Jahresberichten der OBK, Eparchien und Kulturprogrammen des griechischen und serbischen Generalkonsulats in Deutschland.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Veranstaltungsdaten sind teils in Gemeindeblättern und Eparchienberichten dokumentiert; bundesweite Aggregation erfordert systematische Zusammenführung."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Eparchienberichtsauswertung",
+                    "description": "Auswertung der Jahresberichte aller in Deutschland aktiven orthodoxen Eparchien zu Kulturprogrammen und Gemeindeaktivitäten."
+                  },
+                  {
+                    "method": "Veranstaltungsdatenbank",
+                    "description": "Aufbau einer Veranstaltungsdatenbank auf Basis von Gemeindekalendern, Kirchenzeitungen und Programmheften orthodoxer Kulturzentren."
                   }
                 ]
               }
@@ -4738,6 +6338,92 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "aabf-mitgliederstatistik-gemeinden-bundesland",
+              "level": 4,
+              "name": "AABF-Mitgliederstatistik — Gemeinden und Mitglieder nach Bundesland",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Statistik der Alevitischen Gemeinde Deutschland e.V. (AABF) zu Mitgliedsgemeinden und eingetragenen Mitgliedern nach Bundesland, veröffentlicht im AABF-Jahresbericht und auf aabf.de. Enthält Entwicklung der Gemeindezahl seit Gründung des Bundesverbandes 1989.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "AABF veröffentlicht Gemeindestatistiken im Jahresbericht und auf der Verbandshomepage; keine Personendaten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Landesverbandsmeldung",
+                    "description": "Alevitische Landesverbände melden Mitglieder- und Gemeindezahlen an die AABF-Bundesgeschäftsstelle in Köln."
+                  },
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Longitudinalauswertung der Gemeindeentwicklung seit 1989 zur Messung des Wachstums der alevitischen Gemeinschaft in Deutschland."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "cem-gottesdienste-besucherzahlen",
+              "level": 4,
+              "name": "Cem-Gottesdienste — Besucherzahlen Bundesverband",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Erhebung der AABF zu Besucherzahlen bei Cem-Gottesdiensten in den Mitgliedsgemeinden, aufgeschlüsselt nach Bundesland und Veranstaltungstyp (Muharrem-Cem, Kurban-Cem, Trauergedenkfeiern). Daten werden im AABF-Tätigkeitsbericht veröffentlicht.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Besucherzahlen werden per Selbstauskunft der Gemeinden erhoben; Datenqualität variiert und erfordert Plausibilitätsprüfung vor Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Gemeindebefragung",
+                    "description": "AABF befragt Mitgliedsgemeinden nach Gottesdiensthäufigkeit und Besucherzahlen mittels standardisiertem Jahresfragebogen."
+                  },
+                  {
+                    "method": "Hochrechnung",
+                    "description": "Fehlende Meldungen werden anhand bekannter Gemeindekapazitäten und historischer Durchschnittswerte hochgerechnet."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4988,6 +6674,92 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "alevitischer-religionsunterricht-schueler-bundesland",
+              "level": 4,
+              "name": "Alevitischer Religionsunterricht ARI — Schüler nach Bundesland",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Statistik zu Schülerinnen und Schülern im bekenntnisorientierten alevitischen Religionsunterricht (ARI) nach Bundesland seit seiner Einführung in NRW (2008) und anderen Ländern. Daten werden vom KMK-Sekretariat und der AABF gemeinsam veröffentlicht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Schülerzahlen im ARI sind Bestandteil der amtlichen Schulstatistik und werden von KMK und AABF publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "KMK-Schulstatistik-Extraktion",
+                    "description": "Sekretariat der KMK extrahiert ARI-Schülerzahlen aus den Schulstatistiken der am ARI teilnehmenden Länder (NRW, Bayern, Baden-Württemberg, Hamburg u. a.)."
+                  },
+                  {
+                    "method": "AABF-Schulberichtsauswertung",
+                    "description": "AABF ergänzt amtliche Statistiken durch eigene Lehrererhebungen zur Unterrichtsqualität und Schülerentwicklung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "aabf-bildungseinrichtungen-kurse-teilnehmer",
+              "level": 4,
+              "name": "Alevitische Bildungseinrichtungen — Kurse und Teilnehmer",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Statistik zu Bildungsangeboten der alevitischen Gemeindeeinrichtungen (Kulturkurse, Saz-Unterricht, Türkischkurse, Semah-Kurse) und Teilnehmerzahlen nach Bundesland, zusammengestellt aus AABF-Bildungsberichten und Verwendungsnachweisen öffentlich geförderter Kursprogramme.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Kursdaten aus Gemeindemeldungen und Förderverwendungsnachweisen müssen aggregiert werden; vollständige Erfassung erfordert Aufbereitung."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Förderverwendungsnachweis-Auswertung",
+                    "description": "AABF wertet Verwendungsnachweise öffentlich geförderter Bildungsprogramme aus und ergänzt durch Gemeindebefragung."
+                  },
+                  {
+                    "method": "Kursangebotserfassung",
+                    "description": "Systematische Erfassung des Kursangebots aus AABF-Gemeindeverzeichnissen und Semesterprogrammen der Kulturzentren."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -5235,6 +7007,96 @@
                   {
                     "method": "Kulturarchivierung",
                     "description": "Systematische Archivierung alevitischer Musik durch AABF und Ethnomusikologen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "alevitische-semah-festivals-teilnehmer",
+              "level": 4,
+              "name": "Alevitische Kulturfestivals — Semah-Festivals Teilnehmerzahlen",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Statistik zu alevitischen Kulturfestivals und Semah-Veranstaltungen in Deutschland mit Teilnehmerzahlen, Veranstaltungsorten und Trägern, zusammengestellt aus AABF-Kulturberichten und Presseauswertungen. Semah (ritueller Tanz) ist seit 2010 UNESCO-Immaterielles Kulturerbe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Veranstaltungsstatistiken ohne Personenbezug; AABF publiziert Festivalberichte auf aabf.de und in Gemeindemedien."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Veranstaltungsberichtauswertung",
+                    "description": "AABF-Kulturreferat sammelt Veranstaltungsberichte der Mitgliedsgemeinden und aggregiert bundesweite Festivaldaten."
+                  },
+                  {
+                    "method": "Medienmonitoring",
+                    "description": "Ergänzende Auswertung von Presseberichten und Social-Media-Inhalten zu alevitischen Kulturfestivals."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "aabf-kulturzentren-bestandsstatistik",
+              "level": 4,
+              "name": "Alevitische Gedenkstätten und Kulturzentren — Bestandsstatistik",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Bestandsstatistik alevitischer Kulturzentren, Cemevi-Gebäude und Gedenkstätten (für Sivas-Massaker und andere Ereignisse) in Deutschland nach Bundesland und Träger, erstellt aus dem AABF-Gemeinderegister und kommunalen Baulastenverzeichnissen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Einrichtungsregister ohne Personenbezug; AABF-Gemeinderegister ist öffentlich einsehbar."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 2,
+                "processes": [
+                  {
+                    "method": "Gemeinderegisterauswertung",
+                    "description": "Systematische Auswertung des AABF-Online-Gemeindeverzeichnisses zu Einrichtungstypen und Adressen."
+                  },
+                  {
+                    "method": "Georeferenzierung",
+                    "description": "Georeferenzierung der Kulturzentren und Gedenkstätten für kartografische Darstellung der räumlichen Verteilung in Deutschland."
                   }
                 ]
               }
@@ -5508,6 +7370,100 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "misereor-projekte-land-foerderschwerpunkt",
+              "level": 4,
+              "name": "Misereor Jahresbericht — Projekte nach Land und Förderschwerpunkt",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Projektstatistik des Bischöflichen Hilfswerks Misereor (Aachen) zu geförderten Entwicklungsprojekten nach Empfängerland, thematischem Förderschwerpunkt (Ernährung, Gesundheit, Bildung, Governance) und Fördersumme, veröffentlicht im Misereor-Jahresbericht und auf misereor.de.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Misereor veröffentlicht Projektlisten im Jahresbericht und auf der Website; keine schutzbedürftigen Partnerangaben auf Aggregatebene."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Projektdatenbankauswertung",
+                    "description": "Misereor wertet die interne Projektdatenbank nach Empfängerland, Thema und Volumen aus und publiziert aggregierte Jahresübersichten."
+                  },
+                  {
+                    "method": "IATI-Export",
+                    "description": "Misereor publiziert Projektdaten nach IATI-Standard (International Aid Transparency Initiative), ermöglicht automatisierte Auswertung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "brot-fuer-die-welt-projektstatistik-region-thema",
+              "level": 4,
+              "name": "Brot für die Welt — Projektstatistik nach Region und Thema",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Bewilligungsstatistik des evangelischen Hilfswerks Brot für die Welt (Stuttgart/Berlin) zu geförderten Projekten nach Region (Afrika, Asien, Lateinamerika, Europa), thematischem Schwerpunkt und Förderhöhe, veröffentlicht im Jahresbericht und im IATI-Datenfeed.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Brot für die Welt veröffentlicht Projektdaten im Jahresbericht und als IATI-kompatiblen Datensatz; vollständig aggregiert und offen."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "IATI-Datenpublikation",
+                    "description": "Brot für die Welt veröffentlicht Projektdaten gemäß IATI-Standard auf iatiregistry.org, ermöglicht maschinenlesbare Auswertung."
+                  },
+                  {
+                    "method": "Regionale Fördermittelanalyse",
+                    "description": "Auswertung der Fördermittelverteilung nach Weltregion und Thema zur Messung strategischer Förderprioritäten im Mehrjahresvergleich."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -5751,6 +7707,92 @@
                   {
                     "method": "DZI-Jahresbericht",
                     "description": "Erfassung erbrechtlicher Zuwendungen im DZI-Spendensiegelverfahren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "dzi-spendenstatistik-kirchliche-hilfswerke",
+              "level": 4,
+              "name": "DZI-Spendenstatistik — Kirchliche Hilfswerke Einnahmen nach Herkunft",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Spendenstatistik des Deutschen Zentralinstituts für soziale Fragen (DZI) zu Einnahmen DZI-geprüfter kirchlicher Hilfswerke (Misereor, Caritas International, Brot für die Welt, Diakonie Katastrophenhilfe u. a.) nach Einnahmequellen (Spenden, öffentliche Mittel, Bußgelder). Veröffentlicht im DZI Spenden-Almanach.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DZI publiziert Finanzübersichten der geprüften Organisationen im Spenden-Almanach und auf dzi.de als öffentliche Transparenzinformation."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "DZI-Prüfungsauswertung",
+                    "description": "DZI wertet Jahresabschlüsse und Tätigkeitsberichte der Hilfswerke im Rahmen des jährlichen Spendensiegel-Verfahrens aus."
+                  },
+                  {
+                    "method": "Spendenmarktanalyse",
+                    "description": "Einordnung der kirchlichen Hilfswerkseinnahmen in den deutschen Gesamtspendenmarkt (Grundlage: GfK-Charity-Scope-Studie)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "caritas-international-spenden-vs-staatliche-mittel",
+              "level": 4,
+              "name": "Caritas International — Spendenerträge vs. staatliche Mittel",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jahresfinanzstatistik von Caritas international (Freiburg) zur Aufschlüsselung der Einnahmen nach Spendenerlösen (Privat- und Firmenspenden), kirchlichen Mitteln (Kirchensteueranteil), BMZ-Zuwendungen und EU-Mitteln, veröffentlicht im Jahresbericht der Caritas international.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Caritas international veröffentlicht differenzierte Finanzberichte im Jahresbericht und auf caritas-international.de."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Jahresabschlussanalyse",
+                    "description": "Auswertung des geprüften Jahresabschlusses von Caritas international nach Einnahme- und Ausgabepositionen."
+                  },
+                  {
+                    "method": "Abhängigkeitsindex",
+                    "description": "Berechnung des Anteils staatlicher Mittel (BMZ, EU, Auswärtiges Amt) an den Gesamteinnahmen zur Messung der Abhängigkeit von öffentlicher Finanzierung."
                   }
                 ]
               }
@@ -6005,6 +8047,96 @@
                   {
                     "method": "DAC-Gendermarkierung",
                     "description": "Kennzeichnung von Projekten nach OECD-DAC Gender-Politikmarkern."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "diakonie-katastrophenhilfe-wirkungsberichte",
+              "level": 4,
+              "name": "Diakonie Katastrophenhilfe — Begünstigte und Investitionen nach Katastrophentyp",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Wirkungsberichte der Diakonie Katastrophenhilfe (Stuttgart) zu abgeschlossenen Notfallprogrammen nach Katastrophentyp (Erdbeben, Überschwemmung, Konflikt, Dürre), Anzahl begünstigter Personen und eingesetzten Investitionen, veröffentlicht in den Projektabschlussberichten und dem Jahresbericht der Diakonie Katastrophenhilfe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Diakonie Katastrophenhilfe publiziert Wirkungsberichte öffentlich auf diakonie-katastrophenhilfe.de; IATI-konforme Datenpublikation geplant."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "MEAL-Systemauswertung",
+                    "description": "Diakonie Katastrophenhilfe nutzt ein Monitoring-, Evaluierungs-, Accountability- und Lernsystem (MEAL) für alle Projekte ab 200.000 EUR."
+                  },
+                  {
+                    "method": "Katastrophentypklassifikation",
+                    "description": "Klassifikation nach OCHA-Katastrophentypologie ermöglicht Vergleich mit anderen humanitären Akteuren (UNHCR, ICRC)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "brot-fuer-die-welt-projektabschluss-meal",
+              "level": 4,
+              "name": "Brot für die Welt — Projektabschlussberichte MEAL-Daten",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Statistik aus Projektabschlussberichten von Brot für die Welt zu Zielerreichungsgraden, begünstigten Personen und Wirkungsindikatoren nach Förderthema und Region, erhoben im MEAL-Rahmen (Monitoring, Evaluation, Accountability, Learning) und im Evaluationsbericht sowie auf brot-fuer-die-welt.de veröffentlicht.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Projektabschlussberichte enthalten teils schutzwürdige Partnerangaben; aggregierte Wirkungsdaten nach Thema und Region können nach Anonymisierung publiziert werden."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "MEAL-Datenauswertung",
+                    "description": "Brot für die Welt aggregiert MEAL-Kennzahlen aus Projektabschlussberichten nach thematischen Förderbereichen (SDG-Zuordnung)."
+                  },
+                  {
+                    "method": "Wirkungsindikator-Normierung",
+                    "description": "Berechnung standardisierter Wirkungsindikatoren (z. B. Kosten je begünstigte Person) für Vergleich zwischen Projekten und Programmperioden."
                   }
                 ]
               }

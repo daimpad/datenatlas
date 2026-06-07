@@ -267,11 +267,11 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 | staat | 42 | 113 | 1070 | 25,5 |
 | wirtschaft | 16 | 46 | 384 | 24,0 |
 | wissenschaft | 14 | 37 | 345 | 24,6 |
-| zivilgesellschaft | 17 | 49 | 357 | 21,0 |
-| medien & kultur | 11 | 32 | 199 | 18,1 |
-| religion | 8 | 24 | 144 | 18,0 |
-| bildung | 8 | 24 | 144 | 18,0 |
-| **Gesamt** | **116** | **325** | **2.643** | **22,8** |
+| zivilgesellschaft | 17 | 49 | 408 | 24,0 |
+| medien & kultur | 11 | 32 | 264 | 24,0 |
+| religion | 8 | 24 | 192 | 24,0 |
+| bildung | 8 | 24 | 192 | 24,0 |
+| **Gesamt** | **116** | **325** | **2.855** | **24,6** |
 
 ---
 
@@ -351,6 +351,7 @@ Sprint-Format (Features):
 - [x] **F-07** Bildung-Sektor aktiviert — 8 L2 × 3 L3 × 6 L4 = 144 L4; Qualitäts- und Accessibility-Pass (trapFocus, WCAG, SEO, Security Headers) ✓
 - [x] **S-A** Tiefenausbau staat — alle 42 L2 auf ≥24 L4 (Ø 18,6→25,5), +290 L4 (780→1070) ✓
 - [x] **S-B** Tiefenausbau wirtschaft + wissenschaft — alle 30 L2 auf ≥24 L4, +167 L4 (wirtschaft 292→384, wissenschaft 270→345) ✓
+- [x] **S-C** Tiefenausbau medien + zivilgesellschaft + religion + bildung — alle 44 L2 auf ≥24 L4, +212 L4 (medien 199→264, zivil 357→408, religion 144→192, bildung 144→192) ✓
 
 ### Startbefehl
 

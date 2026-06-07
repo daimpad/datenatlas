@@ -1537,10 +1537,8 @@ a#footer-brand:hover { color: var(--accent); }
 
 /* ── Responsive ── */
 @media (max-width: 580px) {
-  :root { --sidebar-w: 100vw; }
-
   /* Header: hide secondary actions; primary CTAs go into mobile sheet */
-  #header { gap: 6px; padding: 0 8px; }
+  #header { gap: 6px; padding: 0 10px; }
   .logo-sub  { display: none; }
   #level-badge { display: none; }
   #gen-btn, #open-data-btn, #share-btn, #export-btn, #stats-btn, #info-btn { display: none; }
@@ -1548,12 +1546,53 @@ a#footer-brand:hover { color: var(--accent); }
   #openness-legend { display: none; }
   #level-overlay { display: none; }
 
+  /* Controls bar: larger touch targets on mobile */
+  #controls-bar { left: 12px; bottom: 16px; gap: 6px; }
+  #controls-bar button { width: 44px; height: 44px; border-radius: 10px; }
+
+  /* Sidebar → bottom sheet */
+  #sidebar {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    max-height: 80dvh;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    border-radius: 20px 20px 0 0;
+    transform: translateY(100%);
+    /* safe-area keeps content clear of iOS home bar */
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  #sidebar[data-open="true"] {
+    transform: translateY(0);
+    box-shadow: 0 -12px 48px rgba(98,0,168,0.15);
+  }
+  /* Drag-handle hint at top of sheet */
+  #sidebar::before {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 4px;
+    background: var(--border-hi);
+    border-radius: 2px;
+    margin: 10px auto 0;
+    flex-shrink: 0;
+  }
+  /* Tighter padding and larger close-button touch target */
+  #sidebar-scroll { padding: 14px 16px 28px; }
+  #sidebar-close  { width: 36px; height: 36px; top: 10px; right: 10px; }
+  .sb-title { font-size: 18px; }
+
   /* Footer: grid → two-row flex for mobile */
   #footer {
     display: flex;
     height: auto;
     min-height: var(--footer-h);
     padding: 6px 12px;
+    padding-bottom: max(6px, env(safe-area-inset-bottom, 6px));
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -1564,7 +1603,7 @@ a#footer-brand:hover { color: var(--accent); }
   a#footer-brand { width: 100%; text-align: center; font-size: 10px; }
   #build-hash    { display: none; }
 
-  /* Onboarding: stack legend cols vertically on very narrow screens */
+  /* Onboarding: stack legend cols vertically on narrow screens */
   .ob-card { padding: 20px 16px; }
   .ob-hints { grid-template-columns: 1fr; }
   .ob-legend-row { grid-template-columns: 1fr; }
@@ -1575,7 +1614,13 @@ a#footer-brand:hover { color: var(--accent); }
   .wz-license-grid { grid-template-columns: 1fr; }
   .wz-format-grid { grid-template-columns: 1fr; }
   .wz-body { padding: 16px; }
-  .wz-card { max-height: 100vh; border-radius: 0; }
+  .wz-footer { padding: 12px 16px; }
+  .wz-card { max-height: 100dvh; border-radius: 0; }
+}
+
+/* Hide hover tooltip on touch-only devices — it never fires on mobile and wastes paint */
+@media (hover: none) {
+  #tooltip { display: none !important; }
 }
 
 /* ── Wizard context banner ── */
@@ -1637,7 +1682,7 @@ a#footer-brand:hover { color: var(--accent); }
   gap: 8px;
   width: 100%;
   background: transparent;
-  border: 1px dashed var(--border-1);
+  border: 1px dashed var(--border-hi);
   border-radius: 6px;
   color: var(--text-2);
   font-family: var(--font);

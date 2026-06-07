@@ -1630,6 +1630,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "kfz-versicherung-schaeden",
+              "level": 4,
+              "name": "KFZ-Schadensstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Aggregierte Statistik zu gemeldeten KFZ-Schäden nach Schadensart, Region und Fahrzeugklasse, erstellt von privaten Kfz-Versicherern.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rohdaten enthalten Versicherungsnehmer-Daten; nach Anonymisierung und Aggregation auf Bundesland-Ebene publizierbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Schadensmuster nach Region und Fahrzeugtyp für Risikomodelle und Prämienkalkulation."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Grundlage für Rückversicherungsverhandlungen und Portfoliosteuerung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "finanzdienstleister-beschaeftigung",
+              "level": 4,
+              "name": "Beschäftigungsstatistik Finanzsektor",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl der Beschäftigten in Banken, Versicherungen und Finanzdienstleistern nach Bundesland, Betriebsgröße und Qualifikationsniveau, erhoben durch Branchenverbände.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Strukturdaten ohne Personenbezug; entsprechen dem Standard der Bundesbank-Berichte."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Branchenstrukturanalyse und Standortvergleiche für Finanzmarktforschung."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Berichte über Arbeitsmarktentwicklung im Finanzsektor."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1839,6 +1929,53 @@
                   {
                     "method": "Aggregierung",
                     "description": "Auswertung öffentlicher Jahresberichte und Regulierungsmeldungen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "derivatives-marktstatistik",
+              "level": 4,
+              "name": "Derivate-Marktstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Volumen und Anzahl abgeschlossener Derivatekontrakte (Futures, Optionen, Swaps) an deutschen Handelsplätzen, veröffentlicht von Börsen und BaFin.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BaFin und Deutsche Börse AG veröffentlichen Handelsstatistiken regelmäßig; keine personenbezogenen Einzeltransaktionen enthalten."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse von Markttiefe und Liquidität für Finanzmarktforschung und Regulierungszwecke."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Grundlage für Risikomodelle und Kapitalanforderungen."
                   }
                 ]
               }
@@ -2747,6 +2884,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "auslandsentsendung-statistik",
+              "level": 4,
+              "name": "Auslandsentsendungsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl und Strukturdaten zu ins Ausland entsandten Mitarbeiter:innen nach Zielland, Branche und Dauer, erhoben durch HR-Verbände und Bundesagentur für Arbeit.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Nach Aggregation auf Branche/Land-Ebene ohne Personenbezug publizierbar; Einzeldaten unterliegen Datenschutz."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse internationaler Mobilitätsmuster und Entsendungskosten für Unternehmen."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "HR-Planung für internationale Expansionsprojekte."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "homeoffice-quote",
+              "level": 4,
+              "name": "Homeoffice-Nutzungsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anteil der Beschäftigten, die regelmäßig im Homeoffice arbeiten, nach Branche, Unternehmensgröße und Bundesland, erhoben durch Unternehmensverbände und IAB.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Quoten ohne Personenbezug; IAB und Bitkom veröffentlichen regelmäßig vergleichbare Daten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse der Arbeitsweltveränderung durch Digitalisierung und Pandemiefolgen."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Benchmark-Daten für HR-Kommunikation und Standortmarketing."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -3166,6 +3393,49 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "instandhaltungskosten-wohnbestand",
+              "level": 4,
+              "name": "Instandhaltungskosten Wohnbestand",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Durchschnittliche jährliche Instandhaltungsausgaben je Quadratmeter nach Gebäudetyp, Baualtersklasse und Region, erhoben durch Wohnungsunternehmen und GdW.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Branchendurchschnitte ohne Bezug zu Einzelobjekten oder Mietparteien; nach Aggregation auf Baualtersklasse/Region publizierbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Budgetplanung für Instandhaltungsrücklagen und Modernisierungsprogramme."
+                  },
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Benchmarkdaten für Bewirtschaftungskosten im Wohnungsmarkt."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -3541,6 +3811,100 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "mietspiegel-vergleichsmieten",
+              "level": 4,
+              "name": "Mietspiegel-Vergleichsmieten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Ortsübliche Vergleichsmieten nach Wohnungsgröße, Baujahr, Ausstattungsmerkmal und Lage aus qualifizierten Mietspiegeln deutscher Städte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Qualifizierte Mietspiegel sind gesetzlich vorgeschrieben und öffentlich zugänglich (§ 558d BGB); keine personenbezogenen Daten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Grundlage für Mietpreisanalysen und Wohnungspolitik-Evaluierungen."
+                  },
+                  {
+                    "method": "Beratung & Begleitung",
+                    "description": "Transparenz für Vermieter und Mieter bei Mietanpassungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wohnflaeche-bestand",
+              "level": 4,
+              "name": "Wohnflächenstatistik Gebäudebestand",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Gesamte Wohnfläche und Anzahl der Wohneinheiten nach Gemeinde, Baujahr und Eigentumsform, erhoben durch statistische Landesämter und GdW.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Strukturdaten ohne Personenbezug; statistische Ämter veröffentlichen diese Daten im Rahmen der Gebäude- und Wohnungszählung."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse des Wohnungsangebots für Stadtentwicklungsplanung und Nachfrageprojektionen."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Bestandsmonitoring für Wohnungsbaugesellschaften und Kommunen."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -3875,6 +4239,53 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "privatschule-traeger-profil",
+              "level": 4,
+              "name": "Trägerprofile Privatschulen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Strukturdaten zu Trägern anerkannter Privatschulen: Rechtsform, Konfessionalität, Schüler:innenzahl, angebotene Schulformen und Standorte, erhoben durch KMK und Kultusministerien.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Institutionelle Daten ohne Personenbezug; im Rahmen der amtlichen Schulstatistik erfasst und veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse der Privatschullandschaft nach Trägervielfalt und Angebotsstruktur."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Transparenzdaten für Eltern und bildungspolitische Akteure."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4158,6 +4569,92 @@
                   {
                     "method": "Plattformauswertung",
                     "description": "Aggregierung aus Nachhilfe-Vermittlungsplattformen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "nachhilfe-digitalisierungsgrad",
+              "level": 4,
+              "name": "Digitalisierungsgrad Nachhilfeangebote",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anteil digital durchgeführter Nachhilfestunden und Lernplattformnutzung nach Schulform und Altersgruppe, erhoben durch Branchenverbände und Marktforscher.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Nutzungsquoten ohne Personenbezug; nach Datenschutzprüfung auf Anbieterebene publizierbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse der Digitalisierung im Bildungsmarkt und Nachfrageveränderungen seit Pandemie."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Produktentwicklung für E-Learning-Anbieter."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "nachhilfe-preisstruktur",
+              "level": 4,
+              "name": "Preisstruktur Nachhilfemarkt",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Stundensätze und Preisbandbreiten für Einzel- und Gruppenunterricht nach Bundesland, Schulform und Fach, erhoben durch Verbraucherverbände und Marktforscher.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Marktpreisübersichten ohne personenbezogene Daten; vergleichbar mit Preisatlanten anderer Branchen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Preistransparenz und Marktstrukturanalyse im privaten Bildungsmarkt."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Verbraucherinformation und Orientierungshilfe für Familien."
                   }
                 ]
               }
@@ -5290,6 +5787,53 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "it-fachkraefte-nachfrage",
+              "level": 4,
+              "name": "IT-Fachkräftenachfrage",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Offene Stellen für IT-Berufe nach Spezialisierung (Software-Entwicklung, Cybersecurity, Data Science) und Bundesland, erhoben durch Bitkom und Bundesagentur für Arbeit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Stellenmarktdaten ohne Personenbezug; Bundesagentur und Bitkom veröffentlichen vergleichbare Berichte regelmäßig."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse des IT-Arbeitsmarkts und Fachkräftemangels für Bildungsplanung und Standortpolitik."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "HR-Planung und Gehaltsmodelle für IT-Unternehmen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -5464,6 +6008,53 @@
                   {
                     "method": "EMF-Datenbank",
                     "description": "Abruf aus BNetzA Frequenzzuweisungsplan"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "tk-beschwerdestatistik",
+              "level": 4,
+              "name": "Beschwerdestatistik Telekommunikation",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl und Kategorien von Kundenbeschwerden bei der Bundesnetzagentur zu Telekommunikationsanbietern: Netzqualität, Vertragsprobleme, Rechnungsfehler.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bundesnetzagentur veröffentlicht aggregierte Beschwerdedaten im Jahresbericht; keine personenbezogenen Einzelfälle."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Verbraucherschutzmonitoring und Qualitätsmessung von TK-Anbietern."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Transparenz für Verbraucher und Regulierungsbehörden."
                   }
                 ]
               }
@@ -6306,6 +6897,53 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "cargo-luftfracht-statistik",
+              "level": 4,
+              "name": "Luftfrachtstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Volumen und Gewicht der beförderten Luftfracht an deutschen Flughäfen nach Herkunfts- und Zielregion, erhoben durch Statistisches Bundesamt und ADV.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ADV (Arbeitsgemeinschaft Deutscher Verkehrsflughäfen) und Destatis veröffentlichen monatliche Luftfrachtstatistiken; keine sensiblen Daten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse von Handelsströmen und Lieferkettendynamiken anhand Luftfrachtdaten."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Kapazitätsplanung für Flughäfen und Frachtdienstleister."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6541,6 +7179,53 @@
                     "title": "Verkehrsdaten BASt",
                     "url": "https://www.bast.de/verkehrsdaten",
                     "publisher": "BASt"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sharing-mobilitaet-statistik",
+              "level": 4,
+              "name": "Sharing-Mobilitätsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Fahrten, Nutzer:innenzahlen und Fahrzeugflottengrößen von Carsharing- und Bikesharing-Anbietern nach Stadtgebiet und Zeitraum.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Kennzahlen ohne Rückschluss auf individuelle Nutzer:innen; nach Anonymisierung auf Quartiersebene publizierbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse von Mobilitätsverhalten und Modal-Split-Veränderungen in Städten."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Standortoptimierung für Sharing-Flotten und kommunale Mobilitätsplanung."
                   }
                 ]
               }
@@ -6804,6 +7489,53 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "bautraeger-projektregister",
+              "level": 4,
+              "name": "Bauträger-Projektregister",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verzeichnis geplanter und genehmigter Wohnungsbauprojekte privater Bauträger mit Volumen, Standort und geplantem Fertigstellungsjahr.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Projektdaten auf Grundstücksebene können Rückschlüsse auf Eigentumsverhältnisse ermöglichen; nach Aggregation auf PLZ-Ebene publizierbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse der Wohnungsbaupipeline und Fertigstellungserwartungen für Marktprognosen."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Projektportfoliomanagement und Finanzierungsplanung für Bauträger."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -7008,6 +7740,53 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "tiefbau-projektvolumen",
+              "level": 4,
+              "name": "Tiefbau-Auftragsvolumen nach Auftraggeber",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Volumen vergebener Tiefbauaufträge nach öffentlichem und privatem Auftraggeber, Projekttyp (Straße, Kanal, Brücke) und Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Vergabedaten öffentlicher Auftraggeber sind nach Vergaberecht publizierungspflichtig; private Aufträge werden aggregiert durch HDB und ZDB erhoben."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Konjunkturanalyse für den Tiefbausektor und Vergabemarktmonitoring."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Kapazitäts- und Ressourcenplanung für Bauunternehmen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -7170,6 +7949,49 @@
                   {
                     "method": "Umfrage",
                     "description": "Quartalsweise Befragung durch ifo Institut"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bau-fachkraefte-barometer",
+              "level": 4,
+              "name": "Fachkräftebarometer Baugewerbe",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl offener Stellen, Ausbildungsverträge und gemeldeter Fachkräftemangel im Baugewerbe nach Gewerk und Bundesland, erhoben durch ZDB und IG BAU.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Arbeitsmarktdaten ohne Personenbezug; ZDB und Bundesagentur veröffentlichen regelmäßige Berichte."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse des Fachkräftemangels im Bausektor für Berufsbildungsplanung."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Advocacy-Daten für Verbandsarbeit zu Ausbildungsförderung."
                   }
                 ]
               }
@@ -7525,6 +8347,53 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "duengung-naehrstoffbilanz",
+              "level": 4,
+              "name": "Düngung & Nährstoffbilanz",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Stickstoff- und Phosphoreinsatz je Hektar landwirtschaftlicher Nutzfläche nach Bundesland und Betriebstyp, erhoben im Rahmen der Düngeverordnung-Berichte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Flächenwerte ohne Betriebsidentifikation; von Bundesministerium und Ländern im Rahmen EU-Berichtspflichten veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Umweltmonitoring der Nährstoffbelastung für Grundwasser- und Bodenschutz."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Optimierung der Düngepraktiken und Einhaltung der EU-Nitratrichtlinie."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -7652,6 +8521,96 @@
                   {
                     "method": "BVL-Kontrollbericht",
                     "description": "Nationaler Rückstandskontrollplan und Lebensmittelkontrollbericht"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lebensmittel-rueckrufe",
+              "level": 4,
+              "name": "Lebensmittelrückruf-Register",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Öffentlich gemeldete Rückrufaktionen für Lebensmittel: Produkt, Hersteller, Grund (Kontamination, Fremdkörper, Kennzeichnungsmangel) und betroffene Chargennummern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BVL (Bundesamt für Verbraucherschutz und Lebensmittelsicherheit) betreibt das öffentliche Rückrufportal; Verbraucherschutzdaten sind per Gesetz zu publizieren."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse von Häufigkeit und Ursachen von Lebensmittelrückrufen für Qualitätsmanagementsysteme."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Verbraucherschutz und öffentliche Gesundheitsinformation."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lebensmittel-hygiene-kontrolle",
+              "level": 4,
+              "name": "Lebensmittelhygiene-Kontrollergebnisse",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Ergebnisse amtlicher Betriebskontrollen in lebensmittelverarbeitenden Betrieben: Beanstandungsquoten nach Betriebstyp und Bundesland, erhoben durch Lebensmittelüberwachungsbehörden.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einzelbetriebsdaten unterliegen Datenschutz; aggregierte Beanstandungsquoten nach Betriebstyp und Bundesland sind im Rahmen des LMIV-Berichtswesens publizierbar."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Monitoring der Lebensmittelsicherheit und Wirksamkeit von Kontrollinstrumenten."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Risikobasierte Kontrollplanung für Überwachungsbehörden."
                   }
                 ]
               }
@@ -7894,6 +8853,53 @@
                     "title": "Bio-Markt Daten BÖLW",
                     "url": "https://www.oekolandbau.de/markt",
                     "publisher": "BÖLW"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "agrar-exportstatistik",
+              "level": 4,
+              "name": "Agrarexportstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Wert und Menge exportierter Agrar- und Lebensmittelgüter nach Produktgruppe und Zielland, erhoben durch Statistisches Bundesamt im Rahmen der Außenhandelsstatistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht monatliche Außenhandelsstatistiken für Agrarerzeugnisse; keine betrieblichen Einzeldaten enthalten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse von Exportwettbewerbsfähigkeit und internationalen Markttrends."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Exportplanung und Marktdiversifizierung für Agrarexporteure."
                   }
                 ]
               }
@@ -8203,6 +9209,53 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "bettenkapazitaet-region",
+              "level": 4,
+              "name": "Bettenkapazität nach Region",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl angebotener Gästebetten in gewerblichen Beherbergungsbetrieben nach Bundesland, Kreistyp und Sternekategorie, erhoben durch statistische Landesämter.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Strukturdaten ohne Personenbezug; Statistische Ämter veröffentlichen im Rahmen der Beherbergungsstatistik (§ 1 BeherbStatG) regelmäßig."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Tourismuskapazitätsanalyse für Regionalplanung und Investitionsentscheidungen."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Angebotsmonitoring für Destinationsmanagement-Organisationen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -8365,6 +9418,49 @@
                   {
                     "method": "Aggregierung",
                     "description": "Auswertung der amtlichen Insolvenzstatistiken"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gastronomie-aussenhandel-import",
+              "level": 4,
+              "name": "Importstatistik Gastronomie-Zutaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Importvolumen und -wert von gastronomierelevanten Rohstoffen und Halbfertigprodukten (Fleisch, Gewürze, Wein) nach Herkunftsland, Statistisches Bundesamt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Außenhandelsstatistiken ohne betriebliche Einzeldaten; Destatis veröffentlicht diese im Standardprogramm."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse von Beschaffungsquellen und Preisrisiken in der Gastronomiezulieferkette."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Einkaufsplanung und Diversifizierung für Gastronomieunternehmen."
                   }
                 ]
               }
@@ -8600,6 +9696,53 @@
                     "title": "Tourismusmarketing DTV",
                     "url": "https://www.deutschertourismusverband.de/marketing",
                     "publisher": "DTV"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "tourismusregion-benchmark",
+              "level": 4,
+              "name": "Tourismusregion-Benchmarking",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Vergleichende Kennzahlen (Übernachtungen, Auslastung, Ausgaben pro Gast) für Tourismusregionen nach NUTS-2-Ebene, erhoben durch dwif und DZT.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Regionale Benchmarkdaten werden von DZT und dwif-Consulting regelmäßig publiziert; keine personenbezogenen Daten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Wettbewerbsanalyse und Positionierung von Tourismusregionen."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Strategische Planung für DMOs und Tourismusverbände."
                   }
                 ]
               }
@@ -8963,6 +10106,53 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "bilanzkreise-regelenergie",
+              "level": 4,
+              "name": "Regelenergie-Abrufstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Volumen und Kosten abgerufener Regelenergie (Primär-, Sekundär-, Tertiärregelleistung) an deutschen Übertragungsnetzen, veröffentlicht von den vier Übertragungsnetzbetreibern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ÜNBs veröffentlichen Regelenergie-Daten auf der Transparenzplattform smard.de; keine betrieblichen Einzeldaten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse der Netzstabilität und Regelenergiemärkte für Energieforschung."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Optimierung von Energiespeichereinsatz und Direktvermarktungsstrategien."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -9137,6 +10327,53 @@
                   {
                     "method": "SMARD-Solar",
                     "description": "Auswertung BNetzA SMARD stündliche Solareinspeisung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ee-direktvermarktung-statistik",
+              "level": 4,
+              "name": "EE-Direktvermarktungsstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Mengen und Erlöse aus der Direktvermarktung erneuerbarer Energien am Großhandelsmarkt nach Energieträger und Bundesland, Bundesnetzagentur.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bundesnetzagentur und Übertragungsnetzbetreiber veröffentlichen Direktvermarktungsdaten im Rahmen des EEG-Monitorings."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse der Marktintegration erneuerbarer Energien und Erlösszenarien."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Vermarktungsoptimierung für EE-Anlagenbetreiber und Direktvermarkter."
                   }
                 ]
               }
@@ -10087,6 +11324,135 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "handwerk-digitalisierung-index",
+              "level": 4,
+              "name": "Handwerk-Digitalisierungsindex",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Kennzahlen zur digitalen Ausstattung und Nutzung digitaler Werkzeuge (ERP, CAD, Buchführungssoftware) in Handwerksbetrieben nach Gewerk und Betriebsgröße, ZDH-Erhebung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ZDH und HWK veröffentlichen regelmäßige Digitalisierungsberichte für das Handwerk; keine betrieblichen Einzeldaten."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse des Digitalisierungsrückstands im Handwerk und Bedarfsermittlung für Fördermaßnahmen."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Digitalisierungsstrategien und Beratungsangebote für Handwerksbetriebe."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "handwerk-energiekosten",
+              "level": 4,
+              "name": "Energiekostenstruktur Handwerk",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Energiekosten als Anteil am Umsatz nach Gewerk und Betriebsgröße sowie Abhängigkeit von Energie- und Rohstoffpreisen, ZDH-Konjunkturumfrage.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Branchendaten ohne betrieblichen Personenbezug; ZDH veröffentlicht regelmäßige Kostenstrukturberichte."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse der Energiekostenbelastung und Auswirkungen von Preisschocks auf das Handwerk."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Datengrundlage für verbandspolitische Forderungen zu Energiekosten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "handwerk-internationalisierung",
+              "level": 4,
+              "name": "Internationalisierung Handwerk",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anteil von Handwerksbetrieben mit grenzüberschreitender Tätigkeit (Leistungserbringung im Ausland) nach Gewerk und Bundesland, ZDH und DIHK-Erhebung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Strukturdaten aus ZDH-Mitgliederbefragungen ohne Einzelbetriebsbezug."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse des Internationalisierungspotenzials und der Hemmnisse für Handwerksbetriebe."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Beratungsangebote für grenzüberschreitend tätige Handwerksunternehmen."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -10302,6 +11668,53 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "pkv-versichertenstruktur",
+              "level": 4,
+              "name": "PKV-Versichertenstruktur",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl der privat krankenversicherten Personen nach Altersgruppe, Berufsgruppe und gewähltem Tarif, erhoben durch PKV-Verband.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "PKV-Verband publiziert jährliche Statistiken zur Versichertenstruktur aggregiert nach Alter und Tarif; keine Einzelversicherungsdaten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse der PKV-Marktstruktur und Entwicklung des dualen Krankenversicherungssystems."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Transparenzdaten für gesundheitspolitische Debatten."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -10502,6 +11915,53 @@
                   {
                     "method": "Portfolioanalyse",
                     "description": "Aufschlüsselung der Kapitalanlagen nach Assetklasse und Laufzeit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lv-nachhaltigkeit-esg",
+              "level": 4,
+              "name": "LV-Nachhaltigkeitsportfolio ESG",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "ESG-Bewertungen und Nachhaltigkeitskennzahlen der Kapitalanlagen deutscher Lebensversicherer nach Anlageklasse und Nachhaltigkeitskriterien, GDV-Erhebung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Portfolio-ESG-Daten können nach Bereinigung sensibler Geschäftsinformationen veröffentlicht werden; Einzelanlagedaten bleiben geschützt."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse der Nachhaltigkeitstransformation im Versicherungssektor und ESG-Reporting."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Portfoliosteuerung und Regulierungskonformität für Versicherungsanlageabteilungen."
                   }
                 ]
               }
@@ -10709,6 +12169,53 @@
                   {
                     "method": "Dunkelzifferanalyse",
                     "description": "Hochrechnung aufgedeckter Betrugsfälle auf das geschätzte Gesamtvolumen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "elementarschaeden-statistik",
+              "level": 4,
+              "name": "Elementarschäden-Statistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Schäden durch Naturereignisse (Überschwemmung, Sturm, Hagel) nach Ereignis, Region und Versicherungssumme, erhoben durch GDV und München Re.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "GDV und Rückversicherer publizieren Naturkatastrophen-Schadensberichte regelmäßig; keine Einzelschadensfall-Daten."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Klimarisiko-Analyse und Modellierung von Extremwetterschäden für Prämienkalkulation."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Risikomanagement und Rückversicherungsstrategien für Sachversicherer."
                   }
                 ]
               }
@@ -10927,6 +12434,49 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "wp-haftungsstatistik",
+              "level": 4,
+              "name": "Haftungsfälle Wirtschaftsprüfung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl und Volumen von Haftungsfällen gegen Wirtschaftsprüfer nach Branchen und Prüfungsanlass, erhoben durch APAS und WPK.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einzelfälle enthalten vertrauliche Mandantenangaben; aggregierte Haftungsstatistiken nach Branche und Haftungsvolumen können veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse von Haftungsrisiken und Qualitätsentwicklung in der Wirtschaftsprüfung."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Regulierungsmonitoring durch APAS und Berufsaufsicht."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -11138,6 +12688,53 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "mf-nachhaltigkeitsbarometer",
+              "level": 4,
+              "name": "Nachhaltigkeitsbarometer Unternehmen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Befragungsergebnisse zu Nachhaltigkeitsinitiativen, ESG-Reporting-Bereitschaft und Investitionsvorhaben in deutschen Unternehmen nach Branche und Größe.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Befragungsdaten auf Unternehmensebene müssen anonymisiert werden; aggregierte Ergebnisse nach Branche/Größe sind publizierbar."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse der Nachhaltigkeitstransformation in der deutschen Wirtschaft."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Benchmark-Daten für CSR-Berichte und ESG-Rating-Agenturen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -11338,6 +12935,49 @@
                   {
                     "method": "Destatis-Auswertung",
                     "description": "Monatliche Insolvenzstatistik des Statistischen Bundesamts nach Schuldnertyp und Branche."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "rs-digitale-rechtsdienstleistungen",
+              "level": 4,
+              "name": "Digitale Rechtsdienstleistungen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Marktvolumen und Nutzungsrate digitaler Rechtsdienstleistungen (Legal Tech, Online-Anwaltsdienste, KI-gestützte Vertragsanalyse) in Deutschland, erhoben durch DAV und Branchenreports.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Marktdaten ohne Mandantenidentifikation; vergleichbar mit IT-Marktforschungsberichten."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse der Digitalisierung im Rechtsdienstleistungsmarkt und Regulierungsimplikationen."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Marktüberblick für Kanzleien und Legal-Tech-Investoren."
                   }
                 ]
               }
@@ -11564,6 +13204,53 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "pharma-erstattungspreise",
+              "level": 4,
+              "name": "Arzneimittel-Erstattungspreise",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verhandlungsergebnisse und Erstattungsbeträge für neue Arzneimittel nach Nutzenbewertung (AMNOG-Verfahren), veröffentlicht durch GKV-Spitzenverband und IQWIG.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "AMNOG-Erstattungsbeträge werden nach Abschluss der Verhandlungen im Rahmen gesetzlicher Transparenzpflichten publiziert."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse der Arzneimittelpreisbildung und Nutzenbewertungsergebnisse für Gesundheitsökonomen."
+                  },
+                  {
+                    "method": "Planung & Steuerung",
+                    "description": "Preisstrategieentwicklung und Markteinführungsplanung für Pharmaunternehmen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -11775,6 +13462,53 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ks-studienprotokoll-register",
+              "level": 4,
+              "name": "Studienprotokoll-Register",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Öffentliche Protokolle geplanter und laufender klinischer Studien mit Indikation, Phase, Sponsor und Endpunkten, im Deutschen Register Klinischer Studien (DRKS).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DRKS als offizielles deutsches Studienregister veröffentlicht Protokolldaten entsprechend WHO-Standards; keine Patientendaten enthalten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse von Forschungsprioritäten und Studienlandschaft in der klinischen Forschung."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Transparenz zu klinischer Forschungsaktivität für Patienten und Öffentlichkeit."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -11983,6 +13717,53 @@
                   {
                     "method": "Destatis-Außenhandel",
                     "description": "Auswertung der Außenhandelsstatistik nach HS-Codes für Medizintechnikprodukte."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mt-ki-medizin-anwendungen",
+              "level": 4,
+              "name": "KI-Anwendungen in der Medizintechnik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl und Klassifizierung von KI-basierten Medizinprodukten im deutschen Markt nach Indikationsgebiet, Risikoklasse und Zulassungsstatus, BfArM-Monitoring.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BfArM und BVMed publizieren Verzeichnisse zugelassener Medizinprodukte; KI-spezifische Auswertungen sind Gegenstand des DiGA-Monitorings."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Forschung & Analyse",
+                    "description": "Analyse des KI-Medizintechnikmarkts und regulatorischer Anforderungen für Zulassung."
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit & Kommunikation",
+                    "description": "Marktüberblick für Investoren und Regulierungsexperten im Digital-Health-Bereich."
                   }
                 ]
               }

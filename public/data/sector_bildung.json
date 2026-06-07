@@ -391,6 +391,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "lehrerstundenkonto-fach-schulform",
+              "level": 4,
+              "name": "Lehrerstundenkonto nach Fach und Schulform",
+              "color": "#92400e",
+              "details": {
+                "description": "Erfassung der erteilten Unterrichtsstunden je Lehrperson, aufgeschlüsselt nach Unterrichtsfach und Schulform (Grundschule, Gymnasium, Realschule, Gesamtschule). Die KMK erhebt diese Daten jährlich im Rahmen der Lehrerstatistik und veröffentlicht sie im Bericht 'Schüler, Klassen, Lehrer und Absolventen der Schulen'.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Stundendaten sind veröffentlichbar, jedoch müssen personenbezogene Einzeldaten der Lehrkräfte anonymisiert werden."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Stundenkonten werden schuljährlich je Schulform und Fachgruppe summiert und als Bundesländervergleich aufbereitet."
+                  },
+                  {
+                    "method": "Qualitätsprüfung",
+                    "description": "KMK-Referat prüft Plausibilität der Meldungen der Länder vor Veröffentlichung in der jährlichen Schulstatistik."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vertretungsunterricht-statistik-bundeslaender",
+              "level": 4,
+              "name": "Vertretungsunterricht-Statistik der Bundesländer",
+              "color": "#92400e",
+              "details": {
+                "description": "Erfassung von Ausfallstunden und Vertretungsunterricht an allgemeinbildenden Schulen, differenziert nach Bundesland, Schulform und Ursache (Krankheit, Fortbildung, sonstiges). Einzelne Bundesländer wie Berlin und Brandenburg veröffentlichen diese Daten halbjährlich über ihre Senatsverwaltungen für Bildung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Schulbezogene Auswertungen erfordern Anonymisierung kleiner Einheiten; bundeslandweite Aggregate sind publikationsfähig."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Ländererhebung",
+                    "description": "Schulen melden wöchentlich Ausfall- und Vertretungsstunden an die zuständigen Schulaufsichtsbehörden, die Daten werden landesweit konsolidiert."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Zeitreihenanalyse über mehrere Schuljahre zur Identifikation von Engpassfächern und saisonalen Ausfallmustern."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -781,6 +871,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "schulabschlussquoten-schulform-bundesland",
+              "level": 4,
+              "name": "Schulabschlussquoten nach Schulform und Bundesland",
+              "color": "#92400e",
+              "details": {
+                "description": "Anteil der Schülerinnen und Schüler, die einen bestimmten Schulabschluss (Hauptschulabschluss, Mittlere Reife, Abitur, ohne Abschluss) erreichen, aufgeschlüsselt nach Bundesland und Schulform. Destatis veröffentlicht diese Quoten jährlich im Rahmen der Bildung und Kultur-Fachserie 11, Reihe 1.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Vollständig anonymisierte Aggregatdaten ohne Personenbezug; von Destatis bereits als Open Data verfügbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Längsschnittanalyse",
+                    "description": "Verknüpfung von Schuleintrittsjahrgängen mit Abschlussjahrgängen zur Berechnung schulformspezifischer Erfolgsquoten."
+                  },
+                  {
+                    "method": "Bundesländervergleich",
+                    "description": "KMK-Bildungsmonitoring stellt jährlich harmonisierte Vergleichsdaten über alle 16 Bundesländer bereit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sitzenbleiber-statistik-klassenwiederholung",
+              "level": 4,
+              "name": "Sitzenbleiber-Statistik und Klassenwiederholer-Quote",
+              "color": "#92400e",
+              "details": {
+                "description": "Anteil der Schülerinnen und Schüler, die eine Jahrgangsstufe wiederholen müssen, differenziert nach Schulform, Jahrgangsstufe und Bundesland. Die KMK veröffentlicht diese Daten im jährlichen Statistikbericht; Destatis ergänzt Zeitreihen in der Fachserie 11.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Ausschließlich aggregierte Schulstatistik ohne personenbezogene Einzeldaten; vollständig veröffentlichungsfähig."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Querschnittserhebung",
+                    "description": "Jährliche Erhebung durch Schulstatistikämter der Länder; Meldung an KMK-Statistikreferat zur bundesweiten Aggregation."
+                  },
+                  {
+                    "method": "Trendbeobachtung",
+                    "description": "Langzeitreihe seit 1960 ermöglicht Analyse des Rückgangs von Klassenwiederholungen durch Schulreformen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1014,6 +1194,100 @@
                     "title": "Schulbibliotheken Leipzig",
                     "url": "https://opendata.leipzig.de/dataset/schulbibliotheken-leipzig",
                     "publisher": "Stadt Leipzig"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schulgebaeudezustand-renovierungsbedarf",
+              "level": 4,
+              "name": "Schulgebäudezustand und Renovierungsbedarf",
+              "color": "#92400e",
+              "details": {
+                "description": "Bewertung des baulichen Zustands von Schulgebäuden und geschätzter Investitionsbedarf für Sanierungsmaßnahmen, erhoben durch kommunale Schulträger und zusammengeführt im KfW-Kommunalpanel sowie dem Bildungsmonitor des Instituts der deutschen Wirtschaft (IW). Der Deutsche Städtetag veröffentlicht ergänzend Lageberichte zur Schulinfrastruktur.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Gebäudebezogene Daten können nach Anonymisierung auf Kreisebene aggregiert veröffentlicht werden; Einzelgebäudedaten sind kommunal restriktiv."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bestandsaufnahme",
+                    "description": "Kommunale Hochbauämter und externe Gutachter erfassen Gebäudezustand nach standardisierten Kriterien (DIN 276) und leiten Prioritätslisten für Sanierungsmaßnahmen ab."
+                  },
+                  {
+                    "method": "Investitionsplanung",
+                    "description": "KfW aggregiert kommunale Meldungen zu bundesweiten Schätzungen des Sanierungsbedarfs im Rahmen des jährlichen Kommunalpanels."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "digitale-ausstattung-schulen-computer-ratio",
+              "level": 4,
+              "name": "Digitale Ausstattung Schulen — Schüler-Computer-Verhältnis",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl digital vernetzter Endgeräte (Computer, Tablets, interaktive Whiteboards) je Schüler, differenziert nach Bundesland, Schulform und Jahrgangsstufe. Das Statistische Bundesamt und die Kultusministerkonferenz erheben diese Daten im Rahmen des Digitalpakts Schule; OECD veröffentlicht internationale Vergleichsdaten im Education at a Glance-Bericht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Rein infrastrukturbezogene Aggregatdaten ohne Personenbezug; Bundesländer veröffentlichen Teilmengen bereits im Rahmen der Digitalpakt-Berichterstattung."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Inventarerhebung",
+                    "description": "Schulen melden jährlich ihren Gerätebestand an die Schulträger; Digitalpakt-Monitoring konsolidiert Daten auf Länderebene."
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "OECD PISA-Begleiterhebung und EU-Bildungsmonitor ermöglichen internationalen Vergleich der digitalen Infrastruktur."
                   }
                 ]
               }
@@ -1358,6 +1632,100 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "loesungsquoten-ausbildungsvertraege-berufsfeld",
+              "level": 4,
+              "name": "Lösungsquoten Ausbildungsverträge nach Berufsfeld",
+              "color": "#92400e",
+              "details": {
+                "description": "Anteil der vorzeitig gelösten Ausbildungsverträge bezogen auf alle neu abgeschlossenen Verträge, differenziert nach Ausbildungsberufsfeld und Bundesland. Das Bundesinstitut für Berufsbildung (BIBB) veröffentlicht diese Daten jährlich im BIBB-Datenreport zum Berufsbildungsbericht mit Zeitreihen seit 1977.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Vertragsdaten aus dem Berufsbildungsstatistik-Register; vom BIBB bereits frei zugänglich über das BIBB-Datenportal veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Registerauswertung",
+                    "description": "BIBB wertet das Berufsbildungsstatistik-Register aus, das alle bei den zuständigen Stellen (IHK, HWK) eingetragenen Vertragsauflösungen erfasst."
+                  },
+                  {
+                    "method": "Kohortenverfolgung",
+                    "description": "Lösungsquoten werden nach Vertragseintrittsjahrgang berechnet, um vollständige Auflösungsverläufe je Kohorte abzubilden."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ausbildungsplatznachfrage-angebot-nachfrage-relation",
+              "level": 4,
+              "name": "Ausbildungsplatznachfrage — Angebot-Nachfrage-Relation",
+              "color": "#92400e",
+              "details": {
+                "description": "Verhältnis von betrieblichen Ausbildungsplatzangeboten zu Nachfragenden nach einer Berufsausbildung, differenziert nach Berufsfeld, Region und Bundesland. Das BIBB berechnet die Angebots-Nachfrage-Relation (ANR) jährlich im Berufsbildungsbericht; die Bundesagentur für Arbeit liefert ergänzende Vermittlungsstatistiken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Vollständig aggregierte Marktdaten; BIBB und BA veröffentlichen ANR-Werte jährlich ohne Einschränkungen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Kennzahlberechnung",
+                    "description": "BIBB berechnet ANR als Verhältnis von (neu abgeschlossene Verträge + unvermittelte Bewerber) zu (neu abgeschlossene Verträge + unbesetzte Stellen)."
+                  },
+                  {
+                    "method": "Regionalanalyse",
+                    "description": "BA-Statistik schlüsselt Angebot und Nachfrage auf Agentur- und Kreisebene auf für kleinräumige Engpassanalysen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1686,6 +2054,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "abschlusspruefung-bestehensquoten-ausbildungsberuf",
+              "level": 4,
+              "name": "Abschlussprüfung Bestehensquoten nach Ausbildungsberuf",
+              "color": "#92400e",
+              "details": {
+                "description": "Anteil der Prüfungsteilnehmenden, die die Abschlussprüfung im dualen Ausbildungssystem erfolgreich bestehen, differenziert nach Ausbildungsberuf, Prüfungsbereich und Bundesland. Das BIBB veröffentlicht diese Daten jährlich im BIBB-Datenreport; die zuständigen Stellen (IHK, HWK, Landwirtschaftskammern) stellen Rohdaten bereit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Prüfungsstatistik ohne Personenbezug; vom BIBB bereits über das Datenportal frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Kammerstatistik",
+                    "description": "IHK, HWK und weitere zuständige Stellen melden Prüfungsergebnisse an das BIBB-Berufsbildungsstatistikregister; BIBB aggregiert bundesweit."
+                  },
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Langfristige Trendanalyse zur Identifikation von Ausbildungsberufen mit strukturell niedrigen Bestehensquoten für bildungspolitische Interventionen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zwischenpruefung-ergebnisse-ihk-beruf",
+              "level": 4,
+              "name": "Zwischenprüfungsergebnisse der IHK nach Ausbildungsberuf",
+              "color": "#92400e",
+              "details": {
+                "description": "Leistungsdaten aus den Zwischenprüfungen der Industrie- und Handelskammern (IHK), differenziert nach Ausbildungsberuf, Prüfungsbereich (schriftlich, praktisch) und IHK-Bezirk. Der Deutsche Industrie- und Handelskammertag (DIHK) veröffentlicht aggregierte Auswertungen; einzelne IHKs stellen Bezirksdaten bereit.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Zwischenprüfungsdaten enthalten in kleinen Berufsgruppen quasi-personenbezogene Informationen; Aggregation auf Berufsebene bundesweit ist publizierbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "IHK-Datenaggregation",
+                    "description": "DIHK sammelt Zwischenprüfungsergebnisse der 79 regionalen IHKs und erstellt bundesweite Berufsvergleiche."
+                  },
+                  {
+                    "method": "Frühwarnsystem",
+                    "description": "Analyse von Zwischenprüfungsergebnissen als Prädiktor für Abschlussprüfungserfolg zur frühzeitigen Förderidentifikation."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -2001,6 +2459,96 @@
                   {
                     "method": "Bildung & Qualifizierung",
                     "description": "Berufsschulen und Kammern nutzen Kompetenzfeststellungsdaten, um Ausbildungsbewerber gezielt zu beraten und Übergänge in passende Ausbildungsberufe zu fördern."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schuelerbetriebspraktika-statistik-bundesland",
+              "level": 4,
+              "name": "Schülerbetriebspraktika-Statistik nach Bundesland und Schulform",
+              "color": "#92400e",
+              "details": {
+                "description": "Erfassung von Betriebspraktika an allgemeinbildenden und beruflichen Schulen, differenziert nach Dauer, Schulform und Bundesland. Das Institut für Arbeitsmarkt- und Berufsforschung (IAB) und die Bertelsmann Stiftung erheben diese Daten im Rahmen des Übergangssystem-Monitorings; einzelne Bundesländer (z.B. Bayern, NRW) führen eigene Praktikumsdatenbanken.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Schulbezogene Praktikumsdaten sind aggregiert auf Bundeslandebene veröffentlichbar; betriebsspezifische Einzeldaten unterliegen Datenschutzbeschränkungen."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Schulbefragung",
+                    "description": "Landesschulbehörden erheben jährlich Praktikumsumfang und -qualität an Schulen; Bertelsmann Stiftung führt ergänzende Stichprobenerhebungen durch."
+                  },
+                  {
+                    "method": "Qualitätsanalyse",
+                    "description": "Auswertung von Praktikumsberichten und Lehrkräftebewertungen zur Identifikation von Best-Practice-Modellen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "uebergangsquoten-schule-ausbildung-migration-region",
+              "level": 4,
+              "name": "Übergangsquoten Schule–Ausbildung nach Migrationshintergrund und Region",
+              "color": "#92400e",
+              "details": {
+                "description": "Anteil der Schulabgänger, die direkt in eine Berufsausbildung einmünden, differenziert nach Migrationshintergrund, Region und Schulabschluss. Das BIBB und das Nationale Bildungspanel (NEPS) liefern Längsschnittdaten; der Berufsbildungsbericht enthält jährliche Übergangsdaten aus der BA-Ausbildungsmarktstatistik.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Migrationshintergrundmerkmal erfordert besondere Datenschutzprüfung; anonymisierte Gruppenstatistiken auf Kreisebene sind publizierbar."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Registerverknüpfung",
+                    "description": "BIBB verknüpft Schulabgangsdaten der Länder mit BA-Ausbildungsregisterdaten zur Berechnung individueller Übergangsquoten."
+                  },
+                  {
+                    "method": "Disaggregierung",
+                    "description": "Mikrozensus-Daten ermöglichen Disaggregierung nach Migrationshintergrund (1. und 2. Generation) und Bildungsabschluss der Eltern."
                   }
                 ]
               }
@@ -2345,6 +2893,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "vhs-statistik-dvv-kurse-programmbereiche",
+              "level": 4,
+              "name": "VHS-Statistik DVV — Kurse nach Programmbereichen",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl von Kursen, Unterrichtsstunden und Teilnehmenden an Volkshochschulen, differenziert nach Programmbereichen (Gesellschaft/Politik, Sprachen, Gesundheit, Kultur, Beruf, Grundbildung). Der Deutsche Volkshochschul-Verband (DVV) erhebt diese Daten jährlich im VHS-Statistikbericht und veröffentlicht sie auf dem Open-Data-Portal des DVV.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Vollständig aggregierte Einrichtungsstatistik ohne Personenbezug; vom DVV bereits als Open Data zugänglich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "DVV-Erhebung",
+                    "description": "Alle rund 850 VHS melden jährlich ihre Kursstatistik an den DVV; dieser aggregiert und veröffentlicht bundesweite Zeitreihen seit 1962."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Langzeitauswertung der Programmbereichsverschiebungen (z.B. Rückgang Sprachkurse, Anstieg Gesundheitskurse) für strategische Planung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vhs-belegungszahlen-sprachkurse-sprache-niveau",
+              "level": 4,
+              "name": "Belegungszahlen VHS-Sprachkurse nach Sprache und Niveau",
+              "color": "#92400e",
+              "details": {
+                "description": "Teilnehmendenzahlen an VHS-Sprachkursen, aufgeschlüsselt nach Zielsprache (Englisch, Deutsch als Fremdsprache, Französisch, Spanisch u.a.) und Sprachniveau (A1–C2 nach GER). Der DVV veröffentlicht diese Daten im jährlichen VHS-Statistikbericht; das Bundesamt für Migration und Flüchtlinge (BAMF) liefert ergänzende Daten zu Integrationskursen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kursstatistik ohne Personenbezug; DVV und BAMF veröffentlichen Sprachkursdaten regelmäßig und öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "VHS-Meldeverfahren",
+                    "description": "VHS-Leitungen übermitteln kursweise Belegungsdaten nach Abschluss jedes Kurshalbjahres an den DVV für die bundesweite Statistik."
+                  },
+                  {
+                    "method": "GER-Niveauanalyse",
+                    "description": "Auswertung der Niveaustufenverteilung ermöglicht Rückschlüsse auf Sprachlernbedarfe und Integrationskurseffekte."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -2681,6 +3319,100 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "aes-weiterbildungsteilnahme-einrichtungstyp",
+              "level": 4,
+              "name": "Adult Education Survey — Weiterbildungsteilnahme nach Einrichtungstyp",
+              "color": "#92400e",
+              "details": {
+                "description": "Bevölkerungsrepräsentative Erhebung zur Weiterbildungsteilnahme Erwachsener (18–64 Jahre), differenziert nach Einrichtungstyp (VHS, Betrieb, Hochschule, privat), Bildungshintergrund und soziodemografischen Merkmalen. Das Bundesministerium für Bildung und Forschung (BMBF) führt den AES alle vier bis fünf Jahre durch; das BIBB wertet die Daten aus und veröffentlicht sie.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Individualbefragungsdaten mit soziodemografischen Merkmalen; Scientific-Use-File nach Anonymisierung verfügbar, Publikationstabellen frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Zufallsstichprobe",
+                    "description": "AES zieht repräsentative Stichprobe von ca. 7.000 Personen; CATI-Interviews erfassen Weiterbildungsaktivitäten der letzten 12 Monate."
+                  },
+                  {
+                    "method": "Internationaler Vergleich",
+                    "description": "AES ist Teil des EU-AES; Eurostat stellt harmonisierte Vergleichsdaten für alle EU-Mitgliedsstaaten bereit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "nationaler-bildungsbericht-weiterbildungsquoten",
+              "level": 4,
+              "name": "Nationaler Bildungsbericht — Weiterbildungsquoten nach Erwerbsstatus",
+              "color": "#92400e",
+              "details": {
+                "description": "Anteil der Erwachsenen, die an formaler und non-formaler Weiterbildung teilnehmen, differenziert nach Erwerbsstatus (beschäftigt, arbeitslos, nicht erwerbstätig), Qualifikationsniveau und Alter. Autorengruppe Bildungsberichterstattung veröffentlicht diese Indikatoren alle zwei Jahre im Nationalen Bildungsbericht, gefördert von BMBF und KMK.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Vollständig aggregierte Berichtsstatistik; Nationaler Bildungsbericht ist als Open Access publiziert und alle Tabellen als Download verfügbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Indikatorenberechnung",
+                    "description": "Autorengruppe berechnet Weiterbildungsquoten auf Basis von AES, Mikrozensus und Betriebsdaten; Indikatoren werden im Zweijahresrhythmus aktualisiert."
+                  },
+                  {
+                    "method": "Trendberichterstattung",
+                    "description": "Zeitreihenvergleich über mehrere Bildungsberichtsjahre identifiziert Gruppen mit systematischer Unterrepräsentation in der Weiterbildung."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -2920,6 +3652,100 @@
                   {
                     "method": "Bildung & Qualifizierung",
                     "description": "VHS und Volkshochschulverbände nutzen diese Daten, um das Angebot an KI-Kursen bedarfsorientiert weiterzuentwickeln und Lücken in der Weiterbildungslandschaft zu schließen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vhs-fernkurs-statistik-online-kurse",
+              "level": 4,
+              "name": "VHS-Fernkurs-Statistik — Online-Kurse nach Fachgebiet",
+              "color": "#92400e",
+              "details": {
+                "description": "Teilnehmendenzahlen und Kursangebote im VHS-Online-Lernangebot (vhs.cloud, Selbstlernzentrum), differenziert nach Fachgebiet und Lernformat (synchron/asynchron). Der DVV erhebt diese Daten seit Einführung der vhs.cloud und veröffentlicht Nutzungsberichte; das BMBF fördert die Plattform und erhält Nutzungsberichte.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Plattformnutzungsdaten enthalten potenziell nutzerbezogene Metadaten; aggregierte Fachgebietsstatistiken sind veröffentlichbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Plattformanalyse",
+                    "description": "DVV wertet Nutzungsdaten der vhs.cloud-Plattform (Moodle-basiert) aus und erstellt jährliche Berichte zu Kursabschlussraten und Fachgebietsnachfrage."
+                  },
+                  {
+                    "method": "Vergleichsanalyse",
+                    "description": "Gegenüberstellung von Online- und Präsenzteilnahme ermöglicht Analyse der digitalen Transformation des VHS-Angebots seit 2020."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vhs-digitale-transformation-plattformnutzung",
+              "level": 4,
+              "name": "Digitale Transformation VHS — Plattformnutzung und Lernformate",
+              "color": "#92400e",
+              "details": {
+                "description": "Kennzahlen zur digitalen Transformation von Volkshochschulen: Anteil digital gestützter Kurse, Nutzung von Lernmanagementsystemen (Moodle, vhs.cloud) und Blended-Learning-Angeboten nach Programmbereich. Das BMBF-Programm 'Digitale Medien in der Weiterbildung' und der DVV erheben diese Daten in Pilotprojekten und bundesweiten Befragungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einrichtungsbezogene Digitalisierungsdaten können auf Bundeslandebene aggregiert veröffentlicht werden; institutionsspezifische Daten unterliegen Vertraulichkeitsanforderungen."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "VHS-Befragung",
+                    "description": "DVV führt alle zwei Jahre eine Vollerhebung unter allen Mitglieds-VHS zur digitalen Infrastruktur und Lehrformatnutzung durch."
+                  },
+                  {
+                    "method": "Nutzungsauswertung",
+                    "description": "vhs.cloud-Betreiber stellt anonymisierte Nutzungsstatistiken bereit; DVV aggregiert diese für den jährlichen Digitalisierungsbericht."
                   }
                 ]
               }
@@ -3260,6 +4086,100 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "kifoeg-rechtsanspruch-erfuellungsgrad-altersgruppe",
+              "level": 4,
+              "name": "KiföG-Rechtsanspruch Erfüllungsgrad nach Altersgruppe und Bundesland",
+              "color": "#92400e",
+              "details": {
+                "description": "Versorgungsquoten und Erfüllungsgrad des gesetzlichen Rechtsanspruchs auf Kindertagesbetreuung (ab 1 Jahr nach KiföG) differenziert nach Altersgruppe (unter 3 Jahre, 3–6 Jahre) und Bundesland. Destatis erhebt diese Daten jährlich zum Stichtag 1. März in der Kinder- und Jugendhilfestatistik (KJH-Statistik) und veröffentlicht sie im Statistischen Jahrbuch.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Vollständig aggregierte Versorgungsstatistik auf Länderebene; von Destatis bereits als Open Data über den GENESIS-Online-Dienst zugänglich."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "KJH-Statistik",
+                    "description": "Jugendämter melden jährlich zum 1. März Platz- und Belegungsdaten aller Kindertageseinrichtungen und Tagespflegepersonen an die Statistischen Landesämter."
+                  },
+                  {
+                    "method": "Bedarfsmodellierung",
+                    "description": "Prognos AG und BMFSFJ modellieren jährlich den zukünftigen Bedarf nach Bevölkerungsprojektion und Elternerwerbsquoten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wartelisten-statistik-kita-plaetze-kommunal",
+              "level": 4,
+              "name": "Wartelisten-Statistik Kita-Plätze kommunal",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl der auf Kita-Wartelisten eingetragenen Kinder nach Altersgruppe und Wartezeit, erhoben auf kommunaler Ebene durch Jugendämter. Der Deutsche Städtetag und der Deutsche Städte- und Gemeindebund erheben diese Daten in Umfragen; einzelne Städte (Berlin, München, Hamburg) führen öffentliche Wartelistenportale.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Wartelistendaten enthalten teilweise personenbezogene Angaben zu Kindern; aggregierte Bedarfslücken auf Stadtbezirksebene sind veröffentlichbar."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Jugendamtserhebung",
+                    "description": "Kommunale Jugendämter führen Wartelisten im Kita-Navigator oder eigenen Systemen; Städtetag-Umfragen erfassen Wartelistenumfang aggregiert."
+                  },
+                  {
+                    "method": "Bedarfsplanung",
+                    "description": "Kommunale Kita-Bedarfspläne werden auf Basis von Wartelisten und Bevölkerungsentwicklung erstellt und im Jugendhilfeausschuss beschlossen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -3592,6 +4512,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "fachkraft-kind-schluessel-bundesland-einrichtungstyp",
+              "level": 4,
+              "name": "Fachkraft-Kind-Schlüssel nach Bundesland und Einrichtungstyp",
+              "color": "#92400e",
+              "details": {
+                "description": "Verhältnis von pädagogischen Fachkräften zu betreuten Kindern in Kitas, Krippen und Tagespflege, differenziert nach Bundesland, Altersgruppe und Einrichtungstyp. Das Forschungszentrum des Deutschen Jugendinstituts (DJI) und die Weiterbildungsinitiative Frühpädagogische Fachkräfte (WiFF) erheben und veröffentlichen diese Daten; Destatis liefert Grunddaten aus der KJH-Statistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Strukturqualitätsdaten aus der amtlichen KJH-Statistik; ohne Personenbezug und bereits über GENESIS-Online von Destatis frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "KJH-Auswertung",
+                    "description": "Destatis berechnet Fachkraft-Kind-Schlüssel aus der jährlichen Kinder- und Jugendhilfestatistik auf Basis gemeldeter VZÄ-Personalstunden und Kinderzahlen."
+                  },
+                  {
+                    "method": "Qualitätsmonitoring",
+                    "description": "Bertelsmann Stiftung Ländermonitor Frühkindliche Bildungssysteme veröffentlicht jährlich aktualisierte Bundesländervergleiche zum Betreuungsschlüssel."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "qualifikationsstruktur-kita-personal-bundesland",
+              "level": 4,
+              "name": "Qualifikationsstruktur Kita-Personal nach Bundesland",
+              "color": "#92400e",
+              "details": {
+                "description": "Ausbildungsabschlüsse und Qualifikationsniveaus des pädagogischen Personals in Kindertageseinrichtungen, differenziert nach Berufsabschluss (Erzieher/in, Sozialpädagoge/in, Kindertagespflegeperson, Quereinsteiger) und Bundesland. Destatis erhebt diese Daten jährlich in der KJH-Statistik; WiFF und DJI analysieren Qualifikationstrends.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Personalstrukturstatistik ohne Personenbezug; von Destatis bereits über GENESIS-Online und im Statistischen Jahrbuch veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Personalstatistik",
+                    "description": "Träger melden Personalqualifikationen jährlich an Jugendämter; statistische Ämter aggregieren für Länder- und Bundesauswertungen."
+                  },
+                  {
+                    "method": "Fachkräftebedarfsmodell",
+                    "description": "Prognos AG modelliert auf Basis von Qualifikationsdaten und Renteneintritten den zukünftigen Fachkräftebedarf im Kita-Bereich."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -3831,6 +4841,100 @@
                   {
                     "method": "Planung & Steuerung",
                     "description": "Kommunale Jugendämter nutzen Sozialraumanalysen zur bedarfsorientierten Ressourcenverteilung und zur Identifikation von Einzugsgebieten mit besonderem Unterstützungsbedarf."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "elternbefragung-kita-zufriedenheit-bmfsfj",
+              "level": 4,
+              "name": "Elternbefragung Kita-Zufriedenheit — BMFSFJ-Monitor Frühe Bildung",
+              "color": "#92400e",
+              "details": {
+                "description": "Elternbewertungen zur Zufriedenheit mit der Kita-Betreuung (Kommunikation, pädagogisches Konzept, Öffnungszeiten, Fachkraftqualität), erhoben im BMFSFJ-Familien-Monitor und ergänzenden Studien des DJI. Das BMFSFJ veröffentlicht diese Daten im jährlichen Familien-Monitor sowie im Kita-Qualitätsmonitor.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Individualbefragungsdaten mit soziodemografischen Angaben; aggregierte Zufriedenheitswerte auf Bundeslandebene sind publizierbar."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Repräsentativbefragung",
+                    "description": "BMFSFJ beauftragt jährlich repräsentative Befragung von Eltern mit Kindern unter 6 Jahren zu Betreuungszufriedenheit; Stichprobe ca. 5.000 Personen."
+                  },
+                  {
+                    "method": "Indexbildung",
+                    "description": "Zufriedenheitsdimensionen werden zu einem Gesamtindex aggregiert; Zeitreihenvergleich über Befragungsjahre zeigt Qualitätsentwicklungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "elternbeitraege-befreiungen-einkommensstufe-kommunal",
+              "level": 4,
+              "name": "Elternbeiträge und -befreiungen nach Einkommensstufe",
+              "color": "#92400e",
+              "details": {
+                "description": "Höhe der Elternbeiträge für Kindertagesbetreuung, differenziert nach Einkommensstufe und kommunalem Beitragssystem, sowie Anteil beitragsbefreiter Familien (Sozialstaffel, Beitragsfreistellung). Kommunale Jugendämter und die Bertelsmann Stiftung erheben diese Daten; das BMFSFJ wertet sie im Rahmen des Kita-Qualitätsgesetzes aus.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gebührenordnungen und Beitragssätze sind als kommunale Satzungen öffentlich; aggregierte Befreiungsquoten sind ohne Personenbezug veröffentlichbar."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Satzungsauswertung",
+                    "description": "Bertelsmann Stiftung wertet jährlich Kita-Beitragssatzungen aller Kreise und kreisfreien Städte aus und erstellt bundesweite Vergleichsübersichten."
+                  },
+                  {
+                    "method": "Sozialmonitoring",
+                    "description": "Jugendämter erfassen jährlich Anteil beitragsbefreiter Kinder nach Rechtsgrundlage (SGB II, SGB XII, kommunale Sozialstaffel) für Haushaltsplanung."
                   }
                 ]
               }
@@ -4092,6 +5196,100 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "sonderpaed-foerderbedarf-schwerpunkt-bundesland",
+              "level": 4,
+              "name": "Sonderpädagogischer Förderbedarf nach Förderschwerpunkt und Bundesland",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl und Anteil der Schülerinnen und Schüler mit festgestelltem sonderpädagogischem Förderbedarf nach Förderschwerpunkt (Lernen, Sprache, emotional-soziale Entwicklung, geistige Entwicklung, körperlich-motorische Entwicklung, Hören, Sehen) und Bundesland. Die KMK erhebt diese Daten jährlich und veröffentlicht sie in der Statistik 'Sonderpädagogische Förderung in Schulen'.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Vollständig aggregierte Schulstatistik; von KMK bereits jährlich veröffentlicht und über das Statistische Informationssystem der KMK zugänglich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Landeserhebung",
+                    "description": "Schulstatistikämter der Länder aggregieren Förderbedarf-Feststellungen aus schulärztlichen und schulpsychologischen Gutachten zu bundeslandweiten Kennzahlen."
+                  },
+                  {
+                    "method": "Ländervergleich",
+                    "description": "KMK stellt jährlich harmonisierte Bundesländervergleiche bereit; Inklusionsquote und Förderquote werden als Leitindikatoren berechnet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "diagnostikinstrumente-foerderschulen-kmk",
+              "level": 4,
+              "name": "Diagnostikinstrumente-Einsatz an Förderschulen",
+              "color": "#92400e",
+              "details": {
+                "description": "Übersicht und Häufigkeit eingesetzter standardisierter Diagnostikverfahren zur Feststellung sonderpädagogischen Förderbedarfs (z.B. WISC-V, CFT, BUEVA-III, HSP), differenziert nach Förderschwerpunkt und Bundesland. Das Institut zur Qualitätsentwicklung im Bildungswesen (IQB) und die KMK erheben diese Daten in periodischen Bestandsaufnahmen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Instrumentenverwendungsdaten sind strukturell ohne Personenbezug; Beschaffungsdaten der Verlage können jedoch wettbewerblich sensibel sein — aggregierte Verwendungsquoten sind publizierbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Expertenbefragung",
+                    "description": "IQB befragt sonderpädagogische Lehrkräfte und Schulpsychologen in Stichprobenerhebungen zu eingesetzten Diagnostikverfahren und deren Validität."
+                  },
+                  {
+                    "method": "Verfahrensanalyse",
+                    "description": "Auswertung der Häufigkeitsverteilung genutzter Tests zur Identifikation von Standardisierungslücken und Schulungsbedarfen bei Fachkräften."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4342,6 +5540,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "inklusive-beschulung-anteil-foerderbedarf-regelschule",
+              "level": 4,
+              "name": "Inklusive Beschulung — Anteil Schüler mit Förderbedarf in Regelschulen",
+              "color": "#92400e",
+              "details": {
+                "description": "Inklusionsquote: Anteil der Schülerinnen und Schüler mit sonderpädagogischem Förderbedarf, die eine allgemeine Schule (Regelschule) statt einer Förderschule besuchen, differenziert nach Förderschwerpunkt und Bundesland. KMK veröffentlicht diese Daten jährlich; die Bertelsmann Stiftung ergänzt mit dem Inklusionsbarometer Arbeit und Bildung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Schulbesuchsdaten ohne Personenbezug; von KMK und Destatis jährlich veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Schulstatistik",
+                    "description": "Länder melden jährlich schulformweise die Anzahl der Schüler mit Förderbedarf an KMK; Inklusionsquote wird als Anteil an Gesamtförderbedarfsquote berechnet."
+                  },
+                  {
+                    "method": "UN-BRK-Monitoring",
+                    "description": "Monitoring-Stelle UN-BRK beim Deutschen Institut für Menschenrechte wertet Inklusionsquoten im Rahmen der Staatenberichterstattung aus."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schulbegleiter-statistik-foerderbedarf-bundesland",
+              "level": 4,
+              "name": "Schulbegleiter-Statistik nach Förderbedarf und Bundesland",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl der eingesetzten Schulbegleiterinnen und Schulbegleiter (Integrationshelfer, Eingliederungshilfe nach SGB IX) an allgemeinen Schulen, differenziert nach Förderschwerpunkt, Stundenumfang und Bundesland. Jugendämter und Sozialämter führen diese Daten; Bundesarbeitsgemeinschaft für Rehabilitation (BAR) und BMAS veröffentlichen aggregierte Auswertungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Schulbegleiterdaten sind leistungsrechtlich verankert (SGB IX); individuelle Bewilligungsdaten unterliegen Datenschutz, Gesamtstatistik auf Länderebene ist publizierbar."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "SGB-IX-Auswertung",
+                    "description": "Sozialämter und Jugendämter erfassen Schulbegleitungsbescheide im Rahmen der Eingliederungshilfestatistik; Destatis aggregiert in der KJH-Statistik."
+                  },
+                  {
+                    "method": "Kostenanalyse",
+                    "description": "Kommunale Spitzenverbände erheben Gesamtkosten der Schulbegleitung als Planungsgröße für kommunale Sozialhaushalte."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4585,6 +5873,96 @@
                   {
                     "method": "Beschaffungserfassung",
                     "description": "Schulträger erfassen Hilfsmittelzuweisungen im Haushaltssystem und übermitteln aggregierte Daten an Schulverwaltungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "individuelle-foerderplaene-umsetzungsgrad",
+              "level": 4,
+              "name": "Individuelle Förderpläne — Umsetzungsgrad nach Bundesland",
+              "color": "#92400e",
+              "details": {
+                "description": "Anteil der Schülerinnen und Schüler mit sonderpädagogischem Förderbedarf, für die ein individueller Förderplan erstellt und regelmäßig fortgeschrieben wird, differenziert nach Bundesland und Schulform. Das IQB und die Bundesländer erheben diese Daten in Qualitätsberichten; die Deutsche UNESCO-Kommission wertet sie im Rahmen des Bildungsmonitorings aus.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Schulbezogene Umsetzungsquoten sind aggregiert auf Länderebene veröffentlichbar; individuelle Förderpläne unterliegen strengem Datenschutz."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Schulinspektion",
+                    "description": "Schulinspektionsberichte der Länder erfassen Förderplanqualität und -umsetzung als Qualitätsindikator; Schulaufsicht aggregiert auf Distriktebene."
+                  },
+                  {
+                    "method": "Selbstauskunft",
+                    "description": "Sonderpädagogische Lehrkräfte geben in Schulleistungsstudien (z.B. PISA-Begleiterhebungen) Auskunft über Förderplanarbeit in ihrer Einrichtung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "uebergangsquoten-foerderschueler-allgemeinbildend",
+              "level": 4,
+              "name": "Übergangsquoten Förderschüler auf allgemeinbildende Schulen",
+              "color": "#92400e",
+              "details": {
+                "description": "Anteil der Schülerinnen und Schüler an Förderschulen, die nach Aufhebung des Förderbedarfs oder Probebeschulung auf eine allgemeinbildende Schule wechseln, differenziert nach Förderschwerpunkt und Bundesland. KMK-Statistik und landesspezifische Schulstatistiken erfassen diese Übergänge; Autorengruppe Bildungsberichterstattung wertet sie aus.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Übergangsdaten erfordern Verknüpfung von Förderschul- und Regelschulstatistik; aggregierte Übergangsquoten auf Länderebene sind publizierbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Schulverlaufsstatistik",
+                    "description": "Statistische Landesämter verfolgen Schülerverlaufsdaten über pseudonymisierte Schüler-IDs und identifizieren Schulformwechsel zwischen Förder- und Regelschule."
+                  },
+                  {
+                    "method": "Inklusionsevaluation",
+                    "description": "Wissenschaftliche Begleitforschung zu Inklusionsprogrammen der Länder (z.B. NRW, Hamburg) dokumentiert Übergangsverläufe prospektiv."
                   }
                 ]
               }
@@ -4842,6 +6220,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "studierendenzahlen-berufsakademien-studienrichtung",
+              "level": 4,
+              "name": "Studierendenzahlen Berufsakademien nach Studienrichtung und Bundesland",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl der eingeschriebenen Studierenden an Berufsakademien und der Dualen Hochschule Baden-Württemberg (DHBW), differenziert nach Studienrichtung (Wirtschaft, Technik, Sozialwesen), Bundesland und Studienjahr. KMK erhebt diese Daten im Rahmen der Hochschulstatistik; Destatis veröffentlicht sie in der Hochschulstatistik (Fachserie 11, Reihe 4).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Studierendenstatistik ohne Personenbezug; von Destatis über GENESIS-Online frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Hochschulstatistik",
+                    "description": "Berufsakademien und DHBW melden Studierendenzahlen jährlich an die Statistischen Landesämter; Destatis aggregiert für bundesweite Vergleiche."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Vergleich der Studierendenzahlen über Jahrzehnte zeigt Wachstum des dualen Studiums als Alternative zum klassischen Universitätsstudium."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "abbrecherquoten-berufsakademie-fachrichtung",
+              "level": 4,
+              "name": "Abbrecherquoten Berufsakademien nach Fachrichtung",
+              "color": "#92400e",
+              "details": {
+                "description": "Anteil der Studierenden an Berufsakademien und der DHBW, die das Studium ohne Abschluss beenden, differenziert nach Fachrichtung und Bundesland. Das DZHW (Deutsches Zentrum für Hochschul- und Wissenschaftsforschung) erhebt Studienabbruchquoten; DHBW veröffentlicht eigene Verbleibstatistiken.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Studienverlaufsdaten erfordern Pseudonymisierung; institutionsbezogene Aggregatquoten auf Studienrichtungsebene sind publizierbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Kohortenanalyse",
+                    "description": "DZHW verfolgt Studienstartjahrgänge über mehrere Semester und berechnet kumulierte Abbrecherquoten je Fachrichtung und Abschlussziel."
+                  },
+                  {
+                    "method": "Ursachenanalyse",
+                    "description": "Befragung von Studienabbrechern zu Abbruchgründen (Leistungsprobleme, Betrieb, persönliche Gründe) liefert Steuerungswissen für Qualitätsverbesserung."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -5092,6 +6560,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "unternehmenspartner-dhbw-kooperationsbetriebe",
+              "level": 4,
+              "name": "Unternehmenspartner-Datenbank DHBW — Kooperationsbetriebe nach Branche",
+              "color": "#92400e",
+              "details": {
+                "description": "Register der akkreditierten Ausbildungsbetriebe, die mit der Dualen Hochschule Baden-Württemberg (DHBW) oder Berufsakademien der Länder kooperieren, differenziert nach Branche, Betriebsgröße und Studiengang. DHBW führt diese Datenbank intern; Berufsakademie Sachsen und andere Länderbehörden veröffentlichen Partnerbetriebslisten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Betriebskontaktdaten enthalten personenbezogene Ansprechpartner; bereinigte Branchenstatistiken ohne Kontaktdaten sind publizierbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Akkreditierungsverfahren",
+                    "description": "DHBW prüft Ausbildungsbetriebe nach Qualitätskriterien (Ausbildereignung, Betreuungskapazität) und führt akkreditierte Partner in einer zentralen Datenbank."
+                  },
+                  {
+                    "method": "Branchenauswertung",
+                    "description": "Jährliche Auswertung der Kooperationsbetriebe nach Wirtschaftszweig (WZ 2008) zur Analyse der Wirtschaftsstruktur des dualen Studiums."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "betreuungsqualitaet-ausbildungsbetriebe-ba-evaluation",
+              "level": 4,
+              "name": "Betreuungsqualität Ausbildungsbetriebe Berufsakademie — Evaluationsdaten",
+              "color": "#92400e",
+              "details": {
+                "description": "Bewertungen der Betreuungsqualität durch duale Studierende in ihren Praxisphasen beim Ausbildungsbetrieb, differenziert nach Betreuungsaspekten (Mentoring, Aufgabenqualität, Lernförderlichkeit) und Studienrichtung. DHBW führt semesterweise Lehrveranstaltungsevaluationen und Praxisphasenevaluationen durch; Ergebnisse fließen in die Reakkreditierung ein.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Betriebsbezogene Evaluationsdaten sind wettbewerblich sensibel; nur Metadaten zu Evaluationsverfahren und aggregierte Gesamtbewertungen auf Studiengangsebene sind veröffentlichbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Studentenbefragung",
+                    "description": "DHBW erhebt nach jeder Praxisphase standardisierte Evaluationsbögen; Ergebnisse werden den Betreuenden Betrieben gespiegelt und intern für Qualitätssicherung genutzt."
+                  },
+                  {
+                    "method": "Reakkreditierung",
+                    "description": "Schlechte Evaluationswerte über mehrere Semester können zur Suspendierung des Kooperationsstatus führen; Akkreditierungsausschuss entscheidet auf Basis aggregierter Daten."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -5339,6 +6897,96 @@
                   {
                     "method": "Standardisierte Absolventenbefragung",
                     "description": "Strukturierte Online-Befragung mit validierten Likert-Skalen, durchgeführt durch Hochschulen oder Forschungseinrichtungen wie DZHW."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "absolventenbefragung-dhbw-berufseinstieg",
+              "level": 4,
+              "name": "Absolventenbefragung DHBW — Berufseinstieg nach Studienrichtung und Region",
+              "color": "#92400e",
+              "details": {
+                "description": "Berufseinstiegsverläufe von DHBW-Absolventen, erfasst durch Absolventenbefragungen ein, drei und fünf Jahre nach Studienabschluss: Einstiegsgehalt, Beschäftigungsquote, Regionalmobilität und Tätigkeitsfeld. DHBW führt diese Befragungen in Kooperation mit INCHER (Internationales Zentrum für Hochschulforschung Kassel) durch.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Individualbefragungsdaten mit beruflichen Angaben; aggregierte Verbleibsquoten nach Studienrichtung und Region sind publizierbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Online-Panelbefragung",
+                    "description": "DHBW kontaktiert Absolventen über Alumni-Netzwerk; strukturierter Online-Fragebogen zu Berufseinstieg, Gehalt und Studienzufriedenheit."
+                  },
+                  {
+                    "method": "Kohortenverfolgung",
+                    "description": "INCHER führt Panelanalyse über mehrere Befragungszeitpunkte durch, um Karriereverläufe über die ersten Jahre nach dem Abschluss abzubilden."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "uebernahmequote-praxispartner-berufsakademie-branche",
+              "level": 4,
+              "name": "Übernahmequote durch Praxispartner — Berufsakademie nach Branche",
+              "color": "#92400e",
+              "details": {
+                "description": "Anteil der Berufsakademie-Absolventen, die nach Studienabschluss vom dualen Ausbildungspartner (Praxisbetrieb) in ein reguläres Beschäftigungsverhältnis übernommen werden, differenziert nach Branche, Studienrichtung und Bundesland. DHBW und Berufsakademien der Länder erheben diese Daten in Absolventenbefragungen; DZHW publiziert Vergleichsdaten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Übernahmedaten sind Bestandteil der Absolventenbefragung; branchenspezifische Aggregatquoten ohne Personenbezug sind publizierbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Absolventenbefragung",
+                    "description": "DHBW erhebt Übernahmebereitschaft und -realität in der Erstbefragung direkt nach Abschluss; Ergebnisse werden nach WZ-Branchen aggregiert."
+                  },
+                  {
+                    "method": "Branchenvergleich",
+                    "description": "Übernahmequoten werden nach Wirtschaftszweig analysiert, um Sektoren mit besonders hoher oder niedriger Bindungsrate zu identifizieren."
                   }
                 ]
               }
@@ -5600,6 +7248,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "vdm-statistik-unterrichtsstunden-fach-schultyp",
+              "level": 4,
+              "name": "VdM-Statistik Musikschulen — Unterrichtsstunden nach Fach und Schultyp",
+              "color": "#92400e",
+              "details": {
+                "description": "Gesamtzahl der erteilten Unterrichtsstunden an öffentlichen und privaten Musikschulen, differenziert nach Unterrichtsfach (Klavier, Gitarre, Violine, Gesang, Bläser, Elementare Musikpädagogik) und Schultyp (kommunal, freie Träger). Der Verband deutscher Musikschulen (VdM) erhebt diese Daten jährlich und veröffentlicht sie im Jahrbuch Musikschule.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Einrichtungsstatistik ohne Personenbezug; VdM veröffentlicht Kerndaten jährlich im Jahrbuch Musikschule und auf der VdM-Website."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "VdM-Jahreserhebung",
+                    "description": "Alle rund 930 VdM-Mitgliedsschulen melden jährlich Unterrichtsstunden nach Fach und Schulform; VdM aggregiert und veröffentlicht bundesweite Statistik."
+                  },
+                  {
+                    "method": "Fachstrukturanalyse",
+                    "description": "Langfristige Beobachtung der Verschiebungen im Fächerangebot (z.B. Rückgang klassischer Instrumente, Anstieg Populärer Musik) für bildungspolitische Planung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "musikschule-gruppenunterricht-einzelunterricht-verteilung",
+              "level": 4,
+              "name": "Gruppenunterricht vs. Einzelunterricht — Verteilung an Musikschulen",
+              "color": "#92400e",
+              "details": {
+                "description": "Anteil von Gruppen- und Einzelunterricht am Gesamtunterrichtsvolumen an Musikschulen, differenziert nach Instrumentengruppe, Altersgruppe und Bundesland. VdM erhebt diese Strukturdaten in der jährlichen Statistik; Studie des Deutschen Musikrats ergänzt qualitative Aspekte der Unterrichtsorganisation.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Strukturstatistik ohne Personenbezug; VdM publiziert Unterrichtsformatdaten im Jahrbuch Musikschule."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Unterrichtsformaterhebung",
+                    "description": "VdM-Mitgliedsschulen melden Unterrichtseinheiten nach Format (Einzel, Duo, Kleingrupppe, Großgruppe) aufgeschlüsselt nach Fach und Altersgruppe."
+                  },
+                  {
+                    "method": "Kostenanalyse",
+                    "description": "VdM analysiert Unterrichtsformatverteilung im Kontext von Ressourceneffizienz und Breitenförderungszielen kultureller Bildung."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -5839,6 +7577,96 @@
                   {
                     "method": "Sozialberichterstattung",
                     "description": "Förderdaten werden jährlich zusammengeführt und auf Stadtteilebene aggregiert für den kommunalen Sozialbericht aufbereitet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schueler-zahlen-instrument-musikschule-vdm",
+              "level": 4,
+              "name": "Schülerzahlen nach Instrument — Musikschulen VdM bundesweit",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl der Schülerinnen und Schüler nach Hauptinstrument (Klavier, Gitarre, Querflöte, Violine, Schlagzeug, Gesang etc.) an VdM-Mitgliedsschulen bundesweit und nach Bundesland. VdM erhebt diese Daten jährlich im Rahmen der Musikschulstatistik und veröffentlicht Rankings der beliebtesten Instrumente im Jahrbuch Musikschule.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Schülerstatistik nach Instrument ohne Personenbezug; VdM veröffentlicht diese Daten regelmäßig und öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "VdM-Vollerhebung",
+                    "description": "Alle VdM-Mitgliedsschulen melden jährlich Schülerzahlen nach Hauptinstrument; VdM erstellt bundesweite und länderspezifische Rankings."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Langzeitbetrachtung der Instrumentalpräferenzen (z.B. Gitarrenboom, Rückgang Blockflöte) zur Vorausplanung von Lehrerkapazitäten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wartelisten-instrumentalunterricht-instrument-kommune",
+              "level": 4,
+              "name": "Wartelisten Instrumentalunterricht nach Instrument und Kommune",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl der auf Wartelisten für Instrumentalunterricht eingetragenen Kinder und Jugendlichen, differenziert nach begehrtem Instrument und kommunaler Musikschule. Einzelne Musikschulen (z.B. Berlin, München, Hamburg) veröffentlichen Wartelisten; VdM-Umfragen erfassen die bundesweite Dimension des Nachfrageüberhangs.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Wartelisten enthalten personenbezogene Anmeldedaten; aggregierte Nachfrageüberhänge nach Instrument auf Stadtebene sind ohne Personenbezug veröffentlichbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Anmeldesystemauswertung",
+                    "description": "Musikschulen werten ihre Anmeldemanagementsysteme nach Wartezeit und Instrument aus; VdM sammelt diese Daten in Stichprobenumfragen."
+                  },
+                  {
+                    "method": "Bedarfsplanung",
+                    "description": "Kommunale Träger nutzen Wartelistendaten für Stellenplanung und Raumprogrammplanung neuer Unterrichtsräume."
                   }
                 ]
               }
@@ -6085,6 +7913,96 @@
                   {
                     "method": "Content-Tracking",
                     "description": "Abrufzahlen werden durch das CMS der Schule aggregiert; kein Tracking einzelner Nutzerinnen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kooperationen-musikschulen-allgemeinbildend-projektstatistik",
+              "level": 4,
+              "name": "Kooperationen Musikschulen und allgemeinbildende Schulen — Projektstatistik",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl und Art der Kooperationsprojekte zwischen kommunalen Musikschulen und allgemeinbildenden Schulen (Bläserklassen, JeKi/JeKits, Streicherklassen), differenziert nach Projekttyp, Bundesland und Schulform. VdM und die Stiftung Jedem Kind ein Instrument (JeKi-Stiftung) erheben und veröffentlichen diese Projektstatistiken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Projektstatistiken ohne Personenbezug; VdM und JeKits-Stiftung veröffentlichen Kooperationsdaten regelmäßig im Jahresbericht."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Projekterfassung",
+                    "description": "VdM-Mitgliedsschulen melden laufende Kooperationsprojekte mit Schulen jährlich; JeKits-Stiftung führt eigenes Projektregister der geförderten Programme."
+                  },
+                  {
+                    "method": "Wirkungsevaluation",
+                    "description": "Universität Potsdam und Hochschule für Musik Hamburg evaluieren JeKits-Programme auf Schülermotivation und musikalische Kompetenzen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "konzerte-auftritt-musikschueler-jahresstatistik-vdm",
+              "level": 4,
+              "name": "Konzerte und Auftritte Musikschüler — Jahresstatistik VdM",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl der öffentlichen Konzerte, Vorspiele und kulturellen Auftritte von Musikschülerinnen und -schülern, differenziert nach Veranstaltungstyp (Vorspielabend, Wettbewerb, Schulkonzert, öffentliches Konzert) und Bundesland. VdM erhebt diese Daten im jährlichen Jahrbuch Musikschule; der Deutsche Musikrat erfasst Wettbewerbsteilnahmen (Jugend musiziert).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Veranstaltungsstatistik ohne Personenbezug; VdM und Deutscher Musikrat veröffentlichen diese Daten im Jahresbericht."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Veranstaltungserfassung",
+                    "description": "Musikschulen melden Konzert- und Auftrittsstatistik an VdM; Jugend-musiziert-Bundeswettbewerb stellt Teilnehmerstatistiken bereit."
+                  },
+                  {
+                    "method": "Kulturanalyse",
+                    "description": "Auswertung der Auftrittsformate als Indikator für kulturelle Teilhabe und öffentliche Sichtbarkeit musikalischer Bildung auf kommunaler Ebene."
                   }
                 ]
               }
@@ -6338,6 +8256,92 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "beratungsfaelle-schulpsychologie-problembereich-schulstufe",
+              "level": 4,
+              "name": "Beratungsfälle schulpsychologischer Dienst nach Problembereich und Schulstufe",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl und Struktur der Beratungsfälle an schulpsychologischen Beratungsstellen, differenziert nach Problembereich (Lern- und Leistungsstörungen, sozial-emotionale Probleme, Berufswahl, Schulangst), Schulstufe und Bundesland. Landesinstitute für Schulpsychologie und die Bundeskonferenz für Schulpsychologie (BDP-Schulpsychologie) erheben und veröffentlichen aggregierte Fallstatistiken.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Fallstatistiken sind ohne personenbezogene Details veröffentlichbar; Einzelfallakten unterliegen strengem Beratungsgeheimnis (§203 StGB)."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Beratungsstellendokumentation",
+                    "description": "Schulpsychologische Dienste erfassen Beratungsanlässe in standardisierten Dokumentationssystemen; Landesinstitute aggregieren zu Jahresstatistiken."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Zeitreihenauswertung der Fallanlässe ermöglicht Frühidentifikation emergenter psychosozialer Belastungsthemen (z.B. Anstieg Schulangst nach COVID-19)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schulvermeidung-schulangst-fallstatistik-bundesland",
+              "level": 4,
+              "name": "Schulvermeidung und Schulangst — Fallstatistik nach Bundesland",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl der schulpsychologisch betreuten Fälle von Schulvermeidung (schulverweigerndes Verhalten, Schulphobie) und Schulangst, differenziert nach Diagnosekategorie, Schulstufe und Bundesland. Landesschulpsychologische Dienste erheben diese Daten; das Deutsche Jugendinstitut (DJI) führt ergänzende Forschungsstudien zur Schulvermeidung durch.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Diagnosestatistik erfordert besondere Anonymisierung; aggregierte Fallzahlen nach Bundesland ohne Einzelpersonenbezug sind veröffentlichbar."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Fallerfassung",
+                    "description": "Schulpsychologische Beratungsstellen dokumentieren Schulvermeidungsfälle nach standardisierter Klassifikation (ICD-10: F40/F41/F93); Länderstatistiken werden jährlich konsolidiert."
+                  },
+                  {
+                    "method": "Prävalenzschätzung",
+                    "description": "DJI schätzt auf Basis von Schuldaten und Beratungsstellenstatistiken die Gesamtprävalenz schulverweigernden Verhaltens in Schülerpopulationen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6580,6 +8584,92 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "kriseninterventionen-schulpsychologie-anlasstyp",
+              "level": 4,
+              "name": "Kriseninterventionen Schulpsychologie nach Anlasstyp bundesweit",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl der schulpsychologischen Kriseninterventionen nach Anlasstyp (Suizid/Suizidversuch, Gewalt/Amoklage, Todesfall in der Schulgemeinschaft, Unfall), differenziert nach Schulform und Bundesland. Bundeskonferenz für Schulpsychologie und Landesinstitute für Schulentwicklung erheben diese besonders sensiblen Daten; BMBF fördert Forschungsprojekte zu schulischer Krisenprävention.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Kriseninterventionsdaten sind hochsensibel und können Rückschlüsse auf betroffene Schulen und Personen erlauben; nur Metadaten zu Häufigkeitsklassen und Interventionstypen ohne schulspezifische Identifikation sind vertretbar."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Krisenprotokoll",
+                    "description": "Schulpsychologen dokumentieren Kriseninterventionen nach standardisierten Protokollen; Landesinstitute aggregieren hochanonymisiert auf Bundeslandebene."
+                  },
+                  {
+                    "method": "Nachsorgeanalyse",
+                    "description": "Bundeskonferenz für Schulpsychologie wertet Interventionsverläufe aus, um evidenzbasierte Kriseninterventionsstandards weiterzuentwickeln."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "notfallplaene-schulen-umsetzungsgrad-bundesland",
+              "level": 4,
+              "name": "Notfallpläne Schulen — Umsetzungsgrad nach Bundesland",
+              "color": "#92400e",
+              "details": {
+                "description": "Anteil der Schulen, die über einen implementierten Notfall- und Krisenplan verfügen, differenziert nach Schulform, Bundesland und Planungsstandard (KMK-Empfehlungen). KMK und Landesinstitute für Schulpsychologie erheben diesen Umsetzungsgrad in Stichprobenerhebungen; Innenministerien der Länder liefern ergänzende Daten zur Amoklaufprävention.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Umsetzungsquoten nach Bundesland ohne schulspezifische Identifikation sind publizierbar; detaillierte Planinhalte einzelner Schulen sind aus Sicherheitsgründen nicht zu veröffentlichen."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Schulinspektionsauswertung",
+                    "description": "Schulinspektionen der Länder prüfen Vorhandensein und Qualität von Schulnotfallplänen als Qualitätsmerkmal; Ergebnisse fließen in Länderberichte ein."
+                  },
+                  {
+                    "method": "KMK-Monitoring",
+                    "description": "KMK berichtet alle fünf Jahre über den Umsetzungsstand ihrer Empfehlungen zur Krisenprävention und -intervention an Schulen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6819,6 +8909,100 @@
                   {
                     "method": "Netzwerkkartierung",
                     "description": "Kooperationspartner werden jährlich durch die SPD-Koordination erfasst und im Jahresbericht tabellarisch dargestellt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "praeventionsprogramme-schulen-kigs-teilnehmende",
+              "level": 4,
+              "name": "Präventionsprogramme Schulen — Teilnehmende nach Programm und Schulform",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl der Schülerinnen und Schüler, die an schulbasierten Präventionsprogrammen für psychische Gesundheit teilnehmen (z.B. KLASSE KIDS, Lions Quest, Suchtprävention, Antismoking), differenziert nach Programm, Schulform und Bundesland. Bundeszentrale für gesundheitliche Aufklärung (BZgA) und Landeskoordinierungsstellen Schulische Prävention erheben und veröffentlichen diese Daten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Programmteilnahmestatistiken ohne Personenbezug; BZgA veröffentlicht Reichweitendaten ihrer Präventionsprogramme regelmäßig im Jahresbericht."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Programmmonitoring",
+                    "description": "Programmträger (BZgA, Suchtprävention) erfassen jährlich Teilnehmendenzahlen und Schulen; Landeskoordinierungsstellen aggregieren für Länderberichte."
+                  },
+                  {
+                    "method": "Wirkungsevaluation",
+                    "description": "Begleitforschung durch Universitäten (z.B. Universität Bielefeld) evaluiert Wirksamkeit schulbasierter Präventionsprogramme auf Risikoverhalten und psychische Resilienz."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "beratungsangebote-psychische-gesundheit-schueler-reichweite",
+              "level": 4,
+              "name": "Beratungsangebote psychische Gesundheit Schüler — Reichweite nach Region",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl und Erreichbarkeit schulpsychologischer und schulsozialpädagogischer Beratungsangebote für Schülerinnen und Schüler, differenziert nach Angebotstyp (schulinterner Beratungslehrer, externe Schulpsychologen, Schulsozialdienst) und Landkreis. Bundeskonferenz für Schulpsychologie und Kultusministerien der Länder erheben diese Daten; Bertelsmann Stiftung ergänzt mit Infrastrukturkarten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Versorgungsstrukturdaten sind auf Kreisebene ohne Personenbezug publizierbar; Einzelstellenangaben mit Personennamen sind datenschutzrechtlich zu schützen."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Infrastrukturerhebung",
+                    "description": "Kultusministerien erfassen jährlich Stellenzahlen und Einzugsbereiche schulpsychologischer Beratungsstellen; Bundeskonferenz für Schulpsychologie erstellt bundesweite Versorgungsberichte."
+                  },
+                  {
+                    "method": "Geografische Analyse",
+                    "description": "Bertelsmann Stiftung kartiert Beratungsstellenstandorte und berechnet Erreichbarkeitsradien zur Identifikation von Versorgungslücken (besonders in ländlichen Regionen)."
                   }
                 ]
               }

@@ -282,6 +282,147 @@
                 ],
                 "examples": []
               }
+            },
+            {
+              "id": "tagesschau-app-nutzungsstatistik",
+              "level": 4,
+              "name": "Tagesschau-App-Nutzungsstatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Monatliche Nutzungsdaten der Tagesschau-App (ARD/tagesschau.de) mit Kennzahlen zu aktiven Nutzern, Sitzungsdauer, meistgenutzten Rubriken und Gerätetypen. Die Daten werden von der ARD Mediathek-Forschung erhoben und teilweise im ARD-Jahresbericht sowie in der KEF-Berichterstattung (Kommission zur Ermittlung des Finanzbedarfs der Rundfunkanstalten) veröffentlicht.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Nutzungsdaten sind vorhanden, werden aber bisher nur aggregiert im Jahresbericht publiziert; Rohdaten enthalten keine personenbezogenen Informationen auf Einzelebene, bedürfen jedoch redaktioneller Aufbereitung vor einer vollständigen Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Zusammenfassung von App-Telemetriedaten auf Monats- und Quartalsbasis durch die ARD-Medienforschung, Bereinigung um Bot-Traffic und Mehrfachzugriffe."
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Vergleich der App-Nutzungszahlen mit anderen Nachrichtenangeboten auf Basis von AGF/GfK-Mediapanel-Daten zur Einordnung des Marktanteils."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mediatheken-reichweitendaten-ard-zdf",
+              "level": 4,
+              "name": "Mediatheken-Reichweitendaten ARD/ZDF",
+              "color": "#9d174d",
+              "details": {
+                "description": "Quartalsweise Reichweitendaten der ARD Mediathek und ZDF Mediathek mit Abrufzahlen je Sendung, Nutzungszeiten, Wiedersehquoten und Verweildauer. Die Daten stammen aus der gemeinsamen AGF-Videoforschung (Arbeitsgemeinschaft Fernsehforschung) sowie den internen Mediathekenreports der öffentlich-rechtlichen Rundfunkanstalten, die im Rahmen des Rundfunkstaatsvertrags publiziert werden.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Abruf- und Nutzungsdaten ohne Personenbezug; ARD und ZDF veröffentlichen bereits Teile dieser Daten in Jahresberichten und auf den Mediathek-Presseseiten; vollständige Datensätze sind ohne rechtliche Hindernisse publizierbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Datenfusion",
+                    "description": "Zusammenführung von AGF-Paneldaten mit First-Party-Streamingdaten der Mediatheken zur Berechnung kanalübergreifender Reichweitenkennzahlen."
+                  },
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Trendanalyse der Nutzungsentwicklung über mehrere Quartale zur Erkennung von Saisonalitäten und Formatpräferenzen im Abrufverhalten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "podcast-abrufzahlen-ard-zdf",
+              "level": 4,
+              "name": "Podcast-Abrufzahlen ARD/ZDF",
+              "color": "#9d174d",
+              "details": {
+                "description": "Monatliche Abruf- und Abonnentenzahlen der Podcast-Angebote von ARD (u. a. WDR, NDR, BR) und ZDF, differenziert nach Format, Plattform (Spotify, Apple Podcasts, ARD Audiothek) und Erscheinungszeitraum. Die Daten werden über die ARD Audiothek-Statistik sowie die Podcast-Analytics-Dienste der jeweiligen Landesrundfunkanstalten erfasst und im Rahmen der KEF-Berichterstattung und öffentlicher Jahresberichte teilweise ausgewiesen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Abrufzahlen existieren in Rohdatenform bei den Landesrundfunkanstalten; plattformspezifische Daten (z. B. Spotify for Podcasters) unterliegen Nutzungsbedingungen Dritter, die eine vollständige Weitergabe einschränken; aggregierte Sendungsdaten sind ohne Einschränkung publizierbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Plattformübergreifende Aggregation",
+                    "description": "Zusammenführung von Download-Statistiken aus Apple Podcasts Connect, Spotify for Podcasters und der ARD Audiothek zu einer konsolidierten Reichweitenkennzahl je Format."
+                  },
+                  {
+                    "method": "Deduplizierung",
+                    "description": "Bereinigung von Mehrfachabfragen durch denselben Client innerhalb eines definierten Zeitfensters gemäß IAB Podcast Measurement Technical Guidelines 2.0."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -569,6 +710,96 @@
                 ],
                 "examples": []
               }
+            },
+            {
+              "id": "rundfunkbeitrag-verwendungsnachweis",
+              "level": 4,
+              "name": "Rundfunkbeitrag-Verwendungsnachweis",
+              "color": "#9d174d",
+              "details": {
+                "description": "Detaillierter Nachweis der Mittelverwendung des Rundfunkbeitrags (aktuell 18,36 € pro Haushalt und Monat) durch die öffentlich-rechtlichen Rundfunkanstalten ARD, ZDF und Deutschlandradio, aufgeschlüsselt nach Programmbereichen, Verwaltung, Investitionen und Pensionsrückstellungen. Die Daten werden von der KEF (Kommission zur Ermittlung des Finanzbedarfs der Rundfunkanstalten) alle vier Jahre im KEF-Bericht veröffentlicht sowie jährlich in den Geschäftsberichten der einzelnen Anstalten ausgewiesen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KEF-Berichte und Geschäftsberichte der Rundfunkanstalten sind bereits öffentlich zugänglich; strukturierte Datensätze der Mittelverwendung können ohne Einschränkungen als Open Data bereitgestellt werden, da keine personenbezogenen oder wettbewerbsrelevanten Daten enthalten sind."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Finanzbedarfsermittlung",
+                    "description": "Vierjährliche Prüfung der angemeldeten Finanzbedarfe aller Rundfunkanstalten durch die KEF anhand standardisierter Kostenkategorien und Effizienzvergleiche."
+                  },
+                  {
+                    "method": "Haushaltsanalyse",
+                    "description": "Gegenüberstellung von Planansätzen und Ist-Ausgaben je Programm- und Verwaltungsbereich zur Transparenzdarstellung gegenüber Beitragszahlern und Länderparlamenten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "verwaltungskostenquoten-oerr",
+              "level": 4,
+              "name": "Verwaltungskostenquoten ÖRR",
+              "color": "#9d174d",
+              "details": {
+                "description": "Kennzahlen zum Anteil der Verwaltungs- und Overheadkosten an den Gesamtausgaben der öffentlich-rechtlichen Rundfunkanstalten (ARD-Landesrundfunkanstalten, ZDF, Deutschlandradio), darunter Personalkosten der Verwaltung, IT-Infrastruktur und Pensionsaufwendungen. Grundlage sind die KEF-Berichtsperioden sowie die nach §§ 32 ff. MStV vorgeschriebenen Wirtschaftspläne, die den Rundfunkräten und Länderparlamenten vorgelegt werden.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Wirtschaftspläne und KEF-Unterlagen enthalten die relevanten Rohdaten, sind jedoch nicht einheitlich strukturiert und maschinenlesbar aufbereitet; eine Harmonisierung der Kostendefinitionen zwischen den Anstalten ist vor einer vergleichenden Veröffentlichung notwendig."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Kennzahlenberechnung",
+                    "description": "Berechnung der Verwaltungskostenquote als Verhältnis von Overhead-Ausgaben zu Gesamtaufwendungen je Rundfunkanstalt auf Basis der KEF-Berichtstabellen."
+                  },
+                  {
+                    "method": "Effizienzvergleich",
+                    "description": "Benchmarking der Verwaltungskostenquoten zwischen den ARD-Anstalten, ZDF und Deutschlandradio zur Identifikation von Einsparpotenzialen im Rahmen des KEF-Prüfverfahrens."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -801,6 +1032,100 @@
                   }
                 ],
                 "examples": []
+              }
+            },
+            {
+              "id": "sendezeitenanalyse-genre-oerr",
+              "level": 4,
+              "name": "Sendezeitenanalyse nach Genre ÖRR",
+              "color": "#9d174d",
+              "details": {
+                "description": "Systematische Erfassung und Auswertung der ausgestrahlten Sendeminuten je Programmgenre (Information, Unterhaltung, Kultur, Sport, Kinderprogramm, Bildung) für alle linearen Programme von ARD, ZDF und Deutschlandradio. Die Daten basieren auf dem Programmschema-Monitoring der Medienforschungsabteilungen sowie den gesetzlich vorgeschriebenen Programmberichten nach § 40 MStV, die jährlich veröffentlicht werden.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Programmberichte sind nach MStV veröffentlichungspflichtig und enthalten die wesentlichen Genre-Statistiken; strukturierte, maschinenlesbare Versionen können ohne rechtliche Hindernisse als Open Data bereitgestellt werden."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Programmklassifikation",
+                    "description": "Kategorisierung aller Sendungen nach dem EBU-Genre-Schema (European Broadcasting Union) und Zuordnung zu den gesetzlich definierten Programmkategorien des MStV."
+                  },
+                  {
+                    "method": "Zeitreihenvergleich",
+                    "description": "Jahresübergreifende Analyse der Genre-Anteile zur Messung von Programmverschiebungen und Erfüllung des öffentlich-rechtlichen Auftrags gemäß Rundfunkstaatsvertrag."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "untertitelquoten-barrierefreiheit-oerr",
+              "level": 4,
+              "name": "Barrierefreiheits-Untertitelquoten ÖRR",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jahresstatistiken zum Anteil der mit Untertiteln, Audiodeskription und Gebärdenspracheinblendungen versehenen Sendungen im linearen und non-linearen Angebot von ARD, ZDF und Deutschlandradio. Rechtsgrundlage ist § 42 MStV (Medienstaatsvertrag), der stufenweise steigende Barrierefreiheitsquoten vorschreibt; die Anstalten berichten im Rahmen ihrer Programmberichte und auf Anfrage der zuständigen Landesmedienanstalten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Barrierefreiheitsdaten unterliegen der gesetzlichen Berichtspflicht nach MStV und enthalten keine sensiblen Informationen; strukturierte Datensätze können unmittelbar als Open Data veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Quotenberechnung",
+                    "description": "Berechnung des prozentualen Anteils barrierefrei zugänglicher Sendungen an der Gesamtsendezeit je Kanal und Barrierefreiheitsmerkmal (Untertitel, Audiodeskription, Gebärdensprache)."
+                  },
+                  {
+                    "method": "Soll-Ist-Vergleich",
+                    "description": "Abgleich der erreichten Barrierefreiheitsquoten mit den gesetzlich vorgeschriebenen Zielwerten nach MStV-Stufenplan zur Feststellung der Zielerreichung und Ableitung von Nachsteuerungsbedarfen."
+                  }
+                ]
               }
             }
           ]
@@ -1090,6 +1415,96 @@
                   {
                     "method": "Zeitreihenanalyse",
                     "description": "Quartalsdaten seit 2010 zusammengeführt, Wachstumsraten und Substitutionseffekte berechnet"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ivw-auflagenentwicklung-digital",
+              "level": 4,
+              "name": "IVW-Auflagenentwicklung Digital",
+              "color": "#9d174d",
+              "details": {
+                "description": "Quartalsweise Auflagenzahlen für digitale Ausgaben (E-Paper, digitale Einzelausgaben, Digitalabonnements) von Tageszeitungen, Wochenzeitungen und Publikumszeitschriften, erhoben und geprüft durch die Informationsgemeinschaft zur Feststellung der Verbreitung von Werbeträgern e. V. (IVW). Die IVW veröffentlicht die Daten auf ihrer Website (ivw.de) je Quartal für alle teilnehmenden Titel und ermöglicht damit Trendanalysen zur Digitalisierung der Pressewirtschaft.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "IVW-Auflagenzahlen werden regulär quartalsweise auf der IVW-Website öffentlich zugänglich gemacht; die Daten enthalten keine personenbezogenen Informationen und sind für Open-Data-Nutzung geeignet."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Auflagenprüfung",
+                    "description": "Neutrale Überprüfung der von Verlagen gemeldeten Auflagenzahlen durch IVW-Prüfer anhand von Aboregistern, Einzelverkaufsnachweisen und Digital-Access-Logs."
+                  },
+                  {
+                    "method": "Langzeittrend-Analyse",
+                    "description": "Berechnung von Jahres- und Fünfjahres-Veränderungsraten je Titel und Gattung zur Messung der Digitalisierungsgeschwindigkeit im deutschen Pressemarkt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "einzelverkauf-abo-verhaeltnis-presse",
+              "level": 4,
+              "name": "Einzelverkauf-Abo-Verhältnis Printmedien",
+              "color": "#9d174d",
+              "details": {
+                "description": "Aufschlüsselung der IVW-Gesamtauflage nach Vertriebsarten (Einzelverkauf am Kiosk, Abonnement, Freiexemplare, Bordexemplare) für Tageszeitungen und Publikumszeitschriften in Deutschland. Die Daten werden quartalsweise von der IVW veröffentlicht und ermöglichen Rückschlüsse auf die Vertriebsstruktur und Leserbindung; Destatis ergänzt diese Angaben durch Branchenstatistiken im Rahmen der Statistik des verarbeitenden Gewerbes.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "IVW-Vertriebsstrukturstatistiken sind öffentlich zugänglich und aggregiert auf Titeleben verfügbar; keine personen- oder wettbewerbsschützenden Restriktionen vorhanden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Vertriebsstrukturanalyse",
+                    "description": "Berechnung des prozentualen Anteils jeder Vertriebsform an der Gesamtauflage je Titel und Zeitungsgattung auf Basis der IVW-Quartalsmeldungen."
+                  },
+                  {
+                    "method": "Gattungsvergleich",
+                    "description": "Gegenüberstellung der Vertriebsstrukturen verschiedener Pressegattungen (Tageszeitungen, Wochentitel, Publikumszeitschriften, Fachzeitschriften) zur Identifikation struktureller Unterschiede."
                   }
                 ]
               }
@@ -1421,6 +1836,100 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "werbeeinnahmen-printverlage",
+              "level": 4,
+              "name": "Werbeeinnahmen Printverlage",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jahres- und Quartalsdaten zu den Netto-Werbeeinnahmen im Printsegment (Tageszeitungen, Anzeigenblätter, Publikumszeitschriften, Fachzeitschriften) in Deutschland, erhoben durch ZAW (Zentralverband der deutschen Werbewirtschaft) und Nielsen Ad Intel. Der Bundesverband Digitalpublisher und Zeitungsverleger (BDZV) sowie der Verband Deutscher Zeitschriftenverleger (VDZ) publizieren ergänzende Branchendaten in ihren Jahresberichten und auf der Mediapilot-Plattform.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "ZAW-Nettowerbedaten werden aggregiert auf Gattungsebene veröffentlicht; Titelebene-Daten sind proprietär und verbleiben bei Verlagen; für Open Data geeignet sind die Branchensummenwerte, die einer redaktionellen Aggregation bedürfen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Nettowerbeumsatz-Schätzung",
+                    "description": "Hochrechnung der Netto-Werbeeinnahmen auf Basis von Stichproben-Meldungen der Verlage an den ZAW unter Abzug von Rabatten und Provisionen."
+                  },
+                  {
+                    "method": "Marktanteilsberechnung",
+                    "description": "Ermittlung des Marktanteils der Printgattungen am gesamten deutschen Werbemarkt in Relation zu Online, TV, Radio und Außenwerbung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "beschaeftigte-pressewesen-destatis",
+              "level": 4,
+              "name": "Beschäftigte im Pressewesen (Destatis)",
+              "color": "#9d174d",
+              "details": {
+                "description": "Statistik zur sozialversicherungspflichtig und geringfügig Beschäftigten in der Zeitungs- und Zeitschriftenbranche (WZ 58.1) sowie in Nachrichtenagenturen (WZ 63.91), erhoben durch das Statistische Bundesamt (Destatis) im Rahmen der Beschäftigungsstatistik der Bundesagentur für Arbeit. Destatis veröffentlicht die Daten im Statistischen Jahrbuch und über die GENESIS-Datenbank (Tabelle 62321); ergänzend erstellt der DJV (Deutscher Journalisten-Verband) jährliche Berufsstandsberichte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Beschäftigungsstatistiken auf Wirtschaftszweigebene (WZ) sind über GENESIS-Online bereits als Open Data abrufbar; keine personenbezogenen Einzel­daten enthalten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Wirtschaftszweigklassifikation",
+                    "description": "Zuordnung der gemeldeten Beschäftigten zu WZ-2008-Codes (58.11 Zeitungen, 58.14 Zeitschriften, 63.91 Nachrichtenagenturen) auf Basis der Betriebsstättenmeldungen an die Sozialversicherung."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Berechnung von Beschäftigungsveränderungen im Fünfjahresvergleich zur Abbildung des Strukturwandels im deutschen Pressewesen (Abbau redaktioneller Stellen, Zunahme freier Mitarbeit)."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1649,6 +2158,100 @@
                   {
                     "method": "Aggregation",
                     "description": "IVW-Quartalsdaten nach Verbreitungsgebiet zusammengefasst und Marktanteile berechnet"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "konzentrationsmessung-lokalzeitungen",
+              "level": 4,
+              "name": "Konzentrationsmessung Lokal-/Regionalzeitungen",
+              "color": "#9d174d",
+              "details": {
+                "description": "Marktkonzentrationsindizes (Herfindahl-Hirschman-Index, CR5) für den deutschen Lokal- und Regionalzeitungsmarkt auf Basis der IVW-Auflagenzahlen und Verbreitungsgebietsdaten, erhoben durch die Bundeszentrale für politische Bildung (bpb) und das Hans-Bredow-Institut im Rahmen des Medienvielfaltsmonitors. Die Landesmedienanstalten ergänzen die Analyse durch regionale Marktbeobachtungsberichte gemäß § 60 MStV.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Konzentrationsindizes beruhen auf öffentlich zugänglichen IVW-Daten und enthalten keine vertraulichen Unternehmensinformationen; Veröffentlichung im Rahmen der gesetzlichen Medienkonzentrationsbeobachtung ist ausdrücklich vorgesehen."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "HHI-Berechnung",
+                    "description": "Berechnung des Herfindahl-Hirschman-Index für jeden Verbreitungskreis auf Basis der Marktanteile je Zeitungstitel, gemessen an der verbreiteten Auflage laut IVW."
+                  },
+                  {
+                    "method": "Geodatenverknüpfung",
+                    "description": "Verknüpfung der Konzentrationswerte mit Kreis- und Gemeindegeometrien (Geobasisdaten BKG) zur räumlichen Darstellung von Informationsversorgungslücken (News Deserts)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "eigentuemer-verlage-strukturdaten",
+              "level": 4,
+              "name": "Eigentümerstruktur Verlage",
+              "color": "#9d174d",
+              "details": {
+                "description": "Systematische Erfassung der Beteiligungsstrukturen und Eigentumsverhältnisse bei deutschen Zeitungs- und Zeitschriftenverlagen, basierend auf Handelsregisterdaten (Unternehmensregister), KEK-Medienkonzentrationsberichten (Kommission zur Ermittlung der Konzentration im Medienbereich) und den nach § 60 MStV vorgeschriebenen Transparenzberichten der Medienunternehmen. Das Hans-Bredow-Institut und die bpb pflegen ergänzend die Mediendatenbank mediendaten.de.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Handelsregisterdaten und KEK-Berichte sind öffentlich zugänglich, jedoch nicht strukturiert maschinenlesbar; verschachtelte Beteiligungsstrukturen erfordern manuelle Aufbereitung und Validierung vor der Veröffentlichung als verknüpfter Datensatz."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Eigentumsnetzwerk-Analyse",
+                    "description": "Rekonstruktion mehrstufiger Beteiligungsketten anhand von Handelsregisterauszügen und KEK-Daten zur Identifikation wirtschaftlicher Letzteigentümer (Ultimate Beneficial Owner) von Medienunternehmen."
+                  },
+                  {
+                    "method": "Transparenzbericht-Auswertung",
+                    "description": "Systematische Extraktion von Eigentümer- und Beteiligungsangaben aus den gesetzlich vorgeschriebenen Transparenzberichten nach § 60 MStV und Aufbereitung als strukturierter Graph-Datensatz."
                   }
                 ]
               }
@@ -1931,6 +2534,53 @@
                     "title": "Denkmalliste NRW",
                     "publisher": "LVR-Amt für Denkmalpflege im Rheinland",
                     "url": "https://www.denkmalliste.LVR.de"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "museumsstatistik-besucherstruktur-ifm",
+              "level": 4,
+              "name": "Museumsstatistik – Besucherstruktur (Institut für Museumsforschung)",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jahresstatistik des Instituts für Museumsforschung (IfM) der Staatlichen Museen zu Berlin mit Besucherzahlen, Besucherstruktur (Alter, Herkunft, Gruppentyp) und Einrichtungsprofilen für rund 6.800 Museen in Deutschland. Die Daten werden jährlich in den Statistischen Gesamterhebungen an den Museen der Bundesrepublik Deutschland (Heft-Reihe) publiziert und umfassen auch Kennzahlen zu Sonderausstellungen, Bildungsangeboten und Onlineangeboten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Die IfM-Museumsstatistik wird bereits in gedruckter und digitaler Form veröffentlicht; aggregierte Besucherdaten auf Einrichtungsebene enthalten keine personenbezogenen Informationen und können ohne Einschränkungen als Open Data bereitgestellt werden."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Vollerhebung Museumslandschaft",
+                    "description": "Jährliche postalische und Online-Befragung aller rund 6.800 deutschen Museen durch das IfM zu Besuchszahlen, Öffnungstagen, Personal und Sammlungsumfang."
+                  },
+                  {
+                    "method": "Regionalauswertung",
+                    "description": "Disaggregierung der Gesamtstatistik nach Bundesland, Museumstyp (Kunstmuseum, Naturkunde, Technik, Heimatmuseum) und Trägerschaft zur regionalen Versorgungsanalyse."
                   }
                 ]
               }
@@ -2230,6 +2880,49 @@
                   }
                 ],
                 "examples": []
+              }
+            },
+            {
+              "id": "theaterstatistik-dbt-auslastungsquoten",
+              "level": 4,
+              "name": "Theaterstatistik DBT – Auslastungsquoten nach Sparte",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährliche Statistik des Deutschen Bühnenvereins (DBT) mit Auslastungsquoten, Besucherzahlen, Vorstellungsanzahlen und Einnahmen für öffentliche Theater in Deutschland, aufgeschlüsselt nach Sparten (Schauspiel, Oper, Operette/Musical, Ballett/Tanz, Kinder- und Jugendtheater, Konzert). Die Daten erscheinen jährlich im Theaterstatistik-Band des Deutschen Bühnenvereins und dienen als zentrale Referenz für Kulturpolitik und Theaterförderung auf Bundes- und Landesebene.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Theaterstatistik-Daten werden in gedruckter Form und als kostenpflichtiger PDF-Bericht veröffentlicht; strukturierte Rohdaten auf Einrichtungsebene sind nicht frei zugänglich; Aggregatdaten auf Spartenebene können nach Aufbereitung als Open Data bereitgestellt werden."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Spartenauswertung",
+                    "description": "Berechnung von Auslastungsquoten (verkaufte Plätze / Platzkapazität × 100) je Sparte und Theatertyp (Staatstheater, Stadttheater, Privattheater) auf Basis der jährlichen DBT-Erhebung."
+                  },
+                  {
+                    "method": "Subventionseffizienzanalyse",
+                    "description": "Ermittlung der öffentlichen Zuschüsse je Besucher und Vorstellung aus den Kombination von DBT-Besuchsdaten und Kulturförderdaten der Länder zur Bewertung der Mitteleinsatzeffizienz."
+                  }
+                ]
               }
             }
           ]
@@ -2546,6 +3239,53 @@
                 ],
                 "examples": []
               }
+            },
+            {
+              "id": "kulturfoerderatlas-bundesprojekte-sparte-region",
+              "level": 4,
+              "name": "Kulturförderatlas – Bundesförderprojekte nach Sparte und Region",
+              "color": "#9d174d",
+              "details": {
+                "description": "Projektbezogene Förderdaten des Beauftragten der Bundesregierung für Kultur und Medien (BKM) und der Bundeskultureinrichtungen (z. B. Bundeskunsthalle, Deutsches Historisches Museum), aufgeschlüsselt nach Kultursparte (Bildende Kunst, Musik, Film, Literatur, Kulturerbe, Darstellende Kunst), Fördervolumen und regionalem Zuwendungsempfänger. Grundlage ist der Kulturförderatlas der Kulturpolitischen Gesellschaft sowie die Zuwendungsdatenbank des Bundes (zuwendungen.bund.de).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bundesförderdaten sind nach dem Transparenzgebot des Haushaltsrechts und dem Portal zuwendungen.bund.de bereits öffentlich zugänglich; strukturierte Datensätze nach Sparte und Region können ohne Einschränkungen als Open Data bereitgestellt werden."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Spartenklassifikation",
+                    "description": "Kategorisierung aller Förderprojekte nach dem Spartenschema des Kulturförderatlas (Kulturpolitische Gesellschaft) und Zuordnung zu Kulturfeldcodes für interoperable Vergleichsanalysen."
+                  },
+                  {
+                    "method": "Georeferenzierung",
+                    "description": "Verknüpfung von Zuwendungsempfängeradressen mit Gemeindegeometrien des BKG zur Visualisierung der räumlichen Förderverteilung und Identifikation strukturschwacher Regionen mit geringer Bundeskulturförderung."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -2710,6 +3450,53 @@
                   }
                 ],
                 "examples": []
+              }
+            },
+            {
+              "id": "denkmalpflege-erhaltungszustand-bundeslaender",
+              "level": 4,
+              "name": "Denkmalpflegestatistik der Bundesländer – Baudenkmal-Erhaltungszustand",
+              "color": "#9d174d",
+              "details": {
+                "description": "Landesweite Erfassung von Anzahl, Typus und Erhaltungszustand eingetragener Baudenkmäler in den deutschen Denkmallisten der Bundesländer, ergänzt durch Fördermitteleinsatz aus Denkmalschutzprogrammen (Deutsche Stiftung Denkmalschutz, Bundesprogramm Denkmalschutz im BKM) und Erfassungsquoten des Europäischen Denkmalschutzjahrs-Monitoring. Das Deutsche Nationalkomitee für Denkmalschutz (DNK) koordiniert die länderübergreifende Standardisierung der Erhaltungszustandskategorien.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Denkmallisten werden in den Bundesländern unterschiedlich strukturiert und digital zugänglich gemacht; einige Länder (z. B. Bayern, NRW) stellen maschinenlesbare Datensätze bereit, andere nur PDF-Verzeichnisse; eine bundesweite Harmonisierung ist notwendig, bevor ein einheitlicher Open-Data-Datensatz veröffentlicht werden kann."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Denkmallisten-Harmonisierung",
+                    "description": "Zusammenführung der 16 Landesdenkmallistenformate in ein einheitliches Schema (Objekt-ID, Adresse, Denkmaltyp, Unterschutzstellungsjahr, Erhaltungszustand) durch das DNK in Abstimmung mit den Landesdenkmalbehörden."
+                  },
+                  {
+                    "method": "Risikoklassifizierung",
+                    "description": "Zuordnung von Baudenkmälern zu Erhaltungsrisikoklassen (saniert, gefährdet, stark gefährdet, Verlust droht) auf Basis von Ortsbegutachtungen und Förderantragsauswertungen der Deutschen Stiftung Denkmalschutz."
+                  }
+                ]
               }
             }
           ]
@@ -3018,6 +3805,100 @@
                     "title": "Reuters Digital News Report",
                     "publisher": "Reuters Institute for the Study of Journalism",
                     "url": "https://reutersinstitute.politics.ox.ac.uk"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ard-zdf-onlinestudie-nutzungsfrequenz",
+              "level": 4,
+              "name": "ARD/ZDF-Onlinestudie Nutzungsfrequenz",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährlich erhobene Daten zur Häufigkeit der Internetnutzung in Deutschland, differenziert nach Altersgruppen, Geschlecht und genutzten Diensten. Die ARD/ZDF-Onlinestudie (seit 1997) erfasst u.a. tägliche, wöchentliche und gelegentliche Nutzung von Streamingdiensten, sozialen Netzwerken und Nachrichtenangeboten durch Befragung von ca. 2.000 Personen ab 14 Jahren.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Umfragedaten ohne Personenbezug; ARD/ZDF veröffentlichen Tabellenband und Methodenbericht jährlich frei zugänglich unter onlinestudie.ard.de."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Repräsentativbefragung",
+                    "description": "Telefonische und Online-Befragung einer repräsentativen Stichprobe der deutschsprachigen Bevölkerung ab 14 Jahren; Gewichtung nach Alter, Geschlecht und Bildung."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Längsschnittvergleich der Nutzungsfrequenzen über Erhebungsjahre hinweg zur Identifikation von Digitalisierungstrends."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "reuters-digital-news-report-deutschland",
+              "level": 4,
+              "name": "Reuters Digital News Report Deutschland",
+              "color": "#9d174d",
+              "details": {
+                "description": "Länderspezifische Daten aus dem jährlichen Reuters Institute Digital News Report zur Nachrichtennutzung im digitalen Raum in Deutschland, erhoben durch das Reuters Institute for the Study of Journalism (Oxford) in Zusammenarbeit mit dem Hans-Bredow-Institut Hamburg. Enthält Angaben zu genutzten Nachrichtenquellen, Vertrauen in Medien, Zahlungsbereitschaft für Online-News sowie Plattformnutzung für Nachrichten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Der vollständige Datensatz (Deutschland-Subsample) wird vom Reuters Institute jährlich als Open Data veröffentlicht; Rohdaten auf Anfrage für Forschungszwecke zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Online-Panel-Befragung",
+                    "description": "Standardisierte Befragung von ca. 2.000 Personen in Deutschland via Online-Panel (YouGov); internationale Vergleichbarkeit durch einheitliches Fragebogendesign."
+                  },
+                  {
+                    "method": "Kreuzvalidierung",
+                    "description": "Abgleich mit Reichweitendaten der IVW und AGF zur Plausibilitätsprüfung der selbstberichteten Nutzungsangaben."
                   }
                 ]
               }
@@ -3336,6 +4217,100 @@
                 ],
                 "examples": []
               }
+            },
+            {
+              "id": "monitoring-kulturwirtschaft-bmwk",
+              "level": 4,
+              "name": "Monitoring Kulturwirtschaft BMWK-Bericht",
+              "color": "#9d174d",
+              "details": {
+                "description": "Zweijährlicher Monitoring-Bericht des Bundesministeriums für Wirtschaft und Klimaschutz (BMWK) zur wirtschaftlichen Lage der Kultur- und Kreativwirtschaft in Deutschland, basierend auf Daten des Statistischen Bundesamts, der Bundesagentur für Arbeit und der Künstlersozialkasse. Enthält Umsatz-, Beschäftigungs- und Betriebszahlen nach Teilmärkten (Film, Musik, Buchmarkt, Designwirtschaft u.a.).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Amtliche Statistik des BMWK; Berichte und Datentabellen werden auf bmwk.de als offene Publikation veröffentlicht, Rohdaten über Destatis zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Amtliche Statistikauswertung",
+                    "description": "Auswertung von Umsatzsteuerstatistik, Beschäftigungsstatistik der BA und Mikrozensus-Daten des Statistischen Bundesamts nach WZ-Klassifikation für KKW-Teilmärkte."
+                  },
+                  {
+                    "method": "Marktabgrenzung",
+                    "description": "Abgrenzung der Kulturwirtschaft nach KKW-Definition des BMWK (11 Teilmärkte) und Berechnung der Wertschöpfungsbeiträge je Teilmarkt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "games-markt-deutschland-bitkom",
+              "level": 4,
+              "name": "Games-Markt Deutschland Bitkom-Statistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährliche Marktdaten zum deutschen Computerspiele-Markt, erhoben durch den Digitalverband Bitkom und game – Verband der deutschen Games-Branche, in Zusammenarbeit mit dem GfK-Handelspanel. Enthält Umsatzzahlen nach Segmenten (PC-Spiele, Konsolenspiele, Mobile Games, In-Game-Käufe), Nutzerzahlen und demografische Angaben zu Spielenden in Deutschland.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Marktdaten werden in Pressemitteilungen frei veröffentlicht; detaillierte Rohdaten aus GfK-Panel sind kommerziell und erfordern Lizenzvereinbarung mit Bitkom/game."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Handelspanel-Auswertung",
+                    "description": "Auswertung des GfK-Handelspanels für physische Spieleverkäufe; Ergänzung durch Plattformbetreiber-Meldungen (Steam, PlayStation Store, App Stores) für digitale Umsätze."
+                  },
+                  {
+                    "method": "Nutzerbefragung",
+                    "description": "Repräsentative Bitkom-Bevölkerungsbefragung zu Spielgewohnheiten und Ausgaben für Computerspiele als Ergänzung zu den Handelspaneldaten."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -3609,6 +4584,100 @@
                   {
                     "method": "Klassifikation",
                     "description": "Audit-Ergebnisse werden nach Plattform, Algorithmustyp und Risikokategorie strukturiert"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "transparenzberichte-plattformen-dsa",
+              "level": 4,
+              "name": "Transparenzberichte Plattformen DSA-Meldungen",
+              "color": "#9d174d",
+              "details": {
+                "description": "Halbjährliche Transparenzberichte sehr großer Online-Plattformen (VLOPs) und sehr großer Suchmaschinen (VLOSEs) gemäß Art. 15 Digital Services Act (DSA), die seit Februar 2023 bei der Europäischen Kommission eingereicht werden. Für Deutschland relevant: Bundesnetzagentur als koordinierte nationale DSA-Behörde überwacht Compliance und veröffentlicht aggregierte Kennzahlen zu Meldevolumen, Reaktionszeiten und Moderationsentscheidungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Transparenzberichte sind gesetzlich vorgeschriebene Offenlegungen; EU-Kommission betreibt öffentliches Transparenzportal (transparency.dsa.ec.europa.eu) mit maschinenlesbaren Downloads."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Regulatorische Berichtspflicht",
+                    "description": "Plattformbetreiber übermitteln standardisierte Berichte gemäß DSA-Durchführungsverordnung (EU) 2023/1480 an die EU-Kommission; Bundesnetzagentur prüft Deutschland-spezifische Daten."
+                  },
+                  {
+                    "method": "Aggregation und Veröffentlichung",
+                    "description": "EU-Kommission aggregiert eingereichte Berichte im öffentlichen Transparenzdatenbankportal und stellt maschinenlesbare Gesamtdatensätze zum Download bereit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "netzdg-berichte-beschwerdestatistik",
+              "level": 4,
+              "name": "NetzDG-Berichte Beschwerdestatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Halbjährliche Transparenzberichte sozialer Netzwerke gemäß § 2 Netzwerkdurchsetzungsgesetz (NetzDG), die Plattformen mit mehr als zwei Millionen Nutzern in Deutschland beim Bundesamt für Justiz (BfJ) einreichen müssen. Berichte enthalten Anzahl eingegangener Beschwerden, Löschquoten, Bearbeitungszeiten und Kategorisierung nach Straftatbeständen (Volksverhetzung, Beleidigung, Hassrede u.a.).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gesetzliche Veröffentlichungspflicht gemäß § 2 Abs. 2 NetzDG; Berichte werden im Bundesanzeiger und auf den Plattformwebsites veröffentlicht; BfJ stellt Übersicht bereit."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Pflichttransparenzberichterstattung",
+                    "description": "Plattformbetreiber übermitteln strukturierte Berichte an das Bundesamt für Justiz; Inhalte umfassen Beschwerdezahlen, Entscheidungsquoten und Bearbeitungszeiten nach Meldekanal."
+                  },
+                  {
+                    "method": "Komparative Auswertung",
+                    "description": "Zivilgesellschaftliche Organisationen (z.B. HateAid, Campact) sowie Wissenschaftler des Hans-Bredow-Instituts analysieren die Berichte vergleichend und veröffentlichen eigene Auswertungen."
                   }
                 ]
               }
@@ -3902,6 +4971,100 @@
                 ],
                 "examples": []
               }
+            },
+            {
+              "id": "agf-videoforschung-marktanteile-privatsender",
+              "level": 4,
+              "name": "AGF-Videoforschung Marktanteile Privatsender",
+              "color": "#9d174d",
+              "details": {
+                "description": "Tagesaktuelle Einschaltquoten und Marktanteildaten der privaten Fernsehsender (RTL, ProSieben, Sat.1, VOX u.a.), erhoben durch die AGF Videoforschung GmbH (Arbeitsgemeinschaft Fernsehforschung) mittels GfK-Fernsehpanel mit ca. 5.300 repräsentativen Haushalten in Deutschland. Daten umfassen Reichweiten, Marktanteile in der Zielgruppe 14–49 Jahre sowie zeitversetzte Nutzung (VOSDAL, 7-Tage-Wert).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Tagesaktuelle Rohdaten sind kommerziell und nur für AGF-Mitgliedssender und lizenzierte Forschungseinrichtungen zugänglich; aggregierte Wochendaten werden in Pressemitteilungen und über DWDL.de frei veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Meter-Panel-Messung",
+                    "description": "Elektronische Sekundengenauigkeit-Messung durch GfK-Meter an TV-Geräten in ca. 5.300 repräsentativen Haushalten; automatische Personenerkennung via Fernbedienung."
+                  },
+                  {
+                    "method": "Hochrechnung",
+                    "description": "Gewichtung der Panel-Rohdaten auf die deutschsprachige Wohnbevölkerung ab 3 Jahren (Fernsehbevölkerung) anhand demografischer Strukturdaten des Mikrozensus."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "prosiebensat1-zuschauerreichweiten",
+              "level": 4,
+              "name": "ProSiebenSat.1 Zuschauerreichweiten nach Sendung",
+              "color": "#9d174d",
+              "details": {
+                "description": "Sendungsbezogene Reichweiten- und Marktanteilsdaten der ProSiebenSat.1 Media SE-Sendergruppe (ProSieben, Sat.1, Kabel Eins, sixx, SAT.1 Gold, ProSieben MAXX), veröffentlicht in Quartalsberichten und Investoren-Präsentationen. Enthält Brutto-Reichweiten, Netto-Reichweiten und Marktanteile in der werberelevanten Zielgruppe sowie digitale Streaming-Nutzungszahlen der Joyn-Plattform.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Quartalsdaten sind als Investor-Relations-Pflichtveröffentlichungen auf prosiebensat1.com öffentlich; sendungsgenaue Tagesdaten bleiben intern oder kostenpflichtig über AGF-Lizenz."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "AGF-Datenintegration",
+                    "description": "ProSiebenSat.1 bezieht tagesaktuelle Reichweitendaten über AGF-Mitgliedschaft und aggregiert diese für Quartalsberichte nach Sendergruppe und Zielgruppenrelevanz."
+                  },
+                  {
+                    "method": "Investor-Relations-Reporting",
+                    "description": "Pflichtveröffentlichung aggregierter Reichweitenkennzahlen im Rahmen der IFRS-Berichterstattung als börsennotiertes Unternehmen; Veröffentlichung auf Unternehmenswebsite und BaFin-Bundesanzeiger."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4186,6 +5349,100 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ma-radioerhebung-private-hoerfunksender",
+              "level": 4,
+              "name": "MA Radioerhebung private Hörfunksender",
+              "color": "#9d174d",
+              "details": {
+                "description": "Halbjährliche Media-Analyse (ma) Radio-Erhebung der Arbeitsgemeinschaft Media-Analyse e.V. (agma) mit Reichweitendaten privater UKW- und DAB+-Sender in Deutschland, basierend auf ca. 70.000 telefonischen Interviews pro Jahr. Enthält Hörer-pro-Tag (HPT), Hörer-pro-Stunde (HPS) und Marktanteile nach Bundesland, Altersgruppe und Tageszeit für Sender wie Antenne Bayern, Radio NRW, Energy und weitere.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Topline-Daten werden von agma in Pressemitteilungen veröffentlicht; vollständige Sendertabellen sind agma-Mitgliedern und lizenzierten Agenturen vorbehalten (Lizenzgebühr ca. 2.000 €/Jahr)."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Telefonbefragung CATI",
+                    "description": "Computer Assisted Telephone Interviewing (CATI) mit ca. 70.000 Befragten pro Erhebungswelle; Befragung zu gestriger Radionutzung (Gestrigen-Konzept) und Senderpräferenzen."
+                  },
+                  {
+                    "method": "Gewichtung und Hochrechnung",
+                    "description": "Gewichtung der Stichprobe nach Bundesland, Altersgruppe und Geschlecht auf die deutschsprachige Bevölkerung ab 10 Jahren anhand Mikrozensus-Strukturdaten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kef-bericht-rundfunkfinanzierung-privatsender",
+              "level": 4,
+              "name": "KEF-Bericht Rundfunkfinanzierung Privatsender",
+              "color": "#9d174d",
+              "details": {
+                "description": "Daten aus den Berichten der Kommission zur Ermittlung des Finanzbedarfs der Rundfunkanstalten (KEF) zu wirtschaftlichen Kennzahlen des privaten Rundfunks, insbesondere Werbeeinnahmen, Marktentwicklung und Wettbewerbssituation gegenüber öffentlich-rechtlichem Rundfunk. Ergänzt durch Jahresberichte der Medienanstalten (DLM) und Landesmedienanstalten zur wirtschaftlichen Lage privater Hörfunksender.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KEF-Berichte sind öffentliche Dokumente der Rundfunkkommission der Länder; vollständige Berichte und Datentabellen werden auf kef-online.de frei zugänglich veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Finanzkennzahlenerhebung",
+                    "description": "KEF erhebt Finanzkennzahlen bei öffentlich-rechtlichen Anstalten und wertet Marktdaten des privaten Rundfunks aus Jahresberichten der Landesmedienanstalten und ZAW-Werbestatistiken aus."
+                  },
+                  {
+                    "method": "Regulatorischer Vergleichsbericht",
+                    "description": "Zusammenführung von Daten aus 14 Landesmedienanstalten (DLM-Jahrbuch) zur Darstellung der dualen Rundfunkordnung und wirtschaftlichen Lage des privaten Hörfunks."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4459,6 +5716,100 @@
                   {
                     "method": "Stichprobenerhebung",
                     "description": "Landesmedienanstalten prüfen Stichproben und publizieren aggregierte Fehlerquoten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ovk-online-werbemarkt-bericht",
+              "level": 4,
+              "name": "OVK Online-Werbemarkt-Bericht Deutschland",
+              "color": "#9d174d",
+              "details": {
+                "description": "Quartalsweise Marktdaten zum deutschen Online-Werbemarkt, erhoben durch den Online-Vermarkterkreis (OVK) im Bundesverband Digitale Wirtschaft (BVDW), in Kooperation mit Nielsen und dem Zentralverband der deutschen Werbewirtschaft (ZAW). Enthält Nettoumsätze nach Werbeform (Display, Video, Search, Social, Programmatic), Gerätetyp und Branche der Werbetreibenden.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Topline-Quartalsdaten werden als Pressemitteilung frei veröffentlicht; vollständige Marktdaten im OVK Online-Report (zweijährlich) sind BVDW-Mitgliedern vorbehalten oder kostenpflichtig erhältlich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Mitglieder-Meldeverfahren",
+                    "description": "OVK-Mitgliedsunternehmen (Online-Vermarkter) melden quartalsweise ihre Netto-Werbeumsätze nach standardisierter Kategorisierung; Nielsen aggregiert und validiert die Meldungen."
+                  },
+                  {
+                    "method": "Marktschätzung und Hochrechnung",
+                    "description": "Auf Basis der Mitgliedermeldungen und Marktanteilsschätzungen wird ein Gesamtmarktvolumen für den deutschen Online-Werbemarkt berechnet und mit internationalen IAB-Daten abgeglichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zaw-werbestatistik-mediaausgaben",
+              "level": 4,
+              "name": "ZAW-Werbestatistik Mediaausgaben nach Medium",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährliche Gesamtstatistik der deutschen Werbewirtschaft des Zentralverbands der deutschen Werbewirtschaft (ZAW), basierend auf Meldungen der Fachverbände und Nielsen-Mediaausgaben-Tracking. Enthält Netto-Werbeeinnahmen aller Mediengattungen (TV, Radio, Print, Online, Out-of-Home, Kino) sowie Brutto-Mediadaten nach Nielsen, Werbemarktanteile und Entwicklung seit 1950.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Kerndaten werden jährlich im ZAW-Jahrbuch Werbung Deutschland veröffentlicht (kostenpflichtig, ca. 150 €); ausgewählte Topline-Daten werden als Pressemitteilung auf zaw.de frei zugänglich gemacht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Fachverbands-Aggregation",
+                    "description": "ZAW aggregiert Netto-Umsatzmeldungen der Mitgliedsverbände (BVDW, ZAW-Mitglieder, VDZ, BDZV) nach einheitlicher Systematik und erstellt Gesamtmarktstatistik."
+                  },
+                  {
+                    "method": "Nielsen-Bruttodaten-Integration",
+                    "description": "Ergänzung der Nettodaten durch Nielsen Media Research-Bruttomessungen aus dem AdIntelligence-System für alle klassischen und digitalen Mediengattungen."
                   }
                 ]
               }
@@ -4870,6 +6221,147 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "bundesliga-rechtevergabe-umsatzstatistik",
+              "level": 4,
+              "name": "Bundesliga-Rechtevergabe Umsatzstatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Daten zu nationalen und internationalen Medienrechteverträgen der Deutschen Fußball Liga (DFL) für die Bundesliga und 2. Bundesliga, einschließlich Vergabepreise, Lizenznehmern (DAZN, Sky, ARD, ZDF, Sat.1, MagentaTV) und Ausschüttungsmodi an Clubs. Ergänzt durch Geschäftsberichte der DFL und Medienberichte aus dem Bundesanzeiger sowie EU-Wettbewerbsprüfungen der Rechtepakete.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Vergabepreise werden von DFL und Lizenznehmern nicht vollständig offengelegt; bekannte Gesamtvolumina (4,4 Mrd. € für 2021–25) sind öffentlich; Detailpakete unterliegen Geschäftsgeheimnis."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Ausschreibungsverfahren-Dokumentation",
+                    "description": "DFL führt offizielle Ausschreibungsverfahren (zuletzt 2022 für Zyklus 2025–29) durch; EU-Kommission prüft Vergabeverfahren auf kartellrechtliche Konformität gemäß Art. 101 AEUV."
+                  },
+                  {
+                    "method": "Journalistische Recherche und Investor-Relations",
+                    "description": "Gesamtvolumina werden durch Meldepflichten börsennotierter Lizenznehmer (DAZN-Investoren, Sky Deutschland-Mutter Comcast) und DFL-Pressemitteilungen rekonstruierbar."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "uebertragungsrechte-internationale-sportevents",
+              "level": 4,
+              "name": "Übertragungsrechte internationale Sportevents Deutschland",
+              "color": "#9d174d",
+              "details": {
+                "description": "Übersichtsdaten zu Übertragungsrechten internationaler Sportgroßereignisse (Olympia, FIFA-WM, UEFA-EM, Formel 1, Tennis-Grand-Slams) für den deutschen Markt, basierend auf Meldungen der Rechtehalter (IOC, FIFA, UEFA), Sendeanstalten und Regulierungsbehörden. Die Bundeszentrale für Medien und Kommunikation (BMWK/BKM) und die Landesmedienanstalten führen Listen geschützter Großereignisse gemäß § 4a RStV / § 60 MStV.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Liste der Großereignisse mit Free-TV-Pflicht gemäß § 60 Medienstaatsvertrag (MStV) ist öffentlich-rechtlich verankert und wird von der Gemeinsamen Stelle der Medienanstalten (GSMA) veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Regulatorische Listenpflege",
+                    "description": "Landesmedienanstalten pflegen die Liste der nach § 60 MStV geschützten Großereignisse (mit Free-TV-Pflicht) und prüfen Übertragungsrechte-Verträge auf regulatorische Konformität."
+                  },
+                  {
+                    "method": "EBU-Rechte-Koordination",
+                    "description": "European Broadcasting Union (EBU) koordiniert Rechteerwerb für öffentlich-rechtliche Mitglieder (ARD, ZDF); Ergebnisse werden in EBU-Sportrechtsdatenbank dokumentiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ebu-sportrechtestatistik-oeffentlich-rechtlich",
+              "level": 4,
+              "name": "EBU-Sportrechtestatistik öffentlich-rechtlich",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährliche Statistik der European Broadcasting Union (EBU) zu Sportrechteausgaben ihrer Mitgliedsanstalten, darunter ARD, ZDF und Deutschlandradio, aufgeschlüsselt nach Sportart, Wettbewerb und Rechtekategorie (Live, Highlights, Digital). Die EBU-Daten ermöglichen einen europäischen Vergleich der Sportrechtekosten im öffentlich-rechtlichen Rundfunk und informieren über Nachverhandlungen und Vertragslaufzeiten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "EBU-Mitglieder erhalten vollständige Statistiken intern; aggregierte Übersichten zu Sportrechteausgaben werden in EBU-Jahresberichten und Tech-Reports (ebu.ch/publications) partiell veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "EBU-Mitglieder-Meldeverfahren",
+                    "description": "EBU-Mitgliedsanstalten melden jährlich ihre Sportrechteausgaben nach standardisierter Kategorisierung; EBU aggregiert und veröffentlicht europäische Benchmarks."
+                  },
+                  {
+                    "method": "Rechtekatalog-Analyse",
+                    "description": "Auswertung der ARD/ZDF-Sportrechte-Koordination (gemeinsame Gremien für Rechteerwerb) anhand Rundfunkstaatsvertrag-Berichte und KEF-Berichtsdaten zu Sportausgaben."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -5263,6 +6755,147 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "quotenentwicklung-sport-live-tv",
+              "level": 4,
+              "name": "Quotenentwicklung Sport-Live-Events TV",
+              "color": "#9d174d",
+              "details": {
+                "description": "Langfristige Zeitreihendaten zu Einschaltquoten und Marktanteilen von Sport-Live-Übertragungen im deutschen Fernsehen (Fußball, Olympia, Formel 1, Tennis, Wintersport), erhoben durch AGF Videoforschung und aufbereitet durch Medienforschungsabteilungen von ARD, ZDF und privaten Sendern. Quellarchive umfassen historische Rekordquoten seit 1953 sowie aktuelle Sendungsebene-Daten aus dem AGF-Panel.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rekordquoten und historische Trenddaten werden von ARD-Medienforschung, ZDF-Medienforschung und DWDL frei veröffentlicht; vollständige Sendungszeitreihen erfordern AGF-Lizenz."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Längsschnittanalyse Einschaltquoten",
+                    "description": "Zusammenführung von AGF-Panel-Tagesdaten über mehrere Jahrzehnte zur Trendanalyse der Sport-TV-Nutzung; Bereinigung um Sonderereignisse (WM-Jahre, Olympia-Zyklen)."
+                  },
+                  {
+                    "method": "Sekundärauswertung Medienforschung",
+                    "description": "ARD-Medienforschung (ard.de/die-ard/forschung) und ZDF-Medienforschung (zdf.de/zdfmediathek) veröffentlichen jährlich aufbereitete Sportquoten-Übersichten für Wissenschaft und Öffentlichkeit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "streaming-abrufzahlen-sport-ard-zdf-mediathek",
+              "level": 4,
+              "name": "Streaming-Abrufzahlen Sportereignisse ARD/ZDF-Mediathek",
+              "color": "#9d174d",
+              "details": {
+                "description": "Abrufstatistiken für Sport-Livestreams und -Abrufe in der ARD-Mediathek und ZDF-Mediathek, erfasst durch die Medienforschungsabteilungen von ARD und ZDF sowie durch die AGF-Stream-Messung. Enthält Unique Streams, Video Views, durchschnittliche Nutzungsdauer und Geräteverteilung für Sportereignisse wie DFB-Pokal, Leichtathletik-WM, Wintersport-Weltcups und Olympische Spiele.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Abrufzahlen für Rekordereignisse werden von ARD und ZDF in Pressemitteilungen veröffentlicht; vollständige Streaming-Statistiken nach Sendung sind intern und partiell über KEF-Berichte zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "AGF-Stream-Messung",
+                    "description": "AGF Videoforschung misst seit 2021 Online-Videoabrufe in einem standardisierten Verfahren (AGF-Scope) für angeschlossene Sender und Mediatheken; Daten werden in AGF-Terminaldaten integriert."
+                  },
+                  {
+                    "method": "Interne Medienforschung-Auswertung",
+                    "description": "ARD-Medienforschung und ZDF-Medienforschung werten Serverlogs und CDN-Statistiken aus und konsolidieren Abrufzahlen nach Sendungstiteln, Sportarten und Übertragungsevents."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "esport-reichweitenforschung-deutschland",
+              "level": 4,
+              "name": "E-Sport-Reichweitenforschung Deutschland",
+              "color": "#9d174d",
+              "details": {
+                "description": "Reichweiten- und Nutzungsdaten zum E-Sport-Medienkonsum in Deutschland, erhoben durch Bitkom, game – Verband der deutschen Games-Branche, und Streaming-Plattformen (Twitch, YouTube Gaming, Discord). Enthält Zuschauerzahlen bei E-Sport-Turnieren (ESL, BLAST, Riot Games), Streamer-Reichweiten und demografische Profile des E-Sport-Publikums in Deutschland.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Bitkom und game veröffentlichen jährlich aggregierte E-Sport-Nutzungsstatistiken als Pressemitteilung; Twitch-Streamerlisten und YouTube-Abonnentenzahlen sind öffentlich, detaillierte Werbedaten sind proprietär."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Plattform-API-Auswertung",
+                    "description": "Auswertung öffentlicher Twitch-API- und YouTube-Analytics-Daten zu deutschen E-Sport-Kanälen und Turnierstreams durch Forschungsinstitute (z.B. GAME Insights, HBI Hamburg)."
+                  },
+                  {
+                    "method": "Repräsentativbefragung E-Sport-Publikum",
+                    "description": "Bitkom-Umfragen und game-Studien zur E-Sport-Nutzung in der deutschen Bevölkerung mit Schwerpunkt auf 14–35-Jährigen; Vergleich mit internationalen Newzoo-Marktdaten."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -5647,6 +7280,139 @@
                   {
                     "method": "Freiwillige Erhebung",
                     "description": "Galerien melden freiwillig an Branchenportale; Destatis ergänzt mit Kulturwirtschaftsberichten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kunstmarktbericht-hiscox-arttactic",
+              "level": 4,
+              "name": "Kunstmarktbericht HISCOX/ArtTactic Deutschland",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährlicher Kunstmarktbericht von HISCOX und ArtTactic mit Kennzahlen zu Umsatz, Transaktionsvolumen und Preisentwicklung im deutschen Kunstmarkt. Enthält Daten zu Online-Kunstverkäufen, Auktionsergebnissen und Käuferverhalten, ergänzt durch Daten des Bundesverbands Deutscher Auktionatoren.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Der Bericht ist kommerziell lizenziert; Rohdaten sind proprietär. Lediglich aggregierte Zusammenfassungen und Metadaten sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Marktanalyse",
+                    "description": "Auswertung von Auktionsdatenbanken (artnet, Artprice) und Händlerbefragungen zur Erstellung von Umsatz- und Preisindizes für den deutschen Kunstmarkt."
+                  },
+                  {
+                    "method": "Umfrageerhebung",
+                    "description": "Online-Befragung von Sammlern und Galerien zur Kaufbereitschaft und Markterwartung, aggregiert nach Segmenten (Zeitgenössisch, Klassische Moderne usw.)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ausstellungsbesucher-bundeskunsthalle-haus-der-kunst",
+              "level": 4,
+              "name": "Ausstellungsbesucherzahlen Bundeskunsthalle und Haus der Kunst",
+              "color": "#9d174d",
+              "details": {
+                "description": "Besucherstatistiken der Bundeskunsthalle in Bonn und des Haus der Kunst in München, erhoben über Einlasskontrollsysteme und Kassenauswertungen. Die Daten umfassen Besucherzahlen pro Ausstellung, Saisonalität, Schulgruppen-Anteil und internationale Besucher, wie sie im jeweiligen Jahresbericht veröffentlicht werden.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Besucherzahlen öffentlich geförderter Kultureinrichtungen werden routinemäßig in Jahresberichten veröffentlicht und sind ohne Personenbezug aggregiert."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Besucherzählung",
+                    "description": "Automatisierte Zählung durch Lichtschrankensysteme an Eingängen, manuelle Plausibilitätsprüfung durch Kassensystemabgleich."
+                  },
+                  {
+                    "method": "Jahresberichterstattung",
+                    "description": "Aggregation der monatlichen Besucherzahlen je Ausstellung und Veröffentlichung im Jahresbericht gemäß Zuwendungsbescheid der Beauftragten der Bundesregierung für Kultur und Medien (BKM)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "galerienumsaetze-bundesverband-deutscher-galerien",
+              "level": 4,
+              "name": "Galerienumsätze Bundesverband Deutscher Galerien (BVDG) Konjunkturumfrage",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährliche Konjunkturumfrage des Bundesverbands Deutscher Galerien und Kunsthändler (BVDG) zu Umsatzentwicklung, Beschäftigung und Markteinschätzung der Mitgliedsgalerien. Die Erhebung erfasst rund 300 Galerien und liefert segmentierte Kennzahlen nach Galeriengröße, Region und Kunstsegment.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rohdaten der Mitgliederbefragung unterliegen Vertraulichkeit; aggregierte Branchenkennzahlen werden nach Anonymisierung in der BVDG-Marktanalyse veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verbandsbefragung",
+                    "description": "Strukturierte Online-Umfrage unter BVDG-Mitgliedern mit standardisierten Fragen zu Jahresumsatz, Ausstellungsanzahl und Absatzkanälen (Messen, Online, Direktverkauf)."
+                  },
+                  {
+                    "method": "Branchenindexierung",
+                    "description": "Berechnung von Umsatz- und Stimmungsindizes analog zu ifo-Geschäftsklimaerhebungen, disaggregiert nach Galeriensegment und Bundesland."
                   }
                 ]
               }
@@ -6106,6 +7872,147 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ksk-versicherte-statistik-sparte",
+              "level": 4,
+              "name": "Künstlersozialversicherung (KSK) Versichertenstatistik nach Kunstsparte",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährliche Statistik der Künstlersozialkasse (KSK) über die Anzahl der versicherten Selbstständigen nach Kunstsparte (Bildende Kunst, Musik, Darstellende Kunst, Wort), Alter, Geschlecht und Einkommensklasse. Die KSK ist eine Körperschaft des öffentlichen Rechts und veröffentlicht Daten nach § 34 KSVG im Rahmen ihres Jahresberichts.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Versichertenstatistiken ohne Personenbezug werden routinemäßig im KSK-Jahresbericht veröffentlicht und sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Registerauswertung",
+                    "description": "Auswertung des KSK-Mitgliederregisters nach Sparte, Einkommensgruppe und Demografik; Veröffentlichung aggregierter Tabellen im Jahresbericht."
+                  },
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Mehrjährige Vergleichsreihen zur Entwicklung der Versichertenzahlen und Durchschnittseinkommen je Sparte, genutzt für sozialpolitische Berichte des BMAS."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "stipendien-kunststiftungen-bewilligungsstatistik",
+              "level": 4,
+              "name": "Stipendien Kunststiftungen Bewilligungsstatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Statistik über bewilligte Künstlerstipendien der großen deutschen Kunststiftungen, darunter die Kulturstiftung des Bundes, die Stiftung Kunstfonds (Bonn) und die Stiftung der Sparkasse. Erfasst werden Anzahl der Bewilligungen, Förderhöhen, künstlerische Sparten und regionale Verteilung der Geförderten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bewilligungsdaten öffentlich geförderter Stiftungen werden in Jahresberichten und auf Förderportalen wie dem Förderdatenbank.de-System des BMWi veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Förderaktenauswertung",
+                    "description": "Systematische Auswertung der Vergabeentscheidungen der Stiftungsgremien, Anonymisierung personenbezogener Daten und Aggregation nach Kunstsparte und Bundesland."
+                  },
+                  {
+                    "method": "Berichterstattung",
+                    "description": "Veröffentlichung in Jahresberichten und auf der Plattform des Informationssystems kulturelle Infrastruktur des Deutschen Zentrums für Kulturgutverluste sowie dem Deutschen Kulturrat."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "atelierfoerderprogramme-bundeslaender",
+              "level": 4,
+              "name": "Atelierförderprogramme der Bundesländer – Belegungs- und Förderdaten",
+              "color": "#9d174d",
+              "details": {
+                "description": "Belegungs- und Förderdaten der landeseigenen Atelierförderprogramme, z.B. des Berliner Atelierprogramms (Senatsverwaltung für Kultur), der Atelierhäuser der Kulturstiftung Sachsen und vergleichbarer Programme in NRW (NRW Kultursekretariat). Enthält Anzahl geförderter Ateliers, Mietzuschüsse, Belegungsdauer und Sparten der Geförderten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Förderdaten sind bei den Landesbehörden vorhanden, jedoch nicht zentral aggregiert; nach Anonymisierung und Zusammenführung über die Kulturministerkonferenz publizierbar."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Geodatenerfassung",
+                    "description": "Verortung geförderter Atelierstandorte auf Stadtteilebene mittels Adressgeocodierung und Verknüpfung mit Förderdatenbank der jeweiligen Landeskulturministerien."
+                  },
+                  {
+                    "method": "Ländervergleich",
+                    "description": "Komparative Analyse der Förderquoten und Belegungsdauern über Bundesländer hinweg im Rahmen des Kulturinfrastrukturberichts der Kultusministerkonferenz (KMK)."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -6356,6 +8263,100 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "dlf-sendungsstatistik-genre-sendezeit",
+              "level": 4,
+              "name": "Sendungsstatistik Deutschlandfunk nach Genre und Sendezeit",
+              "color": "#9d174d",
+              "details": {
+                "description": "Strukturierte Programmstatistik des Deutschlandfunks (DLF) mit Aufschlüsselung der Sendeminuten nach Programmgenre (Nachrichten, Feature, Kultur, Wissenschaft, Sport) und Tageszeit, erhoben auf Basis der internen Sendeplanung und Programmschemas. Deutschlandradio veröffentlicht entsprechende Daten im Jahresbericht und in Berichten an den Hörfunkrat.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Programmstrukturstatistiken ohne Personenbezug werden im Jahresbericht von Deutschlandradio und in Berichten an den Hörfunkrat veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Programmschema-Auswertung",
+                    "description": "Automatisierte Extraktion der Sendedauer je Genre aus dem elektronischen Programmschema (EPG-Daten) des DLF, aggregiert nach Woche und Monat."
+                  },
+                  {
+                    "method": "Genreklassifikation",
+                    "description": "Manuelle Nachklassifikation von Sondersendungen und Übertragungs-Events durch die Programmplanung, Einspeisung in das Reporting-System für den Hörfunkrat-Bericht."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "dlf-podcast-downloads-statistik",
+              "level": 4,
+              "name": "Podcast-Download-Statistik Deutschlandfunk",
+              "color": "#9d174d",
+              "details": {
+                "description": "Monatliche Download- und Abonnementzahlen der Podcast-Angebote des Deutschlandfunks (u.a. \"Das war der Tag\", \"Corso – Kultur nach 3\", \"Forschung aktuell\"), erhoben über den Podtrac-Messdienst und den internen Streaming-Server von Deutschlandradio. Daten fließen in die Media Analyse Podcast (MA Podcast) der Arbeitsgemeinschaft Media-Analyse (agma) ein.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rohe Server-Logdaten enthalten IP-Adressen; nach Anonymisierung und Deduplizierung gemäß IAB Podcast Measurement Technical Guidelines v2.1 sind aggregierte Zahlen publizierbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Server-Log-Analyse",
+                    "description": "Auswertung der RSS-Feed-Anfragen und MP3-Downloads nach IAB-Standard, Bereinigung um Bot-Traffic und Mehrfach-Downloads innerhalb von 24-Stunden-Fenstern."
+                  },
+                  {
+                    "method": "agma-Meldung",
+                    "description": "Monatliche Übermittlung der bereinigten Download-Zahlen an die agma für die aggregierte Veröffentlichung in der MA Podcast-Studie."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6598,6 +8599,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ma-radioerhebung-dlf-tagesreichweite",
+              "level": 4,
+              "name": "MA Radioerhebung Deutschlandfunk Tagesreichweite",
+              "color": "#9d174d",
+              "details": {
+                "description": "Tagesreichweite und Hördauer des Deutschlandfunks (DLF, DLF Kultur, DLF Nova) aus der Media Analyse Radio (MA Radio) der Arbeitsgemeinschaft Media-Analyse (agma), erhoben durch telefonische Befragung von rund 70.000 Personen pro Jahr. Die Daten werden halbjährlich veröffentlicht und bilden die Grundlage für Reichweitenvergleiche im öffentlich-rechtlichen Hörfunk.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Die MA Radio-Kerntabellen werden von der agma öffentlich zugänglich gemacht; aggregierte Reichweitendaten ohne Personenbezug sind frei nutzbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "CATI-Befragung",
+                    "description": "Computer Assisted Telephone Interview (CATI) durch beauftragte Marktforschungsinstitute nach agma-Stichprobenplan, repräsentativ für deutschsprachige Bevölkerung ab 10 Jahren."
+                  },
+                  {
+                    "method": "Reichweitenberechnung",
+                    "description": "Hochrechnung der Stichprobenergebnisse auf die Gesamtbevölkerung nach Gewichtungsmatrix der agma, Ausgabe als Weitester Hörerkreis (WHK) und Tagesreichweite (TR)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "deutschlandradio-jahresabschluss-haushaltsplanung",
+              "level": 4,
+              "name": "Jahresabschluss und Haushaltsplanung Deutschlandradio",
+              "color": "#9d174d",
+              "details": {
+                "description": "Geprüfter Jahresabschluss und Wirtschaftsplan von Deutschlandradio als Körperschaft des öffentlichen Rechts, vorgelegt beim Hörfunkrat und der Kommission zur Ermittlung des Finanzbedarfs der Rundfunkanstalten (KEF). Enthält Einnahmen aus dem Rundfunkbeitrag (ARD-Zuteilung), Ausgaben nach Programmbereich, Personalkosten und Investitionen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Als öffentlich-rechtliche Rundfunkanstalt unterliegt Deutschlandradio der Transparenzpflicht; Jahresabschlüsse werden im Bundesanzeiger und auf der Deutschlandradio-Website veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Jahresabschlussprüfung",
+                    "description": "Externe Wirtschaftsprüfung des Jahresabschlusses nach HGB, Vorlage beim Hörfunkrat und Veröffentlichung im Bundesanzeiger sowie Jahresbericht."
+                  },
+                  {
+                    "method": "KEF-Berichterstattung",
+                    "description": "Übermittlung des Finanzbedarfsplans an die KEF gemäß Rundfunkfinanzierungsstaatsvertrag, Grundlage für die Festsetzung des Rundfunkbeitrags."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6837,6 +8928,100 @@
                   {
                     "method": "Weberhebung",
                     "description": "App-Store-APIs und Webseiten werden systematisch ausgelesen und Bewertungsverläufe gespeichert"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "dlf-app-nutzungsstatistik",
+              "level": 4,
+              "name": "App-Nutzungsstatistik Deutschlandfunk",
+              "color": "#9d174d",
+              "details": {
+                "description": "Monatliche Nutzungsstatistiken der Deutschlandfunk-App (iOS und Android), erhoben über Firebase Analytics und interne Streaming-Server-Logs, umfassend Aktive Nutzer (MAU/DAU), Sitzungsdauer, meistgenutzte Funktionen (Livestream, Podcast, Epaper) und Betriebssystemverteilung. Deutschlandradio berichtet diese Kennzahlen dem Hörfunkrat und der ARD-Mediendatenbank.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "App-Analysedaten enthalten zunächst Gerätekennungen; nach Aggregation und Anonymisierung gemäß DSGVO-Anforderungen sind Nutzungskennzahlen für Berichte verwendbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "SDK-Datenerhebung",
+                    "description": "Automatische Erfassung von Nutzungsereignissen über Firebase SDK, serverseitige Aggregation zu täglichen und monatlichen Kennzahlen nach Funktionsbereich."
+                  },
+                  {
+                    "method": "DSGVO-Anonymisierung",
+                    "description": "Löschung oder Pseudonymisierung von Geräte-IDs nach 30 Tagen, IP-Adressen werden nicht gespeichert; Ausgabe aggregierter Nutzungsberichte für interne Steuerung und Rundfunkratberichte."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "dlf-mediathek-abrufzahlen-sendung",
+              "level": 4,
+              "name": "DLF-Mediathek Abrufzahlen nach Sendung",
+              "color": "#9d174d",
+              "details": {
+                "description": "Monatliche Abrufzahlen der Audio-on-Demand-Inhalte in der Deutschlandfunk-Mediathek, disaggregiert nach Sendung, Sendedatum und Abrufkanal (Website, App, externe Podcast-Apps). Die Daten werden über den Streaming-Server von Deutschlandradio erhoben und nach IAB-Standard bereinigt, bevor sie in die MA Podcast der agma einfließen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Streaming-Logs enthalten IP-Adressen; nach Deduplizierung und Anonymisierung sind Abrufzahlen auf Sendungsebene für Berichte und agma-Meldung geeignet."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Log-File-Parsing",
+                    "description": "Automatische Verarbeitung der CDN-Zugriffslogs nach IAB Podcast Measurement Technical Guidelines v2.1, Filterung von Bot-Traffic und unvollständigen Downloads."
+                  },
+                  {
+                    "method": "Sendungszuordnung",
+                    "description": "Verknüpfung der Abruf-URLs mit der Sendungsdatenbank des DLF über eindeutige Episode-IDs, Erstellung von Abruf-Rankings je Sendungsformat."
                   }
                 ]
               }
@@ -7090,6 +9275,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "zdf-mediathek-abrufzahlen-sendungstyp",
+              "level": 4,
+              "name": "ZDF-Mediathek Abrufzahlen nach Sendungstyp",
+              "color": "#9d174d",
+              "details": {
+                "description": "Monatliche Video-Abrufstatistiken der ZDF-Mediathek, segmentiert nach Sendungstyp (Fiction, Dokumentation, Nachrichten, Sport, Unterhaltung) und Gerätekategorie (Smart-TV, Smartphone, PC), erhoben über die ZDF-eigene Streaming-Infrastruktur und CDN-Partner. Das ZDF berichtet diese Kennzahlen im Jahrbuch und in Fernsehratberichten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Abrufzahlen ohne Nutzerbezug werden im ZDF-Jahrbuch und in Fernsehratberichten veröffentlicht; keine datenschutzrechtlichen Hindernisse für publizierte Aggregatdaten."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Streaming-Datenanalyse",
+                    "description": "Aggregation der CDN-Logdaten nach Sendungstyp und Gerätekategorie, Deduplizierung nach Session-IDs, monatliche Berichterstattung für die Fernsehrat-Sitzungsunterlagen."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Vergleich der Abrufzahlen über Quartale und Jahresverläufe zur Identifikation von Nutzungsverschiebungen zwischen linearem TV und Mediathek-Abruf."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zdfmediathek-app-nutzung-altersstruktur",
+              "level": 4,
+              "name": "ZDFmediathek App-Nutzung Altersstruktur",
+              "color": "#9d174d",
+              "details": {
+                "description": "Demografische Nutzungsstruktur der ZDF-Mediathek-App nach Altersgruppen (14–29, 30–49, 50–69, 70+), erhoben durch Kombination aus App-Registrierungsdaten (freiwillig), repräsentativen Nutzerbefragungen (GfK im Auftrag des ZDF) und AGF-Videodaten. Dient dem ZDF als Nachweis der Reichweite bei jungen Zielgruppen gegenüber dem Fernsehrat.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Demografische Nutzerdaten sind teilweise personenbezogen; nach Aggregation auf Altersgruppen-Ebene und Anonymisierung für Berichte geeignet."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "GfK-Panelbefragung",
+                    "description": "Repräsentative Befragung eines GfK-Onlinepanels zu Mediathek-Nutzungsgewohnheiten, gewichtet nach Bevölkerungsstruktur Destatis-Daten, quartalsweise durchgeführt."
+                  },
+                  {
+                    "method": "AGF-Integration",
+                    "description": "Verknüpfung mit AGF-Videodaten (Arbeitsgemeinschaft Fernsehforschung) für geräteübergreifende Reichweitenmessung nach AGF-Nettokontakt-Methodik."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -7332,6 +9607,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "zdf-enterprises-programmumsatz-export",
+              "level": 4,
+              "name": "ZDF Enterprises Programmumsatz und Exportstatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Umsatz- und Lizenzstatistik der ZDF Enterprises GmbH (100% ZDF-Tochter) aus dem internationalen Programmvertrieb von ZDF-Produktionen, erhoben aus dem Vertriebsmanagementsystem. ZDF Enterprises ist eine der größten öffentlich-rechtlichen Programmagentu­ren in Europa mit Kunden in über 120 Ländern; Umsatzdaten fließen in den ZDF-Konzernabschluss ein.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Detaillierte Vertragsdaten und Lizenznehmer sind Geschäftsgeheimnisse; lediglich Gesamtumsätze im ZDF-Konzernabschluss und Jahresbericht sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Konzernabschluss-Reporting",
+                    "description": "Konsolidierung der ZDF Enterprises-Umsatzzahlen in den ZDF-Konzernabschluss nach HGB, externe Prüfung durch Wirtschaftsprüfer, Vorlage beim ZDF-Fernsehrat."
+                  },
+                  {
+                    "method": "Exportmarkt-Analyse",
+                    "description": "Interne Auswertung der Lizenznehmer nach Regionen und Genres für die Jahresplanung der Vertriebsabteilung, nicht öffentlich im Detail."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "3sat-arte-reichweitendaten-grenzueberschreitend",
+              "level": 4,
+              "name": "3sat und ARTE Reichweitendaten grenzüberschreitend",
+              "color": "#9d174d",
+              "details": {
+                "description": "Reichweitendaten der ZDF-Gemeinschaftssender 3sat (ZDF, ORF, SRG SSR) und ARTE (ZDF, France Télévisions) in Deutschland, Österreich und der Schweiz bzw. Deutschland und Frankreich, erhoben durch die jeweiligen nationalen Messorganisationen (AGF, AGTT, Mediapulse, Médiamétrie). Der ZDF publiziert zusammengefasste Reichweiten in Jahresberichten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Zuschauerreichweiten ohne Personenbezug werden in den Jahresberichten der Gemeinschaftssender und durch die AGF veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Harmonisierung nationaler Messdaten",
+                    "description": "Zusammenführung der Messresultate der nationalen AGF-Systeme (DE), AGTT (AT) und Mediapulse (CH) auf Basis vergleichbarer Methodologie für den gemeinsamen 3sat-Bericht."
+                  },
+                  {
+                    "method": "ARTE-Genel-Reporting",
+                    "description": "Gemeinsames Reporting von ZDF und France Télévisions an den ARTE-Verwaltungsrat, Aggregation der Tagesreichweiten aus AGF (DE) und Médiamétrie (FR)."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -7571,6 +9936,96 @@
                   {
                     "method": "Sendungsmonitoring",
                     "description": "Programmdaten werden nach Barrierefreiheitsmerkmalen ausgewertet und je Monat aggregiert"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zdf-jahrbuch-programmanalyse-primetime",
+              "level": 4,
+              "name": "ZDF Jahrbuch Programmanalyse nach Primetime-Genre",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährliche Analyse des ZDF-Programms nach Genre-Anteilen in der Primetime (20:15–23:00 Uhr), veröffentlicht im ZDF-Jahrbuch und erstellt von der ZDF-Programmplanung sowie vom GöfaK Medienforschung im Auftrag der Medienanstalten. Enthält Sendeminutenanteile für Fiction, Dokumentation, Nachrichten, Sport und Unterhaltung im Vergleich zur Programmvorgabe des ZDF-Staatsvertrags.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Das ZDF-Jahrbuch mit Programmstatistiken ist öffentlich zugänglich und wird jährlich auf der ZDF-Website sowie als Printpublikation veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "EPG-Kategorisierung",
+                    "description": "Vollautomatische Kategorisierung aller Sendungen aus dem elektronischen Programmguide nach ZDF-internem Genre-Schlüssel, manuelle Nachkontrolle für Sondersendungen und Übertragungs-Events."
+                  },
+                  {
+                    "method": "Externaes Monitoring",
+                    "description": "Unabhängige Überprüfung der Kategorisierung durch GöfaK Medienforschung im Auftrag der Landesmedienanstalten als Teil der regulatorischen Programmbeobachtung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zdf-barrierefreiheitsquote-audiodeskription",
+              "level": 4,
+              "name": "Barrierefreiheitsquote ZDF – Audiodeskription und Untertitelung",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährliche Statistik des ZDF zur Abdeckung barrierefreier Angebote (Audiodeskription für Sehbehinderte, Untertitel für Gehörlose) im linearen Programm und in der ZDF-Mediathek, gemessen als prozentualer Anteil aller ausgestrahlten Sendeminuten. Das ZDF berichtet diese Kennzahlen als Nachweis der Verpflichtungen aus § 7a Rundfunkstaatsvertrag und EU-Richtlinie über audiovisuelle Mediendienste (AVMD-RL).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Barrierefreiheitsquoten werden als Nachweis regulatorischer Verpflichtungen im ZDF-Jahresbericht und gegenüber der Landesmedienanstalt veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Sendezeiterfassung",
+                    "description": "Automatische Erfassung der mit AD- oder UT-Signal ausgestrahlten Sendeminuten aus dem Sendesystem, monatliche Aufsummierung durch die Abteilung Barrierefreies Fernsehen."
+                  },
+                  {
+                    "method": "Regulatorisches Reporting",
+                    "description": "Jährliche Übermittlung der Quote an die zuständige Landesmedienanstalt Rheinland-Pfalz (LMK) gemäß § 7a MStV als Nachweis der AVMD-RL-Umsetzung."
                   }
                 ]
               }
@@ -7824,6 +10279,100 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ard-mediathek-nutzung-landesrundfunkanstalt",
+              "level": 4,
+              "name": "ARD-Mediathek Nutzungsstatistik nach Landesrundfunkanstalt",
+              "color": "#9d174d",
+              "details": {
+                "description": "Monatliche Nutzungsstatistiken der ARD-Mediathek aufgeschlüsselt nach liefernder Landesrundfunkanstalt (BR, HR, MDR, NDR, RB, RBB, SR, SWR, WDR), erhoben über das zentrale ARD-Streaming-Backend und die AGF Videoforschung. Die Daten ermöglichen den Anstalten eine vergleichende Bewertung der eigenen Mediathek-Performance und werden dem ARD-Koordinierungsausschuss berichtet.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Abrufzahlen der ARD-Mediathek ohne Nutzerbezug werden im ARD-Jahresbericht und durch die AGF Videoforschung veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "AGF-Videomessung",
+                    "description": "Erfassung von Streaming-Sessions über das AGF-Messframework (Streaming-Zensus) in Kombination mit Panel-Hochrechnung, disaggregiert nach Contenteigentümer (Landesrundfunkanstalt)."
+                  },
+                  {
+                    "method": "ARD-internes Reporting",
+                    "description": "Monatliche Zusammenführung der Daten aller neun Landesrundfunkanstalten im ARD-Koordinierungsausschuss, Veröffentlichung aggregierter Zahlen im ARD-Jahresbericht."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ard-vod-abrufzahlen-format",
+              "level": 4,
+              "name": "Video-on-Demand-Abrufzahlen ARD nach Format",
+              "color": "#9d174d",
+              "details": {
+                "description": "Abrufzahlen der meistgenutzten ARD-Mediathek-Formate (Tatort, Tagesschau, Sportschau, ARD-Mediathek-Originalproduktionen), erhoben über das ARD-CDN-Logfile-System und die AGF-Videomessung. Das ARD-Jahrbuch und die AGF-Videoforschung veröffentlichen Top-Listen und Segmentanalysen nach Sendungstyp.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Format-Ranglisten und Abrufzahlen werden im ARD-Jahrbuch und durch die AGF Videoforschung ohne Personenbezug regelmäßig veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "CDN-Log-Auswertung",
+                    "description": "Parsing und Aggregation der CDN-Logfiles des ARD-Streamingdienstes nach IAB-Standard, Zuordnung von Abrufen zu Sendungs-IDs über die ARD-Mediendatenbank."
+                  },
+                  {
+                    "method": "Formatranking",
+                    "description": "Wöchentliche Erstellung von Abruf-Rankings der Top-100-Titel in der ARD-Mediathek, Veröffentlichung durch AGF und im ARD-Jahresbericht."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -8066,6 +10615,100 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "tagesschau-app-monatliche-aktive-nutzer",
+              "level": 4,
+              "name": "Tagesschau-App Monatlich Aktive Nutzer (MAU)",
+              "color": "#9d174d",
+              "details": {
+                "description": "Monatliche Aktive Nutzer (MAU) und Tägliche Aktive Nutzer (DAU) der Tagesschau-App (iOS und Android), erhoben über Firebase Analytics im NDR-Auftrag und aus den App-Store-Statistiken von Apple und Google. Die Tagesschau-App ist eine der meistgenutzten Nachrichtenapps in Deutschland; NDR und ARD berichten die Zahlen im Jahresbericht und gegenüber dem Rundfunkrat.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "App-Nutzungsdaten enthalten gerätebezogene IDs; nach Aggregation auf MAU/DAU-Niveau und DSGVO-konformer Anonymisierung für Berichte publizierbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Firebase-Datenauswertung",
+                    "description": "Aggregation von Firebase-Ereignisdaten (App-Opens, Session-Duration) zu MAU/DAU-Metriken, Bereinigung um inaktive Installationen nach 90-Tage-Inaktivitätsregel."
+                  },
+                  {
+                    "method": "App-Store-Datenabgleich",
+                    "description": "Ergänzung der Firebase-Daten mit App-Store-Connect (Apple) und Google Play Console-Daten zu Downloads und aktiven Gerätezahlen für eine plattformübergreifende Nutzungsübersicht."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "tagesschau-de-seitenaufrufe-themenbereich",
+              "level": 4,
+              "name": "Tagesschau.de Seitenaufrufe nach Themenbereich",
+              "color": "#9d174d",
+              "details": {
+                "description": "Monatliche Seitenaufrufe (Page Impressions) und Unique User auf tagesschau.de, segmentiert nach Themenbereichen (Inland, Ausland, Wirtschaft, Sport, Wissen), erhoben über die IVW-geprüfte Webanaly­tik (Piano Analytics) im NDR-Auftrag. Die Daten werden von der Informationsgemeinschaft zur Feststellung der Verbreitung von Werbeträgern (IVW) monatlich geprüft und veröffentlicht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "IVW-Messdaten werden monatlich auf der IVW-Website als öffentlich zugängliche Nutzungsstatistiken ohne Personenbezug veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "IVW-Messung",
+                    "description": "Einsatz des IVW-zertifizierten Messsystems (SZM/Piano Analytics) zur Erhebung von Page Impressions und Unique Usern auf tagesschau.de, monatliche Prüfung und Veröffentlichung durch die IVW."
+                  },
+                  {
+                    "method": "Themenklassifikation",
+                    "description": "URL-basierte Zuordnung von Seitenaufrufen zu Themenbereichen über die NDR-interne URL-Taxonomie, Aggregation zu Monatsberichten für die ARD-Gremienberichte."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -8305,6 +10948,96 @@
                   {
                     "method": "Suchloganalyse",
                     "description": "Anonymisierte Suchanfragen werden aggregiert und nach Häufigkeit und Thema ausgewertet"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ard-audiothek-podcast-abonnements-sender",
+              "level": 4,
+              "name": "ARD-Audiothek Podcast-Abonnements nach Sender",
+              "color": "#9d174d",
+              "details": {
+                "description": "Monatliche Abonnement- und Download-Zahlen der ARD-Audiothek-Podcasts, aufgeschlüsselt nach liefernder Landesrundfunkanstalt und Podcast-Kategorie, erhoben über den gemeinsamen ARD-Podcast-Server und externe Verteilplattformen (Spotify, Apple Podcasts). Die agma fasst diese Daten in der MA Podcast zusammen; der ARD-Jahresbericht veröffentlicht Gesamtzahlen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Abonnementdaten externer Plattformen (Spotify, Apple) enthalten aggregierte Metriken ohne Nutzerbezug; interne Server-Logs werden nach IAB-Standard anonymisiert und dann publiziert."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Plattform-API-Abfrage",
+                    "description": "Automatische Abfrage der Podcast-Analytics-APIs von Spotify for Podcasters und Apple Podcasts Connect für alle ARD-Podcasts, Zusammenführung mit internen Serverdaten."
+                  },
+                  {
+                    "method": "agma-MA-Podcast-Meldung",
+                    "description": "Monatliche Übermittlung bereinigter Download-Zahlen aller ARD-Landesrundfunkanstalten an die agma für die Veröffentlichung in der MA Podcast-Studie."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ard-podcast-abrufstatistik-landesrundfunkanstalten",
+              "level": 4,
+              "name": "Podcast-Abrufstatistik der ARD-Landesrundfunkanstalten",
+              "color": "#9d174d",
+              "details": {
+                "description": "Vergleichende Podcast-Abrufstatistik der neun ARD-Landesrundfunkanstalten (BR Podcast, NDR Info, WDR Cosmo usw.), erhoben nach einheitlicher IAB-Methodik über den gemeinsamen ARD-Podcast-Server und Podtrac-Messdienst. Der Datensatz dient der internen Steuerung und wird aggregiert im ARD-Jahresbericht sowie in der MA Podcast veröffentlicht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Podcast-Abrufzahlen nach IAB-Standard ohne Personenbezug werden in der MA Podcast der agma und im ARD-Jahresbericht veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Zentrales Podcast-Monitoring",
+                    "description": "Zusammenführung der Download-Daten aller neun Landesrundfunkanstalten im ARD-Podcast-Backend nach IAB Podcast Measurement v2.1 Standard, monatliche Erstellung von Sendervergleichstabellen."
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Benchmarkanalyse der Podcast-Abrufzahlen je Landesrundfunkanstalt nach Genre und Sendeformat für die ARD-Koordinierungsausschuss-Berichte zur Audiostrategie."
                   }
                 ]
               }
@@ -8558,6 +11291,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "dpa-meldungsvolumen-ressort-dringlichkeit",
+              "level": 4,
+              "name": "dpa-Meldungsvolumen nach Ressort und Dringlichkeitsstufe",
+              "color": "#9d174d",
+              "details": {
+                "description": "Monatliche Statistik des Meldungsvolumens der Deutschen Presse-Agentur (dpa) nach Ressort (Politik, Wirtschaft, Sport, Panorama, Wissenschaft) und Dringlichkeitsstufe (Eilmeldung, Vorausmeldung, Routinemeldung), erhoben aus dem dpa-Redaktionssystem (Superdesk). Die Statistik dient der internen Qualitätssicherung und wird aggregiert im dpa-Jahresbericht veröffentlicht.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Meldungsvolumen-Statistiken sind intern vorhanden; nach Aggregation auf Ressort- und Dringlichkeitsebene ohne Meldungsinhalte für Branchenberichte publizierbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Redaktionssystem-Auswertung",
+                    "description": "Automatische Extraktion von Metadaten (Ressort, Dringlichkeit, Wortanzahl, Zeitstempel) aus dem dpa-Redaktionssystem Superdesk, tägliche Aggregation zu Monatsstatistiken."
+                  },
+                  {
+                    "method": "Qualitätsbericht",
+                    "description": "Interne Berichterstattung an dpa-Führungsgremien zu Meldungsvolumen-Trends und Ressortverteilung; aggregierte Zahlen fließen in den jährlichen dpa-Geschäftsbericht ein."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "dpa-picture-alliance-bildlieferungen-jahresstatistik",
+              "level": 4,
+              "name": "Bildagentur-Lieferungen dpa Picture Alliance Jahresstatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährliche Statistik der Bildlieferungen von dpa Picture Alliance (Deutschlands größte Bildagentur) nach Bildkategorie (Nachrichten, Sport, Entertainment, Archiv) und Abonnenten-Segment, erhoben aus dem Picture Alliance-Bilddatenbankserver (Photoscout). Die Agentur beliefert rund 80.000 Kunden weltweit; aggregierte Lieferzahlen werden im Jahresbericht veröffentlicht.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Detaillierte Kundendaten und Lizenzpreise sind Geschäftsgeheimnisse; nur aggregierte Lieferkennzahlen im dpa-Jahresbericht öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Datenbankabfrage",
+                    "description": "Automatische Abfrage der Photoscout-Bilddatenbank nach Kategorie und Lieferdatum, Aggregation der Downloadzahlen nach Kundensegment für das monatliche Sales-Reporting."
+                  },
+                  {
+                    "method": "Jahresbericht-Aufbereitung",
+                    "description": "Anonymisierung kundenbezogener Daten, Aggregation zu Jahreskennzahlen und Einbettung in den dpa-Geschäftsbericht gemäß Gesellschafterbeschluss."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -8797,6 +11620,92 @@
                   {
                     "method": "Textähnlichkeitsanalyse",
                     "description": "Agenturmeldungen und Medienartikel werden algorithmisch auf Übereinstimmungen geprüft"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "dpa-abonnentenzahl-dienste-medientyp",
+              "level": 4,
+              "name": "Abonnentenzahl dpa-Dienste nach Medientyp",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährliche Statistik der dpa-Abonnenten nach Medientyp (Tageszeitungen, Rundfunk, Online-Medien, Unternehmen/Behörden), erhoben aus dem dpa-CRM-System (Salesforce). Die dpa hat rund 1.000 Kunden in Deutschland; Abonnentenzahlen nach Segment werden im dpa-Jahresbericht und im VDZ-Branchenbericht veröffentlicht.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Kundenlisten der dpa sind Geschäftsgeheimnisse; nur aggregierte Abonnentenanzahl nach Medientyp im Jahresbericht öffentlich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "CRM-Auswertung",
+                    "description": "Jährliche Auswertung des Salesforce-CRM-Systems nach Abonnenten-Segmenten und Vertragsarten, Erstellung einer Segmentierungsübersicht für den Vorstand."
+                  },
+                  {
+                    "method": "Jahresbericht-Publizierung",
+                    "description": "Anonymisierte Aggregation der Kundensegment-Statistiken für die Veröffentlichung im dpa-Jahresbericht gemäß Gesellschafterbeschluss."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lizenznehmerzahl-nachrichtenagenturen-deutschland",
+              "level": 4,
+              "name": "Lizenznehmerstatistik Nachrichtenagenturen Deutschland",
+              "color": "#9d174d",
+              "details": {
+                "description": "Aggregierte Statistik der Lizenznehmer und Nutzungsverträge der in Deutschland aktiven Nachrichtenagenturen (dpa, AFP Deutschland, Reuters Deutschland, sid, epd), erhoben durch den Bundesverband Nachrichtenagenturen oder aus öffentlichen Jahresberichten. Gibt Aufschluss über die Marktstruktur der nachrichtengebenden Institutionen für Presse- und Medienforschung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einzelne Agenturen veröffentlichen Grunddaten im Jahresbericht; eine Zusammenführung zu einer Branchenstatistik erfordert Abstimmung und Anonymisierung der Wettbewerbsdaten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Jahresberichtsauswertung",
+                    "description": "Systematische Extraktion von Lizenznehmer- und Kundenzahlen aus den öffentlich zugänglichen Jahresberichten der deutschen Nachrichtenagenturen, Aggregation zu einer Branchenübersicht."
+                  },
+                  {
+                    "method": "Branchenmonitoring",
+                    "description": "Regelmäßige Überprüfung der Marktstruktur durch die Hamburgische Anstalt für neue Medien (HAM) und das Hans-Bredow-Institut im Rahmen der Medienkonzentrationsforschung."
                   }
                 ]
               }
@@ -9043,6 +11952,96 @@
                   {
                     "method": "Klassifikation",
                     "description": "Veröffentlichte Faktenchecks werden nach Thema, Herkunft der Behauptung und Ergebnis kategorisiert"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "korrekturen-statistik-dpa-meldungen",
+              "level": 4,
+              "name": "Korrekturen-Statistik dpa-Meldungen",
+              "color": "#9d174d",
+              "details": {
+                "description": "Interne Statistik der dpa über veröffentlichte Korrekturen und Richtigstellungen zu bereits verbreiteten Meldungen, erhoben aus dem dpa-Qualitätssicherungssystem (Corrections Management). Die dpa veröffentlicht jährliche Qualitätsberichte als Teil ihres Transparenzengagements; Korrekturdaten sind ein Indikator für journalistische Sorgfaltspflicht.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Detaillierte Korrekturdaten sind intern; aggregierte Jahresstatistiken zu Korrekturhäufigkeiten nach Ressort sind nach Aufbereitung für Qualitätsberichte publizierbar."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Corrections-Management-Auswertung",
+                    "description": "Systematische Protokollierung aller verbreiteten Korrekturen im dpa-System, Kategorisierung nach Fehlertyp (faktisch, orthografisch, Kontext) und Ressort für die Qualitätssicherung."
+                  },
+                  {
+                    "method": "Qualitätsbericht",
+                    "description": "Jährliche Aggregation der Korrekturdaten und Veröffentlichung im dpa-Qualitätsbericht als Teil der Selbstverpflichtung zur journalistischen Transparenz."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "quellenanalyse-nachrichtenagenturen-transparenzbericht",
+              "level": 4,
+              "name": "Quellenanalyse Nachrichtenagenturen Transparenzbericht",
+              "color": "#9d174d",
+              "details": {
+                "description": "Analyse der Quellengrundlagen von Agenturmeldungen (Primärquellen, Behördenmitteilungen, Eigenrecherche, Agentur-zu-Agentur-Meldungen) aus dem Hans-Bredow-Institut für Medienforschung und der Universität Hamburg im Rahmen von Forschungsprojekten zur Medienqualität. Transparenzberichte einzelner Agenturen (dpa Jahresbericht) ergänzen wissenschaftliche Studien.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Quellenanalysen in Transparenzberichten und wissenschaftlichen Studien sind öffentlich zugänglich und ohne Personenbezug aggregiert."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Inhaltsanalyse",
+                    "description": "Systematische quantitative Inhaltsanalyse von Stichproben der dpa-Meldungen nach Quellentyp, durchgeführt durch das Hans-Bredow-Institut in Hamburg nach standardisierten Kategorien."
+                  },
+                  {
+                    "method": "Transparenzberichterstattung",
+                    "description": "Veröffentlichung der Analyseergebnisse in akademischen Publikationen und als Beilagen zu Agentur-Jahresberichten, Nutzung durch Medienpolitik und Presseräte für regulatorische Bewertungen."
                   }
                 ]
               }

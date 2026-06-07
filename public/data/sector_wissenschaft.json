@@ -2073,6 +2073,100 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "langzeit-umweltmonitoring-messreihen",
+              "level": 4,
+              "name": "Langzeit-Umweltmonitoring Messreihen",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Kontinuierliche Umweltmessreihen aus Helmholtz-Großforschungsanlagen und Leibniz-Instituten, z.B. Atmosphärenchemie, Bodenqualität und Gewässerzustand. Daten stammen aus ICOS-, TERENO- und LTER-Netzwerken und dienen der Klimaforschung sowie behördlichen Umweltberichten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Umweltmessdaten aus öffentlich geförderten Forschungsinfrastrukturen unterliegen FAIR-Open-Access-Verpflichtungen und werden über offene Repositorien bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "NetCDF / HDF5"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Qualitätskontrolle",
+                    "description": "Automatisierte Plausibilitätsprüfung und manuelle Expertenvalidierung der Rohmessdaten vor Archivierung."
+                  },
+                  {
+                    "method": "Zeitreihenharmonisierung",
+                    "description": "Zusammenführung von Messreihen aus verschiedenen Stationen auf einheitliche Zeitauflösung und Koordinatenbezugssystem."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "labormesskampagnen-primaerdaten",
+              "level": 4,
+              "name": "Labormesskampagnen Primärdaten",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Rohdaten aus koordinierten Labormesskampagnen der Fraunhofer- und Max-Planck-Institute, etwa Materialcharakterisierungen, spektroskopische Analysen und biochemische Assays. Metadaten dokumentieren Messprozedur, Kalibrierung und beteiligte Institutionen gemäß RDMO-Standard.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich finanzierte Grundlagenforschungsdaten ohne Personenbezug; Veröffentlichung über institutionelle Repositorien (z.B. edmond.mpdl.mpg.de) ist Standard."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Kalibrierungsdokumentation",
+                    "description": "Erfassung von Gerätekalibrierdaten und Referenzstandards als Bestandteil der Primärdatenpakete."
+                  },
+                  {
+                    "method": "Reproduzierbarkeitsprüfung",
+                    "description": "Dreifachwiederholung ausgewählter Messpunkte zur statistischen Absicherung der Messunsicherheit nach GUM-Standard."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -2364,6 +2458,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "technologiereifegrad-statistiken-trl",
+              "level": 4,
+              "name": "Technologiereifegrad-Statistiken (TRL)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Aggregierte Statistiken zur TRL-Verteilung (Technology Readiness Level 1–9) in Fraunhofer- und Helmholtz-Forschungsprojekten, erhoben im Rahmen jährlicher Portfolioanalysen. Daten ermöglichen sektorübergreifende Vergleiche des Technologiereifegrads und die Steuerung von Transferaktivitäten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte TRL-Statistiken ohne Projektdetails sind nicht schutzbedürftig und werden standardmäßig in Jahresberichten veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Portfolio-Klassifikation",
+                    "description": "Jährliche Einordnung laufender Projekte in TRL-Stufen durch Projektleiter gemäß EU-Horizon-Leitfaden, anschließend aggregiert auf Institutsebene."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Longitudinale Auswertung der TRL-Verteilung über Förderprogramme zur Identifikation von Verschiebungen Richtung anwendungsnaher Forschung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fue-ausgaben-nach-forschungsfeld",
+              "level": 4,
+              "name": "F&E-Ausgaben nach Forschungsfeld",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Detaillierte Aufschlüsselung der Forschungs- und Entwicklungsausgaben der außeruniversitären Forschungsorganisationen (Fraunhofer, Helmholtz, Leibniz, MPG) nach Forschungsfeld (FORD-Klassifikation), Finanzierungsquelle und Bundesland. Quellen: Destatis FuE-Erhebung und institutionelle Finanzberichte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "F&E-Ausgabenstatistiken sind Teil der öffentlichen Rechenschaftspflicht öffentlich finanzierter Forschungsorganisationen und werden von Destatis veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "FORD-Klassifikation",
+                    "description": "Zuordnung der Ausgaben zu Forschungsfeldern gemäß OECD Frascati Manual Fields of Research and Development (FORD)."
+                  },
+                  {
+                    "method": "Konsolidierung",
+                    "description": "Bereinigung von Doppelzählungen bei gemeinsamen Projekten und Überführung in einheitliches Berichtsformat für Eurostat-Meldung."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -2652,6 +2836,96 @@
                   {
                     "method": "Politikanalyse",
                     "description": "Ermöglicht Metaanalysen über Nachfrage nach wissenschaftlicher Expertise in verschiedenen Politikbereichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gutachten-metadaten-register",
+              "level": 4,
+              "name": "Gutachten-Metadaten-Register",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Strukturierte Metadaten zu wissenschaftlichen Gutachten und Expertisen der außeruniversitären Forschungsinstitute, einschließlich Thema, Auftraggeber (Bundesministerium, EU-Kommission, Bundestag), Abgabedatum und zentralen Empfehlungen. Ermöglicht Nachvollziehbarkeit und Vernetzung wissenschaftlicher Beratungsleistungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Metadaten zu öffentlich beauftragten Gutachten sind nach IFG und im Sinne von Open Government publizierbar; Volltexte werden separat gehandhabt."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Themenklassifikation",
+                    "description": "Zuordnung jedes Gutachtens zu Politikfeldern (SDG-Zielen und FORD-Forschungsfeldern) für übergreifende Auswertbarkeit."
+                  },
+                  {
+                    "method": "Linked-Data-Anreicherung",
+                    "description": "Verknüpfung von Gutachten-Metadaten mit Wikidata-Entitäten für Auftraggeber und Themenfelder zur semantischen Vernetzung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "politikberatungs-aktivitaeten-statistik",
+              "level": 4,
+              "name": "Politikberatungs-Aktivitäten Statistik",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Aggregierte Statistiken zu Politikberatungsaktivitäten wissenschaftlicher Institutionen: Anzahl Stellungnahmen, Anhörungen, Mitgliedschaften in Beratungsgremien und Policy-Briefs pro Jahr und Themenfeld. Daten werden aus institutionellen Jahresberichten und dem Transparenzregister des Bundestages zusammengeführt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aktivitätsstatistiken zur Wissenschaftskommunikation sind öffentlichkeitsrelevant und unterliegen keinen Einschränkungen."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Berichtsdatenextraktion",
+                    "description": "Semi-automatische Extraktion von Beratungsaktivitäten aus institutionellen Jahres- und Nachhaltigkeitsberichten mittels NLP."
+                  },
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Vergleich der Beratungsintensität über Wahlperioden hinweg zur Messung des wissenschaftspolitischen Einflusses."
                   }
                 ]
               }
@@ -2996,6 +3270,100 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "fdz-bestandsstatistiken-archivierte-daten",
+              "level": 4,
+              "name": "FDZ Bestandsstatistiken archivierter Forschungsdaten",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Quantitative Bestandsstatistiken der deutschen Forschungsdatenzentren (GESIS, FDZ-BA, FDZ-Gesundheit, RDC Destatis) über archivierte Datensätze nach Disziplin, Erhebungsjahr, Dateigröße und Dokumentationsstatus. Daten werden jährlich im Rahmen des RatSWD-Berichtswesens erhoben.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Bestandsstatistiken ohne Rückschluss auf einzelne Forschungsdatensätze oder Nutzer sind uneingeschränkt publizierbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "FDZ-Bestandsabfrage",
+                    "description": "Standardisierte Datenabfrage bei allen RatSWD-akkreditierten Forschungsdatenzentren nach einheitlichem Erhebungsrahmen."
+                  },
+                  {
+                    "method": "Disziplinzuordnung",
+                    "description": "Klassifikation der Bestände nach Destatis-Wissenschaftszweigklassifikation und OECD FORD für internationale Vergleichbarkeit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "langzeitarchivierungs-statusberichte",
+              "level": 4,
+              "name": "Langzeitarchivierungs-Statusberichte",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Periodische Statusberichte zur Langzeitarchivierung von Forschungsdaten in deutschen FDZ, dokumentieren Migrationsaktivitäten, Formatveralterungsrisiken, Integritätsprüfungsergebnisse (Checksummen) und OAIS-Konformitätsbewertungen. Erstellt nach ISO 16363 und nestor-Kriterien.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Technische Statusberichte zur Archivierungsinfrastruktur sind Teil der Transparenzpflichten öffentlich finanzierter Dateninfrastrukturen."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "OAIS-Audit",
+                    "description": "Jährliche Überprüfung der Archivierungsprozesse gegen das Open Archival Information System Referenzmodell (ISO 14721)."
+                  },
+                  {
+                    "method": "Integritätsmonitoring",
+                    "description": "Automatisierte Checksummenprüfung aller archivierten Dateien mit Eskalationsprotokoll bei Abweichungen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -3328,6 +3696,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "datenzugang-antragsvolumen-bearbeitungszeiten",
+              "level": 4,
+              "name": "Datenzugang Antragsvolumen und Bearbeitungszeiten",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Monatliche und jährliche Statistiken zu Datenzugangsanträgen bei deutschen FDZ: Antragsvolumen, durchschnittliche Bearbeitungszeiten, Ablehnungsquoten und häufigste Ablehnungsgründe. Datenquelle: FDZ-interne Antragsmanagement-Systeme; berichtet an RatSWD und BMBF.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Prozesskennzahlen ohne Personenbezug sind zur Evaluation der Datenzugangsinfrastruktur öffentlich bereitzustellen."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Prozesszeit-Messung",
+                    "description": "Automatisierte Erfassung von Antragseingang, Bearbeitungsschritten und Bescheid-Datum im FDZ-Workflow-System."
+                  },
+                  {
+                    "method": "Trendauswertung",
+                    "description": "Quartalsweise Analyse von Volumen- und Zeittrends zur Kapazitätsplanung und Berichtererstattung an Fördergebende."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "scientific-use-file-nutzungsstatistiken",
+              "level": 4,
+              "name": "Scientific-Use-File Nutzungsstatistiken",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Nutzungsstatistiken für Scientific-Use-Files (SUF) der deutschen FDZ: Downloads, aktive Nutzungslizenzen, Nutzende nach Institutionstyp (Universität, außeruniv. Forschung, Verwaltung) und Forschungsthema. Grundlage für Wirkungsnachweise gegenüber Datenproduzenten und Fördermittelgebern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Nutzungsstatistiken ohne Identifikation einzelner Forschender sind nach dem Vorbild von Make Data Count frei publizierbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Usage-Logging",
+                    "description": "Pseudonymisierte Erfassung von Download-Events und Lizenzaktivierungen im FDZ-Portal gemäß COUNTER-Standard."
+                  },
+                  {
+                    "method": "Sektorklassifikation",
+                    "description": "Zuordnung der Nutzenden zu Institutionssektoren anhand von ROR-IDs (Research Organization Registry) der Antragstellenden."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -3616,6 +4074,100 @@
                   {
                     "method": "Qualitätsverbesserung",
                     "description": "Iterative Optimierung der Metadaten und Zugangswege auf Basis der Audit-Ergebnisse."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "metadaten-qualitaetsbewertung-fair-indikatoren",
+              "level": 4,
+              "name": "Metadaten-Qualitätsbewertungen nach FAIR-Indikatoren",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Automatisierte Qualitätsbewertungen von Forschungsdatensatz-Metadaten in deutschen FDZ nach den F-A-I-R-Indikatoren (je 0–100 Punkte pro Dimension), erhoben mittels F-UJI-Assessment-Tool. Ermöglicht Benchmarking zwischen Repositorien und gezielte Verbesserung der Metadatenqualität.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "FAIR-Bewertungsscores aggregierter Repositoriums-Metadaten sind keine schutzbedürftigen Daten und werden im Rahmen von GO FAIR und RDA Communities geteilt."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "F-UJI-Automatisierung",
+                    "description": "Batch-Bewertung aller registrierten Datensätze mit dem F-UJI Automated FAIR Data Assessment Tool via API."
+                  },
+                  {
+                    "method": "Schwachstellen-Reporting",
+                    "description": "Aggregation der häufigsten FAIR-Schwachstellen pro Repositorium und Generierung von Verbesserungsempfehlungen für Datenkuratorinnen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "doi-vergabe-statistiken-forschungsdaten",
+              "level": 4,
+              "name": "DOI-Vergabestatistiken für Forschungsdatensätze",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Jährliche Statistiken zur DOI-Vergabe für Forschungsdatensätze durch deutsche DataCite-Mitglieder (GESIS, TIB, DKRZ u.a.): Anzahl neuer DOIs nach Disziplin, Repositorium und Registrierungsquelle. Daten stammen aus der DataCite-REST-API und werden für nationale Forschungsinfrastruktur-Berichte aufbereitet.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DOI-Metadaten und Vergabestatistiken sind bei DataCite öffentlich zugänglich und werden standardmäßig über die DataCite-API bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "DataCite-API-Harvesting",
+                    "description": "Monatlicher Abruf von DOI-Registrierungsstatistiken nach FORD-Disziplin über die öffentliche DataCite-REST-API."
+                  },
+                  {
+                    "method": "Trendvisualisierung",
+                    "description": "Aufbereitung von Wachstumskurven der Datenpublikationen als Indikator für die Adoption von FAIR-Prinzipien in deutschen Forschungseinrichtungen."
                   }
                 ]
               }
@@ -4036,6 +4588,143 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "akademiegutachten-metadaten-themenregister",
+              "level": 4,
+              "name": "Akademiegutachten Metadaten-Themenregister",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Vollständiges Metadaten-Register wissenschaftlicher Stellungnahmen der Leopoldina, acatech und Union der Akademien, strukturiert nach Thema (SDG, FORD), Auftraggeber, Erscheinungsjahr, beteiligten Fachgebieten und Empfehlungstyp. Dient der Nachvollziehbarkeit wissenschaftlicher Politikberatung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Akademiegutachten werden von öffentlich finanzierten Einrichtungen erstellt und sind nach Open-Government-Grundsätzen frei zugänglich; Metadaten sind uneingeschränkt publizierbar."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Inhaltserschließung",
+                    "description": "Intellektuelle Verschlagwortung aller Akademiestellungnahmen nach AGROVOC und GND-Thesaurus durch Bibliotheksfachpersonal."
+                  },
+                  {
+                    "method": "Linked-Open-Data-Export",
+                    "description": "Serialisierung des Registers als RDF/Turtle für Integration in den Deutschen Wissensgraph und Wikidata."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zitationsraten-akademiegutachten",
+              "level": 4,
+              "name": "Zitationsraten von Akademiegutachten",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Bibliometrische Auswertung der Zitationsraten von Akademiegutachten (Leopoldina, acatech) in wissenschaftlicher Literatur und Regierungsdokumenten, erhoben über Web of Science, Scopus und parlamentarische Dokumentendatenbanken. Indikator für wissenschaftspolitischen Impact.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rohdaten aus kommerziellen Datenbanken (WoS, Scopus) sind lizenzpflichtig; aufbereitete Aggregatstatistiken können nach Klärung mit Datenlieferanten veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Bibliometrische Analyse",
+                    "description": "Automatisierter Abgleich von Akademiegutachten-Titeln und Autoren gegen Zitationsdatenbanken mittels DOI- und Fuzzy-Title-Matching."
+                  },
+                  {
+                    "method": "Policy-Impact-Scoring",
+                    "description": "Gewichtete Zählung von Zitationen in Gesetzestexten, Bundestagsdrucksachen und EU-Regulierungsfolgenabschätzungen als Policy-Impact-Score."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "akademieberatung-bundesministerien-aktivitaeten",
+              "level": 4,
+              "name": "Akademieberatungsleistungen für Bundesministerien",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Strukturierte Erfassung aller formellen Beratungsleistungen der Akademien (Anhörungen, Stellungnahmen auf Anfrage, Gremienmitgliedschaften) für Bundesministerien und Bundesbehörden pro Legislaturperiode und Fachressort. Quellen: Akademie-Jahresberichte, Bundestags-Ausschussprotkolle.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Formelle Beratungsaktivitäten öffentlich finanzierter Akademien gegenüber staatlichen Stellen sind nach Transparenzgrundsätzen vollständig publizierbar."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Ressortklassifikation",
+                    "description": "Zuordnung jeder Beratungsleistung zu federführendem Bundesministerium und Politikfeld nach EPO-Klassifikation."
+                  },
+                  {
+                    "method": "Zeitreihenvergleich",
+                    "description": "Auswertung der Beratungsintensität im Längsschnitt über Legislaturperioden zur Messung der Akademienachfrage."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4452,6 +5141,139 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "akademiemitglieder-struktur-fach-institution",
+              "level": 4,
+              "name": "Akademiemitglieder-Struktur nach Fach und Institution",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Aggregierte Strukturdaten zu Akademiemitgliedschaften (Leopoldina, acatech, Landesakademien) nach Fachgebiet (FORD), Heimatinstitution, Karrierestufe und Geschlecht. Gibt Aufschluss über Repräsentation von Disziplinen und Institutionstypen in deutschen Gelehrtengesellschaften.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Mitgliederstruktur-Statistiken ohne Einzelpersonenidentifikation sind öffentlich; Leopoldina veröffentlicht diese Daten bereits in Jahresberichten."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Disziplin-Mapping",
+                    "description": "Zuordnung aller Mitglieder zu FORD-Hauptkategorien anhand von Institutionszugehörigkeit und Publikationsprofil über OpenAlex-API."
+                  },
+                  {
+                    "method": "Diversitätsanalyse",
+                    "description": "Berechnung von Diversitätsindizes (Shannon, Herfindahl) für Fach- und Institutionsverteilung im Zeitverlauf."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "akademien-internationale-kooperationsbeziehungen",
+              "level": 4,
+              "name": "Internationale Kooperationsbeziehungen der Akademien",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Netzwerkdaten zu formellen internationalen Kooperationsbeziehungen deutscher Wissenschaftsakademien (Partnerakademien, gemeinsame Programme, Korrespondierende Mitglieder im Ausland). Quellen: Akademie-Jahresberichte, IAP-Mitgliedschaftsverzeichnisse, ALLEA-Dokumentation.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Formelle institutionelle Kooperationsbeziehungen sind öffentlich dokumentiert und werden von Akademien auf ihren Webseiten veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Netzwerkkartierung",
+                    "description": "Erstellung eines bilateralen Netzwerkgraphen (Knoten: Akademien, Kanten: Kooperationstypen) aus strukturierten Kooperationsverzeichnissen."
+                  },
+                  {
+                    "method": "Geokodierung",
+                    "description": "Anreicherung der Partnerinstitutionen mit ROR-IDs und Geokoordinaten für kartographische Darstellung der globalen Reichweite."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "nachwuchswissenschaftler-foerderprogramme-akademien",
+              "level": 4,
+              "name": "Nachwuchswissenschaftler-Förderprogramme der Akademien",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Statistische Übersicht zu Nachwuchsförderaktivitäten der deutschen Akademien: Stipendienprogramme, Young-Academy-Mitgliedschaften, Sommerschulen und Mentoring-Programme nach Fachgebiet, Förderdauer und Anzahl geförderter Personen. Quelle: Nationale Akademie Leopoldina, Junge Akademie, acatech Young Engineers.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Statistiken zu Nachwuchsförderprogrammen öffentlich finanzierter Akademien sind transparenzpflichtig und werden in Förderberichten veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Programmvergleich",
+                    "description": "Standardisierte Erfassung aller Nachwuchsprogramme nach einheitlichem Merkmalsschema (Förderdauer, Zielgruppe, Fachgebiet, Budget)."
+                  },
+                  {
+                    "method": "Karriereverbleibstudie",
+                    "description": "Longitudinale Verfolgung des Karriereverlaufs geförderter Nachwuchswissenschaftler über ORCID-ID-basiertes Tracking."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -4862,6 +5684,139 @@
                   {
                     "method": "Gleichstellungsmonitoring",
                     "description": "Transparenznachweis für geschlechtergerechte und karrierestufenangemessene Förderstrukturen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "foerderprojekt-portfolio-fachgebiet-laufzeit",
+              "level": 4,
+              "name": "Förderprojekt-Portfolio nach Fachgebiet und Laufzeit",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Strukturierte Übersicht des laufenden und abgeschlossenen Förderprojekt-Portfolios der DFG, BMBF und EU (Horizon Europe) nach FORD-Fachgebiet, Projektlaufzeit, Fördervolumen und beteiligten Institutionen. Quellen: DFG GEPRIS-Datenbank, BMBF Förderkatalog, CORDIS-API.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Projektdaten aus öffentlichen Förderprogrammen sind nach dem Grundsatz der Transparenz öffentlicher Mittelverwendung vollständig publizierbar; DFG veröffentlicht GEPRIS bereits als Open Data."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "GEPRIS-API-Harvesting",
+                    "description": "Automatisierter Abruf und Normalisierung der DFG GEPRIS-Projektdaten via REST-API mit FORD-Klassifikationsanreicherung."
+                  },
+                  {
+                    "method": "Portfolio-Analyse",
+                    "description": "Berechnung von Förderschwerpunkten, Laufzeitverteilungen und Institutionenkonzentrationsindizes für strategisches Fördercontrolling."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "foerderquoten-nach-antragstyp",
+              "level": 4,
+              "name": "Förderquoten nach Antragstyp",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Jährliche Erfolgsquoten für Förderanträge nach Antragstyp (Einzelantrag, Forschergruppe, Sonderforschungsbereich, Exzellenzcluster, ERC Grants) und Fachgebiet, erhoben von DFG, BMBF und EU-Kommission. Zentrale Kennzahl für Wettbewerbsintensität im deutschen Wissenschaftssystem.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Förderquoten sind standardmäßige Leistungskennzahlen, die DFG und EU-Kommission bereits öffentlich in Jahresberichten ausweisen."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Kohortenverfolgung",
+                    "description": "Verfolgung aller Anträge eines Ausschreibungsjahres von Einreichung über Begutachtung bis zur Entscheidung für exakte Erfolgsquoten-Berechnung."
+                  },
+                  {
+                    "method": "Panelvergleich",
+                    "description": "Disaggregierung der Erfolgsquoten nach Gutachtergremium (DFG-Fachkollegien, ERC-Panels) für Fairness-Analysen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "overhead-kosten-statistik-forschungsfoerderung",
+              "level": 4,
+              "name": "Overhead-Kosten-Statistik Forschungsförderung",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Statistische Auswertung zu Programm- und Verwaltungspauschalen (Overheads) in deutschen und europäischen Förderprogrammen, aufgeschlüsselt nach Förderinstrument, Empfängerinstitutionstyp und Projektgröße. Quellen: DFG-Verwendungsnachweise, EU-Finanzberichte, BMBF-Controlling-Daten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Institutionsspezifische Overhead-Daten aus Verwendungsnachweisen sind nicht ohne Weiteres öffentlich; nach Aggregation auf Institutionstyp-Ebene und Einholung von Zustimmungen publizierbar."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verwendungsnachweis-Auswertung",
+                    "description": "Extraktion von Overhead-Positionen aus standardisierten DFG-Verwendungsnachweisformularen und Überführung in einheitliches Kostenstrukturschema."
+                  },
+                  {
+                    "method": "Internationaler Benchmarking",
+                    "description": "Vergleich der deutschen Overhead-Quoten mit NIH Facilities & Administrative Costs und EU-Artikel-29-Pauschalen."
                   }
                 ]
               }
@@ -5281,6 +6236,147 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "publikationsoutput-gefoerderter-projekte",
+              "level": 4,
+              "name": "Publikationsoutput geförderter Projekte",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Bibliometrische Auswertung des Publikationsoutputs aus DFG-, BMBF- und EU-geförderten Projekten: Anzahl Publikationen, Open-Access-Anteil, Journal-Impact, h-Index-Entwicklung und Zitationsnetzwerke. Quellen: OpenAlex-API, Unpaywall-Datenbank, verknüpft mit GEPRIS- und CORDIS-Förderdaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte bibliometrische Kennzahlen aus öffentlich zugänglichen Literaturdatenbanken (OpenAlex, Unpaywall) sind uneingeschränkt publizierbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Förderkennzeichen-Matching",
+                    "description": "Automatisierter Abgleich von Förder-Grant-IDs in Danksagungen wissenschaftlicher Publikationen via OpenAlex Funder-API."
+                  },
+                  {
+                    "method": "OA-Monitoring",
+                    "description": "Klassifikation aller Publikationen nach Open-Access-Typ (Gold, Green, Hybrid, Closed) zur Messung der OA-Compliance."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wirkungsanalysen-foerderinstrumente",
+              "level": 4,
+              "name": "Wirkungsanalysen zu Förderinstrumenten",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Kausalanalytische Wirkungsstudien zu deutschen Forschungsförderinstrumenten (DFG-Schwerpunktprogramme, BMBF-Verbundprojekte, Exzellenzinitiative) hinsichtlich Netzwerkbildung, Karriereentwicklung geförderter Wissenschaftler und wirtschaftlichem Wissenstransfer. Auftraggeber: BMBF, DFG, iFQ.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Evaluationsstudien öffentlicher Förderprogramme werden standardmäßig veröffentlicht; anonymisierte Mikrodaten gehen an FDZ, Berichte sind frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Difference-in-Differences",
+                    "description": "Kausale Identifikation des Fördereffekts durch Vergleich von geförderten Projekten mit Kontrollgruppe nicht geförderter Antragstellender."
+                  },
+                  {
+                    "method": "Netzwerkanalyse",
+                    "description": "Messung von Koautorschafts- und Projektnetzwerk-Verdichtung vor und nach Förderperiode als Indikator für Kollaborationseffekte."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "patentanmeldungen-gefoerderte-projekte",
+              "level": 4,
+              "name": "Patentanmeldungen aus geförderten Projekten",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Statistiken zu Patentanmeldungen und -erteilungen aus öffentlich geförderten Forschungsprojekten (DFG, BMBF, EU), aufgeschlüsselt nach Technologiefeld (IPC-Klasse), Anmeldertyp (Universität, Unternehmen, Forschungseinrichtung) und Förderprogramm. Quellen: DPMA, EPO PATSTAT, verknüpft mit Förderdatenbanken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Patentdaten aus öffentlichen Registern (DPMA, EPO) sind öffentlich zugänglich; Verknüpfung mit aggregierten Förderdaten ohne Geschäftsgeheimnisse ist publizierbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Förderkennzeichen-Patent-Linking",
+                    "description": "Verknüpfung von Patentzitationen öffentlicher Förderquellen (NPL-Citations auf Förderbescheide) mit GEPRIS/CORDIS-Projektdaten via PATSTAT-API."
+                  },
+                  {
+                    "method": "Technologiefeld-Klassifikation",
+                    "description": "Zuordnung aller verknüpften Patente zu CPC-Technologieklassen für Analyse der Innovationsfelder öffentlich geförderter Forschung."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -5694,6 +6790,143 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ifo-geschaeftsklimaindex-rohdaten",
+              "level": 4,
+              "name": "ifo Geschäftsklimaindex-Rohdaten",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Monatliche Rohdaten des ifo Geschäftsklimaindex, erhoben durch das ifo Institut München bei rund 9.000 Unternehmen des verarbeitenden Gewerbes, Dienstleistungssektors, Handels und Baus. Die Daten umfassen Lagebeurteilungen und Erwartungskomponenten auf Branchenebene sowie aggregierte Klimawerte. Als wichtigster deutscher Konjunkturfrühindikator werden die Zeitreihen seit 1972 archiviert.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Indexwerte werden publiziert; Einzelmeldungen unterliegen Vertraulichkeit und Datenlizenzvereinbarungen mit Umfrageteilnehmern. Aufbereitete Zeitreihen sind über ifo Data Center zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Saisonbereinigung",
+                    "description": "X-13ARIMA-SEATS-Verfahren zur Bereinigung saisonaler und kalenderbedingter Effekte in den Monatszeitreihen."
+                  },
+                  {
+                    "method": "Indexaggregation",
+                    "description": "Gewichtete Aggregation der Branchen-Subindizes zu Gesamtklimazahlen nach wirtschaftlicher Bedeutung der Sektoren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gemeinschaftsdiagnose-prognose-vergleichsdaten",
+              "level": 4,
+              "name": "Konjunkturprognose-Vergleichsdaten Gemeinschaftsdiagnose",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Halbjährliche Prognose- und Ist-Vergleichsdaten der Gemeinschaftsdiagnose der führenden deutschen Wirtschaftsforschungsinstitute (ifo, IfW Kiel, IWH, RWI, DIW). Enthält Prognosen für BIP-Wachstum, Inflation, Arbeitslosenquote und Außenhandel mit nachträglichem Forecast-Error-Tracking über mehrere Jahre. Dient der Qualitätsbewertung institutioneller Wirtschaftsprognosen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Prognosedaten werden zweimal jährlich gemeinsam veröffentlicht und sind vollständig frei zugänglich. Historische Prognose-Ist-Vergleiche werden von den beteiligten Instituten offen bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Forecast-Evaluation",
+                    "description": "Berechnung von mittlerem absolutem Fehler (MAE) und Root Mean Squared Error (RMSE) je Prognosevariable und Prognosehorizont."
+                  },
+                  {
+                    "method": "Konsensprognose-Aggregation",
+                    "description": "Erstellung von Konsensschätzungen durch einfache und gewichtete Mittelwertbildung der Einzelprognosen der beteiligten Institute."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zew-finanzmarktbericht-sentimentindex",
+              "level": 4,
+              "name": "ZEW Finanzmarktbericht Sentimentindizes",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Monatliche Sentimentindizes des ZEW Mannheim, erhoben bei rund 350 Finanzmarktexperten aus Banken, Versicherungen und Finanzabteilungen großer Unternehmen. Umfasst Konjunkturerwartungen und aktuelle Lagebeurteilungen für Deutschland, Eurozone und ausgewählte Drittländer. Die Zeitreihen reichen bis 1991 zurück und werden am zweiten Dienstag jeden Monats veröffentlicht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ZEW veröffentlicht die aggregierten Sentimentindizes als freie Zeitreihen auf der ZEW-Website. Historische Daten sind vollständig im ZEW Data Center als Download verfügbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Saldobildung",
+                    "description": "Berechnung des Saldos aus positiven und negativen Anteilen der Experteneinschätzungen als Differenz der Prozentwerte."
+                  },
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Korrelationsanalyse der Sentimentindizes mit tatsächlichen BIP-Wachstumsraten zur Validierung der Vorlaufeigenschaft."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6103,6 +7336,147 @@
                   {
                     "method": "Verteilungsanalyse",
                     "description": "Untersuchung von Beitrags- und Leistungsgerechtigkeit zwischen Einkommensgruppen und Altersgruppen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mindestlohn-evaluation-wirkungsanalyse",
+              "level": 4,
+              "name": "Mindestlohn-Evaluation Reformwirkungsanalysen",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Forschungsdaten aus den gesetzlich vorgeschriebenen Evaluationen des deutschen Mindestlohns durch die Mindestlohnkommission, koordiniert durch IAB, DIW und RWI. Enthält Differenz-in-Differenzen-Schätzungen zu Beschäftigungseffekten, Lohnverteilungsveränderungen und Betriebsanpassungen vor und nach den Mindestlohnerhöhungen seit 2015. Mikrodatengrundlage bildet die Beschäftigungsstatistik der Bundesagentur für Arbeit.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Analyseergebnisse und aggregierte Befunde werden in Evaluationsberichten publiziert. Zugrundeliegende Mikrodaten (BA-Beschäftigungsstatistik) erfordern Datenzugangsgenehmigung über das FDZ der BA."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Differenz-in-Differenzen",
+                    "description": "Kausale Identifikation von Mindestlohneffekten durch Vergleich von Treat- und Kontrollgruppen vor und nach Reformeinführung unter Kontrolle für Vortrends."
+                  },
+                  {
+                    "method": "Lohnverteilungsschätzung",
+                    "description": "Quantilregressionen und RIF-Regressionen zur Messung von Verteilungseffekten des Mindestlohns entlang der gesamten Lohnverteilung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "verteilungswirkungsmodelle-sozialtransfers",
+              "level": 4,
+              "name": "Verteilungswirkungsmodelle Sozialtransfers",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Modellierungsdaten zur Verteilungswirkung staatlicher Transfers und Abgaben auf Haushaltseinkommen, erstellt durch DIW Berlin, IfW Kiel und ZEW Mannheim. Basierend auf SOEP- und EVS-Daten werden Lorenz-Kurven, Gini-Koeffizienten und Dezilverhältnisse für Szenarien mit und ohne Transfersystem berechnet. Ermöglicht die Quantifizierung des Umverteilungseffekts einzelner Politikinstrumente.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Verteilungskennzahlen und Modelloutputs werden publiziert. Mikrodatengrundlagen (SOEP, EVS) erfordern separate Datenzugangsvereinbarungen mit DIW bzw. Statistischem Bundesamt."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Mikrosimulation",
+                    "description": "Statische Mikrosimulation der Steuer- und Transfersysteme auf Basis repräsentativer Haushaltsbefragungsdaten zur Berechnung verfügbarer Einkommen."
+                  },
+                  {
+                    "method": "Dekompositionsanalyse",
+                    "description": "Zerlegung von Ungleichheitsveränderungen in Beiträge einzelner Einkommenskomponenten und Transferarten nach Shorrocks-Shapley-Methode."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mikrosimulation-steuer-transferreformen",
+              "level": 4,
+              "name": "Mikrosimulationsdaten Steuer- und Transferreformen",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Simulationsergebnisse aus EUROMOD und institutseigenen Mikrosimulationsmodellen (z.B. FiFoSiM, IZAΨMOD) zu geplanten oder hypothetischen Steuer- und Transferreformen in Deutschland. Die Daten umfassen fiskalische Kosten, Gewinner-Verlierer-Analysen nach Einkommensdezilen sowie Arbeitsangebotselastizitäten. Wird von ZEW, ifo und DIW für Politikberatung des BMF und BMAS eingesetzt.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Modelloutputs und Politikszenarien werden in Forschungsberichten und Working Papers publiziert. EUROMOD-Modell ist open source; Eingabemikrodaten (EU-SILC, SOEP) erfordern Datenlizenz."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Verhaltenseffektmodellierung",
+                    "description": "Integration von Arbeitsangebotselastizitäten in statische Mikrosimulationsmodelle zur Annäherung an dynamische Verhaltensanpassungen auf Reformmaßnahmen."
+                  },
+                  {
+                    "method": "Fiskalische Kostenschätzung",
+                    "description": "Hochrechnung von Mikrosimulationsergebnissen auf Bevölkerungsebene mit Kalibrierungsgewichten zur Schätzung aggregierter Haushaltswirkungen von Steuerreformszenarios."
                   }
                 ]
               }
@@ -6523,6 +7897,143 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "haw-transferprojekt-datenbank-kmu",
+              "level": 4,
+              "name": "Transferprojekt-Datenbank HAW/KMU-Kooperationen",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Strukturierte Datenbank aller geförderten Transferprojekte zwischen Hochschulen für Angewandte Wissenschaften und kleinen und mittleren Unternehmen, gespeist aus BMBF-Förderstatistiken und Hochschulberichtssystemen. Enthält Projektlaufzeiten, Fördervolumen, beteiligte Branchen und Transferthemen (Digitalisierung, Nachhaltigkeit, Produktion). Basis für Wirkungsanalysen zum Wissenstransfer in den Mittelstand.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Projektdaten aus öffentlich geförderter Forschung werden im BMBF-Förderkatalog veröffentlicht. Hochschulseitige Daten werden über Hochschulstatistiken nach §3 HStatG berichtet."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Textklassifikation",
+                    "description": "Automatische Zuordnung von Projekttiteln und -beschreibungen zu Technologiefeldern und Branchen mittels vortrainierter Sprachmodelle und manuell geprüfter Taxonomie."
+                  },
+                  {
+                    "method": "Netzwerkanalyse",
+                    "description": "Erstellung von Kooperationsnetzwerken zwischen HAW-Instituten und Unternehmenspartnern zur Identifikation von Transferschwerpunkten und Kooperationsclustern."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "haw-praxissemester-statistiken-branche",
+              "level": 4,
+              "name": "Praxissemester-Statistiken nach Branche und Studiengang",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Jährliche Statistiken zu absolvierten Praxissemestern und Praxisphasen an Hochschulen für Angewandte Wissenschaften, aufgeschlüsselt nach Studiengang, Fachrichtung und Wirtschaftsbranche des Praxisgebers. Erhoben über Hochschulverwaltungssysteme und ergänzt durch Alumni-Befragungen. Enthält Angaben zu Vergütung, Übernahmequoten und Zufriedenheitswerten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Statistiken werden in Hochschulberichten und Qualitätsberichten veröffentlicht. Personenbezogene Angaben aus Befragungen erfordern Anonymisierung vor Weitergabe."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "k-Anonymisierung (k≥5) von Individualdaten nach Studiengang und Branche vor Veröffentlichung zur Wahrung des Datenschutzes."
+                  },
+                  {
+                    "method": "Branchenklassifikation",
+                    "description": "Zuordnung der Praxisbetriebe zur WZ 2008 Wirtschaftszweigklassifikation des Statistischen Bundesamts für sektorale Vergleichbarkeit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "haw-patente-gebrauchsmuster-forschung",
+              "level": 4,
+              "name": "Patente und Gebrauchsmuster aus HAW-Forschung",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Bibliometrische Daten zu Patentanmeldungen und erteilten Patenten sowie Gebrauchsmustern, die aus Forschungsprojekten an Hochschulen für Angewandte Wissenschaften hervorgegangen sind. Quelldaten stammen aus dem Deutschen Patent- und Markenamt (DPMA) sowie dem European Patent Office (EPO PATSTAT). Enthält IPC-Klassifikationen, Anmelder, Erfinder-Hochschulzugehörigkeiten und Zitationsnetzwerke.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Patentdaten sind öffentliche Dokumente und über DPMA DEPATISnet sowie EPO Open Patent Services (OPS) als offene Daten verfügbar. Hochschulzuordnungen basieren auf öffentlichen Anmelderdaten."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Disambiguierung",
+                    "description": "Automatische Zuordnung von Patentanmeldern zu Hochschulinstitutionen mittels Namensvariantenabgleich und geografischer Verifikation (GRID/ROR-Identifier)."
+                  },
+                  {
+                    "method": "Technologiefeldanalyse",
+                    "description": "Mapping von IPC-Patentklassen auf Technologiefeldtaxonomien (CPC, WIPO IPC-Technology Concordance) zur Analyse der Innovationsschwerpunkte an HAW."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6936,6 +8447,143 @@
                   {
                     "method": "Studienqualität",
                     "description": "Rückmeldungen von Absolvent:innen zur Vorbereitung durch das Studium auf den Beruf."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "dual-studierenden-struktur-studiengang-partner",
+              "level": 4,
+              "name": "Dual-Studierenden-Struktur nach Studiengang und Unternehmenspartner",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Jährliche Bestandsstatistiken zu dual Studierenden an deutschen Hochschulen und Berufsakademien, aufgeschlüsselt nach Studiengang, Hochschultyp, Bundesland und Unternehmenspartner-Branche. Datengrundlage bildet die AusbildungPlus-Datenbank des BIBB sowie die amtliche Hochschulstatistik. Enthält Zeitreihen seit 2004 und ermöglicht Trendanalysen zur Entwicklung dualer Studienmodelle.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BIBB AusbildungPlus-Daten werden als offene Statistik veröffentlicht. Amtliche Hochschulstatistik wird durch Statistisches Bundesamt nach HStatG publiziert und ist frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Datenlinkage",
+                    "description": "Verknüpfung der BIBB-Unternehmenspartnerdaten mit der amtlichen Hochschulstatistik über gemeinsame Hochschul-IDs zur Erstellung konsistenter Gesamtstatistiken."
+                  },
+                  {
+                    "method": "Zeitreihenfortschreibung",
+                    "description": "Jährliche Aktualisierung der Bestandsstatistiken mit Konsistenzprüfung gegenüber Vorjahreswerten und Plausibilitätskontrolle bei Schwellenwertüberschreitungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "duale-absolventen-verbleibstudie",
+              "level": 4,
+              "name": "Verbleibstudie Absolventen dualer Studiengänge",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Längsschnittdaten aus Absolventenbefragungen dual Studierender, durchgeführt 1, 3 und 5 Jahre nach Studienabschluss durch das DZHW und einzelne Hochschulen. Erfasst werden Übernahme durch den Ausbildungspartner, Berufseinstieg, Gehaltsentwicklung und Bildungsbiografien nach dem Studium. Ermöglicht Vergleiche mit Absolventen konventioneller Studiengänge hinsichtlich Arbeitsmarkterfolg.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Befragungsergebnisse werden in DZHW-Publikationen und Hochschulberichten veröffentlicht. Individuelle Befragungsdaten erfordern Anonymisierung und Zustimmung der Befragten gemäß DSGVO."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Panelanalyse",
+                    "description": "Schätzung von Fixed-Effects-Modellen auf Individualpanel-Ebene zur Kontrolle unbeobachteter Heterogenität beim Vergleich dualer und konventioneller Studienabsolventen."
+                  },
+                  {
+                    "method": "Selektionskorrektur",
+                    "description": "Heckman-Selektionskorrektur für nicht-zufälligen Studienwahlprozess bei dualen Studiengängen zur Vermeidung von Selektionsbias bei Arbeitsmarktergebnisvergleichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "dual-studierende-verguetungsstatistik",
+              "level": 4,
+              "name": "Vergütungsstatistik Dualstudium",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Jährliche Erhebung der Vergütungen dual Studierender in der Praxisphase, differenziert nach Studiengang, Unternehmensbranche, Unternehmensgröße und Bundesland. Durchgeführt vom BIBB in Kooperation mit Unternehmensdachverbänden. Enthält Median-, Quartils- und Mittelwerte sowie Zeitreihen zur Vergütungsentwicklung seit 2010 als Ergänzung zur Ausbildungsvergütungserhebung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BIBB veröffentlicht Vergütungsstatistiken jährlich als freie Tabellen auf der BIBB-Website. Anonymisierte Branchenmittelwerte unterliegen keiner Geheimhaltungspflicht."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Repräsentativitätsprüfung",
+                    "description": "Abgleich der Stichprobenstruktur mit BIBB-Berufsbildungsstatistik zur Sicherstellung der Repräsentativität für alle dual Studierenden nach Branche und Region."
+                  },
+                  {
+                    "method": "Deflationierung",
+                    "description": "Preisbereinigung nominaler Vergütungsangaben mit dem VPI-Gesamtindex zur Berechnung realer Vergütungsentwicklungen über die Zeitreihe."
                   }
                 ]
               }
@@ -7356,6 +9004,143 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "bibliothek-bestandsstatistik-medienart",
+              "level": 4,
+              "name": "Bestandsstatistiken nach Medienart",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Jährliche Bestandsstatistiken wissenschaftlicher Bibliotheken (Universitätsbibliotheken, Staatsbibliotheken, Spezialbibliotheken) aufgeschlüsselt nach Medienarten: Printmonografien, Zeitschriften, E-Books, E-Journals, Datenbanken, audiovisuelle Medien und Sondersammlungen. Daten werden im Rahmen der DBS (Deutsche Bibliotheksstatistik) erhoben und sind über das hbz-Portal abrufbar. Enthält Bestandszahlen, Erwerbungsausgaben und Abgänge.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Deutsche Bibliotheksstatistik (DBS) wird jährlich durch das Hochschulbibliothekszentrum NRW (hbz) publiziert und steht als offene Daten mit maschinenlesbarer Schnittstelle zur Verfügung."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Zeitreihenbereinigung",
+                    "description": "Identifikation und Bereinigung von Sprüngen in Bestandszeitreihen durch Zusammenschlüsse und Umstrukturierungen von Bibliotheksverbünden mittels Änderungsprotokollen."
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Berechnung von Kennzahlen (Bestand je Student, Ausgaben je Titel) für Peer-Group-Vergleiche zwischen Bibliotheken ähnlichen Typs und Trägerinstitution."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fernleihe-statistik-zdb",
+              "level": 4,
+              "name": "Fernleihe-Statistiken (ZDB)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Monatliche und jährliche Statistiken zum deutschen Fernleihverkehr, koordiniert über die Zeitschriftendatenbank (ZDB) der Staatsbibliothek Berlin und die Verbundzentralen. Enthält Mengen aktiver und passiver Fernleihen, Erledigungsquoten, Bestellwege (konventionell/elektronisch) und durchschnittliche Lieferzeiten. Daten decken alle deutschen Bibliotheksverbünde (BVB, GBV, HBZ, KOBV, SWB, HEBIS) ab.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Fernleihstatistiken werden durch die Verbundzentralen und die ZDB publiziert. Daten fließen in die Deutsche Bibliotheksstatistik ein und sind über das hbz-Portal zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verbundabstimmung",
+                    "description": "Deduplizierung von Fernleihtransaktionen über Verbundgrenzen hinweg zur Vermeidung von Doppelzählungen bei Weiterbestellungen zwischen Verbundzentralen."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Analyse des langfristigen Rückgangs konventioneller Fernleihen und Anstiegs elektronischer Dokumentlieferung zur Bedarfsplanung für Konsortialverhandlungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "open-access-anteil-neuerwerbungen",
+              "level": 4,
+              "name": "Open-Access-Anteil an Neuerwerbungen",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Jährliche Erhebung des Anteils von Open-Access-Titeln an den Neuerwerbungen wissenschaftlicher Bibliotheken, unterschieden nach Gold OA, Hybrid OA, Green OA (Repositorien) und geschlossenen Zugängen. Daten stammen aus Erwerbungssystemen (Alma, LBS), Unpaywall-Abgleichen und Transformationsverträgen. Ermöglicht Monitoring der OA-Transformation im deutschen Bibliothekswesen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "OA-Monitoring-Daten werden durch die DFG-geförderte OA-Monitor-Initiative und hbz/ZBW publiziert. Unpaywall-Daten sind unter CC0 lizenziert und frei nutzbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "DOI-Abgleich Unpaywall",
+                    "description": "Automatischer Abgleich der Erwerbungs-DOIs mit der Unpaywall-Datenbank zur Bestimmung des OA-Status und OA-Typs (Gold, Hybrid, Green, Bronze) jedes Titels."
+                  },
+                  {
+                    "method": "Transformationsvertrags-Monitoring",
+                    "description": "Auswertung von Publikationsausgaben aus Read-and-Publish-Verträgen (Springer, Elsevier, Wiley) nach Artikel-Typ und Open-Access-Status für Kosteneffizienzanalysen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -7769,6 +9554,147 @@
                   {
                     "method": "Vernetzung",
                     "description": "Anreicherung mit externen Identifikatoren (ORCID, ISNI, GND) für personenbezogene Entitäten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "datenbankzugriffe-verlag-disziplin",
+              "level": 4,
+              "name": "Datenbankzugriffe nach Verlag und Disziplin",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Monatliche Zugriffsstatistiken auf lizenzierte Literaturdatenbanken (Web of Science, Scopus, PsycINFO, MEDLINE, Juris u.a.) nach Datenbankanbieter und aufrufender Einrichtung. Daten werden über EZproxy-Logs und Anbieter-Nutzungsberichte im COUNTER-Format erhoben und durch Bibliotheksverbünde aggregiert. Bildet Grundlage für Kostennutzenanalysen bei Lizenzverlängerungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Nutzungsstatistiken auf Bibliotheksebene werden im Rahmen des hbz-Nutzungsstatistikpools geteilt. Institutionell aufgeschlüsselte Rohdaten sind vertraulich und unterliegen Lizenzvereinbarungen mit Datenbankanbietern."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "COUNTER-Normierung",
+                    "description": "Harmonisierung heterogener Anbieter-Nutzungsberichte auf den COUNTER Code of Practice (Release 5) Standard zur bibliotheks- und anbieterübergreifenden Vergleichbarkeit."
+                  },
+                  {
+                    "method": "Kosten-pro-Nutzung-Kalkulation",
+                    "description": "Berechnung von Cost-per-Download und Cost-per-Search-Kennzahlen je Datenbankprodukt als Entscheidungsgrundlage für Lizenzverhandlungen und Abbestellentscheidungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ebook-zeitschriften-counter-nutzungsstatistik",
+              "level": 4,
+              "name": "E-Book- und Zeitschriften-Nutzungsstatistiken (COUNTER)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Standardisierte Nutzungsstatistiken für lizenzierte E-Books und elektronische Zeitschriften nach dem COUNTER-Standard (Title Report TR, Book Report BR), geliefert von Verlagen wie Elsevier, Springer, Wiley, De Gruyter. Enthält Downloads, Titelzugriffe und Ablehnungsraten (turnaways) auf Titelebene. Daten werden von Konsortialstellen (hbz, KOBV, BVB) gesammelt und für Konsortialverhandlungen genutzt.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Konsortialstatistiken werden teilweise publiziert. Titelbezogene Nutzungsdaten einzelner Einrichtungen sind durch Lizenzverträge mit Verlagen als vertraulich eingestuft und dürfen nicht ohne Genehmigung weitergegeben werden."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Turnaway-Analyse",
+                    "description": "Auswertung von Zugriffsablehnungen (turnaways) bei gleichzeitigen Nutzungslimitierungen als Indikator für Unterlizenzierung und Bedarfsermittlung für Paketanpassungen."
+                  },
+                  {
+                    "method": "Trendextrapolation",
+                    "description": "Extrapolation historischer Nutzungsentwicklungen zur Schätzung künftiger Bedarfe als Verhandlungsgrundlage für Transformationsverträge mit Verlagen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "repositorium-einlieferungsstatistiken",
+              "level": 4,
+              "name": "Repositorium-Einlieferungsstatistiken",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Jährliche Statistiken zu Einlieferungen und Beständen institutioneller und disziplinärer Repositorien (OPUS, DSpace, EPrints, Zenodo-Instanzen), aggregiert über das DINI-Zertifikat-Netzwerk und die OpenDOAR-Datenbank. Enthält Dokument- und Datensatzzahlen nach Dokumenttyp, Fachgebiet (DDC) und Zugangsrecht. Bildet Infrastrukturgrundlage für das deutsche Wissenschaftssystem.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Repositorium-Metadaten werden über OAI-PMH-Schnittstellen als offene Daten bereitgestellt. DINI und OpenDOAR aggregieren Repositoriumsstatistiken und publizieren sie frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "OAI-PMH-Harvesting",
+                    "description": "Automatisches Harvesting von Metadaten über OAI-PMH-Schnittstellen aller DINI-zertifizierten Repositorien zur zentralen Aggregation im DINI-Basket und BASE-Suchindex."
+                  },
+                  {
+                    "method": "DDC-Klassifikationsanalyse",
+                    "description": "Auswertung der Fachgebietsverteilung von Repositoriumsdokumenten nach Dewey Decimal Classification zur Identifikation von Abdeckungslücken in der OA-Versorgung."
                   }
                 ]
               }
@@ -8189,6 +10115,147 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "nfdi-datensatz-einlieferungen-konsortium",
+              "level": 4,
+              "name": "Datensatz-Einlieferungen nach NFDI-Konsortium",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Jährliche Statistiken zu Forschungsdatensatz-Einlieferungen in die Dienste der 26 NFDI-Konsortien (NFDI4Chem, NFDI4Health, NFDI4Culture, KonsortSWD u.a.), erhoben durch die NFDI-Geschäftsstelle und die Base4NFDI-Initiative. Enthält Datensatzvolumen (Anzahl und Speichergröße), Metadatenqualitätskennzahlen und Kuratierungsaufwände nach Fachgebiet. Basis für Ressourcenplanung der DFG-NFDI-Förderung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "NFDI-Nutzungsberichte werden der DFG im Rahmen der Fördermonitoring-Pflichten übermittelt und in aggregierter Form publiziert. Einlieferungsstatistiken auf Konsortiumsebene sind nicht personenbeziehbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Metadatenqualitätsbewertung",
+                    "description": "Automatisierte Bewertung von Metadatenvollständigkeit und -qualität anhand von FAIR-Indikatoren (F-UJI-Score) für alle eingelieferten Datensätze je Konsortium."
+                  },
+                  {
+                    "method": "Deduplizierung cross-Konsortium",
+                    "description": "Identifikation von Datensätzen, die in mehrere NFDI-Konsortien eingeliefert wurden, über persistente Identifier (DOI, Handle) zur Vermeidung von Mehrfachzählungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "nfdi-research-data-commons-suchindex-abfragen",
+              "level": 4,
+              "name": "Suchindex-Abfragen Research Data Commons",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Aggregierte Abfragestatistiken des gemeinsamen Suchindex der NFDI Research Data Commons, der Forschungsdaten aus allen NFDI-Konsortien übergreifend durchsuchbar macht. Enthält Suchanfragen-Volumen nach Fachgebiet, Trefferquoten, Null-Ergebnis-Raten und Filternutzungsverhalten. Ermöglicht nutzerzentrierte Optimierung des konsortienübergreifenden Datendiscovery-Systems.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Nutzungsstatistiken ohne personenbeziehbare Einzelabfragen werden im Rahmen der NFDI-Transparenzpflichten gegenüber der Förderinstitution DFG veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Query-Log-Analyse",
+                    "description": "Datenschutzkonforme Anonymisierung und Analyse von Suchanfrage-Logs zur Identifikation häufiger Suchthemen, fehlgeschlagener Suchanfragen und Optimierungspotenzial in der Indexstruktur."
+                  },
+                  {
+                    "method": "Relevanzfeedback-Auswertung",
+                    "description": "Auswertung von Klick-Through-Raten und Verweildauer auf Ergebnisseiten als implizites Relevanzfeedback für Verbesserung des Ranking-Algorithmus."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "nfdi-cross-konsortium-nutzungsstatistiken",
+              "level": 4,
+              "name": "Cross-Konsortium-Nutzungsstatistiken NFDI",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Statistiken zur konsortienübergreifenden Nachnutzung von Forschungsdaten, d.h. Datensätze eines NFDI-Konsortiums, die von Nutzern anderer Konsortien oder Disziplinen abgerufen werden. Erhoben durch Base4NFDI-Dienste (pid4nfdi, search4nfdi) und individuelle Konsortiumsberichte. Quantifiziert den interdisziplinären Mehrwert der NFDI-Architektur und identifiziert besonders nachgefragte Datensätze.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Cross-Konsortium-Statistiken sind nicht personenbeziehbar und werden als Teil der NFDI-Wirkungsberichterstattung gegenüber DFG und Wissenschaftsrat publiziert."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Disziplinen-Mapping",
+                    "description": "Zuordnung von Datensatz-Konsortiumszugehörigkeit und Nutzer-Institutionszugehörigkeit zu Wissenschaftsdisziplinen (Frascati Manual) für Cross-Disziplin-Nutzungsanalysen."
+                  },
+                  {
+                    "method": "Zitationsabgleich",
+                    "description": "Verknüpfung von Datensatz-DOIs mit Zitationen in wissenschaftlichen Publikationen über DataCite Event Data zur Messung der Forschungswirkung der NFDI-Datendienste."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -8602,6 +10669,147 @@
                   {
                     "method": "Effizienzoptimierung",
                     "description": "Benchmarking von PUE und Energiemix zur Identifikation von Einsparpotenzialen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hpc-rechenzeit-belegung-fachgebiet",
+              "level": 4,
+              "name": "Rechenzeit-Belegungsstatistiken nach Fachgebiet",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Jährliche Statistiken zur Nutzung von Rechenzeit auf nationalen Hochleistungsrechnern (JUWELS, SuperMUC-NG, Hawk, Lise/Emmy) der Gauss Centre for Supercomputing (GCS)-Zentren (FZJ, LRZ, HLRS), aufgeschlüsselt nach Fachgebiet (Physik, Chemie, Ingenieurwissenschaften, Lebenswissenschaften, Klima) und Projekttyp (Großprojekte, Normalverfahren). Enthält Core-h-Verbräuche und Auslastungsgrade nach Rechner und Partition.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "GCS publiziert jährliche Nutzungsstatistiken in Jahresberichten und auf der GCS-Website. Aggregierte Fachgebietsdaten sind nicht vertraulich und werden als Nachweis gegenüber DFG und BMBF-Fördergebern veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Ressourcenzuteilungsanalyse",
+                    "description": "Auswertung der Diskrepanz zwischen beantragten und tatsächlich genutzten Rechenzeiten je Projekt und Fachgebiet zur Optimierung des Zuteilungsverfahrens (Peer-Review-Ausschüsse)."
+                  },
+                  {
+                    "method": "Effizienzmetriken",
+                    "description": "Berechnung von CPU-Auslastung, Paralleleffizienz und GPU-Utilization aus Job-Scheduler-Logs zur Identifikation ineffizienter Applikationsmuster und Optimierungspotenzial."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hpc-energieverbrauch-pue-rechenzentren",
+              "level": 4,
+              "name": "Energieverbrauch und PUE-Werte der Rechenzentren",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Monatliche und jährliche Energieverbrauchsdaten und Power Usage Effectiveness (PUE)-Werte der nationalen Hochleistungsrechenzentren (LRZ Garching, JSC Jülich, HLRS Stuttgart, GWDG Göttingen, ZIH Dresden). Enthält IT-Lastverbrauch, Kühlenergie, USV-Verluste und Gesamtverbrauch in MWh sowie CO2-Äquivalente nach Strommix. Dient dem Nachhaltigkeitsmonitoring und der Einhaltung der Energieeffizienzrichtlinie EU 2023/1791.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Rechenzentren mit >500 kW IT-Last sind nach EU-Energieeffizienzrichtlinie zur Berichterstattung im European Green Deal Data Space verpflichtet. Nationale Rechenzentren publizieren PUE-Werte in Jahresberichten und Nachhaltigkeitsberichten."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "PUE-Berechnung",
+                    "description": "Kontinuierliche Messung und Berechnung des Power Usage Effectiveness-Werts als Quotient aus Gesamtenergieverbrauch des Rechenzentrums und IT-Ausrüstungsenergieverbrauch nach Green Grid-Standard."
+                  },
+                  {
+                    "method": "CO2-Bilanzierung",
+                    "description": "Berechnung von Scope-1- und Scope-2-Emissionen nach GHG Protocol unter Anwendung des stündlichen Strommix (Residualmix vs. Marktmix) für standortspezifische CO2-Äquivalente."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hpc-job-scheduler-warteschlangenstatistiken",
+              "level": 4,
+              "name": "Warteschlangenstatistiken HPC-Job-Scheduler",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Aggregierte Statistiken aus den Job-Scheduler-Systemen (SLURM, PBS, LSF) der nationalen Hochleistungsrechner zu Warteschlangenzeiten, Durchsatz und Systemauslastung. Enthält mittlere Wartezeiten nach Partition und Jobgröße, Backfill-Effizienz, Abbruchquoten und Laufzeitverteilungen über monatliche Berichtsperioden. Dienen der Systemoptimierung und der Kommunikation von Dienstgüte an Nutzergemeinschaften.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Scheduler-Statistiken ohne Rückschluss auf einzelne Nutzerprojekte werden in Systemberichten und Benutzerhandbüchern publiziert. Detaillierte Job-Logs enthalten Projektinformationen und unterliegen Vertraulichkeit."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Warteschlangen-Simulation",
+                    "description": "Diskrete Ereignissimulation des Job-Schedulers mit historischen Lastprofilen zur Evaluation neuer Scheduling-Algorithmen und Partitionierungsstrategien vor Produktivbetrieb."
+                  },
+                  {
+                    "method": "Anomalieerkennung",
+                    "description": "Zeitreihenbasierte Anomalieerkennung auf Job-Durchsatz und Fehlraten zur Früherkennung von Hardwareausfällen und Scheduler-Fehlfunktionen im laufenden Betrieb."
                   }
                 ]
               }
@@ -9032,6 +11240,143 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "wiss-klima-remo-clm-projektionen",
+              "level": 4,
+              "name": "Regionale Klimaszenarien-Projektionsdaten (REMO/CLM)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Hochaufgelöste regionale Klimaprojektionen für Deutschland und Europa, erzeugt mit den regionalen Klimamodellen REMO und CLM im Rahmen von CORDEX und ReKliEs-De. Datensätze umfassen Temperatur, Niederschlag, Windgeschwindigkeit und weitere atmosphärische Variablen für RCP2.6, RCP4.5 und RCP8.5 bis 2100. Bereitgestellt durch PIK, Hereon und KIT-IMK auf dem ESGF-Datenportal.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Klimaprojektionsdaten sind im Rahmen von CORDEX und ReKliEs-De frei zugänglich und unter offenen Lizenzen auf dem ESGF-Portal verfügbar."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "NetCDF / HDF5"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Regionalisierung",
+                    "description": "Dynamisches Downscaling globaler CMIP5/CMIP6-Antriebsdaten auf 12,5 km bzw. 5 km Gitterauflösung mit REMO und CLM."
+                  },
+                  {
+                    "method": "Bias-Korrektur",
+                    "description": "Anwendung quantilbasierter Bias-Adjustierung gegenüber E-OBS-Beobachtungsdaten zur Verbesserung der Kalibration."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-klima-extremereignis-schaeden",
+              "level": 4,
+              "name": "Extremereignis-Schadensabschätzungen nach Klimapfad",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Quantifizierte Schadensabschätzungen für klimatische Extremereignisse (Hitze, Hochwasser, Sturm, Dürre) differenziert nach Klimapfaden (RCP/SSP) und Sektoren (Landwirtschaft, Infrastruktur, Gesundheit). Daten entstammen integrierten Klimafolgenmodellen (DAMAGE, CLIMSAVE) und sind auf NUTS-3-Ebene räumlich aufgelöst. Grundlage für Klimaanpassungsplanung auf Bundes- und Landesebene.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Schadensabschätzungen enthalten keine personenbezogenen Daten und werden als Forschungsoutput von PIK und KIT öffentlich bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Schadensfunktionsmodellierung",
+                    "description": "Verknüpfung von Klimaprojektionsdaten mit sektorspezifischen Schadensfunktionen zur Monetarisierung von Extremereignisfolgen."
+                  },
+                  {
+                    "method": "Monte-Carlo-Simulation",
+                    "description": "Unsicherheitsquantifizierung der Schadensschätzer durch Ensemble-Auswertung über multiple Klimamodell-Läufe."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-klima-bodenfeuchte-tereno",
+              "level": 4,
+              "name": "Bodenfeuchtezeitreihen TERENO-Netzwerk",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Kontinuierliche Bodenfeuchtezeitreihen aus dem Terrestrial Environmental Observatories (TERENO)-Netzwerk, das sechs ökologische Langzeitbeobachtungsplattformen in unterschiedlichen Klimaregionen Deutschlands betreibt. Messungen erfolgen per TDR, FDR und kosmischem Rauschen (COSMOS) in verschiedenen Bodentiefen (5–100 cm) mit stündlicher Auflösung. Daten sind im TERENO-Datenportal (terrestrial.tereno.net) öffentlich archiviert.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "TERENO-Daten werden als Open Science gemäß Helmholtz-Datenpolitik im öffentlichen TERENO-Portal unter CC BY 4.0 bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "NetCDF / HDF5"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Qualitätskontrolle",
+                    "description": "Automatisierte Plausibilitätsprüfung und manuelle Flaggung von Ausreißern nach TERENO-QC-Protokoll."
+                  },
+                  {
+                    "method": "Kalibrierung",
+                    "description": "Gerätespezifische Kalibrierung der Bodenfeuchtemessgeräte anhand gravimetrischer Referenzmessungen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -9436,6 +11781,147 @@
                   {
                     "method": "Gewässerbewirtschaftung",
                     "description": "Grundlage für Maßnahmenprogramme zur Erreichung des guten ökologischen Zustands."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-gewaesser-lawa-guetedaten",
+              "level": 4,
+              "name": "Gewässergütedaten LAWA-Messnetz",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Physikalisch-chemische und biologische Gewässergüteparameter aus dem Bund-Länder-Messnetz der Länderarbeitsgemeinschaft Wasser (LAWA), erhoben an über 3.000 Messstellen in deutschen Fließgewässern. Erfasste Parameter umfassen Nährstoffe (NO3, PO4), Sauerstoff, pH, Leitfähigkeit, Schwermetalle und biologische Qualitätskomponenten (Makrozoobenthos, Phytobenthos). Daten fließen in die EU-Wasserrahmenrichtlinien-Berichterstattung ein.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "LAWA-Gewässergütedaten sind über das WasserBLIcK-Portal des BfG als Open Government Data öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Statistische Auswertung langfristiger Trends in Nährstoffkonzentrationen nach Mann-Kendall-Verfahren für die WRRL-Bewertung."
+                  },
+                  {
+                    "method": "Ökologische Zustandsbewertung",
+                    "description": "Klassifizierung des ökologischen Zustands nach WRRL-Bewertungsverfahren (PERLODES, PhytoFluss) auf Basis biologischer Indikatoren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-gewaesser-mikroplastik-binnengewaesser",
+              "level": 4,
+              "name": "Mikroplastikkonzentrationen in Binnengewässern",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Quantitative Messungen von Mikroplastikpartikeln (< 5 mm) in deutschen Flüssen, Seen und Sedimenten, erhoben durch UFZ, Fraunhofer UMSICHT und Landesumweltämter. Datensätze enthalten Partikelanzahl, -größenverteilung, Polymertypen (per FTIR/Raman-Spektroskopie) und räumliche Verteilung entlang Fließgewässergradienten. Grundlage für die EU-Kunststoffstrategie und nationale Monitoringprogramme.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Umweltmessdaten zu Mikroplastik enthalten keine personenbezogenen Informationen und werden als Forschungsoutput unter offenen Lizenzen publiziert."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Spektroskopische Identifikation",
+                    "description": "Bestimmung von Polymertypen mittels FTIR- und Raman-Spektroskopie nach standardisierten Protokollen (MSFD-TG Marine Litter)."
+                  },
+                  {
+                    "method": "Räumliche Interpolation",
+                    "description": "Kriging-basierte Interpolation von Punktmessungen zur Flächenschätzung der Mikroplastikbelastung in Einzugsgebieten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-gewaesser-phytoplankton-ostsee-nordsee",
+              "level": 4,
+              "name": "Phytoplankton-Blütenmonitoring Ostsee und Nordsee",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Zeitreihen zu Phytoplankton-Biomasse, Artzusammensetzung und Blütenereignissen (insbesondere Cyanobakterien und schädliche Algenblüten) in der deutschen Ostsee und Nordsee, erhoben durch GEOMAR, IOW und BSH im Rahmen von HELCOM und OSPAR. Daten umfassen Chlorophyll-a-Konzentrationen aus Fernerkundung und In-situ-Messungen, Artdiversitätsindizes und toxinproduzierende Spezies. Saison- und Langzeittrends werden zur Eutrophierungsbewertung genutzt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Meeresökologische Monitoringdaten werden im Rahmen von HELCOM und OSPAR-Berichtspflichten öffentlich bereitgestellt und sind über ICES Data Portal zugänglich."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "NetCDF / HDF5"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Fernerkundungsauswertung",
+                    "description": "Ableitung von Chlorophyll-a-Konzentrationen und Blütenausdehnungen aus Sentinel-3/OLCI-Satellitendaten mittels OC4ME-Algorithmus."
+                  },
+                  {
+                    "method": "Artzusammensetzungsanalyse",
+                    "description": "Mikroskopische Bestimmung und Zählung von Phytoplankton-Taxa nach Utermöhl-Methode an Wasserproben aus standardisierten Messtiefen."
                   }
                 ]
               }
@@ -9850,6 +12336,139 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "wiss-soep-wellendaten-mikrodaten",
+              "level": 4,
+              "name": "SOEP-Wellendaten (anonymisierte Mikrodaten)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Jährlich aktualisierte Mikrodaten des Sozio-oekonomischen Panels (SOEP), einer der weltweit größten Längsschnittstudien mit über 30.000 Personen in rund 15.000 Haushalten. Erfasst werden Einkommen, Erwerbsbiografien, Gesundheit, Wohnverhältnisse, subjektives Wohlbefinden und politische Einstellungen über mehrere Jahrzehnte. Datenzugang erfolgt über das DIW Berlin nach Abschluss eines Nutzungsvertrags (Scientific-Use-File).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Mikrodaten werden auf Individualebene erhoben und erfordern vor Weitergabe umfangreiche Anonymisierungsschritte; Scientific-Use-Files sind nach Vertragsabschluss zugänglich."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Datenfernverarbeitung und k-Anonymisierung auf Haushalts- und Personenebene nach DIW-Anonymisierungsprotokoll vor Weitergabe als Scientific-Use-File."
+                  },
+                  {
+                    "method": "Längsschnittverknüpfung",
+                    "description": "Verknüpfung von Querschnittserhebungen über persönliche ID zu Verlaufsdaten für Regressionsanalysen auf Panelebene."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-allbus-kumulativer-datensatz",
+              "level": 4,
+              "name": "ALLBUS-Kumulativer Datensatz",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Kumulierter Datensatz der Allgemeinen Bevölkerungsumfrage der Sozialwissenschaften (ALLBUS) aus 27 Erhebungswellen (1980–2022) mit über 60.000 Befragten. Enthält Einstellungen zu Demokratie, Migration, sozialer Ungleichheit, Religion und Wertewandel in der deutschen Gesellschaft. Bereitgestellt durch GESIS–Leibniz-Institut für Sozialwissenschaften unter Datennutzungsvereinbarung als kostenloses Scientific-Use-File.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "ALLBUS-Daten sind nach Registrierung bei GESIS als Scientific-Use-File zugänglich; direkte Offenlegung ohne Nutzungsvereinbarung ist aufgrund von Datenschutzauflagen nicht möglich."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Gewichtung",
+                    "description": "Anwendung von Design- und Kalibrierungsgewichten zur Korrektur von Stichprobenverzerrungen gegenüber Mikrozensus-Randverteilungen."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Zeitreihenvergleich von Einstellungsindikatoren über Erhebungswellen hinweg mit Kontrolle für Erhebungsmodalitäten-Wechsel."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-panel-lebenszufriedenheit-zeitreihen",
+              "level": 4,
+              "name": "Lebenszufriedenheits-Zeitreihen aus Panel-Studien",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Aggregierte Zeitreihen zu subjektiver Lebenszufriedenheit, Wohlbefindenskomponenten (Gesundheit, Arbeit, Finanzen, soziale Beziehungen) und psychischem Wohlbefinden aus SOEP, pairfam und NEPS für Deutschland seit 1984. Daten werden auf Gruppenebene (Alter, Bildung, Haushaltseinkommen) aggregiert und als offene Publikationsdaten bereitgestellt. Ermöglichen internatinale Vergleiche im Rahmen des World Happiness Report.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Gruppenstatistiken ohne Personenbezug werden als Forschungsdaten im Rahmen von Open-Access-Publikationen des DIW und GESIS frei zugänglich gemacht."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Berechnung von Mittelwerten, Standardabweichungen und Quantilverteilungen der Zufriedenheitsskalen nach demographischen Untergruppen."
+                  },
+                  {
+                    "method": "Trenddekomposition",
+                    "description": "Zerlegung von Zeitreihentrends in säkulare, zyklische und ereignisbezogene Komponenten (z.B. Finanz- oder COVID-Schock)."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -10257,6 +12876,135 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "wiss-ungleich-vermoegensverteilung-hfcs",
+              "level": 4,
+              "name": "Vermögensverteilungsdaten (HFCS / SOEP-Reichenstudie)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Haushaltsebene-Vermögensdaten aus dem Household Finance and Consumption Survey (HFCS) der EZB und der SOEP-Reichenstudie des DIW, die speziell das oberste Vermögensdezil in Deutschland erfasst. Enthält Brutto- und Nettovermögen, Schulden, Immobilienbesitz, Finanzvermögen und Unternehmensanteile differenziert nach Haushaltstyp. Ermöglicht Berechnung von Konzentrationsmaßen (Top-1%-Anteil, Gini-Vermögen) im europäischen Vergleich.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Vermögensdaten auf Haushaltsebene sind datenschutzrechtlich sensibel; Scientific-Use-Files werden nach Anonymisierung und Nutzungsvereinbarung mit DIW/EZB bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Multiple Imputation",
+                    "description": "Behandlung fehlender Vermögenswerte durch multiple Imputation (5 Imputate) nach dem Verfahren von Rubin zur Reduktion von Selektionsverzerrungen bei Spitzenvermögen."
+                  },
+                  {
+                    "method": "Pareto-Extrapolation",
+                    "description": "Schätzung des Reichtumsendes der Vermögensverteilung durch Pareto-Fit, da Panel-Surveys Spitzenvermögen systematisch unterschätzen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-ungleich-gini-zeitreihen",
+              "level": 4,
+              "name": "Gini-Koeffizient-Zeitreihen nach Einkommensquelle",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Jährliche Gini-Koeffizienten für Deutschland differenziert nach Einkommensquelle (Markteinkommen, verfügbares Einkommen, Äquivalenzeinkommen) sowie Haushaltstyp und Altersgruppe auf Basis von SOEP, EU-SILC und Steuerstatistik. Zeitreihe reicht bis 1984 und erlaubt Analyse der Umverteilungswirkung staatlicher Transfers. Daten werden vom DIW und Sachverständigenrat jährlich aktualisiert und publiziert.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Ungleichheitsindikatoren auf Gruppenebene enthalten keinen Personenbezug und werden als offene Forschungsdaten und in Statistikberichten frei publiziert."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Dekomposition",
+                    "description": "Zerlegung des Gini-Koeffizienten nach Einkommensquellen (Shorrocks-Dekomposition) zur Identifikation der treibenden Ungleichheitsfaktoren."
+                  },
+                  {
+                    "method": "Bootstrapping",
+                    "description": "Berechnung von Konfidenzintervallen für Gini-Schätzer durch Bootstrap-Resampling zur Quantifizierung der Stichprobenunsicherheit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-ungleich-soziale-mobilitaet-ige",
+              "level": 4,
+              "name": "Soziale-Mobilität-Indizes (Intergenerationale Einkommenselastizität)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Schätzungen der intergenerationalen Einkommenselastizität (IGE) und Rang-Rang-Korrelation zwischen Eltern- und Kindereinkommen für Deutschland auf Basis von SOEP-Mehrgenerationendaten und administrativen Rentenversicherungsdaten. Differenziert nach Bundesland, Geburtskohorte (1960–1990) und Bildungsweg. Daten erlauben internationale Vergleiche im Rahmen des Equality of Opportunity Project.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Mobilitätskennziffern auf Regionen- und Kohortenebene enthalten keinen Personenbezug und werden in peer-reviewten Publikationen mit Replikationsdaten veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Two-Sample-IV-Schätzung",
+                    "description": "Instrumentalvariablen-Schätzung der IGE unter Verwendung von Zweistichproben-Ansätzen (TSTSLS) zur Korrektur von Messfehlern im Elterneinkommen."
+                  },
+                  {
+                    "method": "Transitionsmatrix-Analyse",
+                    "description": "Erstellung von Einkommensquintil-Transitionsmatrizen zwischen Eltern- und Kindergeneration zur Quantifizierung der Aufwärtsmobilität nach sozialer Herkunft."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -10657,6 +13405,139 @@
                   {
                     "method": "Sanktionsforschung",
                     "description": "Analyse der Abschreckungswirkung unterschiedlicher Sanktionsmechanismen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-rechts-verfahrensdauern-instanz",
+              "level": 4,
+              "name": "Gerichtsverfahrensdauern nach Rechtsgebiet und Instanz",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Statistische Auswertungen der durchschnittlichen Verfahrensdauern vor deutschen Zivil-, Straf-, Verwaltungs- und Sozialgerichten differenziert nach Instanz (Amtsgericht bis BGH) und Rechtsgebiet, basierend auf Destatis-Justizstatistik und Erhebungen der Landesjustizverwaltungen. Zeitreihen von 2000 bis aktuell ermöglichen Analyse von Überlastungstendenzen und Reformwirkungen. Relevant für empirische Rechtsforschung und Justizpolitik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Gerichtsstatistiken ohne Fallbezug werden von Destatis und Justizministerien als öffentliche Verwaltungsstatistik frei zugänglich gemacht."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Zeitreihenanalyse der Verfahrensdauern mit Identifikation struktureller Brüche (z.B. Einführung elektronischer Akte, Personalkürzungen)."
+                  },
+                  {
+                    "method": "Regressionsanalyse",
+                    "description": "Multivariate Regression zur Erklärung von Verfahrensdauern durch Richterstellenbesetzung, Klagevolumen und Verfahrensart."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-rechts-anwaltsdichte-region",
+              "level": 4,
+              "name": "Anwaltsdichte nach Region und Fachgebiet",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Räumliche Verteilung zugelassener Rechtsanwältinnen und Rechtsanwälte auf Kreisebene, differenziert nach Fachanwaltschaften (Familienrecht, Arbeitsrecht, Strafrecht etc.) und Kanzleigröße, basierend auf Daten der Bundesrechtsanwaltskammer (BRAK) und des STAR-Statistischen Berichts. Ermöglicht Analyse von Unterversorgungsregionen im ländlichen Raum und Zugangsgerechtigkeit zum Rechtssystem. Zeitreihen ab 2005 verfügbar.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BRAK-Zulassungsstatistiken auf Regionalebene enthalten keine personenbezogenen Einzeldaten und werden im STAR-Bericht öffentlich publiziert."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Räumliche Analyse",
+                    "description": "GIS-basierte Kartierung der Anwaltsdichte (Anwälte pro 10.000 Einwohner) auf Kreisebene mit Identifikation von Unterversorgungsgebieten."
+                  },
+                  {
+                    "method": "Clusteranalyse",
+                    "description": "Identifikation regionaler Cluster nach Fachgebietsspezialisierung und Kanzleistruktur mittels k-Means-Clusteranalyse."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-rechts-rechtspflege-statistik-straftat",
+              "level": 4,
+              "name": "Rechtspflege-Statistik nach Straftatbestand (Destatis)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Strafverfolgungsstatistik des Statistischen Bundesamts mit Angaben zu Abgeurteilten, Verurteilten, Verurteilungsquoten, Sanktionsarten und Strafmaßen differenziert nach Straftatbestand (StGB-Paragraf), Altersgruppe, Geschlecht und Bundesland. Jährliche Publikation ermöglicht Analyse von Sanktionierungsmustern, Strafzumessungsdisparitäten und Wirkungen von Gesetzesreformen. Grundlage für kriminologische und rechtspolitische Forschung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Strafverfolgungsstatistik ohne Fallbezug wird von Destatis als kostenlose Open-Government-Data unter Datenlizenz Deutschland veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Kohorten-Analyse",
+                    "description": "Verfolgung von Jahrgangskohorten durch Strafverfolgungssystem zur Messung von Rückfallquoten und Sanktionswirkungen."
+                  },
+                  {
+                    "method": "Disparitätsanalyse",
+                    "description": "Statistische Prüfung auf Strafzumessungsdisparitäten nach soziodemographischen Merkmalen unter Kontrolle für Tatschwere und Vorstrafen."
                   }
                 ]
               }
@@ -11063,6 +13944,135 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "wiss-reg-normenkontrollrat-kosten",
+              "level": 4,
+              "name": "Regulierungskostenabschätzungen (Normenkontrollrat)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Systematische Erfassung von Erfüllungskosten neuer Bundesgesetze und Verordnungen durch den Nationalen Normenkontrollrat (NKR) gemäß §§ 44a GGO. Datensätze enthalten geschätzte Bürokratiekosten für Wirtschaft, Bürgerinnen und Bürger sowie Verwaltung differenziert nach Gesetz, Normadressat und Einmalkosten/laufenden Kosten. Jährlich im NKR-Jahresbericht und Statistikdatenbank des Statistischen Bundesamts publiziert.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "NKR-Stellungnahmen und Kostenschätzungen sind als öffentliche Dokumente im Bundesanzeiger und auf der NKR-Website frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Standardkosten-Modell",
+                    "description": "Berechnung von Informationspflicht-Kosten nach dem Standardkosten-Modell (SKM) als Produkt aus Fallzahl, Zeitaufwand und Lohnkosten."
+                  },
+                  {
+                    "method": "Ex-post-Evaluation",
+                    "description": "Nachträglicher Abgleich prognostizierter mit tatsächlich eingetretenen Erfüllungskosten zur Kalibrierung des Schätzverfahrens."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-reg-compliance-kosten-rechtsnorm",
+              "level": 4,
+              "name": "Compliance-Kosten-Studien je Rechtsnorm",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Empirische Kostenstudien zu regulatorischen Compliance-Aufwendungen von Unternehmen bei der Umsetzung spezifischer Rechtsakte (z.B. DSGVO, GwG, Lieferkettengesetz), erhoben durch IW Köln, ZEW und Forschungsaufträge des BMWi/BMBJ. Enthält direkte Kosten (Beratung, IT, Personal) und indirekte Kosten (Opportunitätskosten) differenziert nach Unternehmensgröße und Branche. Grundlage für regulatorische Folgenabschätzungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Compliance-Kostenstudien werden als Forschungsberichte öffentlich im Rahmen von Bundesministeriums-Beauftragungen publiziert, ohne personenbezogene Unternehmensdaten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Unternehmenssurvey",
+                    "description": "Repräsentative Unternehmensbefragung zu tatsächlich angefallenen Compliance-Aufwendungen nach Normadressat und Unternehmensgröße."
+                  },
+                  {
+                    "method": "Kosten-Nutzen-Analyse",
+                    "description": "Gegenüberstellung von Compliance-Kosten mit messbaren Regulierungszielen (Schutzwirkung, Markttransparenz) zur Effizienzbeurteilung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-reg-buerokratiekosten-index",
+              "level": 4,
+              "name": "Bürokratiekosten-Index nach Unternehmenstyp",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Aggregierter Index der regulatorischen Belastung differenziert nach Unternehmenstyp (KMU, Großunternehmen, Freiberufler, Startups) auf Basis der jährlichen KMU-Befragungen des IfM Bonn, DIHK und Destatis-Unternehmensregistererhebungen. Berücksichtigt Informationspflichten, Berichtspflichten, Genehmigungs- und Zertifizierungsanforderungen nach Branche. Zeitreihe ab 2006 ermöglicht Messung der Bürokratieentlastungsstrategie der Bundesregierung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Der Bürokratiekosten-Index basiert auf aggregierten Umfragedaten ohne Unternehmensbezug und wird als öffentlicher Forschungsbericht vom IfM Bonn und im NKR-Jahresbericht frei zugänglich gemacht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Index-Konstruktion",
+                    "description": "Gewichtete Aggregation von Teildimensionen (Zeit, Kosten, Komplexität) zu Gesamtindex mittels faktoranalytisch bestimmter Gewichte."
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Internationaler Vergleich des Bürokratiebelastungsindex mit World Bank Doing Business- und OECD PMR-Indikatoren."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -11313,6 +14323,92 @@
                   {
                     "method": "Navigation",
                     "description": "Präzisions-GPS-Korrekturdaten erfordern genaue Modelle des Erdmagnetfelds."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-obs-seismik-grsn-messnetz",
+              "level": 4,
+              "name": "Seismische Messnetz-Daten (GRSN)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Kontinuierliche Seismogramm-Zeitreihen des German Regional Seismic Network (GRSN), das 15 Breitband-Stationen in Deutschland betreibt und vom GFZ Potsdam koordiniert wird. Daten umfassen drei Komponenten (Z, N, E) mit Abtastraten von 20–100 sps in MiniSEED-Format und werden in Echtzeit an das GEOFON-Datenzentrum und den IRIS DMC übermittelt. Grundlage für Erdbeben-Lokalisierung, Sprengungsüberwachung (CTBTO) und Erdstrukturtomographie.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "GRSN-Seismogrammdata sind über das GEOFON-Portal des GFZ Potsdam und den IRIS DMC als Open Data abrufbar; die Daten unterliegen keiner Geheimhaltungspflicht."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "NetCDF / HDF5"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Phasenpicking",
+                    "description": "Automatisierte Detektion von P- und S-Welleneinsätzen mittels STA/LTA-Trigger und Deep-Learning-Picker (PhaseNet) für Echtzeit-Erdbeben-Lokalisierung."
+                  },
+                  {
+                    "method": "Tomographie",
+                    "description": "Inversion von Laufzeitresiduen für 3D-Geschwindigkeitsmodelle der Erdkruste und des Obermantels unter Mitteleuropa."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-obs-schwerefeld-grace-fo",
+              "level": 4,
+              "name": "Schwerefeldmessungen (GRACE-FO Nachfolgemission)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Monatliche Schwerefeldmodelle der GRACE Follow-On Mission (GFZ/NASA, gestartet 2018) in Form von sphärischen Harmonischen-Koeffizienten bis Grad/Ordnung 96, die Massenveränderungen in Grundwasser, Eisschilde, Meeresspiegel und Bodenfeuchtigkeit erfassen. Level-2-Produkte werden vom GFZ Potsdam, CSR Austin und JPL erzeugt und auf den ESA/NASA-Portalen frei bereitgestellt. Zeitreihen ermöglichen Quantifizierung des Gletschermasseverlusts und der Grundwasserentnahme weltweit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "GRACE-FO Level-2 und Level-3 Schwerefeld-Produkte werden von GFZ, CSR und JPL als Open Science auf PODAAC und ISDC kostenlos bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "NetCDF / HDF5"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Filterung",
+                    "description": "Anwendung von Gauss-Filterung und decorrelation-filtering (DDK) auf sphärische Harmonische zur Reduktion von Streifenartefakten."
+                  },
+                  {
+                    "method": "Massenbilanzkalkulation",
+                    "description": "Integration gefilterter Schwerefeldanomalien über Einzugsgebiete zur Berechnung von Wassermassenänderungen in cm Wassersäulenäquivalent."
                   }
                 ]
               }
@@ -11991,6 +15087,135 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "wiss-kosmo-n-koerper-simulation",
+              "level": 4,
+              "name": "Kosmologische N-Körper-Simulationsdaten",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Datenprodukte großvolumiger kosmologischer N-Körper- und hydrodynamischer Simulationen (Millennium, IllustrisTNG, FLAMINGO) mit Teilchenpositionen, -geschwindigkeiten und Halocatalogen für verschiedene Rotverschiebungen. Bereitgestellt durch Max-Planck-Institut für Astrophysik und Virgo-Konsortium über dedizierte Datenbanken. Ermöglicht Studium der Großraumstruktur des Universums, dunkler Materie und Galaxienentstehung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kosmologische Simulationsdaten werden von MPA, MPA Garching und internationalen Konsortien über öffentliche Portale (Virgo Database, TNG-Project) als Open Science frei zugänglich gemacht."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "NetCDF / HDF5"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Halo-Finding",
+                    "description": "Identifikation dunkler Materiehalos und Substruktur in Teilchen-Snapshots mittels Friends-of-Friends und SUBFIND-Algorithmus."
+                  },
+                  {
+                    "method": "Merger-Tree-Konstruktion",
+                    "description": "Verfolgung von Halo-Vorläufern über kosmologische Zeit durch Verknüpfung von Snapshots zu Merger-Trees für Galaxienentstehungsstudien."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-kosmo-gravitationswellen-katalog",
+              "level": 4,
+              "name": "Gravitationswellendetektions-Katalog (LIGO/Virgo)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Öffentlicher Gravitationswellentransientenkatalog (GWTC) des LIGO-Virgo-Konsortiums mit Parametern detektierter Ereignisse (Massen, Spins, Entfernung, Lokalisation) aus O1, O2 und O3 Observierungsläufen. Enthält Posterior-Samples der Bayes'schen Parameterrekonstruktion, Skymaps (HEALPix) und Strain-Zeitreihen der Ereignisse. Basis für Populationsstudien zu kompakten Binärsystemen und Tests der Allgemeinen Relativitätstheorie.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Alle LIGO/Virgo-Gravitationswellendaten werden nach einer Embargo-Phase von 18 Monaten über das Gravitational Wave Open Science Center (GWOSC) als CC0 Open Data frei zugänglich gemacht."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "NetCDF / HDF5"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Matched-Filter-Suche",
+                    "description": "Korrelation von Interferometer-Strain-Daten mit Wellenform-Templates (IMRPhenomPv2, SEOBNRv4) zur Detektion von Binärsystemen."
+                  },
+                  {
+                    "method": "Bayes'sche Parameterrekonstruktion",
+                    "description": "Schätzung von Quellparametern (Massen, Spins, Entfernung) via Markov-Chain-Monte-Carlo-Sampling (LALInference, Bilby) gegen Rauschen-Power-Spektral-Dichte."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-kosmo-exoplaneten-cheops-tess",
+              "level": 4,
+              "name": "Exoplaneten-Detektionsdaten (CHEOPS / TESS)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Photometrische Lichtkurvens-Zeitreihen und Exoplaneten-Parameterkataloge der ESA-Mission CHEOPS und NASA-Mission TESS, an denen deutsche Institute (DLR, Universitäten Bern/Berlin) beteiligt sind. Enthält Transit-Tiefen, Perioden, Radien und Ephemeridenmessungen für bekannte und neu entdeckte Exoplaneten sowie Archiv-Lichtkurven. Daten werden über ESAC Science Data Centre und MAST-Archiv öffentlich bereitgestellt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "CHEOPS- und TESS-Missionsdaten werden gemäß ESA/NASA Open Science Policy nach einer Proprietärfrist von 12 Monaten vollständig öffentlich zugänglich gemacht."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_03",
+                    "label": "NetCDF / HDF5"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Transit-Fitting",
+                    "description": "Modellierung von Transitereignissen mit batman/juliet-Codes zur Extraktion von Planetenradius, Orbitalperiode und Inclination aus Lichtkurven."
+                  },
+                  {
+                    "method": "Detrending",
+                    "description": "Entfernung von Instrumententrends und Sternenaktivitätssignalen aus Rohlichtkurven mittels Gaussian-Process-Regression."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -12244,6 +15469,49 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "wiss-med-studienzentrum-performance",
+              "level": 4,
+              "name": "Studienzentrum-Performancedaten (Screen-Failure / Randomisierung)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Operative Leistungskennzahlen klinischer Prüfzentren in multizentrischen Studien, darunter Screen-Failure-Rate, Randomisierungsrate, Protokollverletzungsquote, Dropout-Rate und Query-Resolution-Zeit, aggregiert nach Prüfzentrum-Typ und Indikation. Daten entstammen elektronischen Datenerfassungssystemen (EDC) wie REDCap und Medidata RAVE und werden von Koordinierungszentren für Klinische Studien (KKS) ausgewertet. Grundlage für Feasibility-Bewertungen und Zentrumsauswahl in Folgeprojekten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rohdaten auf Patientenebene sind vertraulich; aggregierte Zentrumskennzahlen können nach Pseudonymisierung der Prüfzentren in Studienberichten und Benchmarking-Publikationen veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Risk-Based Monitoring",
+                    "description": "Statistische Prozesskontrolle von Zentrumsperformance-KPIs mittels Kontrollkarten zur frühzeitigen Detektion von Compliance-Abweichungen."
+                  },
+                  {
+                    "method": "Feasibility-Analyse",
+                    "description": "Regression von Rekrutierungserfolg auf Prüfzentrumseigenschaften (Erfahrung, Patientenkollektiv, Infrastruktur) zur Optimierung zukünftiger Zentrumsauswahl."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -12484,6 +15752,49 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "wiss-med-probenqualitaet-biobank",
+              "level": 4,
+              "name": "Probenqualitätskennzahlen je Biobank (Hämolyse-Index, RIN)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Qualitätskontrolldaten biologischer Proben (Blut, Serum, Plasma, FFPE-Gewebe, RNA) aus deutschen Biobanken des BBMRI-ERIC-Netzwerks, darunter Hämolyse-Index, Lipämie-Index, RNA Integrity Number (RIN), DNA-Konzentration und -Integrität sowie Probenanfragelaufzeiten. Daten werden im Sample Locator und BBMRI-Directory erfasst. Essenziell für die Bewertung der Verwertbarkeit von Biobankproben in Forschungsprojekten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Qualitätskennzahlen auf Biobankebene können in Benchmarking-Berichten publiziert werden; Probendaten mit Spenderbezug unterliegen datenschutz- und datenschutzbehördlichen Auflagen."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Qualitätskontrolle",
+                    "description": "Automatisierte Messung von Hämolyse- und Lipämie-Index per klinischer Klinochemie-Analyser und RIN-Messung per Bioanalyzer nach ISBER-Standards."
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Vergleich von Probenqualitäts-KPIs zwischen Biobanken innerhalb des BBMRI-ERIC-Netzwerks zur Identifikation von Best Practices und Qualitätsverbesserungspotenzial."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -12720,6 +16031,53 @@
                   {
                     "method": "Propensity-Score-Matching",
                     "description": "Kohortenstudiendesign aus Routinedaten mittels PS-Matching"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-med-drks-registrierungsstatistik",
+              "level": 4,
+              "name": "Registrierungsstatistiken DRKS/ClinicalTrials.de nach Studienphase",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Aggregierte Registrierungsstatistiken des Deutschen Registers Klinischer Studien (DRKS) und ClinicalTrials.gov für in Deutschland durchgeführte Studien, differenziert nach Studienphase (I–IV), Indikationsgebiet, Studientyp (RCT, Beobachtungsstudie), Sponsor-Typ (industrie/Investigator-initiated) und Registrierungszeitpunkt (prospektiv/retrospektiv). Grundlage für Analysen zu Publication Bias, Selective Reporting und Transparenz klinischer Forschung. Daten werden durch DRKS-Team und externe Metaforschende ausgewertet.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Klinische Studienregister-Einträge sind per gesetzlicher Anforderung öffentlich zugänglich; aggregierte Statistiken darüber enthalten keinen Patientenbezug und sind frei verfügbar."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Registerabfrage",
+                    "description": "Systematische Abfrage des DRKS-API und ClinicalTrials.gov-API nach vordefinierten Filterkriterien zur Erstellung strukturierter Registrierungsdatenbanken."
+                  },
+                  {
+                    "method": "Metaforschung",
+                    "description": "Analyse von Registrierungsqualität, Protokollabweichungen zwischen Registrierung und Publikation (Selective Outcome Reporting) und Registrierungsfristen."
                   }
                 ]
               }
@@ -12963,6 +16321,49 @@
                   {
                     "method": "Medical-Coding",
                     "description": "MedDRA-Kodierung von Fallberichten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wiss-med-sentinel-are-surveillance",
+              "level": 4,
+              "name": "Sentinel-Surveillance-Netzwerk ARE-Daten (RKI)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Wöchentliche Inzidenzschätzer für akute respiratorische Erkrankungen (ARE) und Influenza-like Illness (ILI) aus dem ARE-Sentinelnetz des Robert Koch-Instituts, das auf Meldungen von ca. 700 Sentinel-Arztpraxen basiert. Datensatz enthält Konsultationsinzidenz (ARE-Rate pro 100 Patientenkontakte), Altersgruppen-stratifizierte Schätzer (0–4, 5–14, 15–34, 35–59, 60+ Jahre) und positiven Anteil respiratorischer Pathogene (Influenza A/B, RSV, SARS-CoV-2) aus Labordiagnostik. Zeitreihen reichen bis 2001 zurück.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ARE-Surveillancedaten des RKI werden wöchentlich im Influenzawochenbericht und im SurvStat@RKI 2.0-Portal als Open Data veröffentlicht; kein Personenbezug in aggregierten Sentineldaten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Hochrechnung",
+                    "description": "Hochrechnung von Sentinel-Konsultationsdaten auf Bevölkerungsebene mittels Praxispanel-Gewichtungsfaktoren und Bevölkerungsstruktur nach Altersgruppe und KV-Region."
+                  },
+                  {
+                    "method": "Saisonalitätsmodellierung",
+                    "description": "Berechnung saisonaler Baselines (Farrington-Algorithmus, Exponential-Smoothing) zur Identifikation epidemischer Schwellenwerte und Frühdetektion von Ausbrüchen."
                   }
                 ]
               }

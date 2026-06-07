@@ -115,6 +115,7 @@ let _index      = [];
 let _ready      = false;
 let _onNavigate = null;
 let _currentResult = null;
+let _closeGen   = null;
 
 export function initGenerator({ indexPromise, onNavigate }) {
   _onNavigate = onNavigate;
@@ -145,6 +146,7 @@ export function initGenerator({ indexPromise, onNavigate }) {
     triggerBtn.classList.remove('active');
     triggerBtn.focus();
   }
+  _closeGen = _close;
 }
 
 function _doRoll() {
@@ -246,7 +248,6 @@ export function roll() {
 }
 
 export function navigateToEntry(entry) {
-  document.getElementById('gen-modal').hidden = true;
-  document.getElementById('gen-btn').classList.remove('active');
+  _closeGen?.();
   _onNavigate?.(entry);
 }

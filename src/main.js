@@ -103,6 +103,7 @@ function closeMobileSheet() {
 
 moreBtn.addEventListener('click', openMobileSheet);
 mobileSheet.querySelector('.ms-backdrop').addEventListener('click', closeMobileSheet);
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !mobileSheet.hidden) closeMobileSheet(); });
 mobileSheet.querySelectorAll('.ms-item[data-target]').forEach(btn => {
   btn.addEventListener('click', () => {
     closeMobileSheet();

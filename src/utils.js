@@ -44,7 +44,7 @@ export const applyOpennessColors = (tiles) => applyTileColors(tiles);
 // Focuses first focusable child immediately (pass initialFocus:false to skip).
 // Returns a cleanup function — call it on close.
 export function trapFocus(el, { initialFocus = true } = {}) {
-  const SEL = 'button:not([disabled]),[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
+  const SEL = 'button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
   const focusable = () => [...el.querySelectorAll(SEL)];
 
   function onKeydown(e) {

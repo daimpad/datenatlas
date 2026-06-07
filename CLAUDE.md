@@ -265,13 +265,13 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 | Sektor | L2 | L3 | L4 | Ø L4/L2 |
 |--------|----|----|-----|---------|
 | staat | 42 | 113 | 1070 | 25,5 |
-| wirtschaft | 16 | 46 | 292 | 18,3 |
-| wissenschaft | 14 | 37 | 270 | 19,3 |
+| wirtschaft | 16 | 46 | 384 | 24,0 |
+| wissenschaft | 14 | 37 | 345 | 24,6 |
 | zivilgesellschaft | 17 | 49 | 357 | 21,0 |
 | medien & kultur | 11 | 32 | 199 | 18,1 |
 | religion | 8 | 24 | 144 | 18,0 |
 | bildung | 8 | 24 | 144 | 18,0 |
-| **Gesamt** | **116** | **325** | **2.476** | **21,3** |
+| **Gesamt** | **116** | **325** | **2.643** | **22,8** |
 
 ---
 
@@ -350,6 +350,7 @@ Sprint-Format (Features):
 - [x] **F-06** Cross-Sektor-Fusion-Generator — 12 Szenarien, Neo-Brutalism Button + Modal, Slot-Machine-Animation, Navigation zu L4-Datentypen ✓
 - [x] **F-07** Bildung-Sektor aktiviert — 8 L2 × 3 L3 × 6 L4 = 144 L4; Qualitäts- und Accessibility-Pass (trapFocus, WCAG, SEO, Security Headers) ✓
 - [x] **S-A** Tiefenausbau staat — alle 42 L2 auf ≥24 L4 (Ø 18,6→25,5), +290 L4 (780→1070) ✓
+- [x] **S-B** Tiefenausbau wirtschaft + wissenschaft — alle 30 L2 auf ≥24 L4, +167 L4 (wirtschaft 292→384, wissenschaft 270→345) ✓
 
 ### Startbefehl
 

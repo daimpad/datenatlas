@@ -4,7 +4,7 @@ import { initControls }      from './controls.js';
 import { openSidebar, closeSidebar } from './modal.js';
 import { loadMain, loadSector }      from './dataLoader.js';
 import { state, patchState }         from './state.js';
-import { applyTileColors, applyOpennessColors, esc } from './utils.js';
+import { applyTileColors, applyOpennessColors, esc, trapFocus } from './utils.js';
 import { buildSearchIndex, initSearch } from './search.js';
 import { initStats }  from './stats.js';
 import { initExport }   from './export.js';
@@ -59,13 +59,27 @@ errorRetry.addEventListener('click', () => { hideError(); _retryFn?.(); });
 
 // ── Onboarding ────────────────────────────────────────────────────────────────
 // Always show on every page load — no localStorage
-document.getElementById('ob-start').addEventListener('click', () => {
-  onboarding.hidden = true;
-});
+{
+  const obCleanup = trapFocus(onboarding);
+  document.getElementById('ob-start').addEventListener('click', () => {
+    obCleanup();
+    onboarding.hidden = true;
+  });
+}
 
 // ── Info modal ────────────────────────────────────────────────────────────────
-function openInfoModal()  { infoModal.hidden = false; infoBtn.classList.add('active'); }
-function closeInfoModal() { infoModal.hidden = true;  infoBtn.classList.remove('active'); }
+let _infoTrapCleanup = null;
+function openInfoModal() {
+  infoModal.hidden = false;
+  infoBtn.classList.add('active');
+  _infoTrapCleanup = trapFocus(infoModal);
+}
+function closeInfoModal() {
+  _infoTrapCleanup?.(); _infoTrapCleanup = null;
+  infoModal.hidden = true;
+  infoBtn.classList.remove('active');
+  infoBtn.focus();
+}
 
 infoBtn.addEventListener('click', openInfoModal);
 imClose.addEventListener('click', closeInfoModal);
@@ -74,11 +88,24 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && !infoModal
 
 // ── Mobile action sheet ───────────────────────────────────────────────────────
 const mobileSheet = document.getElementById('mobile-sheet');
-document.getElementById('more-btn').addEventListener('click', () => { mobileSheet.hidden = false; });
-mobileSheet.querySelector('.ms-backdrop').addEventListener('click', () => { mobileSheet.hidden = true; });
+const moreBtn = document.getElementById('more-btn');
+let _sheetTrapCleanup = null;
+
+function openMobileSheet() {
+  mobileSheet.hidden = false;
+  _sheetTrapCleanup = trapFocus(mobileSheet);
+}
+function closeMobileSheet() {
+  _sheetTrapCleanup?.(); _sheetTrapCleanup = null;
+  mobileSheet.hidden = true;
+  moreBtn.focus();
+}
+
+moreBtn.addEventListener('click', openMobileSheet);
+mobileSheet.querySelector('.ms-backdrop').addEventListener('click', closeMobileSheet);
 mobileSheet.querySelectorAll('.ms-item[data-target]').forEach(btn => {
   btn.addEventListener('click', () => {
-    mobileSheet.hidden = true;
+    closeMobileSheet();
     document.getElementById(btn.dataset.target)?.click();
   });
 });

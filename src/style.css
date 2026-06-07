@@ -919,6 +919,7 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
   color: var(--text-1);
   outline: none;
 }
+#search-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 #search-input::placeholder { color: var(--text-3); }
 #header.search-mode #breadcrumb { display: none; }
 #header.search-mode #search-input { display: block; }
@@ -2197,4 +2198,12 @@ a#footer-brand:hover { color: var(--accent); }
   .gen-result { padding: 16px 20px; overflow-x: hidden; }
   .gen-footer { padding: 14px 20px; flex-wrap: wrap; }
   .gen-hint { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

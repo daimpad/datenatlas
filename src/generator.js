@@ -1,5 +1,5 @@
 // ── Cross-Sector-Fusion-Generator ─────────────────────────────────────────────
-import { esc } from './utils.js';
+import { esc, trapFocus } from './utils.js';
 
 export const SECTOR_META = {
   staat:             { name: 'Staat & Verwaltung',       color: '#1e5799' },
@@ -125,10 +125,13 @@ export function initGenerator({ indexPromise, onNavigate }) {
   const rollBtn    = document.getElementById('gen-roll-btn');
   const triggerBtn = document.getElementById('gen-btn');
 
+  let _trapCleanup = null;
+
   triggerBtn.addEventListener('click', () => {
     modal.hidden = false;
     triggerBtn.classList.add('active');
     if (!_currentResult) _doRoll();
+    _trapCleanup = trapFocus(modal);
   });
 
   closeBtn.addEventListener('click', () => _close());
@@ -137,8 +140,10 @@ export function initGenerator({ indexPromise, onNavigate }) {
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) _close(); });
 
   function _close() {
+    _trapCleanup?.(); _trapCleanup = null;
     modal.hidden = true;
     triggerBtn.classList.remove('active');
+    triggerBtn.focus();
   }
 }
 

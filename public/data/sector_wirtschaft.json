@@ -1124,6 +1124,174 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "filial-flaechenproduktivitaet",
+              "level": 4,
+              "name": "Flächenproduktivität je Filiale",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Umsatz je Quadratmeter Verkaufsfläche, erhoben durch interne POS-Systeme und Flächenmanagement-Software der Einzelhändler. Ermöglicht Vergleich zwischen Standorten und Optimierung der Raumnutzung. Wird von Handelsverbänden wie dem HDE aggregiert und für Branchenbenchmarks genutzt.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Unternehmensinterne KPI mit Wettbewerbsrelevanz; Branchendurchschnitte vom HDE publiziert, Einzeldaten proprietär."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "POS-Aggregation",
+                    "description": "Kassensystemdaten werden täglich je Filiale summiert und auf die gemeldete Nettofläche normiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "filial-standortbewertung",
+              "level": 4,
+              "name": "Standortbewertungsindex Filialnetz",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Komposit-Score je Filialstandort aus Passantenfrequenz, lokaler Kaufkraft, Wettbewerbsdichte und Mietkosten, erstellt durch spezialisierte Standortanalyse-Dienstleister wie GfK Geomarketing oder MB-Research. Dient der strategischen Entscheidung über Neueröffnungen und Schließungen. Geodaten fließen als Rasterebenen in die Modellierung ein.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Kommerziell lizenzierte Geodaten und unternehmensinterne Gewichtungsmodelle; Methodikbeschreibungen teilweise publizierbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Scoring-Modell",
+                    "description": "Gewichtete Kombination von Makro- und Mikrolagemerkmalen zu einem Standort-Score auf Rasterbasis (100×100 m)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "filial-sortimentssteuerung",
+              "level": 4,
+              "name": "Sortimentssteuerungsdaten je Filiale",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Artikelgenaue Abverkaufsdaten auf Filialbene, erhoben durch Warenwirtschaftssysteme (z. B. SAP Retail, Microsoft Dynamics). Enthält Lagerumschlag, Abverkaufsquoten und Retourenquoten je SKU und Standort. Grundlage für automatisierte Nachbestellprozesse und saisonale Sortimentsanpassungen.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Artikelgenaue Abverkaufsdaten sind Kerngeschäftsgeheimnis; aggregierte Kategoriedaten gelegentlich in Geschäftsberichten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Warenwirtschaftsauswertung",
+                    "description": "Automatisierte ETL-Pipelines extrahieren täglich SKU-Bewegungsdaten aus dem ERP und verdichten sie je Filiale und Warengruppe."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "filial-kassenbon-analyse",
+              "level": 4,
+              "name": "Kassenbon-Warenkorbanalyse",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anonymisierte Transaktionsdaten aus Kassensystemen, ausgewertet nach Warenkorbgröße, Artikelkombinationen (Market-Basket-Analysis) und Tageszeit. Erhoben durch Einzelhändler und Zahlungsdienstleister wie Nets oder Worldline. Dient der Platzierungsoptimierung, Promotionssteuerung und Kundensegmentierung im stationären Handel.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierte Aggregatstatistiken zu Warenkörben können nach Datenschutzprüfung veröffentlicht werden; Rohdaten mit Kundenbezug bleiben intern."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Market-Basket-Analysis",
+                    "description": "Association-Rule-Mining auf anonymisierten Bonnummern identifiziert häufige Artikelkombinationen für Cross-Selling-Empfehlungen."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -1461,6 +1629,88 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "konto-transaktionsvolumen-statistik",
+              "level": 4,
+              "name": "Transaktionsvolumen-Statistik Privatkonten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Aggregierte Monatsdaten zu Transaktionsanzahl und -volumen auf Girokonten, erhoben durch Kreditinstitute und beim Deutschen Sparkassen- und Giroverband (DSGV) sowie Bundesverband deutscher Banken zusammengefasst. Differenziert nach Zahlungsart (Überweisung, Lastschrift, Kartenzahlung). Dient der Kapazitätsplanung und regulatorischen Meldepflichten nach PSD2.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Branchenstatistiken werden vom Bankenverband publiziert; institutsspezifische Daten bleiben intern und unterliegen Bankengeheimnis."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Regulatorisches Reporting",
+                    "description": "Banken aggregieren Transaktionsdaten monatlich für interne Meldungen an die BaFin und Verbandspublikationen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "konto-kontomodell-verteilung",
+              "level": 4,
+              "name": "Kontomodellverteilung und Gebührenstruktur",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Marktdaten zur Verteilung von Kontomodellen (Basis-, Premium-, Geschäftskonten) nach Kundensegment und Gebührenklasse, erhoben durch Bankinstitute sowie Marktforschungsinstitute wie Statista und Barkow Consulting. Ermöglicht Wettbewerbsanalysen im Retail-Banking. Grundlage für Produktentwicklung und Preisstrategie.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Produktbezogene Marktanteile werden durch Verbände und Marktforscher aggregiert veröffentlicht; Kundendaten bleiben proprietär."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Marktanalyse",
+                    "description": "Primärbefragungen bei Banken werden mit öffentlichen Geschäftsberichtsdaten trianguliert, um Marktanteile je Kontomodell zu schätzen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1720,6 +1970,88 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "versicherung-schaden-kosten-quote",
+              "level": 4,
+              "name": "Schaden-Kosten-Quote nach Versicherungssparte",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Combined Ratio (Schäden + Kosten je Prämieneinnahme) differenziert nach Sparte (Kfz, Haftpflicht, Sach, Leben), erhoben durch Versicherungsunternehmen und vom Gesamtverband der Deutschen Versicherungswirtschaft (GDV) aggregiert publiziert. Kerngröße für Profitabilitätssteuerung und Rückversicherungsverhandlungen. GDV-Statistisches Taschenbuch erscheint jährlich.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "GDV publiziert Branchendurchschnitte jährlich; unternehmensspezifische Quoten sind wettbewerbssensibel und bleiben intern."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Spartenaggregation",
+                    "description": "Interne Schadenabwicklungsdaten werden quartalsweise nach Sparte und Zeichnungsjahr aggregiert und mit Marktdaten des GDV abgeglichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "versicherung-neuabschluss-statistik",
+              "level": 4,
+              "name": "Neuabschlussstatistik Versicherungsverträge",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl und Prämienvolumen neu abgeschlossener Versicherungsverträge je Sparte und Vertriebskanal (Makler, Direktvertrieb, Online), erhoben durch Versicherungsunternehmen und beim GDV sowie map-report aggregiert. Liefert Marktdynamik und Wachstumstrends im Versicherungsmarkt. Grundlage für Vertriebssteuerung und Produktplanung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Branchenweite Neuabschlussvolumina werden vom GDV und map-report publiziert; Unternehmensdaten bleiben proprietär."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Vertriebsreporting",
+                    "description": "CRM-Systeme der Versicherer erfassen Abschlüsse in Echtzeit; monatliche Aggregation nach Sparte und Kanal für Marktanteilsausweisung."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1976,6 +2308,92 @@
                   {
                     "method": "Planung & Steuerung",
                     "description": "Grundlage für Risikomodelle und Kapitalanforderungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kapitalmarkt-ordervolumen",
+              "level": 4,
+              "name": "Ordervolumen Privatanleger nach Anlageklasse",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Aggregiertes Handelsvolumen von Privatkundenorders aufgeschlüsselt nach Anlageklasse (Aktien, ETF, Anleihen, Derivate), erhoben durch Depotbanken und Broker sowie vom Deutschen Derivate Verband (DDV) und dem Deutschen Aktieninstitut (DAI) zusammengefasst. Misst Retailanleger-Aktivität und Präferenzverschiebungen. Quartalsdaten im DAI-Factbook.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "DAI und DDV publizieren aggregierte Marktdaten halbjährlich; institutsspezifische Orderbücher unterliegen MiFID-II-Vertraulichkeit."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "MiFID-II-Reporting",
+                    "description": "Transaktionsmeldungen an die BaFin werden intern zu Volumenstatistiken aggregiert und für Verbandspublikationen aufbereitet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kapitalmarkt-depotstruktur",
+              "level": 4,
+              "name": "Depotstruktur und Wertpapierbestand Privathaushalte",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verteilung der Wertpapierbestände in Privatkundendepots nach Produktkategorie und Anlegersegment (Altersgruppe, Depotvolumen), erhoben durch Depotbanken und Fondsgesellschaften sowie im BVI-Investmentstatistik und Bundesbank-Wertpapierdepotstatistik erfasst. Erlaubt Analyse der Vermögensallokation privater Haushalte. Bundesbank publiziert aggregierte Statistiken quartalsweise.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Bundesbank und BVI veröffentlichen aggregierte Depotstatistiken; Einzelkundendepots unterliegen dem Bankgeheimnis und DSGVO."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Depotstatistik-Aggregation",
+                    "description": "Depotbanken melden Wertpapierbestände monatlich an die Bundesbank; BVI aggregiert Fondsbestände separat für die Investmentstatistik."
                   }
                 ]
               }
@@ -2305,6 +2723,88 @@
                     "title": "Lohnstrukturerhebung Destatis",
                     "url": "https://www.destatis.de/dataset/lohnstrukturerhebung",
                     "publisher": "Destatis"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hr-fluktuationsquote-branche",
+              "level": 4,
+              "name": "Fluktuationsquoten nach Branche und Qualifikation",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verhältnis von Personalabgängen zu Durchschnittsbelegschaft, differenziert nach Wirtschaftszweig, Qualifikationsniveau und Kündigungsgrund, erhoben durch Unternehmen und vom Institut der deutschen Wirtschaft (IW Köln) sowie der Deutschen Gesellschaft für Personalführung (DGFP) aggregiert. Liefert Benchmarks für Retention-Strategien. Jährliche DGFP-Kennzahlenstudie.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "DGFP und IW publizieren Branchendurchschnitte; unternehmensspezifische Fluktuationsraten sind HR-intern und wettbewerbssensibel."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "HR-Kennzahlenanalyse",
+                    "description": "Aus HRIS-Systemen (SAP HCM, Workday) extrahierte Bewegungsdaten werden anonymisiert aggregiert und im Rahmen von Verbandsbefragungen gemeldet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hr-krankenstand-statistik",
+              "level": 4,
+              "name": "Krankenstandstatistik privater Arbeitgeber",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Krankenquote (Fehltage je Arbeitnehmer) nach Wirtschaftszweig, Betriebsgröße und Diagnosegruppe, erhoben durch Unternehmen über HR-Systeme und Krankmeldungsmanagement sowie durch BKK Dachverband und AOK-Fehlzeiten-Report zusammengefasst. Grundlage für betriebliches Gesundheitsmanagement (BGM). AOK-Fehlzeiten-Report erscheint jährlich.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Krankenkassen publizieren aggregierte Branchendaten; betriebliche Einzeldaten unterliegen DSGVO und Betriebsrat-Mitbestimmung."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "AU-Datenauswertung",
+                    "description": "Arbeitsunfähigkeitsbescheinigungen werden im HRIS erfasst, nach Diagnosegruppen codiert (ICD-10) und quartalsweise für BGM-Berichte aggregiert."
                   }
                 ]
               }
@@ -2644,6 +3144,88 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "arbeitsmarkt-gehaltsbandstatistik",
+              "level": 4,
+              "name": "Gehaltsbandstatistik nach Funktion und Region",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Vergütungskorridore (Median, P25, P75) für Berufsgruppen und Hierarchieebenen, differenziert nach Region und Unternehmensgröße, erhoben durch Entgelterhebungen der Arbeitgeberverbände (BDA, Gesamtmetall) sowie Vergütungsberatungen wie Kienbaum oder Willis Towers Watson. Basis für tarifliche Eingruppierung und individuelle Gehaltsverhandlungen.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Vergütungssurveys sind kostenpflichtige Produkte der Beratungsunternehmen; Methodiken publizierbar, Rohdaten proprietär."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Vergütungserhebung",
+                    "description": "Standardisierte Stellenbeschreibungsbögen werden von Teilnehmerunternehmen ausgefüllt; Kienbaum u. a. aggregieren, bereinigen und benchmarken die Gehaltsdaten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "arbeitsmarkt-stellenbesetzungsdauer",
+              "level": 4,
+              "name": "Stellenbesetzungsdauer nach Berufsfeld",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Durchschnittliche Dauer von der Ausschreibung bis zur Besetzung einer Stelle, differenziert nach Berufsfeld, Qualifikationsanforderung und Region, erhoben durch Unternehmen und Personalvermittler sowie vom Institut für Arbeitsmarkt- und Berufsforschung (IAB) im Rahmen der IAB-Stellenerhebung erfasst. Indikator für Fachkräftemangel. IAB-Stellenerhebung quartalsweise.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "IAB publiziert aggregierte Ergebnisse der Stellenerhebung frei; unternehmensindividuelle Rekrutierungsdaten aus ATS-Systemen bleiben intern."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "ATS-Auswertung",
+                    "description": "Applicant-Tracking-Systeme (Greenhouse, Personio) protokollieren Zeitstempel je Recruiting-Phase; IAB-Befragung ergänzt diese Daten um repräsentative Stichproben."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -2971,6 +3553,92 @@
                   {
                     "method": "Öffentlichkeitsarbeit & Kommunikation",
                     "description": "Benchmark-Daten für HR-Kommunikation und Standortmarketing."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "aussenhandel-exportquote-branche",
+              "level": 4,
+              "name": "Exportquote nach Branche und Unternehmensgrößenklasse",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anteil des Auslandsumsatzes am Gesamtumsatz privater Unternehmen, differenziert nach WZ-2008-Wirtschaftszweig und Betriebsgrößenklasse, erhoben durch das Statistische Bundesamt im Rahmen der Außenhandelsstatistik und durch DIHK-Exportbefragungen. Ermöglicht Analyse der Exportabhängigkeit mittelständischer Unternehmen. Destatis veröffentlicht Branchendaten monatlich.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Destatis publiziert Branchenexportquoten nach Geheimhaltungsprüfung; unternehmensindividuelle Ausfuhrmeldungen an das Zollamt unterliegen Steuergeheimnis."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Außenhandelsstatistik",
+                    "description": "Zollanmeldungen (ATLAS-System) werden von Destatis aufbereitet und nach CN-Warennomenklatur sowie Länderbestimmung gegliedert publiziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "aussenhandel-handelspartner-diversifikation",
+              "level": 4,
+              "name": "Handelspartnerdiversifikation privater Exporteure",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verteilung der Exportumsätze privater Unternehmen nach Zielland und -region (EU, BRICS, sonstige), erhoben auf Basis von Zollanmeldungen und DIHK-AHK-Netzwerkdaten. Misst Konzentrationsrisiken im Exportportfolio und Erschließungsgrad neuer Märkte. BGA-Außenhandelsverband publiziert jährliche Ländertabellen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Ländertabellen nach WZ-Klassen werden von Destatis und BGA publiziert; Einzelunternehmensdaten unterliegen dem Steuergeheimnis."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Geografische Handelsflussanalyse",
+                    "description": "Destatis-Außenhandelsmatrix wird nach Herkunftsbranche und Zielland gekreuzt; DIHK-AHK-Befragungen ergänzen qualitative Markterschließungseinschätzungen."
                   }
                 ]
               }
@@ -3433,6 +4101,127 @@
                   {
                     "method": "Forschung & Analyse",
                     "description": "Benchmarkdaten für Bewirtschaftungskosten im Wohnungsmarkt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "leerstandsquoten-wohnimmobilien",
+              "level": 4,
+              "name": "Leerstandsquoten Wohnimmobilien",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Erhebung von Leerstandsquoten im verwalteten Wohnimmobilienbestand privater Immobilienunternehmen, differenziert nach Objekttyp, Baujahr und Lage. Daten stammen aus internen Portfoliomanagementsystemen großer Bestandshalter und Wohnungsunternehmen. Verwendung für Renditeoptimierung, Marktvergleiche und strategische Portfoliosteuerung.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Leerstandsdaten sind wettbewerbsrelevant und werden von privaten Unternehmen nicht veröffentlicht; aggregierte Branchendaten nur über kostenpflichtige Marktforschungsberichte zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Portfolio-Aggregation",
+                    "description": "Zusammenführung von Leerstandsmeldungen aus Hausverwaltungssoftware (z. B. iX-Haus, Yardi) zu quartalsmäßigen Kennziffern je Portfoliosegment."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mietrenditen-benchmark-gewerbe",
+              "level": 4,
+              "name": "Mietrenditen-Benchmark Gewerbeimmobilien",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Benchmarkdaten zu Brutto- und Nettomietrenditen für Gewerbeimmobilien (Büro, Handel, Logistik) aus Vergleichsstudien der gif Gesellschaft für Immobilienwirtschaftliche Forschung und großer Maklerhäuser wie CBRE und JLL. Die Kennziffern werden nach Städtekategorie (A- bis C-Städte) und Objektklasse segmentiert. Nutzung durch institutionelle Investoren zur Bewertung von Akquisitionszielen und Portfoliooptimierung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Benchmarkdaten werden von Branchenverbänden in Marktberichten veröffentlicht, jedoch mit zeitlichem Verzug und ohne Einzelobjektbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Peer-Group-Benchmarking",
+                    "description": "Vergleich von Ist-Renditen im verwalteten Bestand gegen Markt-Benchmarks der gif und internationaler Research-Häuser zur Identifikation von Unter- und Überperformern."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "instandhaltungskosten-benchmark",
+              "level": 4,
+              "name": "Instandhaltungskosten-Benchmarks",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Kostenkennwerte für Instandhaltungs- und Bewirtschaftungsaufwendungen je Quadratmeter Wohn- und Nutzfläche, erhoben durch den Verband der Immobilienverwalter Deutschland (VDIV) und den Zentralen Immobilien Ausschuss (ZIA) in regelmäßigen Mitgliederbefragungen. Die Benchmarks decken Wartung, Reparatur, Versicherung und Verwaltungskosten ab und werden nach Gebäudealter und Objektgröße differenziert. Grundlage für die Kalkulation von Wirtschaftsplänen in Wohnungseigentümergemeinschaften und Portfolioverwaltungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Branchendurchschnitte werden im VDIV-Jahresbericht und ZIA-Marktbericht veröffentlicht; unternehmensscharfe Rohdaten verbleiben proprietär."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Verbandsbefragung",
+                    "description": "Jährliche standardisierte Mitgliederbefragung durch VDIV mit anschließender statistischer Auswertung und Normierung auf EUR/m²/Jahr."
                   }
                 ]
               }
@@ -3905,6 +4694,131 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "kaufpreisindizes-wohnimmobilien",
+              "level": 4,
+              "name": "Kaufpreisindizes Wohnimmobilien",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Hedonische Kaufpreisindizes für Eigentumswohnungen und Einfamilienhäuser, berechnet aus Kaufvertragsdaten der Gutachterausschüsse und ergänzenden Inseratsdaten von Immobilienportalen (ImmoScout24, Immowelt). Datenproduzenten sind das Statistische Bundesamt (DESTATIS Häuserpreisindex), die Bundesbank und private Anbieter wie empirica-systeme. Anwendung in der geldpolitischen Analyse, Pfandbriefbewertung und kommunalen Stadtentwicklungsplanung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DESTATIS-Häuserpreisindex und Bundesbank-Immobilienpreisstatistiken sind frei zugänglich; portalbasierte Indizes werden von privaten Anbietern kostenpflichtig bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Hedonische Regression",
+                    "description": "Qualitätsbereinigung von Kaufpreiszeitreihen mittels hedonischer Regressionsmodelle, die Ausstattungs- und Lagemerkmale als erklärende Variablen verwenden."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "transaktionsvolumen-gewerbeimmobilien",
+              "level": 4,
+              "name": "Transaktionsvolumen Gewerbeimmobilien",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Halbjährliche Erfassung des Investmentmarktvolumens für gewerbliche Immobilien (Büro, Logistik, Einzelhandel, Hotel) durch Maklerhäuser (CBRE, Savills, Colliers) auf Basis von Transaktionsdatenbanken und eigener Marktrecherche. Daten werden nach Objektklasse, Investorenherkunft und regionaler Verteilung aufgeschlüsselt. Zentrale Kennzahl für institutionelle Anleger, Banken und Regulierungsbehörden zur Einschätzung von Marktliquidität und Risikoexposition.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Quartalszahlen werden von Maklerhäusern in kostenlosen Marktberichten veröffentlicht; Einzeltransaktionsdaten bleiben proprietär."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Deal-Tracking",
+                    "description": "Systematische Erfassung abgeschlossener Immobilientransaktionen ab einem definierten Mindestvolumen durch dedizierte Research-Teams und automatisierte Grundbuchauswertungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "angebotsmieten-zeitreihen-regional",
+              "level": 4,
+              "name": "Angebotsmieten-Zeitreihen Regional",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatliche Zeitreihen zu Angebotsmieten für Wohnungen auf Basis von Inseratsdaten der großen Immobilienportale, aufbereitet von empirica-systeme, F+B und dem BBSR (Bundesinstitut für Bau-, Stadt- und Raumforschung). Die Daten erfassen Median- und Durchschnittsmieten nach Wohnungsgröße, Baujahr und Postleitzahlgebiet. Sie dienen als Grundlage für Mietspiegel-Erstellung, Mietpreisbremse-Evaluation und wissenschaftliche Wohnungsmarktforschung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "BBSR-Auswertungen sind öffentlich zugänglich; kleinräumige Zeitreihen von empirica und F+B sind lizenzpflichtig, regionale Aggregate werden in Bundesberichten veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Inserats-Scraping & Deduplizierung",
+                    "description": "Automatisierte Erhebung und Bereinigung von Wohnungsinseraten um Dopplungen, Ausreißer und qualitätsfremde Angebote vor der regionalen Aggregation."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -4286,6 +5200,131 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "schuelerzahlen-privatschulen-bundesland",
+              "level": 4,
+              "name": "Schülerzahlen Privatschulen nach Bundesland",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche Erhebung der Schülerzahlen an anerkannten Ersatzschulen und Ergänzungsschulen in privater Trägerschaft, gegliedert nach Schulart, Bundesland und Trägertyp (konfessionell, weltanschaulich, reformpädagogisch, kommerziell). Datenquelle ist die Schulstatistik der Statistischen Landesämter, aggregiert durch DESTATIS in der Schulstatistik-Fachserie. Nutzung durch Bildungsministerien zur Steuerung von Fördermitteln und durch Marktforschung zur Potenzialanalyse.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DESTATIS-Schulstatistik ist als Open Data kostenfrei verfügbar; Einzelschulen sind auf Ebene der Schulverzeichnisse der Länder einsehbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Amtliche Schulstatistik",
+                    "description": "Jährliche Vollerhebung aller Schulen durch die Statistischen Landesämter mit Meldepflicht für alle staatlich anerkannten Bildungseinrichtungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gebuehrenstrukturen-privatschulen",
+              "level": 4,
+              "name": "Gebührenstrukturen Privatschulen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Erhebung von Schulgeld- und Aufnahmegebühren privater Schulen in Deutschland, durchgeführt von Marktforschungsinstituten (z. B. Statista, IW Köln) und investigativen Recherchen der Verbraucherzentralen auf Basis öffentlicher Schulprospekte und Websiteangaben. Daten werden nach Schulform, Bundesland und Träger segmentiert. Relevant für Bildungspolitik (Zugangsgerechtigkeit), Elternberatung und wettbewerbsrechtliche Analyse.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einzelne Schulen kommunizieren Gebühren freiwillig auf ihren Websites; systematische Marktübersichten entstehen durch private Aggregatoren und sind teils kostenpflichtig."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Web-Scraping & manuelle Recherche",
+                    "description": "Systematische Erhebung veröffentlichter Gebührenordnungen von Schulwebsites mit anschließender Kategorisierung nach Gebührentyp und Vergleichbarkeitsbereinigung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "privatschul-anmeldungen-wartelisten",
+              "level": 4,
+              "name": "Anmeldezahlen und Wartelisten Privatschulen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche Statistiken zu Anmeldezahlen, Aufnahmekapazitäten und Wartelisten privater Schulen (Waldorf, Montessori, internationale Schulen, konfessionelle Privatschulen), erhoben durch Schulträgerverbände (VdP, EUDEC) und Landesschulbehörden. Enthält Bewerbungs-Aufnahme-Quoten nach Schulform und Region sowie Entwicklung der Nachfrage nach privatem Schulunterricht als Indikator für Unzufriedenheit mit dem öffentlichen Schulsystem.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Anmeldezahlen können ohne Personenbezug veröffentlicht werden; individuelle Wartelistendaten sind datenschutzrechtlich geschützt und erfordern Anonymisierung."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Zusammenführung der Anmeldedaten verschiedener Schulträgerverbände zu regionalisierten Gesamtstatistiken auf Landkreisebene."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Zeitreihenvergleich von Nachfragewachstum und Kapazitätsentwicklung zur Prognose des Bedarfs an privaten Schulplätzen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4658,6 +5697,123 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "marktvolumen-nachhilfe-deutschland",
+              "level": 4,
+              "name": "Marktvolumen Nachhilfemarkt Deutschland",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Schätzungen zum Gesamtmarktvolumen des privaten Nachhilfemarkts in Deutschland, erhoben durch das Institut für Schulentwicklungsforschung (IFS) an der TU Dortmund im Rahmen der Nachhilfestudie und durch Marktforschungsinstitute wie Statista auf Basis von Haushaltsbefragungen und Unternehmensumsatzdaten. Die Daten umfassen institutionelle Anbieter (Schülerhilfe, Studienkreis), Einzellehrkräfte und Online-Plattformen. Nutzung für Branchenanalysen, Investitionsentscheidungen und bildungspolitische Debatten zu Chancengleichheit.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "IFS-Nachhilfestudien sind als Forschungsberichte frei verfügbar; kommerzielle Marktvolumenschätzungen von Statista sind kostenpflichtig."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Haushaltsbefragung & Hochrechnung",
+                    "description": "Repräsentative Bevölkerungsbefragung zu Nachhilfeinanspruchnahme und -ausgaben mit Hochrechnung auf Gesamtbevölkerung anhand amtlicher Schülerstatistiken."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "stundenpreise-nachhilfe-regional",
+              "level": 4,
+              "name": "Stundenpreise Nachhilfe nach Region und Fach",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Marktpreiserhebungen für Nachhilfestunden nach Fach (Mathematik, Deutsch, Englisch, Naturwissenschaften), Anbietertyp (Institut, Einzellehrer, Online) und Region, durchgeführt durch Plattformbetreiber (Superprof, Nachhilfe.de) auf Basis eigener Buchungsdaten sowie durch Verbraucherzentralen in Preisvergleichen. Daten werden quartalsweise aktualisiert und nach städtischem/ländlichem Umfeld und Bildungsstand der Lehrkraft differenziert. Relevant für Familien, Bildungsanbieter und wettbewerbsrechtliche Preisanalysen.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Plattform-interne Preisdaten sind wettbewerbsrelevant; öffentlich kommuniziert werden allenfalls Einstiegspreise und regionale Durchschnitte in Presseberichten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Plattform-Transaktionsanalyse",
+                    "description": "Auswertung abgeschlossener Buchungsvorgänge auf Matching-Plattformen zur Ermittlung realer Marktpreise, bereinigt um Vermittlungsgebühren und Rabattaktionen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "plattform-nutzungsstatistiken-edtech",
+              "level": 4,
+              "name": "Plattform-Nutzungsstatistiken EdTech",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Nutzungskennzahlen digitaler Lern- und Nachhilfeplattformen (Khan Academy, Sofatutor, Studyflix, Schülerhilfe Online) wie monatlich aktive Nutzer, Sitzungsdauer, abgeschlossene Lerneinheiten und Retentionsraten, erhoben durch die Plattformbetreiber und aggregiert in EdTech-Marktberichten des Bundesverbands Digitale Wirtschaft (BVDW) und des EdTech Germany Reports. Die Daten dokumentieren den Digitalisierungsgrad des Nachhilfemarkts und die Verschiebung von Präsenz- zu Online-Formaten. Nutzung durch Investoren, Verlage und bildungspolitische Akteure.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Interne Nutzungsmetriken sind Geschäftsgeheimnisse; BVDW und EdTech-Germany veröffentlichen aggregierte Trendaussagen ohne Rohdaten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Produktanalytics",
+                    "description": "Serverbasierte Erfassung von User-Events (Login, Lektionsstart, -abschluss, Suchqueries) mit anschließender Kohorten- und Funnel-Analyse zur Produktoptimierung."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -4876,6 +6032,88 @@
                   {
                     "method": "Unternehmensregister",
                     "description": "Verknüpfung aus Handelsregister und Unternehmensdatenbanken"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "produktionsvolumen-pkw-nach-modell",
+              "level": 4,
+              "name": "Produktionsvolumen PKW nach Modell und Werk",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatliche Produktionszahlen für Personenkraftwagen nach Modell, Werk und Antriebsart (Verbrenner, Hybrid, Elektro), erfasst durch den Verband der Automobilindustrie (VDA) auf Basis der Werksmeldungen der Mitgliedsunternehmen (VW, BMW, Mercedes-Benz, Stellantis). Daten werden in der VDA-Produktionsstatistik quartalsweise veröffentlicht und durch das Kraftfahrtbundesamt (KBA) für Zulassungskorrelationen ergänzt. Grundlage für Konjunkturanalysen, Zuliefererplanung und industriepolitische Entscheidungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "VDA veröffentlicht Gesamtproduktionszahlen und Segmentdaten; modellscharfe Werksdaten bleiben unternehmenseigen und werden nur aggregiert kommuniziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Werksmeldeverfahren",
+                    "description": "Standardisiertes monatliches Meldeverfahren der VDA-Mitgliedsunternehmen mit anschließender Plausibilitätsprüfung und Aggregation durch den Verband."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zulieferabhaengigkeiten-automobilsektor",
+              "level": 4,
+              "name": "Zulieferabhängigkeiten im Automobilsektor",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Netzwerkanalysen zur Lieferkettentiefe und Abhängigkeitsstrukturen in der deutschen Automobilzuliefererindustrie, erstellt vom Fraunhofer ISI, dem ifo-Institut und der Bundesagentur für Arbeit auf Basis von Unternehmensregistern, Input-Output-Tabellen und Beschäftigungsdaten. Daten erfassen Einstufigkeit (Tier-1/2/3), geografische Konzentration kritischer Zulieferer und Substitutionspotenziale. Relevant für Resilienzstrategien der OEMs, industriepolitische Förderentscheidungen und Risikobewertungen von Kreditgebern.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Fraunhofer- und ifo-Studien werden als öffentlich zugängliche Forschungsberichte publiziert; unternehmensspezifische Lieferantenlisten bleiben proprietär."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Input-Output-Analyse",
+                    "description": "Verknüpfung von Statistik-Bundesamt-Input-Output-Tabellen mit Unternehmensdaten aus dem Handelsregister zur Kartierung von Wertschöpfungsketten auf Branchenebene."
                   }
                 ]
               }
@@ -5216,6 +6454,84 @@
                     "title": "Zertifikatsdatenbank DQS",
                     "url": "https://www.dqs.de/zertifikatssuche",
                     "publisher": "DQS"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auftragseingang-maschinenbau-abnehmerland",
+              "level": 4,
+              "name": "Auftragseingang Maschinenbau nach Abnehmerland",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatliche Auftragseingangsdaten für den deutschen Maschinenbau, differenziert nach Abnehmerland und Maschinensparte (Werkzeugmaschinen, Fördertechnik, Verpackungsmaschinen, Landmaschinen), erhoben durch den Verband Deutscher Maschinen- und Anlagenbau (VDMA) auf Basis der Meldungen seiner über 3.500 Mitgliedsunternehmen. Die Indexreihen (Basis 2015=100) werden real und nominell ausgewiesen und monatlich vom VDMA veröffentlicht. Frühindikator für die Exportkonjunktur und Leitgröße in der Wirtschaftsberichterstattung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "VDMA veröffentlicht Auftragseingangsindizes kostenlos auf seiner Website und stellt historische Zeitreihen als Download bereit."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Verbandsmeldeverfahren mit Hochrechnung",
+                    "description": "Monatliche Meldung von Auftragsvolumina durch VDMA-Mitgliedsunternehmen mit Hochrechnung auf den Gesamtsektor anhand von Repräsentativitätskennzahlen und Strukturdaten des Statistischen Bundesamts."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kapazitaetsauslastung-maschinenbau",
+              "level": 4,
+              "name": "Kapazitätsauslastung Maschinenbau",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Quartalsweise Erhebung der Produktionskapazitätsauslastung im Maschinenbau durch das ifo-Institut im Rahmen des ifo-Konjunkturtests sowie durch VDMA-Konjunkturumfragen unter Mitgliedsunternehmen. Die Auslastungsquote (Prozent der technisch verfügbaren Kapazität) wird nach Maschinensparte und Unternehmensgröße differenziert. Vorläufer für Investitionsentscheidungen, Beschäftigungsplanung und geldpolitische Lageeinschätzungen der EZB.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ifo-Kapazitätsauslastungsdaten sind Teil der öffentlich zugänglichen ifo-Konjunkturerhebungen; VDMA publiziert sektoreigene Quartalswerte kostenfrei."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Unternehmensumfrage",
+                    "description": "Standardisierter Fragebogen an Produktionsverantwortliche mit Einschätzung der genutzten versus verfügbaren Produktionskapazität; Aggregation als gewichteter Durchschnitt nach Umsatz."
                   }
                 ]
               }
@@ -5566,6 +6882,49 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "produktionsindizes-chemieindustrie-sparte",
+              "level": 4,
+              "name": "Produktionsindizes Chemieindustrie nach Sparte",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatliche Produktionsindizes für die deutsche Chemieindustrie, gegliedert nach Sparten (Grundchemikalien, Spezialchemikalien, Pflanzenschutz, Seifen/Wasch-/Reinigungsmittel, sonstige chemische Erzeugnisse), erstellt vom Statistischen Bundesamt (Fachserie 4, Reihe 2.1) und ergänzt durch Verband der Chemischen Industrie (VCI)-Produktionsstatistiken. Zeitreihen reichen bis 2000 zurück und werden kalender- und saisonbereinigt ausgewiesen. Verwendung in industriepolitischer Analyse, Rohstoffbedarfsprognosen und Emissionshandelsbilanzierungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DESTATIS-Produktionsindizes sind als Genesis-Online-Daten kostenfrei abrufbar; VCI ergänzt mit detaillierten Spartendaten in seinem Jahresbericht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Amtliche Produktionserhebung",
+                    "description": "Monatliche Pflichtmeldung von Produktionsmengen und -werten durch meldepflichtige Unternehmen ab 20 Beschäftigte gemäß Produktionserhebungsgesetz an das Statistische Bundesamt."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -5834,6 +7193,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "softwarelizenz-umsaetze-segment",
+              "level": 4,
+              "name": "Softwarelizenzumsätze nach Segment",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Umsatzdaten aus dem Verkauf von Softwarelizenzen, aufgeschlüsselt nach Segmenten wie Betriebssysteme, Anwendungssoftware, Sicherheitslösungen und Unternehmenssoftware. Die Daten werden vom Bitkom e.V. und Destatis im Rahmen der Jahreserhebung im Dienstleistungsbereich erhoben. Sie ermöglichen Marktanteilsanalysen und Trendbeobachtungen im deutschen Softwaremarkt.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rohdaten enthalten vertrauliche Unternehmensinformationen; aggregierte Segmentstatistiken sind nach Anonymisierung publizierbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Segmentklassifikation",
+                    "description": "Lizenzumsätze werden nach Produktkategorie und Vertriebskanal klassifiziert und zu Marktsegmenten aggregiert."
+                  },
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Quartalsdaten werden zu Jahresreihen verdichtet, um Wachstumstrends je Segment zu identifizieren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "saas-abonnementzahlen-arr",
+              "level": 4,
+              "name": "SaaS-Abonnementzahlen und ARR-Verteilung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Statistiken zu aktiven SaaS-Abonnements und Annual Recurring Revenue (ARR) deutscher Softwareanbieter, differenziert nach Unternehmensgrößenklassen der Abnehmer. Die Erhebung basiert auf Bitkom-Branchenumfragen sowie freiwilligen Meldungen im Rahmen des Digitalindex. Sie liefern Erkenntnisse über Wachstumsdynamik und Kundenbindung im Cloud-Software-Markt.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "ARR-Einzeldaten sind geschäftlich sensibel; Verteilungsstatistiken nach Umsatzklassen können anonymisiert veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Kohortenanalyse",
+                    "description": "Abonnentenkohorten werden nach Vertragsabschlussjahr gruppiert, um Churn-Raten und ARR-Entwicklung je Kohorte zu berechnen."
+                  },
+                  {
+                    "method": "Größenklassenaggregation",
+                    "description": "ARR-Werte werden in Dezil-Gruppen eingeteilt, um die Verteilung ohne Offenlegung einzelner Unternehmensdaten darzustellen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6055,6 +7504,96 @@
                   {
                     "method": "Öffentlichkeitsarbeit & Kommunikation",
                     "description": "Transparenz für Verbraucher und Regulierungsbehörden."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mobilfunkanschluesse-vertragskategorie",
+              "level": 4,
+              "name": "Mobilfunkanschlüsse nach Vertragskategorie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl aktiver Mobilfunkanschlüsse in Deutschland, gegliedert nach Vertragskategorie (Postpaid, Prepaid, M2M/IoT) sowie Netzanbieter und Frequenzband. Die Bundesnetzagentur erhebt diese Daten im Rahmen der Jahresstatistik Telekommunikation und veröffentlicht aggregierte Kennzahlen. Sie ermöglichen die Beurteilung von Marktkonzentration und Technologiemigration (2G→5G).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Anschlusszahlen werden von der Bundesnetzagentur bereits regulär veröffentlicht und enthalten keine personenbezogenen Daten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Marktanteilsberechnung",
+                    "description": "Anschlusszahlen je Anbieter werden ins Verhältnis zur Gesamtmarktzahl gesetzt, um Marktanteile und HHI-Index zu berechnen."
+                  },
+                  {
+                    "method": "Technologieklassifikation",
+                    "description": "Anschlüsse werden nach genutztem Netzstandard (2G/3G/4G/5G) klassifiziert, um Migrationsdynamik abzubilden."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "netzausbauinvestitionen-telekommunikation",
+              "level": 4,
+              "name": "Netzausbauinvestitionen Telekommunikation",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Investitionsvolumina der Telekommunikationsunternehmen in Netzinfrastruktur (Glasfaser, 5G-Masten, Backbone), erfasst durch die Bundesnetzagentur und den Branchenverband VATM. Die Daten umfassen jährliche CAPEX-Angaben nach Technologieart und regionaler Verteilung (Bundesland). Sie sind zentral für die Bewertung des Fortschritts beim Gigabit- und 5G-Ausbau.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Unternehmensspezifische Investitionsdaten sind vertraulich; bundeslandaggregierte Gesamtinvestitionen nach Technologieart können publiziert werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "CAPEX-Aggregation",
+                    "description": "Investitionsangaben aus Geschäftsberichten und Behördenmeldungen werden nach Technologieart und Bundesland konsolidiert."
+                  },
+                  {
+                    "method": "Ausbaufortschrittsmessung",
+                    "description": "Investitionsdaten werden mit Versorgungsquoten aus dem Breitbandatlas verknüpft, um Effizienz des Mitteleinsatzes zu bewerten."
                   }
                 ]
               }
@@ -6376,6 +7915,96 @@
                   {
                     "method": "Produktentwicklung",
                     "description": "Rezensionen liefern direktes Feedback zu Produkten und können für die Weiterentwicklung genutzt werden."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "warenkorbgroesse-verteilung-ecommerce",
+              "level": 4,
+              "name": "Warenkorbgrößenverteilung E-Commerce",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Statistische Verteilung von Warenkorbwerten im deutschen Online-Handel, differenziert nach Produktkategorie, Gerätekategorie (Desktop/Mobil) und Kundentyp (Neu-/Bestandskunde). Die Daten werden vom Handelsverband Deutschland (HDE) und bevh auf Basis von Plattformmeldungen aggregiert. Sie erlauben Rückschlüsse auf Kaufverhalten und Conversion-Optimierungspotenziale.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Transaktionsdaten einzelner Plattformen sind proprietär; Branchenaggregate nach Kategorien sind nach Anonymisierung veröffentlichbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Perzentilanalyse",
+                    "description": "Warenkorbwerte werden in Dezile eingeteilt, um Verteilung und Ausreißer ohne Preisgabe individueller Transaktionen darzustellen."
+                  },
+                  {
+                    "method": "Kategoriensegmentierung",
+                    "description": "Warenkörbe werden nach EU-Produktkategorienomenklatur klassifiziert, um kategoriespezifische Kaufverhaltensmuster zu identifizieren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "retourenquoten-produktkategorie",
+              "level": 4,
+              "name": "Retourenquoten nach Produktkategorie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Rücksendequoten im deutschen Online-Handel, aufgeschlüsselt nach Produktkategorie (Bekleidung, Elektronik, Möbel etc.) und Rücksendegrund laut Forschungsberichten des IFH Köln und bevh-Jahresreports. Die Retourenstatistik erfasst Volumina, Kosten und Umweltauswirkungen der Rücksendungen. Sie ist wesentlich für die Bewertung logistischer Effizienz und Nachhaltigkeitsinitiativen im E-Commerce.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Plattformspezifische Retourendaten sind Geschäftsgeheimnis; branchenweite Quoten nach Kategorie aus Verbandsstudien sind veröffentlichbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Quotenberechnung",
+                    "description": "Retourenvolumen wird als prozentualer Anteil am Bestellvolumen je Produktkategorie berechnet und im Jahresvergleich dargestellt."
+                  },
+                  {
+                    "method": "Grundklassifikation",
+                    "description": "Rücksendegründe (Größe, Qualität, Beschädigung, Nichtgefallen) werden standardisiert klassifiziert und kategoriespezifisch ausgewertet."
                   }
                 ]
               }
@@ -6728,6 +8357,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "frachtaufkommen-verkehrstraeger",
+              "level": 4,
+              "name": "Frachtaufkommen nach Verkehrsträger",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Transportmengen in Tonnen und Tonnenkilometern nach Verkehrsträger (Straße, Schiene, Binnenschiff, Rohrleitung), erhoben durch das Kraftfahrtbundesamt und Destatis im Rahmen der Güterverkehrsstatistik. Die Daten decken grenzüberschreitenden und Binnengüterverkehr privater Speditionen ab. Sie sind Grundlage für Modal-Split-Analysen und Verlagerungspotenzialstudien.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Frachtmengen nach Verkehrsträger werden von Destatis und KBA regulär als Open Data veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Modal-Split-Berechnung",
+                    "description": "Frachtmengen je Verkehrsträger werden ins Verhältnis zum Gesamtfrachtaufkommen gesetzt, um Verkehrsträgermix und Verlagerungstrends darzustellen."
+                  },
+                  {
+                    "method": "Tonnenkilometer-Normierung",
+                    "description": "Rohdaten in Tonnen werden mit mittlerer Transportweite multipliziert, um Transportleistung in Tonnenkilometern zu berechnen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "leerfahrtenquoten-gueterverkehr",
+              "level": 4,
+              "name": "Leerfahrtenquoten im Güterverkehr",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anteil der Leerfahrten (ohne Ladung) am gesamten Fahrtenaufkommen privater Güterkraftverkehrsunternehmen, erfasst durch die Kraftfahrverkehrsstatistik des Kraftfahrtbundesamts und DSLV-Verbandserhebungen. Die Daten werden nach Fahrzeugtyp, Region und Saisonalität differenziert. Leerfahrtenquoten sind ein zentraler Indikator für logistische Effizienz und CO₂-Optimierungspotenziale.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Unternehmensbezogene Tourendaten sind vertraulich; bundesweite und regionale Leerfahrtenquoten sind nach Aggregation veröffentlichbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Leerfahrtenquotenberechnung",
+                    "description": "Fahrten ohne Ladung werden als Anteil aller Fahrten nach Fahrzeugklasse und Quartalsperiode berechnet."
+                  },
+                  {
+                    "method": "Regionalanalyse",
+                    "description": "Leerfahrtenquoten werden nach NUTS-2-Regionen aufgeschlüsselt, um strukturelle Ungleichgewichte im Frachtfluss zu identifizieren."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6941,6 +8660,96 @@
                   {
                     "method": "Planung & Steuerung",
                     "description": "Kapazitätsplanung für Flughäfen und Frachtdienstleister."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "frachttonnen-route-luftsee",
+              "level": 4,
+              "name": "Frachttonnen nach Route (Luft- und Seefracht)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Frachtvolumina in Tonnen auf internationalen Luft- und Seefrachtstrecken mit Bezug zu deutschen Verkehrsknoten (Frankfurt, Hamburg, Bremen), erhoben durch das Statistische Bundesamt, Destatis und den Bundesverband Spedition und Logistik (DSLV). Die Daten umfassen Herkunfts- und Zielregionen nach Kontinent sowie Warengruppen nach Gütersystematik. Sie sind wesentlich für Kapazitätsplanung und Außenhandelsanalysen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Routenstatistiken werden von Destatis und den Hafenbetrieben als Open Data bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Routenaggregation",
+                    "description": "Einzelsendungen werden nach Herkunfts-Ziel-Paaren aggregiert und in standardisierten Routenkorridoren zusammengefasst."
+                  },
+                  {
+                    "method": "Warengruppen-Klassifikation",
+                    "description": "Frachtgut wird nach EU-Kombinierter Nomenklatur klassifiziert und routenweise zusammengeführt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "slot-auslastung-luftfracht",
+              "level": 4,
+              "name": "Slot-Auslastung Luftfracht",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Auslastungsgrade von Frachtzeitnischen (Slots) an deutschen Frachtflughäfen, erfasst durch die Airport Coordination Germany (ACG) und Fraport-Statistiken. Die Daten zeigen das Verhältnis genutzter zu zugewiesener Kapazität nach Flughafen, Saison und Carrier-Kategorie. Sie sind relevant für Kapazitätsengpassanalysen und Regulierungsentscheidungen im Luftfrachtsektor.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Carrier-spezifische Slotdaten unterliegen Wettbewerbsschutz; flughafenweite Auslastungsquoten nach Saison sind veröffentlichbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Auslastungsquotenberechnung",
+                    "description": "Genutzte Slots werden als Anteil zugewiesener Slots je Flughafen und IATA-Saison (Sommer/Winter) berechnet."
+                  },
+                  {
+                    "method": "Spitzenlastanalyse",
+                    "description": "Auslastungsdaten werden nach Tageszeit und Wochentag disaggregiert, um Kapazitätsengpässe zu identifizieren."
                   }
                 ]
               }
@@ -7226,6 +9035,96 @@
                   {
                     "method": "Planung & Steuerung",
                     "description": "Standortoptimierung für Sharing-Flotten und kommunale Mobilitätsplanung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fernbus-auslastung-statistik",
+              "level": 4,
+              "name": "Fernbusauslastung und Streckendaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Auslastungsgrade und Passagierzahlen im deutschen Fernbusmarkt nach Strecke, Betreiber und Saison, basierend auf Daten des Bundesverbands Deutscher Omnibusunternehmer (bdo) und Destatis-Verkehrserhebungen. Die Statistik erfasst Sitzplatzkapazitäten, Buchungsquoten und durchschnittliche Fahrtdistanzen. Sie ermöglicht Wettbewerbsanalysen zwischen Fernbus, Bahn und Individualverkehr.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Betreiberspezifische Buchungsdaten sind proprietär; streckenbezogene Auslastungsquoten aus Verbandserhebungen sind aggregiert publizierbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Auslastungsquotenberechnung",
+                    "description": "Belegte Sitzplätze werden als prozentualer Anteil der Gesamtkapazität je Strecke und Quartal berechnet."
+                  },
+                  {
+                    "method": "Streckenklassifikation",
+                    "description": "Fernbusverbindungen werden nach Entfernungsklassen und Metropolregions-Anbindung kategorisiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ridesharing-statistiken-privat",
+              "level": 4,
+              "name": "Ridesharing-Nutzungsstatistiken",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Kennzahlen zur Nutzung privater Ridesharing-Dienste (Mitfahrgelegenheiten, Carsharing) in Deutschland, erhoben durch den Bundesverband CarSharing (bcs), Kraftfahrtbundesamt und Plattformbetreiber auf freiwilliger Basis. Die Daten umfassen aktive Nutzerkonten, Fahrtanzahlen, durchschnittliche Besetzungsgrade und regionale Verfügbarkeit. Sie sind relevant für Verkehrsplanung und Bewertung geteilter Mobilitätsangebote.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Nutzerdaten einzelner Plattformen sind datenschutzrechtlich sensibel; aggregierte Branchenkennzahlen nach Region und Fahrttyp sind nach Anonymisierung veröffentlichbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Besetzungsgradanalyse",
+                    "description": "Fahrtdaten werden nach Anzahl der Mitfahrer ausgewertet, um durchschnittliche Fahrzeugauslastung und CO₂-Einsparungen zu berechnen."
+                  },
+                  {
+                    "method": "Regionale Verfügbarkeitskartierung",
+                    "description": "Angebotsdichte nach PLZ-Bereichen wird aus Plattformdaten extrahiert und als Raster-GIS-Datensatz aufbereitet."
                   }
                 ]
               }
@@ -7536,6 +9435,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "baugenehmigungsvolumen-private-bautraeger",
+              "level": 4,
+              "name": "Baugenehmigungsvolumen privater Bauträger",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Genehmigte Bauvolumina privater Bauträger und Projektentwickler nach Gebäudetyp (Einfamilienhaus, Mehrfamilienhaus, Wohnheim), erfasst durch Destatis im Rahmen der Baugenehmigungsstatistik (Fachserie 5, Reihe 1). Die Daten umfassen veranschlagte Baukosten, Wohnfläche und geplante Wohneinheiten auf Bundeslandebene. Sie sind zentraler Frühindikator für den zukünftigen Wohnraumangebot.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Baugenehmigungsstatistiken werden von Destatis als Open Data veröffentlicht und enthalten keine personenbezogenen Einzeldaten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Bauträgerklassifikation",
+                    "description": "Genehmigungsanträge werden nach Bauherrenkategorie (privat/gewerblich/öffentlich) aus Verwaltungsdaten selektiert und aggregiert."
+                  },
+                  {
+                    "method": "Volumenberechnung",
+                    "description": "Veranschlagte Baukosten je Projekt werden zu Gesamtvolumina nach Bundesland und Gebäudetyp summiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fertigstellungsquoten-wohnungsbau",
+              "level": 4,
+              "name": "Fertigstellungsquoten Wohnungsbau",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verhältnis fertiggestellter zu genehmigter Wohneinheiten im privaten Wohnungsbau, erfasst durch Destatis-Baufertigstellungsstatistik und ergänzt durch ZIA-Wohnungsmarktbericht. Die Fertigstellungsquote wird nach Bundesland, Gebäudetyp und Genehmigungsjahrgang berechnet. Sie bildet Realisierungslücken und Bauzeitenverzögerungen im deutschen Wohnungsmarkt ab.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Fertigstellungsstatistiken werden durch Destatis regulär als Open Data veröffentlicht und beziehen sich auf Gebäude, nicht auf Einzelpersonen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Kohortenvergleich",
+                    "description": "Fertigstellungen eines Jahres werden den Genehmigungen früherer Jahrgänge zugeordnet, um typische Realisierungsdauern zu ermitteln."
+                  },
+                  {
+                    "method": "Quotenberechnung",
+                    "description": "Fertiggestellte Wohneinheiten werden als Anteil genehmigter Einheiten des jeweiligen Bezugsjahres dargestellt."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -7787,6 +9776,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "auftragsvolumen-tiefbau-auftraggeber",
+              "level": 4,
+              "name": "Auftragsvolumen Tiefbau nach Auftraggeber",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Auftragsvolumina im privaten und öffentlichen Tiefbau, differenziert nach Auftraggeber (Bund, Länder, Kommunen, private Investoren), erhoben durch Destatis im Rahmen der Baustatistik (Fachserie 4, Reihe 5.1) und Hauptverband der Deutschen Bauindustrie (HDB). Die Daten umfassen Auftragseingänge, Auftragsbestände und Umsätze nach Leistungsart (Straßenbau, Kanalbau, Leitungsbau). Sie sind Konjunkturindikator für die Bauwirtschaft.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Auftragsvolumina nach Auftraggeber und Leistungsart werden von Destatis und HDB regulär veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Auftraggeber-Disaggregation",
+                    "description": "Gesamtauftragsvolumina werden nach öffentlichem und privatem Auftraggeber mit Unterklassen (Bund/Land/Gemeinde) aufgeteilt."
+                  },
+                  {
+                    "method": "Saisonbereinigung",
+                    "description": "Monatliche Auftragseingänge werden mittels X-13-ARIMA saisonbereinigt, um konjunkturelle Grundtrends sichtbar zu machen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "materialpreisindizes-tiefbau",
+              "level": 4,
+              "name": "Materialpreisindizes Tiefbau",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Preisindizes für Baumaterialien im Tiefbau (Stahl, Beton, Bitumen, Kies, Rohre), erhoben durch Destatis im Rahmen der Erzeugerpreisstatistik und ergänzt durch ifo-Bauumfragen zu Materialengpässen. Die Indizes werden monatlich nach Materialgruppe und Verwendungszweck veröffentlicht. Sie sind wesentlich für die Kalkulation und Nachtragsmanagement in Tiefbauprojekten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Erzeugerpreisindizes werden von Destatis als Open Data publiziert; Preisdaten beziehen sich auf Güter, nicht auf Einzelunternehmen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Indexberechnung",
+                    "description": "Materialpreise werden auf ein Basisjahr normiert und als Laspeyres-Preisindex mit fixen Gewichtungsanteilen berechnet."
+                  },
+                  {
+                    "method": "Engpassindikation",
+                    "description": "Preisindizes werden mit Lieferzeitdaten aus ifo-Umfragen verknüpft, um Engpasssituationen frühzeitig zu signalisieren."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -7992,6 +10071,92 @@
                   {
                     "method": "Öffentlichkeitsarbeit & Kommunikation",
                     "description": "Advocacy-Daten für Verbandsarbeit zu Ausbildungsförderung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ifo-bauklima-stimmungsindex",
+              "level": 4,
+              "name": "ifo Bauklima-Stimmungsindex",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatlicher Stimmungsindex für das deutsche Bauhauptgewerbe auf Basis des ifo-Konjunkturtests, der Geschäftslage und Geschäftserwartungen von Baufirmen erfasst. Die Erhebung des ifo Instituts umfasst rund 2.000 Unternehmen aus Hoch-, Tief- und Wohnungsbau und wird nach Sparten differenziert ausgewiesen. Das Bauklima ist ein führender Indikator für die Bauwirtschaft mit Vorlaufzeit von ein bis drei Quartalen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einzelmeldungen der Baufirmen sind vertraulich; der aggregierte Indexwert und spartenspezifische Saldi werden vom ifo Institut publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Saldoberechnung",
+                    "description": "Anteile positiver und negativer Urteile zu Geschäftslage und -erwartungen werden zu einem Saldomaß verrechnet und zum Gesamtindex gemittelt."
+                  },
+                  {
+                    "method": "Trendbereinigung",
+                    "description": "Monatliche Indexwerte werden mittels Hodrick-Prescott-Filter in Trend- und Zykluskomponenten zerlegt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kapazitaetsauslastung-baufirmen",
+              "level": 4,
+              "name": "Kapazitätsauslastung Baufirmen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Grad der Kapazitätsauslastung im deutschen Bauhauptgewerbe, gemessen als Anteil der genutzten an der verfügbaren Produktionskapazität, erhoben durch ifo-Konjunkturtest und Destatis-Produktionsstatistik Baugewerbe. Die Daten werden quartalweise nach Bausparte und Unternehmensgrößenklasse ausgewiesen. Hohe Auslastungsgrade korrelieren mit Preisauftrieb und Kapazitätsengpässen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Unternehmensindividuelle Auslastungsdaten sind vertraulich; spartenweise und größenklassenspezifische Mittelwerte können aggregiert veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Auslastungsquotenberechnung",
+                    "description": "Befragte Unternehmen schätzen ihre Kapazitätsauslastung in Prozentbändern; Mittelwerte werden nach Sparte und Größenklasse berechnet."
+                  },
+                  {
+                    "method": "Engpasskorrelation",
+                    "description": "Auslastungsquoten werden mit Materialpreis- und Fachkräftemangel-Indikatoren korreliert, um Engpasstreiber zu identifizieren."
                   }
                 ]
               }
@@ -8394,6 +10559,45 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "pachtpreisindex-bundesland",
+              "level": 4,
+              "name": "Pachtpreisindex landwirtschaftlicher Flächen nach Bundesland",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährlicher Pachtpreisindex für landwirtschaftliche Nutzflächen, differenziert nach Bundesland und Bodenqualität. Erfasst Durchschnittspachtpreise je Hektar für Ackerland und Grünland. Grundlage sind Meldungen der Landwirtschaftsämter und Pachtvertragsregister der Bundesländer.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Pachtpreisdaten werden von Statistischen Landesämtern erhoben, enthalten jedoch teils betriebsindividuelle Angaben, die vor Veröffentlichung aggregiert werden müssen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Preisindexierung",
+                    "description": "Rohe Pachtpreismeldungen werden zu Bundesland-Durchschnittswerten aggregiert und als Kettenindex (Basisjahr 2015=100) berechnet."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -8611,6 +10815,88 @@
                   {
                     "method": "Planung & Steuerung",
                     "description": "Risikobasierte Kontrollplanung für Überwachungsbehörden."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lebensmittelindustrie-produktionsvolumen",
+              "level": 4,
+              "name": "Produktionsvolumen Lebensmittelindustrie nach Erzeugnisgruppe",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatliches Produktionsvolumen der deutschen Lebensmittelindustrie, aufgeschlüsselt nach WZ08-Erzeugnisgruppen (Fleisch, Milch, Backwaren, Getränke etc.). Daten basieren auf Betriebsmeldungen gemäß Produktionsstatistikgesetz. Ermöglicht Konjunkturanalyse und Kapazitätsauslastungsvergleiche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Produktionsstatistik des Statistischen Bundesamts (Destatis), öffentlich zugänglich unter Datenlizenz Deutschland."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Produktionsmengenerfassung",
+                    "description": "Betriebliche Meldedaten werden monatlich zu Erzeugnisgruppen-Aggregaten zusammengefasst und saisonbereinigt veröffentlicht."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ernaehrungsindustrie-exportquoten",
+              "level": 4,
+              "name": "Exportquoten der deutschen Nahrungsmittelindustrie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Exportquoten der Nahrungsmittel- und Getränkeindustrie nach Zielregion und Produktgruppe, quartalsweise erhoben. Enthält Ausfuhrwerte in Euro, Exportanteile am Gesamtumsatz sowie Top-Abnehmerländer. Quelle ist der Bundesverband der Deutschen Ernährungsindustrie (BVE) in Kombination mit Außenhandelsstatistiken des Destatis.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Detaillierte Exportaufschlüsselungen auf Unternehmensebene sind vertraulich; nur aggregierte Branchenkennziffern werden durch den BVE veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Außenhandelsanalyse",
+                    "description": "Verbandsinterne Mitgliederdaten werden mit Destatis-Außenhandelsstatistiken abgeglichen und zu Branchenexportquoten konsolidiert."
                   }
                 ]
               }
@@ -8900,6 +11186,92 @@
                   {
                     "method": "Planung & Steuerung",
                     "description": "Exportplanung und Marktdiversifizierung für Agrarexporteure."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "erzeugerpreise-agrarwaren",
+              "level": 4,
+              "name": "Erzeugerpreise landwirtschaftlicher Waren nach Erzeugnisart",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatliche Erzeugerpreise für landwirtschaftliche Primärprodukte (Getreide, Ölsaaten, Kartoffeln, Milch, Schlachttiere) nach Erzeugnisart und Region. Erhoben vom Statistischen Bundesamt auf Basis von Preiserhebungen bei Landwirtschaftsbetrieben und Erfassungsunternehmen. Dient als Frühindikator für Agrarmarktentwicklungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Erzeugerpreisindizes werden als offizielle Statistik unter Datenlizenz Deutschland durch Destatis veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Preisindexberechnung",
+                    "description": "Gemeldete Erzeugerpreise werden nach Laspeyres-Methode zu Preisindizes aggregiert und monatlich publiziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "terminmarktpreise-agrarrohstoffe",
+              "level": 4,
+              "name": "Terminmarktpreise für Agrarrohstoffe (EURONEXT/CBOT)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Tägliche Settlement-Preise für Agrarrohstoff-Futures an EURONEXT Paris (Weizen, Raps, Mais) und CBOT Chicago (Soja, Weizen, Mais), verfügbar über Datenanbieter. Enthält Front-Month- und ausgewählte Folge-Kontrakt-Preise sowie Handelsvolumina. Relevant für Preisabsicherungsstrategien landwirtschaftlicher Betriebe und Agrarhandelsunternehmen.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Echtzeit- und historische Terminmarktdaten sind lizenzpflichtig; nur verzögerte Tagesdaten sind über Börsenpublikationen eingeschränkt zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Futures-Preisaggregation",
+                    "description": "Börsliche Settlement-Preise werden tagesgenau archiviert und für Zeitreihenanalysen zu rollierenden Kontraktspreisen aufbereitet."
                   }
                 ]
               }
@@ -9256,6 +11628,84 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "revpar-hotelkategorie",
+              "level": 4,
+              "name": "RevPAR-Kennzahl nach Hotelkategorie und Region",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Revenue per Available Room (RevPAR) als zentrale Ertragskennzahl des Hotelgewerbes, segmentiert nach Sterne-Kategorie (2–5 Sterne) und Reiseregion. Monatlich erhoben durch den Deutschen Hotel- und Gaststättenverband (DEHOGA) in Kooperation mit STR Global. Ermöglicht Benchmarking und Marktpositionierungsanalysen.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "RevPAR-Daten basieren auf vertraulichen Hotelmeldungen; nur aggregierte Branchenkennzahlen werden durch DEHOGA veröffentlicht, Rohdaten bleiben proprietär."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "RevPAR-Berechnung",
+                    "description": "Aus gemeldeten Belegungsraten und Durchschnittspreisen wird RevPAR (= Auslastung × ADR) je Hotelkategorie und Region berechnet und saisonbereinigt dargestellt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buchungsvorlaeufe-online-direkt",
+              "level": 4,
+              "name": "Hotelbuchungsvorläufe: Online-Portale vs. Direktbuchung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verteilung der Hotelbuchungen nach Vorlaufzeit (1 Tag bis >90 Tage) und Buchungskanal (OTA-Portale wie Booking.com, Expedia vs. hoteleigene Direktkanäle). Daten werden durch Channelmanagement-Anbieter und Hotelverbände erhoben. Relevant für Yield-Management und Vertriebsstrategie.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Buchungsdaten sind Geschäftsgeheimnisse der OTA-Plattformen und Hotelketten; aggregierte Trends werden nur in Marktberichten kostenpflichtig publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Kanalattribution",
+                    "description": "Buchungseingänge werden nach Buchungskanal und Vorlaufzeit klassifiziert und wöchentlich zu Marktanteilsquoten aggregiert."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -9461,6 +11911,88 @@
                   {
                     "method": "Planung & Steuerung",
                     "description": "Einkaufsplanung und Diversifizierung für Gastronomieunternehmen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bon-durchschnittswerte-restauranttyp",
+              "level": 4,
+              "name": "Bon-Durchschnittswerte nach Restaurant-Typ",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Durchschnittlicher Bonwert (Umsatz je Transaktion) nach Gastronomietyp: Systemgastronomie, gehobene Gastronomie, Imbiss/Schnellservice und Café/Bistro. Quartalsweise erhoben durch Kassensystemanbieter und Marktforschungsinstitute. Dient als Indikator für Konsumausgaben und Preissetzungsverhalten im Außer-Haus-Markt.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Transaktionsdaten sind vertraulich; aggregierte Benchmarks werden nur im Rahmen kostenpflichtiger Branchenberichte (z.B. NPD Group) veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Transaktionsaggregation",
+                    "description": "POS-Transaktionsdaten werden nach Betriebstyp klassifiziert und zu monatlichen Durchschnittsbonwerten aggregiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "delivery-plattform-marktanteile",
+              "level": 4,
+              "name": "Marktanteile Lieferdienstplattformen im Gastronomiebereich",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Marktanteile der führenden Lieferdienstplattformen (Lieferando/Just Eat, Wolt, Uber Eats) nach Bestellvolumen und Umsatz im deutschen Markt. Daten basieren auf Schätzungen von Marktforschungsinstituten und öffentlich zugänglichen Unternehmensberichten. Quartalsweise Zeitreihe ab 2019.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Teildaten aus Geschäftsberichten und Pressemitteilungen sind öffentlich; vollständige Marktanteilsschätzungen erfordern methodische Konsolidierung und können nach Aufbereitung publiziert werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Marktanteilsschätzung",
+                    "description": "Öffentliche Unternehmensdaten, App-Download-Statistiken und Konsumentenumfragen werden trianguliert, um Marktanteile zu schätzen."
                   }
                 ]
               }
@@ -9743,6 +12275,84 @@
                   {
                     "method": "Planung & Steuerung",
                     "description": "Strategische Planung für DMOs und Tourismusverbände."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pauschalreise-umsaetze-reiseland",
+              "level": 4,
+              "name": "Pauschalreise-Umsätze nach Zielland",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jahres- und Quartalsumsätze des deutschen Pauschalreisemarkts, aufgeschlüsselt nach Top-Reiseländern (Spanien, Türkei, Griechenland, Ägypten, Thailand u.a.). Daten stammen vom Deutschen Reiseverband (DRV) und der Forschungsgemeinschaft Urlaub und Reisen (FUR). Enthält Buchungsvolumen in Mio. Euro und Reisendenanzahl.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Marktdaten werden durch DRV und FUR in Jahresberichten veröffentlicht; Rohdaten der Mitgliedererhebung bleiben intern."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Reisemarktanalyse",
+                    "description": "Buchungsdaten der DRV-Mitgliedsunternehmen werden nach Destination aggregiert und mit FUR-Reiseanalyse-Umfrageergebnissen abgeglichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "online-buchungsrate-pauschalreisen",
+              "level": 4,
+              "name": "Online-Buchungsrate Pauschalreisen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anteil der online gebuchten Pauschalreisen am Gesamtbuchungsvolumen, differenziert nach Buchungskanal (Reiseveranstalter-Website, OTA, Reisebüro-Online-Terminal) und Kundensegment. Halbjährlich erhoben durch den Deutschen Reiseverband. Zeigt Digitalisierungsfortschritt im Reisemarkt.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Kanalverteilungsdaten werden in aggregierter Form durch DRV-Pressemitteilungen und Jahresberichte veröffentlicht; detaillierte Unternehmensaufschlüsselungen sind intern."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Kanalverteilungserhebung",
+                    "description": "Mitgliederunternehmen melden halbjährlich Buchungsanteile je Vertriebskanal; Ergebnisse werden zu Marktquoten konsolidiert."
                   }
                 ]
               }
@@ -10153,6 +12763,88 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "epex-spot-stromhandelszeitreihen",
+              "level": 4,
+              "name": "Stromhandelspreis-Zeitreihen EPEX SPOT (Day-Ahead/Intraday)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Stündliche und 15-minütige Day-Ahead- und Intraday-Auktionspreise der EPEX SPOT für die Gebotszone Deutschland/Luxemburg. Enthält Gebots- und Angebotskurven, gehandelte Volumina sowie Preisspitzen. Historische Zeitreihen ab 2010 über die SMARD-Plattform der Bundesnetzagentur kostenfrei verfügbar.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EPEX-SPOT-Preisdaten werden über die SMARD-Plattform der Bundesnetzagentur unter Datenlizenz Deutschland öffentlich bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Marktpreisaggregation",
+                    "description": "Viertelstundenwerte werden zu Stunden-, Tages- und Monatsmittelwerten aggregiert; Preisspitzen (>500 €/MWh) werden gesondert gekennzeichnet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bilanzkreisabweichungen-regelenergie",
+              "level": 4,
+              "name": "Bilanzkreisabweichungen und Regelenergieabruf",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Viertelstündliche Bilanzkreisabweichungen (BKA) im deutschen Übertragungsnetz sowie zugehöriger Regelenergieabruf (Primär-, Sekundär-, Minutenreserve) durch die vier deutschen Übertragungsnetzbetreiber. Daten werden über die Transparenzplattform regelleistung.net veröffentlicht. Relevant für Bilanzkreisverantwortliche und Handelsstrategen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Regelenergie- und Bilanzkreisdaten sind regulatorisch vorgeschrieben auf regelleistung.net öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Netzfrequenzauswertung",
+                    "description": "Viertelstündliche Netzfrequenzabweichungen werden in Regelleistungsabrufe und Kosten je Produkt (FCR, aFRR, mFRR) umgerechnet und publiziert."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -10374,6 +13066,84 @@
                   {
                     "method": "Planung & Steuerung",
                     "description": "Vermarktungsoptimierung für EE-Anlagenbetreiber und Direktvermarkter."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "investitionsvolumen-windkraft-solar",
+              "level": 4,
+              "name": "Investitionsvolumen Windkraft und Solar-Freiflächenanlagen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliches privatwirtschaftliches Investitionsvolumen in Windenergieanlagen (onshore/offshore) und Photovoltaik-Freiflächenanlagen in Deutschland, in Mio. Euro. Erfasst durch den Bundesverband Erneuerbare Energie (BEE) und die Deutsche WindGuard. Enthält Finanzierungsstruktur (Eigenkapital, Fremdkapital, Projektfinanzierung) und regionale Verteilung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Verbandsinterne Mitgliederdaten werden aggregiert in BEE-Jahresberichten veröffentlicht; projektbezogene Finanzierungsdetails bleiben vertraulich."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Investitionserhebung",
+                    "description": "Projektentwickler und Anlagenbetreiber melden Investitionsvolumina jährlich an BEE; Daten werden nach Technologie und Bundesland aggregiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ppa-vertragsvolumen-erneuerbare",
+              "level": 4,
+              "name": "PPA-Vertragsvolumen für erneuerbare Energien in Deutschland",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Halbjährlich erfasstes Gesamtvolumen abgeschlossener Power Purchase Agreements (PPAs) für Windkraft und Solar in Deutschland, in GWh und Mio. Euro. Differenzierung nach Vertragslaufzeit, Abnahmekategorie (Industrie, Handel, Rechenzentren) und Technologie. Quellen: Pexapark PPA Monitor und BNEF.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "PPA-Vertragsbedingungen und -Preise sind Geschäftsgeheimnisse der Vertragsparteien; nur aggregierte Marktvolumina werden in kostenpflichtigen Marktberichten publiziert."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "PPA-Marktmonitoring",
+                    "description": "Vertragsabschlüsse werden aus öffentlichen Ankündigungen, Presseberichten und Datenbankabfragen bei Pexapark und BNEF konsolidiert."
                   }
                 ]
               }
@@ -10620,6 +13390,88 @@
                     "title": "Wasserstatistik BDEW",
                     "url": "https://www.bdew.de/wasser",
                     "publisher": "BDEW"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gasspeicherfuellstaende-private-haendler",
+              "level": 4,
+              "name": "Gasspeicherfüllstände privater Speicherbetreiber",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Tägliche Füllstandsmeldungen privat betriebener Erdgasspeicher in Deutschland, in TWh und prozentualer Kapazitätsauslastung, nach Speicher und Betreiberunternehmen. Veröffentlicht durch Gas Infrastructure Europe (GIE/AGSI) und die Bundesnetzagentur im Rahmen der Transparenzpflichten. Zeitreihe ab 2011 verfügbar.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gasspeicherfüllstände sind EU-weit gemäß SoS-Verordnung und nationaler Regulierung täglich auf der AGSI+-Plattform öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Speichermonitoring",
+                    "description": "Tägliche Einspeise- und Ausspeisemengen werden zu Füllstandszeitreihen kumuliert und mit historischen Seasonal-Patterns verglichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "industriekundenpreise-ttf-gas",
+              "level": 4,
+              "name": "Industriekundenpreise Erdgas auf TTF-Basis",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatliche Endkundenpreise für Industriegroßabnehmer (>10 GWh/Jahr) auf Basis des TTF-Referenzpreises, inklusive Netzentgelte, Steuern und Umlagen. Daten stammen aus Eurostat-Erhebungen und dem Bundesverband der Energie- und Wasserwirtschaft (BDEW). Ermöglicht Wettbewerbsvergleiche und Beschaffungsstrategie-Analysen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Eurostat veröffentlicht aggregierte Preisniveaus halbjährlich; unternehmensindividuelle Konditionen bleiben vertraulich und erfordern Aggregation vor Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Preiskomponentenzerlegung",
+                    "description": "Industriegaspreise werden in Energieanteil (TTF-basiert), Netzentgelt, Steuern und Umlagen zerlegt und im Zeitverlauf ausgewiesen."
                   }
                 ]
               }
@@ -11198,6 +14050,143 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "hw-betriebsgroesse-gewerk",
+              "level": 4,
+              "name": "Betriebsgröße nach Gewerk",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verteilung der Handwerksbetriebe nach Beschäftigtenzahl und Gewerk auf Basis der ZDH-Strukturerhebung. Erfasst Kleinstbetriebe (1–4 MA), Kleinbetriebe (5–19 MA) und mittlere Betriebe (≥20 MA) je Handwerksbranche. Grundlage für regionalpolitische Fördermaßnahmen und Branchenvergleiche.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "ZDH veröffentlicht aggregierte Strukturdaten; Einzelbetriebsdaten unterliegen Datenschutz und Berufsgeheimnisschutz der Handwerkskammern."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Handwerkszählung",
+                    "description": "Jährliche Strukturerhebung der Handwerkskammern, aggregiert durch den Zentralverband des Deutschen Handwerks (ZDH) nach Gewerk und Betriebsgrößenklasse."
+                  },
+                  {
+                    "method": "Kreuzklassifikation",
+                    "description": "Kombination von Gewerk- und Betriebsgrößendimensionen zur Berechnung von Schichtungsquoten für Regionalförderentscheidungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hw-ausbildungsbetrieb-quote",
+              "level": 4,
+              "name": "Ausbildungsbetriebsquote je Handwerksbranche",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anteil der Ausbildungsbetriebe an allen Handwerksbetrieben je Gewerk, erhoben durch das Bundesinstitut für Berufsbildung (BIBB) in Kooperation mit den Handwerkskammern. Enthält Kennzahlen zu Ausbildungsvertragsabschlüssen, Lösungsquoten und unbesetzten Ausbildungsplätzen. Relevant für die Nachwuchsgewinnung im Handwerk.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BIBB-Datenreport und Berufsbildungsstatistik sind öffentlich zugänglich; keine personenbezogenen Einzeldaten enthalten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BIBB-Berufsbildungsstatistik",
+                    "description": "Jährliche Vollerhebung aller Ausbildungsverträge nach § 88 BBiG durch die Handwerkskammern, übermittelt an das BIBB zur Bundesstatistik."
+                  },
+                  {
+                    "method": "Quotenberechnung",
+                    "description": "Berechnung der Ausbildungsbetriebsquote als Verhältnis ausbildender zu ausbildungsberechtigten Betrieben je Gewerk."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hw-umsatzrendite-benchmark",
+              "level": 4,
+              "name": "Umsatzrendite-Benchmark nach Handwerksbranche",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Betriebswirtschaftliche Kennzahlen zu Umsatzrenditen, Rohertragsspannen und Kostenstrukturen je Handwerksgewerk auf Basis der Ludwig-Fröhler-Institut-Betriebsvergleiche. Ermöglicht Benchmarking für einzelne Betriebe und branchenpolitische Analysen zur wirtschaftlichen Lage des Handwerks. Daten werden anonymisiert aus Jahresabschlüssen der Handwerksbetriebe gewonnen.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Betriebswirtschaftliche Einzeldaten unterliegen dem Steuergeheimnis und werden nur hochaggregiert als Branchenmediane veröffentlicht; vollständige Rohdaten sind proprietär."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Betriebsvergleich LFI",
+                    "description": "Ludwig-Fröhler-Institut für Handwerkswissenschaften erhebt jährlich freiwillige Betriebsvergleichsdaten und berechnet branchenspezifische Renditekennziffern."
+                  },
+                  {
+                    "method": "Anonymisierung und Aggregation",
+                    "description": "Rohdaten werden auf Gewerk-Ebene aggregiert und nur als Dezilverteilungen publiziert, um Rückschlüsse auf Einzelbetriebe zu verhindern."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -11450,6 +14439,143 @@
                   {
                     "method": "Planung & Steuerung",
                     "description": "Beratungsangebote für grenzüberschreitend tätige Handwerksunternehmen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hw-auftragsbestand-gewerk",
+              "level": 4,
+              "name": "Auftragsbestand nach Gewerk",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Quartalsweise Erhebung des Auftragsbestands in Wochen Auftragsreichweite je Handwerksgewerk durch den ZDH-Konjunkturbericht. Unterscheidet nach Bau-, Ausbau- und gewerblichen Handwerken sowie nach Bundesland. Frühindikator für Kapazitätsauslastung und Investitionsklima im Handwerk.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ZDH publiziert Konjunkturberichte quartalsweise als PDF und in aggregierter Tabellenform; keine betriebsindividuellen Daten enthalten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "ZDH-Konjunkturumfrage",
+                    "description": "Quartalsweise Befragung von ca. 20.000 Handwerksbetrieben durch die 53 Handwerkskammern; Ergebnisse werden durch den ZDH bundesweit aggregiert."
+                  },
+                  {
+                    "method": "Saisonbereinigung",
+                    "description": "Zeitreihenbereinigung nach Census X-13 zur Eliminierung saisonaler Schwankungen, insbesondere im Bauhandwerk."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hw-materialpreisbelastung",
+              "level": 4,
+              "name": "Materialpreisbelastung im Handwerk",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Index zur Messung der Materialpreisentwicklung als Kostenbelastungsfaktor für Handwerksbetriebe, differenziert nach Gewerk und Materialgruppe (Stahl, Holz, Elektro, Sanitär). Basiert auf Einkaufspreisindizes des Statistischen Bundesamts und ZDH-Betriebsbefragungen. Relevant für Kalkulation von Angebotspreisen und Vertragsnachverhandlungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Statistisches Bundesamt veröffentlicht Erzeugerpreisindizes; die gewerkspezifische Verknüpfung mit Handwerksdaten erfordert methodische Aufbereitung durch den ZDH."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Preisindexverknüpfung",
+                    "description": "Verknüpfung der Destatis-Erzeugerpreisindizes für relevante Materialgruppen mit ZDH-Strukturdaten zur gewerkspezifischen Materialintensität."
+                  },
+                  {
+                    "method": "Belastungsindex-Berechnung",
+                    "description": "Gewichtung der Materialpreisveränderungen nach typischen Materialkostenquoten je Handwerksgewerk zur Berechnung eines sektorspezifischen Belastungsindexes."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hw-fachkraeftemangel-index",
+              "level": 4,
+              "name": "Fachkräftemangel-Index Handwerk",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Zusammengesetzter Index zur Messung des Fachkräftemangels im Handwerk aus Komponenten: offene Stellen (BA-Statistik), Vakanzdauer, unbesetzte Ausbildungsplätze (BIBB) und Selbsteinschätzung der Betriebe (ZDH-Umfrage). Differenziert nach Gewerk und Region. Grundlage für arbeitsmarktpolitische Maßnahmen und Fachkräftesicherungsstrategien.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einzelne Quellen (BA, BIBB, Destatis) sind öffentlich; die Indexkonstruktion durch den ZDH erfordert methodische Dokumentation vor einer Veröffentlichung als offizieller Indikator."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Multikomponenten-Indexierung",
+                    "description": "Kombination von BA-Stellenmarktdaten, BIBB-Ausbildungsplatzstatistik und ZDH-Konjunkturbefragung zu einem gewichteten Gesamtindex je Gewerk."
+                  },
+                  {
+                    "method": "Regionalklassifikation",
+                    "description": "Disaggregation auf Kammerbezirksebene zur Identifikation regionaler Brennpunkte des Fachkräftemangels im Handwerk."
                   }
                 ]
               }
@@ -11715,6 +14841,92 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "pkv-versichertenstruktur-tarif",
+              "level": 4,
+              "name": "PKV-Versichertenstruktur nach Tarif",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verteilung der privat Krankenversicherten nach Tarifgruppen (Vollversicherung, Zusatzversicherung, Beihilfeergänzung) und demografischen Merkmalen (Alter, Geschlecht, Berufsgruppe) auf Basis der PKV-Verbandsstatistik. Enthält Kennzahlen zu Neuabschlüssen, Stornierungen und Wechseln je Tarifkategorie. Grundlage für versicherungsmathematische Risikomodelle.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Detaillierte Tarifstruktur- und Versichertendaten sind Geschäftsgeheimnisse der PKV-Unternehmen; der PKV-Verband veröffentlicht nur hochaggregierte Branchengesamtzahlen."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "PKV-Verbandserhebung",
+                    "description": "Jährliche Aggregation von Versichertendaten der PKV-Mitgliedsunternehmen durch den Verband der Privaten Krankenversicherung (PKV-Verband) zur Branchengesamtstatistik."
+                  },
+                  {
+                    "method": "Risikostrukturanalyse",
+                    "description": "Versicherungsmathematische Auswertung der Tarifstruktur zur Kalkulation prospektiver Beitragsanpassungen nach § 203 VVG."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pkv-leistungsaufwendungen-diagnose",
+              "level": 4,
+              "name": "PKV-Leistungsaufwendungen nach Diagnosegruppe",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Aufwendungen der privaten Krankenversicherungsunternehmen nach Diagnosegruppen (ICD-10-Kapitel), Leistungsart (stationär, ambulant, Zahnersatz, Arzneimittel) und Versicherungsbereich. Basiert auf BaFin-Aufsichtsstatistik und internen Schadendatenbanken der PKV-Unternehmen. Relevant für Produktentwicklung und Leistungssteuerung im PKV-Markt.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Diagnosebezogene Leistungsdaten der PKV unterliegen dem Versicherungsgeheimnis und sind nach VAG nicht zur Veröffentlichung verpflichtet; BaFin erhält nur Gesamtleistungsgrößen."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "BaFin-Aufsichtsmeldeweg",
+                    "description": "PKV-Unternehmen melden Leistungsaufwendungen nach § 55 VAG an die BaFin; diagnosespezifische Aufgliederung erfolgt nur intern für aktuarielle Zwecke."
+                  },
+                  {
+                    "method": "ICD-Kodierung",
+                    "description": "Zuordnung von Leistungsrechnungen zu ICD-10-Diagnosegruppen durch Rechnungsprüfstellen der PKV-Unternehmen als Grundlage für Morbiditätsanalysen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -11962,6 +15174,96 @@
                   {
                     "method": "Planung & Steuerung",
                     "description": "Portfoliosteuerung und Regulierungskonformität für Versicherungsanlageabteilungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lv-stornoentwicklung-vertragsjahr",
+              "level": 4,
+              "name": "Stornoentwicklung nach Vertragsjahr",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Stornoquoten von Lebensversicherungsverträgen (Rückkauf, beitragsfreie Stellung, Vertragsablauf) differenziert nach Vertragslaufzeitjahr und Produktkategorie (Kapitallebensversicherung, Risikolebensversicherung, fondsgebundene LV). Daten stammen aus dem GDV-Jahrbuch und BaFin-Statistiken. Relevant für Vertriebssteuerung und Produktdesign.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "GDV veröffentlicht Storno- und Bestandsstatistiken in aggregierter Form im Statistischen Taschenbuch; unternehmensspezifische Stornodaten sind Geschäftsgeheimnisse."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "GDV-Bestandsstatistik",
+                    "description": "Jährliche Erhebung von Bestand, Neuzugang und Abgang von Lebensversicherungsverträgen durch den Gesamtverband der Deutschen Versicherungswirtschaft (GDV)."
+                  },
+                  {
+                    "method": "Kohortenanalyse",
+                    "description": "Verfolgung von Vertragskohorten nach Abschlussjahr zur Berechnung von Stornoquoten über die Vertragslaufzeit als Grundlage für aktuarielle Annahmen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lv-ablaufleistungen-produktkategorie",
+              "level": 4,
+              "name": "Ablaufleistungen je Produktkategorie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Durchschnittliche und mediane Ablaufleistungen fälliger Lebensversicherungsverträge nach Produktkategorie, Laufzeit und Abschlussjahr auf Basis der BaFin-Aufsichtsstatistik und GDV-Erhebungen. Enthält Kennzahlen zur garantierten Leistung, Überschussbeteiligung und Gesamtleistung. Grundlage für Verbraucherschutz-Monitoring und Produkttransparenz.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "BaFin veröffentlicht Überschussbeteiligungen und ausgewählte Leistungskennzahlen; vollständige produktspezifische Ablaufleistungsstatistiken erfordern Aufbereitung aus internen Unternehmensdaten."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BaFin-Produktkategorisierung",
+                    "description": "BaFin fordert im Rahmen der Solvency-II-Berichterstattung Leistungsdaten nach Produktgruppen an und aggregiert diese zur Marktübersicht."
+                  },
+                  {
+                    "method": "Renditeberechnung",
+                    "description": "Berechnung interner Renditen (IRR) aus Beitrags- und Leistungsdaten zur Vergleichbarkeit unterschiedlicher Produktgenerationen und Laufzeiten."
                   }
                 ]
               }
@@ -12216,6 +15518,100 @@
                   {
                     "method": "Planung & Steuerung",
                     "description": "Risikomanagement und Rückversicherungsstrategien für Sachversicherer."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sv-elementarschaden-schadenquoten",
+              "level": 4,
+              "name": "Elementarschaden-Schadenquoten nach Region",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Schadenquoten für Elementarschadenversicherungen (Überschwemmung, Erdrutsch, Starkregen) nach Bundesland und Risikozone (GDV-Zonierungssystem ZÜRS), differenziert nach Schadenjahr und Sparte (Gebäude, Hausrat, Gewerbe). Basiert auf GDV-Naturgefahren-Schadenstatistik. Relevant für Risikoklassifizierung, Tarifierung und Klimafolgenanpassung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "GDV veröffentlicht nach Naturkatastrophen aggregierte Schadenschätzungen; detaillierte ZÜRS-Zonenschadenquoten sind proprietäre Risikokalkulationsgrundlagen der Versicherer."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "ZÜRS-Zonierung",
+                    "description": "GDV-Zonierungssystem für Überschwemmung, Rückstau und Starkregen (ZÜRS) klassifiziert Grundstücke in vier Gefährdungsklassen als Basis für die Tarifierung von Elementarschadenversicherungen."
+                  },
+                  {
+                    "method": "Schadenjahr-Auswertung",
+                    "description": "Jährliche Aggregation gemeldeter Elementarschäden nach Schadenart, Region und Versicherungssparte zur Berechnung sparten- und regionalspezifischer Schadenquoten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sv-kfz-schadenstatistik",
+              "level": 4,
+              "name": "KFZ-Schadenstatistik nach Fahrzeugklasse",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Schadenhäufigkeiten, Schadendurchschnitte und Schadenquoten der Kfz-Haftpflicht- und Kaskoversicherung nach Fahrzeugklasse (Pkw, Lkw, Motorrad, E-Fahrzeug), Typklasse und Regionalklasse. Basiert auf GDV-Kfz-Statistik und Kraftfahrt-Bundesamt-Daten. Grundlage für die jährliche Typklasseneinstufung durch den GDV.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "GDV veröffentlicht jährlich Typklassenlisten und Regionalklassen; detaillierte Schadendatenbanken nach Fahrzeug-Identifikationsnummer sind wettbewerbssensibel und nicht öffentlich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "GDV-Typklasseneinstufung",
+                    "description": "Jährliche statistische Auswertung von Kfz-Schadendaten nach Fahrzeugtyp durch den GDV zur Aktualisierung der Typklassenlisten für über 30.000 Fahrzeugtypen."
+                  },
+                  {
+                    "method": "Regionalklassenberechnung",
+                    "description": "Ermittlung der Schadenhäufigkeit nach Zulassungsbezirk (412 Bezirke) als Grundlage für die regionale Tarifkomponente in der Kfz-Haftpflichtversicherung."
                   }
                 ]
               }
@@ -12477,6 +15873,92 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "wp-umsatzstruktur-dienstleistungsart",
+              "level": 4,
+              "name": "Umsatzstruktur nach Dienstleistungsart",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Umsatzverteilung der Wirtschaftsprüfungs- und Beratungsgesellschaften nach Dienstleistungssegmenten (Prüfung/Assurance, Steuerberatung, Transaktionsberatung, Managementberatung, IT-Beratung) auf Basis des IDW-Berufsstandsberichts und WPK-Statistik. Enthält Marktanteile der Big-4-Gesellschaften und mittelständischer Prüfungsgesellschaften. Grundlage für Wettbewerbsanalysen und Berufsstandsmonitoring.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "WPK und IDW veröffentlichen Berufsstandsberichte mit aggregierten Umsatzzahlen; gesellschaftsspezifische Umsatzaufteilungen nach Dienstleistungsart werden nur in freiwilligen Transparenzberichten der Gesellschaften offengelegt."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "WPK-Berufsregisterdaten",
+                    "description": "Wirtschaftsprüferkammer (WPK) erhebt Struktur- und Umsatzdaten der zugelassenen Wirtschaftsprüfungsgesellschaften im Rahmen der Berufsaufsicht nach WPO."
+                  },
+                  {
+                    "method": "Marktsegmentierung",
+                    "description": "Klassifikation der Umsätze nach IDW-Dienstleistungskategorien zur Analyse von Marktentwicklungen und Diversifikationsstrategien im Beratungsmarkt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wp-mandantenstruktur-unternehmensgroesse",
+              "level": 4,
+              "name": "Mandantenstruktur nach Unternehmensgröße",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verteilung der Mandate von Wirtschaftsprüfungs- und Beratungsgesellschaften nach Unternehmensgröße des Mandanten (KMU, Mittelstand, DAX/MDAX-Konzerne, öffentliche Hand) sowie nach Branche. Basiert auf WPK-Prüferstatistik und freiwilligen Transparenzberichten der Gesellschaften. Relevant für Regulierungsfolgenabschätzung (Pflichtrotation, Prüfermarktkonzentration).",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Mandantenbeziehungen unterliegen dem Berufsgeheimnis nach § 43 WPO; die WPK veröffentlicht nur Gesamtstatistiken zur Prüfermarktkonzentration ohne mandantenbezogene Details."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Prüfermarkt-Monitoring",
+                    "description": "EU-Audit-Verordnung (537/2014) verpflichtet Mitgliedstaaten zur Überwachung der Prüfermarktkonzentration; BaFin und WPK erheben hierfür Mandatsstrukturstatistiken für PIE-Gesellschaften."
+                  },
+                  {
+                    "method": "Transparenzberichtsanalyse",
+                    "description": "Auswertung freiwilliger Transparenzberichte der Top-10-Prüfungsgesellschaften zur Mandantenstrukturanalyse nach Umsatz und Branche."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -12735,6 +16217,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "mf-panelgroesse-repraesentativitaet",
+              "level": 4,
+              "name": "Panelgrößen und Repräsentativitätsstatistiken",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Kennzahlen zu Panelgrößen, Quotenerfüllung und Repräsentativitätsgüte der großen deutschen Marktforschungspanels (Verbraucherpanel, Online-Access-Panel, Handelspanel) nach Anbieter und Paneltyp. Basiert auf BVM-Qualitätsberichten und ISO-26362-Zertifizierungsdaten. Relevant für Auftraggeber und Qualitätssicherung in der Marktforschung.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Panelzusammensetzung und Recruting-Statistiken sind Kerngeschäftsgeheimnisse der Marktforschungsunternehmen; BVM veröffentlicht nur Qualitätsstandards, keine panel-spezifischen Repräsentativitätsdaten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "ISO-26362-Zertifizierung",
+                    "description": "Auditierung von Access-Panels nach ISO 26362 prüft Panelrekrutierung, Qualitätssicherung und Repräsentativitätsmerkmale; Zertifizierungsergebnisse sind teilweise öffentlich zugänglich."
+                  },
+                  {
+                    "method": "Gewichtungsverfahren",
+                    "description": "Iterative Randanpassung (Raking) von Panelstichproben an Mikrozensus-Randverteilungen zur Sicherstellung der demografischen Repräsentativität von Befragungsergebnissen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mf-online-befragung-ruecklaufquoten",
+              "level": 4,
+              "name": "Online-Befragungs-Rücklaufquoten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Branchenkennzahlen zu Rücklaufquoten, Abbruchraten und Bearbeitungszeiten von Online-Befragungen nach Befragungstyp (B2C, B2B, Spezialgruppen), Fragebogenlänge und Incentivierungsmodell. Basiert auf BVM-Branchenmonitor und Esomar-Industrie-Report. Relevant für Kalkulation von Feldkosten und Stichprobenplanung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Esomar und BVM veröffentlichen aggregierte Branchen-Benchmarks zu Feldkennzahlen; projektspezifische Rücklaufstatistiken einzelner Studien sind Kundeneigentum und nicht öffentlich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "BVM-Branchenmonitor",
+                    "description": "Jährliche Erhebung des Berufsverbands Deutscher Markt- und Sozialforscher (BVM) zu Umsatz, Methoden und Feldkennzahlen der deutschen Marktforschungsbranche."
+                  },
+                  {
+                    "method": "Benchmark-Aggregation",
+                    "description": "Berechnung von Branchenmedianwerten für Rücklauf- und Abbruchquoten als Qualitätsbenchmark für die Planung und Bewertung von Online-Felderhebungen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -12978,6 +16550,92 @@
                   {
                     "method": "Öffentlichkeitsarbeit & Kommunikation",
                     "description": "Marktüberblick für Kanzleien und Legal-Tech-Investoren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "rst-honorarstruktur-beratungsfeld",
+              "level": 4,
+              "name": "Honorarstruktur nach Beratungsfeld",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Stundenhonorar-Benchmarks und Honorarstrukturen (Zeithonorar, Pauschalhonorar, Erfolgsbeteiligung) für Rechtsanwälte und Steuerberater nach Beratungsfeld (M&A, Arbeitsrecht, Steuerplanung, Compliance, Litigation) und Kanzleigröße. Basiert auf BRAK-Umfragen, DStV-Statistiken und Benchmarking-Studien. Grundlage für Honorarverhandlungen und Branchenmonitoring.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Individuelle Honorarvereinbarungen unterliegen dem Mandatsgeheimnis; BRAK und DStV veröffentlichen nur grobe Orientierungsrahmen, keine detaillierten Honorarstatistiken nach Beratungsfeld."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "BRAK-Berufsstatistik",
+                    "description": "Bundesrechtsanwaltskammer (BRAK) erhebt im Rahmen der Berufsaufsicht Strukturdaten der Kanzleien; Honorardaten werden nur in freiwilligen Vergütungsumfragen des DAV erhoben."
+                  },
+                  {
+                    "method": "Kanzleigrößenklassifizierung",
+                    "description": "Segmentierung nach Kanzleigröße (Einzelkanzlei, Boutique, Mittelkanzlei, Großkanzlei, Magic Circle) zur differenzierten Honorarbenchmark-Analyse."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "rst-mandantenstruktur-kmu-konzern",
+              "level": 4,
+              "name": "Mandantenstruktur KMU vs. Konzern",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verteilung des Mandantenportfolios von Rechtsanwalts- und Steuerberatungskanzleien nach Mandantengröße (KMU, Mittelstand, Großunternehmen, Privatpersonen, öffentliche Hand) sowie nach Beratungsfeld und Umsatzanteil. Basiert auf DStV-Strukturerhebung und BRAK-Berufsstatistik. Relevant für Kanzleistrategie, Nachwuchsgewinnung und Regulierungsfolgenabschätzung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "DStV und BRAK erheben Strukturdaten ihrer Mitglieder; aggregierte Mandantenstrukturstatistiken werden in Jahresberichten veröffentlicht, betriebsindividuelle Daten bleiben vertraulich."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "DStV-Strukturumfrage",
+                    "description": "Deutscher Steuerberaterverband (DStV) führt periodische Strukturumfragen unter Mitgliedskanzleien durch; Ergebnisse werden als Branchenstatistik aggregiert veröffentlicht."
+                  },
+                  {
+                    "method": "Umsatzanteilsanalyse",
+                    "description": "Berechnung der Umsatzanteile nach Mandantengrößenklassen zur Identifikation von Abhängigkeiten und Klumpenrisiken im Mandantenportfolio von Kanzleien."
                   }
                 ]
               }
@@ -13251,6 +16909,100 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ph-zulassungsdauer-antragstyp",
+              "level": 4,
+              "name": "Zulassungsdauer nach Antragstyp",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Durchschnittliche und mediane Bearbeitungsdauer von Arzneimittelzulassungsanträgen beim BfArM und EMA nach Antragstyp (Erstantrag, Generikum, Biosimilar, Orphan Drug, Zentralisiertes Verfahren, MRP/DCP). Basiert auf BfArM-Jahresberichten und EMA-Performance-Statistiken. Relevant für Planungssicherheit in der pharmazeutischen Produktentwicklung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BfArM und EMA veröffentlichen Bearbeitungszeitstatistiken in Jahresberichten und Performance-Reports; keine schutzbedürftigen Einzelantragsdaten enthalten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BfArM-Verfahrensmonitoring",
+                    "description": "Bundesinstitut für Arzneimittel und Medizinprodukte (BfArM) dokumentiert Verfahrensdauern je Zulassungsverfahrenstyp nach § 22 AMG als Teil des behördlichen Qualitätsmanagements."
+                  },
+                  {
+                    "method": "EMA-Performance-Benchmarking",
+                    "description": "European Medicines Agency (EMA) veröffentlicht jährlich Key Performance Indicators zu Zulassungsverfahren einschließlich Bearbeitungszeiten nach CHMP-Leitlinien."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ph-zulassung-zentralisiert-national",
+              "level": 4,
+              "name": "Zulassungsvolumen zentralisiert vs. national",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl und Anteil neu zugelassener Arzneimittel nach Zulassungsweg (EMA-zentralisiert, nationaler Antrag, MRP, DCP) sowie nach Wirkstoffklasse und Antragsteller-Typ (Originalhersteller, Generika, Biosimilar). Zeitreihe auf Basis von EMA-EPAR-Datenbank und BfArM-Zulassungsregister. Grundlage für Marktentwicklungsanalysen und regulatorische Strategieberatung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EMA-EPAR-Datenbank und BfArM-Arzneimittelinformationssystem sind öffentlich zugänglich; Zulassungsdaten nach Erteilung der Zulassung werden vollständig veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "EPAR-Datenbankauswertung",
+                    "description": "Systematische Auswertung der EMA European Public Assessment Reports (EPAR) nach Verfahrenstyp, Wirkstoffklasse und Zulassungsstatus zur Marktvolumenanalyse."
+                  },
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Analyse der jährlichen Zulassungszahlen nach Verfahrenstyp zur Identifikation von Trends in der Regulierungspräferenz und Marktstrategieveränderungen der Pharmaindustrie."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -13509,6 +17261,96 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ph-studien-phasenverteilung",
+              "level": 4,
+              "name": "Phasenverteilung laufender klinischer Studien",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl und Verteilung laufender klinischer Studien nach Entwicklungsphase (Phase I–IV), Indikationsgebiet (ICD-10-Kapitel), Sponsor-Typ (Pharmaunternehmen, Biotechunternehmen, akademisch) und Studienland. Basiert auf DRKS, EU Clinical Trials Register und ClinicalTrials.gov. Relevant für Innovationsmonitoring und Standortattraktivität Deutschlands als Studienstandort.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Klinische Studienregister (DRKS, EU CTR, ClinicalTrials.gov) sind gesetzlich verpflichtend und öffentlich zugänglich; Registereinträge enthalten keine schutzbedürftigen Patientendaten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Studienregister-API-Auswertung",
+                    "description": "Automatisierte Abfrage der öffentlichen APIs von DRKS und EU Clinical Trials Register zur Erstellung von Querschnittsanalysen der aktiven klinischen Studienlandschaft in Deutschland."
+                  },
+                  {
+                    "method": "Phasen- und Indikationsklassifikation",
+                    "description": "Standardisierte Klassifikation der Studienregisterdaten nach WHO-Phasendefinitionen und ICD-10-Indikationszuordnung für vergleichende Länderanalysen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ph-dropout-rate-phase-iii",
+              "level": 4,
+              "name": "Drop-out-Raten Phase-III-Studien",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Abbruch- und Drop-out-Raten von Phase-III-Zulassungsstudien nach Indikationsgebiet, Studiendesign (RCT, Open-label, Cross-over) und Abbruchgrund (unerwünschte Ereignisse, fehlende Wirksamkeit, Patientenentscheidung). Basiert auf publizierten Studienergebnissen (PubMed), FDA/EMA-Studienberichten und vfa-Forschungsstatistiken. Relevant für Erfolgswahrscheinlichkeitsabschätzungen in der Pharmaindustrie.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Studien-Drop-out-Daten werden in Studienprotokollen und Clinical Study Reports (CSR) dokumentiert; vollständige CSRs sind nach EMA-Policy nur teilweise öffentlich, Drop-out-Statistiken müssen aus publizierten Papieren rekonstruiert werden."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Systematisches Literatur-Screening",
+                    "description": "Strukturierte Auswertung publizierter Phase-III-Studienergebnisse in PubMed und ClinicalTrials.gov nach PRISMA-Kriterien zur Extraktion von Drop-out-Raten und Abbruchgründen."
+                  },
+                  {
+                    "method": "Metaanalyse nach Indikation",
+                    "description": "Pooling von Drop-out-Daten aus vergleichbaren Phase-III-Studien je Indikationsgebiet zur Berechnung indikationsspezifischer Benchmarkwerte für die Studienplanung."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -13764,6 +17606,100 @@
                   {
                     "method": "Öffentlichkeitsarbeit & Kommunikation",
                     "description": "Marktüberblick für Investoren und Regulierungsexperten im Digital-Health-Bereich."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mt-ce-zertifizierungsvolumen",
+              "level": 4,
+              "name": "CE-Zertifizierungsvolumen nach Produktklasse",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl erteilter CE-Zertifikate für Medizinprodukte nach MDR/IVDR-Produktklasse (Klasse I, IIa, IIb, III; IVDR Klasse A–D), Benannter Stelle und Produktkategorie. Basiert auf EUDAMED-Datenbank und BVMed-Marktdaten. Enthält Kennzahlen zur Umstellungsrate von MDD auf MDR. Relevant für regulatorische Strategieberatung und Marktzugangsplanung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EUDAMED (EU-Datenbank für Medizinprodukte) ist nach MDR Art. 33 öffentlich zugänglich für Zertifikatsdaten; BVMed veröffentlicht Marktstatistiken in Jahresberichten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "EUDAMED-Datenbankabfrage",
+                    "description": "Systematische Auswertung der European Database on Medical Devices (EUDAMED) nach Zertifikatstyp, Produktklasse und Benannter Stelle zur Analyse des europäischen Zertifizierungsmarkts."
+                  },
+                  {
+                    "method": "MDR-Übergangstracking",
+                    "description": "Monitoring des Zertifizierungsfortschritts der MDR-Transition (MDD→MDR) nach Produktklasse und Marktvolumen zur Bewertung regulatorischer Umsetzungsrisiken."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mt-exportquoten-region",
+              "level": 4,
+              "name": "Exportquoten Medizintechnik nach Region",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Exportvolumina und -quoten der deutschen Medizintechnikindustrie nach Zielregion (EU, USA, China, Japan, Schwellenländer) und Produktkategorie (Diagnostik, Therapiegeräte, Implantate, Verbrauchsmaterialien). Basiert auf Destatis-Außenhandelsstatistik (WA-Nummern 9018–9022) und BVMed-Branchendaten. Grundlage für Außenwirtschafts- und Exportförderstrategien.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht Außenhandelsstatistiken nach Warengruppen im Genesis-Portal; BVMed-Exportstatistiken werden als aggregierte Branchendaten in Jahresberichten publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Außenhandelsstatistik Destatis",
+                    "description": "Auswertung der Destatis-Außenhandelsstatistik nach CN-Warennummern 9018 (chirurgische Instrumente) bis 9022 (Röntgenapparate) zur Bestimmung medizintechnikspezifischer Exportvolumina."
+                  },
+                  {
+                    "method": "BVMed-Branchenreport",
+                    "description": "Bundesverband Medizintechnologie (BVMed) aggregiert Exportdaten seiner Mitgliedsunternehmen und veröffentlicht regionenspezifische Exportquoten im jährlichen Branchenreport."
                   }
                 ]
               }

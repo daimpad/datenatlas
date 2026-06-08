@@ -12049,6 +12049,2910 @@
           ]
         }
       ]
+    },
+    {
+      "id": "filmwirtschaft-kino",
+      "level": 2,
+      "name": "Filmwirtschaft & Kino",
+      "color": "#be185d",
+      "children": [
+        {
+          "id": "filmproduktion-foerderung",
+          "level": 3,
+          "name": "Filmproduktion & Förderung",
+          "color": "#db2777",
+          "children": [
+            {
+              "id": "ffa-foerdermittel-jahresbericht",
+              "level": 4,
+              "name": "FFA Fördermittel Jahresbericht",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährliche Fördermittelvergabe der Filmförderungsanstalt (FFA) nach Projektart, Förderlinie und Empfänger. Quelle: FFA Jahresberichte (ffa.de/marktdaten).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "FFA veröffentlicht Förderdaten regelmäßig als PDF und Tabellen auf der eigenen Website."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Fördersummen werden nach Förderlinie und Projektart aggregiert und im Jahresbericht publiziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bkm-filmfoerderung-bundesmittel",
+              "level": 4,
+              "name": "BKM Filmförderung Bundesmittel",
+              "color": "#9d174d",
+              "details": {
+                "description": "Bundesmittel der Beauftragten für Kultur und Medien (BKM) für Filmproduktionen, Koproduktionen und Drehbuchförderung. Quelle: BKM Haushaltsberichte und Pressemitteilungen (bundesregierung.de/bkm).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Bundesmittel sind öffentlich dokumentiert, jedoch nur in aggregierten Haushaltstiteln; Einzelprojektdaten erfordern Aufbereitung."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Haushaltsdatenanalyse",
+                    "description": "Extraktion der filmrelevanten Haushaltspositionen aus dem Bundeshaushalt und Zuordnung zu Förderlinien."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mdm-foerderprojekte-datenbank",
+              "level": 4,
+              "name": "MDM Geförderte Filmprojekte",
+              "color": "#9d174d",
+              "details": {
+                "description": "Projektliste der Mitteldeutschen Medienförderung (MDM) mit Fördersummen, Produktionsfirmen und Genres für Sachsen, Sachsen-Anhalt und Thüringen. Quelle: MDM Jahresbericht und Projektdatenbank (mdm-online.de).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "MDM veröffentlicht geförderte Projekte auf der eigenen Website mit Projektname, Fördersumme und Produktionsfirma."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Datenbankexport",
+                    "description": "Strukturierte Abfrage der MDM-Projektdatenbank nach Jahr, Genre und Förderlinie."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "filmfoerderung-hsh-projektliste",
+              "level": 4,
+              "name": "Filmförderung Hamburg Schleswig-Holstein Projektliste",
+              "color": "#9d174d",
+              "details": {
+                "description": "Geförderte Kino- und Fernsehproduktionen der Filmförderung Hamburg Schleswig-Holstein (FFHSH) mit Titeln, Fördersummen und Produzenten. Quelle: FFHSH Jahresberichte (ffhsh.de).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "FFHSH publiziert Projektlisten offen auf ihrer Website als Teil des Transparenzgebots öffentlicher Förderinstitutionen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Projekterfassung",
+                    "description": "Manuelle Erfassung und Digitalisierung der Projektlisten aus FFHSH-Jahresberichten für strukturierte Auswertung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "spio-filmstatistik-produktionsvolumen",
+              "level": 4,
+              "name": "SPIO Filmstatistik Produktionsvolumen",
+              "color": "#9d174d",
+              "details": {
+                "description": "Statistische Daten der Spitzenorganisation der Filmwirtschaft (SPIO) über Anzahl und Budget deutscher Filmproduktionen, aufgeschlüsselt nach Genre und Produktionsart. Quelle: SPIO Filmstatistisches Jahrbuch.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "SPIO Jahrbuch ist kostenpflichtig; Kerndaten werden in Pressemitteilungen veröffentlicht, eine vollständige Datenbankveröffentlichung erfordert Aufbereitung."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Statistikauswertung",
+                    "description": "Analyse des SPIO-Jahrbuchs zur Ermittlung von Produktionskennzahlen und Branchentrends."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "european-audiovisual-observatory-koproduktionen",
+              "level": 4,
+              "name": "European Audiovisual Observatory Koproduktionsdaten",
+              "color": "#9d174d",
+              "details": {
+                "description": "Statistiken des European Audiovisual Observatory (EAO) zu deutsch beteiligten internationalen Filmkoproduktionen, Fördervolumen und Partnerländern. Quelle: EAO LUMIERE-Datenbank (lumiere.obs.coe.int).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EAO LUMIERE-Datenbank ist frei zugänglich und erlaubt Download von Filmstatistiken unter offener Lizenz."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Datenbankabfrage",
+                    "description": "Gezielte Abfrage der LUMIERE-Datenbank nach deutschen Koproduktionen mit Filterung nach Zeitraum und Partnerland."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ffa-referenzfilmfoerderung-abrechnungen",
+              "level": 4,
+              "name": "FFA Referenzfilmförderung Abrechnungsdaten",
+              "color": "#9d174d",
+              "details": {
+                "description": "Abrechnungsdaten der FFA-Referenzfilmförderung, die sich an Besucherzahlen orientiert. Enthält Referenzpunkte, ausgezahlte Beträge und begünstigte Produktionsfirmen. Quelle: FFA (ffa.de).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Referenzfilmdaten sind in aggregierter Form verfügbar; Einzelabrechnungen unterliegen Geschäftsgeheimnissen und erfordern Anonymisierung."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Aggregation und Anonymisierung der Einzelabrechnungen zur Veröffentlichung als Branchenstatistik."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "filmfoerderung-laender-gesamtueberblick",
+              "level": 4,
+              "name": "Landesfilmförderung Gesamtüberblick",
+              "color": "#9d174d",
+              "details": {
+                "description": "Konsolidierter Überblick über alle deutschen Landesfilmförderungen (FFF Bayern, MFG Baden-Württemberg, NRW, etc.) mit Fördersummen, Projektzahlen und regionaler Verteilung. Quelle: Konferenz der deutschen Filmförderanstalten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Länderdaten liegen dezentral vor; eine konsolidierte Darstellung erfordert manuelle Zusammenführung aus Jahresberichten der Einzelinstitutionen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Datenfusion",
+                    "description": "Zusammenführung der Jahresberichtsdaten aller Landesfilmförderungen in eine einheitliche Datenbankstruktur."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "kinobesuch-marktdaten",
+          "level": 3,
+          "name": "Kinobesuch & Marktdaten",
+          "color": "#db2777",
+          "children": [
+            {
+              "id": "ffa-kinobesucherzahlen-jahresstatistik",
+              "level": 4,
+              "name": "FFA Kinobesucherzahlen Jahresstatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährliche Kinobesucherzahlen in Deutschland, aufgeschlüsselt nach Bundesland, Filmtitel, Genre und Herkunftsland. Quelle: FFA Kinostatistik (ffa.de/marktdaten/kinobesucher).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "FFA veröffentlicht Kinobesuchszahlen kostenlos auf der eigenen Website als Excel und PDF."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Marktanalyse",
+                    "description": "Auswertung der Kinobesuchszahlen nach demografischen und regionalen Segmenten zur Identifikation von Markttrends."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ag-kino-arthouse-besuchsstatistik",
+              "level": 4,
+              "name": "AG Kino Arthouse-Besuchsstatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Besuchsdaten der deutschen Arthousekinos, erhoben durch die AG Kino – Gilde deutscher Filmkunsttheater. Enthält Zuschauerzahlen pro Filmtitel und Spielort. Quelle: AG Kino (agkino.de).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "AG Kino erhebt Daten für Mitglieder; aggregierte Statistiken werden in Branchenberichten veröffentlicht, Rohdaten erfordern Aufbereitung."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Segmentanalyse",
+                    "description": "Differenzierung der Arthousebesuchsdaten nach Filmherkunft (europäisch/nicht-europäisch) und Kinostandort."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hdf-kino-spielstaettenerhebung",
+              "level": 4,
+              "name": "HDF Kino Spielstättenerhebung",
+              "color": "#9d174d",
+              "details": {
+                "description": "Bundesweite Erhebung des Hauptverbands Deutscher Filmtheater (HDF Kino) zu Anzahl, Größe und Ausstattung der Kinospielstätten, inkl. Sitzplatzzahl und digitaler Aufrüstung. Quelle: HDF Kino (hdf.de).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "HDF veröffentlicht Jahresberichte mit Spielstättenstatistiken offen auf der Website."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bestandserhebung",
+                    "description": "Jährliche Vollerhebung aller deutschen Kinospielstätten mit strukturierten Merkmalen zu Kapazität und technischer Ausstattung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ffa-umsatzstatistik-kinokassen",
+              "level": 4,
+              "name": "FFA Kinokassen-Umsatzstatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Umsatzdaten an deutschen Kinokassen (Box Office) nach Filmtitel, Startdatum und Bundesland. Quelle: FFA Marktdaten (ffa.de), wöchentliche und jährliche Berichte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "FFA veröffentlicht Box-Office-Daten regelmäßig als öffentliche Marktstatistik auf der Website."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Box-Office-Analyse",
+                    "description": "Wöchentliche Auswertung der Kinokassenumsätze nach Filmtitel und Vergleich mit Vorjahreszeitraum."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "eao-kinopublikum-demografik-europa",
+              "level": 4,
+              "name": "EAO Kinopublikum Demografik Europa",
+              "color": "#9d174d",
+              "details": {
+                "description": "Demografische Daten zum Kinopublikum in Deutschland im europäischen Vergleich: Altersgruppen, Geschlecht, Besuchsfrequenz. Quelle: European Audiovisual Observatory (obs.coe.int).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EAO publiziert vergleichende Marktberichte kostenlos auf der Observatory-Website."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Benchmarking",
+                    "description": "Vergleich der deutschen Kinopublikumsdaten mit europäischen Nachbarländern zur Identifikation struktureller Unterschiede."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ffa-kinoprogramm-genre-verteilung",
+              "level": 4,
+              "name": "FFA Kinoprogramm Genre-Verteilung",
+              "color": "#9d174d",
+              "details": {
+                "description": "Analyse der deutschen Kinoprogramme nach Genre, Herkunftsland und Marktanteil (deutsche vs. US-amerikanische vs. europäische Filme). Quelle: FFA Marktdaten (ffa.de).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Genre- und Herkunftsdaten werden von der FFA als Teil der Jahresmarktstatistik offen publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Programmanalyse",
+                    "description": "Auswertung der Kinoprogramme aller deutschen Spielstätten nach Genre und Produktionsland über ein Kalenderjahr."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kinopublikum-befragungsdaten-media-analyse",
+              "level": 4,
+              "name": "Kinopublikum Befragungsdaten Media Analyse",
+              "color": "#9d174d",
+              "details": {
+                "description": "Reichweitendaten und Publikumsprofile für Kino aus der Media-Analyse (ma) der Arbeitsgemeinschaft Media-Analyse e.V. Enthält Nutzungsintensität und soziodemografische Merkmale. Quelle: agma.de.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Media-Analyse-Daten sind lizenzpflichtig und nur für Mitglieder der agma zugänglich; Rohdaten sind nicht öffentlich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Stichprobenerhebung",
+                    "description": "Repräsentative Bevölkerungsbefragung zu Kinonutzungsverhalten mit standardisierten Fragebögen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ffa-regionale-kinostruktur-laenderdaten",
+              "level": 4,
+              "name": "FFA Regionale Kinostruktur Länderdaten",
+              "color": "#9d174d",
+              "details": {
+                "description": "Regionale Kinostrukturstatistiken auf Bundeslandebene: Anzahl Spielstätten, Leinwände, Sitzplätze und Besucher je 100.000 Einwohner. Quelle: FFA Marktdaten (ffa.de).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "FFA veröffentlicht regionale Kinostrukturdaten in Jahresberichten kostenfrei."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Regionalstatistik",
+                    "description": "Berechnung von Versorgungskennzahlen (Kinos pro Einwohner) auf Bundeslandebene für Infrastrukturanalysen."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "filmverleih-distribution",
+          "level": 3,
+          "name": "Filmverleih & Distribution",
+          "color": "#db2777",
+          "children": [
+            {
+              "id": "ffa-filmstart-verleihdaten",
+              "level": 4,
+              "name": "FFA Filmstart- und Verleihdaten",
+              "color": "#9d174d",
+              "details": {
+                "description": "Daten zu deutschen Filmstarts nach Verleihfirma, Kopienzahl, Starttermin und Herkunftsland. Enthält Marktanteile der großen Verleiher. Quelle: FFA Marktdaten (ffa.de).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "FFA publiziert Verleihdaten und Kopienzahlen als Teil der öffentlichen Kinomarktstatistik."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Marktanteilsanalyse",
+                    "description": "Berechnung von Marktanteilen der Verleiher nach Besucherzahlen und Umsatz für Wettbewerbsanalysen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "spio-fsk-zulassungsregister",
+              "level": 4,
+              "name": "SPIO FSK Zulassungsregister",
+              "color": "#9d174d",
+              "details": {
+                "description": "Register der FSK-Freigaben (Freiwillige Selbstkontrolle der Filmwirtschaft) mit Filmtitel, Alterskennzeichen und Prüfnummer. Quelle: SPIO/FSK (fsk.de).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "FSK-Zulassungsdaten sind öffentlich und im FSK-Online-Archiv abrufbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Registerabfrage",
+                    "description": "Strukturierte Abfrage des FSK-Online-Registers zur Analyse von Altersfreigabe-Trends über Zeit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vod-markt-umsatzstatistik",
+              "level": 4,
+              "name": "VOD-Markt Umsatzstatistik Deutschland",
+              "color": "#9d174d",
+              "details": {
+                "description": "Umsatz- und Nutzungsdaten des deutschen Video-on-Demand-Marktes (SVoD, TVoD, AVoD) nach Anbieter und Segment. Quellen: GfK Entertainment, EAO Yearbook, Goldmedia.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "VOD-Marktdaten stammen aus kostenpflichtigen Marktforschungsberichten; Kerndaten werden in Branchenpublikationen zusammengefasst."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Marktsegmentierung",
+                    "description": "Aufschlüsselung des VOD-Marktes nach Geschäftsmodell (SVoD/TVoD/AVoD) und Umsatzanteil je Plattform."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "eao-digitale-filmvertriebsdaten-europa",
+              "level": 4,
+              "name": "EAO Digitale Filmvertriebsdaten Europa",
+              "color": "#9d174d",
+              "details": {
+                "description": "Vergleichende Statistiken des European Audiovisual Observatory zur digitalen Filmdistribution in Europa: Anzahl Filmtitel pro Plattform, länderspezifische Verfügbarkeit. Quelle: EAO MAVISE-Datenbank (mavise.obs.coe.int).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EAO MAVISE-Datenbank bietet freien Zugang zu Daten über audiovisuelle Dienste in Europa."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Plattformanalyse",
+                    "description": "Auswertung der MAVISE-Datenbank zu deutschen Filmtiteln auf europäischen Streaming-Plattformen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ffa-heimkino-verwertungsdaten",
+              "level": 4,
+              "name": "FFA Heimkino-Verwertungsdaten",
+              "color": "#9d174d",
+              "details": {
+                "description": "Umsatz- und Absatzdaten der Heimkinoverwertung (DVD, Blu-ray, Download) nach Filmtitel und Vertriebsweg. Quelle: FFA Marktdaten in Kooperation mit GfK Entertainment (ffa.de).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Heimkinodaten werden in FFA-Jahresberichten publiziert; Einzeltiteldaten erfordern Aufbereitung und Anonymisierung."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verwertungskettenanalyse",
+                    "description": "Verfolgung der Filmverwertung vom Kinostart über Heimkino bis VOD zur Analyse der Einnahmen entlang der Distributionskette."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bkm-auslandsvertrieb-foerderung",
+              "level": 4,
+              "name": "BKM Auslandsvertrieb Filmförderung",
+              "color": "#9d174d",
+              "details": {
+                "description": "Förderdaten der BKM für den internationalen Vertrieb deutscher Filme: geförderte Filmtitel, Zielländer und Fördersummen für Festivals und Auslandsauswertung. Quelle: BKM (bundesregierung.de/bkm).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "BKM-Fördermaßnahmen für Auslandsvertrieb sind öffentlich dokumentiert, aber nur in aggregierten Kategorien; Einzelprojektlisten erfordern Aufbereitung."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Exportmarktanalyse",
+                    "description": "Analyse der Zielländer und Festivals für geförderte deutsche Filmexporte zur Bewertung der Außenwirkung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "filmverleih-marktkonzentration-hhi",
+              "level": 4,
+              "name": "Filmverleih Marktkonzentrations-Index",
+              "color": "#9d174d",
+              "details": {
+                "description": "Berechnung von Marktkonzentrationsindizes (HHI, CR4) für den deutschen Filmverleihmarkt auf Basis von FFA-Verleihdaten. Zeigt Oligopolisierungstendenzen durch Majors. Quelle: FFA-Daten, eigene Berechnung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Basis-Verleihdaten sind öffentlich; Konzentrationsindizes müssen aus Primärdaten berechnet werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Konzentrationsberechnung",
+                    "description": "Berechnung von Herfindahl-Hirschman-Index aus FFA-Verleihdaten zur Bewertung der Wettbewerbsstruktur im Verleihmarkt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gvl-leistungsschutzrechte-filmmusik",
+              "level": 4,
+              "name": "GVL Leistungsschutzrechte Filmverwertung",
+              "color": "#9d174d",
+              "details": {
+                "description": "Vergütungsdaten der Gesellschaft zur Verwertung von Leistungsschutzrechten (GVL) für Musiker und Tonträgerhersteller bei Filmverwertung (Kino, TV, VOD). Quelle: GVL Geschäftsbericht (gvl.de).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "GVL publiziert Gesamtvergütungszahlen; Aufschlüsselung nach Verwertungsart erfordert Aufbereitung aus Geschäftsberichten."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Lizenzgebührenanalyse",
+                    "description": "Auswertung der GVL-Vergütungsberichte zur Analyse von Einnahmenströmen aus Filmverwertung für Rechteinhaber."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "musikwirtschaft",
+      "level": 2,
+      "name": "Musikwirtschaft",
+      "color": "#be185d",
+      "children": [
+        {
+          "id": "tontraegermarkt-streaming",
+          "level": 3,
+          "name": "Tonträgermarkt & Streaming",
+          "color": "#db2777",
+          "children": [
+            {
+              "id": "bvmi-streaming-umsaetze-jahresbericht",
+              "level": 4,
+              "name": "BVMI Streaming-Umsätze Jahresbericht",
+              "color": "#9d174d",
+              "details": {
+                "description": "Bundesverband Musikindustrie (BVMI) veröffentlicht jährlich Streaming-Umsätze nach Segment (Audio, Video, Paid, Ad-Supported) für den deutschen Markt. Quelle: BVMI Jahrbuch Musik in Zahlen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BVMI veröffentlicht aggregierte Marktdaten im Jahresbericht ohne personenbezogene Inhalte."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Umsatzdaten der Mitgliedsunternehmen werden aggregiert und nach Vertriebsweg segmentiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bvmi-physischer-tontraegerverkauf",
+              "level": 4,
+              "name": "BVMI Physischer Tonträgerverkauf",
+              "color": "#9d174d",
+              "details": {
+                "description": "Verkaufszahlen für CD, LP/Vinyl und andere physische Tonträger aus dem BVMI-Marktbericht. Enthält Absatzmengen und Umsatz nach Format und Quartal.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Handelsdaten ohne Personenbezug, regulär im BVMI-Jahrbuch veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Marktsegmentierung",
+                    "description": "Differenzierung nach Trägermedium (CD, Vinyl, MC) und Verkaufskanal (Fachhandel, Online)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gfk-entertainment-albumcharts-daten",
+              "level": 4,
+              "name": "GfK Entertainment Albumcharts-Daten",
+              "color": "#9d174d",
+              "details": {
+                "description": "GfK Entertainment erhebt wöchentliche Verkaufs- und Streamingdaten für offizielle Deutsche Charts. Daten umfassen Ranking, Einheiten (Streams + physisch + Download) und Labelzuordnung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rohdaten sind proprietär; aggregierte Chart-Ergebnisse werden öffentlich veröffentlicht, Einzeltransaktionen unterliegen Geschäftsgeheimnisschutz."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Chart-Berechnung",
+                    "description": "Streams werden mit GfK-Faktor gewichtet und mit physischen Verkäufen zu Official-Chart-Units zusammengeführt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bvmi-digitaler-download-umsatz",
+              "level": 4,
+              "name": "BVMI Digitaler Download-Umsatz",
+              "color": "#9d174d",
+              "details": {
+                "description": "Umsatzzahlen für einzelne digitale Downloads (Track, Album) aus dem deutschen Musikmarkt, erhoben vom BVMI auf Basis von Meldungen der Mitgliedsunternehmen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Branchendaten ohne Personenbezug; im Jahresbericht bereits öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Zeitreihenvergleich Download- vs. Streaming-Umsatz zur Darstellung des Transformationsprozesses."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bvmi-marktanteile-major-indie",
+              "level": 4,
+              "name": "BVMI Marktanteile Major vs. Independent",
+              "color": "#9d174d",
+              "details": {
+                "description": "Marktanteilsdaten nach Labeltyp (Major Labels, Independents) im deutschen Tonträgermarkt. Quelle: BVMI Jahrbuch, ergänzt durch IMPALA-Daten für den Independentsektor.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Marktstrukturstatistiken ohne Personenbezug, im BVMI-Jahrbuch veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Wettbewerbsanalyse",
+                    "description": "Vergleich Marktkonzentration und Wettbewerbsstruktur im Labelmarkt über mehrere Jahre."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "streaming-abo-nutzerzahlen-deutschland",
+              "level": 4,
+              "name": "Streaming-Abonnentenzahlen Deutschland",
+              "color": "#9d174d",
+              "details": {
+                "description": "Abonnentenzahlen für Musik-Streaming-Dienste (Spotify, Apple Music, Amazon Music etc.) im deutschen Markt; Daten aus BVMI-Bericht und Statista-Erhebungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Plattformseitige Nutzerdaten sind proprietär; aggregierte Schätzungen können aufbereitet veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Marktschätzung",
+                    "description": "Triangulation aus Plattform-Pressemitteilungen, BVMI-Erhebungen und Statista-Haushaltsbefragungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bvmi-exportumsaetze-musikindustrie",
+              "level": 4,
+              "name": "BVMI Exportumsätze Musikindustrie",
+              "color": "#9d174d",
+              "details": {
+                "description": "Exportumsätze der deutschen Musikindustrie ins Ausland, gegliedert nach Region und Format. Quelle: BVMI in Zusammenarbeit mit IFPI Global Music Report.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Branchenstatistiken zu Auslandserlösen; keine personenbezogenen Daten enthalten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Außenhandelsanalyse",
+                    "description": "Verknüpfung nationaler BVMI-Daten mit IFPI-Länderdaten zur Berechnung von Exportquoten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "streaming-umsatz-kuenstlerverteilung",
+              "level": 4,
+              "name": "Streaming-Umsatz Künstlerverteilung",
+              "color": "#9d174d",
+              "details": {
+                "description": "Statistische Auswertung der Umsatzverteilung zwischen Top-Künstlern und Long-Tail im deutschen Streaming-Markt. Quelle: BVMI-Analysen, Musik-Wirtschaft-Berichte.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rohdaten der Plattformen sind vertraulich; Verteilungsstatistiken können anonymisiert veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Konzentrationsmessung",
+                    "description": "Berechnung von Gini-Koeffizient und Top-1%/10%-Anteil an Gesamt-Streaming-Erlösen."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "gema-lizenzierung-ausschuettung",
+          "level": 3,
+          "name": "GEMA-Lizenzierung & Ausschüttung",
+          "color": "#db2777",
+          "children": [
+            {
+              "id": "gema-gesamtumsatz-lizenzeinnahmen",
+              "level": 4,
+              "name": "GEMA Gesamtumsatz & Lizenzeinnahmen",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährliche Gesamteinnahmen der GEMA aus Lizenzen für alle Nutzungsbereiche (Online, Rundfunk, Aufführung, Vervielfältigung). Quelle: GEMA Geschäftsbericht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "GEMA veröffentlicht Gesamteinnahmen und -ausschüttungen jährlich im Geschäftsbericht ohne personenbezogene Details."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Jahresabschlussanalyse",
+                    "description": "Auswertung des GEMA-Geschäftsberichts nach Einnahmensparten und Verwaltungskostenquote."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gema-ausschuettungsstatistik-sparten",
+              "level": 4,
+              "name": "GEMA Ausschüttungsstatistik nach Sparten",
+              "color": "#9d174d",
+              "details": {
+                "description": "Aufschlüsselung der GEMA-Ausschüttungen nach Sparten (U-Musik, E-Musik) und Nutzungsarten. Quelle: GEMA Geschäftsbericht und Verteilungsplan.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Spartenbezogene Ausschüttungsdaten sind im GEMA-Geschäftsbericht öffentlich."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Spartenauswertung",
+                    "description": "Vergleich der Ausschüttungsquoten zwischen Unterhaltungs- und Ernster Musik."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gema-online-lizenzeinnahmen-streaming",
+              "level": 4,
+              "name": "GEMA Online-Lizenzeinnahmen Streaming",
+              "color": "#9d174d",
+              "details": {
+                "description": "Lizenzeinnahmen der GEMA aus dem Online-Bereich (Streaming-Plattformen, UGC, Downloads). Quelle: GEMA Geschäftsbericht, Sparte Online.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich im GEMA-Geschäftsbericht; keine individuellen Vertragsdaten enthalten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Wachstumsentwicklung der Online-Lizenzeinnahmen seit 2015 im Verhältnis zu traditionellen Nutzungsarten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gema-mitgliederstatistik-urheber",
+              "level": 4,
+              "name": "GEMA Mitgliederstatistik Urheber",
+              "color": "#9d174d",
+              "details": {
+                "description": "Anzahl der GEMA-Mitglieder nach Kategorie (ordentlich, außerordentlich, angeschlossen), Berufsgruppe (Komponisten, Textautoren, Verleger). Quelle: GEMA Geschäftsbericht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Mitgliederzahlen ohne Personenbezug, jährlich im Geschäftsbericht veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Bestandsanalyse",
+                    "description": "Entwicklung der Mitgliederzahlen über Zeit als Indikator für professionelle Musikschaffende."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gema-rundfunklizenz-ard-zdf",
+              "level": 4,
+              "name": "GEMA Rundfunklizenzeinnahmen ARD/ZDF",
+              "color": "#9d174d",
+              "details": {
+                "description": "Einnahmen der GEMA aus Pauschallizenzen mit öffentlich-rechtlichen Rundfunkanstalten (ARD, ZDF, Deutschlandradio). Quelle: GEMA Geschäftsbericht, Nutzungsart Rundfunk.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Lizenzeinnahmen aus Rundfunk sind Teil des öffentlich zugänglichen GEMA-Geschäftsberichts."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Lizenzvertragsanalyse",
+                    "description": "Auswertung der Rundfunk-Pauschalvergütungen im Mehrjahresvergleich."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gema-verwaltungskostenquote",
+              "level": 4,
+              "name": "GEMA Verwaltungskostenquote",
+              "color": "#9d174d",
+              "details": {
+                "description": "Verhältnis der Verwaltungskosten zu Gesamteinnahmen der GEMA als Effizienzindikator. Quelle: GEMA Geschäftsbericht, Verwendungsrechnung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Verwaltungskostenquote ist regulatorisch vorgeschrieben und jährlich im Geschäftsbericht veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Effizienzvergleich",
+                    "description": "Benchmarking der GEMA-Verwaltungsquote gegenüber europäischen Schwestergesellschaften (SACEM, PRS)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gema-verteilungsplan-kategorien",
+              "level": 4,
+              "name": "GEMA Verteilungsplan Kategorienschlüssel",
+              "color": "#9d174d",
+              "details": {
+                "description": "Strukturdaten des GEMA-Verteilungsplans: Gewichtungsfaktoren nach Nutzungsart, Werkgruppe und Aufführungsdauer. Quelle: GEMA Verteilungsplan (öffentliches Dokument).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Der GEMA-Verteilungsplan ist ein öffentliches Regelwerk und vollständig einsehbar."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Regelwerkanalyse",
+                    "description": "Extraktion der Bewertungsschlüssel aus dem GEMA-Verteilungsplan zur Simulation von Ausschüttungsbeträgen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gema-internationale-gegenseitigkeitseinnahmen",
+              "level": 4,
+              "name": "GEMA Internationale Gegenseitigkeitseinnahmen",
+              "color": "#9d174d",
+              "details": {
+                "description": "Einnahmen der GEMA aus Gegenseitigkeitsverträgen mit ausländischen Verwertungsgesellschaften (z.B. SACEM, PRS, ASCAP). Quelle: GEMA Geschäftsbericht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Im Jahresbericht als Gesamtposten ausgewiesen; keine einzelvertraglichen Daten."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Internationale Vergleichsanalyse",
+                    "description": "Anteil ausländischer Einnahmen am GEMA-Gesamtaufkommen im Zeitverlauf."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "musikveranstaltungen-konzerte",
+          "level": 3,
+          "name": "Musikveranstaltungen & Konzerte",
+          "color": "#db2777",
+          "children": [
+            {
+              "id": "livekomm-konzertmarkt-umsatz",
+              "level": 4,
+              "name": "LiveKomm Konzertmarkt-Umsatz",
+              "color": "#9d174d",
+              "details": {
+                "description": "Umsatzdaten des deutschen Livemusikmarkts (Ticketeinnahmen, Clubumsätze) aus dem LiveKomm-Verband. Enthält Daten zu Clubs, Festivals und Konzerthäusern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Branchendaten des LiveKomm e.V., regelmäßig in Presseberichten veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Verbandsdatenerhebung",
+                    "description": "Umfrage unter LiveKomm-Mitgliedern zu Umsatz, Besucherzahlen und Programmausgaben."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bdkv-veranstaltungswirtschaft-kennzahlen",
+              "level": 4,
+              "name": "BDKV Veranstaltungswirtschaft Kennzahlen",
+              "color": "#9d174d",
+              "details": {
+                "description": "Branchenkennzahlen des Bundesverbands der Konzert- und Veranstaltungswirtschaft (BDKV): Umsatz, Beschäftigte, Veranstaltungsanzahl. Quelle: BDKV Jahresbericht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Verbandsstatistiken werden öffentlich kommuniziert und enthalten keine personenbezogenen Einzeldaten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Branchenanalyse",
+                    "description": "Auswertung BDKV-Mitgliederdaten zu Umsatz- und Beschäftigungsentwicklung in der Veranstaltungsbranche."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "festivalmarkt-besucher-ticketpreise",
+              "level": 4,
+              "name": "Festivalmarkt Besucherzahlen & Ticketpreise",
+              "color": "#9d174d",
+              "details": {
+                "description": "Besucherzahlen und durchschnittliche Ticketpreise der größten deutschen Musikfestivals (Rock am Ring, Wacken, Fusion etc.). Quelle: Veranstalterangaben, ICS-Berichte, Statista.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einzelne Veranstalter machen keine Pflichtangaben; Daten müssen aus Pressemitteilungen und Statista zusammengeführt werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Datenkompilation",
+                    "description": "Zusammenführung öffentlicher Veranstalterangaben zu Besucherzahlen und Preisindizes."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "konzertticket-verkaufsplattformen-marktanteile",
+              "level": 4,
+              "name": "Konzertticket-Verkaufsplattformen Marktanteile",
+              "color": "#9d174d",
+              "details": {
+                "description": "Marktanteile der Ticketverkaufsplattformen (CTS Eventim, Ticketmaster, Reservix) im deutschen Konzertmarkt. Quelle: Unternehmensberichte, Statista-Schätzungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Umsatzdaten teils aus Jahresberichten börsennotierter Unternehmen (CTS Eventim) ableitbar; Marktanteile erfordern Aufbereitung."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Marktstrukturanalyse",
+                    "description": "Schätzung von Marktanteilen auf Basis publizierter Umsatzzahlen und Transaktionsvolumina."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "livekomm-club-insolvenzstatistik",
+              "level": 4,
+              "name": "LiveKomm Club-Insolvenzstatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Statistik zu Schließungen und Insolvenzen von Musikclubs in Deutschland. Quelle: LiveKomm-Monitoring, Bundeszentrale für politische Bildung, Medienberichte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "LiveKomm veröffentlicht regelmäßig Zahlen zu Clubschließungen ohne personenbezogene Insolvenzdetails."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Verlaufsdokumentation",
+                    "description": "Jährliche Zählung von Clubschließungen nach Bundesland und Stadtgröße."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "konzertveranstaltungen-beschaeftigte",
+              "level": 4,
+              "name": "Konzertveranstaltungen Beschäftigte",
+              "color": "#9d174d",
+              "details": {
+                "description": "Beschäftigtenzahlen in der Konzert- und Veranstaltungsbranche (sozialversicherungspflichtig + Freelancer). Quelle: Bundesagentur für Arbeit, BDKV.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Beschäftigungsstatistiken der Bundesagentur für Arbeit sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Arbeitsmarktanalyse",
+                    "description": "Auswertung der Beschäftigungsstatistiken nach WZ-Code 90 (Kreative/darstellende Kunst)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "touring-kuenstler-gagen-statistik",
+              "level": 4,
+              "name": "Touring-Künstler Gagenstatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Statistische Auswertung von Künstlergagen nach Veranstaltungstyp und -größe (Club, Theater, Arena). Quelle: BDKV-Umfragen, LiveKomm-Erhebungen, Musikmarkt-Studie.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einzelgagen sind vertraulich; statistische Verteilungen können anonymisiert publiziert werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Vergütungsanalyse",
+                    "description": "Auswertung von Gagenspannen nach Venue-Kapazität und Booking-Kategorie."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "konzertmarkt-regionalverteilung-bundeslaender",
+              "level": 4,
+              "name": "Konzertmarkt Regionalverteilung Bundesländer",
+              "color": "#9d174d",
+              "details": {
+                "description": "Räumliche Verteilung von Konzert- und Musikveranstaltungen nach Bundesland: Anzahl, Besucher, Venues. Quelle: BDKV, Statistisches Bundesamt, Landesstatistiken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Regionale Veranstaltungsstatistiken der Landesstatistikämter und BDKV sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Geodatenanalyse",
+                    "description": "Verknüpfung von Veranstaltungsstatistiken mit Geodaten der Bundesländer zur räumlichen Visualisierung."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "buchverlage",
+      "level": 2,
+      "name": "Buchverlage",
+      "color": "#be185d",
+      "children": [
+        {
+          "id": "buchmarkt-umsatz",
+          "level": 3,
+          "name": "Buchmarkt & Umsatz",
+          "color": "#db2777",
+          "children": [
+            {
+              "id": "boersenverein-buchmarkt-umsatzbericht",
+              "level": 4,
+              "name": "Börsenverein Buchmarkt-Umsatzbericht",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährlicher Gesamtumsatz des deutschen Buchmarkts nach Warengruppe (Belletristik, Sachbuch, Kinder- und Jugendbuch). Quelle: Börsenverein des Deutschen Buchhandels, Wirtschaftszahlen Buch.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Branchenjahresbericht des Börsenvereins, öffentlich zugänglich und ohne personenbezogene Daten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Branchenerhebung",
+                    "description": "Jahreserhebung unter Börsenverein-Mitgliedsverlagen und Buchhandlungen zu Umsatz und Absatz."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buchmarkt-e-book-anteil-umsatz",
+              "level": 4,
+              "name": "Buchmarkt E-Book-Anteil & Umsatz",
+              "color": "#9d174d",
+              "details": {
+                "description": "Umsatz- und Absatzanteile von E-Books am deutschen Buchmarkt nach Warengruppe. Quelle: Börsenverein, GfK-Konsumentenpanel, buchreport.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Marktdaten ohne Personenbezug, regelmäßig im Jahresbericht des Börsenvereins publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Formatanalyse",
+                    "description": "Vergleich Print- vs. Digital-Anteile im Zeitverlauf als Digitalisierungsindikator."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buchreport-verlagsumsaetze-top-ranking",
+              "level": 4,
+              "name": "buchreport Verlagsumsätze Top-Ranking",
+              "color": "#9d174d",
+              "details": {
+                "description": "Umsatz-Ranking der größten deutschen Buchverlage. Quelle: buchreport Jahresranking, jährlich veröffentlicht als Fachpublikation.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Vollständige Ranking-Daten sind kostenpflichtig; aggregierte Übersichten und Trendaussagen können aufbereitet werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Marktkonzentrationsanalyse",
+                    "description": "Berechnung von Marktanteilen und Konzentrationsindizes auf Basis der Verlagsumsatz-Rankings."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buchmarkt-titelproduktion-neuerscheinungen",
+              "level": 4,
+              "name": "Buchmarkt Titelproduktion Neuerscheinungen",
+              "color": "#9d174d",
+              "details": {
+                "description": "Anzahl der Neuerscheinungen im deutschen Buchmarkt nach Sachgebiet und Verlagsart. Quelle: Deutsche Nationalbibliothek, Börsenverein Titelproduktionsstatistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Titelproduktionsstatistiken der Deutschen Nationalbibliothek sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bibliometrische Analyse",
+                    "description": "Auswertung der DNB-Pflichtabgabedaten nach Thema, Sachgebiet und Erscheinungsjahr."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ivw-buchauflagen-abonnements",
+              "level": 4,
+              "name": "IVW Buchauflagen & Abonnements",
+              "color": "#9d174d",
+              "details": {
+                "description": "Auflagenstatistiken für Bücher und Buchclub-Abonnements aus den IVW-Quartalsberichten. Quelle: Informationsgemeinschaft zur Feststellung der Verbreitung von Werbeträgern (IVW).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "IVW-Auflagendaten werden quartalsweise öffentlich ausgewiesen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Auflageauswertung",
+                    "description": "Aggregation der IVW-Quartalsdaten zu Jahreswerten und Trenddarstellung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buchmarkt-leserhaushalte-kaufverhalten",
+              "level": 4,
+              "name": "Buchmarkt Leserhaushalte & Kaufverhalten",
+              "color": "#9d174d",
+              "details": {
+                "description": "Haushaltspaneldaten zum Buchkaufverhalten in Deutschland (Käuferreichweite, Ausgaben je Haushalt). Quelle: GfK Konsumentenpanel Buch, Börsenverein.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "GfK-Paneldaten sind lizenzpflichtig; aggregierte Kennzahlen werden im Börsenverein-Jahresbericht veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Panelauswertung",
+                    "description": "Längsschnittanalyse der Buchkäufe auf Haushaltsebene mit demographischer Segmentierung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buchmarkt-online-stationaer-kanalverteilung",
+              "level": 4,
+              "name": "Buchmarkt Online vs. Stationär Kanalverteilung",
+              "color": "#9d174d",
+              "details": {
+                "description": "Umsatzanteile nach Vertriebskanal (stationärer Buchhandel, Online-Handel, Direktvertrieb). Quelle: Börsenverein Wirtschaftszahlen Buch, GfK-Panel.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kanalverteilungsdaten sind im Jahresbericht des Börsenvereins öffentlich ausgewiesen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Kanalanalyse",
+                    "description": "Zeitreihe der Kanalverschiebung von stationär zu online als Strukturwandelindikator."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buchmarkt-warengruppen-bestsellerlisten",
+              "level": 4,
+              "name": "Buchmarkt Warengruppen-Bestsellerlisten",
+              "color": "#9d174d",
+              "details": {
+                "description": "Bestsellerlisten nach Warengruppe (Belletristik, Sachbuch, Ratgeber, Kinderbuch) des Spiegels und der Buchhandelszeitschrift. Quelle: Spiegel-Bestsellerliste, buchmarkt.de.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aktuelle Listendaten sind urheberrechtlich geschützt; historische Aggregationen können aufbereitet werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Auswertung von Themen- und Autorentrends über Bestsellerlisten-Zeitreihen."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "buchhandel-distribution",
+          "level": 3,
+          "name": "Buchhandel & Distribution",
+          "color": "#db2777",
+          "children": [
+            {
+              "id": "mvb-verzeichnis-lieferbarer-buecher",
+              "level": 4,
+              "name": "MVB Verzeichnis Lieferbarer Bücher (VLB)",
+              "color": "#9d174d",
+              "details": {
+                "description": "Das Verzeichnis lieferbarer Bücher des MVB (Marketing- und Verlagsservice des Buchhandels) enthält bibliografische Metadaten zu ca. 2 Mio. lieferbaren Titeln. Quelle: MVB/VLB.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "VLB-Daten sind kostenpflichtig lizenziert; Teilmengen und Metadaten können aufbereitet publiziert werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Titeldatenanalyse",
+                    "description": "Auswertung von VLB-Metadaten zu Verlagsstruktur, Themengebieten und Preisentwicklung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "boersenverein-buchhandlungen-statistik",
+              "level": 4,
+              "name": "Börsenverein Buchhandlungen-Statistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Anzahl stationärer Buchhandlungen in Deutschland nach Bundesland und Betriebsgröße. Quelle: Börsenverein Wirtschaftszahlen Buch, Handelsregisterauswertungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Standortstatistiken ohne Personenbezug, im Jahresbericht des Börsenvereins veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Standortanalyse",
+                    "description": "Räumliche Auswertung der Buchhandlungsdichte nach Bundesland und kommunalem Umfeld."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "libri-kno-barsortiment-lieferkennzahlen",
+              "level": 4,
+              "name": "Barsortiment Lieferkennzahlen (Libri/KNO)",
+              "color": "#9d174d",
+              "details": {
+                "description": "Lieferkennzahlen der führenden deutschen Barsortimenter (Libri, KNO/Koch, Noel): Lieferquoten, Bearbeitungszeiten, Titelabdeckung. Quelle: Unternehmensberichte, Börsenverein.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Operative Lieferdaten sind Geschäftsgeheimnisse; nur aggregierte Strukturinformationen öffentlich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Lieferkettenanalyse",
+                    "description": "Auswertung von Barsortiment-Marktanteilen und Lieferperformance-Indikatoren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buchhandel-personalstatistik-ausbildung",
+              "level": 4,
+              "name": "Buchhandel Personalstatistik & Ausbildung",
+              "color": "#9d174d",
+              "details": {
+                "description": "Beschäftigte und Auszubildende im Buchhandel nach Betriebsgröße. Quelle: Bundesagentur für Arbeit (WZ-Code 47.61), Börsenverein-Ausbildungsstatistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Arbeitsmarktstatistiken der BA und Ausbildungszahlen des Börsenvereins sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Arbeitsmarktanalyse",
+                    "description": "Auswertung sozialversicherungspflichtiger Beschäftigung im Buchhandel nach BA-Statistik."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "amazon-buchhandel-marktanteil-deutschland",
+              "level": 4,
+              "name": "Amazon Buchhandel Marktanteil Deutschland",
+              "color": "#9d174d",
+              "details": {
+                "description": "Geschätzte Marktanteile von Amazon im deutschen Online-Buchhandel. Quelle: buchreport-Schätzungen, EHI Retail Institute, Statista-Analysen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Amazon veröffentlicht keine länderspezifischen Buchhandel-Umsätze; Schätzungen müssen aus Branchenquellen zusammengeführt werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Marktanteilsschätzung",
+                    "description": "Triangulation von Amazon-Gesamtumsatz, Buchkategorie-Anteilen und Verlagsangaben zu Direktabsatz."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "stationaerer-buchhandel-flächenproduktivitaet",
+              "level": 4,
+              "name": "Stationärer Buchhandel Flächenproduktivität",
+              "color": "#9d174d",
+              "details": {
+                "description": "Umsatz je Verkaufsfläche (€/m²) im stationären Buchhandel nach Betriebstyp. Quelle: EHI Retail Institute, Börsenverein Betriebsvergleich.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "EHI-Betriebsvergleichsdaten sind kostenpflichtig; Durchschnittswerte werden in Branchenberichten publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Effizienzanalyse",
+                    "description": "Benchmarking der Flächenproduktivität im Buchhandel gegenüber anderen Mediensortimenten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buchhandel-retourenquote-verlage",
+              "level": 4,
+              "name": "Buchhandel Retourenquote Verlage",
+              "color": "#9d174d",
+              "details": {
+                "description": "Retourenquoten im Buchhandel (Anteil zurückgesendeter Bücher an Auslieferung) nach Warengruppe. Quelle: Börsenverein, MVB-Auswertungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Retouren-Rohdaten der Verlage sind intern; Branchendurchschnittswerte werden vereinzelt im Börsenverein veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Retourenanalyse",
+                    "description": "Berechnung von Retourenquoten als Ineffizienzindikator im Buchhandelssystem."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buchhandel-standortentwicklung-schliessungen",
+              "level": 4,
+              "name": "Buchhandel Standortentwicklung & Schließungen",
+              "color": "#9d174d",
+              "details": {
+                "description": "Zeitreihe der Buchhandlungsstandorte in Deutschland inklusive Neueröffnungen und Schließungen. Quelle: Börsenverein, Handelskammer-Register, buchreport.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Standortstatistiken des Börsenvereins werden jährlich veröffentlicht, keine personenbezogenen Daten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Strukturwandelanalyse",
+                    "description": "Kartierung von Buchhandelsschließungen nach Region und Stadtgröße im Zeitverlauf."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "urheberrecht-autorenverguetung",
+          "level": 3,
+          "name": "Urheberrecht & Autorenvergütung",
+          "color": "#db2777",
+          "children": [
+            {
+              "id": "vg-wort-ausschuettungsstatistik",
+              "level": 4,
+              "name": "VG Wort Ausschüttungsstatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Jährliche Ausschüttungsstatistik der VG Wort nach Berechtigtengruppe (Autoren, Übersetzer, Verlage) und Nutzungsart. Quelle: VG Wort Geschäftsbericht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "VG Wort veröffentlicht aggregierte Ausschüttungszahlen jährlich im Geschäftsbericht ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Ausschüttungsanalyse",
+                    "description": "Auswertung der VG-Wort-Ausschüttungen nach Berechtigtenklasse und Nutzungsart im Jahresvergleich."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vg-wort-gesamteinnahmen-nutzungsarten",
+              "level": 4,
+              "name": "VG Wort Gesamteinnahmen Nutzungsarten",
+              "color": "#9d174d",
+              "details": {
+                "description": "Einnahmen der VG Wort nach Nutzungsart (Kopiergeräte-Abgaben, Online, Rundfunk, Bibliothekstantieme). Quelle: VG Wort Geschäftsbericht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich im Jahresbericht der VG Wort ausgewiesen; keine individuellen Vertragsdaten."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Einnahmenstrukturanalyse",
+                    "description": "Verteilung der VG-Wort-Einnahmen auf Nutzungsarten als Indikator für digitale Transformation."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "autorenverguetung-verlagsvertrag-konditionen",
+              "level": 4,
+              "name": "Autorenhonorar Verlagsvertrag Konditionen",
+              "color": "#9d174d",
+              "details": {
+                "description": "Übliche Honorarsätze (Tantiemen) in Verlagsverträgen nach Buchformat und Verlagstyp. Quelle: Verdi-Autorenumfragen, Autorenverbands-Berichte, PEN-Studien.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einzelvertragskonditionen sind vertraulich; Branchendurchschnitte aus Umfragestudien können publiziert werden."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Umfrageauswertung",
+                    "description": "Analyse von Honorarbefragungen unter Autorinnen und Autoren zu Vertragsbedingungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "urheberrecht-rechtsstreitigkeiten-buchbereich",
+              "level": 4,
+              "name": "Urheberrecht Rechtsstreitigkeiten Buchbereich",
+              "color": "#9d174d",
+              "details": {
+                "description": "Statistiken zu urheberrechtlichen Verfahren im Buchbereich (Klagen, Abmahnungen, Vergleiche). Quelle: Deutsche Patentamt, Justizstatistik der Länder, DPMA-Jahresbericht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Justizstatistiken zu Urheberrechtsverfahren werden von Statistischen Ämtern und DPMA öffentlich bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Rechtsfallanalyse",
+                    "description": "Auswertung der Urheberrechtsverfahren im Buchbereich nach Klageart und Ausgang."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vg-wort-mitglieder-berechtigte",
+              "level": 4,
+              "name": "VG Wort Mitglieder & Berechtigte",
+              "color": "#9d174d",
+              "details": {
+                "description": "Anzahl der Mitglieder und Berechtigten der VG Wort nach Kategorie (Autoren, Übersetzer, Verlage). Quelle: VG Wort Geschäftsbericht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Mitgliederzahlen werden jährlich im VG-Wort-Geschäftsbericht ohne Personenbezug veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Mitgliederentwicklung",
+                    "description": "Zeitreihenanalyse der VG-Wort-Berechtigtenzahlen als Proxy für professionelle Autorenschaft."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "open-access-buecher-lizenzstatistik",
+              "level": 4,
+              "name": "Open-Access-Bücher Lizenzstatistik",
+              "color": "#9d174d",
+              "details": {
+                "description": "Anzahl und Anteil von Open-Access-Büchern (OA-Monografien) nach Lizenztyp (CC BY, CC BY-NC) in Deutschland. Quelle: DOAB (Directory of Open Access Books), DFG-Förderstatistiken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DOAB-Metadaten sind öffentlich zugänglich; OA-Bücher per Definition frei verfügbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "OA-Trendanalyse",
+                    "description": "Auswertung des DOAB-Bestands nach Erscheinungsjahr, Verlag und Lizenzkategorie."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "verlagskonzentration-marktstruktur-buch",
+              "level": 4,
+              "name": "Verlagskonzentration & Marktstruktur Buch",
+              "color": "#9d174d",
+              "details": {
+                "description": "Marktkonzentrationsmaße (HHI, CR4) im deutschen Buchverlagsmarkt nach Umsatz und Titelproduktion. Quelle: buchreport, Börsenverein, Wettbewerbsberichte des Bundeskartellamts.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bundeskartellamt-Berichte und Börsenverein-Daten sind öffentlich; keine Einzelunternehmensdaten nötig."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Konzentrationsanalyse",
+                    "description": "Berechnung von HHI und CR-Maßen auf Basis der Verlagsrankings und Marktanteilsschätzungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bibliothekstantieme-oeffentliche-ausleihzahlen",
+              "level": 4,
+              "name": "Bibliothekstantieme Öffentliche Ausleihzahlen",
+              "color": "#9d174d",
+              "details": {
+                "description": "Ausleihzahlen aus öffentlichen und wissenschaftlichen Bibliotheken als Grundlage der Bibliothekstantieme (§ 27 UrhG). Quelle: Deutsche Bibliotheksstatistik (DBS), VG Wort.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Deutsche Bibliotheksstatistik (DBS) ist eine öffentliche Erhebung mit offen zugänglichen Ergebnissen."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Ausleihstatistik",
+                    "description": "Aggregation der DBS-Ausleihzahlen nach Bibliothekstyp und Bundesland für Tantiemenberechnung."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -9010,6 +9010,2078 @@
           ]
         }
       ]
+    },
+    {
+      "id": "digitale-bildungsplattformen",
+      "level": 2,
+      "name": "Digitale Bildungsplattformen",
+      "color": "#b45309",
+      "children": [
+        {
+          "id": "mooc-nutzung-plattformen",
+          "level": 3,
+          "name": "MOOC-Nutzung & Plattformen",
+          "color": "#d97706",
+          "children": [
+            {
+              "id": "openhpi-kursregistrierungen",
+              "level": 4,
+              "name": "openHPI Kursregistrierungen",
+              "color": "#92400e",
+              "details": {
+                "description": "Aggregierte Kursregistrierungs- und Abschlussdaten des Hasso-Plattner-Instituts openHPI-Plattform; veröffentlicht durch HPI in Jahresberichten und Pressemitteilungen mit Kursnamen, Teilnehmerzahlen und Zertifikatsquoten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "HPI veröffentlicht Plattformstatistiken offen; keine personenbezogenen Daten enthalten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Kursweise Summierung von Registrierungen, aktiven Lernenden und Zertifikatsabschlüssen pro Semester."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "openhpi-lernfortschritt-metriken",
+              "level": 4,
+              "name": "openHPI Lernfortschritt-Metriken",
+              "color": "#92400e",
+              "details": {
+                "description": "Anonymisierte Lernfortschrittsdaten (Video-Abschlussraten, Quiz-Ergebnisverteilungen, Forenbeiträge) aus der openHPI-Plattform des Hasso-Plattner-Instituts; Grundlage für Learning-Analytics-Forschung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rohdaten enthalten potentiell re-identifizierbare Nutzungsmuster; Anonymisierung und k-Anonymität erforderlich vor Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "k-Anonymität-Verfahren auf Nutzungslogs anwenden; Entfernung direkter Identifikatoren vor Forschungsdaten-Export."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "coursera-deutschland-nutzungsstatistik",
+              "level": 4,
+              "name": "Coursera Deutschland-Nutzungsstatistik",
+              "color": "#92400e",
+              "details": {
+                "description": "Länderspezifische Nutzungsdaten für Deutschland aus dem jährlichen Coursera Global Skills Report; enthält Einschreibungszahlen nach Fachbereich, Abschlussquoten und Top-Kurse für Deutschland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Coursera Global Skills Report wird als Open-Access-PDF publiziert; aggregierte Länderdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Länderfilterung",
+                    "description": "Extraktion der Deutschland-spezifischen Kennzahlen aus dem globalen Datensatz; Zeitreihenaufbau über Jahresberichte hinweg."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "edx-hochschulpartnerschaften-deutschland",
+              "level": 4,
+              "name": "edX Hochschulpartnerschaften Deutschland",
+              "color": "#92400e",
+              "details": {
+                "description": "Verzeichnis der deutschen Hochschulinstitutionen auf der edX-Plattform (2U) mit Anzahl aktiver Kurse, Lernenden und Programmformaten (MicroMasters, Professional Certificate); aus öffentlichem edX-Katalog extrahiert.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Katalogdaten sind öffentlich zugänglich; keine personenbezogenen Daten; Kursbeschreibungen und Partnerinfos sind offen lizenziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Katalog-Scraping",
+                    "description": "Automatisiertes Abrufen des edX-Kurskatalogs, Filterung nach Institution mit Sitz in Deutschland, strukturierte Speicherung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "monitor-digitale-bildung-mooc-befragung",
+              "level": 4,
+              "name": "Monitor Digitale Bildung – MOOC-Befragung",
+              "color": "#92400e",
+              "details": {
+                "description": "Repräsentative Befragungsdaten zur MOOC-Nutzung in Deutschland aus dem Monitor Digitale Bildung der Bertelsmann Stiftung; erhebt Bekanntheit, Nutzungsintensität und Motivationen nach Alters- und Bildungsgruppen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bertelsmann Stiftung veröffentlicht Rohdaten und Berichte unter CC BY; aggregierte Surveydaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Surveyanalyse",
+                    "description": "Gewichtung der Befragungsdaten nach Bevölkerungsrepräsentativität; Kreuztabellenanalyse nach demographischen Merkmalen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bmbf-digitale-hochschullehre-foerderdaten",
+              "level": 4,
+              "name": "BMBF Förderdaten Digitale Hochschullehre",
+              "color": "#92400e",
+              "details": {
+                "description": "Förderprojektdaten des BMBF-Programms 'Digitale Hochschullehre' inklusive geförderter MOOCs, Plattformprojekte, Fördersummen und Projektergebnisse; über die BMBF-Förderdatenbank öffentlich abrufbar.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BMBF-Förderdatenbank ist öffentlich zugänglich; Projektdaten sind nach Informationsfreiheitsgesetz offenzulegen."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Datenbankabfrage",
+                    "description": "Abfrage der BMBF-Förderdatenbank mit Filterkriterien zu Digitaler Bildung; Anreicherung mit Projektergebnisberichten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "iq-digital-bildungsbarometer-onlinekurse",
+              "level": 4,
+              "name": "IQ Digital Bildungsbarometer – Online-Kurse",
+              "color": "#92400e",
+              "details": {
+                "description": "Jährliche Nutzungsdaten zu Online-Lernformaten aus dem IQ Digital Bildungsbarometer; erfasst Nutzungsfrequenz, Gerätepräferenzen und Zahlungsbereitschaft für Online-Kurse in der deutschen Bevölkerung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rohdaten sind proprietär; publizierte Aggregatberichte sind frei verfügbar, Einzeldaten müssen beim Anbieter angefragt werden."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Längsschnittvergleich der Jahreswellen zur Ermittlung von Wachstumstrends bei Online-Kursnutzung in Deutschland."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "oncampus-lernplattform-statistiken",
+              "level": 4,
+              "name": "oncampus Lernplattform-Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Nutzungs- und Kursstatistiken der deutschen MOOC-Plattform oncampus (Fachhochschule Lübeck); veröffentlicht Teilnehmerzahlen, Kursangebote und Abschlussquoten für berufliche Weiterbildungsangebote.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "oncampus veröffentlicht Plattformstatistiken in Jahresberichten; Trägerin ist eine öffentliche Hochschule, Transparenzpflicht greift."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Aufbau einer Zeitreihe aus Jahresberichten; Vergleich von Wachstumsraten nach Kursformat und Zielgruppe."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "schuldigitalisierung-lms",
+          "level": 3,
+          "name": "Schuldigitalisierung & LMS",
+          "color": "#d97706",
+          "children": [
+            {
+              "id": "kmk-digitalpakt-mittelabruf",
+              "level": 4,
+              "name": "KMK Digitalpakt Mittelabruf-Statistik",
+              "color": "#92400e",
+              "details": {
+                "description": "Bundeslandbezogene Abrufstatistik der Digitalpakt-Schule-Fördermittel (5 Mrd. €) der Kultusministerkonferenz; enthält abgerufene Mittel, bewilligte Projekte und Investitionskategorien (Infrastruktur, Endgeräte, LMS).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KMK und BMBF veröffentlichen Mittelabrufdaten halbjährlich als öffentliche Berichte; kein Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Bundeslandvergleich",
+                    "description": "Normierung der Abrufquoten auf Schülerzahlen der Länder; Clusteranalyse nach Investitionsschwerpunkten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "moodle-schulnutzung-deutschland",
+              "level": 4,
+              "name": "Moodle Schulnutzung Deutschland",
+              "color": "#92400e",
+              "details": {
+                "description": "Aggregierte Installationsstatistiken der Moodle-Plattform für den deutschen Schulbereich aus der öffentlichen Moodle-Statistikdatenbank (stats.moodle.org); enthält Anzahl registrierter Sites, Nutzer und Kurse pro Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Moodle-Statistikdatenbank ist offen zugänglich; Daten werden von registrierten Installationen freiwillig geteilt und aggregiert veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Geographische Aggregation",
+                    "description": "Zuordnung der IP-Adressen registrierter Moodle-Instanzen zu Bundesländern; Bereinigung um Mehrfachregistrierungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "itslearning-schullizenz-verbreitung",
+              "level": 4,
+              "name": "itslearning Schullizenz-Verbreitung",
+              "color": "#92400e",
+              "details": {
+                "description": "Verbreitungsdaten der LMS-Plattform itslearning an deutschen Schulen; erfasst durch Schulträgerverträge und Landeslizenzen (z. B. Bremen, Schleswig-Holstein); enthält Schulanzahl, Nutzerzahlen und Lizenztypen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Lizenzdetails sind proprietär; aggregierte Verbreitungsdaten werden von Bundesländern in Schulberichten teilweise veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Dokumentenanalyse",
+                    "description": "Extraktion von Verbreitungsdaten aus Landesschulberichten und Pressemitteilungen zu LMS-Einführungsprojekten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schul-cloud-nutzungsdaten",
+              "level": 4,
+              "name": "HPI Schul-Cloud Nutzungsdaten",
+              "color": "#92400e",
+              "details": {
+                "description": "Monatliche Nutzungsstatistiken der HPI Schul-Cloud (Nachfolger: LERNEN.cloud); veröffentlicht durch das Hasso-Plattner-Institut; enthält aktive Schulen, Lehrkräfte, Schüler und Dateispeichervolumen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "HPI veröffentlicht Nutzungsstatistiken der Schul-Cloud transparent auf der Projektwebsite; öffentlich finanziertes Projekt."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Monatliche Wachstumsratenberechnung; Identifikation von Nutzungsspitzen während Schulschließungen (COVID-19-Vergleich)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bertelsmann-schuldigitalisierung-index",
+              "level": 4,
+              "name": "Bertelsmann Schuldigitalisierungsindex",
+              "color": "#92400e",
+              "details": {
+                "description": "Bundeslandvergleich des Digitalisierungsgrads an deutschen Schulen aus dem Schuldigitalisierungsindex der Bertelsmann Stiftung; enthält Ausstattungsniveau, LMS-Nutzungsquoten, Lehrkräftefortbildung und WLAN-Abdeckung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bertelsmann Stiftung publiziert Indexdaten und Rohdaten unter Creative Commons; keine personenbezogenen Einzeldaten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Indexkonstruktion",
+                    "description": "Gewichtete Aggregation von Teildimensionen zu einem Gesamtindex; Normierung auf Bundeslandebene für Längsschnittvergleich."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kmk-lehrkraefte-digitalkompetenzen-erhebung",
+              "level": 4,
+              "name": "KMK Lehrkräfte-Digitalkompetenzen",
+              "color": "#92400e",
+              "details": {
+                "description": "Erhebungsdaten zu digitalen Kompetenzen und LMS-Nutzung von Lehrkräften aus der KMK-Berichterstattung zur Umsetzung der Strategie 'Bildung in der digitalen Welt'; enthält Fortbildungsteilnahmen und Selbsteinschätzungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KMK veröffentlicht Monitoringberichte zur Digitalstrategie öffentlich; Daten sind auf Länderebene aggregiert ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Surveyauswertung",
+                    "description": "Aggregation der Länderdaten nach Schulform und Fach; Trendvergleich gegenüber Vorjahreserhebungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "digitalpakt-endgeraete-verteilung",
+              "level": 4,
+              "name": "Digitalpakt Endgeräte-Verteilung Schulen",
+              "color": "#92400e",
+              "details": {
+                "description": "Verteilungsdaten von Schüler-Endgeräten aus dem Sofortausstattungsprogramm des Digitalpakt Schule; auf Bundeslandebene erfasst durch Schulträger und vom BMBF im Umsetzungsbericht veröffentlicht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BMBF veröffentlicht Umsetzungsberichte des Digitalpakts halbjährlich; öffentliche Mittel erfordern Transparenz zur Mittelverwendung."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Quotenberechnung",
+                    "description": "Berechnung der Geräte-Schüler-Relation je Bundesland; Abgleich mit WLAN-Ausbaustand für Nutzbarkeitsindex."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lms-marktanteile-schulen-brd",
+              "level": 4,
+              "name": "LMS-Marktanteile an deutschen Schulen",
+              "color": "#92400e",
+              "details": {
+                "description": "Marktanteilsanalyse von Lernmanagementsystemen (Moodle, itslearning, MS Teams for Education, LOGINEO, Fronter) an deutschen Schulen; erhoben durch Schulträgerumfragen und aggregierte Lizenzstatistiken der Kultusministerien.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einzelne Lizenzdaten sind vertraulich; aggregierte Marktanteile können nach Anonymisierung der Anbieterverträge veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Marktanalyse",
+                    "description": "Kreuzvalidierung von Anbieterangaben, Schulträgerberichten und Kultusministerium-Ausschreibungsdaten; Schätzung nationaler Marktanteile."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "edtech-markt-investitionen",
+          "level": 3,
+          "name": "EdTech-Markt & Investitionen",
+          "color": "#d97706",
+          "children": [
+            {
+              "id": "edtech-venture-monitor-deutschland",
+              "level": 4,
+              "name": "EduTech Venture Monitor Deutschland",
+              "color": "#92400e",
+              "details": {
+                "description": "Jährlicher Investitionsmonitor für den deutschen EdTech-Markt; erfasst Venture-Capital-Investitionen, Gründungszahlen, Finanzierungsrunden und Investor-Portfolios; herausgegeben von EduTech Germany / Holtzbrinck Ventures.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Zusammenfassende Berichte sind öffentlich; detaillierte Transaktionsdaten sind proprietär und erfordern Datenanfrage beim Herausgeber."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Deal-Tracking",
+                    "description": "Systematische Erfassung von Finanzierungsrunden aus Pressemitteilungen, Crunchbase und Handelsregistern; Klassifikation nach EdTech-Segment."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bertelsmann-edtech-startup-radar",
+              "level": 4,
+              "name": "Bertelsmann EdTech Startup-Radar Deutschland",
+              "color": "#92400e",
+              "details": {
+                "description": "Regelmäßige Bestandsaufnahme des deutschen EdTech-Startup-Ökosystems durch die Bertelsmann Stiftung; enthält Startup-Profile, Zielgruppen (K12, Hochschule, Weiterbildung), Finanzierungsstatus und Technologiefelder.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bertelsmann Stiftung veröffentlicht Startup-Radar-Daten offen unter CC BY; keine personenbezogenen oder vertraulichen Unternehmensdaten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Ökosystem-Mapping",
+                    "description": "Strukturierte Erfassung und Kategorisierung aller identifizierten EdTech-Startups nach Segment, Technologie und Entwicklungsstufe."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bmbf-edtech-foerderprogramme-daten",
+              "level": 4,
+              "name": "BMBF EdTech-Förderprogramme Daten",
+              "color": "#92400e",
+              "details": {
+                "description": "Förderprojektdaten zu EdTech-relevanten BMBF-Programmen (KMU-innovativ Bildung, Forschung für Bildungsinnovation, WIR!); enthält Projektvolumina, Laufzeiten, Verbundpartner und Technologieschwerpunkte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BMBF-Förderdatenbank ist öffentlich; Projektdaten werden nach Bewilligung im Projektträger-Portal veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Förderdatenbankabfrage",
+                    "description": "Filterung der BMBF-Förderdatenbank nach Bildungs- und Technologieschlüsselwörtern; Geocodierung nach Unternehmensstandort."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "handelsregister-edtech-gruendungen",
+              "level": 4,
+              "name": "Handelsregister EdTech-Gründungen",
+              "color": "#92400e",
+              "details": {
+                "description": "Neugründungsdaten von EdTech-Unternehmen aus dem deutschen Handelsregister (Unternehmensregister.de); klassifiziert nach WZ-Code 85.6 (Sonstige Unterrichtsdienstleistungen) und 62.0 (Softwareentwicklung) mit Bildungsbezug.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Handelsregisterdaten sind nach § 9 HGB öffentlich zugänglich; Unternehmensgründungsdaten enthalten keine schützenswerten Personendaten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "WZ-Code-Filterung",
+                    "description": "Selektion relevanter Wirtschaftszweigcodes; NLP-basierte Klassifikation von Unternehmenszwecken auf EdTech-Relevanz."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kfw-bildungsinvestitionen-statistik",
+              "level": 4,
+              "name": "KfW Bildungsinvestitionen Statistik",
+              "color": "#92400e",
+              "details": {
+                "description": "KfW-Förderstatistik zu Bildungskrediten und Investitionsfinanzierungen im Bildungsbereich; enthält Kreditvolumina, Empfängergruppen (Privatpersonen, Unternehmen, öffentliche Träger) und Bildungssegmente.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KfW veröffentlicht jährliche Förderstatistiken als Open Data; aggregierte Volumendaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Aufbau von Investitionszeitreihen; Berechnung von Wachstumsraten und Vergleich mit allgemeiner Bildungsfinanzierungsstatistik."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "eu-edtech-foerderungen-horizon-deutschland",
+              "level": 4,
+              "name": "EU Horizon EdTech-Förderungen Deutschland",
+              "color": "#92400e",
+              "details": {
+                "description": "EU Horizon Europe-Förderdaten für EdTech-Projekte mit deutschen Konsortialpartnern; aus CORDIS-Datenbank extrahiert; enthält Projektbudgets, Partner-Institutionen und Forschungsschwerpunkte (KI in Bildung, adaptive Lernumgebungen).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "CORDIS-Datenbank ist vollständig offen zugänglich; alle EU-Förderprojektdaten sind per EU-Transparenzpflicht öffentlich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "CORDIS-Abfrage",
+                    "description": "Filterung der CORDIS-Datenbank nach Stichworten (education technology, e-learning, adaptive learning) und deutschem Partner-Land-Code."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "edtech-beschaeftigte-sozialversicherung",
+              "level": 4,
+              "name": "EdTech-Beschäftigte Sozialversicherungsstatistik",
+              "color": "#92400e",
+              "details": {
+                "description": "Beschäftigungsstatistik im EdTech-Sektor aus der Beschäftigtenstatistik der Bundesagentur für Arbeit; klassifiziert nach Wirtschaftszweig und Berufsgruppe; Proxy-Indikator für Marktentwicklung und Sektorgröße.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bundesagentur für Arbeit veröffentlicht Beschäftigungsstatistiken offen als Open Data; Daten sind auf WZ-Ebene aggregiert ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "WZ-Segmentierung",
+                    "description": "Kombination mehrerer WZ-Codes zur EdTech-Annäherung; Trendanalyse der Beschäftigtenzahlen als Marktindikator."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pitchbook-edtech-deals-deutschland",
+              "level": 4,
+              "name": "PitchBook EdTech Deal-Daten Deutschland",
+              "color": "#92400e",
+              "details": {
+                "description": "Venture-Capital- und Private-Equity-Transaktionsdaten für deutsche EdTech-Unternehmen aus der PitchBook-Datenbank; enthält Investitionsrunden, Bewertungen, Lead-Investoren und Exit-Ereignisse (IPO, M&A).",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "PitchBook-Daten sind vollständig proprietär und lizenzpflichtig; nur aggregierte Zusammenfassungen in publizierten Berichten sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Datenbankzugang",
+                    "description": "Institutioneller Zugang zur PitchBook-Plattform erforderlich; Extraktion über API oder Export-Funktion mit Lizenzvertrag."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hochschule",
+      "level": 2,
+      "name": "Hochschule",
+      "color": "#b45309",
+      "children": [
+        {
+          "id": "studienfinanzierung-foerderung",
+          "level": 3,
+          "name": "Studienfinanzierung & Förderung",
+          "color": "#d97706",
+          "children": [
+            {
+              "id": "bafoeg-empfaenger-statistik",
+              "level": 4,
+              "name": "BAföG-Empfängerstatistik",
+              "color": "#92400e",
+              "details": {
+                "description": "Jährliche Statistik der BAföG-Geförderten nach Hochschulart, Fachrichtung, Alter und Förderhöhe. Quelle: Destatis Fachserie 11 Reihe 7 (Ausbildungsförderung) sowie BMBF-Bericht zur BAföG-Statistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Förderdaten ohne Personenbezug; von Destatis als Open Data veröffentlicht unter Datenlizenz Deutschland."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Entwicklung der Förderquoten und Förderhöhen über mehrere Jahrgänge hinweg auswerten."
+                  },
+                  {
+                    "method": "Regionalauswertung",
+                    "description": "Förderquoten nach Bundesland und Hochschulstandort vergleichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bafoeg-foerderhoehen-verteilung",
+              "level": 4,
+              "name": "BAföG-Förderhöhen & Darlehenssätze",
+              "color": "#92400e",
+              "details": {
+                "description": "Verteilung der monatlichen Förderbeträge, Elternfreibeträge und Darlehensanteile je Geförderten. Quelle: BMBF BAföG-Statistik, ergänzt durch Destatis Schnellmeldungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Keine personenbezogenen Einzeldaten; vollständig aggregiert und vom BMBF öffentlich bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Verteilungsanalyse",
+                    "description": "Häufigkeitsverteilung der Förderhöhen und Identifikation von Förderklassen."
+                  },
+                  {
+                    "method": "Kaufkraftbereinigung",
+                    "description": "Reale Kaufkraftentwicklung der Förderbeträge im Zeitverlauf berechnen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "stipendien-datenbank-daad",
+              "level": 4,
+              "name": "DAAD-Stipendienstatistik",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl und Volumen vergebener Stipendien nach Programm, Herkunftsland, Fachrichtung und Hochschule. Quelle: DAAD Jahresbericht und Publikation 'Wissenschaft weltoffen'.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DAAD veröffentlicht aggregierte Stipendiendaten jährlich als Open Data; kein Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Programmvergleich",
+                    "description": "Fördervolumen und Stipendienzahlen nach DAAD-Programm und Zielregion vergleichen."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Entwicklung internationaler Stipendienvergabe über 10-Jahres-Zeitraum auswerten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sozialerhebung-finanzierungsquellen",
+              "level": 4,
+              "name": "Finanzierungsquellen Studierender",
+              "color": "#92400e",
+              "details": {
+                "description": "Zusammensetzung des Einkommens Studierender aus Elternunterhalt, BAföG, Erwerbstätigkeit, Stipendien und Krediten. Quelle: Sozialerhebung des Deutschen Studentenwerks (alle 3 Jahre), DZHW.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Umfragedaten mit Anonymisierungsbedarf; Scientific-Use-Files nach Aufbereitung zugänglich über DZHW-Forschungsdatenzentrum."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Einkommensanalyse",
+                    "description": "Durchschnittliches Gesamtbudget und Finanzierungsmix nach Hochschultyp und Bundesland berechnen."
+                  },
+                  {
+                    "method": "Deprivationsindex",
+                    "description": "Anteil Studierender unterhalb Existenzminimum identifizieren und nach sozialer Herkunft differenzieren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "studienkredite-marktstatistik",
+              "level": 4,
+              "name": "Studienkredite & Bankdarlehen",
+              "color": "#92400e",
+              "details": {
+                "description": "Volumen, Konditionen und Inanspruchnahme von Studienkrediten (KfW Studienkredit, Bildungsfonds, private Anbieter). Quelle: KfW Förderstatistik, Bundesbank-Daten, CHE-Studie zu Studienfinanzierung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KfW veröffentlicht aggregierte Kreditstatistiken ohne Personenbezug im Jahresbericht."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Marktanalyse",
+                    "description": "Marktanteile der verschiedenen Kreditanbieter und Zinskonditionen vergleichen."
+                  },
+                  {
+                    "method": "Rückzahlungsanalyse",
+                    "description": "Rückzahlungsverläufe und Ausfallquoten nach Studienabschluss auswerten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "foerderprogramme-laender-bund",
+              "level": 4,
+              "name": "Landes- & Bundesförderprogramme Hochschule",
+              "color": "#92400e",
+              "details": {
+                "description": "Übersicht über Deutschlandstipendium, Begabtenförderungswerke (Friedrich-Ebert-Stiftung, Studienstiftung des deutschen Volkes etc.) und Länderprogramme. Quelle: BMBF-Förderdatenbank, HRK-Daten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Programmübersichten und aggregierte Vergabedaten sind öffentlich zugänglich im BMBF-Förderatlas."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Programmvergleich",
+                    "description": "Fördervoraussetzungen, Förderhöhen und Zielgruppen der Programme gegenüberstellen."
+                  },
+                  {
+                    "method": "Erreichbarkeitsanalyse",
+                    "description": "Anteil geförderter Studierender nach sozialer Herkunft und Hochschultyp messen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "soziale-herkunft-hochschulzugang",
+              "level": 4,
+              "name": "Soziale Herkunft & Hochschulzugang",
+              "color": "#92400e",
+              "details": {
+                "description": "Studierquoten nach sozialer Herkunftsgruppe (Elternbildung, Haushaltseinkommen), regionale Disparitäten beim Hochschulzugang. Quelle: DZHW-Studienberechtigtenpanel, Sozialerhebung Studentenwerk.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Mikrodaten aus Panelstudien nach Anonymisierung als Scientific-Use-File verfügbar; aggregierte Berichte sind öffentlich."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Chancengleichheitsanalyse",
+                    "description": "Bildungsungleichheiten nach sozialer Schicht und Migrationsgeschichte quantifizieren."
+                  },
+                  {
+                    "method": "Panelauswertung",
+                    "description": "Längsschnittdaten zu Bildungsentscheidungen vom Schulabschluss bis zum Studienabschluss verknüpfen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wohnsituation-studierender",
+              "level": 4,
+              "name": "Wohnsituation & Lebenshaltungskosten Studierender",
+              "color": "#92400e",
+              "details": {
+                "description": "Wohnformen (Wohnheim, WG, Elternhaus), Mietpreise an Hochschulstandorten und monatliche Lebenshaltungskosten Studierender. Quelle: Sozialerhebung Deutsches Studentenwerk, Moses Mendelssohn Institut Wohnkostenerhebung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Wohn- und Kostenstatistiken ohne Personenbezug werden vom Deutschen Studentenwerk öffentlich bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Wohnkostenvergleich",
+                    "description": "Durchschnittliche Mietbelastung nach Hochschulstadt und Wohnform berechnen."
+                  },
+                  {
+                    "method": "Budgetmodellierung",
+                    "description": "Mindestbudgetbedarf für Studierende an verschiedenen Standorten schätzen."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "studienverlauf-abschluesse",
+          "level": 3,
+          "name": "Studienverlauf & Abschlüsse",
+          "color": "#d97706",
+          "children": [
+            {
+              "id": "studienanfaenger-statistik-hochschule",
+              "level": 4,
+              "name": "Studienanfängerstatistik",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl Studienanfänger im ersten Hochschulsemester nach Hochschulart, Fachrichtung, Geschlecht, Staatsangehörigkeit und Bundesland. Quelle: Destatis Fachserie 11 Reihe 4.1.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Offizielle Hochschulstatistik von Destatis unter Datenlizenz Deutschland als Open Data verfügbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Entwicklung der Studienanfängerzahlen nach Fachrichtung und Hochschultyp über 20-Jahres-Zeitraum auswerten."
+                  },
+                  {
+                    "method": "Demografieprognose",
+                    "description": "Zukünftige Studienanfängerzahlen auf Basis demografischer Daten und Studierquoten modellieren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "studienabbruch-quote-dzhw",
+              "level": 4,
+              "name": "Studienabbruchquoten",
+              "color": "#92400e",
+              "details": {
+                "description": "Anteil der Studierenden, die das Studium ohne Abschluss beenden, nach Fach, Hochschultyp und sozialer Herkunft. Quelle: DZHW-Studienabbruchstudie (alle 2 Jahre), CHE-Daten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DZHW veröffentlicht Studienabbruchberichte als Open Access; aggregierte Quoten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Abbruchursachenanalyse",
+                    "description": "Häufigkeit von finanziellen, leistungsbezogenen und motivationalen Abbruchgründen quantifizieren."
+                  },
+                  {
+                    "method": "Risikomodellierung",
+                    "description": "Prädiktoren für Studienabbruch auf Basis von Eingangsmerkmalen und Studienverlaufsdaten identifizieren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "regelstudienzeit-pruefungsleistungen",
+              "level": 4,
+              "name": "Regelstudienzeit & Prüfungsleistungen",
+              "color": "#92400e",
+              "details": {
+                "description": "Durchschnittliche Studiendauer, Anteil Studierender in Regelstudienzeit und Prüfungsbestehensquoten je Fach und Hochschule. Quelle: Destatis Fachserie 11 Reihe 4.2, Akkreditierungsberichte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Studiendauer- und Prüfungsdaten sind Teil der öffentlichen Hochschulstatistik von Destatis."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Benchmarking",
+                    "description": "Regelstudienzeiteinhaltung nach Hochschule und Fach vergleichen und Ausreißer identifizieren."
+                  },
+                  {
+                    "method": "Ursachenanalyse",
+                    "description": "Zusammenhang zwischen Studienorganisation (Prüfungsdichte, ECTS-Last) und Studiendauer untersuchen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hochschulabschluesse-bestandsstatistik",
+              "level": 4,
+              "name": "Hochschulabschlüsse & Absolventenstatistik",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl verliehener Abschlüsse (Bachelor, Master, Staatsexamen, Promotion) nach Fach, Hochschule, Geschlecht und Jahr. Quelle: Destatis Fachserie 11 Reihe 4.2 Absolventenstatistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Offizielle Absolventenstatistik als Bestandteil der Hochschulstatistik von Destatis unter Datenlizenz Deutschland."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Abschlussquotenberechnung",
+                    "description": "Verhältnis von Absolventen zu Studienanfängern eines Jahrgangs nach Fach und Hochschultyp berechnen."
+                  },
+                  {
+                    "method": "Genderanalyse",
+                    "description": "Geschlechterverteilung bei Abschlüssen über Fächer und Abschlussarten auswerten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "notendurchschnitte-abschluesse",
+              "level": 4,
+              "name": "Notendurchschnitte bei Hochschulabschlüssen",
+              "color": "#92400e",
+              "details": {
+                "description": "Verteilung der Abschlussnoten nach Studiengang, Hochschule und Abschlussart; Notenentwicklung im Zeitverlauf (Noteninfation). Quelle: CHE-Hochschulranking, Akkreditierungsagenturberichte, Destatis-Sonderauswertungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Hochschulspezifische Notendaten erfordern Anonymisierung und Aggregierung; CHE-Ranking-Daten teilweise proprietär."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Notenverteilungsanalyse",
+                    "description": "Häufigkeitsverteilung der Abschlussnoten und Vergleich zwischen Hochschulen und Fächern."
+                  },
+                  {
+                    "method": "Inflationskorrektur",
+                    "description": "Notentrends über Zeit bereinigt um Curriculumsänderungen und Kohortenzusammensetzung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "studienfachwechsel-hochschulwechsel",
+              "level": 4,
+              "name": "Studienfach- & Hochschulwechsel",
+              "color": "#92400e",
+              "details": {
+                "description": "Häufigkeit und Muster von Fachwechsel und Hochschulwechsel während des Studiums nach Fach und Semester. Quelle: DZHW-Studierendensurvey, Destatis Hochschulstatistik Verlaufsquoten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Verlaufsdaten erfordern Verknüpfung und Anonymisierung; aggregierte Wechselquoten sind als DZHW-Berichte öffentlich verfügbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Wechselmusteranalyse",
+                    "description": "Typische Fach- und Hochschulwechselpfade und deren Häufigkeit kartieren."
+                  },
+                  {
+                    "method": "Motivationserhebung",
+                    "description": "Gründe für Wechselentscheidungen aus Studierendenbefragungen auswerten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "uebergang-schule-hochschule",
+              "level": 4,
+              "name": "Übergang Schule – Hochschule",
+              "color": "#92400e",
+              "details": {
+                "description": "Zeitspanne und Direktübergangsquote zwischen Schulabschluss und Studienaufnahme, Orientierungsphase, Überbrückungsjahr. Quelle: DZHW-Studienberechtigtenpanel, Destatis Microzensus-Sonderauswertung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Paneldaten nach Anonymisierung als Scientific-Use-File verfügbar; aggregierte Berichte offen zugänglich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Übergangszeitanalyse",
+                    "description": "Wartezeiten zwischen Schulabschluss und Studienaufnahme nach Region, Schultyp und Fach auswerten."
+                  },
+                  {
+                    "method": "Kohortenverfolgung",
+                    "description": "Studienentscheidungsverläufe von Abiturientenjahrgängen über 5 Jahre nachverfolgen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "berufsbegleitendes-studium-statistik",
+              "level": 4,
+              "name": "Berufsbegleitendes & duales Hochschulstudium",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl und Entwicklung berufsbegleitender und dualer Studiengänge sowie Studierender nach Hochschultyp. Quelle: Destatis Hochschulstatistik, AusbildungPlus-Datenbank des BIBB, HRK-Daten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Studiengangsdaten aus Destatis-Hochschulstatistik und BIBB-Datenbanken öffentlich verfügbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Angebotsanalyse",
+                    "description": "Regionale Verteilung dualer und berufsbegleitender Studiengänge nach Fach und Hochschultyp kartieren."
+                  },
+                  {
+                    "method": "Wachstumsmessung",
+                    "description": "Zuwachsraten bei Teilnehmerzahlen und Studiengangsangeboten im Zeitverlauf messen."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "internationalisierung-auslandsstudium",
+          "level": 3,
+          "name": "Internationalisierung & Auslandsstudium",
+          "color": "#d97706",
+          "children": [
+            {
+              "id": "erasmus-mobilitaetsstatistik-deutschland",
+              "level": 4,
+              "name": "Erasmus+ Outgoing-Mobilitätsstatistik",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl deutscher Studierender im Erasmus+-Programm nach Zielland, Fach, Hochschule und Mobilitätsart (Studium/Praktikum). Quelle: DAAD Erasmus+-Nationalagentur, Publikation 'Wissenschaft weltoffen'.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DAAD veröffentlicht Erasmus+-Statistiken jährlich als Open Data; keine personenbezogenen Daten enthalten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Mobilitätsquotenberechnung",
+                    "description": "Anteil mobiler Studierender an Gesamtstudierendenzahl je Hochschule und Fachrichtung berechnen."
+                  },
+                  {
+                    "method": "Ziellandanalyse",
+                    "description": "Beliebteste Zielländer und -hochschulen nach Fach und Hochschultyp auswerten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auslaendische-studierende-hochschulstatistik",
+              "level": 4,
+              "name": "Ausländische Studierende an deutschen Hochschulen",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl und Anteil ausländischer Studierender (Bildungsausländer und Bildungsinländer) nach Herkunftsland, Fach und Hochschule. Quelle: Destatis Fachserie 11 Reihe 4.1, DAAD 'Wissenschaft weltoffen'.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bestandteil der amtlichen Hochschulstatistik von Destatis; aggregiert und ohne Personenbezug verfügbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Herkunftslandanalyse",
+                    "description": "Wichtigste Herkunftsländer ausländischer Studierender und deren Entwicklung über Zeit kartieren."
+                  },
+                  {
+                    "method": "Internationalisierungsindex",
+                    "description": "Internationalitätsgrad von Hochschulen und Fächern anhand Ausländeranteil berechnen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "daad-incoming-stipendien",
+              "level": 4,
+              "name": "DAAD-Incoming-Stipendien & Gastforscher",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl ausländischer Geförderter durch DAAD-Programme nach Herkunftsregion, Fach und Programmtyp. Quelle: DAAD Jahresbericht, DAAD-Datenbank geförderte Personen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DAAD stellt aggregierte Förderstatistiken öffentlich bereit; keine individualisierten Daten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Programmwirkungsanalyse",
+                    "description": "Fördervolumen und Zielerreichung der DAAD-Incoming-Programme nach Weltregion auswerten."
+                  },
+                  {
+                    "method": "Geberanalyse",
+                    "description": "Anteile von EU-, Bundes- und Drittmittelfinanzierung an Incoming-Stipendien aufschlüsseln."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "internationale-studiengaenge-angebot",
+              "level": 4,
+              "name": "Internationale & englischsprachige Studiengänge",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl englischsprachiger und international ausgerichteter Studiengänge an deutschen Hochschulen nach Fach und Abschlussart. Quelle: HRK-Hochschulkompass Datenbank, DAAD-Studiengangssuche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "HRK-Hochschulkompass stellt Studiengangsdaten als Open Data bereit; keine personenbezogenen Informationen."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Angebotsanalyse",
+                    "description": "Regionale und fachliche Verteilung internationaler Studiengänge kartieren."
+                  },
+                  {
+                    "method": "Wachstumsmessung",
+                    "description": "Ausweitung des englischsprachigen Studienangebots im 10-Jahres-Vergleich messen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auslandssemester-finanzierung-befragung",
+              "level": 4,
+              "name": "Finanzierung & Barrieren beim Auslandsstudium",
+              "color": "#92400e",
+              "details": {
+                "description": "Finanzierungsquellen und Hindernisse für Auslandsmobilität (Kosten, Anerkennungsprobleme, soziale Herkunft). Quelle: Sozialerhebung Deutsches Studentenwerk, DZHW-Mobilitätsstudie, Eurobarometer.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Befragungsdaten mit Anonymisierungsbedarf; aggregierte Berichte des Studentenwerks öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Barriereanalyse",
+                    "description": "Häufigkeit und Gewichtung von Mobilitätshindernissen nach sozialer Herkunft und Fach auswerten."
+                  },
+                  {
+                    "method": "Sozialschichtanalyse",
+                    "description": "Zusammenhang zwischen finanzieller Situation und Auslandssemesterentscheidung quantifizieren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "anerkennung-auslaendischer-abschluesse",
+              "level": 4,
+              "name": "Anerkennung ausländischer Studienleistungen",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zur Anerkennungsquote ausländischer Studienleistungen und Abschlüsse nach Herkunftsland und Fachrichtung. Quelle: anabin-Datenbank KMK, ENIC/NARIC-Berichte, Destatis-Sonderauswertungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KMK anabin-Datenbank ist öffentlich zugänglich; aggregierte Anerkennungsstatistiken ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Anerkennungsquotenanalyse",
+                    "description": "Anerkennungsraten nach Herkunftsland und Fach kartieren und Problemfälle identifizieren."
+                  },
+                  {
+                    "method": "Verfahrensdauerauswertung",
+                    "description": "Bearbeitungszeiten für Anerkennungsverfahren nach Hochschule und Abschlusstyp auswerten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hochschulpartnerschaften-netzwerke",
+              "level": 4,
+              "name": "Hochschulpartnerschaften & internationale Netzwerke",
+              "color": "#92400e",
+              "details": {
+                "description": "Anzahl und geografische Verteilung der Hochschulpartnerschaften deutscher Hochschulen, Mitgliedschaft in internationalen Netzwerken. Quelle: HRK-Hochschulkompass, DAAD-Partnerhochschulstatistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "HRK-Hochschulkompass stellt Partnerschaftsdaten öffentlich bereit; institutionelle Daten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Netzwerkanalyse",
+                    "description": "Strukturanalyse des internationalen Hochschulpartnerschaftsnetzwerks nach Regionen und Fächern."
+                  },
+                  {
+                    "method": "Geovisiualisierung",
+                    "description": "Geografische Darstellung der Partnerhochschulen und Mobilitätsströme auf Weltkarte."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "internationale-studierende-verbleibstudie",
+              "level": 4,
+              "name": "Verbleib internationaler Absolventen in Deutschland",
+              "color": "#92400e",
+              "details": {
+                "description": "Anteil ausländischer Hochschulabsolventen, die nach dem Studium in Deutschland verbleiben, nach Herkunftsregion und Fach. Quelle: DZHW-Absolventenstudie, Migrationsforschung des BAMF, Destatis Wanderungsstatistik.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Verbleibsdaten aus Längsschnittstudien erfordern Anonymisierung; BAMF-Berichte aggregiert und öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Verbleibsanalyse",
+                    "description": "Verbleibsquoten nach Herkunftsregion, Fach und Abschlussart im 1- und 5-Jahres-Follow-up berechnen."
+                  },
+                  {
+                    "method": "Arbeitsmarktintegration",
+                    "description": "Beschäftigungsstatus und Qualifikationsadäquanz international ausgebildeter Absolventen auswerten."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

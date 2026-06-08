@@ -1,5 +1,25 @@
 import { esc, safeColor } from './utils.js';
 
+const VOCAB_LABELS = {
+  TH_01:'Gesundheit', TH_02:'Bildung', TH_03:'Soziales', TH_04:'Wirtschaft',
+  TH_05:'Verwaltung', TH_06:'Umwelt', TH_07:'Finanzen', TH_08:'Recht',
+  TH_09:'Natur / Biodiversität', TH_10:'Wissenschaft / Technik',
+  OB_01:'Personenbezogene Daten', OB_02:'Textdokumente', OB_03:'Finanzdaten',
+  OB_04:'Messungen / Sensordaten', OB_05:'Geodaten', OB_06:'Mediendaten',
+  OB_07:'Transaktionsdaten', OB_08:'Metadaten',
+  GR_01:'Einzelereignis / Rohdaten', GR_02:'Aggregiert', GR_03:'Kleinräumig',
+  GR_04:'Individuell / Mikrodaten',
+  LI_01:'CC0 / Public Domain', LI_02:'CC BY 4.0',
+  LI_03:'Datenlizenz Deutschland', LI_04:'Proprietär / Restriktiv',
+  FT_01:'CSV', FT_02:'JSON', FT_03:'NetCDF / HDF5',
+  FT_04:'XML', FT_05:'GeoJSON', FT_06:'Shapefile',
+};
+
+function resolveLabel(obj) {
+  if (!obj) return null;
+  return obj.label ?? VOCAB_LABELS[obj.code] ?? obj.code ?? null;
+}
+
 const sidebar  = document.getElementById('sidebar');
 const body     = document.getElementById('sidebar-body');
 const closeBtn = document.getElementById('sidebar-close');
@@ -134,16 +154,15 @@ function buildDetailSections(d) {
   }
 
   const metaItems = [];
-  if (d.theme)       metaItems.push({ label: d.theme.label });
-  if (d.object)      metaItems.push({ label: d.object.label });
-  if (d.granularity) metaItems.push({ label: d.granularity.label });
-  if (d.format?.length) {
-    d.format.forEach(f => metaItems.push({ label: f.label }));
-  }
-  if (d.license)     metaItems.push({ label: d.license.label });
-  if (metaItems.length) {
-    const chips = metaItems.map(m =>
-      `<span class="meta-chip">${m.label}</span>`
+  if (d.theme)       metaItems.push(resolveLabel(d.theme));
+  if (d.object)      metaItems.push(resolveLabel(d.object));
+  if (d.granularity) metaItems.push(resolveLabel(d.granularity));
+  if (d.format?.length) d.format.forEach(f => metaItems.push(resolveLabel(f)));
+  if (d.license)     metaItems.push(resolveLabel(d.license));
+  const validMeta = metaItems.filter(Boolean);
+  if (validMeta.length) {
+    const chips = validMeta.map(label =>
+      `<span class="meta-chip">${esc(label)}</span>`
     ).join('');
     parts.push(section('<i class="fa-solid fa-circle-info"></i> Metadaten', `<div class="meta-chips">${chips}</div>`));
   }

@@ -98,7 +98,7 @@ function buildCumulativePoints(allYears) {
 }
 
 function svgChart(allYears) {
-  const W = 660, H = 160, PAD_L = 40, PAD_B = 24, PAD_R = 12, PAD_T = 10;
+  const W = 660, H = 172, PAD_L = 40, PAD_B = 36, PAD_R = 12, PAD_T = 10;
   const cw = W - PAD_L - PAD_R;
   const ch = H - PAD_B - PAD_T;
 

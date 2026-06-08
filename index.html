@@ -63,6 +63,13 @@
         </svg>
       </button>
 
+      <button id="timeline-btn" title="Datenverfügbarkeit & Timeline" aria-label="Zeitliche Datenverfügbarkeit anzeigen">
+        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </button>
+
       <button id="gen-btn" title="Daten kombinieren" aria-label="Daten kombinieren"><i class="fa-solid fa-shuffle" aria-hidden="true"></i> Daten kombinieren</button>
       <button id="open-data-btn" title="Schritt-für-Schritt: Daten als Open Data veröffentlichen" aria-label="Daten öffnen"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Daten öffnen</button>
       <button id="info-btn" title="Über den Datenatlas" aria-label="Infos und Hilfe öffnen">Mehr erfahren</button>
@@ -353,6 +360,25 @@
       </div>
     </div>
 
+    <!-- Timeline Modal -->
+    <div id="timeline-modal" role="dialog" aria-modal="true" aria-labelledby="tl-title" hidden>
+      <div class="tl-card">
+        <button id="tl-close" title="Schließen" aria-label="Schließen"><i class="fa-solid fa-xmark"></i></button>
+
+        <div class="tl-card-header">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" style="flex-shrink:0;color:var(--accent)">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+          <h2 class="tl-title" id="tl-title">Timeline — Datenverfügbarkeit</h2>
+        </div>
+
+        <div id="tl-body">
+          <!-- populated by timeline.js -->
+        </div>
+      </div>
+    </div>
+
     <!-- "Daten öffnen" Wizard Modal -->
     <div id="wizard-modal" role="dialog" aria-modal="true" aria-label="Daten öffnen – Schritt-für-Schritt" hidden>
       <div class="wz-card">
@@ -401,6 +427,10 @@
           <button class="ms-item" data-target="stats-btn">
             <i class="fa-solid fa-chart-bar ms-icon" aria-hidden="true"></i>
             <span>Statistik</span>
+          </button>
+          <button class="ms-item" data-target="timeline-btn">
+            <i class="fa-regular fa-clock ms-icon" aria-hidden="true"></i>
+            <span>Timeline</span>
           </button>
           <button class="ms-item" data-target="info-btn">
             <i class="fa-solid fa-circle-info ms-icon" aria-hidden="true"></i>

@@ -10,6 +10,7 @@ import { initStats }  from './stats.js';
 import { initExport }   from './export.js';
 import { initRelated, findRelated } from './related.js';
 import { initGenerator } from './generator.js';
+import { initTimeline }  from './timeline.js';
 
 // ── Build hash ────────────────────────────────────────────────────────────────
 const _buildHashEl = document.getElementById('build-hash');
@@ -431,7 +432,8 @@ async function _buildIndexLazy(sectors, firstId) {
     setTimeout(() => _buildIndexLazy(sectors, _firstSector), 0);
 
     initSearch({ indexPromise: _fullIndexPromise, getLiveIndex: () => _liveIndex, onNavigate: navigateToSearchResult });
-    initStats({ indexPromise: _fullIndexPromise, mainTiles: sectors });
+    initStats(    { indexPromise: _fullIndexPromise, mainTiles: sectors });
+    initTimeline( { indexPromise: _fullIndexPromise, mainTiles: sectors });
     initExport({ indexPromise: _fullIndexPromise });
     initRelated({ indexPromise: _fullIndexPromise });
     initGenerator({ indexPromise: _fullIndexPromise, onNavigate: navigateToSearchResult });

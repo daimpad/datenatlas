@@ -759,6 +759,25 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
 .im-op-item strong { font-size: 13px; color: var(--text-1); }
 .im-op-item div    { font-size: 12px; color: var(--text-2); line-height: 1.55; }
 
+/* Sectors */
+.im-sectors { display: flex; flex-direction: column; gap: 6px; }
+.im-sector-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--surface-2);
+  border-radius: 8px;
+  padding: 9px 12px;
+}
+.im-sector-dot {
+  flex-shrink: 0;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  margin-top: 4px;
+}
+.im-sector-item strong { font-size: 13px; color: var(--text-1); }
+.im-sector-item div    { font-size: 12px; color: var(--text-2); line-height: 1.5; }
+
 /* Features */
 .im-features { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .im-feat {
@@ -1154,15 +1173,24 @@ a#footer-brand {
 a#footer-brand:hover { color: var(--accent); }
 
 #build-hash {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
   font-family: var(--mono);
-  font-size: 10px;
-  color: var(--text-3);
-  opacity: 0.45;
-  letter-spacing: 0.3px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-2);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2px 9px;
   white-space: nowrap;
   flex-shrink: 0;
   user-select: none;
+  letter-spacing: 0.2px;
 }
+#build-hash .bh-sep { opacity: 0.35; font-weight: 400; }
+#build-hash .bh-hash { font-size: 9px; opacity: 0.45; font-weight: 400; }
 
 /* ── Wizard Modal ── */
 #wizard-modal {

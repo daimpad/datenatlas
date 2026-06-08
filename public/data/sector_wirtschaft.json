@@ -17707,6 +17707,4222 @@
           ]
         }
       ]
+    },
+    {
+      "id": "automobilindustrie",
+      "level": 2,
+      "name": "Automobilindustrie",
+      "color": "#d35400",
+      "children": [
+        {
+          "id": "fahrzeugproduktion-statistik",
+          "level": 3,
+          "name": "Fahrzeugproduktion & Statistik",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "auto-pkw-produktionsvolumen-vda",
+              "level": 4,
+              "name": "PKW-Produktionsvolumen (VDA-Statistik)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatliche und jährliche PKW-Produktionszahlen nach Hersteller und Werk, erhoben vom Verband der Automobilindustrie (VDA). Enthält Stückzahlen je Modellreihe, Antriebsart und Produktionsstandort in Deutschland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "VDA veröffentlicht aggregierte Produktionsstatistiken regelmäßig als Open Data auf seiner Webseite und im Jahresbericht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Monatliche Produktionszahlen werden zu Jahresreihen aggregiert und Wachstumsraten berechnet."
+                  },
+                  {
+                    "method": "Antriebsartenvergleich",
+                    "description": "Aufschlüsselung nach Verbrenner, Hybrid, BEV und PHEV zur Transformationsbeobachtung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-nutzfahrzeug-produktion-destatis",
+              "level": 4,
+              "name": "Nutzfahrzeugproduktion (Destatis GP09)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Produktionsstatistik für Nutzfahrzeuge (LKW, Busse, Transporter) aus der Destatis-Produktionserhebung GP09. Enthält Stückzahlen, Produktionswert und Beschäftigte nach WZ-Klassifikation.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis stellt Produktionsstatistiken im GENESIS-Portal unter Datenlizenz Deutschland kostenlos zum Download bereit."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "WZ-Klassifikation",
+                    "description": "Zuordnung nach Wirtschaftszweig WZ 29.1 (PKW) und WZ 29.2 (Nutzfahrzeuge) für Vergleichbarkeit."
+                  },
+                  {
+                    "method": "Indexberechnung",
+                    "description": "Berechnung von Produktionsindizes (2015=100) für konjunkturelle Analysen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-werkskapazitaeten-auslastung",
+              "level": 4,
+              "name": "Werkskapazitäten & Auslastungsgrade",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Installierte Produktionskapazitäten und tatsächliche Auslastungsgrade je Automobilwerk in Deutschland. Datenbasis: ifo Institut Kapazitätsumfragen (Verarbeitendes Gewerbe) sowie VDA-Betriebsdaten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rohdaten enthalten teils vertrauliche Unternehmensinformationen; aggregierte Auslastungsindizes sind nach Anonymisierung veröffentlichbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Auslastungsberechnung",
+                    "description": "Verhältnis aus tatsächlicher Produktionsmenge und theoretischer Jahreskapazität je Schichtmodell."
+                  },
+                  {
+                    "method": "Standortvergleich",
+                    "description": "Benchmarking der Auslastungsgrade zwischen deutschen Werken und europäischen Vergleichsstandorten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-elektrofahrzeug-produktionsanteil",
+              "level": 4,
+              "name": "Elektrofahrzeug-Produktionsanteil (BEV/PHEV)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatlicher Anteil batterie-elektrischer (BEV) und Plug-in-Hybrid-Fahrzeuge (PHEV) an der Gesamtproduktion je Hersteller. Quelle: VDA-Monatsbericht, ergänzt durch Daten des Kraftfahrt-Bundesamts (KBA).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "VDA und KBA veröffentlichen Elektrofahrzeug-Anteile regelmäßig als öffentliche Pressemitteilungen und Datendownloads."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Transformationsmonitoring",
+                    "description": "Messung des Hochlaufs der Elektromobilität an der Produktionsbasis als Indikator für CO2-Zielerfüllung."
+                  },
+                  {
+                    "method": "Szenariomodellierung",
+                    "description": "Projektion zukünftiger BEV-Anteile auf Basis historischer Produktionstrends."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-beschaeftigung-kfz-industrie-destatis",
+              "level": 4,
+              "name": "Beschäftigung in der KFZ-Industrie (Destatis)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Beschäftigtenzahlen, Entgelte und Arbeitsstunden im Wirtschaftszweig WZ 29 (Fahrzeugbau) aus der Destatis-Verdiensterhebung und Beschäftigungsstatistik der Bundesagentur für Arbeit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Beschäftigungsstatistiken sind im GENESIS-Portal und im Datenangebot der BA unter offener Lizenz abrufbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Strukturanalyse",
+                    "description": "Aufschlüsselung der Beschäftigung nach Qualifikationsniveau, Region und Betriebsgröße."
+                  },
+                  {
+                    "method": "Langzeitvergleich",
+                    "description": "Zeitreihe der Beschäftigungsentwicklung seit 2000 zur Analyse von Automatisierung und Transformation."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-produktionsindex-ifo",
+              "level": 4,
+              "name": "Produktionsindex Fahrzeugbau (ifo Konjunkturtest)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatlicher Produktionsindex und Geschäftsklima-Indikator für den Fahrzeugbau aus dem ifo Konjunkturtest. Enthält Produktionspläne, aktuelle Beurteilung und Erwartungen der Unternehmen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "ifo-Rohdaten sind lizenzpflichtig; aggregierte Indexwerte werden in ifo-Pressemitteilungen und teils als Datendienst publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Saldoberechnung",
+                    "description": "Bildung von Salden aus positiven und negativen Einschätzungen der befragten Unternehmen."
+                  },
+                  {
+                    "method": "Konjunkturprognose",
+                    "description": "Verwendung der Erwartungskomponente als Frühindikatoren für Produktionsschwankungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-exportstatistik-kfz-destatis",
+              "level": 4,
+              "name": "KFZ-Exportstatistik (Destatis Außenhandel)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Wert und Menge exportierter Kraftfahrzeuge aus Deutschland nach Zielland und Fahrzeugklasse. Quelle: Destatis Außenhandelsstatistik (Tabelle 51000), Warennummer KN 8703/8704.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Außenhandelsstatistiken sind im GENESIS-Portal von Destatis frei zugänglich und unter Datenlizenz Deutschland veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Marktanteilsanalyse",
+                    "description": "Berechnung der deutschen Exportanteile je Zielmarkt im Vergleich zu anderen Automobilexporteuren."
+                  },
+                  {
+                    "method": "Währungsbereinigung",
+                    "description": "Deflationierung der Exportwerte für reale Vergleichbarkeit über Zeitreihen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-co2-flottenemissionen-produktion",
+              "level": 4,
+              "name": "CO2-Flottenemissionen Neuproduktion (EEA/KBA)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Durchschnittliche CO2-Emissionen neu produzierter PKW-Flotten je Hersteller gemäß EU-Flottenregulierung. Daten: Europäische Umweltagentur (EEA) und Kraftfahrt-Bundesamt (KBA) auf Basis der Typgenehmigungsdaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EEA und KBA veröffentlichen CO2-Flottendaten jährlich als Open Data, da die EU-Flottenverordnung (VO 2019/631) die Veröffentlichung vorschreibt."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Zielwertüberwachung",
+                    "description": "Vergleich der Ist-Emissionen mit den EU-Flottengrenzwerten (95g CO2/km) und Berechnung von Strafzahlungsrisiken."
+                  },
+                  {
+                    "method": "Herstellerranking",
+                    "description": "Erstellung von Hersteller-Rankings nach CO2-Performance zur regulatorischen Berichterstattung."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "kfz-zulassungen-markt",
+          "level": 3,
+          "name": "KFZ-Zulassungen & Markt",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "auto-neuzulassungen-kba-monatsbericht",
+              "level": 4,
+              "name": "Neuzulassungen PKW (KBA-Monatsbericht)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatliche Neuzulassungszahlen für PKW nach Marke, Modell, Antriebsart und Haltertyp (Privat/Gewerbe) vom Kraftfahrt-Bundesamt (KBA). Enthält auch Flottenzulassungen und regionale Aufschlüsselung nach Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KBA veröffentlicht Zulassungsstatistiken monatlich als kostenlose Dateidownloads (CSV, XLSX) auf kba.de unter Datenlizenz Deutschland."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Marktanteilsberechnung",
+                    "description": "Berechnung von Marken- und Segmentanteilen am Gesamtmarkt auf Monats- und Jahresbasis."
+                  },
+                  {
+                    "method": "Segmentanalyse",
+                    "description": "Gruppierung nach Fahrzeugsegmenten (Kleinwagen, Kompakt, SUV, Premium) für Marktstrukturanalysen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-elektro-neuzulassungen-kba",
+              "level": 4,
+              "name": "Elektro-Neuzulassungen BEV/PHEV (KBA)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatliche Neuzulassungen batterieelektrischer Fahrzeuge (BEV) und Plug-in-Hybride (PHEV) nach Marke und Modell. Quelle: KBA-Datenbank FZ 10 (Neuzulassungen nach Kraftstoffarten), ergänzt durch VDIK-Importeurzahlen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KBA stellt Elektromobilitätsdaten als spezifische Sonderauswertung kostenlos bereit; politisch priorisierte Veröffentlichung im Rahmen des Klimaschutzprogramms."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Hochlaufkurvenanalyse",
+                    "description": "Modellierung des BEV-Marktanteils als S-Kurve zur Abschätzung des Erreichungszeitpunkts politischer Ziele."
+                  },
+                  {
+                    "method": "Prämieneffektmessung",
+                    "description": "Statistische Messung des Einflusses staatlicher Kaufprämien (Umweltbonus) auf Zulassungszahlen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-fahrzeugbestand-kba-fz1",
+              "level": 4,
+              "name": "Fahrzeugbestand Zentrales Fahrzeugregister (KBA FZ1)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jahresbestand aller zugelassenen Kraftfahrzeuge in Deutschland nach Fahrzeugklasse, Antriebsart, Alter und Haltereigenschaft aus dem Zentralen Fahrzeugregister (ZFZR) des KBA, Tabelle FZ 1.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KBA veröffentlicht den Fahrzeugbestand jährlich (Stichtag 1. Januar) als offizielle Statistik unter Datenlizenz Deutschland."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Flottenerneuerungsrate",
+                    "description": "Berechnung der jährlichen Bestandserneuerung als Verhältnis von Neuzulassungen zu Löschungen."
+                  },
+                  {
+                    "method": "Altersstrukturanalyse",
+                    "description": "Auswertung des Fahrzeugalters nach Antriebsart zur Schätzung von Schadstoffemissionen des Gesamtbestands."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-gebrauchtwagen-markt-dat",
+              "level": 4,
+              "name": "Gebrauchtwagenmarkt & Restwerte (DAT-Report)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Gebrauchtwagenumschläge, Durchschnittspreise und Restwertentwicklung nach Fahrzeugsegment und Alter. Quelle: Deutsche Automobil Treuhand (DAT) DAT-Report, ergänzt durch KBA-Halterwechselstatistiken.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "DAT-Rohdaten sind kostenpflichtig; Zusammenfassungen und Kernindikatoren im Jahresbericht werden öffentlich zugänglich gemacht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Restwertmodellierung",
+                    "description": "Regressionsbasierte Modellierung des Wertverlusts als Funktion von Alter, Laufleistung und Ausstattung."
+                  },
+                  {
+                    "method": "Marktsegmentierung",
+                    "description": "Trennung von Privat- und Händlerverkäufen zur Analyse des strukturellen Wandels im Vertrieb."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-importzulassungen-vdik",
+              "level": 4,
+              "name": "Importfahrzeug-Zulassungen (VDIK-Statistik)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Neuzulassungen von Importfahrzeugen in Deutschland nach Herkunftsland und Marke. Quelle: Verband der Internationalen Kraftfahrzeughersteller (VDIK), kombiniert mit KBA-Daten nach Herstellerland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "VDIK veröffentlicht Importzulassungsstatistiken als Pressemitteilungen und Jahresberichte mit Datenanhang kostenlos auf vdik.de."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Marktanteilsanalyse",
+                    "description": "Berechnung des Importanteils am Gesamtmarkt als Indikator für den Wettbewerbsdruck auf deutsche Hersteller."
+                  },
+                  {
+                    "method": "Herkunftslandanalyse",
+                    "description": "Geografische Aufschlüsselung der Importe nach EU, Fernost und Nordamerika."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-zulassungen-regional-kba-fz6",
+              "level": 4,
+              "name": "Regionale KFZ-Zulassungen nach Kreisen (KBA FZ6)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Neuzulassungen nach Landkreis und kreisfreier Stadt differenziert nach Fahrzeugart und Antrieb. Quelle: KBA-Tabelle FZ 6 (Neuzulassungen nach Gemeinden), Jahres- und Quartalsdaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KBA veröffentlicht regionale Zulassungsstatistiken auf Kreisebene unter Datenlizenz Deutschland."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Georeferenzierung",
+                    "description": "Verknüpfung der Kreisschlüssel mit Geoboundaries für kartografische Visualisierung der Zulassungsdichte."
+                  },
+                  {
+                    "method": "Kaufkraftkorrelation",
+                    "description": "Korrelationsanalyse zwischen regionalem BIP/Kaufkraft und Neuzulassungsrate je Einwohner."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-markenpraeferenz-kaufentscheidung-kba",
+              "level": 4,
+              "name": "Markenpräferenz & Kaufentscheidungsdaten (KBA/CAR)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Marktanteile nach Marke und Segment sowie Käuferstruktur (Alter, Haltereigenschaft, Flotte/Privat). Datenquellen: KBA Neuzulassungsstatistiken und Center Automotive Research (CAR) Universität Duisburg-Essen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "KBA-Basisstatistiken sind offen; detaillierte Käuferstrukturanalysen des CAR-Instituts werden als Forschungsberichte mit Embargo veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Segmenttypologisierung",
+                    "description": "Clusterung von Käuferprofilen nach soziodemografischen Merkmalen und Fahrzeugsegment-Präferenzen."
+                  },
+                  {
+                    "method": "Zeitreihenvergleich",
+                    "description": "Langfristiger Vergleich der Markenpräferenzen zur Identifikation struktureller Nachfrageverschiebungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-kraftstoffpreise-tankstellenmarkt-bafa",
+              "level": 4,
+              "name": "Kraftstoffpreise & Tankstellenmarkt (BAFA/MTS-K)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Tägliche Kraftstoffpreise aller deutschen Tankstellen aus der Markttransparenzstelle für Kraftstoffe (MTS-K) beim Bundeskartellamt sowie Marktstrukturinformationen aus BAFA-Erhebungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "MTS-K-Daten sind per API öffentlich abrufbar (Tankerkönig-API basiert darauf); gesetzliche Pflicht zur Preismeldung und Transparenz seit 2013."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Preiszeitreihenanalyse",
+                    "description": "Aggregierung von Einzelpreismeldungen zu regionalen und nationalen Durchschnittspreisen je Kraftstoffsorte."
+                  },
+                  {
+                    "method": "Nachfrageelastizitätsschätzung",
+                    "description": "Ökonometrische Schätzung der Preiselastizität der Kraftstoffnachfrage aus MTS-K- und Zulassungsdaten."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "lieferketten-zulieferer",
+          "level": 3,
+          "name": "Lieferketten & Zulieferer",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "auto-zuliefererumsatz-vda-statistik",
+              "level": 4,
+              "name": "Zuliefererumsatz & Wertschöpfungstiefe (VDA)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Umsatz, Exportquote und Wertschöpfungstiefe der deutschen Automobilzulieferindustrie nach Unternehmensgröße und Produktsegment. Quelle: VDA-Jahresbericht, Destatis-Strukturerhebung WZ 29.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "VDA und Destatis veröffentlichen aggregierte Branchenstrukturstatistiken regelmäßig als Open Data."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Wertschöpfungskettenanalyse",
+                    "description": "Zerlegung des Fahrzeugwerts in OEM-Eigenleistung und Zulieferanteile (Tier 1–3) für volkswirtschaftliche Analysen."
+                  },
+                  {
+                    "method": "Mittelstandsmonitoring",
+                    "description": "Gesonderte Auswertung für KMU-Zulieferer (< 250 MA) zur Identifikation von Transformationsrisiken."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-rohstoffbedarf-batterie-bmwi",
+              "level": 4,
+              "name": "Kritische Rohstoffe für Batterieproduktion (BMWK/BGR)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Bedarf und Importabhängigkeit kritischer Rohstoffe (Lithium, Kobalt, Nickel, Mangan) für die Fahrzeugbatterieproduktion. Datenquellen: Bundesanstalt für Geowissenschaften und Rohstoffe (BGR), BMWK-Rohstoffstrategie.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BGR und BMWK veröffentlichen Rohstoffstudien als öffentlich finanzierte Forschungsberichte kostenfrei."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Importabhängigkeitsindex",
+                    "description": "Berechnung des Herfindahl-Hirschman-Index für Lieferantenkonzentration je Rohstoff."
+                  },
+                  {
+                    "method": "Szenarioanalyse",
+                    "description": "Modellierung des Rohstoffbedarfs unter verschiedenen BEV-Hochlaufszenarien bis 2035."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-lieferantenbewertungen-ecovadis",
+              "level": 4,
+              "name": "Lieferanten-Nachhaltigkeitsbewertungen (EcoVadis/LkSG)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Aggregierte Nachhaltigkeits- und Compliance-Bewertungen von Automobilzulieferern im Rahmen des Lieferkettensorgfaltspflichtengesetzes (LkSG). Plattformdaten: EcoVadis-Scores sowie Selbstauskünfte nach BAFA-LkSG-Leitfaden.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Individuelle Lieferantenbewertungen sind geschäftsvertraulich und unterliegen Datenschutz; nur anonymisierte Aggregatstatistiken sind publizierbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "ESG-Scoring",
+                    "description": "Berechnung von Umwelt-, Sozial- und Governance-Scores auf Basis von Lieferanten-Selbstauskünften und Audits."
+                  },
+                  {
+                    "method": "Risikoklassifizierung",
+                    "description": "Einstufung von Lieferanten in Risikoklassen für priorisierte Sorgfaltspflichtprüfungen gemäß LkSG § 9."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-halbleiterversorgung-vda-monitor",
+              "level": 4,
+              "name": "Halbleiterversorgungslage Automobilindustrie (VDA-Monitor)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatliche Befragungsdaten zur Halbleiter- und Chipverfügbarkeit für Automobilhersteller und Tier-1-Zulieferer. Quelle: VDA-Lieferkettenmonitor (seit 2021), ergänzt durch ZVEI-Chipherstellungsstatistiken.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Unternehmensindividuelle Versorgungsdaten sind vertraulich; der VDA veröffentlicht aggregierte Stimmungsindizes als Pressemitteilung."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Engpassfrüherkennung",
+                    "description": "Identifikation von Versorgungsengpässen durch Abgleich von Produktionsplänen und Bestellbestätigungen."
+                  },
+                  {
+                    "method": "Diversifizierungsanalyse",
+                    "description": "Messung der geografischen Diversifikation der Halbleiterbeschaffung nach Lieferantenland."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-tier1-umsatz-beschaeftigung-destatis",
+              "level": 4,
+              "name": "Tier-1-Zulieferer Umsatz & Beschäftigung (Destatis WZ 29)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jahresumsatz, Exportquote und Beschäftigung der größten deutschen Automobilzulieferer (Tier-1) aus der Destatis-Strukturerhebung im Verarbeitenden Gewerbe (SV4), WZ 29.3 (Kfz-Teile und -Zubehör).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis Strukturerhebungsdaten sind im GENESIS-Portal unter Datenlizenz Deutschland frei verfügbar; Einzelunternehmen werden statistisch geheimgehalten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Branchenstrukturanalyse",
+                    "description": "Vergleich der Unternehmensgrößenklassen (KMU vs. Großunternehmen) anhand von Umsatz- und Beschäftigungsanteilen."
+                  },
+                  {
+                    "method": "Internationalisierungsgrad",
+                    "description": "Berechnung der Exportintensität (Auslandsumsatz / Gesamtumsatz) als Maß der globalen Marktintegration."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-nearshoring-verlagerungen-ifo",
+              "level": 4,
+              "name": "Nearshoring & Produktionsverlagerungen (ifo/DIHK)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Umfragedaten zu geplanten und vollzogenen Produktionsverlagerungen in der Automobilzulieferkette. Quellen: ifo-Unternehmensbefragung zur Verlagerungsneigung und DIHK-Konjunkturumfrage Außenwirtschaft.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Verlagerungsindizes werden in ifo- und DIHK-Berichten veröffentlicht; Einzelfallangaben sind vertraulich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Standortkostenvergleich",
+                    "description": "Gegenüberstellung von Lohnkosten, Energiekosten und Regulierungslasten an alternativen Produktionsstandorten."
+                  },
+                  {
+                    "method": "Verlagerungsindexbildung",
+                    "description": "Aggregierung von Einzelangaben zu einem Nettoverlagerungsindex (Zuzug minus Abzug) je Region."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-logistik-transport-kba-gueterverkehr",
+              "level": 4,
+              "name": "Automobillogistik & Güterverkehr (Destatis GV2)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Transportmengen und -wege für Kraftfahrzeuge und Kfz-Teile im deutschen Güterverkehr nach Verkehrsträger (Straße, Schiene, Schiff). Quelle: Destatis Güterverkehrsstatistik (GV2) und Kraftfahrtbundesamt Güterkraftverkehrsstatistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis Güterverkehrsstatistiken sind im GENESIS-Portal unter Datenlizenz Deutschland frei verfügbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Modal-Split-Analyse",
+                    "description": "Berechnung des Anteils der Verkehrsträger (Straße/Schiene/Wasser) am Automobilgütertransport."
+                  },
+                  {
+                    "method": "CO2-Logistikfußabdruck",
+                    "description": "Schätzung der transportbedingten Emissionen in der Automobillieferkette auf Basis von Tonnenkilometern."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auto-zulieferer-insolvenzrisiko-creditreform",
+              "level": 4,
+              "name": "Zulieferer-Insolvenzrisiken (Creditreform/AUREG)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Insolvenzquoten und Bonitätsindikatoren der deutschen Automobilzuliefererindustrie nach Unternehmensgröße und Region. Datenquellen: Creditreform Wirtschaftsforschung und Destatis-Insolvenzstatistik (Tabelle 52411).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Destatis-Insolvenzstatistiken sind öffentlich; Creditreform-Scoring-Daten sind lizenzpflichtig, aggregierte Branchenauswertungen werden veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Insolvenzratenvergleich",
+                    "description": "Benchmarking der Ausfallquoten in der Automobilzulieferkette gegenüber dem verarbeitenden Gewerbe insgesamt."
+                  },
+                  {
+                    "method": "Frühwarnindikatormodell",
+                    "description": "Entwicklung eines Scoringmodells zur Früherkennung von Lieferantenausfällen auf Basis von Bilanzkennzahlen."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gesundheitswirtschaft-privat",
+      "level": 2,
+      "name": "Private Gesundheitswirtschaft",
+      "color": "#d35400",
+      "children": [
+        {
+          "id": "private-krankenhaeuser-kliniken",
+          "level": 3,
+          "name": "Private Krankenhäuser & Kliniken",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "privatklinik-fallzahlen-drg",
+              "level": 4,
+              "name": "Fallzahlen privater Kliniken nach DRG",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Stationäre Fallzahlen privater Krankenhäuser, gegliedert nach Diagnosis Related Groups (DRG), Fachabteilung und Träger. Quelle: Destatis Krankenhausstatistik (Fachserie 12, Reihe 6.1) sowie DKG-Krankenhausverzeichnis.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Fallzahlen ohne Personenbezug; Destatis veröffentlicht diese Daten regulär als Open Data."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Fallzahlen werden je DRG-Gruppe und Trägerkategorie (privat/öffentlich/freigemeinnützig) zusammengefasst."
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Vergleich privater Kliniken mit anderen Trägertypen nach Auslastung und Fallschwere (Case-Mix-Index)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "privatklinik-bettenkapazitaet",
+              "level": 4,
+              "name": "Bettenkapazität privater Krankenhäuser",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Aufstellung der aufgestellten und betriebenen Betten in privaten Krankenhäusern nach Bundesland, Fachabteilung und Betreiber (z. B. Helios, Asklepios, Rhön-Klinikum). Quelle: Destatis Krankenhausverzeichnis, DKG-Statistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Strukturdaten ohne Personenbezug, jährlich von Destatis als Open Data veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Georeferenzierung",
+                    "description": "Krankenhausstandorte werden mit Geokoordinaten angereichert, um räumliche Versorgungsanalysen zu ermöglichen."
+                  },
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Entwicklung der Bettenkapazität privater Träger über 10 Jahre zur Marktkonzentrationsmessung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "privatklinik-erloesentwicklung",
+              "level": 4,
+              "name": "Erlösentwicklung privater Klinikketten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche Umsatz- und Erlösdaten der größten privaten Krankenhauskonzerne (Helios/Fresenius, Asklepios, Rhön-Klinikum, Sana) aus Geschäftsberichten und Bundesanzeiger-Pflichtveröffentlichungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Geschäftsberichte börsennotierter Konzerne sind öffentlich, müssen aber aus PDF-Jahresabschlüssen extrahiert und harmonisiert werden."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "PDF-Extraktion",
+                    "description": "Finanzkennzahlen werden aus Jahresabschlüssen im Bundesanzeiger maschinell extrahiert und normiert."
+                  },
+                  {
+                    "method": "Marktkonzentrationsanalyse",
+                    "description": "Berechnung des Herfindahl-Hirschman-Index für den deutschen Privatklinikmarkt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "privatklinik-qualitaetsbericht-daten",
+              "level": 4,
+              "name": "Strukturierte Qualitätsberichte privater Kliniken",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Qualitätsberichte nach § 136b SGB V aller nach SGB V zugelassenen Krankenhäuser inkl. privater Träger, veröffentlicht durch IQTIG (Institut für Qualitätssicherung und Transparenz im Gesundheitswesen). Enthält Leistungsmengen, Komplikationsraten und Ergebnisqualität.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gesetzlich vorgeschriebene Veröffentlichungspflicht nach § 136b SGB V; IQTIG stellt XML-Rohdaten öffentlich bereit."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "XML-Parsing",
+                    "description": "Strukturierte Qualitätsberichte im IQTIG-XML-Schema werden in tabellarische Analyseformate überführt."
+                  },
+                  {
+                    "method": "Qualitätsindikator-Vergleich",
+                    "description": "Benchmarking privater vs. öffentlicher Träger anhand standardisierter IQTIG-Indikatoren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "privatklinik-beschaeftigte",
+              "level": 4,
+              "name": "Beschäftigte in privaten Krankenhäusern",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Personalstatistik privater Krankenhäuser nach Berufsgruppe (Ärzte, Pflegepersonal, Verwaltung), Vollzeitäquivalenten und Bundesland. Quelle: Destatis Krankenhausstatistik, Fachserie 12 Reihe 6.1, jährliche Erhebung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Beschäftigtendaten ohne Personenbezug, regulär als Open Data durch Destatis veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Aggregation nach Träger",
+                    "description": "Personaldaten werden getrennt nach Trägertyp (privat, öffentlich, freigemeinnützig) ausgewertet."
+                  },
+                  {
+                    "method": "VZÄ-Berechnung",
+                    "description": "Umrechnung von Teil- und Vollzeitstellen in Vollzeitäquivalente für sektorale Vergleichbarkeit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "privatklinik-investitionen",
+              "level": 4,
+              "name": "Investitionsausgaben privater Kliniken",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Investitionsausgaben privater Krankenhausträger für Gebäude, Medizintechnik und IT, aus DKG-Jahresstatistik und Landesinvestitionsprogrammen. Enthält Fördermittelquoten und Eigenfinanzierungsanteile.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "DKG-Erhebungsdaten sind aggregiert verfügbar; Landesförderdaten müssen aus verschiedenen Quellen zusammengeführt werden."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Datenfusion",
+                    "description": "DKG-Bundesstatistik wird mit Landesinvestitionsprogrammen verknüpft, um Förderquoten je Träger zu berechnen."
+                  },
+                  {
+                    "method": "Investitionsquoten-Analyse",
+                    "description": "Vergleich Investitionsintensität (Investitionsausgaben/Umsatz) zwischen privaten und öffentlichen Kliniken."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "privatklinik-marktanteile-regional",
+              "level": 4,
+              "name": "Marktanteile privater Kliniken nach Region",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Regionaler Marktanteil privater Krankenhausträger an Gesamtbetten und Fallzahlen je Versorgungsregion (Kreis- und Kreisfreiestadt-Ebene). Basiert auf Destatis-Krankenhausverzeichnis und GKV-Abrechnungsdaten (InEK-Statistik).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rohdaten aus öffentlichen Quellen verfügbar, Marktanteilsberechnung erfordert Verknüpfung und räumliche Aggregation."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Räumliche Aggregation",
+                    "description": "Fallzahlen und Betten werden auf Kreisebene aggregiert und Marktanteile nach Träger berechnet."
+                  },
+                  {
+                    "method": "Visualisierung",
+                    "description": "Choroplethenkarte der Privatisierungsintensität nach Versorgungsregion."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "privatklinik-casemix-index",
+              "level": 4,
+              "name": "Case-Mix-Index privater Krankenhäuser",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Durchschnittlicher Case-Mix-Index (CMI) als Maß für die Fallschwere in privaten Kliniken, aus InEK-DRG-Statistik und Qualitätsberichten. Ermöglicht Vergleich der Spezialisierung und Leistungsstruktur privater Träger.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "InEK veröffentlicht DRG-Statistiken inkl. CMI-Daten jährlich als Open Data auf der InEK-Website."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "CMI-Berechnung",
+                    "description": "Case-Mix-Index wird aus InEK-Relativgewichten und Fallzahlen je DRG für jeden Krankenhausstandort berechnet."
+                  },
+                  {
+                    "method": "Spezialisierungsanalyse",
+                    "description": "Identifikation von Hochleistungsfeldern privater Träger (z. B. Orthopädie, Herzchirurgie) anhand CMI-Profil."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "pflegeeinrichtungen-privat",
+          "level": 3,
+          "name": "Private Pflegeeinrichtungen",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "pflegeheim-belegungsquoten-privat",
+              "level": 4,
+              "name": "Belegungsquoten privater Pflegeheime",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Belegungs- und Auslastungsquoten stationärer Pflegeeinrichtungen in privater Trägerschaft, differenziert nach Pflegegrad und Einrichtungstyp. Quelle: MDS-Pflegestatistik (Medizinischer Dienst), Destatis Pflegestatistik (alle 2 Jahre).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Auslastungsdaten ohne Personenbezug; Destatis veröffentlicht Pflegestatistik regulär als Open Data."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Aggregation nach Träger",
+                    "description": "Belegungsquoten werden getrennt nach privat, freigemeinnützig und öffentlich ausgewiesen."
+                  },
+                  {
+                    "method": "Pflegegradanalyse",
+                    "description": "Verteilung der Pflegegrade (1–5) je Trägertyp zur Beurteilung der Versorgungsschwerpunkte."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflegeheim-personalschluessel-privat",
+              "level": 4,
+              "name": "Personalschlüssel in privaten Pflegeeinrichtungen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Fachkraftquoten und Personalschlüssel (Pflegestunden je Bewohner) in privaten Pflegeheimen und ambulanten Diensten, aus MDS-Qualitätsprüfungen und Landesheimaufsichten. PKV-Verband ergänzt Daten für Privatversicherte.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "MDS-Prüfberichte sind einrichtungsbezogen verfügbar, müssen anonymisiert und aggregiert werden."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Einrichtungsbezogene Prüfberichte werden auf Kreisebene aggregiert, um Rückschlüsse auf Einzeleinrichtungen zu verhindern."
+                  },
+                  {
+                    "method": "Benchmark-Analyse",
+                    "description": "Vergleich Personalschlüssel privater vs. öffentlicher Pflegeeinrichtungen nach Bundesland."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflegeheim-pflegeentgelte-privat",
+              "level": 4,
+              "name": "Pflegeentgelte privater Einrichtungen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatliche Eigenanteile und Pflegeentgelte stationärer Pflegeheime in privater Trägerschaft, nach Bundesland und Pflegegrad. Quelle: vdek-Pflegemarkt, Verband privater Anbieter sozialer Dienste (bpa), Pflegemarkt.de-Datenbank.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Pflegeentgelte sind nach § 84 SGB XI öffentlich zugänglich und werden durch Pflegekassen veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Preisvergleich",
+                    "description": "Eigenanteilsentwicklung privater Pflegeheime wird mit Lohnentwicklung und Inflationsrate in Beziehung gesetzt."
+                  },
+                  {
+                    "method": "Regionale Kartierung",
+                    "description": "Geografische Visualisierung der Pflegeentgelte zur Identifikation regionaler Disparitäten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflegedienst-ambulant-privat-fallzahlen",
+              "level": 4,
+              "name": "Fallzahlen privater ambulanter Pflegedienste",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Anzahl versorgter Pflegebedürftiger durch private ambulante Pflegedienste, nach Pflegegrad und Leistungsart (Grundpflege, Behandlungspflege, hauswirtschaftliche Versorgung). Quelle: Destatis Pflegestatistik, bpa-Verbandsdaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht Pflegestatistik alle zwei Jahre als Open Data; Fallzahlen ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Zeitreihenvergleich",
+                    "description": "Marktanteilsentwicklung privater Pflegedienste gegenüber freigemeinnützigen und öffentlichen Anbietern über 10 Jahre."
+                  },
+                  {
+                    "method": "Leistungstyp-Analyse",
+                    "description": "Segmentierung nach erbrachten Leistungsarten zur Beurteilung der Versorgungstiefe privater Dienste."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflegeheim-qualitaetspruefung-mds",
+              "level": 4,
+              "name": "MDS-Qualitätsprüfungsergebnisse Pflegeheime",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Ergebnisse der Qualitätsprüfungen durch den Medizinischen Dienst (MD) nach § 114 SGB XI in privaten Pflegeheimen. Enthält Qualitätsindikatoren zu Dekubitus, Sturzereignissen, Medikamentengabe und Ernährungssituation. Quelle: MDS-Qualitätsberichte (öffentlich).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Qualitätsberichte sind nach SGB XI gesetzlich zur Veröffentlichung vorgeschrieben und über Pflegelotse.de abrufbar."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Qualitätsindikator-Extraktion",
+                    "description": "Prüfergebnisse werden aus strukturierten Berichten extrahiert und nach Trägertyp aggregiert."
+                  },
+                  {
+                    "method": "Outcome-Vergleich",
+                    "description": "Vergleich pflegebezogener Outcomes (z. B. Dekubitusrate) zwischen privaten und nicht-privaten Einrichtungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflegeheim-marktkonzentration",
+              "level": 4,
+              "name": "Marktkonzentration privater Pflegeketten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Marktanteile und Bettenkapazitäten der größten privaten Pflegeheimketten in Deutschland (Korian, Alloheim, Vitanas, Orpea), aus Bundesanzeiger-Pflichtveröffentlichungen und bpa-Verbandsstatistik.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Jahresabschlüsse im Bundesanzeiger öffentlich, Konsolidierung auf Konzernebene erfordert manuelle Aufbereitung."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Konzernstrukturanalyse",
+                    "description": "Tochtergesellschaften werden Mutterkonzernen zugeordnet, um Marktkonzentration korrekt abzubilden."
+                  },
+                  {
+                    "method": "HHI-Berechnung",
+                    "description": "Berechnung des Herfindahl-Hirschman-Index für den Pflegeheimmarkt nach Betten und Umsatz."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflegeheim-digitalisierungsgrad",
+              "level": 4,
+              "name": "Digitalisierungsgrad privater Pflegeeinrichtungen",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Erhebung zum Einsatz digitaler Pflegedokumentationssysteme, Telecare-Lösungen und elektronischer Medikamentenverwaltung in privaten Pflegeheimen. Quelle: Befragungen des bpa, BARMER Pflegereport, Bertelsmann-Stiftung Digital-Monitor Pflege.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Befragungsdaten aus Verbandserhebungen, Aggregation auf Einrichtungsebene erfordert Anonymisierung."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Umfrageauswertung",
+                    "description": "Likert-skalierte Antworten zu Digitalisierungsaspekten werden zu einem zusammengesetzten Digitalisierungsindex aggregiert."
+                  },
+                  {
+                    "method": "Korrelationsanalyse",
+                    "description": "Zusammenhang zwischen Digitalisierungsgrad und Pflegequalitätsindikatoren wird statistisch untersucht."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflegeheim-eigenanteil-entwicklung",
+              "level": 4,
+              "name": "Eigenanteilsentwicklung Pflegebedürftiger",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Zeitreihe der durchschnittlichen monatlichen Eigenanteile von Pflegebedürftigen in privaten stationären Einrichtungen (einrichtungseinheitlicher Eigenanteil EEE), aus vdek-Datenbank und BMG-Pflegereport. Enthält Sozialhilfequoten (§ 65 SGB XII).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Eigenanteile nach § 84 SGB XI müssen öffentlich bekannt gemacht werden; BMG und vdek stellen Zeitreihen bereit."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Deflationierung",
+                    "description": "Nominale Eigenanteile werden mit VPI inflationsbereinigt, um reale Kostenentwicklung darzustellen."
+                  },
+                  {
+                    "method": "Sozialhilfequoten-Analyse",
+                    "description": "Anteil der auf Sozialhilfe angewiesenen Pflegebedürftigen wird als Indikator für Bezahlbarkeit berechnet."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "medizintechnik-medtech",
+          "level": 3,
+          "name": "Medizintechnik (MedTech)",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "medtech-umsatzstatistik-bvmed",
+              "level": 4,
+              "name": "Umsatzstatistik Medizintechnikbranche (BVMed)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche Umsatzdaten der deutschen Medizintechnikbranche, differenziert nach Produktkategorien (Diagnostika, Implantate, Verbrauchsmaterialien, digitale Gesundheit). Quelle: BVMed-Jahresbericht, SPECTARIS-Marktbericht Medizintechnik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BVMed und SPECTARIS veröffentlichen aggregierte Branchenstatistiken jährlich als freie Downloads."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Branchenklassifikation",
+                    "description": "Umsätze werden nach WZ-2008-Klassen und BVMed-internen Produktkategorien segmentiert."
+                  },
+                  {
+                    "method": "Export-Import-Analyse",
+                    "description": "Außenhandelsdaten werden aus Destatis-Genesis-Datenbank ergänzt, um Außenhandelssaldo zu berechnen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "medtech-zulassungen-bfarm",
+              "level": 4,
+              "name": "Medizinprodukte-Zulassungen (BfArM/EUDAMED)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Registrierungsdaten von Medizinprodukten in der europäischen EUDAMED-Datenbank und beim BfArM, inkl. Risikoklasse (I–III), Hersteller, Benannte Stelle und Zertifizierungsdatum. Umfasst In-vitro-Diagnostika nach MDR und IVDR.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EUDAMED ist eine öffentlich zugängliche EU-Datenbank; BfArM stellt Benachrichtigungsdaten bereit."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "API-Abfrage",
+                    "description": "EUDAMED-REST-API wird für automatisierte Abfragen von Zulassungsdaten genutzt."
+                  },
+                  {
+                    "method": "Risikoklassen-Analyse",
+                    "description": "Verteilung der registrierten Produkte nach MDR-Risikoklasse und Produktkategorie wird ausgewertet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "medtech-patente-anmeldungen",
+              "level": 4,
+              "name": "Patentanmeldungen Medizintechnik (DPMA/EPO)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Patentanmeldungen im Bereich Medizintechnik (IPC-Klasse A61) beim Deutschen Patent- und Markenamt (DPMA) und Europäischen Patentamt (EPO), nach Unternehmen, Technologiefeld und Anmeldejahr. Quelle: DPMA DEPATISnet, EPO Espacenet Open Data.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Patentdaten sind nach Ablauf der Geheimhaltungsfrist öffentlich; DPMA und EPO bieten Open-Data-Exports."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "IPC-Klassifikation",
+                    "description": "Patente werden nach IPC-Unterklassen (A61B Diagnose, A61F Implantate etc.) kategorisiert."
+                  },
+                  {
+                    "method": "Innovationsindex",
+                    "description": "Patentanmeldungen pro Beschäftigtem werden als Innovationsintensitätsindex für die Medtech-Branche berechnet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "medtech-beschaeftigte-qualifikation",
+              "level": 4,
+              "name": "Beschäftigte in der Medizintechnik nach Qualifikation",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Sozialversicherungspflichtig Beschäftigte in der Medizintechnikbranche (WZ 26.6, 32.5) nach Qualifikationsniveau, Berufsgruppe und Region. Quelle: BA-Beschäftigungsstatistik, SPECTARIS-Personalreport.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bundesagentur für Arbeit veröffentlicht Beschäftigungsstatistiken nach WZ-Klassen als Open Data auf statistik.arbeitsagentur.de."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "WZ-Filterung",
+                    "description": "Beschäftigtendaten werden auf WZ-Klassen 26.6 (Bestrahlungs-, Elektrotherapie-, Elektromed. Geräte) und 32.5 (Medizinische Instrumente) gefiltert."
+                  },
+                  {
+                    "method": "MINT-Analyse",
+                    "description": "Anteil von MINT-Fachkräften wird als Qualifikationsstrukturindikator für die Branche ausgewiesen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "medtech-rueckrufe-vorkommnisse",
+              "level": 4,
+              "name": "Medizinprodukt-Rückrufe und Vorkommnisse",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Datenbank der Rückrufe, Sicherheitskorrekturmaßnahmen und Vorkommnismeldungen von Medizinprodukten, aus BfArM-Datenbank MPSV und EUDAMED SCENIHR-Modul. Enthält Produkttyp, Hersteller, Schweregrad und Maßnahme.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BfArM veröffentlicht Rückrufdatenbank öffentlich; EU-weit über EUDAMED zugänglich (Art. 87 MDR)."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Schweregrad-Klassifikation",
+                    "description": "Vorkommnisse werden nach IMDRF-Severity-Score in kritisch/schwerwiegend/geringfügig eingeteilt."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Zeitreihe der Rückrufe je Produktkategorie zur Identifikation systemischer Sicherheitsprobleme."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "medtech-aussenhandel-export",
+              "level": 4,
+              "name": "Außenhandel Medizintechnik (Export/Import)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Exports und Importe von Medizintechnikprodukten nach HS-Warennummern (HS 9018–9022), Zielländern und Wertvolumen. Quelle: Destatis Außenhandelsstatistik (Genesis-Online, Tabelle 51000-0008), SPECTARIS-Export-Monitor.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht Außenhandelsdaten nach HS-Nummern als Open Data über Genesis-Online."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "HS-Klassifikation",
+                    "description": "Warenwert und -mengen werden auf medizintechnikrelevante HS-Kapitel 90 (Optik, Foto, Medizin) gefiltert."
+                  },
+                  {
+                    "method": "Partnerland-Analyse",
+                    "description": "Top-10-Exportdestinationen und Marktanteilsentwicklung werden jährlich berechnet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "medtech-klinische-studien-register",
+              "level": 4,
+              "name": "Klinische Studien Medizintechnik (DRKS/ClinicalTrials)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Registrierungsdaten klinischer Studien mit Medizinprodukten im Deutschen Register Klinischer Studien (DRKS) und ClinicalTrials.gov, nach Studienphase, Sponsor (Industrie vs. akademisch), Indikation und Rekrutierungsstatus.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DRKS und ClinicalTrials.gov sind öffentliche Register mit freiem Datenzugang und API-Schnittstellen."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "API-Aggregation",
+                    "description": "DRKS- und ClinicalTrials-APIs werden kombiniert abgefragt; Duplikate über NCT- und DRKS-IDs dedupliziert."
+                  },
+                  {
+                    "method": "Sponsor-Klassifikation",
+                    "description": "Studiensponsoren werden als industriegefördert oder akademisch klassifiziert und Medtech-Unternehmen zugeordnet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "medtech-digitale-gesundheitsanwendungen-diga",
+              "level": 4,
+              "name": "DiGA-Verzeichnis (Digitale Gesundheitsanwendungen)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Amtliches Verzeichnis der vom BfArM zugelassenen Digitalen Gesundheitsanwendungen (DiGA) nach § 139e SGB V, inkl. Indikation, Hersteller, Erstattungsstatus (vorläufig/dauerhaft), Preis und Nutzenbewertungsergebnis.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BfArM veröffentlicht das DiGA-Verzeichnis als maschinenlesbare JSON-Datei auf diga.bfarm.de (Open Data)."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Preismonitoring",
+                    "description": "Erstattungspreise zugelassener DiGA werden als Zeitreihe erfasst und mit Verhandlungsergebnissen verknüpft."
+                  },
+                  {
+                    "method": "Nutzenbewertungsauswertung",
+                    "description": "Bewertungsergebnisse (positiv/negativ/noch offen) werden nach Indikationsgebiet und Hersteller aggregiert."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chemieindustrie",
+      "level": 2,
+      "name": "Chemieindustrie",
+      "color": "#d35400",
+      "children": [
+        {
+          "id": "chemieproduktion-umsatz",
+          "level": 3,
+          "name": "Chemieproduktion & Umsatz",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "vci-chemieumsatz-jahresbericht",
+              "level": 4,
+              "name": "VCI Chemieumsatz Jahresbericht",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jahresumsatzstatistik der deutschen Chemieindustrie nach Sparten (Basis-, Spezial-, Pharmachemie), erhoben und publiziert vom Verband der Chemischen Industrie (VCI). Enthält Exportquoten, Produktionsindizes und Beschäftigtenzahlen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "VCI publiziert Jahresberichte und Statistiken offen auf seiner Website; aggregierte Branchendaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Branchenerhebung",
+                    "description": "VCI aggregiert Meldedaten der Mitgliedsunternehmen zu jährlichen Umsatz- und Produktionsindizes."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "destatis-chemie-produktionsindex",
+              "level": 4,
+              "name": "Destatis Produktionsindex Chemie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatlicher Produktionsindex für das Verarbeitende Gewerbe, Wirtschaftszweig WZ 20 (Herstellung von chemischen Erzeugnissen), bereitgestellt von Destatis (Statistisches Bundesamt) über Genesis-Online.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis stellt Produktionsindizes über Genesis-Online als offene Daten zur Verfügung (Datenlizenz Deutschland)."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Konjunkturstatistik",
+                    "description": "Monatliche Erhebung bei Betrieben ab 50 Beschäftigten; Indexberechnung nach Laspeyres-Formel auf Basis 2015=100."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vci-chemiekonjunktur-quartal",
+              "level": 4,
+              "name": "VCI / ifo Chemiekonjunktur Quartalsbericht",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Quartalsweise Konjunkturumfrage unter Chemieproduzenten, durchgeführt gemeinsam von VCI und ifo Institut. Enthält Geschäftslage, Produktionserwartungen und Kapazitätsauslastung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Umfrageergebnisse werden öffentlich als Pressemitteilung und Datentabelle veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Unternehmensumfrage",
+                    "description": "Repräsentative Stichprobenerhebung bei VCI-Mitgliedsunternehmen; Saldierung von Positiv- und Negativmeldungen zu Konjunkturindizes."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "destatis-chemie-aussenhandel",
+              "level": 4,
+              "name": "Destatis Außenhandelsstatistik Chemische Erzeugnisse",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatliche Import- und Exportwerte chemischer Erzeugnisse (SITC 5 / HS Kapitel 28–38) aus der Außenhandelsstatistik des Statistischen Bundesamtes, differenziert nach Partnerländern und Warengruppen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Außenhandelsstatistiken werden von Destatis über Genesis-Online unter Datenlizenz Deutschland veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Zollanmeldungsauswertung",
+                    "description": "Zusammenführung von Intrastat- und Extrastat-Meldungen; Hochrechnung auf Basis monatlicher Schwellenwerte."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "chemie-beschaeftigte-entgelt",
+              "level": 4,
+              "name": "Beschäftigte und Entgelte Chemieindustrie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jahres- und Quartalsdaten zu Beschäftigtenzahlen, Arbeitsstunden und Entgeltsummen in der Chemieindustrie (WZ 20), erhoben von Destatis im Rahmen der Verdiensterhebung und Kostenstrukturstatistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Branchenaggregierte Beschäftigtendaten ohne Personenbezug sind frei zugänglich über Genesis-Online."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verdiensterhebung",
+                    "description": "Pflichtmeldung der Betriebe mit ≥10 Beschäftigten; statistische Geheimhaltung bei zu geringen Fallzahlen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vci-chemie-energie-rohstoff",
+              "level": 4,
+              "name": "VCI Energie- und Rohstoffkosten Chemie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche Auswertung der Energie- und Rohstoffkostenentwicklung der deutschen Chemieindustrie durch den VCI, einschließlich Naphtha-, Erdgas- und Strompreisindizes für die Branche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "VCI publiziert Energie- und Rohstoffstatistiken auf seiner Website offen; keine personenbezogenen Daten enthalten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Preisindex-Berechnung",
+                    "description": "VCI erhebt Energiekostendaten bei Mitgliedsunternehmen und stellt sie marktüblichen Energiepreisindizes gegenüber."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "destatis-kostenstruktur-chemie",
+              "level": 4,
+              "name": "Destatis Kostenstrukturerhebung Chemische Industrie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche Kostenstrukturerhebung für den Wirtschaftszweig WZ 20 durch das Statistische Bundesamt: Material-, Personal-, Energie- und sonstige Kosten sowie Wertschöpfung auf Unternehmensebene (aggregiert).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kostenstrukturstatistiken werden nach gesetzlicher Geheimhaltungsprüfung aggregiert veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Unternehmensstatistik",
+                    "description": "Pflichterhebung bei Unternehmen mit ≥20 Beschäftigten; Ergebnisse nach Geheimhaltungsprüfung aggregiert publiziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "chemie-investitionen-kapazitaet",
+              "level": 4,
+              "name": "VCI Investitionen und Kapazitätsauslastung Chemie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche Erhebung des VCI zu Bruttoanlageinvestitionen und Kapazitätsauslastungsgraden in der deutschen Chemieindustrie, untergliedert nach Chemieteilbranchen (Basis-, Agro-, Spezialchemie).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Investitions- und Kapazitätsdaten werden im VCI-Jahresbericht offen publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Investitionserhebung",
+                    "description": "Freiwillige Meldung durch VCI-Mitgliedsunternehmen; Hochrechnung auf Branchengesamtwert über Repräsentativitätsfaktor."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "forschung-innovation-chemie",
+          "level": 3,
+          "name": "Forschung & Innovation Chemie",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "vci-fue-ausgaben-chemie",
+              "level": 4,
+              "name": "VCI F&E-Ausgaben Chemieindustrie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche Erhebung der internen und externen Forschungs- und Entwicklungsausgaben der deutschen Chemieindustrie durch den VCI, differenziert nach Unternehmensgrößenklassen und Chemieteilbranchen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "VCI veröffentlicht F&E-Statistiken im Rahmen des Jahresberichts und als Einzelpublikation offen."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "FuE-Erhebung",
+                    "description": "Branchenerhebung gemäß Frascati-Handbuch; Erfassung von internem FuE-Personal, Sachinvestitionen und vergebenen Aufträgen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "dechema-forschungslandkarte-chemie",
+              "level": 4,
+              "name": "DECHEMA Forschungslandkarte Chemie & Biotechnologie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "DECHEMA (Gesellschaft für Chemische Technik und Biotechnologie) kartiert öffentlich geförderte Forschungsvorhaben und Verbundprojekte im Bereich Chemie, Verfahrenstechnik und industrielle Biotechnologie in Deutschland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DECHEMA stellt Projektdaten und Auswertungen auf seiner Website frei zur Verfügung."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Projektdatenbank-Auswertung",
+                    "description": "DECHEMA aggregiert Förderdaten aus BMBF-Förderkatalog und EU-Datenbanken (CORDIS) für chemietypische Themenfelder."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "chemie-patent-anmeldungen",
+              "level": 4,
+              "name": "DPMA Patentanmeldungen Chemie & Pharma",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche Patentanmeldungsstatistik des Deutschen Patent- und Markenamts (DPMA) für die IPC-Klassen C (Chemie) und A61 (Pharmazeutika), differenziert nach Anmeldertyp (Unternehmen, Hochschule, Einzelpersonen).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DPMA veröffentlicht Patentstatistiken im Jahresbericht und über DPMAregister als offene Daten."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Patentstatistik",
+                    "description": "DPMA zählt Erst- und Folgeanmeldungen nach IPC-Klassifikation; internationale Vergleichsdaten aus WIPO-Statistik ergänzt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bmbf-foerderprojekte-chemie",
+              "level": 4,
+              "name": "BMBF Förderprojekte Chemische Forschung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Projektdaten aus dem BMBF-Förderkatalog für chemie- und materialwissenschaftliche Forschungsvorhaben: Fördersummen, Laufzeiten, Projektträger, beteiligte Einrichtungen (Hochschulen, Unternehmen).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BMBF-Förderkatalog ist öffentlich zugänglich und enthält alle Projektdaten ohne Einschränkung."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Förderdatenbank-Auswertung",
+                    "description": "Selektion chemietypischer Projekte anhand von Schlagwörtern und Förderbereichen aus dem offenen BMBF-Förderkatalog."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ifo-innovationserhebung-chemie",
+              "level": 4,
+              "name": "ifo Innovationserhebung Chemieindustrie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche Innovationserhebung des ifo Instituts für die Chemieindustrie im Rahmen des Mannheimer Innovationspanels (MIP): Innovationsausgaben, Innovatorenanteile, Produktinnovationen und Prozessinnovationen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Mikrodaten unterliegen Datenschutz; aggregierte Branchenergebnisse werden im Innovationsbericht des ZEW/ifo veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Panelerhebung",
+                    "description": "Repräsentative Längsschnitterhebung nach Oslo-Handbuch-Methodik; Gewichtung nach Beschäftigten- und Umsatzklassen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "dechema-white-paper-chemietechnologien",
+              "level": 4,
+              "name": "DECHEMA Technologie-Roadmaps Chemie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "DECHEMA-Roadmaps und White Papers zu Schlüsseltechnologien der Chemie (Elektrifizierung, CO2-Nutzung, Biokatalyse, Digitalisierung), erarbeitet in Zusammenarbeit mit Industrie und Wissenschaft.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DECHEMA publiziert alle Roadmap-Dokumente offen auf seiner Website als PDF und zugehörige Datentabellen."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Expertenkonsultation",
+                    "description": "DECHEMA fasst Expertendelphi und Workshop-Ergebnisse in strukturierten Technologiebewertungen zusammen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "chemie-startup-gruendungsgeschehen",
+              "level": 4,
+              "name": "Gründungsgeschehen Chemiestartups Deutschland",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Auswertung von Gründungsdaten für chemie- und materialwissenschaftliche Startups auf Basis des Handelsregisters (Destatis) und Startup-Datenbanken (Crunchbase, Pitchbook-Extrakte via DECHEMA/VCI).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Handelsregisterdaten sind öffentlich, aber als Rohdaten kostenpflichtig; aggregierte Auswertungen werden von VCI/DECHEMA publiziert."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Registerauswertung",
+                    "description": "Selektion chemietypischer Gründungen anhand von WZ-Codes und Stichwortrauswertung aus Handelsregister und Startup-Monitoren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "eu-horizont-chemie-projekte",
+              "level": 4,
+              "name": "EU Horizon Förderdaten Chemie & Materialien",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Projektdaten aus CORDIS (Community Research and Development Information Service) der EU-Kommission für Fördervorhaben in den Clustern 4 (Digitales, Industrie) und 6 (Nahrung, Bioökonomie) mit chemischen Schwerpunkten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "CORDIS-Daten werden von der EU-Kommission als Open Data unter CC BY 4.0 veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "CORDIS-API-Abfrage",
+                    "description": "Filterung nach Programmlinien und Schlagwörtern über die offene CORDIS-REST-API; deutsche Beteiligungen via Länderfilter."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "chemikalien-sicherheit-umwelt",
+          "level": 3,
+          "name": "Chemikalien, Sicherheit & Umwelt",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "echa-reach-registrierungsdaten",
+              "level": 4,
+              "name": "ECHA REACH-Registrierungsdaten",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Registrierungsdossiers für chemische Stoffe ab 1 Tonne Jahresproduktion im REACH-Register der Europäischen Chemikalienbehörde (ECHA). Enthält Stoffidentität, Verwendungszwecke, Exposition und Sicherheitsdaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ECHA veröffentlicht Registrierungsdaten auf echa.europa.eu als Open Data; vertrauliche Geschäftsinformationen (CBI) ausgeblendet."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Regulatorische Dossierauswertung",
+                    "description": "ECHA stellt IUCLID-Datei-Exporte aller Registrierungsdossiers über die ECHA-API und Bulk-Downloads zur Verfügung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "uba-chemikalienregister-deutschland",
+              "level": 4,
+              "name": "UBA Chemikalienregister Deutschland",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Das Umweltbundesamt (UBA) führt das nationale Chemikalienregister mit Angaben zu in Deutschland verwendeten Stoffen, Meldepflichten nach ChemG und Verknüpfungen zu EU-Kandidatenlisten für besonders besorgniserregende Stoffe (SVHC).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "UBA-Registerdaten sind gesetzlich veröffentlichungspflichtig und über das UBA-Webportal frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Registerführung",
+                    "description": "Pflichtmeldungen der Inverkehrbringer gemäß ChemG §16a; UBA führt Register und verknüpft mit EU-Harmonisierungsdaten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "uba-emissionsregister-chemie",
+              "level": 4,
+              "name": "UBA PRTR Emissionsregister Chemische Industrie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Schadstofffreisetzungs- und Verbringungsregister (PRTR / E-PRTR) des Umweltbundesamts für Chemieunternehmen: Jahresemissionen in Luft, Wasser und Boden von rund 90 Schadstoffen für alle meldepflichtigen Anlagen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Das PRTR ist gesetzlich öffentlich (§ 5 SchadRegProtAG); Daten werden auf thru.de frei zur Verfügung gestellt."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Anlagenerhebung",
+                    "description": "Meldepflichtige Anlagen nach IED-Richtlinie übermitteln Jahresemissionsdaten; UBA publiziert via thru.de und E-PRTR-Portal."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "baua-sicherheitsdatenblatt-datenbank",
+              "level": 4,
+              "name": "BAuA Sicherheitsdatenblatt-Datenbank GESTIS",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Die Gefahrstoffinformationssystem-Datenbank GESTIS der Bundesanstalt für Arbeitsschutz und Arbeitsmedizin (BAuA) enthält Sicherheitsdatenblätter und toxikologische Daten für mehr als 8.500 Arbeitsstoffe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "GESTIS-Datenbank ist öffentlich zugänglich und bietet eine API für den strukturierten Datenzugriff."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Datenbankpflege",
+                    "description": "BAuA kuratiert Sicherheitsdatenblätter nach GHS-Verordnung (EG 1272/2008); API ermöglicht maschinenlesbaren Datenabruf."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "echa-svhc-kandidatenliste",
+              "level": 4,
+              "name": "ECHA SVHC Kandidatenliste besonders besorgniserregender Stoffe",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Kandidatenliste der Europäischen Chemikalienbehörde (ECHA) mit besonders besorgniserregenden Stoffen (Substances of Very High Concern, SVHC), die für die Aufnahme in die REACH-Zulassungsliste vorgeschlagen werden.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ECHA publiziert die Kandidatenliste inklusive aller zugehörigen Begründungsdokumente öffentlich."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Regulatorische Listenpflege",
+                    "description": "ECHA aktualisiert die Kandidatenliste zweimal jährlich nach Konsultationsverfahren; Maschinenlesbarkeit via ECHA-API."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "uba-biozidprodukte-zulassungen",
+              "level": 4,
+              "name": "UBA Biozidprodukt-Zulassungsregister",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Register des Umweltbundesamtes zu zugelassenen Biozidprodukten in Deutschland (Desinfektionsmittel, Schädlingsbekämpfungsmittel, Holzschutzmittel) gemäß EU-Biozidverordnung 528/2012, mit Wirkstoff- und Anwendungsangaben.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Zulassungsregister ist gesetzlich öffentlich; UBA stellt Daten als Downloadtabelle bereit."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Zulassungsverfahren",
+                    "description": "BAuA und UBA prüfen gemeinsam Zulassungsanträge; Register wird nach Bescheid aktualisiert und öffentlich gehalten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "chemie-arbeitsunfaelle-berufskrankheiten",
+              "level": 4,
+              "name": "BG RCI Arbeitsunfälle und Berufskrankheiten Chemie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jahresstatistik der Berufsgenossenschaft Rohstoffe und chemische Industrie (BG RCI) zu meldepflichtigen Arbeitsunfällen, tödlichen Unfällen und anerkannten Berufskrankheiten in der Chemieindustrie.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BG RCI veröffentlicht aggregierte Unfallstatistiken im Jahresbericht; keine personenbezogenen Einzelfälle enthalten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Unfallstatistik",
+                    "description": "BG RCI erhebt Unfallanzeigen und Berufskrankheitenmeldungen; Aggregation nach Unfallkategorien und Wirtschaftsgruppen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "chemie-abfall-entsorgung-statistik",
+              "level": 4,
+              "name": "Destatis Abfallstatistik Chemische Industrie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Zweijährliche Abfallstatistik des Statistischen Bundesamtes für den Wirtschaftszweig WZ 20: gefährliche und nicht gefährliche Abfallmengen nach Abfallschlüssel (AVV), Entsorgungsweg und Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis publiziert Abfallstatistiken über Genesis-Online unter Datenlizenz Deutschland."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Betriebliche Abfallerhebung",
+                    "description": "Pflichtmeldung aller Betriebe mit gefährlichen Abfällen; Destatis aggregiert nach AVV-Schlüssel und Entsorgungsverfahren."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "medienwirtschaft-verlage",
+      "level": 2,
+      "name": "Medienwirtschaft & Verlage",
+      "color": "#d35400",
+      "children": [
+        {
+          "id": "verlagsmarkt-buch-zeitschrift",
+          "level": 3,
+          "name": "Verlagsmarkt Buch & Zeitschrift",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "boersenverein-buchmarkt-jahresumsatz",
+              "level": 4,
+              "name": "Börsenverein Buchmarkt Jahresumsatz",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche Umsatzstatistik des deutschen Buchmarkts nach Warengruppen (Belletristik, Sachbuch, Kinder, Schule, Wissenschaft) und Vertriebskanälen (stationärer Handel, Online, Direktvertrieb), erhoben vom Börsenverein des deutschen Buchhandels.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Börsenverein publiziert Buchmarktdaten im Buch und Buchhandel in Zahlen-Jahrbuch und als frei zugängliche Pressedaten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Branchenerhebung",
+                    "description": "Börsenverein erhebt Umsatzdaten bei Mitgliedsverlagen und Buchhändlern; Gesamtmarkt wird über GfK-Panel hochgerechnet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ivw-auflagenstatistik-printmedien",
+              "level": 4,
+              "name": "IVW Auflagenstatistik Printmedien",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Quartalsweise Auflagenstatistik der Informationsgemeinschaft zur Feststellung der Verbreitung von Werbeträgern (IVW) für Zeitungen, Zeitschriften und Magazine in Deutschland: Druckauflage, verbreitete Auflage und Abonnements.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "IVW publiziert Auflagenzahlen auf seiner Website öffentlich und als Datendownload; Grundlage für Mediaeinkauf."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Auflagenprüfung",
+                    "description": "IVW-Treuhänder prüfen Auflagenangaben der Verlage auf Basis von Druckauftragsbelegen und Vertriebsnachweisen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "boersenverein-titelproduktion-isbn",
+              "level": 4,
+              "name": "Börsenverein Titelproduktion und ISBN-Vergabe",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche Statistik der Buchtitelproduktion in Deutschland auf Basis der ISBN-Vergabe durch die Deutsche Nationalbibliothek, aufgeschlüsselt nach Thema, Erscheinungsform (Print, E-Book, Audio) und Verlagsgrößenklasse.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Deutsche Nationalbibliothek und Börsenverein veröffentlichen Titelproduktionsstatistiken offen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "ISBN-Registerauswertung",
+                    "description": "Auswertung aller vergebenen ISBN durch die MVB GmbH (Marketing- und Verlagsservice des Buchhandels) nach Warengruppen und Erscheinungsformen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gfk-buchkaeufer-panel",
+              "level": 4,
+              "name": "GfK Buchkäufer-Panel Deutschland",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Haushaltspanel der GfK zum Buchkaufverhalten in Deutschland: Käuferreichweiten, Kauffrequenz, Ausgaben pro Käufer, demografische Struktur der Buchkäufer sowie Kanalwahl (Buchhandlung, Online, Discounter).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "GfK-Mikrodaten sind proprietär; aggregierte Ergebnisse werden vom Börsenverein lizenziert und teilweise öffentlich kommuniziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_07"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Haushaltspanel",
+                    "description": "Repräsentatives Panel von ~25.000 Haushalten erfasst kontinuierlich Buchkäufe per Scan-Tagebuch; Hochrechnung auf Gesamtbevölkerung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mvb-vlb-verlagsverzeichnis",
+              "level": 4,
+              "name": "MVB VLB Verzeichnis Lieferbarer Bücher",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Das Verzeichnis Lieferbarer Bücher (VLB) der MVB GmbH enthält bibliografische Metadaten zu über 1 Million lieferbarer Titel aus dem deutschsprachigen Verlagsmarkt: ISBN, Preis, Erscheinungsdatum, Verlag, Beschreibungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "VLB-Daten sind kommerziell; Teildaten (Titellisten) werden für Bildungs- und Forschungszwecke unter Lizenz bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Metadatenpflege",
+                    "description": "Verlage pflegen Titelmetadaten selbst ins VLB-Portal ein; MVB stellt ONIX-konforme Exportschnittstellen für Buchhändler bereit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "boersenverein-ebook-marktanteil",
+              "level": 4,
+              "name": "Börsenverein E-Book-Marktanteile Deutschland",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche Erhebung des Börsenverein des deutschen Buchhandels zu E-Book-Umsatzanteilen am Gesamtbuchmarkt, differenziert nach Buchsegmenten (Consumer, Fachbuch, Schulbuch) und Distributionskanälen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte E-Book-Marktdaten werden vom Börsenverein jährlich öffentlich kommuniziert und als Pressedaten bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Branchenerhebung",
+                    "description": "Mitgliedsbefragung des Börsenvereins ergänzt durch GfK-Paneldaten; Zusammenführung zu E-Book-Marktanteilsstatistik."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vdz-zeitschriftenmarkt-umsatz",
+              "level": 4,
+              "name": "VDZ Zeitschriftenmarkt Umsatz- und Titelstatistik",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jahres- und Quartalsstatistik des Verbands Deutscher Zeitschriftenverleger (VDZ) für den deutschen Zeitschriftenmarkt: Verlagserlöse aus Vertrieb und Anzeigen, Titelanzahl nach Segment, Digitalumsätze.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "VDZ veröffentlicht Zeitschriftmarktdaten im Jahresbericht und als Pressemitteilungen öffentlich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Verlagserhebung",
+                    "description": "VDZ erhebt Erlösdaten bei Mitgliedsverlagen; Ergänzung durch IVW-Auflagendaten für Reichweitenberechnung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "destatis-verlagsgewerbe-umsatz",
+              "level": 4,
+              "name": "Destatis Umsatz Verlagsgewerbe (WZ 58)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatliche und jährliche Umsatzerhebung für das Verlagsgewerbe (WZ 58: Verlegen von Büchern, Software, Zeitungen, Zeitschriften) im Rahmen der Konjunktur- und Jahreserhebung des Statistischen Bundesamtes.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht Konjunkturdaten für das Verlagsgewerbe über Genesis-Online unter Datenlizenz Deutschland."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Konjunkturerhebung",
+                    "description": "Monatliche Pflichtmeldung der Unternehmen mit ≥17.500 EUR Jahresumsatz; Hochrechnung auf Totalwert."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "digitale-mediennutzung",
+          "level": 3,
+          "name": "Digitale Mediennutzung",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "ivw-online-nutzungsdaten",
+              "level": 4,
+              "name": "IVW Online-Nutzungsdaten (PI, Visits)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Monatliche Online-Nutzungsstatistik der IVW für deutsche Nachrichtenportale, Verlagswebsites und digitale Magazine: Page Impressions (PI), Visits und Unique User nach Gerätekategorie (Desktop, Mobile, App).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "IVW publiziert Online-Nutzungsdaten monatlich auf seiner Website als frei downloadbare CSV-Tabellen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Server-Log-Auswertung",
+                    "description": "IVW-zertifizierte Zählpixel auf Mitgliederseiten erfassen PI und Visits; technische Prüfung durch Wirtschaftsprüfer."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "agof-digital-facts-reichweite",
+              "level": 4,
+              "name": "AGOF Digital Facts Reichweitenstudie",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Quartalsweise Reichweitenstudie der Arbeitsgemeinschaft Online Forschung (AGOF): Unique User, Reichweiten und Nutzungsintensität für über 4.000 digitale Angebote in Deutschland, erhoben via Passivmessung und Befragung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "AGOF veröffentlicht Toplisten frei; vollständige Datensätze für Marktforscher und Mediaagenturen kostenpflichtig."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Hybrid-Messung",
+                    "description": "Kombination aus technischer Nutzungsmessung (Passivmessung via Meter) und repräsentativer Bevölkerungsbefragung (CAWI)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zaw-werbemarkt-digitalmedien",
+              "level": 4,
+              "name": "ZAW Werbemarkt Digitalmedien Deutschland",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche Werbeumsatzstatistik des Zentralverbands der deutschen Werbewirtschaft (ZAW) für den digitalen Werbemarkt: Display-, Video-, Search- und Social-Media-Werbung, differenziert nach Formaten und Medienträgern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ZAW veröffentlicht aggregierte Werbemarktdaten im Werbedatenkompass und als Pressemitteilungen offen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Verbandsdatenerhebung",
+                    "description": "ZAW aggregiert Meldedaten der Mitgliedsverbände (OVK, BVDW, VDZ) zu Gesamtmarkt-Werbeumsätzen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bvdw-digitalwerbemarkt-ovk",
+              "level": 4,
+              "name": "BVDW / OVK Online-Werbemarktbericht",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Halbjährliche Umsatzerhebung des Online-Vermarkterkreises (OVK) im Bundesverband Digitale Wirtschaft (BVDW) für den deutschen Online-Werbemarkt: Display, Video, Mobile und Programmatic Advertising.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "OVK-Werbemarktberichte werden vom BVDW öffentlich auf seiner Website als PDF und Datentabelle veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Mitgliedererhebung",
+                    "description": "OVK-Mitglieder melden Netto-Werbeumsätze; BVDW aggregiert und hochrechnet auf Gesamtmarkt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ard-zdf-onlinestudie-nutzung",
+              "level": 4,
+              "name": "ARD/ZDF-Onlinestudie Mediennutzung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche repräsentative Bevölkerungsbefragung von ARD und ZDF zur Mediennutzung der deutschen Bevölkerung ab 14 Jahren: Internetnutzung, Streaming, Social Media, Podcasts und digitale Medienangebote.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "ARD und ZDF veröffentlichen alle Studiendaten und -tabellen auf ard-zdf-onlinestudie.de als freien Download."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bevölkerungsumfrage",
+                    "description": "Repräsentative CATI/CAWI-Befragung mit ca. 2.000 Befragten; Gewichtung nach Alter, Geschlecht, Bildung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "destatis-ikt-nutzung-haushalte",
+              "level": 4,
+              "name": "Destatis IKT-Nutzung privater Haushalte (IKT-Erhebung)",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche IKT-Erhebung des Statistischen Bundesamtes zur Nutzung von Internet, Computer und digitalen Diensten in deutschen Privathaushalten (EU-Pflichterhebung), differenziert nach Alter, Bildung und Haushaltstyp.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis veröffentlicht IKT-Erhebungsdaten über Genesis-Online unter Datenlizenz Deutschland als offene Daten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "EU-Pflichterhebung",
+                    "description": "Harmonisierte Erhebung nach Eurostat-Methodologie; Stichprobe ca. 15.000 Haushalte, jährlich im ersten Quartal."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "social-media-reichweite-kantar",
+              "level": 4,
+              "name": "Kantar Social-Media-Nutzungsstatistik Deutschland",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche Nutzungsstatistik von Kantar (im Auftrag von BVDW/Verbandsgemeinschaft) zu deutschen Social-Media-Plattformen: Monatliche Nutzerzahlen, Demografien und Nutzungsintensität für Instagram, TikTok, LinkedIn, X und YouTube.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Kantar-Rohdaten sind proprietär; BVDW publiziert aggregierte Eckdaten in Pressemitteilungen und Studienberichten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bevölkerungsumfrage",
+                    "description": "Repräsentative Online-Befragung (CAWI) mit Quotenstichprobe nach Alter und Geschlecht; quartalsweise Trendmessung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "streaming-nutzung-gvu",
+              "level": 4,
+              "name": "GVU Streaming-Nutzung und Piracy-Monitor",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jahresstudie der Gesellschaft zur Verfolgung von Urheberrechtsverletzungen (GVU) zu legaler und illegaler Streaming-Nutzung in Deutschland: Abostreaming, Live-Streaming, Nutzungsfrequenz und Zahlungsbereitschaft.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "GVU veröffentlicht Studienzusammenfassungen und Kerndaten öffentlich; detaillierte Daten auf Anfrage für Forschung."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Nutzungsbefragung",
+                    "description": "Online-Repräsentativbefragung der deutschen Bevölkerung (16+); Erfassung von Streaming-Abo-Besitz und Nutzungsverhalten."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "medienkonzentration-regulierung",
+          "level": 3,
+          "name": "Medienkonzentration & Regulierung",
+          "color": "#e67e22",
+          "children": [
+            {
+              "id": "kek-medienkonzentrationsbericht",
+              "level": 4,
+              "name": "KEK Medienkonzentrationsbericht",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Zweijährlicher Bericht der Kommission zur Ermittlung der Konzentration im Medienbereich (KEK) zur Konzentration im bundesweiten privaten Fernsehen und medienrelevanten Märkten: Marktanteile, Beteiligungsstrukturen, Zuschauerreichweiten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KEK-Berichte werden gemäß Rundfunkstaatsvertrag veröffentlicht; alle Daten sind auf kek-online.de frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Regulatorische Marktanalyse",
+                    "description": "KEK analysiert Beteiligungsstrukturen anhand von Handelsregister, Zuschaueranteilen (AGF) und eigenen Erhebungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kek-medienunternehmen-verflechtungen",
+              "level": 4,
+              "name": "KEK Medienunternehmen und Beteiligungsdatenbank",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Strukturdatenbank der KEK zu Medienunternehmen in Deutschland mit Beteiligungsverhältnissen, Sendernetzwerken und Cross-Media-Verflechtungen im privaten Rundfunk, online und Print.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KEK pflegt die Medienunternehmensdatenbank öffentlich auf kek-online.de als abfragbare Datenbank."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Unternehmensregisteranalyse",
+                    "description": "KEK wertet Handelsregister, Rundfunklizenzen und Jahresabschlüsse aus; Beteiligungsstrukturen werden manuell gepflegt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "agf-tv-marktanteile",
+              "level": 4,
+              "name": "AGF Videoforschung TV-Marktanteile",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Tägliche und monatliche Marktanteilsmessungen der Arbeitsgemeinschaft Fernsehforschung (AGF) für private und öffentlich-rechtliche TV-Sender in Deutschland: Gesamtmarktanteile, Zielgruppenreichweiten und Sehdauern.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "AGF-Tagesdaten sind kostenpflichtig; monatliche Topline-Daten werden öffentlich kommuniziert und von KEK für Regulierung genutzt."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "GfK-Metersystem",
+                    "description": "AGF betreibt ein Telemetrie-Panel mit ca. 5.000 Haushalten (GfK-Fernsehpanel); sekundengenaue Nutzungsmessung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "blm-rundfunklizenzen-register",
+              "level": 4,
+              "name": "Landesmedienanstalten Rundfunklizenz-Register",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Gemeinsames Lizenzregister der 14 deutschen Landesmedienanstalten (u.a. BLM, LMK, MA HSH) zu erteilten, geänderten und entzogenen Rundfunk- und Mediendienstlizenzen für private TV- und Radiosender sowie Online-Medien.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Rundfunklizenzen sind öffentlich-rechtliche Verwaltungsakte; Landesmedienanstalten publizieren Lizenzlisten auf ihren Websites."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Regulatorische Registerführung",
+                    "description": "Landesmedienanstalten führen Lizenzregister gemäß Medienstaatsvertrag; Lizenzentscheidungen werden in Amtsblättern veröffentlicht."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bundesnetzagentur-tlm-medienmarkt",
+              "level": 4,
+              "name": "Bundesnetzagentur Telekommunikations- und Medienmarktbericht",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährlicher Tätigkeitsbericht der Bundesnetzagentur mit Marktdaten für Telekommunikation und audiovisuelle Mediendienste: Kabelnetze, Satellitensegmente, IPTV-Haushalte und Breitbandinfrastruktur als Verbreitungsweg für Medienangebote.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bundesnetzagentur veröffentlicht Jahresberichte und Marktdaten auf bundesnetzagentur.de als offene Daten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Markterhebung",
+                    "description": "Bundesnetzagentur erhebt Netzbetreiberdaten per Pflichtauskunft; ergänzt durch eigene Frequenzmessungen und Satellitenmonitoring."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bkm-kulturbericht-medienfoerderung",
+              "level": 4,
+              "name": "BKM Kulturbericht Medienförderung Deutschland",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jahresbericht des Beauftragten der Bundesregierung für Kultur und Medien (BKM) zu Bundesförderprogrammen für Presse, Film, Rundfunk und digitale Medien: Fördersummen, Empfänger, Programmschwerpunkte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BKM-Berichte und Förderdaten sind öffentlich gemäß Transparenzgebot; bundeshaushaltliche Förderungen sind über Subventionsbericht einsehbar."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Haushaltsberichterstattung",
+                    "description": "BKM konsolidiert Förderdaten aus Bundeshaushaltsplan, Zuwendungsbescheiden und nachgeordneten Behörden (FFA, DW)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pressegrosshandel-marktstruktur",
+              "level": 4,
+              "name": "Bundesverband Presse-Grosso Marktstrukturerhebung",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Jährliche Marktstrukturerhebung des Bundesverbands Presse-Grosso zur Pressevertriebsinfrastruktur in Deutschland: Anzahl der Grossisten, belieferte Verkaufsstellen, Titelzahl im Grosso-Sortiment und Remissionsquoten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bundesverband Presse-Grosso publiziert Branchenstrukturkennzahlen im Jahresbericht und als Pressemitteilungen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verbandserhebung",
+                    "description": "Mitglieder des Presse-Grosso melden Strukturkennzahlen; Verband aggregiert und publiziert Branchengesamtbild."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "eu-dsa-transparenzbericht-plattformen",
+              "level": 4,
+              "name": "EU DSA Transparenzberichte Very Large Platforms",
+              "color": "#ca6f1e",
+              "details": {
+                "description": "Verpflichtende Transparenzberichte sehr großer Online-Plattformen (VLOP/VLOSE) gemäß EU Digital Services Act (DSA): Nutzerzahlen in der EU, Content-Moderation-Entscheidungen, Werbetransparenz und algorithmische Empfehlungssysteme.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DSA schreibt öffentliche Transparenzberichte vor; EU-Kommission veröffentlicht alle Berichte im Transparency Database."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Regulatorische Berichterstattung",
+                    "description": "Plattformen übermitteln Berichte an EU-Kommission; DSA Transparency Database aggregiert und stellt Daten via API zur Verfügung."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

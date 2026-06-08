@@ -16371,6 +16371,2006 @@
           ]
         }
       ]
+    },
+    {
+      "id": "ki-forschungsinstitute",
+      "level": 2,
+      "name": "KI-Forschungsinstitute",
+      "color": "#4527a0",
+      "children": [
+        {
+          "id": "ki-projekte-foerderung",
+          "level": 3,
+          "name": "KI-Projekte & Förderung",
+          "color": "#5e35b1",
+          "children": [
+            {
+              "id": "ki-foerderprojekte-bmbf",
+              "level": 4,
+              "name": "BMBF KI-Förderprojektdatenbank",
+              "color": "#3d1a87",
+              "details": {
+                "description": "BMBF-Datenbank aller geförderten KI-Forschungsprojekte inkl. Projektträger, Laufzeit, Fördersumme und Forschungsschwerpunkt. Quelle: Förderkatalog des BMBF (foerderdatenbank.de).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Förderdaten sind öffentlich im Bundesförderkatalog abrufbar und unterliegen keinen Schutzregelungen."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Projektregister-Abfrage",
+                    "description": "Maschineller Abruf aus dem BMBF-Förderkatalog via API oder Dateiexport; Filterung nach Förderprogramm und Themenfeld KI."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-dfg-forschungsprojekte",
+              "level": 4,
+              "name": "DFG KI-Forschungsprojekte & Förderentscheidungen",
+              "color": "#3d1a87",
+              "details": {
+                "description": "DFG-Projektinformationssystem GEPRIS: alle bewilligten Projekte mit KI-Bezug, Antragstellende Institution, Bewilligungssumme, Abstract. Quelle: DFG GEPRIS (gepris.dfg.de).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "GEPRIS ist öffentlich zugänglich; Projektdaten werden von der DFG aktiv veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "GEPRIS-API-Extraktion",
+                    "description": "Automatisierter Abruf aus der DFG GEPRIS-API; Keyword-Filterung auf KI-relevante Fachgebiete (Maschinelles Lernen, NLP, Robotik)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-helmholtz-projektfoerderung",
+              "level": 4,
+              "name": "Helmholtz AI Projektportfolio",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Übersicht aller durch Helmholtz AI geförderten Verbundprojekte: Projektbeschreibung, beteiligte Zentren, Finanzvolumen und Laufzeit. Quelle: Helmholtz AI (helmholtz.ai/projects).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Helmholtz AI veröffentlicht sein Projektportfolio aktiv auf der eigenen Website unter offener Lizenz."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Portfolioanalyse",
+                    "description": "Strukturierte Erfassung und Kategorisierung der Helmholtz-AI-Projekte nach Anwendungsdomäne und Förderinstrument."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-eu-horizont-foerderung",
+              "level": 4,
+              "name": "EU Horizon KI-Projekte (deutsche Beteiligung)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Aus CORDIS extrahierte EU-Horizon-Projekte mit deutscher Koordination oder Partnerschaft im KI-Bereich: Projektdaten, Fördersummen, Konsortien. Quelle: EU CORDIS (cordis.europa.eu).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "CORDIS-Daten sind öffentlich und unter offener Lizenz frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "CORDIS-Filterextraktion",
+                    "description": "Abfrage der CORDIS-Datenbank mit Länderfilter Deutschland und Themenfilter KI/ML; Export und Aufbereitung als strukturierter Datensatz."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-fraunhofer-projektregister",
+              "level": 4,
+              "name": "Fraunhofer KI-Projektregister",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Intern geführtes Register aller KI-bezogenen Industriekooperations- und Förderprojekte an Fraunhofer-Instituten (IAIS, IESE, IML u. a.). Quelle: Fraunhofer-Gesellschaft Jahresbericht & IAIS-Projektseiten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Projektdaten enthalten teils vertrauliche Industriekooperationsdetails; eine anonymisierte Aggregatform ist publizierbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Anonymisierung & Aggregation",
+                    "description": "Entfernung vertraulicher Projektpartner-Details; Zusammenfassung nach Themenfeld und Fördertyp für öffentliche Berichterstattung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-dfki-projektfoerderung",
+              "level": 4,
+              "name": "DFKI Forschungsprojektdaten",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Projektdaten des Deutschen Forschungszentrums für Künstliche Intelligenz (DFKI): laufende und abgeschlossene Projekte, beteiligte Forschungsbereiche, Drittmittelgeber. Quelle: DFKI Projektdatenbank (dfki.de/web/forschung/projekte).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DFKI veröffentlicht seine Projekte öffentlich auf der Website; keine personenbezogenen oder vertraulichen Daten enthalten."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Web-Scraping & Strukturierung",
+                    "description": "Automatisierter Abruf der DFKI-Projektseiten; Extraktion von Metadaten zu Projektlaufzeit, Partnern und Themenfeldern."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-foerderprogramm-zeitreihe",
+              "level": 4,
+              "name": "KI-Fördervolumen Zeitreihe (Bund/Länder)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Aggregierte Zeitreihe der öffentlichen KI-Förderausgaben durch Bund und Länder seit 2015: jährliches Fördervolumen, Anzahl Projekte, Trägerstruktur. Quelle: BMBF Bundesbericht Forschung & Innovation.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Budgetdaten aus Bundesberichten sind öffentliche Haushaltsinformationen ohne Schutzrestriktionen."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Längsschnittanalyse",
+                    "description": "Zusammenführung von Jahresberichten und Haushaltsdaten zu konsistenter Zeitreihe; Inflationsbereinigung und Normierung auf Vergleichsbasis."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-oecd-ai-policy-foerdervergleich",
+              "level": 4,
+              "name": "OECD AI Policy Observatory – Deutschlanddaten",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Deutschlandspezifische Datenauszüge aus dem OECD AI Policy Observatory: nationale KI-Strategiemaßnahmen, Förderprogrammübersicht, internationaler Vergleichsindex. Quelle: OECD AIPO (oecd.ai).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "OECD AIPO-Daten sind öffentlich und kostenfrei zugänglich; Deutschland-Daten können extrahiert und publiziert werden."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Internationaler Benchmarkvergleich",
+                    "description": "Extraktion der Deutschland-Einträge aus dem OECD AIPO; Vergleich mit EU-Durchschnitt nach Fördertypen und strategischen Schwerpunkten."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "ki-publikationen-patente",
+          "level": 3,
+          "name": "KI-Publikationen & Patente",
+          "color": "#5e35b1",
+          "children": [
+            {
+              "id": "ki-publikationen-dfki-iais",
+              "level": 4,
+              "name": "KI-Publikationsdaten DFKI & Fraunhofer IAIS",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Bibliographische Metadaten aller peer-reviewten Publikationen des DFKI und Fraunhofer IAIS: Autoren, Venue, Jahr, Zitationscount, Open-Access-Status. Quellen: DFKI Publications Server, Fraunhofer-Publica.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bibliographische Metadaten wissenschaftlicher Publikationen sind öffentlich und ohne Schutzrestriktionen verfügbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bibliometrische Analyse",
+                    "description": "Automatisierte Abfrage der Publikationsserver; Zitationsanreicherung via OpenCitations; Klassifikation nach KI-Subfeldern."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-patente-epo-deutschland",
+              "level": 4,
+              "name": "KI-Patentanmeldungen (EPO Deutschland)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Alle beim Europäischen Patentamt eingereichten KI-bezogenen Patentanmeldungen mit deutschem Anmelder: IPC-Klassifikation, Anmeldedatum, Erfinder, Rechtsstatus. Quelle: EPO PATSTAT, DPMA e-Register.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Patentdaten sind gesetzlich öffentlich zugänglich; EPO PATSTAT ist für Forschungszwecke frei nutzbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "CPC-Klassifikationsfilterung",
+                    "description": "Abfrage von PATSTAT mit CPC-Codes G06N (KI/ML); Filterung auf deutsche Anmelder; Zeitreihenanalyse der Patentaktivität."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-arxiv-deutsche-autoren",
+              "level": 4,
+              "name": "arXiv KI-Preprints deutscher Forschungseinrichtungen",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Preprint-Metadaten von arXiv (cs.AI, cs.LG, cs.CL, cs.CV) mit Affiliationsfilter auf deutsche Forschungseinrichtungen: Titel, Abstracts, Autorenliste, Einreichungsdatum. Quelle: arXiv API.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "arXiv-Inhalte sind Open Access; Metadaten stehen über die öffentliche API frei zur Verfügung."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Affiliations-Matching",
+                    "description": "Abfrage der arXiv-API mit Kategorie- und Zeitraumfilter; Affiliationsabgleich mit Liste deutscher KI-Forschungseinrichtungen via Named-Entity-Recognition."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-zitationsmetriken-deutschland",
+              "level": 4,
+              "name": "KI-Zitationsmetriken deutschsprachige Forschung",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Aggregierte Zitationsindikatoren (H-Index, Impact Factor, Field-Weighted Citation Impact) für KI-Publikationen deutscher Einrichtungen. Quelle: Scopus/Web of Science (Nationallizenz Destatis/GESIS).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Rohdaten unterliegen Lizenzbeschränkungen von Scopus/WoS; aggregierte Metriken können nach Aufbereitung veröffentlicht werden."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Bibliometrische Aggregation",
+                    "description": "Berechnung von Feldzitationsindizes aus lizenzierten Datenbanken; Normierung auf internationale Vergleichsgruppe; Ausgabe als institutionelle Rangfolge."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-open-access-quote-einrichtungen",
+              "level": 4,
+              "name": "Open-Access-Quote KI-Publikationen je Einrichtung",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Open-Access-Anteil an KI-Publikationen je Forschungseinrichtung (DFKI, Helmholtz-Zentren, Max-Planck-Institute): Gold/Green/Hybrid OA, Jahr. Quelle: Unpaywall, OpenAIRE.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Unpaywall und OpenAIRE stellen aggregierte OA-Metadaten öffentlich bereit; keine personenbezogenen Daten enthalten."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "OA-Klassifikation",
+                    "description": "DOI-basierter Abgleich mit Unpaywall-API zur Bestimmung des OA-Status; Aggregation nach Einrichtung und Jahr."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-konferenzpapiere-top-venues",
+              "level": 4,
+              "name": "Deutsche Beiträge auf KI-Top-Konferenzen (NeurIPS, ICML, ICLR)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Anzahl und Anteil angenommener Papiere von deutschen Institutionen auf den führenden KI-Konferenzen NeurIPS, ICML, ICLR, CVPR: Jahresvergleich 2018–2025. Quelle: Semantic Scholar, ACL Anthology, Papers With Code.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Konferenzpublikationsdaten sind öffentlich; Semantic Scholar API ermöglicht freie Abfrage von Affiliationsdaten."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Affiliationsextraktion & Ranking",
+                    "description": "Abfrage von Semantic Scholar API für gelistete Konferenzen; Affiliations-Parsing; Länderklassifikation; Zeitreihenanalyse."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-softwarepatente-dpma",
+              "level": 4,
+              "name": "KI-bezogene Softwarepatente beim DPMA",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Beim Deutschen Patent- und Markenamt angemeldete Schutzrechte mit KI/ML-Bezug: Anmeldedatum, Anmelder (Unternehmen vs. Hochschule), technisches Feld, Rechtsstatus. Quelle: DPMA DPMAregister.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "DPMA-Registerdaten sind per Gesetz öffentlich zugänglich und können frei abgefragt werden."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "IPC-G06N-Filterabfrage",
+                    "description": "Systematische Abfrage des DPMA-eRegisters nach IPC-Klasse G06N; Klassifikation nach Anmeldertyp (Hochschule/KMU/Konzern)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-forschungsoutput-ranking-hochschulen",
+              "level": 4,
+              "name": "KI-Forschungsoutput-Ranking deutscher Hochschulen",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Institutionelles Ranking deutscher Universitäten und Fachhochschulen nach KI-Forschungsoutput (Publikationen + Patente + Drittmittel): TU München, KIT, TU Berlin u. a. Quelle: CHE-Ranking, Times Higher Education, BMBF BuFI.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Ranking-Indikatoren basieren auf öffentlichen Quellen und werden von Ranking-Institutionen zur Weiterverwendung freigegeben."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Composite-Scoring",
+                    "description": "Gewichtete Aggregation von Publikations-, Patent- und Drittmittelindikatoren zu einem KI-Forschungsindex je Hochschule."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "ki-anwendungsfelder-transfer",
+          "level": 3,
+          "name": "KI-Anwendungsfelder & Transfer",
+          "color": "#5e35b1",
+          "children": [
+            {
+              "id": "ki-transfer-anwendungsfaelle-industrie",
+              "level": 4,
+              "name": "KI-Anwendungsfälle Industrie (Fraunhofer-Transferberichte)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Dokumentierte KI-Transferprojekte zwischen Fraunhofer-Instituten und Industriepartnern: Branche, KI-Methode, Umsetzungsgrad, wirtschaftlicher Impact. Quelle: Fraunhofer-Jahresbericht, Fraunhofer IAIS Transferbericht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Fraunhofer-Jahresberichte mit aggregierten Transferdaten sind öffentlich; keine vertraulichen Einzelvertragsdetails enthalten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Fallstudien-Kodierung",
+                    "description": "Strukturierte Extraktion aus Fraunhofer-Transferberichten; Kategorisierung nach Branche (NACE), KI-Methode und Reifegrad (TRL)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-anwendungsfelder-gesundheit",
+              "level": 4,
+              "name": "KI-Anwendungsfelder Gesundheitsversorgung",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Systematische Erfassung klinischer KI-Anwendungen: Diagnostik, Bildauswertung, Medikamentenentwicklung, Pflegeassistenz. Quelle: DFKI Gesundheitsprojekte, BfArM KI-Zulassungen, Bundesärztekammer KI-Report.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Beschreibungen klinischer KI-Anwendungen ohne Patientendaten sind öffentlich publizierbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Literatur-Screening & Taxonomisierung",
+                    "description": "Systematisches Review veröffentlichter Zulassungsdokumente und Forschungsberichte; Einordnung nach Anwendungsfeld und Reifegrad."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-startups-ausgründungen-hochschulen",
+              "level": 4,
+              "name": "KI-Startups & Ausgründungen aus Forschungseinrichtungen",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Register der aus deutschen Universitäten und Forschungsinstituten (DFKI, Max Planck) ausgegründeten KI-Unternehmen: Gründungsjahr, Mutterinstitution, Branchenfokus, Finanzierungsrunde. Quelle: Exist-Förderung BMBF, High-Tech Gründerfonds, Startupdetector.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Unternehmensgründungsdaten sind im Handelsregister öffentlich; EXIST-Förderdaten werden vom BMBF veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Gründungsdaten-Triangulation",
+                    "description": "Abgleich von EXIST-Förderregister, Handelsregisterdaten und Startup-Datenbanken; Zuordnung zur Mutterinstitution."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-mittelstand-digitalisierungsgrad",
+              "level": 4,
+              "name": "KI-Adoptionsgrad im deutschen Mittelstand",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Befragungsdaten zum KI-Einsatz in KMU: Adoptionsrate nach Branche und Unternehmensgröße, Hürden, Investitionsvolumen. Quelle: Bitkom KI-Studie, Fraunhofer-IAO Digitalisierungsbarometer, ZEW IKT-Erhebung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Umfrageergebnisse ohne Einzelunternehmens-Identifikation werden von den Erhebungsinstituten publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Surveydaten-Harmonisierung",
+                    "description": "Zusammenführung verschiedener KMU-Befragungen; Harmonisierung von Kategoriensystemen; Trendanalyse über mehrere Erhebungswellen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-anwendungsfelder-verwaltung",
+              "level": 4,
+              "name": "KI-Anwendungen in der öffentlichen Verwaltung",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Kataster der bei Bundes- und Landesbehörden eingesetzten KI-Systeme: Behörde, Anwendungsfall, eingesetzte Methode, Rechtsgrundlage, Transparenzstatus. Quelle: Algorithmwatch AI Register DE, BMI KI-Leitfaden.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Algorithmwatch führt ein öffentliches Register; Behörden sind zur Transparenz über KI-Einsatz verpflichtet."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "AI-Register-Auswertung",
+                    "description": "Strukturierte Auswertung des Algorithmwatch-Registers; Ergänzung durch parlamentarische Anfragen und Behördenveröffentlichungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-technologietransfer-lizenzeinnahmen",
+              "level": 4,
+              "name": "Technologietransfer-Kennzahlen KI (Lizenzeinnahmen & Kooperationsverträge)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Finanzielle Kennzahlen des Wissenstransfers: Lizenzeinnahmen, Anzahl Kooperationsverträge, Spin-off-Bewertungen für KI-Technologien aus Hochschulen und Helmholtz-Zentren. Quelle: BMBF Bundesbericht Forschung & Innovation, Helmholtz-Jahresbericht.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Einzel-Lizenzvertragsdetails sind vertraulich; aggregierte Transferkennzahlen auf Einrichtungsebene können publiziert werden."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Transferbilanz-Berechnung",
+                    "description": "Aggregation institutioneller Transferkennzahlen; Normierung auf Forschungsausgaben; Darstellung als Transfereffizienzkennzahl."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-anwendungsfelder-mobilitaet-energie",
+              "level": 4,
+              "name": "KI-Anwendungen in Mobilität & Energie",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Forschungs- und Pilotprojekte zu KI in autonomem Fahren, Energienetzoptimierung und Smart Grids an deutschen Instituten: Projektstatus, beteiligte Institutionen, eingesetzte KI-Methoden. Quelle: BMBF NOW-Projekte, Fraunhofer IEE, DFKI Robotics Innovation Center.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Projektbeschreibungen und Statusberichte öffentlich geförderter Vorhaben sind ohne Einschränkungen publizierbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Domänen-Taxonomisierung",
+                    "description": "Kategorisierung von KI-Projekten nach Anwendungsdomäne (Mobilität, Energie, Logistik); Zuordnung zu TRL-Stufen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-ethos-regulierung-forschungsstand",
+              "level": 4,
+              "name": "KI-Ethik & Regulierungsforschung – Publikationsstand",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Systematisches Mapping der deutschen KI-Ethik- und Regulierungsforschung: Publikationen, Leitfäden, Policy Papers von Einrichtungen wie AlgorithmWatch, HIIG, acatech, Sachverständigenrat für Verbraucherfragen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Policy Papers und Publikationen der genannten Institutionen sind frei zugänglich und zur Weiterverwendung freigegeben."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Scoping Review",
+                    "description": "Systematisches Mapping von KI-Ethikpublikationen nach Themenfeld (Fairness, Transparenz, Haftung); Institutionszuordnung und Zeitreihenanalyse."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "berufsbildungsforschung",
+      "level": 2,
+      "name": "Berufsbildungsforschung",
+      "color": "#4527a0",
+      "children": [
+        {
+          "id": "berufsbildungsstatistik-forschung",
+          "level": 3,
+          "name": "Berufsbildungsstatistik & Forschung",
+          "color": "#5e35b1",
+          "children": [
+            {
+              "id": "bibb-berufsbildungsstatistik-auszubildende",
+              "level": 4,
+              "name": "BIBB Berufsbildungsstatistik – Auszubildendenzahlen",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Jährliche Vollerhebung zu Auszubildenden in Deutschland: Neuabschlüsse, Bestände, Lösungsquoten nach Ausbildungsberuf, Bundesland, Trägertyp und Geschlecht. Quelle: BIBB Datenreport zum Berufsbildungsbericht (bibb.de/datenreport).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BIBB-Berufsbildungsstatistik ist gesetzlich vorgeschriebene Bundesstatistik und wird vollständig publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Bundesstatistik-Auswertung",
+                    "description": "Aufbereitung der BIBB-Vollerhebungsdaten; Zeitreihenanalyse nach Ausbildungsberuf und demografischen Merkmalen; Berechnung von Lösungsquoten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bibb-ausbildungsmarkt-angebote-nachfrage",
+              "level": 4,
+              "name": "BIBB Ausbildungsmarktstatistik – Angebot & Nachfrage",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Jährliche Bilanzierung von Ausbildungsangebot und -nachfrage auf dem deutschen Ausbildungsmarkt: Passungsprobleme, regionale Disparitäten, Entwicklung nach Berufsfeld. Quelle: BIBB/BA Ausbildungsmarktbilanz.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Ausbildungsmarktdaten werden von BIBB und Bundesagentur für Arbeit gemeinsam jährlich publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Marktbilanzkalkulation",
+                    "description": "Gegenüberstellung gemeldeter Ausbildungsstellen und Bewerber auf Bundesagentur-Bezirksebene; Berechnung regionaler Angebotsquoten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bibb-forschungsdaten-qualifikationspanel",
+              "level": 4,
+              "name": "BIBB-Qualifikationspanel (BIBB-QP)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Längsschnittstudie zu Qualifikation und Erwerbsverläufen: jährliche Befragung von Personen in Ausbildung und früher Erwerbsphase zu Kompetenzen, Einkommen, Übergang. Quelle: BIBB Forschungsdatenzentrum (FDZ-BIBB).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Scientific-Use-Files des BIBB-FDZ sind nach Antragstellung für Forschungszwecke zugänglich; direkte Publikation erfordert Anonymisierung."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Paneldaten-Anonymisierung",
+                    "description": "Formale Anonymisierung nach §16 BStatG; Erstellung von Scientific-Use-Files mit kontrollierten Zugangsmodalitäten über FDZ-BIBB."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bibb-berufsbildungsbericht-destatis",
+              "level": 4,
+              "name": "Destatis Berufsbildungsstatistik (§ 87 BBiG)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Amtliche Statistik gemäß Berufsbildungsgesetz §87: Prüfungsstatistik, Fortbildungsabschlüsse, betriebliche Ausbildungsverhältnisse. Quelle: Statistisches Bundesamt, Fachserie 11, Reihe 3.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Amtliche Bundesstatistik wird von Destatis vollständig und kostenfrei publiziert; gesetzlich vorgeschriebene Veröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Amtliche Statistikauswertung",
+                    "description": "Download und Aufbereitung der Destatis-Fachserie 11 Reihe 3; Berechnung von Zeitreihen und regionalen Vergleichsindizes."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bibb-ausbildungsordnungen-berufsregister",
+              "level": 4,
+              "name": "BIBB-Berufsregister & Ausbildungsordnungen",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Vollständiges Register aller anerkannten Ausbildungsberufe in Deutschland mit geltenden Ausbildungsordnungen, Erlassdatum, zuständiger Stelle und Strukturdaten. Quelle: BIBB Verzeichnis der anerkannten Ausbildungsberufe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Ausbildungsordnungen sind Rechtsverordnungen und daher öffentlich; BIBB-Berufsregister ist frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Registerabfrage & Strukturanalyse",
+                    "description": "Maschinenlesbarer Abruf des BIBB-Berufsregisters; Analyse der Ausbildungsordnungsstrukturen nach Berufsfeldern und Modernisierungszyklen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bibb-kosten-nutzen-ausbildung",
+              "level": 4,
+              "name": "BIBB Kosten-Nutzen-Erhebung betriebliche Ausbildung",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Periodische Erhebung der Nettokosten und Nettoerträge betrieblicher Berufsausbildung: Bruttkosten, Ausbilderkosten, Produktivitätsbeiträge. Quelle: BIBB-Forschungsprojekt Kosten und Nutzen der betrieblichen Berufsausbildung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Kostendaten auf Branchenebene werden vom BIBB regulär veröffentlicht; keine unternehmensindividuellen Daten enthalten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Betriebsbefragungsauswertung",
+                    "description": "Hochrechnung der Stichprobendaten auf Branchenebene; Berechnung von Nettokosten und Return on Training Investment je Ausbildungsberuf."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bibb-neps-bildungsbiographien",
+              "level": 4,
+              "name": "NEPS Berufsbildungsbiographien (Startkohorte 4 & 6)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Längsschnittdaten des Nationalen Bildungspanels (NEPS) zu Berufsbildungsverläufen: Bildungsentscheidungen, Ausbildungsabbrüche, Übergänge Schule-Beruf. Quelle: NEPS-Startkohorte 4 (9. Klasse) und SC6 (Erwachsene), LIfBi Bamberg.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "NEPS Scientific-Use-Files sind nach Registrierung beim FDZ-LIfBi für Forschungszwecke zugänglich; Publikation aggregierter Ergebnisse möglich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Bildungsverlaufsanalyse",
+                    "description": "Sequenzanalyse von Ausbildungsverläufen aus NEPS-Paneldaten; Identifikation typischer Trajektorien und Risikofaktoren für Ausbildungsabbruch."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bibb-ausbildungsbegleitende-hilfen",
+              "level": 4,
+              "name": "Statistik ausbildungsbegleitende Hilfen (abH) & AsA",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Förderstatistik zu ausbildungsbegleitenden Hilfen (abH), Assistierter Ausbildung (AsA) und Einstiegsqualifizierung (EQ): Teilnehmendenzahlen, Erfolgsquoten, Kostenträger. Quelle: Bundesagentur für Arbeit Statistik, BIBB-Datenreport.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "BA-Förderstatistiken werden monatlich/jährlich auf der BA-Statistikplattform veröffentlicht; freier Zugang."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Förderstatistik-Disaggregation",
+                    "description": "Regionalisierung der BA-Förderstatistik auf Agenturbezierkebene; Berechnung von Förderquoten bezogen auf Auszubildendengesamtzahl."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "arbeitsmarktforschung-iab",
+          "level": 3,
+          "name": "Arbeitsmarktforschung (IAB)",
+          "color": "#5e35b1",
+          "children": [
+            {
+              "id": "iab-beschaeftigtenpanel-liab",
+              "level": 4,
+              "name": "IAB-Beschäftigtenpanel (LIAB – Linked Employer-Employee)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Verknüpfte Arbeitgeber-Arbeitnehmer-Daten des IAB: Betriebspanel (Arbeitgeberbefragung) verknüpft mit administrativen Beschäftigungsmeldungen. Enthält Lohn, Qualifikation, Betriebsgröße. Quelle: IAB-FDZ (fdz.iab.de).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "LIAB-Daten sind hochsensibel (personenbezogen + Betriebsgeheimnis); Scientific-Use-Files nach Genehmigung zugänglich, keine direkte Publikation von Individualdaten."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Datensatzverknüpfung & Anonymisierung",
+                    "description": "Deterministische Verknüpfung von Betriebspanel und Beschäftigungshistorik via verschlüsselter Betriebsnummer; formale Anonymisierung für FDZ-Zugang."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "iab-betriebspanel-beschaeftigung",
+              "level": 4,
+              "name": "IAB-Betriebspanel – Beschäftigungstrends",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Jährliche Arbeitgeberbefragung des IAB zu Beschäftigungsentwicklung, Fachkräftemangel, Weiterbildung und Digitalisierung in deutschen Betrieben (ca. 16.000 Betriebe). Quelle: IAB-Betriebspanel (iab.de/betriebspanel).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Ergebnisse des IAB-Betriebspanels werden jährlich als IAB-Forschungsberichte publiziert und sind frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Hochrechnungsverfahren",
+                    "description": "Gewichtung der Betriebsstichprobe auf Bundesebene nach Branche und Betriebsgrößenklasse; Zeitreihenanalyse zentraler Beschäftigungsindikatoren."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "iab-beschaeftigungshistorik-beh",
+              "level": 4,
+              "name": "IAB Beschäftigungshistorik (BeH)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Administrative Vollerhebung aller sozialversicherungspflichtig Beschäftigten in Deutschland seit 1975: Meldezeiträume, Entgeltgruppen, Beruf (KldB), Region. Quelle: IAB-FDZ, Integrierte Erwerbsbiografien (IEB).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "IEB enthält personenbezogene Sozialdaten; Scientific-Use-Files mit formaler Anonymisierung über IAB-FDZ zugänglich; Direktpublikation ausgeschlossen."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Erwerbsbiografische Längsschnittanalyse",
+                    "description": "Konstruktion individueller Erwerbsbiografien aus Meldedaten; Sequenzanalyse von Beschäftigungs-, Arbeitslosigkeits- und Ausbildungsepisoden."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "iab-arbeitsmarktprognose-mittelfristig",
+              "level": 4,
+              "name": "IAB-Arbeitsmarktprognose (mittelfristig, QuBe-Projekt)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Mittelfristige Arbeitsmarktprognosen des QuBe-Projekts (IAB/Fraunhofer IAO/BIBB/GWS): Beschäftigung und Arbeitskräfteangebot nach Berufs- und Qualifikationsfeldern bis 2040. Quelle: QuBe-Welle (qube.bibb.de).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "QuBe-Projektionsdaten werden publiziert und stehen auf der Projektwebsite als Download bereit."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Makroökonometrische Projektionsmodellierung",
+                    "description": "Berechnung von Beschäftigungsprojektionen mit dem GWS-PANTA-RHEI-Modell; Szenarienrechnung für Digitalisierungs- und demografische Entwicklungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "iab-offene-stellen-arbeitskraeftemangel",
+              "level": 4,
+              "name": "IAB-Stellenerhebung & Arbeitskräftemangelindex",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Quartalsweise Befragung des IAB zu offenen Stellen in deutschen Betrieben: Gesamtzahl offener Stellen, Vakanzdauer, Fachkräftemangel nach Beruf und Region. Quelle: IAB-Stellenerhebung (iab.de/stellenerhebung).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Ergebnisse werden vom IAB quartalsweise als Kurzbericht publiziert und sind öffentlich abrufbar."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Hochrechnung & Saisonbereinigung",
+                    "description": "Hochrechnung der Stichprobendaten auf alle Betriebe mit mindestens einer Stelle; X-13-ARIMA-Saisonbereinigung; Berechnung des Fachkräftemangel-Indexes."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "iab-lohnstrukturerhebung-entgeltungleichheit",
+              "level": 4,
+              "name": "Verdienststrukturerhebung & Gender-Pay-Gap (Destatis/IAB)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Vierjährliche Vollerhebung der Verdienststruktur aller Beschäftigten: Brutto- und Nettolöhne nach Beruf, Qualifikation, Geschlecht, Branche. Grundlage für Gender-Pay-Gap-Berechnung. Quelle: Destatis Verdienststrukturerhebung, IAB-Auswertungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Verdienststrukturerhebung ist amtliche Statistik; Ergebnisse auf Aggregatebene werden von Destatis veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Regressionsdekomposition",
+                    "description": "Oaxaca-Blinder-Dekomposition zur Zerlegung des Gender-Pay-Gaps in erklärten und unerklärten Anteil nach IAB-Standardmethodik."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "iab-digitalisierung-berufe-substituierbarkeit",
+              "level": 4,
+              "name": "IAB-Substituierbarkeitspotenziale durch Digitalisierung",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Berufsebene-Schätzungen des IAB zur Automatisierbarkeit von Tätigkeiten: Substituierbarkeitspotenzial nach KldB-Berufen, Qualifikationsniveau und Digitalisierungsindex. Quelle: IAB-Forschungsbericht Dengler/Matthes (2015ff.), aktualisierte Wellen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "IAB-Substituierbarkeitsdaten wurden als Datentabellen zu Forschungsberichten publiziert und stehen frei zum Download bereit."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Tätigkeitsprofilanalyse",
+                    "description": "Abgleich berufsebener Tätigkeitsprofile (BERUFENET) mit technischen Substituierbarkeitskriterien; Aggregation zu Berufs-Substituierbarkeitswerten."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "iab-mikrozensus-erwerbstaetigkeit",
+              "level": 4,
+              "name": "Mikrozensus Erwerbstätigkeit & Arbeitsmarktbeteiligung",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Jährliche 1-%-Haushaltsstichprobe mit detaillierten Erwerbstätigkeitsdaten: Beschäftigungsform, Wochenarbeitszeit, Beruf, Qualifikation, Migrationshintergrund. Quelle: Destatis Mikrozensus, Scientific-Use-File via GESIS.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Mikrozensus-Scientific-Use-Files sind über GESIS zugänglich; Publikation aggregierter Ergebnisse ohne Identifikationsrisiko möglich."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Gewichtete Querschnittsanalyse",
+                    "description": "Auswertung des Mikrozensus-Scientific-Use-File mit Hochrechnungsfaktoren; Disaggregation nach soziodemografischen Merkmalen und Berufshauptgruppen."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "kompetenzforschung-qualifikation",
+          "level": 3,
+          "name": "Kompetenzforschung & Qualifikation",
+          "color": "#5e35b1",
+          "children": [
+            {
+              "id": "bibb-erwachsenenbefragung-piaac",
+              "level": 4,
+              "name": "PIAAC Kompetenzmessung Erwachsener (Deutschland)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "OECD-Kompetenzstudie PIAAC: direkte Messung von Lese-, Alltags- und technologischen Kompetenzen bei 16–65-Jährigen in Deutschland. Quelle: PIAAC 2012, PIAAC 2023 (Deutschland-Datei via GESIS/OECD).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "PIAAC Public-Use-Files werden von der OECD zur freien Nachnutzung bereitgestellt."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Plausible-Values-Analyse",
+                    "description": "Auswertung mit PIAAC-Methodik (10 Plausible Values, BRR-Gewichtung); Kompetenzvergleich nach Qualifikationsniveau, Beruf und Migrationshintergrund."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bibb-cvts-weiterbildung-betriebe",
+              "level": 4,
+              "name": "CVTS Betriebliche Weiterbildungsstatistik",
+              "color": "#3d1a87",
+              "details": {
+                "description": "EU-Erhebung zur betrieblichen Weiterbildung (Continuing Vocational Training Survey): Weiterbildungsbeteiligung, Kosten, Stunden nach Branche und Betriebsgröße. Quelle: BIBB/Destatis CVTS (alle 5 Jahre).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "CVTS-Ergebnisse werden von Eurostat und BIBB publiziert; aggregierte Betriebsdaten ohne Einzelidentifikation."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Branchenvergleichsanalyse",
+                    "description": "Berechnung von Weiterbildungsquoten und -investitionen nach NACE-Branchen; EU-Vergleich auf Basis harmonisierter Eurostat-Methodik."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bibb-qualiifikationsprojektionen-qube",
+              "level": 4,
+              "name": "QuBe-Qualifikationsprojektionen 2040 (BIBB/IAB)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Modellrechnungen zu zukünftigem Qualifikationsbedarf und -angebot in Deutschland: Nachfrage nach Qualifikationsniveaus (ISCED), Fachkräftebilanz bis 2040. Quelle: QuBe-Basisprojektion (qube.bibb.de), BIBB/IAB.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "QuBe-Projektionsdaten stehen auf der Projektwebsite als Datentabellen zum Download bereit."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Qualifikationsangebot-Nachfrage-Modellierung",
+                    "description": "Berechnung von Qualifikationslücken mit dem QuBe-Modell; Szenarienanalyse für demografischen Wandel, Zuwanderung und technologischen Wandel."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bibb-berufliche-bildungskosten-rendite",
+              "level": 4,
+              "name": "Bildungsrenditen beruflicher Qualifikationen (IAB/BIBB)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Schätzungen privater und gesellschaftlicher Ertragsraten beruflicher Qualifikationen: Einkommensrendite nach Ausbildungsabschluss, Fachrichtung und Region. Quelle: IAB-Forschungsberichte, BIBB-Qualifikationsrenditen-Studie.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Ergebnisse werden als Forschungsberichte publiziert; zugrunde liegende Aggregatdaten werden mitveröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Mincerianische Ertragsratenberechnung",
+                    "description": "Schätzung von Mincer-Lohngleichungen aus IEB-Daten; Berechnung interner Ertragsraten beruflicher Bildung im Vergleich zu Hochschulbildung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bibb-digitale-kompetenzen-berufsausbildung",
+              "level": 4,
+              "name": "Digitale Kompetenzen in der Berufsausbildung (BIBB-Digi-Erhebung)",
+              "color": "#3d1a87",
+              "details": {
+                "description": "BIBB-Erhebung zu digitalen Kompetenzen von Auszubildenden und Ausbildenden: IT-Kenntnisse, Nutzung digitaler Tools, Qualifizierungsbedarfe nach Ausbildungsberuf. Quelle: BIBB Digitalisierungserhebung 2020/2023.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Erhebungsergebnisse werden vom BIBB als Forschungsberichte mit Datentabellen publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Kompetenzprofil-Indexierung",
+                    "description": "Erstellung eines digitalen Kompetenzindex aus Befragungsitems; Vergleich nach Ausbildungsberuf, Trägertyp und Betriebsgröße."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bibb-migrantenqualifikationen-anerkennung",
+              "level": 4,
+              "name": "Anerkennungsstatistik ausländischer Berufsqualifikationen",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Bundesweite Statistik zur Anerkennung ausländischer Berufsabschlüsse nach Anerkennungsgesetz (BQFG): Antragszahlen, Herkunftsländer, Beruf, Anerkennungsentscheidung. Quelle: BIBB Anerkennungsmonitoring, Destatis.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Anerkennungsstatistik wird jährlich vom BIBB im Anerkennungsmonitoring publiziert; aggregierte Daten ohne Einzelfallbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Anerkennungsquoten-Analyse",
+                    "description": "Berechnung von Anerkennungsquoten nach Herkunftsland und Beruf; Analyse von Auflagen und Ausgleichsmaßnahmen im Zeitverlauf."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bibb-weiterbildungsverhalten-acs",
+              "level": 4,
+              "name": "Adult Education Survey (AES) – Weiterbildungsverhalten Erwachsener",
+              "color": "#3d1a87",
+              "details": {
+                "description": "EU-Haushaltsbefragung zum Weiterbildungsverhalten von Erwachsenen: Teilnahmequoten, Weiterbildungsformen, Lernmotive, Barrieren nach Bildungsstand und Beruf. Quelle: BMBF/Destatis AES Deutschland-Erhebung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "AES-Ergebnisse werden vom BMBF und Destatis publiziert; harmonisierte Eurostat-Daten frei verfügbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Teilnahmequoten-Trendanalyse",
+                    "description": "Berechnung bildungsstandard- und berufsgruppenbezogener Weiterbildungsteilnahmequoten; EU-Benchmarkvergleich nach Eurostat-Methodik."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bibb-berufsorientierung-schulabgaenger",
+              "level": 4,
+              "name": "BIBB-Übergangspanel – Berufsorientierung & Schulabgänger",
+              "color": "#3d1a87",
+              "details": {
+                "description": "Längsschnittstudie des BIBB zum Übergang von Schulabgängerinnen und Schulabgängern in Ausbildung: Berufswunsch, Bewerbungsverhalten, Matching-Ergebnisse, erste Ausbildungserfahrungen. Quelle: BIBB-Übergangspanel, FDZ-BIBB.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Übergangspanel-Daten enthalten personenbezogene Längsschnittdaten; Scientific-Use-Files nach Antrag beim FDZ-BIBB zugänglich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_04"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Übergangsanalyse & Ereignismodellierung",
+                    "description": "Ereignisdatenanalyse (Discrete-Time Hazard Models) zur Modellierung von Übergangswahrscheinlichkeiten Schule–Ausbildung; Identifikation von Wartezeiten und Suchmustern."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

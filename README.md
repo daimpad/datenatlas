@@ -2,7 +2,7 @@
 
 **Welche Daten besitzt unsere Gesellschaft, und wie offen könnten sie sein?**
 
-Der Datenatlas macht sichtbar, welche Daten Behörden, Unternehmen, NGOs, Forschungseinrichtungen und andere Organisationen in Deutschland täglich erzeugen. Auf einer interaktiven isometrischen Karte lassen sich über 1.600 Datentypen quer durch 6 gesellschaftliche Sektoren erkunden.
+Der Datenatlas macht sichtbar, welche Daten Behörden, Unternehmen, Forschungseinrichtungen, Zivilgesellschaft, Medien, Religionsgemeinschaften und Bildungseinrichtungen in Deutschland täglich erzeugen. Auf einer interaktiven isometrischen Karte lassen sich **3.842 Datentypen** quer durch **7 gesellschaftliche Sektoren** erkunden und bewerten.
 
 **→ [datenatlas.de](https://datenatlas.de)**
 
@@ -32,7 +32,7 @@ Staat und Verwaltung          ← Ebene 1: Sektor
 
 | Ebene | Was Sie sehen | Wie weiter |
 |---|---|---|
-| **1 Sektor** | Die 6 gesellschaftlichen Bereiche als Kachelgruppe | Kachel anklicken |
+| **1 Sektor** | Die 7 gesellschaftlichen Bereiche als Kachelgruppe | Kachel anklicken |
 | **2 Organisation** | Organisationstypen innerhalb des Sektors | Kachel anklicken |
 | **3 Aktivität** | Was diese Organisation tut | Kachel anklicken |
 | **4 Datentyp** | Konkrete Datensätze mit Bewertung und Metadaten | Kachel anklicken für Details |
@@ -59,12 +59,14 @@ Der **Öffnungsklasse-Filter** (Trichter-Symbol oben rechts) blendet auf Ebene 4
 
 | Sektor | Trägertyp | L2 | L4 |
 |---|---|---|---|
-| 🔵 **Staat und Verwaltung** | Behörden, Ämter, öffentliche Einrichtungen auf Bundes-, Landes- und Kommunalebene | 36 | 690 |
-| ⚫ **Wirtschaft** | Private Unternehmen aller Branchen inkl. Finanz-, Gesundheits- und Infrastrukturdienstleister | 16 | 253 |
-| 🟣 **Wissenschaft und Forschung** | Universitäten, Forschungsinstitute, wissenschaftliche Einrichtungen | 14 | 240 |
-| 🟪 **Zivilgesellschaft** | Vereine, NGOs, Stiftungen — gegliedert nach den 16 Engagementfeldern des ziviz-Monitors | 17 | 255 |
-| 🩷 **Medien und Kultur** | Öffentlich-rechtliche und private Medien, Verlage, Plattformen, Kultureinrichtungen | 11 | 173 |
-| 🌿 **Religionsgemeinschaften** | Evangelische und katholische Kirche, jüdische Gemeinden, muslimische Gemeinschaften, Freikirchen | 5 | 75 |
+| 🔵 **Staat und Verwaltung** | Bundesbehörden, Ministerien, Ämter, Kommunen auf allen Verwaltungsebenen | 42 | 1.289 |
+| ⚫ **Wirtschaft** | Private Unternehmen aller Branchen von Banken bis Pharmaindustrie | 20 | 600 |
+| 🟣 **Wissenschaft und Forschung** | Universitäten, Forschungsinstitute, Akademien, Transfereinrichtungen | 16 | 483 |
+| 🟪 **Zivilgesellschaft** | Vereine, NGOs, Wohlfahrtsverbände, Stiftungen — gegliedert nach ziviz-Monitor | 17 | 510 |
+| 🩷 **Medien und Kultur** | Öffentlich-rechtliche und private Medien, Verlage, Plattformen, Kultureinrichtungen | 14 | 420 |
+| 🌿 **Religionsgemeinschaften** | Kirchen, jüdische Gemeinden, muslimische Verbände, Hilfswerke | 8 | 240 |
+| 🟤 **Bildung** | Kitas, Schulen, Berufsschulen, Hochschulen, Volkshochschulen | 10 | 300 |
+| | **Gesamt** | **127** | **3.842** |
 
 ---
 
@@ -85,15 +87,23 @@ Der **Öffnungsklasse-Filter** (Trichter-Symbol oben rechts) blendet auf Ebene 4
 ### Details und Verknüpfungen
 
 - **Detail-Sidebar** — pro Datentyp: Öffnungsklassenbewertung mit Begründung, Thema, Objekt, Granularität, Format, Lizenz und Prozessverknüpfungen
-- **Prozess-Navigation** — von einem Datentyp aus lassen sich verknüpfte Prozesse öffnen; von dort aus erscheinen alle Datentypen, die diesen Prozess nutzen, auch sektorübergreifend
+- **Ähnliche Datensätze** — bis zu 5 thematisch verwandte Datentypen aus anderen Sektoren direkt in der Sidebar
+- **Prozess-Navigation** — von einem Datentyp aus lassen sich verknüpfte Prozesse öffnen; von dort erscheinen alle Datentypen, die diesen Prozess nutzen, auch sektorübergreifend
 
-### Teilen
+### Analyse
 
-- **Teilen-Button** (Ketten-Symbol) — kopiert den Link zur aktuellen Navigationstiefe; jede Ebene hat eine eigene URL, die direkt aufgerufen werden kann
+- **Statistik-Dashboard** — Öffnungsklassen-Verteilung als Balkendiagramm pro Sektor; zeigt auf einen Blick, welcher Sektor am offensten ist
+- **Zeitliche Datenverfügbarkeit** — kumulative Verfügbarkeitskurve 1980–2024 und Aktualisierungshäufigkeiten (Echtzeit bis unregelmäßig) je Sektor
+- **Datenkombinator** — 12 Cross-Sektor-Fusionsszenarien mit Slot-Machine-Animation zeigen, welche Datentypen sektorübergreifend kombinierbar sind
+
+### Teilen und Exportieren
+
+- **Teilen-Button** (Ketten-Symbol) — kopiert den Link zur aktuellen Navigationstiefe; jede Ebene hat eine eigene URL
+- **Export** (Download-Symbol) — lädt alle sichtbaren L4-Datentypen als CSV oder JSON herunter; vollständig im Browser, kein Backend
 
 ### Daten öffnen
 
-- **Wizard "Daten öffnen"** (Button in der Fußzeile) — ein 5-stufiger interaktiver Leitfaden für Organisationen, die ihre Daten als Open Data veröffentlichen möchten. Lizenz- und Publikationsempfehlungen passen sich an Sektor, Datenart und Rechtslage an.
+- **Wizard "Daten öffnen"** — ein 5-stufiger interaktiver Leitfaden für Organisationen, die ihre Daten als Open Data veröffentlichen möchten. Lizenz- und Publikationsempfehlungen passen sich an Sektor, Datenart und Rechtslage an.
 
 ---
 
@@ -103,7 +113,7 @@ Alle Daten liegen als statische JSON-Dateien unter `public/data/`. Es gibt keine
 
 ### Aufbau
 
-Jeder Sektor hat eine eigene Datei (`sector_*.json`), die die komplette Hierarchie von Ebene 2 bis 4 enthält. Die Startseite (`main.json`) listet nur die 6 aktiven Sektoren.
+Jeder Sektor hat eine eigene Datei (`sector_*.json`), die die komplette Hierarchie von Ebene 2 bis 4 enthält. Die Startseite (`main.json`) listet die 7 aktiven Sektoren.
 
 ### Datentyp-Eintrag (Ebene 4)
 
@@ -119,6 +129,8 @@ Jeder Datentyp enthält neben Name und Beschreibung strukturierte Metadaten:
 | `license` | Lizenz | CC0, CC BY 4.0, Datenlizenz Deutschland … |
 | `relevance` | Gesellschaftliche Relevanz | Skala 1–5 |
 | `processes` | Verknüpfte Prozesse | Methodenname + Beschreibung |
+| `temporal.available_from` | Verfügbar ab (Jahr) | `2003` |
+| `temporal.update_frequency` | Aktualisierungshäufigkeit | `FQ_01` (Echtzeit) … `FQ_05` (unregelmäßig) |
 
 ---
 
@@ -150,9 +162,12 @@ src/
   main.js         — App-Bootstrap, Navigation, Breadcrumb, Onboarding-Modal
   renderer.js     — Isometrischer Kachel-Renderer (Canvas-basiert)
   wizard.js       — "Daten öffnen"-Wizard (5-Schritt-Modal)
+  stats.js        — Statistik-Dashboard (Öffnungsklassen-Balkendiagramm)
+  timeline.js     — Timeline-View (kumulative Verfügbarkeit + Aktualisierungshäufigkeit)
+  fusion.js       — Datenkombinator (Cross-Sektor-Fusionsgenerator)
   style.css       — CSS-Variablen, Layout, Modal-Styles
 public/
-  data/           — Taxonomie-JSON-Dateien (eine pro Sektor + main.json)
+  data/           — Taxonomie-JSON-Dateien (eine pro Sektor + main.json + vocabulary.json)
   fonts/          — Lokale Font-Assets
 index.html        — Single-Page-Shell
 scripts/
@@ -171,6 +186,7 @@ scripts/
 | `sector_zivilgesellschaft.json` | Zivilgesellschaft | `#6d28d9` |
 | `sector_medien.json` | Medien und Kultur | `#be185d` |
 | `sector_religion.json` | Religionsgemeinschaften | `#134e4a` |
+| `sector_bildung.json` | Bildung | `#b45309` |
 
 > **Wichtig:** Die Farben `#27ae60`, `#d4a017` und `#c0392b` sind für Öffnungsklassen reserviert und dürfen nicht als Sektorfarben verwendet werden.
 
@@ -199,7 +215,11 @@ scripts/
     "relevance": 5,
     "processes": [
       { "method": "Methode", "description": "Beschreibung" }
-    ]
+    ],
+    "temporal": {
+      "available_from": 2003,
+      "update_frequency": "FQ_02"
+    }
   }
 }
 ```
@@ -217,6 +237,15 @@ scripts/
 | `OP_01` | `#27ae60` | Sofort publizierbar |
 | `OP_02` | `#d4a017` | Nach Aufbereitung publizierbar |
 | `OP_03` | `#c0392b` | Nur Metadaten publizierbar |
+
+### Aktualisierungshäufigkeit (`details.temporal.update_frequency`)
+| Code | Bedeutung |
+|---|---|
+| `FQ_01` | Echtzeit / Kontinuierlich |
+| `FQ_02` | Täglich |
+| `FQ_03` | Monatlich |
+| `FQ_04` | Jährlich |
+| `FQ_05` | Unregelmäßig |
 
 ### Thema (`details.theme.code`)
 | Code | Thema |

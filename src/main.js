@@ -14,7 +14,7 @@ import { initTimeline }  from './timeline.js';
 
 // ── Build hash ────────────────────────────────────────────────────────────────
 const _buildHashEl = document.getElementById('build-hash');
-if (_buildHashEl) { try { _buildHashEl.textContent = __BUILD_HASH__; } catch { /* raw source, not built */ } }
+if (_buildHashEl) { try { _buildHashEl.innerHTML = `v2.0 <span class="bh-sep">·</span> <span class="bh-hash">${__BUILD_HASH__}</span>`; } catch { _buildHashEl.textContent = 'v2.0'; } }
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
 const canvas        = document.getElementById('map-canvas');

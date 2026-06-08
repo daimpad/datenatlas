@@ -64,10 +64,7 @@
       </button>
 
       <button id="timeline-btn" title="Datenverfügbarkeit & Timeline" aria-label="Zeitliche Datenverfügbarkeit anzeigen">
-        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
-          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
-          <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
-        </svg>
+        <i class="fa-solid fa-clock" aria-hidden="true"></i>
       </button>
 
       <button id="gen-btn" title="Daten kombinieren" aria-label="Daten kombinieren"><i class="fa-solid fa-shuffle" aria-hidden="true"></i> Daten kombinieren</button>
@@ -165,18 +162,31 @@
           <span class="logo-mark">◈</span>
           <span class="logo-text">Datenatlas</span>
         </div>
-        <p class="im-intro">Der Datenatlas visualisiert, welche Daten NGOs, Behörden, Unternehmen und andere zivilgesellschaftliche Akteure besitzen, und wie offen diese Daten potenziell sind. Navigiere von gesellschaftlichen Sektoren bis zu einzelnen Datentypen und erkunde sektorübergreifende Verbindungen.</p>
+        <p class="im-intro">Der Datenatlas macht sichtbar, welche Daten Behörden, Unternehmen, Forschungseinrichtungen, Zivilgesellschaft, Medien, Religionsgemeinschaften und Bildungseinrichtungen in Deutschland erzeugen — und wie offen diese Daten sein könnten. Über <strong>3.842 Datentypen</strong> in <strong>7 Sektoren</strong> sind kartiert und bewertet.</p>
+
+        <section class="im-section">
+          <h3 class="im-heading">Sektoren</h3>
+          <div class="im-sectors">
+            <div class="im-sector-item"><span class="im-sector-dot" style="background:#1e5799"></span><div><strong>Staat &amp; Verwaltung</strong><br>Bundesbehörden, Ministerien, Ämter, Kommunen — 42 Organisationstypen, 1.289 Datentypen</div></div>
+            <div class="im-sector-item"><span class="im-sector-dot" style="background:#d35400"></span><div><strong>Wirtschaft</strong><br>Unternehmen aller Branchen von Banken bis Pharmaindustrie — 20 Organisationstypen, 600 Datentypen</div></div>
+            <div class="im-sector-item"><span class="im-sector-dot" style="background:#4527a0"></span><div><strong>Wissenschaft &amp; Forschung</strong><br>Universitäten, Forschungsinstitute, Akademien — 16 Organisationstypen, 483 Datentypen</div></div>
+            <div class="im-sector-item"><span class="im-sector-dot" style="background:#6d28d9"></span><div><strong>Zivilgesellschaft</strong><br>Vereine, NGOs, Wohlfahrtsverbände, Stiftungen — 17 Organisationstypen, 510 Datentypen</div></div>
+            <div class="im-sector-item"><span class="im-sector-dot" style="background:#be185d"></span><div><strong>Medien &amp; Kultur</strong><br>Öffentlich-rechtliche und private Medien, Verlage, Kultureinrichtungen — 14 Organisationstypen, 420 Datentypen</div></div>
+            <div class="im-sector-item"><span class="im-sector-dot" style="background:#0f766e"></span><div><strong>Religionsgemeinschaften</strong><br>Kirchen, jüdische Gemeinden, muslimische Verbände, Hilfswerke — 8 Organisationstypen, 240 Datentypen</div></div>
+            <div class="im-sector-item"><span class="im-sector-dot" style="background:#d97706"></span><div><strong>Bildung</strong><br>Schulen, Kitas, Berufsschulen, Hochschulen, Volkshochschulen — 10 Organisationstypen, 300 Datentypen</div></div>
+          </div>
+        </section>
 
         <section class="im-section">
           <h3 class="im-heading">Navigation</h3>
           <div class="im-levels">
             <div class="im-level">
               <span class="im-badge">1</span>
-              <div><strong>Sektor</strong><br>Wähle einen gesellschaftlichen Bereich: NGO, Behörde, Wirtschaft, Forschung, Gesundheit, Infrastruktur oder Bildung.</div>
+              <div><strong>Sektor</strong><br>Wähle einen der 7 gesellschaftlichen Bereiche als Ausgangspunkt.</div>
             </div>
             <div class="im-level">
               <span class="im-badge">2</span>
-              <div><strong>Organisation</strong><br>Art der Organisation innerhalb des Sektors, z. B. Wohlfahrtsverband, Ordnungsamt oder Krankenhaus.</div>
+              <div><strong>Organisation</strong><br>Art der Organisation innerhalb des Sektors, z. B. Wohlfahrtsverband, Ordnungsamt oder Universität.</div>
             </div>
             <div class="im-level">
               <span class="im-badge">3</span>
@@ -234,6 +244,22 @@
             <div class="im-feat">
               <span class="im-feat-icon"><i class="fa-solid fa-sliders"></i></span>
               <div><strong>Öffnungsklasse-Filter</strong><br>Blende auf Ebene 4 alle Kacheln einer bestimmten Klasse hervor: Grün, Gelb oder Rot.</div>
+            </div>
+            <div class="im-feat">
+              <span class="im-feat-icon"><i class="fa-solid fa-chart-bar"></i></span>
+              <div><strong>Statistik-Dashboard</strong><br>Öffnungsklassen-Verteilung als Balkendiagramm pro Sektor — direkt im Browser, ohne Server.</div>
+            </div>
+            <div class="im-feat">
+              <span class="im-feat-icon"><i class="fa-solid fa-clock"></i></span>
+              <div><strong>Zeitliche Datenverfügbarkeit</strong><br>Kumulative Verfügbarkeitskurve und Aktualisierungshäufigkeiten aller Datentypen nach Sektor.</div>
+            </div>
+            <div class="im-feat">
+              <span class="im-feat-icon"><i class="fa-solid fa-shuffle"></i></span>
+              <div><strong>Datenkombinator</strong><br>12 Cross-Sektor-Fusionsszenarien zeigen, welche Datentypen sektorübergreifend kombinierbar sind.</div>
+            </div>
+            <div class="im-feat">
+              <span class="im-feat-icon"><i class="fa-solid fa-file-export"></i></span>
+              <div><strong>Export</strong><br>Lade alle sichtbaren L4-Datentypen als CSV oder JSON herunter — vollständig im Browser.</div>
             </div>
             <div class="im-feat">
               <span class="im-feat-icon"><i class="fa-solid fa-link"></i></span>

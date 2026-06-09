@@ -264,14 +264,14 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 
 | Sektor | L2 | L3 | L4 | Ø L4/L2 |
 |--------|----|----|-----|---------|
-| staat | 42 | 113 | 1289 | 30,7 |
-| wirtschaft | 20 | 58 | 600 | 30,0 |
-| wissenschaft | 16 | 43 | 483 | 30,2 |
-| zivilgesellschaft | 17 | 49 | 510 | 30,0 |
-| medien & kultur | 14 | 41 | 420 | 30,0 |
-| religion | 8 | 24 | 240 | 30,0 |
-| bildung | 10 | 30 | 300 | 30,0 |
-| **Gesamt** | **127** | **358** | **3.842** | **30,3** |
+| staat | 42 | 113 | 1523 | 36,3 |
+| wirtschaft | 20 | 58 | 720 | 36,0 |
+| wissenschaft | 16 | 43 | 579 | 36,2 |
+| zivilgesellschaft | 17 | 49 | 612 | 36,0 |
+| medien & kultur | 14 | 41 | 506 | 36,1 |
+| religion | 8 | 24 | 288 | 36,0 |
+| bildung | 10 | 30 | 360 | 36,0 |
+| **Gesamt** | **127** | **358** | **4.588** | **36,1** |
 
 ---
 
@@ -354,6 +354,7 @@ Sprint-Format (Features):
 - [x] **S-C** Tiefenausbau medien + zivilgesellschaft + religion + bildung — alle 44 L2 auf ≥24 L4, +212 L4 (medien 199→264, zivil 357→408, religion 144→192, bildung 144→192) ✓
 - [x] **S-D** Breitenausbau wirtschaft + wissenschaft + medien + bildung — +11 L2 je 3 L3 × 8 L4 = +264 L4 (wirtschaft 16→20 L2, wissenschaft 14→16 L2, medien 11→14 L2, bildung 8→10 L2) ✓
 - [x] **S-E** Tiefenausbau II — alle 127 L2 auf ≥30 L4 (+723 L4), 3.119→3.842 L4 gesamt ✓ (PR #76)
+- [x] **S-F** Tiefenausbau III — alle 127 L2 auf ≥36 L4 (+746 L4), 3.842→4.588 L4 gesamt ✓
 
 ### Startbefehl
 

@@ -539,6 +539,96 @@
                   "update_frequency": "FQ_03"
                 }
               }
+            },
+            {
+              "id": "vereinsaustritt-gruende-befragung",
+              "level": 4,
+              "name": "Vereinsaustritts-Befragungsdaten",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Anonymisierte Befragungsdaten zu Austrittsgründen aus Sportvereinen, erhoben durch DOSB und Landessportbünde. Enthält Altersgruppen, Sportartzuordnung und Hauptmotivkategorien. Basis für Mitgliederbindungsstrategien.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Personenbezogene Motive werden vor Veröffentlichung aggregiert."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Befragungsdesign",
+                    "description": "Standardisierter Fragebogen wird nach Austrittsverarbeitung versandt."
+                  },
+                  {
+                    "method": "Aggregation",
+                    "description": "Antworten werden nach Sportart, Altersgruppe und Region zusammengefasst."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vereinsbeitrags-einnahmen-struktur",
+              "level": 4,
+              "name": "Vereinsbeitragsstruktur und Einnahmenübersicht",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Aggregierte Daten zu Mitgliedsbeitragshöhen und Einnahmenanteilen aus Beiträgen bei eingetragenen Sportvereinen, bereitgestellt durch Landessportbünde. Ermöglicht Vergleiche über Sportarten und Vereinsgrößenklassen hinweg.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Daten sind auf Vereinsebene aggregiert, kein Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Datenerhebung",
+                    "description": "Landessportbünde erfassen Beitragsstruktur jährlich in Bestandserhebung."
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Bundesweiter Vergleich nach Sportart und Vereinsgröße wird publiziert."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1030,6 +1120,96 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "sportanlagen-baujahr-sanierungsstatus",
+              "level": 4,
+              "name": "Baujahr und Sanierungsstatus von Sportanlagen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Datensatz zu Baujahren, letzten Sanierungsmaßnahmen und aktuellem Zustandsrating vereinseigener Sportanlagen, geführt von kommunalen Sportämtern und Landessportbünden. Grundlage für Förderantragsplanung und Investitionsbedarfsermittlung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Infrastrukturdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Zustandserfassung",
+                    "description": "Sportanlagen werden nach standardisiertem Bewertungsschema begutachtet."
+                  },
+                  {
+                    "method": "GIS-Integration",
+                    "description": "Geografische Verortung ermöglicht kleinräumige Investitionsplanung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hallenbelegung-verein-schule",
+              "level": 4,
+              "name": "Hallenzeiten-Belegungsverteilung Verein vs. Schule",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Stunden- und Flächendaten zur wöchentlichen Nutzungsverteilung von Sporthallen zwischen Schulsport und Vereinssport, erhoben durch kommunale Sportämter. Zeigt Kapazitätsengpässe und Nutzungskonkurrenzen auf.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Keine personenbezogenen Daten enthalten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Belegungserfassung",
+                    "description": "Wöchentliche Belegungspläne werden digital erfasst und ausgewertet."
+                  },
+                  {
+                    "method": "Kapazitätsanalyse",
+                    "description": "Verhältnis Schulsport zu Vereinssport wird je Halle berechnet."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1469,6 +1649,96 @@
                   "available_from": 2011,
                   "update_frequency": "FQ_04"
                 }
+              }
+            },
+            {
+              "id": "kadernominierungen-sportart-geschlecht",
+              "level": 4,
+              "name": "Kadernominierungsstatistik nach Sportart und Geschlecht",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Jährliche Nominierungsdaten für Bundeskader (A–D/C) des DOSB, aufgeschlüsselt nach Sportart, Geschlecht und Altersstufe. Bildet Leistungsdichteverteilung im deutschen Spitzensport ab.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Kaderdaten ohne Einzelpersonenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Nominierungsverfahren",
+                    "description": "Bundesfachverbände nominieren Kaderathleten nach Leistungskriterien."
+                  },
+                  {
+                    "method": "Statistische Auswertung",
+                    "description": "DOSB konsolidiert Nominierungen zu jährlicher Gesamtstatistik."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "antidoping-kontrollquote-sportart",
+              "level": 4,
+              "name": "Dopingkontrollquoten nach Sportart",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Statistik der NADA zur Anzahl durchgeführter Dopingkontrollen (im Wettkampf / außerhalb) je Sportart und Jahr. Enthält Kontrollarten, nicht aber Ergebnisse auf Individualebene.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kontrollquoten ohne Athletenidentifikation veröffentlichbar."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Kontrollplanung",
+                    "description": "NADA plant Kontingente nach Risikobewertung je Sportart."
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Ergebnisse werden im NADA-Jahresbericht aggregiert publiziert."
+                  }
+                ]
               }
             }
           ]
@@ -2056,6 +2326,92 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "kultur-veranstaltungskosten-struktur",
+              "level": 4,
+              "name": "Kostenstruktur kultureller Vereinsveranstaltungen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Aggregierte Daten zu Ausgabenkategorien (Technik, Honorare, Werbung, Raummiete) bei Kulturveranstaltungen eingetragener Kulturvereine, erhoben durch Kulturverbände und Bundesvereinigung Soziokultureller Zentren.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Keine Einzelvereinsdaten, nur Durchschnittswerte je Veranstaltungstyp."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Erhebung",
+                    "description": "Jahresbefragung der Mitgliedseinrichtungen zu Veranstaltungskosten."
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Kostenvergleich nach Veranstaltungsformat und Bundesland."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ehrenamtliche-veranstaltungshelfer-stunden",
+              "level": 4,
+              "name": "Ehrenamtliche Helferstunden bei Kulturveranstaltungen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Schätzungen und Erhebungen zu geleisteten Ehrenamtsstunden bei Kulturveranstaltungen lokaler Vereine, zusammengeführt durch Bundesvereinigung Kulturelle Kinder- und Jugendbildung. Zeigt Wertschöpfungsbeitrag unbezahlter Arbeit im Kultursektor.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Stundendaten, kein Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Stundenerfassung",
+                    "description": "Vereine erfassen Helferstunden je Veranstaltung in Eigenerhebung."
+                  },
+                  {
+                    "method": "Hochrechnung",
+                    "description": "Bundeswerte werden anhand Stichprobenerhebung hochgerechnet."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -2491,6 +2847,96 @@
                   "available_from": 2011,
                   "update_frequency": "FQ_04"
                 }
+              }
+            },
+            {
+              "id": "kultur-zielgruppen-reichweite",
+              "level": 4,
+              "name": "Zielgruppenreichweite kultureller Bildungsangebote",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Daten zu erreichten Zielgruppen (Alter, Bildungshintergrund, Migrationshintergrund) in kulturellen Vermittlungsprogrammen gemeinnütziger Träger, erhoben durch die Bundesvereinigung Kulturelle Kinder- und Jugendbildung (BKJ).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Zielgruppenmerkmale werden vor Publikation anonymisiert aggregiert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Teilnahmedokumentation",
+                    "description": "Träger erfassen Teilnehmerprofile standardisiert je Maßnahme."
+                  },
+                  {
+                    "method": "Aggregation",
+                    "description": "BKJ fasst Daten bundesweit zusammen und publiziert Jahresbericht."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kulturvermittlungs-methoden-register",
+              "level": 4,
+              "name": "Methodenregister Kulturvermittlung",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Katalog dokumentierter Vermittlungsmethoden und didaktischer Ansätze aus gemeinnützigen Kultureinrichtungen, zusammengestellt durch das Institut für Kulturpolitik der Kulturpolitischen Gesellschaft. Enthält Zielgruppeneignung und Wirkungshinweise.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Methodenbeschreibungen enthalten keinen Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Methodensammlung",
+                    "description": "Einrichtungen dokumentieren erprobte Methoden in standardisiertem Format."
+                  },
+                  {
+                    "method": "Qualitätsbewertung",
+                    "description": "Externe Fachredaktion prüft Einträge auf Plausibilität und Vollständigkeit."
+                  }
+                ]
               }
             }
           ]
@@ -2943,6 +3389,100 @@
                   "available_from": 2002,
                   "update_frequency": "FQ_04"
                 }
+              }
+            },
+            {
+              "id": "vereinsarchiv-findmittel-register",
+              "level": 4,
+              "name": "Findmittel-Register digitalisierter Vereinsarchive",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Verzeichnis erschlossener Bestände in Vereinsarchiven (Sportvereine, Kulturvereine, NGOs), koordiniert durch die Bundeskonferenz der Kommunalarchive. Enthält Bestandsumfang, Erschließungsgrad und digitale Verfügbarkeit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Metadaten zu Archivbeständen ohne personenbezogene Inhalte."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Erschließung",
+                    "description": "Vereine übergeben Findmittel an kommunale Archive oder pflegen eigene Datenbank."
+                  },
+                  {
+                    "method": "Aggregation",
+                    "description": "Bundesweites Register wird durch Archivverbund gepflegt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "immaterielles-kulturerbe-vereine",
+              "level": 4,
+              "name": "Immaterielles Kulturerbe in Vereinen – Bundesliste",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Einträge aus der deutschen Bundesliste des immateriellen Kulturerbes (UNESCO-Konvention), die von eingetragenen Vereinen getragen werden. Enthält Trägerorganisation, Praxisbeschreibung und Verbreitungsgebiet.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich zugängliche Kulturerbe-Dokumentation."
+                },
+                "theme": {
+                  "code": "TH_09"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Nominierungsverfahren",
+                    "description": "Vereine bewerben sich über Länderkommissionen für Aufnahme."
+                  },
+                  {
+                    "method": "Dokumentation",
+                    "description": "Deutsche UNESCO-Kommission führt und publiziert Bundesliste."
+                  }
+                ]
               }
             }
           ]
@@ -3487,6 +4027,92 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "non-formale-bildung-zertifikate",
+              "level": 4,
+              "name": "Zertifikate non-formaler Bildungsangebote freier Träger",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Statistik zu ausgestellten Abschlüssen und Teilnahmezertifikaten in non-formalen Bildungsangeboten gemeinnütziger Träger, erfasst durch BMFSFJ und Bundesjugendring. Differenziert nach Trägertyp, Altersgruppe und Bildungsbereich.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Individuelle Zertifikatsdaten werden nur aggregiert publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Erfassung",
+                    "description": "Träger melden ausgestellte Zertifikate an Dachverband."
+                  },
+                  {
+                    "method": "Bundesstatistik",
+                    "description": "BMFSFJ aggregiert Daten zu jährlichem Bildungsbericht."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bildungsangebot-kosten-foerderquote",
+              "level": 4,
+              "name": "Kostenstruktur und Förderquoten non-formaler Bildungsangebote",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Daten zu Teilnahmegebühren, Eigenanteilen und öffentlichen Förderquoten in Bildungsangeboten freier Träger der Kinder- und Jugendhilfe, erhoben durch Bundesarbeitsgemeinschaft Jugendsozialarbeit (BAG JAW).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Finanzstruktur auf Angebotsebene ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Preiserhebung",
+                    "description": "Standardisierte Kostenerfassung je Maßnahmentyp."
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Förderquotenvergleich zwischen Bundesländern und Trägertypen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -3926,6 +4552,92 @@
                   "available_from": 2007,
                   "update_frequency": "FQ_04"
                 }
+              }
+            },
+            {
+              "id": "kjh-personal-qualifikation-quote",
+              "level": 4,
+              "name": "Qualifikationsquoten Personal in freier Jugendhilfe",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Daten zu Berufsabschlüssen und Qualifikationsprofilen pädagogischen Personals bei freien Trägern der Kinder- und Jugendhilfe, aus Destatis-Statistik §§ 98–103 SGB VIII. Differenziert nach Einrichtungstyp und Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Qualifikationsstatistik ohne Individualreferenz."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Destatis-Erhebung",
+                    "description": "Jugendämter melden Personalstruktur jährlich an Statistische Ämter."
+                  },
+                  {
+                    "method": "Auswertung",
+                    "description": "Destatis publiziert Fachserie 13 Reihe 6 mit Personalstatistik."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schutzkonzepte-verbreitung-kita",
+              "level": 4,
+              "name": "Verbreitung von Schutzkonzepten in Kindertageseinrichtungen freier Träger",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Monitoring-Daten zur Implementierung von Kinderschutzkonzepten (§ 72a SGB VIII) in Kindertageseinrichtungen freier Träger, erhoben durch BMFSFJ und Unabhängige Beauftragte für Fragen des sexuellen Kindesmissbrauchs.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Institutionelle Daten ohne Bezug zu Einzelfällen."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Monitoring",
+                    "description": "Träger melden Schutzkonzeptstatus an Jugendamt."
+                  },
+                  {
+                    "method": "Berichterstattung",
+                    "description": "UBSKM publiziert Monitoring-Bericht alle zwei Jahre."
+                  }
+                ]
               }
             }
           ]
@@ -4413,6 +5125,92 @@
                   "available_from": 2003,
                   "update_frequency": "FQ_03"
                 }
+              }
+            },
+            {
+              "id": "weiterbildungsberatung-inanspruchnahme",
+              "level": 4,
+              "name": "Inanspruchnahme von Weiterbildungsberatungsangeboten",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Fallzahlen und Beratungsthemen aus Weiterbildungsberatungsstellen gemeinnütziger Träger (Bildungswerke, Volkshochschulen), erfasst durch Deutsches Institut für Erwachsenenbildung (DIE). Zeigt Zugangsbarrieren und Bedarfsschwerpunkte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Beratungsstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Fallstatistik",
+                    "description": "Beratungsstellen erfassen anonymisierte Fallmerkmale."
+                  },
+                  {
+                    "method": "DIE-Auswertung",
+                    "description": "Deutsches Institut für Erwachsenenbildung aggregiert bundesweit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "digitale-weiterbildungsformate-anteil",
+              "level": 4,
+              "name": "Anteil digitaler Lernformate in der Erwachsenenbildung",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Zeitreihendaten zum Anteil digitaler und hybrider Kursformate an Gesamtangeboten gemeinnütziger Weiterbildungsträger, erhoben im Rahmen des DIE-Trendberichts Weiterbildung. Differenziert nach Trägertyp und Themenfeld.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Angebotsstruktur-Daten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Trenderhebung",
+                    "description": "Jährliche Befragung repräsentativer Stichprobe von Weiterbildungsträgern."
+                  },
+                  {
+                    "method": "Publikation",
+                    "description": "DIE veröffentlicht Trendbericht Weiterbildung mit Formatstatistik."
+                  }
+                ]
               }
             }
           ]
@@ -5172,6 +5970,143 @@
                   "update_frequency": "FQ_03"
                 }
               }
+            },
+            {
+              "id": "spielplatz-ausstattungs-check",
+              "level": 4,
+              "name": "Ausstattungs- und Sicherheitsprüfung kommunaler Spielplätze",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Prüfprotokolle und Ausstattungsdaten öffentlicher Spielplätze in Trägerschaft von Kommunen und gemeinnützigen Vereinen, dokumentiert durch TÜV/DEKRA-Prüfberichte und kommunale Grünflächenämter.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Infrastrukturdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Sicherheitsprüfung",
+                    "description": "Jährliche Inspektion nach DIN EN 1176 durch akkreditierte Prüfstellen."
+                  },
+                  {
+                    "method": "Mängelerfassung",
+                    "description": "Prüfergebnisse werden in kommunales GIS-System eingepflegt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "jugendfreizeitstätten-personalschluessel",
+              "level": 4,
+              "name": "Personalschlüssel in Jugendfreizeitstätten freier Träger",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Kennzahlen zu Fachkraft-Nutzer-Verhältnissen in Jugendfreizeitstätten und offener Jugendarbeit freier Träger, aus Länderstatistiken zur Kinder- und Jugendhilfe (§ 79 SGB VIII).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Personalstrukturdaten ohne Individualreferenz."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Länderstatistik",
+                    "description": "Jugendämter erheben Personalschlüssel je Einrichtung."
+                  },
+                  {
+                    "method": "Bundesauswertung",
+                    "description": "BMFSFJ fasst Länderdaten im Kinder- und Jugendhilfereport zusammen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "freizeiteinrichtungen-barrierefreiheits-grad",
+              "level": 4,
+              "name": "Barrierefreiheitsgrad gemeinnütziger Freizeiteinrichtungen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Selbstauskunftsdaten zur baulichen und kommunikativen Barrierefreiheit in gemeinnützigen Freizeit- und Begegnungseinrichtungen, erhoben durch Aktion Mensch im Rahmen des Inklusionsmonitors.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Strukturdaten der Einrichtungen ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Selbstauskunft",
+                    "description": "Einrichtungen füllen Barrierefreiheits-Checkliste aus."
+                  },
+                  {
+                    "method": "Monitoring",
+                    "description": "Aktion Mensch wertet jährlich aus und veröffentlicht Inklusionsmonitor."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -5851,6 +6786,139 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "ehrenamtsversicherung-schadensfaelle",
+              "level": 4,
+              "name": "Schadensfälle in der Ehrenamtsversicherung",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Aggregierte Daten zu gemeldeten Schadensfällen in der gesetzlichen Ehrenamtsversicherung der Bundesländer und der Unfallversicherung für Ehrenamtliche (DGUV), nach Schadensart und Tätigkeitsfeld.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Schadensstatistik auf Aggregatebene ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Schadensmeldung",
+                    "description": "Versicherungsträger erfassen Schadensfälle nach standardisiertem Schema."
+                  },
+                  {
+                    "method": "Statistikbericht",
+                    "description": "DGUV publiziert jährliche Schadensstatistik für Ehrenamtliche."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "freiwilligenmanagement-tools-verbreitung",
+              "level": 4,
+              "name": "Verbreitung digitaler Freiwilligenmanagement-Tools",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Erhebungsdaten zur Nutzung digitaler Verwaltungstools (Schichtplanung, Kommunikationsplattformen) in Freiwilligenorganisationen, aus Studie des Instituts für Sozialarbeit und Sozialpädagogik (ISS) im Auftrag von BMFSFJ.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Organisationsstruktur-Daten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Befragung",
+                    "description": "Repräsentative Online-Befragung von Freiwilligenorganisationen."
+                  },
+                  {
+                    "method": "Auswertung",
+                    "description": "ISS wertet Digitalisierungsgrad nach Organisationstyp aus."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "engagement-anerkennung-kommunal",
+              "level": 4,
+              "name": "Kommunale Anerkennungsleistungen für Ehrenamtliche",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Verzeichnis kommunaler Anerkennungsformate für Ehrenamtliche (Ehrenamtskarten, Steuerbefreiungen, Rabattsysteme), dokumentiert durch Bundesministerium für Familie sowie Deutsches Ehrenamt e.V.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Programmbeschreibungen ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Katalogisierung",
+                    "description": "Kommunen melden Anerkennungsformate an Bundesverzeichnis."
+                  },
+                  {
+                    "method": "Auswertung",
+                    "description": "Jährliche Aktualisierung und regionale Vergleichsanalyse."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -6515,6 +7583,96 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "sozialberatung-wartezeit-monitor",
+              "level": 4,
+              "name": "Wartezeiten-Monitor Sozialberatungsstellen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Erhebung durchschnittlicher Wartezeiten auf Erstberatungstermine in Sozialberatungsstellen freier Träger (Schuldner-, Sucht-, Wohnungslosenhilfe), koordiniert durch BAGFW. Zeigt regionale Unterversorgungslagen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Wartezeiten sind Einrichtungskennzahlen ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Datenerhebung",
+                    "description": "Mitgliedseinrichtungen der BAGFW melden Wartezeiten quartalsweise."
+                  },
+                  {
+                    "method": "Versorgungsanalyse",
+                    "description": "BAGFW aggregiert nach Beratungstyp und Region."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hilfebedarf-sozialraumanalyse",
+              "level": 4,
+              "name": "Sozialraumanalyse Hilfebedarf freier Träger",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Räumlich differenzierte Bedarfsanalysen sozialer Dienste freier Träger auf Stadtteilebene, erstellt durch AWO, Caritas und Diakonie im Rahmen von Sozialplanungsprozessen. Enthält soziodemografische Indikatoren und Angebotsabdeckung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Kleinräumige Daten erfordern Prüfung auf Rückschlussmöglichkeiten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Sozialraumanalyse",
+                    "description": "Kombination von Sozialstatistik und GIS-Daten je Planungsraum."
+                  },
+                  {
+                    "method": "Bedarfsplanung",
+                    "description": "Ergebnisse fließen in kommunale Sozialplanung ein."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6911,6 +8069,92 @@
                   "available_from": 2000,
                   "update_frequency": "FQ_03"
                 }
+              }
+            },
+            {
+              "id": "zuwendungsempfaenger-soziale-dienste",
+              "level": 4,
+              "name": "Zuwendungsempfänger sozialer Dienste – Bundesregierung",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Verzeichnis institutioneller Zuwendungsempfänger sozialer Dienstleistungen aus Bundesförderprogrammen (BMFSFJ, BMAS), veröffentlicht im Zuwendungsempfängerregister des Bundes. Enthält Trägername, Förderjahr und Fördersumme.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Zuwendungsdaten sind nach § 44 BHO öffentlich ausweispflichtig."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Registerführung",
+                    "description": "BMF führt Zuwendungsempfängerregister als Open-Data-Datensatz."
+                  },
+                  {
+                    "method": "Auswertung",
+                    "description": "Zuwendungen nach Trägertyp und Förderzweck werden aggregiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "soziale-dienste-eigenanteil-statistik",
+              "level": 4,
+              "name": "Eigenanteilsstruktur sozialer Dienstleistungsträger",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Aggregierte Daten zur Finanzierungsstruktur sozialer Dienste: Verhältnis öffentlicher Zuwendungen, Leistungsentgelte und Eigenmittel, erhoben durch BAGFW im Rahmen der Gesamtstatistik freier Wohlfahrtspflege.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Finanzstrukturübersichten ohne Bezug zu einzelnen Trägern publizierbar."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Gesamtstatistik",
+                    "description": "BAGFW erhebt Einnahmestruktur bei Mitgliedsverbänden alle vier Jahre."
+                  },
+                  {
+                    "method": "Kennzahlenberechnung",
+                    "description": "Eigenanteilsquoten werden nach Verbands- und Leistungstyp berechnet."
+                  }
+                ]
               }
             }
           ]
@@ -7316,6 +8560,96 @@
                   "available_from": 2006,
                   "update_frequency": "FQ_04"
                 }
+              }
+            },
+            {
+              "id": "wirkungsindikator-set-soziale-dienste",
+              "level": 4,
+              "name": "Wirkungsindikatoren-Set sozialer Dienste (PHINEO-Standard)",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Standardisiertes Set von Wirkungsindikatoren für soziale Dienstleistungen nach PHINEO-Wirkungs-Kompass, genutzt von Wohlfahrtsverbänden und sozialen Organisationen für Wirkungsberichte. Enthält Indikatordefinitionen, Messverfahren und Referenzwerte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Methodologische Referenzdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Standardisierung",
+                    "description": "PHINEO definiert Indikatoren gemeinsam mit Praktikergemeinschaft."
+                  },
+                  {
+                    "method": "Anwendung",
+                    "description": "Organisationen wenden Indikatoren-Set in eigenem Wirkungsbericht an."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sozial-qualitaetszertifikate-traeger",
+              "level": 4,
+              "name": "Qualitätszertifikate sozialer Träger (DIN ISO, EFQM)",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Verzeichnis zertifizierter sozialer Träger mit Angaben zu Zertifizierungsstandard, Gültigkeitsdauer und Zertifizierungsstelle, geführt durch Bundesarbeitsgemeinschaft der freien Wohlfahrtspflege und DAkkS.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Zertifizierungsdaten sind öffentlich zugängliche Institutionsinformationen."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Zertifizierung",
+                    "description": "Unabhängige Zertifizierungsstellen führen Audit nach Normvorgaben durch."
+                  },
+                  {
+                    "method": "Registerführung",
+                    "description": "BAGFW pflegt öffentliches Trägerverzeichnis mit Zertifikatsstatus."
+                  }
+                ]
               }
             }
           ]
@@ -7911,6 +9245,96 @@
                   "update_frequency": "FQ_03"
                 }
               }
+            },
+            {
+              "id": "buerger-luftmessungen-sensor-community",
+              "level": 4,
+              "name": "Bürgermessnetz Feinstaub und Temperatur (Sensor.Community)",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Messdaten aus dem offenen Bürgermessnetz Sensor.Community: Feinstaub (PM2.5/PM10), Temperatur und Luftfeuchtigkeit von über 14.000 Sensoren in Deutschland. Rohdaten stündlich abrufbar via Open-Data-API.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Vollständig offener Citizen-Science-Datensatz."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Sensorerfassung",
+                    "description": "Kostengünstige ESP8266-Sensoren übertragen Messwerte ans Community-Backend."
+                  },
+                  {
+                    "method": "Datenqualität",
+                    "description": "Automatisierte Plausibilitätsprüfung filtert Ausreißer aus Zeitreihen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gewaesser-ehrenamt-monitoring",
+              "level": 4,
+              "name": "Ehrenamtliches Gewässermonitoring Fließgewässer",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Messdaten ehrenamtlicher Gewässerwarte in BUND und NABU: Wasserqualitätsindikatoren (Sauerstoff, Nitrat, Temperatur) aus regelmäßigen Probenahmen an Fließgewässern, koordiniert durch Gewässerschutzbund Bundesverband.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Messdaten ohne Personenbezug, Freigabe durch Erhebungsorganisationen."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_04"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Probenahme",
+                    "description": "Ehrenamtliche Gewässerwarte nehmen Wasserproben nach DIN-Protokoll."
+                  },
+                  {
+                    "method": "Labormessung",
+                    "description": "Proben werden in akkreditierten Partnerlaboren analysiert."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -8359,6 +9783,100 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "naturschutzverein-pachtflaechen",
+              "level": 4,
+              "name": "Pacht- und Pflegeflächen von Naturschutzvereinen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Geodaten zu Flächen im Eigentum oder Pacht von Naturschutzorganisationen (NABU, BUND, LBV), bereitgestellt durch Verbände in Kooperation mit Bundesamt für Naturschutz. Enthält Flächengröße, Schutzstatus und Pflegemaßnahmen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Flächendaten ohne Personenbezug, öffentliches Interesse an Transparenz."
+                },
+                "theme": {
+                  "code": "TH_09"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_06",
+                    "label": "Shapefile"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Flächenerfassung",
+                    "description": "Verbände digitalisieren Pacht- und Eigentumsgeometrien jährlich."
+                  },
+                  {
+                    "method": "BfN-Integration",
+                    "description": "Daten fließen in nationale Flächenschutzdatenbank ein."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "renaturierungs-massnahmen-kartierung",
+              "level": 4,
+              "name": "Kartierung abgeschlossener Renaturierungsmaßnahmen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Geodatensatz zu Renaturierungsprojekten von Naturschutzorganisationen und -verbänden: Lage, Flächenumfang, Maßnahmentyp und Fördermittelherkunft, koordiniert durch BfN und Deutsche Umwelthilfe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Projektdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_09"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Projektdokumentation",
+                    "description": "Träger erfassen Maßnahmenparameter nach Projektabschluss."
+                  },
+                  {
+                    "method": "Monitoring",
+                    "description": "BfN prüft Nachhaltigkeitswirkung durch Folgeerhebungen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -8802,6 +10320,92 @@
                   "available_from": 2011,
                   "update_frequency": "FQ_04"
                 }
+              }
+            },
+            {
+              "id": "umweltkampagnen-petition-reichweite",
+              "level": 4,
+              "name": "Petitionsreichweite und Unterzeichnerstatistik Umweltkampagnen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Daten zu Unterzeichnerzahlen, Reichweite und Konversionraten von Online-Petitionen und Aktionen von Umweltschutzorganisationen (Greenpeace, BUND, Deutsche Umwelthilfe), veröffentlicht in Jahresberichten und OpenPetition-Statistiken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Aktionsdaten ohne Unterzeichner-Individualidentifikation."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Kampagnendokumentation",
+                    "description": "Organisationen erfassen Aktionsdaten in CRM und publizieren aggregiert."
+                  },
+                  {
+                    "method": "Plattformstatistik",
+                    "description": "OpenPetition stellt offene Statistiken zu Unterzeichnertrends bereit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "klimaschutzkampagnen-schule-evaluation",
+              "level": 4,
+              "name": "Evaluationsdaten schulischer Klimaschutzkampagnen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Prä-Post-Befragungsdaten zu Wissens- und Einstellungsänderungen durch schulische Klimaschutzkampagnen gemeinnütziger Träger (Germanwatch, Klimaschutz-Netzwerk), erhoben durch pädagogische Begleitforschung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Schülerbefragungen werden nur aggregiert nach Schultyp publiziert."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Prä-Post-Messung",
+                    "description": "Befragung vor und nach Kampagnendurchführung mit standardisiertem Fragebogen."
+                  },
+                  {
+                    "method": "Wirkungsanalyse",
+                    "description": "Statistische Auswertung der Einstellungsveränderungen je Kampagnenmodul."
+                  }
+                ]
               }
             }
           ]
@@ -9424,6 +11028,92 @@
                   "update_frequency": "FQ_02"
                 }
               }
+            },
+            {
+              "id": "katschutz-einsatzkraefte-kapazitaet",
+              "level": 4,
+              "name": "Kapazitätsregister Katastrophenschutzkräfte Bundesländer",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Bestandsdaten zu verfügbaren Einsatzkräften und Einsatzmitteln des Katastrophenschutzes (THW, Hilfsorganisationen) je Bundesland, veröffentlicht im BBK-Jahresbericht Bevölkerungsschutz. Enthält Einheitstypen und Ausrüstungsstand.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kapazitätsdaten auf Aggregatebene sind für Zivilschutzzwecke freigegeben."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bestandserfassung",
+                    "description": "BBK erhebt jährlich Einsatzkräfte- und Ausstattungsbestände."
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "BBK publiziert Bevölkerungsschutzbericht mit Kapazitätsübersicht."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "katschutz-uebung-lernziele-evaluation",
+              "level": 4,
+              "name": "Evaluationsergebnisse Katastrophenschutzübungen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Nachbereitungsdaten zu gemeinsamen Stabsrahmenübungen und Vollübungen des Katastrophenschutzes, dokumentiert durch Länderinnenministerien und BBK. Enthält Lernziele, Defizitbefunde und Maßnahmenempfehlungen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Taktische Details werden vor Veröffentlichung geschwärzt."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Übungsnachbereitung",
+                    "description": "Stab führt Hot-Wash nach Übung und dokumentiert Lernpunkte."
+                  },
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "BBK aggregiert Befunde aus Länderübungen zu bundesweiten Empfehlungen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -9860,6 +11550,92 @@
                   "update_frequency": "FQ_03"
                 }
               }
+            },
+            {
+              "id": "ffw-altersstruktur-jugendfeuerwehr-trend",
+              "level": 4,
+              "name": "Altersstruktur und Jugendfeuerwehr-Übergangsquote",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Zeitreihendaten zur Altersverteilung aktiver Mitglieder der Freiwilligen Feuerwehr und Übergangsquoten aus der Jugendfeuerwehr in den aktiven Dienst, aus dem DFV-Jahrbuch. Zeigt demografische Herausforderungen der Nachwuchsgewinnung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Altersstrukturdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "DFV-Statistik",
+                    "description": "Kreis- und Stadtfeuerwehrverbände melden Mitgliederdaten an DFV."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "DFV berechnet Übergangsquoten und publiziert im Jahrbuch."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ffw-einsatzbewertung-hilfsfrist",
+              "level": 4,
+              "name": "Hilfsfrist-Einhaltungsquote Freiwillige Feuerwehr",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Statistik zur Einhaltung der gesetzlichen Hilfsfristen bei Brandeinsätzen Freiwilliger Feuerwehren nach Gemeindetyp (städtisch/ländlich), erhoben durch Länderinnenministerien und Landesfeuerwehrverbände.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Einsatzqualitätsdaten auf Gemeindetypebene ohne Individualbezug."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Einsatzdatenerfassung",
+                    "description": "Leitstellen erfassen Ausrücke- und Eintrefftime je Einsatz."
+                  },
+                  {
+                    "method": "Hilfsfristen-Auswertung",
+                    "description": "Länderstatistiken aggregieren Einhaltungsquote nach Gemeindetyp."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -10260,6 +12036,92 @@
                   "available_from": 2002,
                   "update_frequency": "FQ_04"
                 }
+              }
+            },
+            {
+              "id": "erste-hilfe-kurs-abdeckung-bevoel",
+              "level": 4,
+              "name": "Erste-Hilfe-Kursabdeckung je Einwohner nach Bundesland",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Kennzahlen zur Dichte von Erste-Hilfe-Ausbildungskapazitäten (Kurse, Ausbilder) je 100.000 Einwohner nach Bundesland, berechnet aus Verbandsdaten von DRK, Malteser, ASB und DLRG.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Versorgungsdaten auf Bundeslandebene ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Verbandsdaten",
+                    "description": "Hilfsorganisationen melden Kurskapazitäten an Dachverbände."
+                  },
+                  {
+                    "method": "Versorgungsanalyse",
+                    "description": "Normierung auf Bevölkerungszahl ermöglicht Bundesländervergleich."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "laienreanimation-quote-offentlicher-raum",
+              "level": 4,
+              "name": "Laienreanimationsquote bei außerklinischem Herzstillstand",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Reanimationsstatistik des Deutschen Reanimationsregisters: Anteil von Herzstillstandsfällen im öffentlichen Raum mit Laienreanimation vor Eintreffen des Rettungsdienstes, nach Region und Umgebungstyp.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Einsatzdaten ohne Patientenidentifikation."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Registerdaten",
+                    "description": "Rettungsdienste melden Herzstillstandsfälle ans Deutsche Reanimationsregister."
+                  },
+                  {
+                    "method": "Regionale Analyse",
+                    "description": "Auswertung nach Ersteinsatzort und Bevölkerungsdichte."
+                  }
+                ]
               }
             }
           ]
@@ -10839,6 +12701,92 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "hospiz-wartezeiten-aufnahme",
+              "level": 4,
+              "name": "Wartezeiten auf Hospizaufnahme nach Region",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Erhebung zu durchschnittlichen Wartezeiten auf stationäre Hospizplätze nach Bundesland, koordiniert durch Deutschen Hospiz- und PalliativVerband (DHPV). Zeigt regionale Versorgungsungleichgewichte in der Palliativversorgung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Wartezeiten auf Einrichtungsebene aggregiert, kein Patientenbezug."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Verbandserhebung",
+                    "description": "DHPV-Mitgliedseinrichtungen melden Belegung und Wartelisten."
+                  },
+                  {
+                    "method": "Versorgungsmonitoring",
+                    "description": "DHPV publiziert Versorgungsbericht mit regionaler Differenzierung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflegedienst-personalkostenanteil",
+              "level": 4,
+              "name": "Personalkostenanteil ambulanter Pflegedienste freier Träger",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Betriebswirtschaftliche Kennzahlen zu Personalkostenanteilen in ambulanten Pflegediensten freier Träger, aus Pflegekosten-Studie des Deutschen Instituts für angewandte Pflegeforschung (DIP) im Auftrag der BAGFW.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Branchenkennzahlen ohne Bezug zu Einzeleinrichtungen."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Kostenstudie",
+                    "description": "DIP erhebt Kostenstrukturen durch standardisierte Betriebsbefragung."
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Personalkostenanteile werden nach Trägertyp und Bundesland verglichen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -11275,6 +13223,96 @@
                   "update_frequency": "FQ_03"
                 }
               }
+            },
+            {
+              "id": "gesundheitskampagnen-materialverteilung",
+              "level": 4,
+              "name": "Materialverteilung Gesundheitsaufklärungskampagnen NGO",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Daten zur Verbreitung von Informationsmaterialien (Broschüren, Onlineressourcen) durch Gesundheits-NGOs (Deutsche Krebshilfe, Deutsche Herzstiftung, DGA), erfasst nach Zielgruppe, Thema und Verbreitungskanal.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Materialdaten ohne Empfänger-Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Kampagnenerfassung",
+                    "description": "Organisationen erfassen Materialbestellungen und Downloads je Kampagne."
+                  },
+                  {
+                    "method": "Reichweitenauswertung",
+                    "description": "Jährlicher Tätigkeitsbericht enthält Verbreitungsstatistik."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ngo-gesundheits-screeningprogramme",
+              "level": 4,
+              "name": "Screeningprogramme gemeinnütziger Gesundheitsorganisationen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Verzeichnis und Teilnahmezahlen von Screeningprogrammen gemeinnütziger Träger (Früherkennung Hautkrebs, Diabetes, Hör- und Sehtest), koordiniert durch DNGK und Bundeszentrale für gesundheitliche Aufklärung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Programmbeschreibungen und Teilnahmeaggregatzahlen ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Programmkatalog",
+                    "description": "BZgA erfasst alle anerkannten Screeningprogramme gemeinnütziger Träger."
+                  },
+                  {
+                    "method": "Teilnahmestatistik",
+                    "description": "Träger melden Teilnehmerzahlen aggregiert nach Altersgruppe."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -11710,6 +13748,96 @@
                   "available_from": 2009,
                   "update_frequency": "FQ_03"
                 }
+              }
+            },
+            {
+              "id": "selbsthilfegruppen-psychisch-krank-bestand",
+              "level": 4,
+              "name": "Bestandsverzeichnis Selbsthilfegruppen psychische Erkrankungen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Bundesweites Verzeichnis anerkannter Selbsthilfegruppen für psychische Erkrankungen, geführt durch NAKOS und Nationale Kontakt- und Informationsstelle zur Anregung und Unterstützung von Selbsthilfegruppen. Enthält Gruppenangebote, Träger und Kontaktdaten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gruppenverzeichnis ohne personenbezogene Teilnehmerdaten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Registrierung",
+                    "description": "Selbsthilfegruppen melden sich bei NAKOS-Regionaldatenbank an."
+                  },
+                  {
+                    "method": "Qualitätsprüfung",
+                    "description": "NAKOS prüft Mindeststandards für Aufnahme ins Verzeichnis."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wartezeit-psychotherapie-freie-praxis",
+              "level": 4,
+              "name": "Wartezeit auf ambulante Psychotherapie – Kassenstatistik",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Erhebungsdaten zu Wartezeiten auf einen Psychotherapieplatz bei niedergelassenen Psychotherapeuten und Beratungsstellen freier Träger, aus Befragungen der Bundespsychotherapeutenkammer und DGPPN.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Wartezeiten sind Versorgungskennzahlen ohne Patientenbezug."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Befragungsstudie",
+                    "description": "Kassenärztliche Vereinigungen erheben Wartezeiten bei Therapeutensample."
+                  },
+                  {
+                    "method": "Versorgungsatlas",
+                    "description": "BPtK publiziert Wartezeit-Studie mit regionaler Differenzierung."
+                  }
+                ]
               }
             }
           ]
@@ -12477,6 +14605,139 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "vereinsregister-neueintragungen-trend",
+              "level": 4,
+              "name": "Trend Neueintragungs- und Löschungsrate eingetragener Vereine",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Zeitreihendaten zu jährlichen Neueintragungs- und Löschungsraten eingetragener Vereine aus dem Vereinsregister (Amtsgerichte), ausgewertet durch Destatis und Stiftung Zukunft Berlin. Differenziert nach Bundesland und Tätigkeitsfeld.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Registerstatistik ohne Personenbezug öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Registerauswertung",
+                    "description": "Amtsgerichtliche Vereinsregisterdaten werden durch Destatis aggregiert."
+                  },
+                  {
+                    "method": "Zeitreihe",
+                    "description": "Jährliche Entwicklung nach Vereinstyp und Region wird publiziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vereinssatzungen-zweckanalyse",
+              "level": 4,
+              "name": "Inhaltsanalyse Vereinssatzungen nach Satzungszweck",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Kodierte Inhaltsanalyse von Vereinssatzungen aus dem elektronischen Vereinsregister, durchgeführt durch Forschungsstelle für Vereins- und Verbandsrecht. Kategorisiert Satzungszwecke und gemeinnützige Zweckverfolgung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Satzungstexte sind öffentlich, Kategorisierung erfordert Aufbereitung."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Textanalyse",
+                    "description": "NLP-gestützte Extraktion von Satzungszwecken aus Registerauszügen."
+                  },
+                  {
+                    "method": "Kategorisierung",
+                    "description": "Zwecke werden nach Bundesverband-Systematik klassifiziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vereinsinsolvenz-ursachen-monitor",
+              "level": 4,
+              "name": "Insolvenzursachen-Monitor eingetragener Vereine",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Analyse von Insolvenzverfahren eingetragener Vereine mit Kategorisierung der Hauptinsolvenzursachen (Mitgliederrückgang, Haftungsprobleme, Förderkürzungen), erhoben durch Creditreform und Bundesverband Ehrenamt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Insolvenzstatistik ohne Bezug zu Einzelvereinen."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Insolvenzanalyse",
+                    "description": "Creditreform wertet Vereinsinsolvenzen nach Verfahrensunterlagen aus."
+                  },
+                  {
+                    "method": "Ursachenkodierung",
+                    "description": "Standardisiertes Schema zur Klassifikation von Insolvenzursachen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -13140,6 +15401,147 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "engagement-infrastruktur-foerderprogramme",
+              "level": 4,
+              "name": "Förderprogramme für Engagement-Infrastruktur Bund/Länder",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Verzeichnis aktiver Förderprogramme von Bund und Ländern zur Unterstützung von Engagement-Infrastruktur (Freiwilligenzentren, Ehrenamtsbüros), gepflegt durch Bundesnetzwerk Bürgerschaftliches Engagement (BBE).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Programmdaten sind öffentliche Förderpolitikinformation."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Programmerfassung",
+                    "description": "BBE sammelt und verifiziert Förderprogramme bei Bund und Ländern."
+                  },
+                  {
+                    "method": "Datenbank",
+                    "description": "Öffentlich zugängliche Förderdatenbank wird halbjährlich aktualisiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "engagement-atlas-regional-dichte",
+              "level": 4,
+              "name": "Engagement-Atlas: Organisationsdichte nach Kreisen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Räumliche Dichte eingetragener gemeinnütziger Organisationen je 10.000 Einwohner nach Kreisen und kreisfreien Städten, berechnet aus Vereinsregister und Steuerstatistik durch ZiviZ im Stifterverband.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Strukturdaten ohne Personenbezug auf Kreisebene."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Datenkombination",
+                    "description": "Vereinsregister und Steuerstatistik werden kreisspezifisch verknüpft."
+                  },
+                  {
+                    "method": "GIS-Aufbereitung",
+                    "description": "Ergebnisse werden als interaktive Karte und Download bereitgestellt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buergerbudget-partizipation-statistik",
+              "level": 4,
+              "name": "Bürgerbudget-Beteiligungsstatistik Kommunen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Daten zu Bürgerbudget- und Partizipationshaushalt-Prozessen in deutschen Kommunen: Beteiligungsquoten, eingereichte Vorschläge und Umsetzungsraten, koordiniert durch Bundeszentrale für politische Bildung und Deutsches Institut für Urbanistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Beteiligungsstatistiken sind öffentliche Demokratiedaten."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Kommunalerhebung",
+                    "description": "Kommunen melden Beteiligungskennzahlen an Bundesverzeichnis."
+                  },
+                  {
+                    "method": "Evaluationsstudie",
+                    "description": "Difu wertet Umsetzungsraten und Beteiligungsqualität aus."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -13632,6 +16034,96 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "stiftungsfoerderung-wissenschaft-themen",
+              "level": 4,
+              "name": "Thematische Förderverteilung Stiftungsgelder Wissenschaft",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Analyse der thematischen Verteilung von Stiftungsfördergeldern für wissenschaftliche Forschung nach Forschungsfeldern, erhoben durch Bundesverband Deutscher Stiftungen im Rahmen des Stiftungsreports.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Förderdaten ohne Bezug zu einzelnen Projektnehmern."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Stiftungsreport",
+                    "description": "Verbandsbefragung erfasst Fördervolumina nach Forschungsfeld."
+                  },
+                  {
+                    "method": "Themenklassifikation",
+                    "description": "Stiftungszwecke werden nach Wissenschaftssystematik kodiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "zivilgesellschaft-eu-forschungsfoerderung",
+              "level": 4,
+              "name": "Beteiligung zivilgesellschaftlicher Organisationen an EU-Forschungsprogrammen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Statistik zur Teilnahme gemeinnütziger Organisationen als Partner in EU-Horizon-Projekten, ausgewertet durch Stifterverband und Forschungsinfrastruktur CORDIS. Enthält Fördervolumina und Partnerrollenverteilung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "EU-Förderdaten sind öffentlich über CORDIS-API zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "CORDIS-Auswertung",
+                    "description": "EU-Projektdatenbank CORDIS wird nach NGO-Beteiligung gefiltert."
+                  },
+                  {
+                    "method": "Rollen-Analyse",
+                    "description": "Partner- vs. Koordinatorenrollen werden nach Organisationstyp klassifiziert."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -14118,6 +16610,96 @@
                   "available_from": 2017,
                   "update_frequency": "FQ_04"
                 }
+              }
+            },
+            {
+              "id": "preprint-server-beitraege-ngo",
+              "level": 4,
+              "name": "Preprint-Beiträge zivilgesellschaftlicher Forschungseinrichtungen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Anzahl und Themenverteilung von Preprint-Veröffentlichungen durch zivilgesellschaftliche Forschungseinrichtungen und NGO-eigene Forschungsabteilungen auf Servern wie SSRN und EarthArXiv, ausgewertet durch Open-Science-Monitor der Europäischen Kommission.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bibliografische Metadaten sind frei zugänglich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Metadatenextraktion",
+                    "description": "Preprint-APIs werden nach Autoraffilierungen mit NGOs gefiltert."
+                  },
+                  {
+                    "method": "Themenklassifikation",
+                    "description": "Fachgebiete werden nach arXiv-Schema kategorisiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "open-data-veroeffentlichungen-ngo",
+              "level": 4,
+              "name": "Open-Data-Veröffentlichungen gemeinnütziger Organisationen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Inventar von Datensätzen, die gemeinnützige Organisationen auf offenen Plattformen (GovData, Zenodo, Kaggle) unter offenen Lizenzen publiziert haben, erfasst durch Open Knowledge Foundation Deutschland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Metadaten offener Datensätze sind per Definition öffentlich."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Plattformscraping",
+                    "description": "OKF DE crawlt offene Datenportale nach NGO-Herausgebern."
+                  },
+                  {
+                    "method": "Qualitätsbewertung",
+                    "description": "Datensätze werden nach Open-Definition-Konformität bewertet."
+                  }
+                ]
               }
             }
           ]
@@ -14606,6 +17188,96 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "buergerwissenschaft-datenbeitrag-qualitaet",
+              "level": 4,
+              "name": "Datenqualitätsbewertung Citizen-Science-Beiträge",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Bewertungsrahmen und Ergebnisdaten zur Datenqualität von Bürgerwissenschaftsbeiträgen auf deutschen Plattformen (Bürger schaffen Wissen), erfasst durch Fraunhofer IAIS im Rahmen des Qualitätssicherungsprojekts CitizenScienceQuality.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Qualitätsmetriken ohne Bezug zu einzelnen Beitragenden."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Qualitätsaudit",
+                    "description": "Stichprobenhafte Überprüfung von Citizen-Science-Daten durch Fachexperten."
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Qualitätsindikatoren werden nach Projekttyp und Themenfeld verglichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "citizen-science-schule-projekte",
+              "level": 4,
+              "name": "Citizen-Science-Projekte mit Schulbeteiligung",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Verzeichnis und Teilnahmedaten schulischer Citizen-Science-Projekte in Deutschland, koordiniert durch Wissenschaft im Dialog und Bürger schaffen Wissen. Enthält Schulstufe, Projektziel und erzeugte Datenmengen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Projektbeschreibungen und Aggregatdaten ohne Schüleridentifikation."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Projektregistrierung",
+                    "description": "Schulprojekte melden sich bei Bürger-schaffen-Wissen-Plattform an."
+                  },
+                  {
+                    "method": "Wirkungsauswertung",
+                    "description": "WiD wertet Teilnahmedaten und Lerneffekte je Projekttyp aus."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -15047,6 +17719,92 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "mbe-beratungsdichte-herkunftslaender",
+              "level": 4,
+              "name": "Beratungsdichte Migrationserstberatung nach Herkunftsregion",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Statistik zur regionalen Beratungsdichte (Fälle je 1.000 Personen der Zielgruppe) in der Migrationserstberatung (MBE) des BAMF nach Herkunftsregion und Beratungsstellentyp, aus BAMF-Jahresauswertung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Regionale Beratungsdichten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BAMF-Auswertung",
+                    "description": "BAMF aggregiert MBE-Fallzahlen nach Träger, Region und Herkunft."
+                  },
+                  {
+                    "method": "Versorgungsanalyse",
+                    "description": "Normierung auf Zielgruppenpopulation ergibt Beratungsdichteindex."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "integrationsberatung-verbleib-statistik",
+              "level": 4,
+              "name": "Verbleibsstatistik nach Abschluss Integrationsberatung",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Follow-up-Daten zu Beratungsabschlüssen in der Integrationsberatung freier Träger (AWO, DRK, Caritas): Verbleib in Ausbildung, Beschäftigung oder Transferleistung sechs Monate nach Abschluss, aus BAMF-Trägerstatistik.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Verbleibsdaten erfordern Anonymisierung vor Publikation."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Trägermeldung",
+                    "description": "Beratungsstellen dokumentieren Verbleib standardisiert bei Fallabschluss."
+                  },
+                  {
+                    "method": "BAMF-Auswertung",
+                    "description": "BAMF aggregiert Verbleibsdaten nach Trägertyp und Region."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -15439,6 +18197,92 @@
                   "available_from": 2010,
                   "update_frequency": "FQ_04"
                 }
+              }
+            },
+            {
+              "id": "integrationskurs-traeger-qualitaet",
+              "level": 4,
+              "name": "Qualitätsbewertungen zugelassener Integrationskursträger",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Bewertungsdaten aus dem BAMF-Qualitätssicherungssystem für zugelassene Integrationskursträger: Prüfergebnisse, Abschlussquoten und Kundenbefragungswerte, veröffentlicht im Integrationsprogramm-Monitoring.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Qualitätskennzahlen je Trägertyp öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Qualitätsprüfung",
+                    "description": "BAMF führt Stichprobenprüfungen bei zugelassenen Trägern durch."
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Qualitätskennzahlen werden im BAMF-Integrationsprogramm-Bericht publiziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sprachstandserhebung-erwachsene-migranten",
+              "level": 4,
+              "name": "Sprachstandserhebung Deutsch als Zweitsprache Erwachsene",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Ergebnisse standardisierter Sprachstandstests (Deutsch-Test für Zuwanderer) bei Integrationskursteilnehmenden, aggregiert durch BAMF nach Herkunftsregion, Alphabetisierungsstatus und Kursdauer.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Testdaten werden nur als Gruppenstatistik ohne Individualreferenz publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Testdurchführung",
+                    "description": "DTZ wird nach Abschluss des Integrationskurses verpflichtend durchgeführt."
+                  },
+                  {
+                    "method": "Aggregation",
+                    "description": "BAMF wertet Testergebnisse nach soziodemografischen Gruppen aus."
+                  }
+                ]
               }
             }
           ]
@@ -16052,6 +18896,96 @@
                   "update_frequency": "FQ_03"
                 }
               }
+            },
+            {
+              "id": "deutsches-nothilfe-volumen-laender",
+              "level": 4,
+              "name": "Nothilfe-Volumen deutscher NGOs nach Empfängerländern",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Aggregierte Daten zu Nothilfemittelflüssen deutscher humanitärer Organisationen (Caritas international, Diakonie Katastrophenhilfe, AWO International) nach Empfängerländern und Krisenkategorien, aus VENRO-Jahresbericht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Finanzflüsse ohne Begünstigtenidentifikation."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Verbandsmeldung",
+                    "description": "VENRO-Mitglieder melden Nothilfeausgaben nach Ländern und Krisen."
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "VENRO publiziert aggregierte Übersicht im Jahresbericht Humanitäre Hilfe."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ngo-koordination-humanitaere-cluster",
+              "level": 4,
+              "name": "Cluster-Koordinationsdaten humanitärer NGOs",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Teilnahme- und Koordinationsdaten aus UN-OCHA-Cluster-Koordinationssystem für deutsche humanitäre NGOs: Zahl der koordinierten Akteure, Reichweite und Bedarfsdeckungsgrad je Cluster und Krisenkontext.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "UN-OCHA-Daten sind grundsätzlich öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "OCHA-Datenportal",
+                    "description": "Humdata.org stellt Cluster-Koordinationsdaten als Open Data bereit."
+                  },
+                  {
+                    "method": "NGO-Auswertung",
+                    "description": "VENRO filtert Einträge nach deutschen Organisationen."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -16634,6 +19568,96 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "lobbyregister-zivilgesellschaft-eintraege",
+              "level": 4,
+              "name": "Lobbyregister-Einträge zivilgesellschaftlicher Organisationen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Extrahierte Einträge gemeinnütziger und zivilgesellschaftlicher Organisationen aus dem Lobbyregister des Deutschen Bundestages, aufbereitet durch LobbyControl und Open Knowledge Foundation. Enthält Interessenfelder und Kontakthäufigkeiten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Lobbyregister-Daten sind gesetzlich öffentlich (§§ 1 ff. LobbyRG)."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Registerextraktion",
+                    "description": "LobbyControl scrapt Bundestagslobbyregister nach NGO-Einträgen."
+                  },
+                  {
+                    "method": "Kategorisierung",
+                    "description": "Interessenfelder werden nach Politikbereichen klassifiziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buergerinitiative-erfolgsquote-bundestag",
+              "level": 4,
+              "name": "Erfolgsquote Bürgerinitiativen und Petitionen im Bundestag",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Analyse der Annahmequote und parlamentarischen Weiterbehandlung von Petitionen beim Deutschen Bundestag nach Themenfeldern und Unterstützerzahlen, aus Petitionsausschuss-Jahresberichten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Parlamentarische Verfahrensdaten sind öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Petitionsauswertung",
+                    "description": "Petitionsausschuss dokumentiert Behandlung und Ergebnis jeder Petition."
+                  },
+                  {
+                    "method": "Erfolgsanalyse",
+                    "description": "Annahmequoten werden nach Themenfeld und Unterstützerzahl ausgewertet."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -17074,6 +20098,92 @@
                   "update_frequency": "FQ_03"
                 }
               }
+            },
+            {
+              "id": "verbraucher-ngo-kooperationspartnerschaften",
+              "level": 4,
+              "name": "Kooperationspartnerschaften Verbraucher-NGOs",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Verzeichnis formalisierter Kooperationsvereinbarungen zwischen Verbraucherorganisationen und anderen zivilgesellschaftlichen Trägern, geführt durch vzbv (Verbraucherzentrale Bundesverband). Enthält Kooperationsart und Themenschwerpunkte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Institutionelle Partnerschaftsdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Vertragsregister",
+                    "description": "vzbv pflegt Verzeichnis aktiver Kooperationsabkommen."
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Kooperationsaktivitäten werden im Jahresbericht dokumentiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "verbraucherschutz-netzwerk-akteure",
+              "level": 4,
+              "name": "Akteursnetzwerk Verbraucherschutz Deutschland",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Netzwerkanalyse-Datensatz zu Kooperationsbeziehungen zwischen deutschen Verbraucherorganisationen, Behörden und Forschungseinrichtungen, erstellt durch Stiftung Warentest und vzbv auf Basis institutioneller Selbstauskünfte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Institutionelle Netzwerkdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Akteursbefragung",
+                    "description": "Organisationen dokumentieren eigene Netzwerkbeziehungen."
+                  },
+                  {
+                    "method": "Netzwerkanalyse",
+                    "description": "Adjazenzmatrix wird für Zentralitäts- und Clusteranalysen aufbereitet."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -17513,6 +20623,92 @@
                   "available_from": 2002,
                   "update_frequency": "FQ_03"
                 }
+              }
+            },
+            {
+              "id": "schlichtungsstellen-fallstatistik-sektoren",
+              "level": 4,
+              "name": "Fallstatistik anerkannter Verbraucherschlichtungsstellen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Jahresstatistiken anerkannter Verbraucherschlichtungsstellen (Energie, Telekommunikation, Reise) nach Fallzahl, Einigungsquote und Streitwerthöhe, aus Jahresberichten der Schlichtungsstellen und BMJV-Berichterstattung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Verfahrensstatistiken ohne Parteibezug."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Schlichtungsstatistik",
+                    "description": "Schlichtungsstellen melden Kennzahlen an BMJV gemäß VSBG."
+                  },
+                  {
+                    "method": "Sektorvergleich",
+                    "description": "BMJV aggregiert sektorübergreifenden Jahresbericht Streitbeilegung."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "produktsicherheit-rueckruf-reaktionszeit",
+              "level": 4,
+              "name": "Reaktionszeit-Analyse Produktrückrufe Verbraucherorganisationen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Analyse von Reaktionszeiten zwischen Schadensmeldung und Rückrufankündigung bei Produktrückrufen, zusammengestellt durch Stiftung Warentest auf Basis von Rückrufdatenbanken (RAPEX, BfR-Datenbank).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Rückrufzeitanalysen ohne Bezug zu geschädigten Verbrauchern."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "RAPEX-Auswertung",
+                    "description": "Europäisches Schnellwarnsystem RAPEX-Daten werden nach Deutschland gefiltert."
+                  },
+                  {
+                    "method": "Zeitanalyse",
+                    "description": "Differenz zwischen Erstmeldung und Rückrufveröffentlichung wird gemessen."
+                  }
+                ]
               }
             }
           ]
@@ -18045,6 +21241,96 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "berufsverband-weiterbildungsangebote",
+              "level": 4,
+              "name": "Weiterbildungsangebote-Katalog Berufsverbände",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Verzeichnis von Fort- und Weiterbildungsangeboten, die von Berufsverbänden und Standesorganisationen für ihre Mitglieder angeboten werden, koordiniert durch Bundesverband Selbständige Berufe und IHK-Fachverbände.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Programmdaten ohne Personenbezug öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Angebotserfassung",
+                    "description": "Verbände melden Weiterbildungsformate an Bundesverzeichnis."
+                  },
+                  {
+                    "method": "Katalogisierung",
+                    "description": "Angebote werden nach Berufsfeld und Format kategorisiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "berufsethik-beschwerdeverfahren-statistik",
+              "level": 4,
+              "name": "Beschwerdeverfahren-Statistik berufsethischer Kommissionen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Aggregierte Daten zu Beschwerdeverfahren in berufsethischen Kommissionen von Berufsverbänden (Ärztekammern, Anwaltskammern, Ingenieurkammern), aus Jahresberichten der Kammern. Enthält Beschwerdekategorien und Verfahrensergebnisse.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Verfahrensstatistiken ohne Bezug zu Einzelpersonen veröffentlichbar."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Kammerstatistik",
+                    "description": "Kammern erfassen Beschwerden nach standardisiertem Schema."
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Verfahrensstatistiken werden in Kammerberichten publiziert."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -18528,6 +21814,92 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "verbands-investitionsabsichten-umfrage",
+              "level": 4,
+              "name": "Investitionsabsichten-Umfrage Branchenverbände",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Erhebungsdaten zu geplanten Investitionsvolumina und -schwerpunkten aus Branchenverbandsbefragungen (BDI, BDA, DIHK), veröffentlicht als Frühindikator für Investitionskonjunktur. Differenziert nach Branche und Betriebsgröße.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Konjunkturdaten ohne Unternehmensbezug."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Verbandsbefragung",
+                    "description": "Quartalsweise Mitgliederbefragung zu Investitionsplanungen."
+                  },
+                  {
+                    "method": "Frühindikatorkalkulation",
+                    "description": "Saldo aus Investitionszunahme- und -abnahmeerwartungen wird publiziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "exporterwartungen-mittelstand-verbandsstudie",
+              "level": 4,
+              "name": "Exporterwartungen mittelständischer Unternehmen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Erhebung zu Exporterwartungen kleiner und mittlerer Unternehmen aus Branchenverbandsbefragungen (BVMW, IHK-Exportbericht), differenziert nach Zielmärkten und Unternehmensgröße. Vorläuferindikator für Außenhandelsstatistiken.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Erwartungsdaten ohne Unternehmensbezug."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "IHK-Erhebung",
+                    "description": "IHKs befragen Mitglieder zu Außenhandelserwartungen vierteljährlich."
+                  },
+                  {
+                    "method": "BVMW-Studie",
+                    "description": "BVMW ergänzt mittelstandsspezifische Exportbarometer-Studie."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -18967,6 +22339,92 @@
                   "available_from": 2000,
                   "update_frequency": "FQ_04"
                 }
+              }
+            },
+            {
+              "id": "tarifbindung-sektoral-zeitreihe",
+              "level": 4,
+              "name": "Sektorale Tarifbindungsquoten Zeitreihe",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Zeitreihendaten zur Entwicklung der Tarifbindung (Branchentarifvertrag, Haustarifvertrag, kein Vertrag) nach Wirtschaftssektor und Bundesland, aus dem IAB-Betriebspanel und WSI-Tarifarchiv.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Branchenstatistiken ohne Unternehmensbezug."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "IAB-Betriebspanel",
+                    "description": "Repräsentative Betriebsbefragung erhebt Tarifbindungsstatus jährlich."
+                  },
+                  {
+                    "method": "WSI-Ergänzung",
+                    "description": "WSI-Tarifarchiv kombiniert mit Vergütungsstatistik der Bundesagentur."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "arbeitskampf-dauer-kosten",
+              "level": 4,
+              "name": "Arbeitskampf-Dauer und wirtschaftliche Kostenabschätzung",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Daten zu Streikdauer, Streikvolumen und Schätzungen wirtschaftlicher Kosten von Arbeitskämpfen nach Branche, erhoben durch WSI Wirtschafts- und Sozialwissenschaftliches Institut der Hans-Böckler-Stiftung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Arbeitskampfdaten ohne Beteiligtenidentifikation."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Streikerfassung",
+                    "description": "WSI erhebt Arbeitskämpfe über Pressemonitoring und Verbandsmeldungen."
+                  },
+                  {
+                    "method": "Kostenmodell",
+                    "description": "Volkswirtschaftliche Ausfallkosten werden auf Basis von Produktionsdaten geschätzt."
+                  }
+                ]
               }
             }
           ]
@@ -19460,6 +22918,92 @@
                   "update_frequency": "FQ_03"
                 }
               }
+            },
+            {
+              "id": "energiegenossenschaft-rendite-verteilung",
+              "level": 4,
+              "name": "Renditeverteilung und Dividendenstatistik Energiegenossenschaften",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Daten zu ausgeschütteten Dividenden und Eigenkapitalrenditen von Energiegenossenschaften, erhoben durch DGRV (Deutscher Genossenschafts- und Raiffeisenverband) im Rahmen des Energie-Genossenschaftsreports.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Renditedaten ohne Bezug zu Einzelmitgliedern."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verbandsbefragung",
+                    "description": "DGRV erhebt Finanzkennzahlen bei Mitglieds-Energiegenossenschaften."
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Renditeverteilung nach Anlagentyp und Genossenschaftsgröße wird verglichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "energiegenossenschaft-anlagentyp-leistung",
+              "level": 4,
+              "name": "Anlagentyp und installierte Leistung Energiegenossenschaften",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Technische Bestandsdaten zu Energieerzeugungsanlagen von Energiegenossenschaften (PV, Wind, Biogas) nach Anlagentyp, installierter Leistung und Inbetriebnahmejahr, aus DGRV-Anlagenregister und Marktstammdatenregister.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Anlagenregisterdaten sind öffentlich im Marktstammdatenregister."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "MaStR-Abgleich",
+                    "description": "Anlagen werden mit Bundesnetzagentur-Marktstammdatenregister abgeglichen."
+                  },
+                  {
+                    "method": "DGRV-Aggregation",
+                    "description": "DGRV konsolidiert genossenschaftsspezifische Teilmenge."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -19947,6 +23491,92 @@
                   "update_frequency": "FQ_03"
                 }
               }
+            },
+            {
+              "id": "genossenschaftswohnungen-warteliste",
+              "level": 4,
+              "name": "Wartelistenstatistik Wohnungsbaugenossenschaften",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Daten zu Wartelistenlängen und Wartezeiten bei Wohnungsbaugenossenschaften nach Stadtgröße und Region, erhoben durch GdW (Bundesverband deutscher Wohnungs- und Immobilienunternehmen) in der GdW-Jahresstatistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Wartestatistiken ohne Bewerberdaten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "GdW-Mitgliedererhebung",
+                    "description": "Wohnungsgenossenschaften melden Wartelistenkennzahlen jährlich."
+                  },
+                  {
+                    "method": "Stadtgrößenklassen",
+                    "description": "GdW aggregiert nach Gemeindegröße und Bundesland."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "genossenschaftswohnen-mietpreisbindung",
+              "level": 4,
+              "name": "Mietpreisbindungsquote genossenschaftlicher Wohnungen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Anteil mietpreisgebundener Wohnungen im Genossenschaftsbestand nach Region und Baujahr, berechnet aus GdW-Wohnungsbestandsstatistik und Sozialwohnungsdaten der Länder.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Bestandsstatistiken auf Aggregatebene ohne Mieterdaten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bestandserhebung",
+                    "description": "GdW erhebt Wohnungsbestand mit Belegungs- und Preisbindungsstatus."
+                  },
+                  {
+                    "method": "Regionaler Vergleich",
+                    "description": "Mietpreisbindungsquoten werden nach Bundesland publiziert."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -20429,6 +24059,92 @@
                   "available_from": 2001,
                   "update_frequency": "FQ_04"
                 }
+              }
+            },
+            {
+              "id": "tafel-herkunft-lebensmittelspenden",
+              "level": 4,
+              "name": "Herkunftsstruktur Lebensmittelspenden Tafel Deutschland",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Daten zur Herkunft gespendeter Lebensmittel bei den Tafeln (Einzelhandel, Großhandel, Industrie, Privat) nach Lebensmittelkategorie und Wert, aus Tafel Deutschland e.V. Jahresbericht und BMEL-Studie zur Lebensmittelverschwendung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Spendendaten ohne Spendengeberbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Tafel-Jahreserhebung",
+                    "description": "Tafeln melden Spendenmengen nach Herkunftskategorie an Dachverband."
+                  },
+                  {
+                    "method": "Wertermittlung",
+                    "description": "Lebensmittelmengen werden nach statistischen Einheitspreisen bewertet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "tafel-kunden-bedarfsdeckung",
+              "level": 4,
+              "name": "Bedarfsdeckungsgrad Tafelkunden nach Haushaltstyp",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Schätzwerte zum Anteil des wöchentlichen Lebensmittelbedarfs, der durch Tafel-Ausgaben gedeckt wird, differenziert nach Haushaltstyp (Alleinstehende, Familien, Senior*innen), aus BMEL-begleitender Wirkungsforschung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Bedarfsdeckungsdaten auf Haushaltstypebene aggregiert, kein Individualbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Wirkungsforschung",
+                    "description": "BMEL-geförderte Begleitforschung befragt Tafelkunden zu Versorgungsanteil."
+                  },
+                  {
+                    "method": "Hochrechnung",
+                    "description": "Stichprobenergebnisse werden auf Tafelkunden-Grundgesamtheit hochgerechnet."
+                  }
+                ]
               }
             }
           ]
@@ -20961,6 +24677,92 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "buergermedien-finanzierungsstruktur",
+              "level": 4,
+              "name": "Finanzierungsstruktur gemeinnütziger Lokalmedien",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Daten zur Einnahmestruktur (öffentliche Förderung, Spenden, Werbung, Mitgliedsbeiträge) gemeinnütziger Lokalmedien und Bürgerfunkhäuser, erhoben durch ALM-Arbeitsgemeinschaft der Landesmedienanstalten und Netzwerk Recherche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Finanzstruktur auf Aggregatebene ohne Einzelmedien-Identifikation."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "ALM-Erhebung",
+                    "description": "Landesmedienanstalten erfassen Finanzierungsquellen zugelassener Bürgermedien."
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Einnahmestruktur wird nach Medientyp und Bundesland verglichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "nichtkommerzielle-radiosender-hoererzahlen",
+              "level": 4,
+              "name": "Hörerreichweite nichtkommerzieller Lokalradiosender",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Reichweitendaten nichtkommerzieller Lokalradiosender (Offene Kanäle, Community-Radio) aus ALM-Studien und MA Radio-Begleiterhebungen. Zeigt Nutzungsstruktur und demokratische Breitenwirkung zivilgesellschaftlicher Medien.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Reichweitendaten auf Sendersegment-Ebene öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Reichweitenerhebung",
+                    "description": "MA Radio erhebt Nutzungsdaten nach Sendertyp und Region."
+                  },
+                  {
+                    "method": "ALM-Auswertung",
+                    "description": "ALM aggregiert Offene-Kanal-spezifische Teilmenge."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -21396,6 +25198,92 @@
                   "available_from": 2002,
                   "update_frequency": "FQ_04"
                 }
+              }
+            },
+            {
+              "id": "medienkompetenz-programme-evaluation",
+              "level": 4,
+              "name": "Evaluationsergebnisse Medienkompetenzprogramme",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Wirkungsdaten aus evaluierten Medienkompetenzprogrammen gemeinnütziger Träger (Klicksafe, Saferinternet.de), nach Zielgruppe, Bildungskontext und Messverfahren, koordiniert durch EU-Initiative Klicksafe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Programmevaluationsergebnisse auf Aggregatebene ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Programmmonitoring",
+                    "description": "Träger erfassen Wirkungsindikatoren nach standardisierten Messinstrumenten."
+                  },
+                  {
+                    "method": "EU-Auswertung",
+                    "description": "Klicksafe aggregiert Programmdaten im Jahresbericht EU-Safer-Internet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "digitale-kompetenz-jugend-laendervergleich",
+              "level": 4,
+              "name": "Digitale Kompetenzen Jugendlicher – Ländervergleich NGO-Studie",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Erhebungsdaten zu digitalen Kompetenzen von Jugendlichen nach Bundesland und soziodemografischen Merkmalen, aus JFF-Institut-Studie im Auftrag der Landesmedienanstalten. Operationalisiert nach DigComp-Kompetenzrahmen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Jugendlichenbefragung wird nur aggregiert nach Schulstufe publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Jugenderhebung",
+                    "description": "JFF führt repräsentative Querschnittserhebung bei Jugendlichen durch."
+                  },
+                  {
+                    "method": "DigComp-Operationalisierung",
+                    "description": "Kompetenzdimensionen werden nach EU-DigComp-Rahmen bewertet."
+                  }
+                ]
               }
             }
           ]
@@ -21884,6 +25772,96 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "desinformation-faktenchecks-ngo",
+              "level": 4,
+              "name": "Faktenchecks zivilgesellschaftlicher Faktencheck-Organisationen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Datenbank publizierter Faktenchecks von gemeinnützigen Faktencheck-Organisationen in Deutschland (Correctiv, Mimikama, dpa-Faktencheck), kategorisiert nach Thema, Falschinformationstyp und Verbreitungsplattform.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Faktenchecks werden von den Organisationen öffentlich publiziert."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Faktencheck-Datenbank",
+                    "description": "IFCN-Mitgliedsorganisationen melden Faktenchecks in ClaimBuster-Datenbank."
+                  },
+                  {
+                    "method": "Kategorisierung",
+                    "description": "Faktenchecks werden nach Falschinformationstyp und Themenfeld kodiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "digitale-buergerrechtsverletzungen-meldungen",
+              "level": 4,
+              "name": "Meldungsstatistik digitale Bürgerrechtsverletzungen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Fallstatistiken zu gemeldeten digitalen Bürgerrechtsverletzungen (Datenschutzverstöße, Online-Diskriminierung, Zensur) bei zivilgesellschaftlichen Beschwerdestellen (D64, Digitale Gesellschaft), differenziert nach Verletzungstyp.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Meldungsstatistik ohne Fallbezug zu Einzelpersonen."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Beschwerdestelle",
+                    "description": "Organisationen erfassen Meldungen nach standardisiertem Vorfallstyp."
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Aggregierte Statistik wird im Jahresbericht zu Digitalrechten publiziert."
+                  }
+                ]
+              }
             }
           ]
         }
@@ -22350,6 +26328,92 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "wohlfahrt-einrichtungen-bestandsentwicklung",
+              "level": 4,
+              "name": "Bestandsentwicklung Einrichtungen freier Wohlfahrtspflege",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Zeitreihendaten zur Anzahl von Einrichtungen und Diensten der freien Wohlfahrtspflege nach Verbandstyp und Hilfeleistungsbereich, aus BAGFW-Gesamtstatistik alle vier Jahre.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Strukturstatistik auf Verbands-Aggregatebene öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Gesamtstatistik",
+                    "description": "BAGFW erhebt Einrichtungsbestand alle vier Jahre bei Mitgliedsverbänden."
+                  },
+                  {
+                    "method": "Zeitreihe",
+                    "description": "Bestandsentwicklung wird seit 1970 als Zeitreihe bereitgestellt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wohlfahrtsverband-haushalt-ausgabenstruktur",
+              "level": 4,
+              "name": "Haushalts- und Ausgabenstruktur Wohlfahrtsverbände",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Aggregierte Daten zur Ausgabenstruktur der sechs Spitzenverbände der freien Wohlfahrtspflege nach Leistungsbereich und Finanzierungsquelle, aus BAGFW-Statistik und Jahresabschlüssen der Verbände.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Verbandliche Finanzstruktur auf Spitzenverbands-Ebene öffentlich."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Jahresabschlussanalyse",
+                    "description": "Jahresabschlüsse der Verbände werden nach Ausgabenkategorien analysiert."
+                  },
+                  {
+                    "method": "BAGFW-Aggregation",
+                    "description": "Spitzenverbandsebene wird zu Gesamtbild der freien Wohlfahrtspflege zusammengefasst."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -22804,6 +26868,92 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "wohlfahrt-pflegeheimbelegung-qualitaet",
+              "level": 4,
+              "name": "Pflegeheimbelegung und MDK-Qualitätsbewertungen Wohlfahrtsverbände",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Belegungsquoten und MDK-Transparenzbewertungen stationärer Pflegeeinrichtungen der freien Wohlfahrtspflege, aus MDS-Berichten und Pflege-Transparenzvereinbarung PTVS.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Qualitätsbewertungen sind nach § 115 SGB XI öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "MDK-Prüfung",
+                    "description": "MDK prüft Pflegeeinrichtungen regelmäßig nach PTVS-Kriterien."
+                  },
+                  {
+                    "method": "Transparenzveröffentlichung",
+                    "description": "Bewertungen werden auf pflegelotse.de publiziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wohlfahrt-ambulante-versorgungsquote",
+              "level": 4,
+              "name": "Ambulante Versorgungsquote freier Wohlfahrtsverbände nach Region",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Anteil ambulanter Pflegebedürftiger, die von Pflegediensten freier Träger versorgt werden, nach Region und Verbandstyp, berechnet aus Destatis-Pflegestatistik und BAGFW-Trägerstatistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Versorgungsquoten auf Bundeslandebene ohne Patientenbezug."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Destatis-Pflegestatistik",
+                    "description": "Zweijährliche Pflegestatistik erfasst Versorgungsformen nach Träger."
+                  },
+                  {
+                    "method": "Quotenberechnung",
+                    "description": "Anteil freier Träger an Gesamtversorgung wird regional berechnet."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -23257,6 +27407,92 @@
                   "available_from": 2003,
                   "update_frequency": "FQ_04"
                 }
+              }
+            },
+            {
+              "id": "wohlfahrt-spendenherkunft-kanaele",
+              "level": 4,
+              "name": "Spendenherkunft und Kanalstruktur Wohlfahrtsverbände",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Aufschlüsselung der Spendeneinnahmen der Wohlfahrtsverbände nach Spendenkanal (Online, Direktmailing, Erbschaften, Großspenden), aus DZI-Spendenklima-Studie und Verbandsjahresberichten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Spendenkanalstatistik ohne Spenderdaten."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "DZI-Studie",
+                    "description": "DZI erhebt Spendeneinnahmen bei Mitgliedsorganisationen nach Kanal."
+                  },
+                  {
+                    "method": "Kanalanalyse",
+                    "description": "Shift zwischen digitalen und analogen Spendenkanälen wird als Trend publiziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "wohlfahrt-kosteneffizienz-verwaltungsquote",
+              "level": 4,
+              "name": "Verwaltungskostenquote und Kosteneffizienz Wohlfahrtsverbände",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Verwaltungskostenanteile an Gesamtausgaben der Wohlfahrtsverbände, berechnet aus Jahresabschlüssen und DZI-Spendensiegel-Prüfungen. Referenzwert für Spendertransparenz und Effizienzvergleich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Verwaltungsquoten werden durch DZI-Spendensiegel öffentlich ausgewiesen."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "DZI-Prüfung",
+                    "description": "DZI prüft Jahresabschlüsse auf Verwaltungskostenanteil für Spendensiegel."
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Verwaltungsquoten werden nach Verbands- und Organisationstyp verglichen."
+                  }
+                ]
               }
             }
           ]
@@ -23727,6 +27963,96 @@
                   "available_from": 2017,
                   "update_frequency": "FQ_04"
                 }
+              }
+            },
+            {
+              "id": "stiftungsfoerderung-regionale-verteilung",
+              "level": 4,
+              "name": "Regionale Verteilung Stiftungsfördergelder",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Geografische Verteilung von Fördermitteln rechtsfähiger Stiftungen des bürgerlichen Rechts nach Förderempfänger-Bundesland, berechnet aus Bundesverband Deutscher Stiftungen Stiftungsstatistik und Förderberichten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Fördergeografie ohne Begünstigtenidentifikation."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Stiftungsstatistik",
+                    "description": "Bundesverband erhebt Förderdaten bei Mitgliedsstiftungen nach Region."
+                  },
+                  {
+                    "method": "GIS-Aufbereitung",
+                    "description": "Fördergelder werden auf Kreiskarte visualisiert und als Geodaten bereitgestellt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "stiftungs-foerderzweck-verteilung-zeitreihe",
+              "level": 4,
+              "name": "Zeitreihe Förderzweckverteilung deutsches Stiftungswesen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Langfristige Zeitreihendaten (1990–heute) zur Verteilung von Stiftungsneugründungen nach Satzungszweck (Bildung, Soziales, Kunst, Wissenschaft), aus Bundesverband Deutscher Stiftungen Verzeichnis rechtsfähiger Stiftungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Zweckverteilung aus öffentlichem Stiftungsverzeichnis."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verzeichnisauswertung",
+                    "description": "Satzungszwecke werden aus Stiftungsverzeichnis kodiert."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Langfristiger Strukturwandel im Stiftungszweckspektrum wird berechnet."
+                  }
+                ]
               }
             }
           ]
@@ -24202,6 +28528,92 @@
                   "update_frequency": "FQ_04"
                 }
               }
+            },
+            {
+              "id": "stiftungs-wirkungsbericht-benchmark",
+              "level": 4,
+              "name": "Wirkungsbericht-Benchmarking großer Stiftungen",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Vergleichende Inhaltsanalyse von Wirkungsberichten der 50 größten deutschen Förderstiftungen nach Wirkungsnachweisniveau (Indikator/Wirkungsstudie/RCT), durchgeführt durch PHINEO im Auftrag des Bundesverbands Deutscher Stiftungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Berichtsanalyse auf Dokumentenebene ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Dokumentenanalyse",
+                    "description": "PHINEO analysiert publizierte Wirkungsberichte nach Qualitätskriterien."
+                  },
+                  {
+                    "method": "Benchmark-Score",
+                    "description": "Jede Stiftung erhält Wirkungsnachweis-Score nach standardisiertem Schema."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "stiftungs-gesellschaftliche-wirkung-laengsschnitt",
+              "level": 4,
+              "name": "Gesellschaftliche Wirkungsdaten Langzeitförderprogramme",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Längsschnittdaten zu gesellschaftlichen Wirkungsindikatoren aus mehrjährigen Stiftungs-Förderprogrammen (z.B. Hertie-Stiftung, Bertelsmann Stiftung), veröffentlicht in abschließenden Evaluationsberichten.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Evaluationsdaten werden anonymisiert und aggregiert publiziert."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Programmevaluation",
+                    "description": "Externe Evaluatoren erheben Wirkungsdaten nach Programmende."
+                  },
+                  {
+                    "method": "Längsschnittauswertung",
+                    "description": "Prä-Post-Vergleich misst gesellschaftliche Veränderungen über Programmzeitraum."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -24667,6 +29079,96 @@
                   "available_from": 2002,
                   "update_frequency": "FQ_04"
                 }
+              }
+            },
+            {
+              "id": "stiftungsregister-bund-neueintragungen",
+              "level": 4,
+              "name": "Neueintragungen Stiftungsregister Bund",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Monatliche Neueintragungen im Zentralen Stiftungsregister des Bundes (seit 2026 verpflichtend) nach Stiftungsform, Satzungszweck und Sitz-Bundesland, bereitgestellt durch Bundesamt für Justiz.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Registereinträge sind nach Stiftungsregistergesetz öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Registerführung",
+                    "description": "BfJ führt Zentrales Stiftungsregister und stellt Daten als Open Data bereit."
+                  },
+                  {
+                    "method": "Monatsstatistik",
+                    "description": "Aggregierte Neuzugänge werden monatlich publiziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "stiftungsregister-loeschungen-erloschengruende",
+              "level": 4,
+              "name": "Löschungen und Erlöschensgründe im Stiftungsregister",
+              "color": "#6d28d9",
+              "details": {
+                "description": "Statistik zu gelöschten Stiftungen aus dem Zentralen Stiftungsregister nach Erlöschensgrund (Zweckerfüllung, Insolvenz, Fusionen, freiwillige Auflösung), Jahr und Bundesland. Zeigt Bestandsdynamik des deutschen Stiftungssektors.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Registerstatistik ohne Personenbezug öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Registerauswertung",
+                    "description": "BfJ wertet Löschungsvorgänge nach Erlöschensgrund aus."
+                  },
+                  {
+                    "method": "Jahresstatistik",
+                    "description": "Erlöschensstatistik wird im BfJ-Jahresbericht veröffentlicht."
+                  }
+                ]
               }
             }
           ]

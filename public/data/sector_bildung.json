@@ -709,6 +709,272 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "schulpsych-schnittstellen-stat",
+              "level": 4,
+              "name": "Schulpsychologischer Dienst Schnittstellen",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu Schnittstellen zwischen schulpsychologischem Dienst und allgemeinbildenden Schulen. Erfasst Überweisungsquoten, Beratungsanlässe und Rückmeldeprozesse. Grundlage für Bedarfsplanung und Qualitätssicherung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Enthält aggregierte Fallzahlen, die nach Anonymisierung publizierbar sind."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Aggregation",
+                    "description": "Fallzahlen werden je Schuljahr und Bundesland aggregiert."
+                  },
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Personenbezogene Daten werden vor Veröffentlichung anonymisiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ganztagsschul-ausbaustand",
+              "level": 4,
+              "name": "Ganztagesschul-Ausbaustand",
+              "color": "#92400e",
+              "details": {
+                "description": "Daten zum aktuellen Ausbaustand von Ganztagsschulen nach Bundesland, Schulform und Träger. Enthält Anzahl der Schulen mit Ganztagesangebot sowie Ausbaufortschritt im Zeitverlauf. Relevant für Monitoring des Rechtsanspruchs auf Ganztagsbetreuung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Infrastrukturdaten ohne Personenbezug, bereits teilweise durch KMK publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Ländererhebung",
+                    "description": "Daten werden jährlich durch Kultusministerien erhoben und an KMK gemeldet."
+                  },
+                  {
+                    "method": "Zeitreihenanalyse",
+                    "description": "Ausbaufortschritt wird als Zeitreihe seit 2010 dargestellt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gebundener-offener-ganztag-stat",
+              "level": 4,
+              "name": "Gebundener vs. offener Ganztag",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistischer Vergleich zwischen gebundenem und offenem Ganztagsbetrieb nach Schulform und Region. Enthält Teilnahmequoten, Angebotsstrukturen und Qualitätsmerkmale beider Modelle. Basis für bildungspolitische Entscheidungen zum Ganztagsausbau.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Strukturdaten ohne Personenbezug, aus öffentlichen Schulstatistiken ableitbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Kategorisierung",
+                    "description": "Schulen werden nach Betriebsmodell klassifiziert."
+                  },
+                  {
+                    "method": "Regionalvergleich",
+                    "description": "Verteilung wird auf Kreisebene ausgewertet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lehrerversorgung-faecher-quote",
+              "level": 4,
+              "name": "Lehrerversorgungsquoten Fächer",
+              "color": "#92400e",
+              "details": {
+                "description": "Versorgungsquoten nach Unterrichtsfach und Bundesland, differenziert nach Schulform. Zeigt Mangelfächer und Überschussfächer im Ländervergleich. Wird für Lehramtsstudium-Steuerung und Quereinstiegsplanung genutzt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Personalstatistik ohne Personenbezug, KMK-Standarderhebung."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Soll-Ist-Vergleich",
+                    "description": "Bedarf wird dem verfügbaren Personal gegenübergestellt."
+                  },
+                  {
+                    "method": "Fächercluster",
+                    "description": "Fächer werden nach MINT, Sprachen, Gesellschaftswissenschaften gruppiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schulbuchzulassungen-statistik",
+              "level": 4,
+              "name": "Schulbuchzulassungen Statistik",
+              "color": "#92400e",
+              "details": {
+                "description": "Daten zu zugelassenen Schulbüchern nach Bundesland, Fach und Schulform. Enthält Verlagsdaten, Zulassungszeitraum und Überarbeitungszyklen. Relevant für Verlagsmarkt-Analyse und bildungspolitische Transparenz.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Verwaltungsdaten der Kultusministerien, kein Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Registerpflege",
+                    "description": "Kultusministerien führen Zulassungsregister, die periodisch veröffentlicht werden."
+                  },
+                  {
+                    "method": "Metadatenextraktion",
+                    "description": "Verlag, ISBN und Gültigkeitsdauer werden strukturiert erfasst."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "klassenwiederholung-statistiken",
+              "level": 4,
+              "name": "Klassenwiederholungs-Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Wiederholerquoten nach Jahrgangsstufe, Schulform, Bundesland und soziodemografischen Merkmalen. Zeitreihe zeigt Entwicklung seit Einführung von Versetzungsregelungen. Grundlage für Diskussion um Abschaffung der Klassenwiederholung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Anonymisierte Schulstatistik, durch Statistisches Bundesamt publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Längsschnittanalyse",
+                    "description": "Wiederholerquoten werden als Kohortenstatistik über Schuljahre verfolgt."
+                  },
+                  {
+                    "method": "Disaggregation",
+                    "description": "Daten werden nach Migrationshintergrund und sozialem Status aufgeschlüsselt."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -2626,6 +2892,268 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ausbildungsmarkt-angebot-nachfrage",
+              "level": 4,
+              "name": "Ausbildungsmarkt-Angebot-Nachfrage-Relation",
+              "color": "#92400e",
+              "details": {
+                "description": "Verhältnis von Ausbildungsangeboten zu Bewerberzahlen nach Berufsfeld, Region und Jahr. Datenquelle ist die Bundesagentur für Arbeit (Berufsberatungsstatistik). Zeigt Engpässe und Überkapazitäten im dualen System.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Marktdaten ohne Personenbezug, BA-Standardveröffentlichung."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Marktanalyse",
+                    "description": "Angebots-Nachfrage-Relationen werden je Berufsfeld und Arbeitsagenturbezirk berechnet."
+                  },
+                  {
+                    "method": "Trendprojektion",
+                    "description": "Entwicklung wird mit Vorjahreswerten verglichen und Trend extrapoliert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "berufsschulpflicht-erfuellungsquoten",
+              "level": 4,
+              "name": "Berufsschulpflicht-Erfüllungsquoten",
+              "color": "#92400e",
+              "details": {
+                "description": "Quoten zur Erfüllung der Berufsschulpflicht nach Bundesland, Ausbildungsberuf und Träger. Erfasst Absentismus und Abbruchquoten im berufsschulischen Bereich. Grundlage für Interventionsprogramme und Schulpflichtdurchsetzung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Teilweise personenbezogene Daten, die aggregiert publizierbar sind."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Schulstatistik",
+                    "description": "Anwesenheitsdaten werden durch Berufsschulen erfasst und an Schulbehörden gemeldet."
+                  },
+                  {
+                    "method": "Quoentberechnung",
+                    "description": "Erfüllungsquoten werden als Anteil regulärer Besucher an Pflichtschülern berechnet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kooperative-ausbildung-koa-stat",
+              "level": 4,
+              "name": "Kooperative Ausbildung (KoA) Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zum Modell der kooperativen Ausbildung, bei dem mehrere Betriebe gemeinsam ausbilden. Umfasst Anzahl der Kooperationsverbünde, teilnehmende Betriebe und Auszubildende. Relevant für Förderung von KMU-Ausbildungsbeteiligung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Strukturdaten ohne Personenbezug, durch BIBB publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "BIBB-Erhebung",
+                    "description": "Bundesinstitut für Berufsbildung erhebt Daten zu Kooperationsmodellen."
+                  },
+                  {
+                    "method": "Branchenklassifikation",
+                    "description": "Kooperationsverbünde werden nach WZ-Code klassifiziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "duale-ausbildung-neue-berufe",
+              "level": 4,
+              "name": "Duale Ausbildung neu geschaffene Berufe",
+              "color": "#92400e",
+              "details": {
+                "description": "Verzeichnis neu geschaffener und modernisierter Ausbildungsberufe im dualen System. Enthält Einführungsjahr, zuständige Kammer und erste Absolventenzahlen. Zeigt Anpassung des Berufsbildungssystems an Marktveränderungen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Berufsordnungsdaten, im Bundesgesetzblatt veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Ordnungsverfahren",
+                    "description": "Neue Berufe werden durch BIBB und Sozialpartner erarbeitet und erlassen."
+                  },
+                  {
+                    "method": "Registrierung",
+                    "description": "Berufe werden im Verzeichnis der anerkannten Ausbildungsberufe geführt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "betriebliche-ausbildungsfoerderung-stat",
+              "level": 4,
+              "name": "Betriebliche Ausbildungsförderung Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu Fördermaßnahmen für ausbildende Betriebe, insbesondere Förderung nach BBiG und SGB III. Enthält Fördersummen, begünstigte Betriebe und Auszubildende nach Bundesland und Branche. Grundlage für Evaluierung der Ausbildungsförderung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Förderdaten der BA, keine Betriebs- oder Personenidentifikation."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Förderstatistik BA",
+                    "description": "Bundesagentur für Arbeit aggregiert Förderdaten quartalsweise."
+                  },
+                  {
+                    "method": "Evaluierung",
+                    "description": "Förderwirkung wird durch BIBB-Studien evaluiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "uebergaenge-ausbildung-beschaeftigung",
+              "level": 4,
+              "name": "Übergänge Ausbildung in Beschäftigung",
+              "color": "#92400e",
+              "details": {
+                "description": "Übernahmequoten und Beschäftigungsverläufe nach dem Ausbildungsabschluss, differenziert nach Beruf, Region und Betriebsgröße. Datenquelle: BA-Statistik und BIBB-Übergangsstudie. Zeigt Arbeitsmarkterfolg des dualen Systems.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Anonymisierte Verlaufsdaten, durch BA und BIBB regelmäßig publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Linked-Employer-Employee-Daten",
+                    "description": "Ausbildungs- und Beschäftigungsdaten werden über Betriebsnummer verknüpft."
+                  },
+                  {
+                    "method": "Kohortenanalyse",
+                    "description": "Übergänge werden für Abschlusskohorten über 3 Jahre verfolgt."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -4539,6 +5067,268 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "vhs-alphabetisierung-teilnehmer",
+              "level": 4,
+              "name": "VHS-Alphabetisierungskurse Teilnehmer",
+              "color": "#92400e",
+              "details": {
+                "description": "Teilnehmerzahlen an Alphabetisierungs- und Grundbildungskursen der Volkshochschulen nach Bundesland und Träger. Datenquelle: DVV-Verbundstatistik. Grundlage für Bedarfsplanung und Förderanträge im Bereich funktionaler Analphabetismus.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Kursstatistik, durch DVV jährlich publiziert, kein Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "DVV-Verbundstatistik",
+                    "description": "Volkshochschulen melden Kursdaten jährlich an DVV."
+                  },
+                  {
+                    "method": "Bedarfsanalyse",
+                    "description": "Teilnehmerzahlen werden mit leo-Studien-Grundbildungsbedarfs-Schätzungen verglichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "gesundheitsbildung-kursstatistiken-vhs",
+              "level": 4,
+              "name": "Gesundheitsbildung-Kursstatistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu Gesundheitsbildungsangeboten an Volkshochschulen: Kurszahlen, Teilnehmende und Belegungsdichten nach Themenbereich (Bewegung, Ernährung, Stressbewältigung). Datenquelle: DVV-Statistik. Wird für GKV-Kooperationsplanung genutzt.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Kursstatistik ohne Personenbezug, öffentlich zugänglich."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Kurstypen-Klassifikation",
+                    "description": "Kurse werden nach DVV-Programmbereich-Systematik kategorisiert."
+                  },
+                  {
+                    "method": "GKV-Abgleich",
+                    "description": "Zertifizierte Präventionskurse werden mit GKV-Abrechnungsdaten abgeglichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kulturelle-bildungsangebote-vhs",
+              "level": 4,
+              "name": "Kulturelle Bildungsangebote VHS",
+              "color": "#92400e",
+              "details": {
+                "description": "Umfang und Teilnahme an kulturellen Bildungsangeboten der VHS: Musik, bildende Kunst, Theater, Tanz und Literatur. Zeitreihe aus DVV-Statistik. Relevant für kommunale Kulturplanung und Nachweise kultureller Grundversorgung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Programmstatistik, keine personenbezogenen Daten enthalten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Programmbereich-Auswertung",
+                    "description": "Kulturkurse werden aus DVV-Programmbereich 4 (Kultur-Gestalten) extrahiert."
+                  },
+                  {
+                    "method": "Kommunalvergleich",
+                    "description": "Angebot wird nach Gemeindegröße und Trägerschaft verglichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "politische-bildungskurse-vhs",
+              "level": 4,
+              "name": "Politische Bildungskurse VHS",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu politischen Bildungsangeboten an Volkshochschulen nach Programmbereich, Teilnehmerzahlen und Fördermittelherkunft. Datenquelle: DVV-Statistik, bpb-Projektberichte. Relevant für demokratiebildungspolitische Monitoring.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Programmstatistik, Förderberichte durch bpb publiziert."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "DVV-Bereichsauswertung",
+                    "description": "Politische Bildungskurse werden aus Programmbereich 1 (Politik-Gesellschaft-Umwelt) extrahiert."
+                  },
+                  {
+                    "method": "Fördermitteltracking",
+                    "description": "bpb-geförderte Angebote werden separat ausgewiesen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "digitalkompetenz-kurse-vhs",
+              "level": 4,
+              "name": "Digitalkompetenz-Kurse VHS",
+              "color": "#92400e",
+              "details": {
+                "description": "Kursangebote und Teilnehmerzahlen im Bereich digitale Kompetenzen an VHS: von Grundlagen-EDV bis Datenschutz und KI-Grundbildung. Zeitreihe seit 2015 zeigt Digitalisierungsschub. Relevant für Monitoring der digitalen Teilhabe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Kursstatistik der DVV, ohne Personenbezug publizierbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Kompetenz-Framework-Mapping",
+                    "description": "Kurse werden DigComp-Kompetenzbereichen zugeordnet."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Nachfragewachstum wird im Vergleich zu anderen Programmbereichen analysiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "vhs-jahresbericht-metadaten",
+              "level": 4,
+              "name": "VHS-Jahresbericht-Metadaten",
+              "color": "#92400e",
+              "details": {
+                "description": "Metadaten der jährlichen DVV-Statistik zu Volkshochschulen: Gesamtbelegungen, Unterrichtsstunden, Einrichtungsanzahl und Personalbestand bundesweit. Jahresreihe ab 1962 verfügbar. Standardreferenz für Weiterbildungsforschung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Offiziell durch DVV als Jahrbuch publiziert, freier Zugang zu aggregierten Daten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Jahreserhebung",
+                    "description": "DVV erhebt jährlich Strukturdaten aller Mitglieds-VHS."
+                  },
+                  {
+                    "method": "Langzeitreihe",
+                    "description": "Daten werden in Jahrbuch-Zeitreihe ab 1962 fortgeschrieben."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -6396,6 +7186,268 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "inklusive-kita-plaetze-zeitreihe",
+              "level": 4,
+              "name": "Inklusive Kita-Plätze Zeitreihe",
+              "color": "#92400e",
+              "details": {
+                "description": "Zeitreihe der inklusiven Betreuungsplätze in Kindertageseinrichtungen nach Bundesland. Erfasst Kinder mit und ohne Behinderung in gemeinsamen Gruppen. Grundlage für Umsetzungsmonitoring der UN-Behindertenrechtskonvention im Frühbereich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Strukturdaten aus Kinder- und Jugendhilfestatistik des Statistischen Bundesamts."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Destatis-Kita-Statistik",
+                    "description": "Jährliche Erhebung der Kinder- und Jugendhilfestatistik erfasst Gruppenmerkmale."
+                  },
+                  {
+                    "method": "Bundesvergleich",
+                    "description": "Inklusionsquoten werden bundesländervergleichend dargestellt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sprachfoerdermassnahmen-kita",
+              "level": 4,
+              "name": "Sprachfördermaßnahmen Kita",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu Sprachfördermaßnahmen in Kitas: Teilnehmerzahlen, Programmtypen (z.B. Delfin 4, Vorkurs Deutsch) und Bundesland-Regelungen. Datenquelle: Kultusministerien und Kinder-Jugendhilfe-Statistik. Relevant für Sprachbildungs-Policy.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Maßnahmenstatistik, keine Kinder identifizierbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Programmmonitoring",
+                    "description": "Sprachförderprogramme werden durch Länder evaluiert und Ergebnisse aggregiert."
+                  },
+                  {
+                    "method": "Bedarfsermittlung",
+                    "description": "Förderbedarf wird über Sprachstandserhebungen im Vorschulalter ermittelt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "elternumfrage-kita-ergebnisse",
+              "level": 4,
+              "name": "Elternumfrage-Ergebnisse Kita",
+              "color": "#92400e",
+              "details": {
+                "description": "Ergebnisse von Elternbefragungen zur Kita-Qualität, Betreuungszufriedenheit und Wünschen. Datenquellen: Bertelsmann-Stiftung KiTa-Radar, kommunale Elternbefragungen. Relevant für Qualitätsentwicklung und Bedarfsplanung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Befragungsergebnisse publizierbar; Einzelantworten erfordern Anonymisierung."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Elternbefragung",
+                    "description": "Standardisierte Fragebögen werden durch Träger oder Kommune verteilt."
+                  },
+                  {
+                    "method": "Anonymisierte Auswertung",
+                    "description": "Ergebnisse werden auf Einrichtungsebene aggregiert und anonymisiert berichtet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "personalschluessel-bundesvergleich-kita",
+              "level": 4,
+              "name": "Personalschlüssel-Bundesvergleich",
+              "color": "#92400e",
+              "details": {
+                "description": "Vergleich der Fachkraft-Kind-Relationen in Kitas nach Bundesland, Altersgruppe und Gruppenform. Datenquelle: Destatis, Bertelsmann KiTa-Monitor. Zentrale Qualitätskennzahl im Betreuungsbereich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Strukturkennzahl, kein Personenbezug, durch Destatis publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Ratio-Berechnung",
+                    "description": "Personalschlüssel = geleistete Fachkraft-Stunden / betreute Kinder."
+                  },
+                  {
+                    "method": "Ländernormvergleich",
+                    "description": "Ist-Werte werden mit Empfehlungswerten der Deutschen Liga für Kind verglichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kita-qualitaetssicherung-statistiken",
+              "level": 4,
+              "name": "Kita-Qualitätssicherungs-Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu Qualitätssicherungsmaßnahmen in Kitas: Trägerqualität, externe Evaluierungen, Beschwerdemanagement und Zertifizierungen. Grundlage für Umsetzung des KiTa-Qualitätsgesetzes (KiQuTG). Datenquelle: Jugendämter und Länderberichte.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Evaluierungsergebnisse nach Aggregation publizierbar; Einzeleinrichtungs-Daten erfordern Abstimmung."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "KiQuTG-Monitoring",
+                    "description": "Bundesministerium erhebt Umsetzungsstand des Kita-Qualitätsgesetzes."
+                  },
+                  {
+                    "method": "Länderberichterstattung",
+                    "description": "Länder berichten jährlich über Qualitätssicherungsmaßnahmen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "krippen-ausbaustand-laender",
+              "level": 4,
+              "name": "Krippen-Ausbaustand nach Ländern",
+              "color": "#92400e",
+              "details": {
+                "description": "Betreuungsquoten für Kinder unter 3 Jahren (U3) nach Bundesland im Zeitverlauf. Enthält Ausbau seit Einführung des Rechtsanspruchs 2013. Datenquelle: Destatis Kinder- und Jugendhilfestatistik. Zeigt regionale Disparitäten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Destatis publiziert U3-Betreuungsquoten jährlich als freie Statistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Betreuungsquoten-Berechnung",
+                    "description": "Betreute Kinder U3 / Bevölkerung 0-3 Jahre je Bundesland."
+                  },
+                  {
+                    "method": "Zeitreihenfortschreibung",
+                    "description": "Jährliche Fortschreibung seit 2006 ermöglicht Ausbaumonitoring."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -8166,6 +9218,264 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "foerderschularten-verteilung",
+              "level": 4,
+              "name": "Förderschularten-Verteilung",
+              "color": "#92400e",
+              "details": {
+                "description": "Verteilung der Schülerinnen und Schüler auf verschiedene Förderschularten (Lernen, emotionale-soziale Entwicklung, Sprache, geistige Behinderung etc.) nach Bundesland. Datenquelle: KMK-Sonderpädagogikstatistik. Basis für Systemvergleiche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Schulstatistik der KMK, ohne Personenbezug publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "KMK-Schulstatistik",
+                    "description": "Länder melden Förderschüler nach Förderschwerpunkt an KMK."
+                  },
+                  {
+                    "method": "Zeitreihendarstellung",
+                    "description": "Entwicklung seit Einführung der Inklusion 2009 wird abgebildet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "uebergang-regelschule-statistiken",
+              "level": 4,
+              "name": "Übergangs-Regelschule-Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu Übergängen von Förderschülerinnen und -schülern in allgemeine Schulen (Inklusion) sowie Rücküberweisung. Datenquelle: Schulstatistiken der Länder. Indikator für Inklusionserfolg im Bildungssystem.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Übergangsstatistik, durch Kultusministerien und KMK publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Schülerlaufbahnverfolgung",
+                    "description": "Übergänge werden über Schulformwechsel-Statistik erfasst."
+                  },
+                  {
+                    "method": "Inklusionsquoten-Berechnung",
+                    "description": "Anteil inklusiv beschulter Schüler mit sonderpäd. Förderbedarf wird berechnet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sonderpaed-foerderbedarf-zeitreihe",
+              "level": 4,
+              "name": "Sonderpädagogischer Förderbedarf Zeitreihe",
+              "color": "#92400e",
+              "details": {
+                "description": "Zeitreihe der Feststellungsquoten sonderpädagogischen Förderbedarfs nach Bundesland und Förderschwerpunkt. Zeigt Diagnosetrends und regionale Disparitäten. Datenquelle: KMK-Statistik seit 1994. Zentrale Referenz für Inklusionsforschung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "KMK-Standardstatistik, jährlich als Bericht publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Feststellungsstatistik",
+                    "description": "Anzahl der Feststellungsverfahren und -ergebnisse wird jährlich gemeldet."
+                  },
+                  {
+                    "method": "Quotenberechnung",
+                    "description": "Förderbedarfsquote = Kinder mit Förderbedarf / Schüler gesamt je Bundesland."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "foerderschul-lehrkraeftebedarf",
+              "level": 4,
+              "name": "Förderschul-Lehrkräftebedarf",
+              "color": "#92400e",
+              "details": {
+                "description": "Bedarfsanalysen für sonderpädagogische Lehrkräfte nach Förderschwerpunkt und Bundesland. Umfasst Versorgungsquoten, Pensionierungswellen und Studienabsolventen. Grundlage für Steuerung der sonderpädagogischen Ausbildungskapazitäten.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Personalplanung, keine personenbezogenen Einzeldaten enthalten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bedarfsprojektion",
+                    "description": "KMK projiziert Lehrkräftebedarf für Sonderpädagogik über 10 Jahre."
+                  },
+                  {
+                    "method": "Angebot-Nachfrage-Abgleich",
+                    "description": "Hochschulabsolventen werden dem projizierten Bedarf gegenübergestellt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "elternwunsch-beschulung-statistiken",
+              "level": 4,
+              "name": "Elternwunsch-Statistiken Beschulung",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu Elternwünschen bei der Schulformwahl für Kinder mit sonderpädagogischem Förderbedarf (inklusive Regelschule vs. Förderschule). Datenquelle: Schulbehörden-Auswertungen. Zeigt Nachfrage nach inklusiver Beschulung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Elternentscheidungen publizierbar; Einzelfälle unterliegen Datenschutz."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verwaltungsstatistik",
+                    "description": "Anmeldedaten für Förderschulen und inklusive Schulen werden durch Schulbehörden erfasst."
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Elternentscheidungen werden je Schuljahr aggregiert und ausgewertet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "foerderschul-bildungsgaenge-uebergaenge",
+              "level": 4,
+              "name": "Förderschul-Übergangs-Bildungsgänge",
+              "color": "#92400e",
+              "details": {
+                "description": "Bildungsgangverläufe von Förderschulabsolventen: Übergänge in Berufsschule, berufliche Bildung, Werkstätten oder weiterführende Schulen. Datenquelle: KMK, Berufsberatungsstatistik der BA. Grundlage für Übergangsmanagement.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Verlaufsdaten ohne Personenbezug, durch KMK und BA publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Abschlussverbleibsstatistik",
+                    "description": "Verbleib nach Förderschulabschluss wird im Folgejahr erhoben."
+                  },
+                  {
+                    "method": "Bildungsgangs-Klassifikation",
+                    "description": "Übergänge werden nach ISCED-Bildungsgangs-Kategorie klassifiziert."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -9839,6 +11149,268 @@
                   {
                     "method": "Standortplanung",
                     "description": "Landesministerien nutzen Immatrikulationsdaten zur Genehmigung neuer BA-Studiengänge."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "duale-studien-absolventen-fachbereich",
+              "level": 4,
+              "name": "Duale-Studien-Absolventen nach Fachbereich",
+              "color": "#92400e",
+              "details": {
+                "description": "Absolventenzahlen dualer Studiengänge an Berufsakademien nach Fachbereich (Wirtschaft, Technik, Sozialwesen) und Bundesland. Zeitreihe aus ABS-Statistik und Destatis-Hochschulstatistik. Relevant für Bedarfsplanung und Attraktivitätsmonitoring.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Hochschulstatistik ohne Personenbezug, durch Destatis publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Hochschulstatistik-Meldung",
+                    "description": "Berufsakademien melden Absolventen an Destatis."
+                  },
+                  {
+                    "method": "Fachbereichsklassifikation",
+                    "description": "Studiengänge werden nach Fächergruppe der Destatis-Klassifikation zugeordnet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "partnerunternehmen-register-ba",
+              "level": 4,
+              "name": "Partnerunternehmen-Register Berufsakademien",
+              "color": "#92400e",
+              "details": {
+                "description": "Register der Partnerunternehmen, die mit Berufsakademien kooperieren und duale Studienplätze anbieten. Enthält Branche, Unternehmensbestand und Ausbildungsplatzangebot. Öffentliche Datenquelle für Studieninteressierte und Forschung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Unternehmens-Stammdaten ohne Personenbezug, durch Berufsakademien publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Registerpflege",
+                    "description": "Berufsakademien pflegen Partnerunternehmenslisten und stellen sie online bereit."
+                  },
+                  {
+                    "method": "Qualitätsprüfung",
+                    "description": "Partnerunternehmen werden nach Ausbildungseignung zertifiziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "verguetung-duale-studenten-statistik",
+              "level": 4,
+              "name": "Vergütung Duale Studenten Statistik",
+              "color": "#92400e",
+              "details": {
+                "description": "Vergütungsstatistiken für dual Studierende nach Fachbereich, Bundesland und Unternehmensgröße. Datenquelle: AMS-Vergütungsreport, BIBB-Erhebungen. Zeigt Attraktivität und Einkommensverteilung im dualen Studium.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Vergütungsstatistik, durch BIBB und Berufsverbände publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Vergütungserhebung",
+                    "description": "BIBB erhebt Vergütungsdaten im Rahmen der Berufsbildungsstatistik."
+                  },
+                  {
+                    "method": "Branchenvergleich",
+                    "description": "Vergütungen werden nach WZ-Branchenkode und Betriebsgröße verglichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "uebernahmequoten-nach-dualstudiym",
+              "level": 4,
+              "name": "Übernahmequoten nach Studium",
+              "color": "#92400e",
+              "details": {
+                "description": "Übernahmequoten von Absolventen dualer Studiengänge durch ihre Partnerunternehmen. Zeitreihe aus Absolventenstudien der Berufsakademien und BIBB. Zeigt Bindungswirkung und Arbeitsmarkterfolg des dualen Hochschulstudiums.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Absolventendaten ohne Identifikationsmerkmale, regulär publiziert."
+                },
+                "theme": {
+                  "code": "TH_04"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Absolventenbefragung",
+                    "description": "Standardisierte Befragung 6 und 18 Monate nach Abschluss."
+                  },
+                  {
+                    "method": "Übernahmequoten-Berechnung",
+                    "description": "Verhältnis übernommener zu abgeschlossenen Studierenden je Partnerunternehmen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "akkreditierungsstatus-berufsakademien",
+              "level": 4,
+              "name": "Akkreditierungs-Status Berufsakademien",
+              "color": "#92400e",
+              "details": {
+                "description": "Akkreditierungsstatus der Berufsakademien und ihrer Studiengänge nach Bundesland. Enthält Akkreditierungsagentur, Gültigkeitszeitraum und ggf. Auflagen. Datenquelle: Akkreditierungsrat-Datenbank. Transparent für Studieninteressierte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Akkreditierungsdaten, durch Akkreditierungsrat publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_01"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Akkreditierungsrat-Register",
+                    "description": "Alle akkreditierten Studiengänge werden in öffentlicher Datenbank geführt."
+                  },
+                  {
+                    "method": "Statusaktualisierung",
+                    "description": "Akkreditierungsstatus wird nach Verfahrensabschluss aktualisiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "internationalisierungsgrad-berufsakademien",
+              "level": 4,
+              "name": "Internationalisierungs-Grad Berufsakademien",
+              "color": "#92400e",
+              "details": {
+                "description": "Kennzahlen zur Internationalisierung von Berufsakademien: Anteil internationaler Studierender, Auslandspraktika, internationale Partnerunternehmen und Kooperationsverträge. Datenquelle: DAAD, Hochschulstatistik. Relevant für Standortattraktivität.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Kennzahlen, durch DAAD und Destatis publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "DAAD-Erhebung",
+                    "description": "DAAD erhebt jährlich Internationalisierungskennzahlen aller Hochschultypen."
+                  },
+                  {
+                    "method": "Institutionenvergleich",
+                    "description": "BA-Werte werden mit FH- und Uni-Werten verglichen."
                   }
                 ]
               }
@@ -11522,6 +13094,264 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "instrumentalunterricht-nachfrage-instrument",
+              "level": 4,
+              "name": "Instrumentalunterricht-Nachfrage nach Instrument",
+              "color": "#92400e",
+              "details": {
+                "description": "Nachfragestatistiken nach Instrumentalunterricht differenziert nach Instrument (Klavier, Gitarre, Violine etc.), Altersgruppe und Bundesland. Datenquelle: VdM-Statistik. Zeigt Beliebtheit und Verfügbarkeit von Instrumentalfächern.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Kursstatistik ohne Personenbezug, durch VdM jährlich publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "VdM-Jahresstatistik",
+                    "description": "Verband deutscher Musikschulen erhebt jährlich Belegungs- und Schülerzahlen."
+                  },
+                  {
+                    "method": "Instrumenten-Ranking",
+                    "description": "Instrumente werden nach Belegungszahlen sortiert und Trends analysiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "musikschul-foerderquoten-bundeslaender",
+              "level": 4,
+              "name": "Musikschul-Förderquoten Bundesländer",
+              "color": "#92400e",
+              "details": {
+                "description": "Öffentliche Förderquoten für Musikschulen nach Bundesland: kommunale Zuschüsse, Landesförderung und Eigenfinanzierungsanteil. Datenquelle: VdM-Statistik, Haushaltsdaten. Zeigt Disparitäten in der Kulturförderung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Haushaltsdaten und VdM-Finanzstatistik, kein Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Haushaltsdatenauswertung",
+                    "description": "Kommunale Musikschul-Förderung wird aus Haushaltsdaten extrahiert."
+                  },
+                  {
+                    "method": "Bundesländervergleich",
+                    "description": "Pro-Kopf-Förderung wird nach Bundesland normiert und verglichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "elementare-musikerziehung-statistiken",
+              "level": 4,
+              "name": "Elementare Musikerziehung Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu elementarer Musikerziehung (Musikalische Früherziehung, Grundausbildung) für Kinder unter 6 Jahren. Umfasst Kursangebote, Teilnehmende und Kooperationen mit Kitas. Datenquelle: VdM. Grundlage für Frühbildungsplanung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Kursstatistik, durch VdM publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Altersgruppenauswertung",
+                    "description": "Früherziehungs-Kurse werden aus VdM-Daten nach Altersgruppe 0-6 gefiltert."
+                  },
+                  {
+                    "method": "Kita-Kooperationserfassung",
+                    "description": "Externe Kursstandorte in Kitas werden separat ausgewiesen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kooperationen-musikschule-allgem-schule",
+              "level": 4,
+              "name": "Kooperationen Musikschule-allgem. Schule",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu formalen Kooperationen zwischen Musikschulen und allgemeinbildenden Schulen. Umfasst JeKits/JeKi-Kooperationen, gebundene Ganztags-Musikprogramme und Bläserklassen. Datenquelle: VdM, Schulministerien. Relevant für kulturelle Bildungsteilhabe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Strukturdaten zu Kooperationsverträgen, ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Kooperationsvertrag-Register",
+                    "description": "VdM erfasst aktive Kooperationen nach Bundesland und Programmtyp."
+                  },
+                  {
+                    "method": "Reichweitenanalyse",
+                    "description": "Anteil erreichter Schulkinder wird als Teilhabequote berechnet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ensemblearbeit-statistiken-musikschule",
+              "level": 4,
+              "name": "Ensemblearbeit-Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zur Ensemblearbeit an Musikschulen: Orchesterprojekte, Kammermusik, Chöre und Bands. Umfasst Ensemblegröße, Auftritte und Schülerzahl. Datenquelle: VdM-Jahresstatistik. Zeigt kollektive Musizierpraxis.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Aktivitätsdaten, durch VdM publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Ensembletypen-Klassifikation",
+                    "description": "Ensembles werden nach Besetzungstyp und Genre kategorisiert."
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "VdM erhebt Ensembledaten im Rahmen der Jahresstatistik."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "musikschul-lehrerstunden-zeitreihe",
+              "level": 4,
+              "name": "Musikschul-Lehrerstunden Zeitreihe",
+              "color": "#92400e",
+              "details": {
+                "description": "Zeitreihe der geleisteten Unterrichtsstunden an öffentlichen Musikschulen nach Bundesland und Fachbereich. Zeigt Kapazitätsentwicklung und Personalaufwand. Datenquelle: VdM-Statistik. Relevant für Tarifrunden und Personalbedarfsplanung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Personalstatistik ohne Individualdaten, durch VdM publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Stundenmeldung",
+                    "description": "Einrichtungen melden erteilte Unterrichtsstunden nach Fachbereich an VdM."
+                  },
+                  {
+                    "method": "Vollzeitäquivalent-Berechnung",
+                    "description": "Stunden werden in Vollzeitäquivalente für Personalbedarfsplanung umgerechnet."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -13170,6 +15000,264 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ads-adhs-diagnostik-statistiken",
+              "level": 4,
+              "name": "ADS/ADHS-Diagnostik-Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Aggregierte Statistiken zu ADS/ADHS-Diagnosen und Beratungsanlässen beim schulpsychologischen Dienst. Enthält Altersverteilung, Schulform und regionale Verteilung. Datenquelle: Schulpsychologische Dienste der Länder. Basis für Versorgungsplanung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Fallzahlen nach Anonymisierung publizierbar; Diagnosedaten unterliegen Gesundheitsdatenschutz."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Fallzahlenaggregation",
+                    "description": "Diagnosefälle werden je Schuljahr und Region anonymisiert aggregiert."
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Entwicklung der ADS/ADHS-Diagnosefrequenz wird im Zeitverlauf analysiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lernbehinderungs-screenings-stat",
+              "level": 4,
+              "name": "Lernbehinderungs-Screenings",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu Lernbehinderungs-Screenings durch schulpsychologische Dienste: Anzahl durchgeführter Tests, Ergebnisverteilungen und Überweisungsquoten. Anonymisiert und aggregiert nach Bundesland. Grundlage für Ressourcenplanung im SPD.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Screening-Ergebnisse nach Anonymisierung und Aggregation publizierbar."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Teststatistik",
+                    "description": "Durchgeführte Tests werden je SPD-Dienststelle jährlich erfasst."
+                  },
+                  {
+                    "method": "Ergebnisaggregation",
+                    "description": "Ergebnisverteilungen werden bundeslandweit anonymisiert zusammengeführt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hochbegabten-beratung-faelle",
+              "level": 4,
+              "name": "Hochbegabten-Beratungs-Fälle",
+              "color": "#92400e",
+              "details": {
+                "description": "Fallzahlen zur Hochbegabtendiagnostik und -beratung im schulpsychologischen Dienst. Enthält Altersverteilung, Schulform und Anlasskategorien. Datenquelle: Länder-SPD-Statistiken. Basis für Förderangebote für Hochbegabte.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierte Fallzahlen publizierbar; Identifikation muss ausgeschlossen werden."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Fallkategorie-Erfassung",
+                    "description": "Beratungsanlässe werden nach standardisierten Kategorien dokumentiert."
+                  },
+                  {
+                    "method": "Jahresaggregation",
+                    "description": "Daten werden je Schuljahr und Bundesland aggregiert berichtet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schulangst-beratung-faelle-stat",
+              "level": 4,
+              "name": "Schulangst-Beratungs-Fälle",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu Schulangst- und Schulverweigerungs-Beratungen beim schulpsychologischen Dienst. Umfasst Fallzahlen, Schulform, Altersverteilung und Interventionsarten. Relevant für Prävention und Frühintervention bei Schulverweigerung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Beratungsstatistik nach Anonymisierung publizierbar."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Beratungsfall-Klassifikation",
+                    "description": "Fälle werden nach ICD-10-Angstsymptomatik und Schulverweigerungsgrad klassifiziert."
+                  },
+                  {
+                    "method": "Frühwarnsystem",
+                    "description": "Fallzahlentwicklung wird als Frühindikator für Schulwohlbefinden genutzt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "krisenintervention-schule-statistiken",
+              "level": 4,
+              "name": "Krisenintervention-Schule Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu schulpsychologischen Kriseninterventionen bei akuten Vorfällen (Todesfall, Gewalt, Suizid). Aggregierte Fallzahlen nach Interventionstyp und Bundesland. Datenquelle: Kultusministerien. Grundlage für Kapazitätsplanung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Interventionszahlen publizierbar; Einzelschulen dürfen nicht identifizierbar sein."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Ereignisdokumentation",
+                    "description": "Kriseninterventionen werden durch SPD-Fachkräfte standardisiert dokumentiert."
+                  },
+                  {
+                    "method": "Bundeslandmeldung",
+                    "description": "Daten werden halbjährlich aggregiert an Kultusministerium gemeldet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "schulpsychologen-bedarfsanalysen",
+              "level": 4,
+              "name": "Schulpsychologen-Bedarfsanalysen",
+              "color": "#92400e",
+              "details": {
+                "description": "Bedarfsanalysen für schulpsychologische Fachkräfte nach Bundesland: Ist-Versorgung, empfohlene Ratio (1:5000 Schüler) und Deckungslücken. Datenquelle: ÖSBF-Empfehlungen, Länderberichte. Grundlage für Stellenausbau.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Personalbedarfsdaten, ohne Personenbezug, durch Kultusministerien publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Bedarfsberechnung",
+                    "description": "Ist-Stellen werden empfohlener Versorgungsratio von 1:5000 gegenübergestellt."
+                  },
+                  {
+                    "method": "Bundesländervergleich",
+                    "description": "Versorgungsquoten werden nach Bundesland verglichen und Deckungslücken ausgewiesen."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -14811,6 +16899,272 @@
                   {
                     "method": "Anbietervergleich",
                     "description": "Bildungseinrichtungen nutzen Marktübersichten für Positionierungsentscheidungen im MOOC-Bereich."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "mooc-abschlussquoten-de",
+              "level": 4,
+              "name": "MOOC-Abschlussquoten DE",
+              "color": "#92400e",
+              "details": {
+                "description": "Abschlussquoten von Massive Open Online Courses (MOOCs) auf deutschen Plattformen (oncampus, openHPI, Coursera DE). Differenziert nach Fachbereich, Zertifizierungstyp und Lernendenprofil. Zeigt Engagement und Kursqualität im deutschen E-Learning-Markt.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Plattformdaten nach Aggregation und Anonymisierung publizierbar; Nutzerdaten proprietär."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Plattform-Analytics",
+                    "description": "Lernplattformen erheben Kursabschlüsse und stellen aggregierte Daten bereit."
+                  },
+                  {
+                    "method": "Fachbereichsvergleich",
+                    "description": "Abschlussquoten werden nach ISCED-Fächergruppe normiert verglichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "micro-credential-ausgaben-statistiken",
+              "level": 4,
+              "name": "Micro-Credential-Ausgaben Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu ausgegebenen Micro-Credentials und digitalen Badges durch deutsche Bildungsplattformen und Hochschulen. Enthält Anerkennungsquoten und Beziehung zu formalen Abschlüssen. Datenquelle: HRK-Pilotprojekte, Plattformberichte.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Badge-Statistiken publizierbar; Empfänger-Daten erfordern Anonymisierung."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Open-Badge-Infrastruktur",
+                    "description": "Digitale Badges werden über standardisierte Open-Badge-Protokolle ausgegeben."
+                  },
+                  {
+                    "method": "Anerkennungsanalyse",
+                    "description": "Anerkennung durch Arbeitgeber wird über Befragungen evaluiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ki-tutoring-adoptionsraten-schulen",
+              "level": 4,
+              "name": "KI-tutoring-Adoptionsraten Schulen",
+              "color": "#92400e",
+              "details": {
+                "description": "Adoptionsraten von KI-gestützten Tutoringsystemen an deutschen Schulen nach Bundesland und Schulform. Umfasst Nutzungsfrequenz, Schülerzahlen und Lehrkräfte-Akzeptanz. Datenquelle: Länder-Digitalstrategien, HPI-Schulcloud-Berichte.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Nutzungsdaten publizierbar; Nutzungsprofile erfordern Datenschutzprüfung."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Plattform-Nutzungsstatistik",
+                    "description": "Bildungsplattformen liefern aggregierte Nutzungszahlen an Schulbehörden."
+                  },
+                  {
+                    "method": "Pilotprojekt-Evaluierung",
+                    "description": "KI-Tutoring-Piloten werden durch Bildungsforschungsinstitute evaluiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "lernvideo-produktionsvolumen-stat",
+              "level": 4,
+              "name": "Lernvideo-Produktionsvolumen",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zur Produktion von Lernvideos durch öffentliche Bildungsplattformen (ZDF, ARD, Serlo, sofatutor). Enthält Abrufzahlen, Fachzuordnung und Lizenztypen. Grundlage für OER-Politik und Plattformplanung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Produktions- und Nutzungsstatistiken öffentlicher Mediatheken sind veröffentlichungspflichtig."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_01"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "OER-Repositorium-Auswertung",
+                    "description": "Metadaten aus OER-Repositorien werden aggregiert und nach Fach klassifiziert."
+                  },
+                  {
+                    "method": "Reichweitenmessung",
+                    "description": "Abrufzahlen werden durch Plattform-Analytics erfasst."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "plattform-lehrplan-alignment-stat",
+              "level": 4,
+              "name": "Plattform-Lehrplan-Alignment-Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zur Abdeckung nationaler Lehrplaninhalte durch digitale Bildungsplattformen. Zeigt Lücken und Überschneidungen zwischen Plattformangebot und Bildungsstandards. Datenquelle: Metadatenauswertungen, IQB-Abgleiche.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Metadaten-Alignment-Analysen ohne Personenbezug, durch Bildungsforschungsinstitute publizierbar."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Curriculum-Mapping",
+                    "description": "Plattforminhalte werden KMK-Bildungsstandards per Metadaten-Mapping zugeordnet."
+                  },
+                  {
+                    "method": "Lückenanalyse",
+                    "description": "Nicht abgedeckte Bildungsstandards werden identifiziert und priorisiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "digital-learning-equity-indikatoren",
+              "level": 4,
+              "name": "Digital-Learning-Equity-Indikatoren",
+              "color": "#92400e",
+              "details": {
+                "description": "Indikatoren zur digitalen Bildungsgerechtigkeit: Geräteverfügbarkeit, Internetanbindung und Plattformnutzung nach sozioökonomischem Status. Datenquelle: PISA-Zusatzerhebungen, Bitkom-Studien. Zeigt digitale Spaltung im Bildungsbereich.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Befragungsdaten, durch OECD und Bitkom regulär veröffentlicht."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "PISA-Sekundärauswertung",
+                    "description": "Equity-Indikatoren werden aus PISA-Datensatz nach sozioök. Hintergrund disaggregiert."
+                  },
+                  {
+                    "method": "Länderindex",
+                    "description": "Deutschland-Werte werden in EU-Vergleich gesetzt (DESI-Index)."
                   }
                 ]
               }
@@ -16483,6 +18837,264 @@
                   {
                     "method": "Hochschulranking",
                     "description": "Einwerbung von Deutschlandstipendien wird als Qualitätsindikator für Hochschulen in Rankings genutzt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bafoeg-rueckzahlungsquoten",
+              "level": 4,
+              "name": "BAföG-Rückzahlungsquoten",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu BAföG-Rückzahlungsquoten und -verläufen nach Abschlusskohorten. Enthält Rückzahlungsbeginne, Stundungsquoten und Erlassanträge. Datenquelle: Bundesverwaltungsamt. Relevant für Nachhaltigkeitsbewertung der Studienfinanzierung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Rückzahlungsstatistiken publizierbar; Einzeldarlehen unterliegen Datenschutz."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Rückzahlungstracking",
+                    "description": "Bundesverwaltungsamt verfolgt Rückzahlungsverläufe je Kohorte."
+                  },
+                  {
+                    "method": "Ausfallquoten-Berechnung",
+                    "description": "Ausfälle und Stundungen werden als Anteil der Forderungen berechnet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "stipendienquoten-nationalitaet",
+              "level": 4,
+              "name": "Stipendienquoten Nationalität",
+              "color": "#92400e",
+              "details": {
+                "description": "Stipendienquoten nach Nationalität, Hochschultyp und Fachbereich. Enthält Nationalstipendienprogramm, DAAD-Stipendien und Begabtenförderung. Zeigt Zugangsgleichheit zur Stipendienförderung. Datenquelle: DAAD, Destatis.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Stipendiendaten, durch DAAD-Wissenschaft und Destatis publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "DAAD-Förderstatistik",
+                    "description": "DAAD publiziert jährlich Stipendienvergabe nach Nationalität und Programm."
+                  },
+                  {
+                    "method": "Equity-Analyse",
+                    "description": "Stipendienquoten werden mit Studierendenanteilen nach Nationalität normiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hochschulstart-matching-statistiken",
+              "level": 4,
+              "name": "Hochschulstart-Matching-Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zum Zulassungsverfahren über hochschulstart.de (DoSV): Matching-Ergebnisse, Mehrfachbewerbungen und Koordinierungsverfahren. Datenquelle: Stiftung für Hochschulzulassung. Relevant für Optimierung der Studienplatzvergabe.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Verfahrensstatistiken, durch Stiftung für Hochschulzulassung publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_08"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "DoSV-Auswertung",
+                    "description": "Dialogorientiertes Serviceverfahren wird statistisch nach Koordinierungsrunden ausgewertet."
+                  },
+                  {
+                    "method": "Nachfrageanalyse",
+                    "description": "Bewerberzahlen je Studiengang werden Studienplatzangeboten gegenübergestellt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hochschulzulassungs-klagen-statistiken",
+              "level": 4,
+              "name": "Hochschulzulassungs-Klagen-Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu verwaltungsgerichtlichen Klagen gegen Hochschulzulassungsentscheidungen nach Fach, Hochschule und Urteil. Datenquelle: Verwaltungsgerichtsstatistiken der Länder. Zeigt Rechtsunsicherheiten im Zulassungsrecht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Gerichtsstatistiken sind öffentliche Verwaltungsdaten, durch Justizministerien publiziert."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Gerichtsstatistik-Auswertung",
+                    "description": "Klageeingänge und -ausgänge werden aus Verwaltungsgerichtsstatistiken extrahiert."
+                  },
+                  {
+                    "method": "Falltyp-Klassifikation",
+                    "description": "Klagen werden nach Zulassungsgrund und Hochschule kategorisiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "studiengebuehren-vergleich-bundeslaender",
+              "level": 4,
+              "name": "Studiengebühren-Vergleich Bundesländer",
+              "color": "#92400e",
+              "details": {
+                "description": "Vergleich von Studiengebühren und -entgelten nach Bundesland, Hochschultyp und Studierendenstatus (Erst-/Zweitstudium, Langzeit). Zeitreihe ab Einführung allgemeiner Studiengebühren. Datenquelle: HRK, Destatis. Zeigt finanzielle Hochschulzugangsbarrieren.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Satzungsdaten der Hochschulen, durch HRK aggregiert."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "HRK-Erhebung",
+                    "description": "HRK erhebt jährlich Gebührenordnungen aller Mitgliedshochschulen."
+                  },
+                  {
+                    "method": "Kaufkraftbereinigung",
+                    "description": "Gebühren werden für Vergleichszwecke mit regionalem Preisniveau gewichtet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "bildungslaender-statistiken-hochschule",
+              "level": 4,
+              "name": "Bildungsinländer-Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu Bildungsinländern (ausländische Studierende mit deutschem Abitur) nach Herkunftsland, Fach und Hochschultyp. Datenquelle: Destatis-Hochschulstatistik. Zeigt Erfolg der Integrations- und Bildungssysteme.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Hochschulstatistik, durch Destatis publiziert, ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Staatangehörigkeits-Bildungsweg-Kreuztabelle",
+                    "description": "Studierende werden nach Nationalität und Bildungsweg (Inland/Ausland) kreuztabelliert."
+                  },
+                  {
+                    "method": "Erfolgsquotenanalyse",
+                    "description": "Studienabschlussquoten von Bildungsinländern werden mit anderen Gruppen verglichen."
                   }
                 ]
               }
@@ -18198,6 +20810,264 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "erzieher-ausbildung-abschluesse-zeitreihe",
+              "level": 4,
+              "name": "Erzieher-Ausbildungs-Abschlüsse Zeitreihe",
+              "color": "#92400e",
+              "details": {
+                "description": "Zeitreihe der Abschlusszahlen in der Erzieher-Ausbildung nach Bundesland und Geschlecht. Zeigt Wachstum als Reaktion auf Kita-Ausbau. Datenquelle: Destatis, Schulstatistiken der Länder. Zentrale Planungsgröße für Kita-Personalentwicklung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Schulabschlussstatistik ohne Personenbezug, durch Destatis publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Destatis-Schulstatistik",
+                    "description": "Abschlüsse an Fachschulen werden in Schulstatistik nach Berufsfeld erfasst."
+                  },
+                  {
+                    "method": "Bedarfsabgleich",
+                    "description": "Absolventenzahlen werden dem projizierten Erzieher-Bedarf gegenübergestellt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sozialpaedagogik-bedarf-deckung",
+              "level": 4,
+              "name": "Sozialpädagogik-Bedarf-Deckung",
+              "color": "#92400e",
+              "details": {
+                "description": "Verhältnis zwischen Bedarf und Angebot sozialpädagogischer Fachkräfte. Enthält Prognosedaten zu Stellenbedarfen in Kita, Schulsozialarbeit und Jugendhilfe sowie Absolventenzahlen. Datenquelle: Bertelsmann, BMFSFJ-Fachkräftebarometer.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Bedarfsanalysen durch Bundesministerium und Bertelsmann-Stiftung publiziert."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Fachkräftebarometer-Erhebung",
+                    "description": "BMFSFJ publiziert alle 2 Jahre Fachkräftebarometer Frühe Bildung."
+                  },
+                  {
+                    "method": "Soll-Ist-Projektion",
+                    "description": "Bedarf wird auf Basis demografischer Entwicklung und Rechtsansprüche projiziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pflegeschul-ausbildungskapazitaeten",
+              "level": 4,
+              "name": "Pflegeschul-Ausbildungskapazitäten",
+              "color": "#92400e",
+              "details": {
+                "description": "Ausbildungskapazitäten und Auslastung von Pflegeschulen nach Bundesland. Enthält Schulplatzzahlen, Belegungsquoten und Erweiterungspläne nach Pflegeberufegesetz. Datenquelle: BIBB-Pflegedatenerhebung, Länder-Schulbehörden.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Strukturdaten der Berufsschulstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "BIBB-Pflegestatistik",
+                    "description": "BIBB erhebt Ausbildungskapazitäten im Pflegebereich nach PfBG."
+                  },
+                  {
+                    "method": "Kapazitätsplanung",
+                    "description": "Freie Kapazitäten werden Nachfrageprojektionen gegenübergestellt."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "techniker-abschluesse-fachrichtung",
+              "level": 4,
+              "name": "Techniker-Abschlüsse nach Fachrichtung",
+              "color": "#92400e",
+              "details": {
+                "description": "Abschlüsse der staatlich geprüften Techniker nach Fachrichtung (Maschinentechnik, Elektrotechnik, Bautechnik etc.) und Bundesland. Zeitreihe aus Destatis-Schulstatistik. Relevant für Ingenieurnachwuchs-Monitoring und Fachkräfteplanung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Schulabschlussstatistik, durch Destatis regulär publiziert."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Schulstatistik-Auswertung",
+                    "description": "Abschlüsse an Fachschulen-Technik werden nach KldB-Berufsfeld ausgewertet."
+                  },
+                  {
+                    "method": "MINT-Monitoring",
+                    "description": "Techniker-Abschlüsse werden in MINT-Nachwuchs-Berichten des VDI eingebettet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fachschul-anerkennung-eu-vergleich",
+              "level": 4,
+              "name": "Fachschul-Anerkennung EU-Vergleich",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zur Anerkennung deutscher Fachschulabschlüsse in EU-Ländern und umgekehrt. Umfasst Anerkennungsverfahren, Auflagenbescheide und Ablehnungsquoten. Datenquelle: BMBF-Anerkennungsberatung, IMI-Statistik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Anerkennungsstatistiken durch BMBF und EU-Behörden publiziert."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "IMI-Systemauswertung",
+                    "description": "Anerkennungsanfragen werden über EU-IMI-System erfasst und statistisch ausgewertet."
+                  },
+                  {
+                    "method": "Berufsgruppen-Analyse",
+                    "description": "Anerkennungsquoten werden nach Berufsgruppe und Herkunftsland differenziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fachschul-lehrkraefte-mangel-statistiken",
+              "level": 4,
+              "name": "Fachschul-Lehrkräftemangel-Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zum Lehrkräftemangel an Fachschulen nach Berufsfeld und Bundesland. Enthält Vakanzzeiten, Quereinstiegsquoten und prognostizierte Engpässe. Datenquelle: KMK, Schulbehörden. Relevant für Studiengangplanung in Lehramtsstudiengängen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Personalstatistik, durch KMK und Kultusministerien publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Vakanzstatistik",
+                    "description": "Offene Lehrerstellen werden je Fachschultyp und Fachrichtung erfasst."
+                  },
+                  {
+                    "method": "Angebots-Bedarfs-Projektion",
+                    "description": "KMK projiziert Angebot und Bedarf von Fachschullehrkräften für 10 Jahre."
+                  }
+                ]
+              }
             }
           ]
         },
@@ -19783,6 +22653,268 @@
                   {
                     "method": "Benchmarking",
                     "description": "Vergleich von Auslandsschulen nach Qualitätsindikatoren zur Identifikation guter Praxis."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "dsd-prueflings-statistiken",
+              "level": 4,
+              "name": "DSD-Prüflings-Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu Prüflingen des Deutschen Sprachdiploms (DSD I und II) nach Land, Schule und Ergebnis. Datenquelle: KMK-Zentralstelle, ZfA. Zeigt Reichweite und Qualität der deutschen Auslandsschulspracharbeit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Prüfungsstatistiken der KMK-Zentralstelle, ohne Personenbezug publiziert."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "ZfA-Prüfungsstatistik",
+                    "description": "Zentralstelle für das Auslandsschulwesen erfasst DSD-Prüfungsergebnisse nach Schule und Land."
+                  },
+                  {
+                    "method": "Bestehensquoten-Analyse",
+                    "description": "Bestehensquoten werden nach DSD-Niveau und Region ausgewertet."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auslandsschul-foerdervolumen-aa",
+              "level": 4,
+              "name": "Auslandsschul-Fördervolumen AA",
+              "color": "#92400e",
+              "details": {
+                "description": "Fördervolumen des Auswärtigen Amts für deutsche Auslandsschulen nach Schultyp, Land und Maßnahme. Enthält Betriebskostenzuschüsse, Lehrerzuweisungen und Investitionsförderung. Datenquelle: ZfA-Haushaltsberichte. Öffentliche Rechenschaftsdarstellung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Haushaltsdaten des Auswärtigen Amts, parlamentarisch kontrolliert."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "ZfA-Finanzstatistik",
+                    "description": "ZfA erstellt jährliche Übersicht über Fördermaßnahmen nach Schultyp und Region."
+                  },
+                  {
+                    "method": "Parlamentsberichterstattung",
+                    "description": "AA erstattet Bundestag jährlich über Auslandsschulförderung Bericht."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "deutsche-lehrkraefte-ausland-stat",
+              "level": 4,
+              "name": "Deutsche Lehrkräfte im Ausland",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu vom Staat entsandten deutschen Lehrkräften an Auslandsschulen: Anzahl, Entsendungsländer, Fachverteilung und Rückkehrerquoten. Datenquelle: ZfA-Personaldaten. Relevant für Auswärtige Kultur- und Bildungspolitik.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Personalstatistik, keine Identifikation von Einzelpersonen möglich."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "ZfA-Personalplanung",
+                    "description": "ZfA pflegt Übersicht aller entsandten Auslandsdienstlehrkräfte nach Einsatzland."
+                  },
+                  {
+                    "method": "Fachbedarfsanalyse",
+                    "description": "Nachfrage nach Fächern wird mit verfügbaren Bewerbern abgeglichen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "pasch-netzwerk-reichweite-stat",
+              "level": 4,
+              "name": "PASCH-Netzwerk-Reichweite",
+              "color": "#92400e",
+              "details": {
+                "description": "Reichweitendaten des PASCH-Netzwerks (Schulen: Partner der Zukunft): Anzahl teilnehmender Schulen, Schülerinnen und Schüler, die Deutsch lernen, nach Land und Initiative (ZfA, DAAD, Goethe-Institut). Datenquelle: ZfA, PASCH-Jahresbericht.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "PASCH-Jahresbericht ist öffentlich zugänglich, Reichweitendaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "PASCH-Jahreserhebung",
+                    "description": "Alle PASCH-Partner melden jährlich Schüler- und Schulzahlen an ZfA."
+                  },
+                  {
+                    "method": "Georeferenzierung",
+                    "description": "Schulstandorte werden für kartografische Darstellung georeferenziert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "auslandsschul-alumni-statistiken",
+              "level": 4,
+              "name": "Auslandsschul-Alumni-Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zu Alumni-Netzwerken deutscher Auslandsschulen: Absolventenzahlen, berufliche Verläufe und Bindung an deutsche Sprache und Kultur. Datenquelle: ZfA-Absolventenstudien, Netzwerkerhebungen. Zeigt Langzeitwirkung der Auslandsschularbeit.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Alumni-Befragungsergebnisse publizierbar; Einzelpersonen anonymisiert."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Alumni-Befragung",
+                    "description": "Standardisierte Befragungen von Absolventen 5 und 10 Jahre nach Abschluss."
+                  },
+                  {
+                    "method": "Ländervergleich",
+                    "description": "Alumni-Verläufe werden nach Schultyp und Entsendungsland analysiert."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sprachassistenten-einsatz-ausland-stat",
+              "level": 4,
+              "name": "Sprachassistenten-Einsatz Statistiken",
+              "color": "#92400e",
+              "details": {
+                "description": "Statistiken zum Einsatz von Sprachassistentinnen und -assistenten an Auslandsschulen: Anzahl nach Land, Programm (PAD, DAAD, Goethe-Institut) und Fachbereich. Datenquelle: PAD-Jahresbericht. Relevant für Programmplanung und -evaluierung.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Programmdaten des PAD, ohne Personenbezug, jährlich publiziert."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_03"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "PAD-Programmstatistik",
+                    "description": "PAD erfasst jährlich eingesetzte Sprachassistenten nach Land und Einsatzort."
+                  },
+                  {
+                    "method": "Programmvergleich",
+                    "description": "Einsatzzahlen werden über ZfA-, DAAD- und PAD-Programme aggregiert."
                   }
                 ]
               }

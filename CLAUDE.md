@@ -357,6 +357,7 @@ Sprint-Format (Features):
 - [x] **S-F** Tiefenausbau III — alle 127 L2 auf ≥36 L4 (+746 L4), 3.842→4.588 L4 gesamt ✓
 - [x] **S-G** Breitenausbau — +20 L2 (staat+4, wirtschaft+3, wissenschaft+3, zivilgesellschaft+3, medien+3, religion+2, bildung+2), +720 L4, 4.588→5.308 ✓
 - [x] **S-H** Tiefenausbau IV — alle 147 L2 auf ≥42 L4, +871 L4, 5.308→6.179 ✓
+- [x] **S-I** Qualitätspass Processes — alle 1.765 L4-Nodes mit <2 Prozesseinträgen auf ≥2 gebracht ✓
 
 ### Startbefehl
 

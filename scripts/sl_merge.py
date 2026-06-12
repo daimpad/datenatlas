@@ -42,7 +42,8 @@ def get_existing_ids(sector_data):
 total_added = total_skipped = total_warn = 0
 
 for sector, sector_file in SECTOR_FILES.items():
-    data = json.load(open(sector_file, encoding='utf-8'))
+    with open(sector_file, encoding='utf-8') as f:
+        data = json.load(f)
     existing_ids = get_existing_ids(data)
     added = skipped = warn = 0
 
@@ -51,7 +52,8 @@ for sector, sector_file in SECTOR_FILES.items():
             print(f'WARNING: {agent_file} missing!')
             continue
         try:
-            entries = json.load(open(agent_file, encoding='utf-8'))
+            with open(agent_file, encoding='utf-8') as f:
+                entries = json.load(f)
         except Exception as e:
             print(f'ERROR reading {agent_file}: {e}')
             continue
@@ -86,7 +88,8 @@ for sector, sector_file in SECTOR_FILES.items():
                 existing_ids.add(nid)
                 added += 1
 
-    json.dump(data, open(sector_file, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+    with open(sector_file, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
     print(f'{sector}: +{added} added, {skipped} skipped, {warn} warnings')
     total_added += added
     total_skipped += skipped

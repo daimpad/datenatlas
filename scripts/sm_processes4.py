@@ -75,7 +75,8 @@ def pick_4th_process(name, desc):
 total_updated = 0
 
 for filepath in FILES:
-    data = json.load(open(filepath, encoding='utf-8'))
+    with open(filepath, encoding='utf-8') as f:
+        data = json.load(f)
     updated = 0
     for l2 in data['children']:
         for l3 in l2.get('children', []):
@@ -96,7 +97,8 @@ for filepath in FILES:
                         'description': desc_tmpl.format(name=name)
                     })
                     updated += 1
-    json.dump(data, open(filepath, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+    with open(filepath, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
     print(f'{filepath}: {updated} nodes updated')
     total_updated += updated
 

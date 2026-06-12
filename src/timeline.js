@@ -23,6 +23,7 @@ export function initTimeline({ indexPromise, mainTiles }) {
   let _trapCleanup = null;
 
   tlBtn.addEventListener('click', () => {
+    if (!modal.hidden) return;
     render();
     modal.hidden = false;
     tlBtn.classList.add('active');

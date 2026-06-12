@@ -129,6 +129,7 @@ export function initGenerator({ indexPromise, onNavigate }) {
   let _trapCleanup = null;
 
   triggerBtn.addEventListener('click', () => {
+    if (!modal.hidden) return;
     modal.hidden = false;
     triggerBtn.classList.add('active');
     if (!_currentResult) _doRoll();

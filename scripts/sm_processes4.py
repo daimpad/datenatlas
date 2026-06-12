@@ -88,6 +88,9 @@ for filepath in FILES:
                     existing_methods = {p['method'] for p in procs}
                     if method in existing_methods:
                         method, desc_tmpl = FALLBACK
+                    if method in existing_methods:
+                        updated -= 1
+                        continue
                     l4['details']['processes'].append({
                         'method': method,
                         'description': desc_tmpl.format(name=name)

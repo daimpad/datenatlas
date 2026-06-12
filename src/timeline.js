@@ -18,7 +18,7 @@ export function initTimeline({ indexPromise, mainTiles }) {
   const closeBtn = document.getElementById('tl-close');
   const tlBtn    = document.getElementById('timeline-btn');
 
-  indexPromise.then(idx => { _index = idx; });
+  indexPromise.then(idx => { _index = idx; if (!modal.hidden) render(); });
 
   let _trapCleanup = null;
 
@@ -112,7 +112,8 @@ function svgChart(allYears) {
 
   // Area path
   const pts = cumul.map((v, i) => `${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
-  const areaPath = `M${px(0)},${py(cumul[0])} L${pts} L${px(years)},${py(0) + ch} L${px(0)},${py(0) + ch} Z`;
+  const bottomY  = py(0).toFixed(1);
+  const areaPath = `M${px(0)},${py(cumul[0])} L${pts} L${px(years)},${bottomY} L${px(0)},${bottomY} Z`;
   const linePath = `M${px(0)},${py(cumul[0])} L${pts}`;
 
   // Y-axis ticks
@@ -181,6 +182,11 @@ function render() {
 
   const { freqTotals, sectors, allYears } = computeData();
   const total = allYears.length;
+
+  if (!total) {
+    body.innerHTML = `<div class="tl-loading"><p>Keine Zeitdaten verfügbar.</p></div>`;
+    return;
+  }
 
   // Summary cards: total, most common frequency, earliest, latest
   const topFreq   = Object.entries(freqTotals).sort((a, b) => b[1] - a[1])[0];

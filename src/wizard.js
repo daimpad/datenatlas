@@ -52,8 +52,10 @@ export function initWizard() {
 
   // ── Open / Close ──────────────────────────────────────────────────────────
   let _trapCleanup = null;
+  let _wizardOpener = null;
 
   function openWizard(ctx = null) {
+    _wizardOpener = document.activeElement;
     resetState(ctx);
     modal.hidden = false;
     document.body.style.overflow = 'hidden';
@@ -65,7 +67,8 @@ export function initWizard() {
     _trapCleanup?.(); _trapCleanup = null;
     modal.hidden = true;
     document.body.style.overflow = '';
-    openBtn?.focus();
+    (_wizardOpener ?? openBtn)?.focus();
+    _wizardOpener = null;
   }
 
   _openWizardWithContext = (ctx) => openWizard(ctx);

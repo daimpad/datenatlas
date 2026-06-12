@@ -62,15 +62,15 @@ errorRetry.addEventListener('click', () => { hideError(); _retryFn?.(); });
 // Always show on every page load — no localStorage
 {
   const obCleanup = trapFocus(onboarding);
-  document.getElementById('ob-start').addEventListener('click', () => {
-    obCleanup();
-    onboarding.hidden = true;
-  });
+  function dismissOnboarding() { obCleanup(); onboarding.hidden = true; }
+  document.getElementById('ob-start').addEventListener('click', dismissOnboarding);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !onboarding.hidden) dismissOnboarding(); });
 }
 
 // ── Info modal ────────────────────────────────────────────────────────────────
 let _infoTrapCleanup = null;
 function openInfoModal() {
+  if (!infoModal.hidden) return;
   infoModal.hidden = false;
   infoBtn.classList.add('active');
   _infoTrapCleanup = trapFocus(infoModal);
@@ -85,7 +85,7 @@ function closeInfoModal() {
 infoBtn.addEventListener('click', openInfoModal);
 imClose.addEventListener('click', closeInfoModal);
 infoModal.addEventListener('click', e => { if (e.target === infoModal) closeInfoModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape' && !infoModal.hidden) closeInfoModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !infoModal.hidden && mobileSheet.hidden) closeInfoModal(); });
 
 // ── Mobile action sheet ───────────────────────────────────────────────────────
 const mobileSheet = document.getElementById('mobile-sheet');
@@ -93,6 +93,7 @@ const moreBtn = document.getElementById('more-btn');
 let _sheetTrapCleanup = null;
 
 function openMobileSheet() {
+  if (!mobileSheet.hidden) return;
   mobileSheet.hidden = false;
   _sheetTrapCleanup = trapFocus(mobileSheet);
 }

@@ -264,14 +264,14 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 
 | Sektor | L2 | L3 | L4 | Ø L4/L2 |
 |--------|----|----|-----|---------|
-| staat | 46 | 125 | 2210 | 48,0 |
-| wirtschaft | 23 | 67 | 1104 | 48,0 |
-| wissenschaft | 19 | 52 | 912 | 48,0 |
-| zivilgesellschaft | 20 | 58 | 960 | 48,0 |
-| medien & kultur | 17 | 50 | 816 | 48,0 |
-| religion | 10 | 30 | 480 | 48,0 |
-| bildung | 12 | 36 | 576 | 48,0 |
-| **Gesamt** | **147** | **418** | **7.058** | **48,0** |
+| staat | 46 | 125 | 2486 | 54,0 |
+| wirtschaft | 23 | 67 | 1242 | 54,0 |
+| wissenschaft | 19 | 52 | 1026 | 54,0 |
+| zivilgesellschaft | 20 | 58 | 1080 | 54,0 |
+| medien & kultur | 17 | 50 | 918 | 54,0 |
+| religion | 10 | 30 | 540 | 54,0 |
+| bildung | 12 | 36 | 648 | 54,0 |
+| **Gesamt** | **147** | **418** | **7.940** | **54,0** |
 
 ---
 
@@ -360,6 +360,8 @@ Sprint-Format (Features):
 - [x] **S-I** Qualitätspass Processes — alle 1.765 L4-Nodes mit <2 Prozesseinträgen auf ≥2 gebracht ✓
 - [x] **S-J** Tiefenausbau V — alle 147 L2 auf ≥48 L4, +879 L4, 6.179→7.058 ✓
 - [x] **S-K** Qualitätspass Processes II — alle 7.048 L4-Nodes auf ≥3 Prozesseinträge gebracht ✓
+- [x] **S-L** Tiefenausbau VI — alle 147 L2 auf ≥54 L4, +882 L4, 7.058→7.940 ✓
+- [x] **S-M** Qualitätspass Processes IV — alle 7.940 L4-Nodes auf ≥4 Prozesseinträge gebracht ✓
 
 ### Startbefehl
 

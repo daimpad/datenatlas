@@ -1,17 +1,12 @@
-import { readFileSync, writeFileSync } from 'fs';
+import { execSync } from 'child_process';
 import { defineConfig } from 'vite';
 
-const versionFile = new URL('./version.json', import.meta.url).pathname;
-const versionData = JSON.parse(readFileSync(versionFile, 'utf8'));
-
-// Increment build counter on every production build
-const isProduction = process.env.NODE_ENV === 'production';
-if (isProduction) {
-  versionData.build += 1;
-  writeFileSync(versionFile, JSON.stringify(versionData, null, 0) + '\n');
-}
-
-const appVersion = `v2.${versionData.build}`;
+const appVersion = (() => {
+  try {
+    const count = execSync('git rev-list --count HEAD').toString().trim();
+    return `v2.${count}`;
+  } catch { return 'v2.0'; }
+})();
 
 export default defineConfig({
   base: './',

@@ -15,6 +15,7 @@ export function initStats({ indexPromise, mainTiles }) {
   let _trapCleanup = null;
 
   statsBtn.addEventListener('click', () => {
+    if (!modal.hidden) return;
     render();
     modal.hidden = false;
     statsBtn.classList.add('active');

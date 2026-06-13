@@ -16,9 +16,9 @@ AGENT_FILES = {
     'staat':            ['/tmp/sn_agent_1.json', '/tmp/sn_agent_2.json', '/tmp/sn_agent_3.json',
                          '/tmp/sn_agent_4.json', '/tmp/sn_agent_5.json'],
     'wirtschaft':       ['/tmp/sn_agent_6.json', '/tmp/sn_agent_7.json', '/tmp/sn_agent_8.json'],
-    'wissenschaft':     ['/tmp/sn_agent_9.json', '/tmp/sn_agent_10.json'],
-    'zivilgesellschaft':['/tmp/sn_agent_11.json', '/tmp/sn_agent_12.json'],
-    'medien':           ['/tmp/sn_agent_13.json', '/tmp/sn_agent_14.json'],
+    'wissenschaft':     ['/tmp/sn_agent_9.json', '/tmp/sn_agent_10.json', '/tmp/sn_agent_20.json'],
+    'zivilgesellschaft':['/tmp/sn_agent_11.json', '/tmp/sn_agent_12.json', '/tmp/sn_agent_18.json'],
+    'medien':           ['/tmp/sn_agent_13.json', '/tmp/sn_agent_14.json', '/tmp/sn_agent_19.json'],
     'religion':         ['/tmp/sn_agent_15.json'],
     'bildung':          ['/tmp/sn_agent_16.json', '/tmp/sn_agent_17.json'],
 }

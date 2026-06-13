@@ -363,6 +363,7 @@ Sprint-Format (Features):
 - [x] **S-L** Tiefenausbau VI — alle 147 L2 auf ≥54 L4, +882 L4, 7.058→7.940 ✓
 - [x] **S-M** Qualitätspass Processes IV — alle 7.940 L4-Nodes auf ≥4 Prozesseinträge gebracht ✓
 - [x] **S-N** Tiefenausbau VII — alle 147 L2 auf ≥60 L4, +921 L4, 7.940→8.861 ✓
+- [x] **S-O** Qualitätspass Processes V — alle 8.861 L4-Nodes auf ≥5 Prozesseinträge gebracht ✓
 
 ### Startbefehl
 

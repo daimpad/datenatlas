@@ -1408,6 +1408,175 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "ev-taufen-konfirmationen",
+              "level": 4,
+              "name": "Taufen und Konfirmationen",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Statistik zu Taufen, Konfirmationen und Trauungen in evangelischen Gemeinden nach Landeskirche.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Zahlen ohne Personenbezug veröffentlichbar."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Datenaggregation",
+                    "description": "Zusammenführung aus Kirchenbüchern der Gemeinden"
+                  },
+                  {
+                    "method": "Qualitätsprüfung",
+                    "description": "Plausibilitätsprüfung gegen Vorjahreswerte"
+                  },
+                  {
+                    "method": "Jahresveröffentlichung",
+                    "description": "Publikation im Statistischen Jahrbuch der EKD"
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Langzeitauswertung seit 1950"
+                  },
+                  {
+                    "method": "Regionalvergleich",
+                    "description": "Vergleich nach Landeskirchen und Propsteibezirken"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ev-altersstruktur-mitglieder",
+              "level": 4,
+              "name": "Altersstruktur evangelischer Mitglieder",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Mitgliederverteilung nach Alter und Geschlecht differenziert nach Landeskirche und Gemeindegröße.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Altersgruppen ohne Einzelpersonenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Altersgruppenbildung",
+                    "description": "Zusammenfassung in 10-Jahres-Kohorten"
+                  },
+                  {
+                    "method": "Hochrechnung",
+                    "description": "Fortschreibung auf Basis von Sterbestatistiken"
+                  },
+                  {
+                    "method": "Visualisierung",
+                    "description": "Bevölkerungspyramide je Landeskirche"
+                  },
+                  {
+                    "method": "Prognose",
+                    "description": "Mitgliederentwicklung bis 2040"
+                  },
+                  {
+                    "method": "Vergleichsanalyse",
+                    "description": "Vergleich mit Gesamtbevölkerung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ev-kirchenaustritte-eintritte",
+              "level": 4,
+              "name": "Kirchenaus- und -eintritte",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Monatliche Zu- und Abgangszahlen aus den Kirchenregistern der Landeskirchen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Monatswerte ohne Personendaten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Kirchenregisterauswertung",
+                    "description": "Automatisierte Abfrage aus lokalen Meldesystemen"
+                  },
+                  {
+                    "method": "Monatliche Aggregation",
+                    "description": "Zusammenfassung auf Gemeindeebene"
+                  },
+                  {
+                    "method": "Jahresreport",
+                    "description": "Konsolidierung für EKD-Statistik"
+                  },
+                  {
+                    "method": "Medienmitteilung",
+                    "description": "Kommunikation der Jahreszahlen"
+                  },
+                  {
+                    "method": "Wissenschaftskooperation",
+                    "description": "Weitergabe an Religionssoziologie"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -2412,6 +2581,171 @@
                   {
                     "method": "Wirkungsevaluation",
                     "description": "Standardisierte Wirkungsmessung der auf Soziodemografie Gemeindemitglieder evangelisch basierenden Programme und Maßnahmen nach SROI-Methodik."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ev-kirchensteuereinnahmen-regional",
+              "level": 4,
+              "name": "Kirchensteuereinnahmen regional",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Kirchensteueraufkommen nach Bundesland und Landeskirche, Zeitreihe 2000–2023.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Finanzstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Finanzbuchhaltung",
+                    "description": "Erfassung aus Landeskirchen-Buchungssystemen"
+                  },
+                  {
+                    "method": "Jahresabschluss",
+                    "description": "Konsolidierung nach HGB-Kirchenrecht"
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Vergleich pro Mitglied je Landeskirche"
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "10-Jahres-Entwicklung"
+                  },
+                  {
+                    "method": "Veröffentlichung",
+                    "description": "Publikation im EKD-Finanzbericht"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ev-diakonie-ausgaben",
+              "level": 4,
+              "name": "Diakonieausgaben nach Handlungsfeld",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Mittelverwendung evangelischer Wohlfahrtseinrichtungen nach Aufgabenfeld (Pflege, Jugend, Sucht).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Ausgabenstatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Projektabrechnung",
+                    "description": "Erfassung der Einzelprojektkosten"
+                  },
+                  {
+                    "method": "Konsolidierung",
+                    "description": "Zusammenführung auf Landesverbandsebene"
+                  },
+                  {
+                    "method": "Bundesstatistik",
+                    "description": "Aggregation zum Diakonischen Werk EKD"
+                  },
+                  {
+                    "method": "Verwendungsnachweis",
+                    "description": "Prüfung gegenüber öffentlichen Zuschüssen"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Publikation des Diakonieberichts"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ev-immobilienwert-kirchenbesitz",
+              "level": 4,
+              "name": "Immobilienwert Kirchenbesitz",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Schätzung und Buchwert kirchlicher Liegenschaften nach Landeskirche und Nutzungsart.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Detaillierte Lagedaten kirchlicher Immobilien sind schützenswert."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Liegenschaftsverwaltung",
+                    "description": "Erfassung in Immobilienmanagementsystemen"
+                  },
+                  {
+                    "method": "Wertermittlung",
+                    "description": "Gutachterliche Bewertung nach WertV"
+                  },
+                  {
+                    "method": "Nutzungsanalyse",
+                    "description": "Klassifikation nach Nutzungsart"
+                  },
+                  {
+                    "method": "Strategieplanung",
+                    "description": "Entscheidungsgrundlage für Gebäudekonzepte"
+                  },
+                  {
+                    "method": "Datenschutzprüfung",
+                    "description": "Abwägung Transparenz vs. Sicherheit"
                   }
                 ]
               }
@@ -3521,6 +3855,171 @@
                   {
                     "method": "Anonymisierte Mikrodata-Bereitstellung",
                     "description": "Bereitstellung anonymisierter Mikrodaten zu Kirchliche Trauungsstatistik evangelisch für Forschungszwecke über Scientific-Use-Files an akkreditierte Einrichtungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ev-konfirmandenunterricht-teilnahme",
+              "level": 4,
+              "name": "Konfirmandenunterricht Teilnahmequote",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Teilnahmequoten am Konfirmandenunterricht nach Landeskirche und Alterskohorte.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Quoten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Gemeindebefragung",
+                    "description": "Erhebung bei allen Kirchengemeinden"
+                  },
+                  {
+                    "method": "Quoten-Berechnung",
+                    "description": "Anteil an der Altersgruppe der 14-Jährigen"
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Entwicklung 2000–2023"
+                  },
+                  {
+                    "method": "Vergleich",
+                    "description": "Ost-West-Unterschiede"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Veröffentlichung in EKD-Statistik"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ev-rundfunkbeauftragte-programme",
+              "level": 4,
+              "name": "Rundfunkbeauftragte: Sendungsstatistik",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Umfang und Reichweite evangelischer Verkündungssendungen in ARD und ZDF.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Sendungsstatistiken sind ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Programmerfassung",
+                    "description": "Logging aller evangelischen Sendeplätze"
+                  },
+                  {
+                    "method": "Reichweitenmessung",
+                    "description": "GfK-Zuschauerzahlen je Sendung"
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Aggregation durch Rundfunkbeauftragten"
+                  },
+                  {
+                    "method": "Vergleich",
+                    "description": "Gegenüberstellung mit kath. Rundfunkarbeit"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Publikation beim Gemeinschaftswerk EKD"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ev-jugendarbeit-teilnehmer",
+              "level": 4,
+              "name": "Evangelische Jugendarbeit Teilnehmerzahlen",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Teilnehmende an evangelischer Kinder- und Jugendarbeit nach Landeskirche und Angebotskategorie.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Teilnahmezahlen."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Freizeiterfassung",
+                    "description": "Anmeldedaten aus Freizeitdatenbanken"
+                  },
+                  {
+                    "method": "Jahreserhebung",
+                    "description": "Befragung der Landesjugendwerke"
+                  },
+                  {
+                    "method": "Konsolidierung",
+                    "description": "Zusammenführung zur EKD-Jugendstatistik"
+                  },
+                  {
+                    "method": "Trendbericht",
+                    "description": "Vergleich mit Vorjahren"
+                  },
+                  {
+                    "method": "Öffentlichkeitsarbeit",
+                    "description": "Kommunikation der Reichweite"
                   }
                 ]
               }
@@ -4924,6 +5423,175 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "kath-erstkommunion-firmung",
+              "level": 4,
+              "name": "Erstkommunion und Firmung",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jährliche Zahlen zu Erstkommunionen und Firmungen nach Bistum.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Zahlen."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Pfarrgemeindeerhebung",
+                    "description": "Meldung durch Pfarrämter"
+                  },
+                  {
+                    "method": "Bistumsbericht",
+                    "description": "Konsolidierung je Bistum"
+                  },
+                  {
+                    "method": "DBK-Statistik",
+                    "description": "Zusammenführung durch Deutsche Bischofskonferenz"
+                  },
+                  {
+                    "method": "Langzeittrend",
+                    "description": "Vergleich 1970–2023"
+                  },
+                  {
+                    "method": "Pressemitteilung",
+                    "description": "Kommunikation der Jahresergebnisse"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kath-kirchenaustritte-regionen",
+              "level": 4,
+              "name": "Kirchenaustritte nach Region",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Monatliche Austrittszahlen nach Bistum und Dekanat.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte regionale Zahlen."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Registererfassung",
+                    "description": "Meldungen aus staatlichen Austrittsregistern"
+                  },
+                  {
+                    "method": "Bistumszuordnung",
+                    "description": "Zuordnung nach Wohnsitz"
+                  },
+                  {
+                    "method": "Monatsaggregation",
+                    "description": "Monatliche Konsolidierung"
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Vergleich mit Vorjahren und Ereignissen"
+                  },
+                  {
+                    "method": "Wissenschaftskooperation",
+                    "description": "Weitergabe an Religionsforschung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kath-seelsorgebezirke-geodaten",
+              "level": 4,
+              "name": "Seelsorgebezirke Geodaten",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Geometrien der Pfarreigrenzen und Seelsorgebezirke nach Bistum.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Geodaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_05"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_06",
+                    "label": "Shapefile"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Digitalisierung",
+                    "description": "Erfassung aus historischen Grenzkarten"
+                  },
+                  {
+                    "method": "Georeferenzierung",
+                    "description": "Einpassung in ETRS89-Koordinatensystem"
+                  },
+                  {
+                    "method": "Validierung",
+                    "description": "Plausibilitätsprüfung durch Bistümer"
+                  },
+                  {
+                    "method": "Webpublikation",
+                    "description": "Bereitstellung als WMS/WFS"
+                  },
+                  {
+                    "method": "Aktualisierung",
+                    "description": "Nachführung bei Pfarreireformen"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -5861,6 +6529,175 @@
                   {
                     "method": "Open-Data-Publikation auf GovData",
                     "description": "Bereitstellung der Geodaten zu Pfarreienverzeichnis Deutsche Bistümer als offener Datensatz auf dem nationalen Datenportal GovData.de nach DCAT-AP.de-Standard."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kath-kirchensteuer-bistum",
+              "level": 4,
+              "name": "Kirchensteuereinnahmen nach Bistum",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Kirchensteueraufkommen der 27 deutschen Bistümer, Zeitreihe 2000–2023.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Finanzdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Finanzbuchhaltung",
+                    "description": "Erfassung aus Bistumsbuchführung"
+                  },
+                  {
+                    "method": "Jahresabschluss",
+                    "description": "Testat durch Wirtschaftsprüfer"
+                  },
+                  {
+                    "method": "DBK-Konsolidierung",
+                    "description": "Zusammenführung durch Bischofskonferenz"
+                  },
+                  {
+                    "method": "Veröffentlichung",
+                    "description": "Jahrespressemitteilung"
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Pro-Kopf-Vergleich nach Bistum"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kath-caritas-mitteleinsatz",
+              "level": 4,
+              "name": "Caritas Mitteleinsatz nach Handlungsfeld",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Verwendung der Caritasmittel nach sozialen Handlungsfeldern bundesweit.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Ausgabenstatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Projektabrechnung",
+                    "description": "Erfassung nach KHSG und Zuwendungsrecht"
+                  },
+                  {
+                    "method": "Jahresabschluss",
+                    "description": "Testat durch Wirtschaftsprüfer"
+                  },
+                  {
+                    "method": "Verbandsbericht",
+                    "description": "Konsolidierung durch DCV"
+                  },
+                  {
+                    "method": "Verwendungsnachweis",
+                    "description": "Prüfung öffentlicher Zuschüsse"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Publikation Caritasbericht"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kath-vermoegen-offenlegung",
+              "level": 4,
+              "name": "Vermögensbericht Bistümer",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Jahresabschlüsse und Vermögensübersichten der deutschen Bistümer nach Transparenzinitiative.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Freiwillige Offenlegung der Bistümer."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  },
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Rechnungslegung",
+                    "description": "HGB-konforme Buchführung"
+                  },
+                  {
+                    "method": "Wirtschaftsprüfung",
+                    "description": "Externe Abschlussprüfung"
+                  },
+                  {
+                    "method": "Publikation",
+                    "description": "Veröffentlichung auf Bistumswebsite"
+                  },
+                  {
+                    "method": "DBK-Bericht",
+                    "description": "Zusammenführung durch Bischofskonferenz"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Weitergabe an Religionsökonomie"
                   }
                 ]
               }
@@ -7029,6 +7866,171 @@
                   {
                     "method": "Metadaten-Standardisierung DDI",
                     "description": "Dokumentation der Erhebungsmetadaten aus Gottesdienstbesucherzählung Katholisch im DDI-Codebook-Standard für Wiederverwendbarkeit in Forschungsinfrastrukturen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kath-schulen-schuelerzahlen",
+              "level": 4,
+              "name": "Katholische Schulen Schülerzahlen",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Schüler- und Klassenzahlen an katholischen Schulen in freier Trägerschaft nach Bundesland.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Schulstatistik ohne Einzelpersonenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Schulstatistik",
+                    "description": "Erhebung durch KMK-Meldewesen"
+                  },
+                  {
+                    "method": "Bistumsbericht",
+                    "description": "Zusammenführung durch Schulreferate"
+                  },
+                  {
+                    "method": "Bundesstatistik",
+                    "description": "Aggregation durch DBK"
+                  },
+                  {
+                    "method": "Vergleichsanalyse",
+                    "description": "Anteil an Gesamtschülerschaft"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Publikation Bildungsbericht"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kath-kitas-betreuungsquote",
+              "level": 4,
+              "name": "Katholische Kitas Betreuungsquote",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Platzzahlen und Betreuungsquoten in katholischen Kindertageseinrichtungen nach Bistum.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Einrichtungsdaten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Einrichtungserhebung",
+                    "description": "Jährliche Meldung durch Träger"
+                  },
+                  {
+                    "method": "Kapazitätserfassung",
+                    "description": "Genehmigte Plätze vs. Belegung"
+                  },
+                  {
+                    "method": "Bistumszusammenführung",
+                    "description": "Aggregation je Bistum"
+                  },
+                  {
+                    "method": "Bundesvergleich",
+                    "description": "Vergleich mit Gesamtbetreuungsquote"
+                  },
+                  {
+                    "method": "Bericht",
+                    "description": "Jahrespublikation"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "kath-familienberatung-fallzahlen",
+              "level": 4,
+              "name": "Ehe- und Familienberatung Fallzahlen",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Beratungsfälle der kirchlichen Ehe-, Familien- und Lebensberatungsstellen.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Einzelfallbezogene Beratungsstatistik ist schützenswert."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Falldokumentation",
+                    "description": "Pseudonymisierte Erfassung in Beratungssoftware"
+                  },
+                  {
+                    "method": "Jahresstatistik",
+                    "description": "Aggregation auf Stellenebene"
+                  },
+                  {
+                    "method": "Bundesauswertung",
+                    "description": "Konsolidierung durch DBJR/KDB"
+                  },
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Löschung aller Identifikatoren"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Aggregierte Veröffentlichung"
                   }
                 ]
               }
@@ -8440,6 +9442,171 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "juedisch-zuwanderung-kontingent",
+              "level": 4,
+              "name": "Jüdische Kontingentflüchtlinge",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Zuzugszahlen jüdischer Zuwanderer im Rahmen des Kontingentflüchtlingsprogramms nach Jahr und Herkunftsland.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Zahlen ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Behördenmeldung",
+                    "description": "Erfassung durch BAMF und Einwandererbehörden"
+                  },
+                  {
+                    "method": "Gemeindeerhebung",
+                    "description": "Meldung durch Zentralrat"
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Entwicklung seit 1990"
+                  },
+                  {
+                    "method": "Integrationsmonitoring",
+                    "description": "Verbleib in Gemeinden"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Zentralratspublikation"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "juedisch-gemeindewachstum-regionen",
+              "level": 4,
+              "name": "Gemeindewachstum nach Regionen",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Mitgliederentwicklung jüdischer Gemeinden nach Bundesland, Zeitreihe 1990–2023.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Gemeindestatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Jahreserhebung",
+                    "description": "Abfrage bei Landesverbänden"
+                  },
+                  {
+                    "method": "Plausibilitätsprüfung",
+                    "description": "Abgleich mit Vorjahreswerten"
+                  },
+                  {
+                    "method": "Zentralratsstatistik",
+                    "description": "Konsolidierung durch ZdJ"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Weitergabe an Religionssoziologie"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Publikation Zentralrat"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "juedisch-rabbiner-religionspersonal",
+              "level": 4,
+              "name": "Rabbiner und Religionspersonal",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Anzahl und Qualifikation rabbinischen und religiösen Personals in deutschen Gemeinden.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Personenbezogene Daten von Amtsträgern."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Gemeindemeldung",
+                    "description": "Erfassung durch Landesverbände"
+                  },
+                  {
+                    "method": "Qualifikationscheck",
+                    "description": "Prüfung der Ordination/Ausbildung"
+                  },
+                  {
+                    "method": "Zentralratsregister",
+                    "description": "Zusammenführung beim ZdJ"
+                  },
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Für externe Weitergabe"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Aggregierter Bericht"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -9460,6 +10627,171 @@
                   {
                     "method": "Datenportfolio-Management",
                     "description": "Strukturierte Verwaltung und Versionierung der Datensätze aus Gedenkstättenbesuche jüdische Erinnerung in einem zentralen Datenportfolio mit Lifecycle-Management."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "juedisch-gedenkstaetten-besuche",
+              "level": 4,
+              "name": "Gedenkstättenbesuche",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Besucherzahlen jüdischer Gedenkstätten und Museen in Deutschland nach Jahr und Einrichtungstyp.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Besucherstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Kassenerfassung",
+                    "description": "Ticketverkaufsstatistik"
+                  },
+                  {
+                    "method": "Schulgruppenerfassung",
+                    "description": "Anmeldedaten Schulgruppen"
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Aggregation je Einrichtung"
+                  },
+                  {
+                    "method": "Bundesvergleich",
+                    "description": "Vergleich über Gedenkstätten"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Publikation der Bundeskonferenz"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "juedisch-antisemitismus-meldungen",
+              "level": 4,
+              "name": "Antisemitismusmeldungen",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Erfasste antisemitische Vorfälle nach Kategorie und Bundesland (RIAS-Daten).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierte Vorfallsstatistik."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Meldestelle",
+                    "description": "Erfassung durch RIAS-Meldestellen"
+                  },
+                  {
+                    "method": "Kategorisierung",
+                    "description": "Einordnung nach IHRA-Definition"
+                  },
+                  {
+                    "method": "Bundesauswertung",
+                    "description": "Jahresreport RIAS"
+                  },
+                  {
+                    "method": "Behördenkooperation",
+                    "description": "Weitergabe an Ermittlungsbehörden"
+                  },
+                  {
+                    "method": "Politikberatung",
+                    "description": "Grundlage für Handlungsempfehlungen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "juedisch-synagogenstandorte",
+              "level": 4,
+              "name": "Synagogen und Gemeindezentren Geodaten",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Standorte aktiver Synagogen und jüdischer Gemeindezentren in Deutschland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich zugängliche Standortinformationen."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verzeichniserfassung",
+                    "description": "Erfassung durch ZdJ"
+                  },
+                  {
+                    "method": "Georeferenzierung",
+                    "description": "Koordinatenerfassung"
+                  },
+                  {
+                    "method": "Verifikation",
+                    "description": "Prüfung durch Landesverbände"
+                  },
+                  {
+                    "method": "Webpublikation",
+                    "description": "Bereitstellung auf ZdJ-Website"
+                  },
+                  {
+                    "method": "Aktualisierung",
+                    "description": "Jährliche Nachführung"
                   }
                 ]
               }
@@ -10565,6 +11897,171 @@
                   {
                     "method": "Länderübergreifendes Bildungsmonitoring",
                     "description": "Integration der Daten aus Jüdische Schulen Bildungseinrichtungen in das nationale Bildungsmonitoring der KMK für bundesweite Vergleichsberichte."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "juedisch-gemeindehaushalt",
+              "level": 4,
+              "name": "Jüdische Gemeindehaushalte",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Einnahmen und Ausgaben jüdischer Gemeinden nach Einnahmequellen (Staatsleistungen, Beiträge, Zuschüsse).",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Finanzdaten."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Haushaltsbuchhaltung",
+                    "description": "Jahresabschluss je Gemeinde"
+                  },
+                  {
+                    "method": "Landesverbandskonsolidierung",
+                    "description": "Aggregation auf Landesebene"
+                  },
+                  {
+                    "method": "Zentralratsstatistik",
+                    "description": "Bundesweite Zusammenführung"
+                  },
+                  {
+                    "method": "Wirtschaftsprüfung",
+                    "description": "Externe Prüfung"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Finanzbericht ZdJ"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "juedisch-staatsleistungen-laender",
+              "level": 4,
+              "name": "Staatsleistungen nach Bundesland",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Staatliche Zuwendungen an jüdische Gemeinden nach Bundesland und Rechtsgrundlage.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Haushaltsmittel sind transparenzpflichtig."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Haushaltsauswertung",
+                    "description": "Erfassung aus Landeshaushalten"
+                  },
+                  {
+                    "method": "Rechtsgrundlagenanalyse",
+                    "description": "Vertragsgrundlage je Bundesland"
+                  },
+                  {
+                    "method": "Bundesvergleich",
+                    "description": "Pro-Kopf-Vergleich"
+                  },
+                  {
+                    "method": "Transparenzbericht",
+                    "description": "Publikation auf Anfrage"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Rechtswissenschaftliche Analyse"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "juedisch-soziale-einrichtungen-budget",
+              "level": 4,
+              "name": "Jüdische Sozialeinrichtungen Budget",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Budgets und Kapazitäten jüdischer Altenheime, Kindergärten und Sozialzentren.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Einrichtungsdaten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Einrichtungserhebung",
+                    "description": "Jährliche Meldung durch Träger"
+                  },
+                  {
+                    "method": "Aggregation",
+                    "description": "Zusammenführung durch Zentralwohlfahrtsstelle"
+                  },
+                  {
+                    "method": "Bundesbericht",
+                    "description": "Jahresbericht ZWST"
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Vergleich mit konfessionellen Trägern"
+                  },
+                  {
+                    "method": "Fördernachweis",
+                    "description": "Verwendung für Zuschussanträge"
                   }
                 ]
               }
@@ -11949,6 +13446,171 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "muslimisch-moscheegemeinden-anzahl",
+              "level": 4,
+              "name": "Moscheegemeinden Bestandserhebung",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Anzahl und Verbreitung islamischer Moscheegemeinden in Deutschland nach Bundesland und Verband.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Gemeindestatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verbandserhebung",
+                    "description": "Meldung durch DITIB, ZMD, VIKZ u.a."
+                  },
+                  {
+                    "method": "Plausibilitätsprüfung",
+                    "description": "Abgleich mit kommunalen Daten"
+                  },
+                  {
+                    "method": "Bundesauswertung",
+                    "description": "Konsolidierung durch Islamkonferenz"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Weitergabe an Religionssoziologie"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Publikation DIK"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "muslimisch-imame-ausbildung",
+              "level": 4,
+              "name": "Imamausbildung in Deutschland",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Teilnehmerzahlen und Institutionen der Imamausbildung in Deutschland.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Ausbildungsdaten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Institutionserhebung",
+                    "description": "Erfassung durch Bildungsträger"
+                  },
+                  {
+                    "method": "Akkreditierungscheck",
+                    "description": "Prüfung durch Kultusministerien"
+                  },
+                  {
+                    "method": "Bundesauswertung",
+                    "description": "Zusammenführung DIK"
+                  },
+                  {
+                    "method": "Qualitätsbericht",
+                    "description": "Evaluation der Programme"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Publikation"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "muslimisch-gebetsraeume-geodaten",
+              "level": 4,
+              "name": "Gebetsräume Geodaten",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Standorte islamischer Gebetsräume und Moscheen in Deutschland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich zugängliche Standorte."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Felderhebung",
+                    "description": "Erhebung durch Stadtplanungsämter"
+                  },
+                  {
+                    "method": "Verbandserfassung",
+                    "description": "Ergänzung durch islamische Verbände"
+                  },
+                  {
+                    "method": "Georeferenzierung",
+                    "description": "GPS-Koordinatenerfassung"
+                  },
+                  {
+                    "method": "Webpublikation",
+                    "description": "Bereitstellung als offene Karte"
+                  },
+                  {
+                    "method": "Aktualisierung",
+                    "description": "Jährliche Nachführung"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -12996,6 +14658,171 @@
                   {
                     "method": "API-first-Bereitstellung",
                     "description": "Maschinenlesbare REST-API mit OpenAPI-Spezifikation für den programmatischen Zugriff auf die Datensätze aus Islamische Beratungsstellen Angebote."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "muslimisch-sprachkurse-teilnahme",
+              "level": 4,
+              "name": "Islamische Träger: Sprachkurs-Teilnahme",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Teilnehmerzahlen an Integrationskursen in Trägerschaft islamischer Verbände.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Teilnahmezahlen."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "BAMF-Abrechnung",
+                    "description": "Abrechnungsdaten aus Integrationskurssystem"
+                  },
+                  {
+                    "method": "Trägerbericht",
+                    "description": "Statistik je Trägerorganisation"
+                  },
+                  {
+                    "method": "Bundesauswertung",
+                    "description": "BAMF-Jahresstatistik"
+                  },
+                  {
+                    "method": "Qualitätsprüfung",
+                    "description": "Kursabschlusstests"
+                  },
+                  {
+                    "method": "Erfolgsmonitoring",
+                    "description": "Sprachniveauerhebung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "muslimisch-beratungsstellen-nachfrage",
+              "level": 4,
+              "name": "Muslimische Beratungsstellen Nachfrage",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Anfragen und Beratungsfälle bei islamischen Beratungsstellen (Familie, Soziales, Recht).",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Beratungsinhalte unterliegen dem Datenschutz."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Falldokumentation",
+                    "description": "Pseudonymisierte Fallerfassung"
+                  },
+                  {
+                    "method": "Jahresstatistik",
+                    "description": "Aggregation je Beratungsstelle"
+                  },
+                  {
+                    "method": "Bundesauswertung",
+                    "description": "Konsolidierung durch Verbände"
+                  },
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Vollständige Entpersonalisierung"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Aggregierter Bericht"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "muslimisch-diskriminierungsmeldungen",
+              "level": 4,
+              "name": "Diskriminierungsmeldungen",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Erfasste Diskriminierungsvorfälle gegen Muslime nach Kategorie und Region.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierte Vorfallsstatistik."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Meldestelle",
+                    "description": "Erfassung durch CLAIM-Meldestellen"
+                  },
+                  {
+                    "method": "Kategorisierung",
+                    "description": "Einordnung nach AGG-Kategorien"
+                  },
+                  {
+                    "method": "Regionalauswertung",
+                    "description": "Analyse nach Bundesland"
+                  },
+                  {
+                    "method": "Behördenkooperation",
+                    "description": "Weitergabe relevanter Fälle"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Publikation CLAIM-Report"
                   }
                 ]
               }
@@ -14097,6 +15924,171 @@
                   {
                     "method": "Metadaten-Standardisierung DDI",
                     "description": "Dokumentation der Erhebungsmetadaten aus Halal-Zertifizierungsstatistik im DDI-Codebook-Standard für Wiederverwendbarkeit in Forschungsinfrastrukturen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "muslimisch-moscheehaushalt",
+              "level": 4,
+              "name": "Moscheeverbände Haushalte",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Einnahmen und Ausgaben muslimischer Moschee-Verbände nach Einnahmequellen.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Finanzdetails religiöser Vereinigungen sind schützenswert."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Vereinsbuchhaltung",
+                    "description": "Jahresabschluss je Verein"
+                  },
+                  {
+                    "method": "Prüfung",
+                    "description": "Interne Rechnungsprüfung"
+                  },
+                  {
+                    "method": "Aggregation",
+                    "description": "Zusammenführung durch Verbände"
+                  },
+                  {
+                    "method": "Transparenzinitiative",
+                    "description": "Freiwillige Offenlegung"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Verbandsgeschäftsbericht"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "muslimisch-auslandsfinanzierung",
+              "level": 4,
+              "name": "Auslandsfinanzierung islamischer Organisationen",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Erfasste Finanzflüsse aus dem Ausland an islamische Organisationen in Deutschland.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Sicherheitsrelevante Finanzierungsdaten."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Behördenerfassung",
+                    "description": "Erfassung durch BfV und Finanzämter"
+                  },
+                  {
+                    "method": "Verdachtsmeldeanalyse",
+                    "description": "Auswertung nach GwG"
+                  },
+                  {
+                    "method": "Risikoklassifizierung",
+                    "description": "Einstufung nach Risikomodell"
+                  },
+                  {
+                    "method": "Behördenkooperation",
+                    "description": "Weitergabe an Strafverfolgung"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Verfassungsschutzbericht"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "muslimisch-soziale-projekte-foerderung",
+              "level": 4,
+              "name": "Muslimische Sozialprojekte Förderung",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Staatliche Fördergelder für Sozialprojekte islamischer Verbände nach Förderprogramm.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Förderdaten sind transparenzpflichtig."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Förderantragsdaten",
+                    "description": "Erfassung aus Förderverwaltungssystemen"
+                  },
+                  {
+                    "method": "Bewilligungsstatistik",
+                    "description": "Aggregation genehmigter Mittel"
+                  },
+                  {
+                    "method": "Bundesauswertung",
+                    "description": "Jahresstatistik Förderbereich"
+                  },
+                  {
+                    "method": "Verwendungsnachweis",
+                    "description": "Prüfung der Mittelverwendung"
+                  },
+                  {
+                    "method": "Transparenzbericht",
+                    "description": "Publikation Förderdatenbank"
                   }
                 ]
               }
@@ -15488,6 +17480,171 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "freikirchen-mitgliederzahlen",
+              "level": 4,
+              "name": "Freikirchen Mitgliederzahlen",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Mitgliederstatistik der größten Freikirchen (Baptisten, Methodisten, Pfingstgemeinden) in Deutschland.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Gemeindestatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Gemeindeerhebung",
+                    "description": "Jährliche Meldung durch Gemeindeleitung"
+                  },
+                  {
+                    "method": "Verbandszusammenführung",
+                    "description": "Aggregation durch Dachverband"
+                  },
+                  {
+                    "method": "Bundesbericht",
+                    "description": "Veeka-Mitgliederstatistik"
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Entwicklung seit 1990"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Weitergabe an Religionssoziologie"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "freikirchen-gemeindestandorte",
+              "level": 4,
+              "name": "Freikirchen Standorte Geodaten",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Standorte freikirchlicher Gemeindezentren und Versammlungsräume in Deutschland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich zugängliche Standorte."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verbandskartierung",
+                    "description": "Erfassung durch Freikirchen-Verbände"
+                  },
+                  {
+                    "method": "Georeferenzierung",
+                    "description": "Adressgeokodierung"
+                  },
+                  {
+                    "method": "Verifikation",
+                    "description": "Prüfung durch Ortsbeauftragte"
+                  },
+                  {
+                    "method": "Webpublikation",
+                    "description": "Gemeinde-Finder auf Websites"
+                  },
+                  {
+                    "method": "Aktualisierung",
+                    "description": "Quartalsweise Nachführung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "freikirchen-finanzen-ueberblick",
+              "level": 4,
+              "name": "Freikirchen Finanzen Überblick",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Haushaltsdaten der evangelischen Freikirchen nach Verband und Einnahmequellen.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Verbandsfinanzen."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Vereinsbuchhaltung",
+                    "description": "Jahresabschluss je Verband"
+                  },
+                  {
+                    "method": "Wirtschaftsprüfung",
+                    "description": "Externe Prüfung"
+                  },
+                  {
+                    "method": "Beeka-Statistik",
+                    "description": "Zusammenführung durch Beeka"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Publikation Beeka"
+                  },
+                  {
+                    "method": "Transparenzinitiative",
+                    "description": "Freiwillige Offenlegung"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -16543,6 +18700,171 @@
                   {
                     "method": "Länderübergreifendes Bildungsmonitoring",
                     "description": "Integration der Daten aus Freikirchliche Bildungseinrichtungen in das nationale Bildungsmonitoring der KMK für bundesweite Vergleichsberichte."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "freikirchen-diakonische-einrichtungen",
+              "level": 4,
+              "name": "Freikirchliche Diakonische Einrichtungen",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Bestandserhebung diakonischer Einrichtungen freikirchlicher Träger (Suchthilfe, Obdachlosenarbeit).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Einrichtungsstatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Einrichtungserhebung",
+                    "description": "Meldung durch Trägerverbände"
+                  },
+                  {
+                    "method": "Kapazitätserfassung",
+                    "description": "Plätze nach Einrichtungstyp"
+                  },
+                  {
+                    "method": "Bundesauswertung",
+                    "description": "Koordination durch BAG"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Sozialbericht"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Weitergabe an Wohlfahrtsforschung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "freikirchen-schule-bildung",
+              "level": 4,
+              "name": "Freikirchliche Schulen Schülerstatistik",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Schülerzahlen an Schulen in Trägerschaft freikirchlicher Gemeinschaften.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Schulstatistik ohne Einzelpersonenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "KMK-Statistik",
+                    "description": "Schulstatistik durch Kultusministerien"
+                  },
+                  {
+                    "method": "Trägererfassung",
+                    "description": "Meldung durch Schulträger"
+                  },
+                  {
+                    "method": "Bundesauswertung",
+                    "description": "KMK-Schulverzeichnis"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Bildungsstatistik"
+                  },
+                  {
+                    "method": "Vergleichsanalyse",
+                    "description": "Anteil an Privatschülerschaft"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "freikirchen-jugendarbeit",
+              "level": 4,
+              "name": "Freikirchliche Jugendarbeit",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Teilnehmende und Angebote in freikirchlicher Jugend- und Kinderarbeit.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Teilnahmezahlen."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Gemeindeerhebung",
+                    "description": "Befragung der Jugendbeauftragten"
+                  },
+                  {
+                    "method": "Verbandsbericht",
+                    "description": "Zusammenführung je Verband"
+                  },
+                  {
+                    "method": "Jahresstatistik",
+                    "description": "Publikation Jugendverbände"
+                  },
+                  {
+                    "method": "Qualitätsevaluation",
+                    "description": "Selbstevaluation der Programme"
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Entwicklung 2010–2023"
                   }
                 ]
               }
@@ -17609,6 +19931,171 @@
                   {
                     "method": "Metadaten-Standardisierung DDI",
                     "description": "Dokumentation der Erhebungsmetadaten aus Interreligiöse Dialogveranstaltungen Statistik im DDI-Codebook-Standard für Wiederverwendbarkeit in Forschungsinfrastrukturen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "interreligioes-veranstaltungen",
+              "level": 4,
+              "name": "Interreligiöse Veranstaltungen Statistik",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Anzahl und Art interreligiöser Veranstaltungen und Begegnungen in Deutschland nach Träger.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Veranstaltungsstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Trägermeldung",
+                    "description": "Erfassung durch teilnehmende Verbände"
+                  },
+                  {
+                    "method": "Klassifikation",
+                    "description": "Einordnung nach Dialogformat"
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Aggregation Koordinierungsrat"
+                  },
+                  {
+                    "method": "Veröffentlichung",
+                    "description": "Jahresbericht Dialog"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Forschung zu Dialogeffekten"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "interreligioes-bildungsprojekte",
+              "level": 4,
+              "name": "Interreligiöse Bildungsprojekte",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Laufende und abgeschlossene interreligiöse Bildungsprojekte nach Förderbereich und Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Projektdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Projekterfassung",
+                    "description": "Meldung durch Träger"
+                  },
+                  {
+                    "method": "Förderabrechnung",
+                    "description": "Zuschussabrechnungen"
+                  },
+                  {
+                    "method": "Bundesauswertung",
+                    "description": "Koordinierungsrat Interreligiöser Dialog"
+                  },
+                  {
+                    "method": "Evaluation",
+                    "description": "Wirkungsmessung"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Publikation"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "interreligioes-konfliktmonitoring",
+              "level": 4,
+              "name": "Interreligiöses Konfliktmonitoring",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Erfasste interreligiöse Spannungen und Vorfälle nach Kategorie und Region.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierte Vorfallsstatistik."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Meldestelle",
+                    "description": "Erfassung durch Beobachtungsstellen"
+                  },
+                  {
+                    "method": "Kategorisierung",
+                    "description": "Klassifikation nach Konflikttyp"
+                  },
+                  {
+                    "method": "Regionalauswertung",
+                    "description": "Analyse nach Bundesland"
+                  },
+                  {
+                    "method": "Behördenkooperation",
+                    "description": "Information der Behörden"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Sicherheitsbericht"
                   }
                 ]
               }
@@ -18969,6 +21456,171 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "orthodox-mitglieder-herkunft",
+              "level": 4,
+              "name": "Orthodoxe Mitglieder nach Herkunft",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Mitgliederstruktur orthodoxer Gemeinden nach Nationalität und Kirchenpatriarchat.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Mitgliederstatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Gemeindeerhebung",
+                    "description": "Meldung durch Gemeindepriester"
+                  },
+                  {
+                    "method": "Patriarchatsebene",
+                    "description": "Aggregation je Kirchengemeinschaft"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Metropolitanstatistik"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Migrationsforschung"
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Entwicklung seit 1990"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "orthodox-kirchengebaeude-geodaten",
+              "level": 4,
+              "name": "Orthodoxe Kirchengebäude Geodaten",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Standorte orthodoxer Kirchen und Kapellen in Deutschland nach Patriarchat.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich zugängliche Standorte."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Gemeindeerfassung",
+                    "description": "Meldung durch Gemeinden"
+                  },
+                  {
+                    "method": "Georeferenzierung",
+                    "description": "Adressgeokodierung"
+                  },
+                  {
+                    "method": "Verifikation",
+                    "description": "Prüfung durch Metropoliten"
+                  },
+                  {
+                    "method": "Webpublikation",
+                    "description": "Kirchenfinder-Karte"
+                  },
+                  {
+                    "method": "Aktualisierung",
+                    "description": "Jährliche Nachführung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "orthodox-gottesdiensttermine",
+              "level": 4,
+              "name": "Orthodoxe Gottesdienststatistik",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Gottesdienstangebote und Besucherzahlen in orthodoxen Gemeinden nach Liturgietradition.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Besucherstatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Gemeindemeldung",
+                    "description": "Erfassung durch Gemeindepriester"
+                  },
+                  {
+                    "method": "Aggregation",
+                    "description": "Zusammenführung auf Metropolitenebene"
+                  },
+                  {
+                    "method": "Jahresstatistik",
+                    "description": "Jahresbericht"
+                  },
+                  {
+                    "method": "Vergleich",
+                    "description": "Vergleich nach Patriarchat"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Liturgieforschung"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -20012,6 +22664,171 @@
                   {
                     "method": "Maschinelle Prüfroutinen",
                     "description": "Automatisierte Plausibilitäts- und Konsistenzprüfungen der Finanzdaten in Finanzierung orthodoxe Gemeinden nach HGB/IPSAS-Konventionen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "orthodox-gemeindehaushalte",
+              "level": 4,
+              "name": "Orthodoxe Gemeindehaushalte",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Einnahmen und Ausgaben orthodoxer Gemeinden nach Einnahmequellen.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Finanzdetails religiöser Gemeinden."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Vereinsbuchhaltung",
+                    "description": "Jahresabschluss je Gemeinde"
+                  },
+                  {
+                    "method": "Prüfung",
+                    "description": "Interne Rechnungsprüfung"
+                  },
+                  {
+                    "method": "Metropolitenebene",
+                    "description": "Aggregation auf Diözesanebene"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Geschäftsbericht Metropolie"
+                  },
+                  {
+                    "method": "Transparenz",
+                    "description": "Freiwillige Offenlegung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "orthodox-staatsleistungen",
+              "level": 4,
+              "name": "Staatsleistungen an orthodoxe Gemeinden",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Staatliche Zuwendungen an orthodoxe Kirchengemeinschaften nach Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Haushaltsmittel."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Haushaltsauswertung",
+                    "description": "Erfassung aus Landeshaushalten"
+                  },
+                  {
+                    "method": "Rechtsgrundlagenanalyse",
+                    "description": "Vertragsgrundlage je Bundesland"
+                  },
+                  {
+                    "method": "Bundesvergleich",
+                    "description": "Vergleich nach Kirchengemeinschaft"
+                  },
+                  {
+                    "method": "Transparenz",
+                    "description": "Parlamentarische Anfragen"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Kirchenrechtliche Analyse"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "orthodox-kirchenbeitraege",
+              "level": 4,
+              "name": "Kirchenbeiträge orthodoxer Gemeinden",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Freiwillige Beiträge und Spendenaufkommen orthodoxer Gemeindemitglieder.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Personenbezogene Finanzdaten."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Gemeindekasse",
+                    "description": "Erfassung im Gemeindekassenbuch"
+                  },
+                  {
+                    "method": "Aggregation",
+                    "description": "Jahresabschluss je Gemeinde"
+                  },
+                  {
+                    "method": "Metropolitenebene",
+                    "description": "Zusammenführung zur Jahresstatistik"
+                  },
+                  {
+                    "method": "Datenschutz",
+                    "description": "Schutz der Spenderdaten"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Finanzbericht"
                   }
                 ]
               }
@@ -21121,6 +23938,171 @@
                   {
                     "method": "Metadaten-Standardisierung DDI",
                     "description": "Dokumentation der Erhebungsmetadaten aus Diaspora-Seelsorgedaten Orthodoxe Kirchen im DDI-Codebook-Standard für Wiederverwendbarkeit in Forschungsinfrastrukturen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "orthodox-religionsunterricht",
+              "level": 4,
+              "name": "Orthodoxer Religionsunterricht",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Schülerzahlen im orthodoxen Religionsunterricht nach Bundesland und Klassenstufe.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Schulstatistik ohne Einzelpersonenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "KMK-Schulstatistik",
+                    "description": "Erfassung durch Kultusministerien"
+                  },
+                  {
+                    "method": "Kirchenmeldung",
+                    "description": "Ergänzung durch Metropoliten"
+                  },
+                  {
+                    "method": "Bundesauswertung",
+                    "description": "Zusammenführung KMK"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Bildungsstatistik"
+                  },
+                  {
+                    "method": "Vergleich",
+                    "description": "Vergleich mit anderen Konfessionen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "orthodox-kulturgut-register",
+              "level": 4,
+              "name": "Orthodoxes Kulturgut Register",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Erfassung liturgischer Kunstgegenstände und Kulturgüter orthodoxer Gemeinden.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Sicherheitsrelevante Standortdaten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Inventarisierung",
+                    "description": "Erfassung durch Gemeinden"
+                  },
+                  {
+                    "method": "Kunsthistorische Prüfung",
+                    "description": "Bewertung durch Experten"
+                  },
+                  {
+                    "method": "Digitalisierung",
+                    "description": "Fotodokumentation"
+                  },
+                  {
+                    "method": "Datenschutz",
+                    "description": "Keine Standortveröffentlichung"
+                  },
+                  {
+                    "method": "Versicherung",
+                    "description": "Für Versicherungszwecke"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "orthodox-kulturfeste-besuche",
+              "level": 4,
+              "name": "Orthodoxe Kulturfeste Besucherzahlen",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Besucherzahlen orthodoxer Kulturfeste und kirchlicher Veranstaltungen in Deutschland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Veranstaltungsstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Veranstaltungserfassung",
+                    "description": "Erfassung durch Gemeinden"
+                  },
+                  {
+                    "method": "Bundesauswertung",
+                    "description": "Metropolitenstatistik"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Kulturprogrammbericht"
+                  },
+                  {
+                    "method": "Pressearbeit",
+                    "description": "Kommunikation der Reichweite"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Diasporaforschung"
                   }
                 ]
               }
@@ -22532,6 +25514,171 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "alevitisch-cemhaeuser-standorte",
+              "level": 4,
+              "name": "Cemhäuser Standorte",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Standorte alevitischer Cemhäuser (Kulturzentren) in Deutschland nach Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich zugängliche Standorte."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "AABF-Erfassung",
+                    "description": "Meldung durch Mitgliedsvereine"
+                  },
+                  {
+                    "method": "Georeferenzierung",
+                    "description": "Adressgeokodierung"
+                  },
+                  {
+                    "method": "Webpublikation",
+                    "description": "Cemfinder-Karte"
+                  },
+                  {
+                    "method": "Aktualisierung",
+                    "description": "Jährliche Nachführung"
+                  },
+                  {
+                    "method": "Verifikation",
+                    "description": "Prüfung durch Ortsvereine"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "alevitisch-mitglieder-alter",
+              "level": 4,
+              "name": "Alevitische Mitglieder Altersstruktur",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Altersstruktur alevitischer Gemeindemitglieder nach Bundesverband.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Altersstatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Gemeindeerhebung",
+                    "description": "Meldung durch Ortsvereine"
+                  },
+                  {
+                    "method": "Aggregation",
+                    "description": "Zusammenführung durch AABF"
+                  },
+                  {
+                    "method": "Jahresstatistik",
+                    "description": "Jahresbericht AABF"
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Entwicklung der Altersstruktur"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Migrationsforschung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "alevitisch-vereinsgruendungen",
+              "level": 4,
+              "name": "Alevitische Vereine Gründungsstatistik",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Neugründungen und Auflösungen alevitischer Vereine nach Jahr und Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Vereinsregisterinformation."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Vereinsregisterauswertung",
+                    "description": "Abfrage aus Vereinsregistern"
+                  },
+                  {
+                    "method": "AABF-Abgleich",
+                    "description": "Vergleich mit Verbandsmeldungen"
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Statistik je Bundesland"
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Gründungsdynamik"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "AABF-Bericht"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -23575,6 +26722,171 @@
                   {
                     "method": "Anonymisierte Mikrodata-Bereitstellung",
                     "description": "Bereitstellung anonymisierter Mikrodaten zu Alevitische Bildungsmaterialien Statistik für Forschungszwecke über Scientific-Use-Files an akkreditierte Einrichtungen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "alevitisch-religionsunterricht-schule",
+              "level": 4,
+              "name": "Alevitischer Religionsunterricht",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Schülerzahlen im alevitischen Religionsunterricht nach Bundesland.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Schulstatistik ohne Einzelpersonenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "KMK-Erfassung",
+                    "description": "Schulstatistik durch Kultusministerien"
+                  },
+                  {
+                    "method": "AABF-Abgleich",
+                    "description": "Ergänzung durch Bundesverband"
+                  },
+                  {
+                    "method": "Bundesauswertung",
+                    "description": "Jahresstatistik KMK"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Bildungsbericht AABF"
+                  },
+                  {
+                    "method": "Vergleich",
+                    "description": "Vergleich mit anderen Religionen"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "alevitisch-musahip-dedeleri-ausbildung",
+              "level": 4,
+              "name": "Dedeleri-Ausbildung",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Programme zur Ausbildung alevitischer Geistlicher (Dedeler) in Deutschland.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Ausbildungsdaten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Programmerfassung",
+                    "description": "Erfassung durch AABF-Bildungsreferat"
+                  },
+                  {
+                    "method": "Teilnahmestatistik",
+                    "description": "Anmeldedaten und Abschlüsse"
+                  },
+                  {
+                    "method": "Qualitätsevaluation",
+                    "description": "Evaluation durch Prüfungsausschuss"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Bildungsbericht"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Religionspädagogische Forschung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "alevitisch-jugendlager-aktivitaeten",
+              "level": 4,
+              "name": "Alevitische Jugendarbeit",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Teilnehmerzahlen an Jugendlagern und Aktivitäten der alevitischen Jugendbewegung.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Teilnahmezahlen."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Anmeldedaten",
+                    "description": "Erfassung bei Veranstaltungsanmeldung"
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Aggregation durch AABF-Jugend"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Jugendbericht AABF"
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Entwicklung seit 2000"
+                  },
+                  {
+                    "method": "Qualitätsevaluation",
+                    "description": "Evaluierung der Programme"
                   }
                 ]
               }
@@ -24633,6 +27945,171 @@
                   {
                     "method": "Länderübergreifendes Bildungsmonitoring",
                     "description": "Integration der Daten aus Alevitischer Religionsunterricht Schulen in das nationale Bildungsmonitoring der KMK für bundesweite Vergleichsberichte."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "alevitisch-ashik-saz-register",
+              "level": 4,
+              "name": "Aşık- und Saz-Künstler Register",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Erfassung und Förderung alevitischer Musiktraditionen und Künstler in Deutschland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Kulturregister ohne schützenswerte Daten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Kulturregister",
+                    "description": "Erfassung durch AABF-Kulturreferat"
+                  },
+                  {
+                    "method": "Dokumentation",
+                    "description": "Aufnahme von Darbietungen"
+                  },
+                  {
+                    "method": "Digitalisierung",
+                    "description": "Archivierung digitaler Mitschnitte"
+                  },
+                  {
+                    "method": "Webpublikation",
+                    "description": "Online-Datenbank"
+                  },
+                  {
+                    "method": "Kulturförderung",
+                    "description": "Grundlage für Förderanträge"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "alevitisch-muharrem-gedenkfeiern",
+              "level": 4,
+              "name": "Muharrem-Gedenkfeiern",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Statistische Erfassung der Muharrem-Fastenzeit und Gedenkfeiern (Aşure) nach Region.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Veranstaltungsstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Gemeindebefragung",
+                    "description": "Meldung durch Cemhäuser"
+                  },
+                  {
+                    "method": "AABF-Aggregation",
+                    "description": "Zusammenführung auf Bundesebene"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "AABF-Kulturbericht"
+                  },
+                  {
+                    "method": "Pressearbeit",
+                    "description": "Öffentlichkeitsarbeit"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Religionswissenschaft"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "alevitisch-diskriminierungserfahrungen",
+              "level": 4,
+              "name": "Diskriminierungserfahrungen Aleviten",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Erfasste Diskriminierungsvorfälle gegen Aleviten nach Kategorie und Region.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierte Vorfallsstatistik."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Meldestelle",
+                    "description": "Erfassung durch AABF-Beratungsstelle"
+                  },
+                  {
+                    "method": "Kategorisierung",
+                    "description": "Klassifikation nach AGG"
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Aggregation je Bundesland"
+                  },
+                  {
+                    "method": "Behördenkooperation",
+                    "description": "Weitergabe relevanter Fälle"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Diskriminierungsbericht AABF"
                   }
                 ]
               }
@@ -25966,6 +29443,171 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "hilfswerke-projekt-laender",
+              "level": 4,
+              "name": "Hilfswerke Projektländer",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Anzahl und Volumen laufender Entwicklungsprojekte kirchlicher Hilfswerke nach Zielland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Projektdaten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Projektdatenbank",
+                    "description": "Erfassung im Projektmanagementsystem"
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Aggregation nach Zielregion"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Projektübersicht im Jahresbericht"
+                  },
+                  {
+                    "method": "BMZ-Reporting",
+                    "description": "Rechenschaftsbericht an BMZ"
+                  },
+                  {
+                    "method": "Wirkungsevaluation",
+                    "description": "Externe Projektevaluation"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hilfswerke-nothilfe-einsaetze",
+              "level": 4,
+              "name": "Nothilfe-Einsätze",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Einsätze und Mittelvolumen kirchlicher Hilfswerke bei humanitären Krisen nach Ereignis und Region.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Einsatzstatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Krisenerfassung",
+                    "description": "Registrierung humanitärer Ereignisse"
+                  },
+                  {
+                    "method": "Einsatzplanung",
+                    "description": "Deployment-Dokumentation"
+                  },
+                  {
+                    "method": "Mittelerfassung",
+                    "description": "Spenden- und Finanzerfassung"
+                  },
+                  {
+                    "method": "Abschlussbericht",
+                    "description": "Auswertung je Kriseneinsatz"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Publikation Nothilfebericht"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hilfswerke-partners-sueden",
+              "level": 4,
+              "name": "Partnerorganisationen im Globalen Süden",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Netzwerk und Qualifikation von Partnerorganisationen kirchlicher Hilfswerke nach Region.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Partnerdaten ohne sensible Details."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Partnerregister",
+                    "description": "Erfassung im CRM-System"
+                  },
+                  {
+                    "method": "Kapazitätsprüfung",
+                    "description": "Due-Diligence-Prüfung"
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Aggregation je Region"
+                  },
+                  {
+                    "method": "Qualitätsbericht",
+                    "description": "Partnerschaftsevaluation"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Partnernetzwerk-Übersicht"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -27080,6 +30722,171 @@
                   {
                     "method": "Open-Data-Publikation auf GovData",
                     "description": "Bereitstellung der Geodaten zu Projekttransparenzdaten kirchliche Hilfswerke als offener Datensatz auf dem nationalen Datenportal GovData.de nach DCAT-AP.de-Standard."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hilfswerke-spendeneinnahmen",
+              "level": 4,
+              "name": "Spendeneinnahmen kirchlicher Hilfswerke",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Spendenaufkommen nach Hilfswerk, Kampagne und Verwendungszweck.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Spendenstatistik."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Spendenerfassung",
+                    "description": "Buchung im CRM-System"
+                  },
+                  {
+                    "method": "Jahresabschluss",
+                    "description": "Konsolidierung im Jahresabschluss"
+                  },
+                  {
+                    "method": "DZI-Siegel",
+                    "description": "Prüfung durch Spenderverband"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Publikation im Jahresbericht"
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Vergleich im Spendenmarkt"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hilfswerke-bmz-zuschüsse",
+              "level": 4,
+              "name": "BMZ-Zuschüsse kirchliche Hilfswerke",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Staatliche Ko-Finanzierung kirchlicher Entwicklungsprojekte durch das BMZ nach Programm.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentliche Förderdaten."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Förderantragsdaten",
+                    "description": "Erfassung im BMZ-Fördersystem"
+                  },
+                  {
+                    "method": "Bewilligungsstatistik",
+                    "description": "Aggregation genehmigter Mittel"
+                  },
+                  {
+                    "method": "Verwendungsnachweis",
+                    "description": "Prüfung der Mittelverwendung"
+                  },
+                  {
+                    "method": "Transparenzbericht",
+                    "description": "Publikation Förderdatenbank"
+                  },
+                  {
+                    "method": "Parlamentarische Kontrolle",
+                    "description": "Berichterstattung an Bundestag"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hilfswerke-verwaltungskosten",
+              "level": 4,
+              "name": "Verwaltungskostenquote Hilfswerke",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Anteil der Verwaltungskosten am Gesamthaushalt kirchlicher Hilfswerke nach Organisation.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Effizienzkenngröße."
+                },
+                "theme": {
+                  "code": "TH_07"
+                },
+                "object": {
+                  "code": "OB_03"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Kostenrechnung",
+                    "description": "Buchung nach Kostenarten"
+                  },
+                  {
+                    "method": "Jahresabschluss",
+                    "description": "Wirtschaftsprüfung"
+                  },
+                  {
+                    "method": "DZI-Bewertung",
+                    "description": "Prüfung durch DZI"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Transparenzbericht"
+                  },
+                  {
+                    "method": "Benchmarking",
+                    "description": "Vergleich mit anderen Hilfswerken"
                   }
                 ]
               }
@@ -28209,6 +32016,171 @@
                   {
                     "method": "Langzeitarchivierung nach OAIS",
                     "description": "Dauerhafter Erhalt der Messdaten aus Wirkungsmonitoring kirchliche Hilfswerke nach dem OAIS-Referenzmodell in einem zertifizierten digitalen Langzeitarchiv."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hilfswerke-beguenstigte",
+              "level": 4,
+              "name": "Begünstigte kirchlicher Hilfswerke",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Anzahl direkt Begünstigter kirchlicher Entwicklungsprojekte nach Projekttyp und Region.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierte Reichweitendaten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 5,
+                "processes": [
+                  {
+                    "method": "Projektmonitoring",
+                    "description": "Erhebung durch Projektpartner"
+                  },
+                  {
+                    "method": "Datenaggregation",
+                    "description": "Konsolidierung auf Hilfswerksebene"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Reichweitenstatistik"
+                  },
+                  {
+                    "method": "BMZ-Reporting",
+                    "description": "Rechenschaftsbericht"
+                  },
+                  {
+                    "method": "Wirkungsevaluation",
+                    "description": "Unabhängige Evaluation"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hilfswerke-sdg-beitrag",
+              "level": 4,
+              "name": "SDG-Beitrag kirchlicher Hilfswerke",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Einordnung der Projektportfolios nach UN-Nachhaltigkeitszielen.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregiertes Klassifikationssystem."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_02",
+                    "label": "JSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "SDG-Mapping",
+                    "description": "Zuordnung der Projekte zu SDG-Zielen"
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Aggregation des Portfolios"
+                  },
+                  {
+                    "method": "BMZ-Reporting",
+                    "description": "SDG-Konformitätsprüfung"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "SDG-Bericht"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Entwicklungsforschung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "hilfswerke-evaluation-berichte",
+              "level": 4,
+              "name": "Evaluationsberichte",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Externe Evaluationsberichte kirchlicher Entwicklungsprojekte nach Qualitätskriterien.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Evaluationsberichte mit anonymisierten Personendaten."
+                },
+                "theme": {
+                  "code": "TH_10"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_04",
+                    "label": "XML"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Evaluationsplanung",
+                    "description": "Auftragserteilung an externe Evaluatoren"
+                  },
+                  {
+                    "method": "Felderhebung",
+                    "description": "Datenerhebung im Projektgebiet"
+                  },
+                  {
+                    "method": "Berichtserstellung",
+                    "description": "Ergebnisbericht"
+                  },
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Peer Review durch Fachabteilung"
+                  },
+                  {
+                    "method": "Veröffentlichung",
+                    "description": "Publikation nach Anonymisierung"
                   }
                 ]
               }
@@ -29509,6 +33481,171 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "buddhismus-zentren-standorte",
+              "level": 4,
+              "name": "Buddhistische Zentren Geodaten",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Standorte buddhistischer Meditationszentren und Gemeinschaften in Deutschland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich zugängliche Standorte."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verbandserfassung",
+                    "description": "Meldung durch DBU und andere Dachverbände"
+                  },
+                  {
+                    "method": "Georeferenzierung",
+                    "description": "Adressgeokodierung"
+                  },
+                  {
+                    "method": "Webpublikation",
+                    "description": "Gemeindefinder-Karte"
+                  },
+                  {
+                    "method": "Aktualisierung",
+                    "description": "Jährliche Nachführung"
+                  },
+                  {
+                    "method": "Verifikation",
+                    "description": "Bestätigung durch Zentren"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buddhismus-tradition-verteilung",
+              "level": 4,
+              "name": "Buddhistische Traditionen Verteilung",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Anteil der verschiedenen buddhistischen Traditionen (Zen, Theravada, Vajrayana) an deutschen Gemeinschaften.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Traditionsstatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verbandserhebung",
+                    "description": "Befragung der Mitgliedsorganisationen"
+                  },
+                  {
+                    "method": "Klassifikation",
+                    "description": "Einordnung nach Tradition"
+                  },
+                  {
+                    "method": "Bundesauswertung",
+                    "description": "DBU-Jahresstatistik"
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Entwicklung 2000–2023"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Religionssoziologie"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buddhismus-ordinationen",
+              "level": 4,
+              "name": "Buddhistische Ordinationen",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Anzahl und Art der Ordinationen buddhistischer Mönche und Nonnen in Deutschland.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Daten ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Zentrumsmeldung",
+                    "description": "Erfassung durch Ordinationszentren"
+                  },
+                  {
+                    "method": "Traditionsebene",
+                    "description": "Aggregation nach Tradition"
+                  },
+                  {
+                    "method": "Jahresstatistik",
+                    "description": "DBU-Bericht"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Buddhismuskunde"
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Entwicklung seit 1990"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -30512,6 +34649,171 @@
                   {
                     "method": "Digitales Rechtemanagement",
                     "description": "Implementierung eines DRM-Systems zur Verwaltung von Urheberrechten, Nutzungslizenzen und Verwertungsansprüchen für Buddhistisches Kulturerbe Dharma Texte."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buddhismus-retreats-teilnahme",
+              "level": 4,
+              "name": "Buddhistische Retreats Teilnehmerzahlen",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Teilnehmende an buddhistischen Meditationsretreats in Deutschland nach Veranstaltungsart.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Teilnahmezahlen."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Anmeldedaten",
+                    "description": "Erfassung bei Retreat-Anmeldung"
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Aggregation durch Veranstaltungsträger"
+                  },
+                  {
+                    "method": "DBU-Statistik",
+                    "description": "Zusammenführung auf Bundesebene"
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Wachstum des Angebots"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Meditationsforschung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buddhismus-lehrende-qualifikation",
+              "level": 4,
+              "name": "Buddhistische Lehrende",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Qualifikation und Anzahl zertifizierter buddhistischer Lehrer in Deutschland.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Qualifikationsdaten."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Zertifizierungsregister",
+                    "description": "Erfassung durch Ausbildungsverbände"
+                  },
+                  {
+                    "method": "Traditionsprüfung",
+                    "description": "Anerkennung durch buddhistische Autoritäten"
+                  },
+                  {
+                    "method": "DBU-Register",
+                    "description": "Zusammenführung auf Bundesebene"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "DBU-Bericht"
+                  },
+                  {
+                    "method": "Qualitätssicherung",
+                    "description": "Evaluierung der Ausbildungsgänge"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buddhismus-ethik-tierschutz",
+              "level": 4,
+              "name": "Buddhistische Tierschutzprojekte",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Umwelt- und Tierschutzprojekte buddhistischer Gemeinschaften in Deutschland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Projektdaten."
+                },
+                "theme": {
+                  "code": "TH_06"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Projekterfassung",
+                    "description": "Meldung durch Gemeinschaften"
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "DBU-Aggregation"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Projektbericht DBU"
+                  },
+                  {
+                    "method": "Vergleich",
+                    "description": "Vergleich mit anderen Trägern"
+                  },
+                  {
+                    "method": "Pressearbeit",
+                    "description": "Öffentlichkeitsarbeit"
                   }
                 ]
               }
@@ -31573,6 +35875,171 @@
                   {
                     "method": "Institutionelle Transparenzberichterstattung",
                     "description": "Veröffentlichung der Daten aus Buddhistische Bestattungsformen in Deutschland im Rahmen der kirchlichen Transparenzoffensive auf den jeweiligen Verbandsportalen."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buddhismus-soziale-projekte",
+              "level": 4,
+              "name": "Buddhistische Soziale Projekte",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Soziale Projekte und Hilfsprogramme buddhistischer Gemeinschaften in Deutschland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Projektdaten."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Projekterfassung",
+                    "description": "Meldung durch Träger"
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "DBU-Aggregation"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Sozialbericht"
+                  },
+                  {
+                    "method": "Fördernachweis",
+                    "description": "Grundlage für Zuschüsse"
+                  },
+                  {
+                    "method": "Qualitätsevaluation",
+                    "description": "Wirkungsmessung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buddhismus-kunst-kultur",
+              "level": 4,
+              "name": "Buddhistische Kunst und Kultur",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Ausstellungen, Vorträge und Kulturprogramme buddhistischer Einrichtungen nach Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Veranstaltungsstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_06"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Veranstaltungserfassung",
+                    "description": "Meldung durch Zentren"
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Aggregation durch DBU"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Kulturbericht"
+                  },
+                  {
+                    "method": "Pressearbeit",
+                    "description": "Öffentlichkeitsarbeit"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Kulturforschung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "buddhismus-meditation-gesundheit",
+              "level": 4,
+              "name": "Buddhistische Meditation & Gesundheit",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Kooperationsprojekte buddhistischer Zentren mit Gesundheitseinrichtungen (MBSR, Achtsamkeit).",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Aggregierte Kooperationsdaten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Kooperationserfassung",
+                    "description": "Meldung durch Zentren"
+                  },
+                  {
+                    "method": "Teilnahmestatistik",
+                    "description": "Aggregation je Programm"
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "DBU-Bericht"
+                  },
+                  {
+                    "method": "Gesundheitsforschung",
+                    "description": "Kooperation mit Forschungsinstituten"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Meditationsforschungsbericht"
                   }
                 ]
               }
@@ -32873,6 +37340,171 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "humanismus-mitgliederentwicklung",
+              "level": 4,
+              "name": "Humanistische Verbände Mitgliederentwicklung",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Mitgliederzahlen des Humanistischen Verbands und anderer humanistischer Organisationen, Zeitreihe.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Mitgliederstatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verbandserhebung",
+                    "description": "Jahresabfrage bei Landesverbänden"
+                  },
+                  {
+                    "method": "Aggregation",
+                    "description": "Zusammenführung auf Bundesebene"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "HVD-Statistik"
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Entwicklung seit 1990"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Säkularisierungsforschung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "humanismus-ortsgruppen-geodaten",
+              "level": 4,
+              "name": "Humanistische Ortsgruppen Geodaten",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Standorte humanistischer Ortsgruppen und Beratungsstellen nach Bundesland.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Öffentlich zugängliche Standorte."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_05"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Verbandserfassung",
+                    "description": "Meldung durch Landesverbände"
+                  },
+                  {
+                    "method": "Georeferenzierung",
+                    "description": "Adressgeokodierung"
+                  },
+                  {
+                    "method": "Webpublikation",
+                    "description": "Standortfinder-Karte"
+                  },
+                  {
+                    "method": "Aktualisierung",
+                    "description": "Jährliche Nachführung"
+                  },
+                  {
+                    "method": "Verifikation",
+                    "description": "Bestätigung durch Landesverbände"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "humanismus-kirchenaustritt-foerderung",
+              "level": 4,
+              "name": "Kirchenaustrittsberatung Nachfrage",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Beratungsanfragen beim HVD zur Kirchenaustrittshilfe nach Bundesland und Monat.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Beratungsstatistik."
+                },
+                "theme": {
+                  "code": "TH_03"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Beratungserfassung",
+                    "description": "Anonymisierte Falldokumentation"
+                  },
+                  {
+                    "method": "Monatsstatistik",
+                    "description": "Aggregation je Bundesland"
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "HVD-Bericht"
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Korrelation mit Kirchenaustrittsstatistik"
+                  },
+                  {
+                    "method": "Pressearbeit",
+                    "description": "Jahrespressemitteilung"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -33934,6 +38566,171 @@
                   }
                 ]
               }
+            },
+            {
+              "id": "humanismus-hpe-jugendweihe",
+              "level": 4,
+              "name": "Jugendweihe Teilnehmerzahlen",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Teilnehmerzahlen an humanistischen Jugendfeier-Programmen (Jugendweihe) nach Bundesland.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Aggregierte Teilnahmezahlen."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Anmeldedaten",
+                    "description": "Erfassung bei Programmregistrierung"
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "HVD-Landesverbandsstatistik"
+                  },
+                  {
+                    "method": "Bundesbericht",
+                    "description": "HVD-Bundesstatistik"
+                  },
+                  {
+                    "method": "Trendanalyse",
+                    "description": "Entwicklung seit 1990"
+                  },
+                  {
+                    "method": "Pressearbeit",
+                    "description": "Jahrespressemitteilung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "humanismus-ethikunterricht",
+              "level": 4,
+              "name": "Humanistischer Ethikunterricht",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Schülerzahlen im Werteunterricht und Ethikunterricht humanistischer Träger nach Bundesland.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Schulstatistik ohne Einzelpersonenbezug."
+                },
+                "theme": {
+                  "code": "TH_02"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "KMK-Schulstatistik",
+                    "description": "Erfassung durch Kultusministerien"
+                  },
+                  {
+                    "method": "HVD-Abgleich",
+                    "description": "Ergänzung durch Verband"
+                  },
+                  {
+                    "method": "Bundesauswertung",
+                    "description": "Jahresstatistik"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Bildungsbericht HVD"
+                  },
+                  {
+                    "method": "Vergleich",
+                    "description": "Vergleich mit konfessionellem Religionsunterricht"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "humanismus-hospizbegleitung",
+              "level": 4,
+              "name": "Humanistische Hospizbegleitung",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Begleitete Personen in humanistischer Hospiz- und Sterbebegleitung nach Region.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Sensible personenbezogene Betreuungsdaten."
+                },
+                "theme": {
+                  "code": "TH_01"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Falldokumentation",
+                    "description": "Pseudonymisierte Fallerfassung"
+                  },
+                  {
+                    "method": "Jahresstatistik",
+                    "description": "Aggregation auf Verbandsebene"
+                  },
+                  {
+                    "method": "Bundesauswertung",
+                    "description": "HVD-Sozialbericht"
+                  },
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Vollständige Entpersonalisierung"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Aggregierter Bericht"
+                  }
+                ]
+              }
             }
           ]
         },
@@ -34937,6 +39734,171 @@
                   {
                     "method": "Wirkungsevaluation",
                     "description": "Standardisierte Wirkungsmessung der auf Humanistische Lebensfeierstatistik basierenden Programme und Maßnahmen nach SROI-Methodik."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "humanismus-weltanschauungsfreiheit",
+              "level": 4,
+              "name": "Weltanschauungsfreiheit Monitoring",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Erfasste Verstöße gegen Weltanschauungsfreiheit in Deutschland nach Kategorie.",
+                "openness": {
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Anonymisierte Vorfallsstatistik."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_03"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Meldestelle",
+                    "description": "Erfassung durch HVD-Meldestelle"
+                  },
+                  {
+                    "method": "Kategorisierung",
+                    "description": "Klassifikation nach ECHR-Standards"
+                  },
+                  {
+                    "method": "Jahresauswertung",
+                    "description": "Aggregation je Bundesland"
+                  },
+                  {
+                    "method": "Behördenkooperation",
+                    "description": "Weitergabe relevanter Fälle"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Bericht zur Weltanschauungsfreiheit"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "humanismus-sterbehilfe-debatte",
+              "level": 4,
+              "name": "Sterbehilfe Mediendebatte",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Medienberichterstattungsindex zu Sterbehilfe-Gesetzgebung und gesellschaftlicher Debatte.",
+                "openness": {
+                  "class": "OP_01",
+                  "label": "Sofort publizierbar",
+                  "explanation": "Medienstatistik ohne Personenbezug."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_02"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_02"
+                },
+                "relevance": 3,
+                "processes": [
+                  {
+                    "method": "Medienmonitoring",
+                    "description": "Automatisiertes Monitoring von Onlinemedien"
+                  },
+                  {
+                    "method": "Themenklassifikation",
+                    "description": "NLP-basierte Themenanalyse"
+                  },
+                  {
+                    "method": "Sentimentanalyse",
+                    "description": "Bewertung des Diskursstands"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Diskursbericht HVD"
+                  },
+                  {
+                    "method": "Wissenschaftsnutzung",
+                    "description": "Bioethikforschung"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "humanismus-seelsorge-gefaengnis",
+              "level": 4,
+              "name": "Humanistische Gefängnisseelsorge",
+              "color": "#0d5c57",
+              "details": {
+                "description": "Begleitungsangebote und Fallzahlen humanistischer Seelsorge in Justizvollzugsanstalten.",
+                "openness": {
+                  "class": "OP_03",
+                  "label": "Nur Metadaten publizierbar",
+                  "explanation": "Sensible Daten aus dem Strafvollzug."
+                },
+                "theme": {
+                  "code": "TH_08"
+                },
+                "object": {
+                  "code": "OB_01"
+                },
+                "granularity": {
+                  "code": "GR_02"
+                },
+                "format": [
+                  {
+                    "code": "FT_01",
+                    "label": "CSV"
+                  }
+                ],
+                "license": {
+                  "code": "LI_04"
+                },
+                "relevance": 4,
+                "processes": [
+                  {
+                    "method": "Falldokumentation",
+                    "description": "Pseudonymisierte Erfassung je Anstalt"
+                  },
+                  {
+                    "method": "Jahresstatistik",
+                    "description": "Aggregation auf Verbandsebene"
+                  },
+                  {
+                    "method": "Justizbehördenkooperation",
+                    "description": "Abstimmung mit JVA-Leitungen"
+                  },
+                  {
+                    "method": "Anonymisierung",
+                    "description": "Vollständige Entpersonalisierung"
+                  },
+                  {
+                    "method": "Jahresbericht",
+                    "description": "Aggregierter Sozialbericht"
                   }
                 ]
               }

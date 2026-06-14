@@ -2,7 +2,7 @@
 
 **Welche Daten besitzt unsere Gesellschaft, und wie offen könnten sie sein?**
 
-Der Datenatlas macht sichtbar, welche Daten Behörden, Unternehmen, Forschungseinrichtungen, Zivilgesellschaft, Medien, Religionsgemeinschaften und Bildungseinrichtungen in Deutschland täglich erzeugen. Auf einer interaktiven isometrischen Karte lassen sich **3.842 Datentypen** quer durch **7 gesellschaftliche Sektoren** erkunden und bewerten.
+Der Datenatlas macht sichtbar, welche Daten Behörden, Unternehmen, Forschungseinrichtungen, Zivilgesellschaft, Medien, Religionsgemeinschaften und Bildungseinrichtungen in Deutschland täglich erzeugen. Auf einer interaktiven isometrischen Karte lassen sich **8.861 Datentypen** quer durch **7 gesellschaftliche Sektoren** erkunden und bewerten.
 
 **→ [datenatlas.de](https://datenatlas.de)**
 
@@ -59,14 +59,14 @@ Der **Öffnungsklasse-Filter** (Trichter-Symbol oben rechts) blendet auf Ebene 4
 
 | Sektor | Trägertyp | L2 | L4 |
 |---|---|---|---|
-| 🔵 **Staat und Verwaltung** | Bundesbehörden, Ministerien, Ämter, Kommunen auf allen Verwaltungsebenen | 42 | 1.289 |
-| ⚫ **Wirtschaft** | Private Unternehmen aller Branchen von Banken bis Pharmaindustrie | 20 | 600 |
-| 🟣 **Wissenschaft und Forschung** | Universitäten, Forschungsinstitute, Akademien, Transfereinrichtungen | 16 | 483 |
-| 🟪 **Zivilgesellschaft** | Vereine, NGOs, Wohlfahrtsverbände, Stiftungen — gegliedert nach ziviz-Monitor | 17 | 510 |
-| 🩷 **Medien und Kultur** | Öffentlich-rechtliche und private Medien, Verlage, Plattformen, Kultureinrichtungen | 14 | 420 |
-| 🌿 **Religionsgemeinschaften** | Kirchen, jüdische Gemeinden, muslimische Verbände, Hilfswerke | 8 | 240 |
-| 🟤 **Bildung** | Kitas, Schulen, Berufsschulen, Hochschulen, Volkshochschulen | 10 | 300 |
-| | **Gesamt** | **127** | **3.842** |
+| 🔵 **Staat und Verwaltung** | Bundesbehörden, Ministerien, Ämter, Kommunen auf allen Verwaltungsebenen | 46 | 2.766 |
+| ⚫ **Wirtschaft** | Private Unternehmen aller Branchen von Banken bis Pharmaindustrie | 23 | 1.381 |
+| 🟣 **Wissenschaft und Forschung** | Universitäten, Forschungsinstitute, Akademien, Transfereinrichtungen | 19 | 1.142 |
+| 🟪 **Zivilgesellschaft** | Vereine, NGOs, Wohlfahrtsverbände, Stiftungen — gegliedert nach ziviz-Monitor | 20 | 1.230 |
+| 🩷 **Medien und Kultur** | Öffentlich-rechtliche und private Medien, Verlage, Plattformen, Kultureinrichtungen | 17 | 1.022 |
+| 🌿 **Religionsgemeinschaften** | Kirchen, jüdische Gemeinden, muslimische Verbände, Hilfswerke | 10 | 600 |
+| 🟤 **Bildung** | Kitas, Schulen, Berufsschulen, Hochschulen, Volkshochschulen | 12 | 720 |
+| | **Gesamt** | **147** | **8.861** |
 
 ---
 
@@ -94,7 +94,7 @@ Der **Öffnungsklasse-Filter** (Trichter-Symbol oben rechts) blendet auf Ebene 4
 
 - **Statistik-Dashboard** — Öffnungsklassen-Verteilung als Balkendiagramm pro Sektor; zeigt auf einen Blick, welcher Sektor am offensten ist
 - **Zeitliche Datenverfügbarkeit** — kumulative Verfügbarkeitskurve 1980–2024 und Aktualisierungshäufigkeiten (Echtzeit bis unregelmäßig) je Sektor
-- **Datenkombinator** — 12 Cross-Sektor-Fusionsszenarien mit Slot-Machine-Animation zeigen, welche Datentypen sektorübergreifend kombinierbar sind
+- **Datenkombinator** — 32 Cross-Sektor-Fusionsszenarien mit Slot-Machine-Animation zeigen, welche Datentypen sektorübergreifend kombinierbar sind und welches Erkenntnispotenzial ihre Verknüpfung hat
 
 ### Teilen und Exportieren
 
@@ -128,7 +128,7 @@ Jeder Datentyp enthält neben Name und Beschreibung strukturierte Metadaten:
 | `format` | Dateiformat | CSV, JSON, GeoJSON, XML … |
 | `license` | Lizenz | CC0, CC BY 4.0, Datenlizenz Deutschland … |
 | `relevance` | Gesellschaftliche Relevanz | Skala 1–5 |
-| `processes` | Verknüpfte Prozesse | Methodenname + Beschreibung |
+| `processes` | Verknüpfte Prozesse (≥ 5) | Methodenname + Beschreibung |
 | `temporal.available_from` | Verfügbar ab (Jahr) | `2003` |
 | `temporal.update_frequency` | Aktualisierungshäufigkeit | `FQ_01` (Echtzeit) … `FQ_05` (unregelmäßig) |
 
@@ -161,10 +161,19 @@ npm run preview    # Lokale Vorschau des Builds
 src/
   main.js         — App-Bootstrap, Navigation, Breadcrumb, Onboarding-Modal
   renderer.js     — Isometrischer Kachel-Renderer (Canvas-basiert)
+  state.js        — Zentraler Navigationszustand & History
+  controls.js     — Pan/Zoom, Touch-Gesten, Keyboard-Navigation
+  dataLoader.js   — Lazy-Loading der Sektordateien, Index-Aufbau
+  search.js       — Volltext-Suche über alle Sektoren
+  modal.js        — Generisches Modal-System (Öffnen/Schließen/Trap-Focus)
+  expand.js       — Expand-Ansicht (einzelner Sektor als eigene Seite)
+  related.js      — "Ähnliche Datensätze" (Cross-Sektor-Ähnlichkeit)
+  export.js       — CSV/JSON-Export der sichtbaren L4-Datentypen
   wizard.js       — "Daten öffnen"-Wizard (5-Schritt-Modal)
   stats.js        — Statistik-Dashboard (Öffnungsklassen-Balkendiagramm)
   timeline.js     — Timeline-View (kumulative Verfügbarkeit + Aktualisierungshäufigkeit)
-  fusion.js       — Datenkombinator (Cross-Sektor-Fusionsgenerator)
+  generator.js    — Datenkombinator (32 Cross-Sektor-Fusionsszenarien)
+  utils.js        — esc(), trapFocus() und weitere Hilfsfunktionen
   style.css       — CSS-Variablen, Layout, Modal-Styles
 public/
   data/           — Taxonomie-JSON-Dateien (eine pro Sektor + main.json + vocabulary.json)
@@ -228,6 +237,7 @@ scripts/
 - `"openness": { "code": "OP_01" }` ist falsch — muss `"class"` heißen, nicht `"code"`
 - `"formats": [...]` ist falsch — muss `"format"` (Singular) heißen
 - Kein `"details"`-Wrapper vergessen
+- Jeder L4-Datentyp benötigt mindestens **5 Prozesseinträge**
 
 ## Vokabular-Codes
 

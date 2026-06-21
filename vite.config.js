@@ -2,6 +2,9 @@ import { execSync } from 'child_process';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
+import { buildSlimIndex } from './scripts/build-search-index.js';
+
+const DATA_DIR = fileURLToPath(new URL('./public/data', import.meta.url));
 
 const appVersion = (() => {
   try {
@@ -9,6 +12,33 @@ const appVersion = (() => {
     return `v2.${count}`;
   } catch { return 'v2.0'; }
 })();
+
+// Generates the slim client search index (data/search-index.json) from the full
+// taxonomy source files — as a dev-server route and as a build asset. The index
+// is never written into the source tree and never committed; adding new data
+// types stays unchanged (edit sector JSON → validate → commit; index rebuilds).
+function searchIndex() {
+  return {
+    name: 'search-index',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        const url = (req.url || '').split('?')[0];
+        if (url.endsWith('/data/search-index.json')) {
+          res.setHeader('Content-Type', 'application/json; charset=utf-8');
+          res.end(buildSlimIndex(DATA_DIR));
+          return;
+        }
+        next();
+      });
+    },
+    generateBundle() {
+      const json = buildSlimIndex(DATA_DIR);
+      this.emitFile({ type: 'asset', fileName: 'data/search-index.json', source: json });
+      const { entries } = JSON.parse(json);
+      console.log(`[search-index] ${entries.length} entries, ${(Buffer.byteLength(json) / 1048576).toFixed(2)} MB`);
+    },
+  };
+}
 
 // Minify the taxonomy JSON in the build output (dist/data) without touching the
 // readable source files in public/data. Whitespace removal cuts the shipped
@@ -45,7 +75,7 @@ function minifyDataJson() {
 export default defineConfig({
   base: './',
   define: { __APP_VERSION__: JSON.stringify(appVersion) },
-  plugins: [minifyDataJson()],
+  plugins: [searchIndex(), minifyDataJson()],
   build: {
     rollupOptions: {
       input: {

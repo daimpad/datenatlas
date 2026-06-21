@@ -264,14 +264,14 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 
 | Sektor | L2 | L3 | L4 | Ø L4/L2 |
 |--------|----|----|-----|---------|
-| staat | 46 | 125 | 2766 | 60,1 |
+| staat | 46 | 125 | 3174 | 69,0 |
 | wirtschaft | 23 | 67 | 1587 | 69,0 |
 | wissenschaft | 19 | 52 | 1311 | 69,0 |
 | zivilgesellschaft | 20 | 58 | 1386 | 69,3 |
 | medien & kultur | 17 | 50 | 1173 | 69,0 |
 | religion | 10 | 30 | 690 | 69,0 |
 | bildung | 12 | 36 | 828 | 69,0 |
-| **Gesamt** | **147** | **418** | **9.741** | **66,3** |
+| **Gesamt** | **147** | **418** | **10.149** | **69,0** |
 
 ---
 
@@ -364,7 +364,7 @@ Sprint-Format (Features):
 - [x] **S-M** Qualitätspass Processes IV — alle 7.940 L4-Nodes auf ≥4 Prozesseinträge gebracht ✓
 - [x] **S-N** Tiefenausbau VII — alle 147 L2 auf ≥60 L4, +921 L4, 7.940→8.861 ✓
 - [x] **S-O** Qualitätspass Processes V — alle 8.861 L4-Nodes auf ≥5 Prozesseinträge gebracht ✓
-- [~] **S-P** Tiefenausbau VIII — alle 147 L2 auf ≥69 L4 (je +9). Erledigt: religion (600→690, PR #94), bildung (720→828, PR #96), medien (1022→1173, PR #97), wissenschaft (1142→1311, PR #98), zivilgesellschaft (1230→1386, PR #99), wirtschaft (1381→1587, +206). **Offen:** staat (~+389 L4) → Ziel 10.129
+- [x] **S-P** Tiefenausbau VIII — alle 147 L2 auf ≥69 L4. religion (PR #94), bildung (PR #96), medien (PR #97), wissenschaft (PR #98), zivilgesellschaft (PR #99), wirtschaft (PR #100), staat (2766→3174, +408). Gesamt 8.861→10.149 L4 ✓
 
 ### Startbefehl
 

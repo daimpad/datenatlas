@@ -1,4 +1,4 @@
-import { esc, safeColor } from './utils.js';
+import { esc, safeColor, safeUrl } from './utils.js';
 
 const VOCAB_LABELS = {
   TH_01:'Gesundheit', TH_02:'Bildung', TH_03:'Soziales', TH_04:'Wirtschaft',
@@ -26,7 +26,13 @@ const closeBtn = document.getElementById('sidebar-close');
 
 closeBtn.addEventListener('click', closeSidebar);
 
+// Guards the outside-click-to-close handler against the very click that opens
+// the sidebar programmatically (e.g. via a search result or generator tile),
+// which would otherwise bubble to document and close it again in the same tick.
+let _justOpened = false;
+
 document.addEventListener('click', e => {
+  if (_justOpened) return;
   if (!sidebar.contains(e.target) && !e.target.closest('#map-canvas'))
     closeSidebar();
 });
@@ -47,6 +53,10 @@ export function openSidebar(tile, { onExplore, exploreLabel = 'Erkunden', relate
   body.innerHTML = buildContent(tile, !!_onExplore, exploreLabel, related, !!_onWizard, !!_onExpand);
   sidebar.dataset.open = 'true';
 
+  // Suppress the outside-click handler for the current click dispatch only.
+  _justOpened = true;
+  setTimeout(() => { _justOpened = false; }, 0);
+
   const btn = document.getElementById('sb-explore-btn');
   if (btn && _onExplore) {
     btn.addEventListener('click', () => {
@@ -57,9 +67,13 @@ export function openSidebar(tile, { onExplore, exploreLabel = 'Erkunden', relate
   }
 
   body.querySelectorAll('.rel-item[data-idx]').forEach(el => {
-    el.addEventListener('click', () => {
+    const activate = () => {
       const entry = _relatedEntries[+el.dataset.idx];
       if (entry && _onNavigate) _onNavigate(entry);
+    };
+    el.addEventListener('click', activate);
+    el.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
     });
   });
 
@@ -189,7 +203,7 @@ function buildDetailSections(d) {
 
   if (d.examples?.length) {
     const items = d.examples.map(ex => `
-      <a href="${esc(ex.url)}" target="_blank" rel="noopener noreferrer" class="example-item">
+      <a href="${esc(safeUrl(ex.url))}" target="_blank" rel="noopener noreferrer" class="example-item">
         <span class="example-title">${esc(ex.title)}</span>
         <span class="example-pub">${esc(ex.publisher)}</span>
       </a>`).join('');

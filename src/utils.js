@@ -19,6 +19,15 @@ export function safeColor(color, fallback = '#4a5568') {
   return /^#[0-9a-fA-F]{3,8}$/.test(color) ? color : fallback;
 }
 
+// Only allow http(s) URLs in hrefs — blocks javascript:/data: scheme injection
+export function safeUrl(url, fallback = '#') {
+  if (typeof url !== 'string') return fallback;
+  try {
+    const u = new URL(url, location.href);
+    return (u.protocol === 'http:' || u.protocol === 'https:') ? url : fallback;
+  } catch { return fallback; }
+}
+
 // Apply the full color concept:
 //   L1 — keep sector color (distinct per sector)
 //   L2/L3 — override with sectorColor (monochrome within a sector)

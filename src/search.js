@@ -20,10 +20,14 @@ export function buildSearchIndex(mainTiles, sectorPairs) {
 
         for (const dataType of activity.children ?? []) {
           const tile = applyOpennessColors([dataType])[0];
+          const displayPath = `${sectorTile.name} · ${org.name} · ${activity.name}`;
           index.push({
             tile,
             breadcrumb:  [rootCrumb, sectorCrumb, orgCrumb, activityCrumb],
-            displayPath: `${sectorTile.name} · ${org.name} · ${activity.name}`,
+            displayPath,
+            // Precomputed lowercase blob so query() does one includes() per entry
+            // instead of three toLowerCase() calls on every keystroke.
+            searchText: `${tile.name} ${tile.details?.description ?? ''} ${displayPath}`.toLowerCase(),
           });
         }
       }
@@ -92,11 +96,14 @@ export function initSearch({ indexPromise, getLiveIndex, onNavigate }) {
     const idx = _index();
     if (!idx.length || q.length < 2) return [];
     const lower = q.toLowerCase();
-    return idx.filter(r =>
-      r.tile.name.toLowerCase().includes(lower) ||
-      r.tile.details?.description?.toLowerCase().includes(lower) ||
-      r.displayPath.toLowerCase().includes(lower)
-    ).slice(0, 9);
+    const out = [];
+    for (const r of idx) {
+      // Fall back to live lowercasing for any entry built before searchText existed
+      const hay = r.searchText
+        ?? `${r.tile.name} ${r.tile.details?.description ?? ''} ${r.displayPath}`.toLowerCase();
+      if (hay.includes(lower)) { out.push(r); if (out.length === 9) break; }
+    }
+    return out;
   }
 
   function render(results) {

@@ -110,6 +110,9 @@ export class IsometricRenderer {
       row:       Math.floor(i / cols),
       navigable: !!(t.children?.length || t.subFile),
     }));
+    // Precompute painter order (ascending col+row) once per tile set, instead of
+    // allocating + sorting a copy on every frame (_draw) and every hover (hitTest).
+    this._byDepth = [...this.tiles].sort((a, b) => (a.col + a.row) - (b.col + b.row));
     this.dirty = true;
   }
 
@@ -171,8 +174,9 @@ export class IsometricRenderer {
   // Return tile id at logical screen point (px, py), or null
   hitTest(px, py) {
     // Iterate tiles front-to-back (reverse painter order), skip off-screen
-    const sorted = [...this.tiles].sort((a, b) => (b.col + b.row) - (a.col + a.row));
-    for (const t of sorted) {
+    const byDepth = this._byDepth ?? this.tiles;
+    for (let i = byDepth.length - 1; i >= 0; i--) {
+      const t = byDepth[i];
       const { tx, ty } = this._tilePos(t.col, t.row);
       if (!this._isVisible(tx, ty)) continue;
       const W = this.W, H = this.H, D = this.D;
@@ -210,8 +214,8 @@ export class IsometricRenderer {
     ctx.globalAlpha = alpha;
 
     // Paint tiles back-to-front (ascending col+row), skip off-screen tiles
-    const sorted = [...this.tiles].sort((a, b) => (a.col + a.row) - (b.col + b.row));
-    for (const t of sorted) {
+    const byDepth = this._byDepth ?? this.tiles;
+    for (const t of byDepth) {
       const { tx, ty } = this._tilePos(t.col, t.row);
       if (!this._isVisible(tx, ty)) continue;
       const pulse   = this._pulseFactor(t.id);

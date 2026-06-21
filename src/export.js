@@ -9,21 +9,30 @@ const OPENNESS    = { OP_01:'Sofort publizierbar', OP_02:'Nach Aufbereitung', OP
 
 const HEADERS = ['Name','Sektor','Organisation','Aktivität','Öffnungsklasse','Thema','Objekttyp','Granularität','Format','Lizenz','Relevanz','Beschreibung'];
 
-let _index = null;
+export function initExport({ ensureFullIndex }) {
+  let _busy = false;
 
-export function initExport({ indexPromise }) {
-  indexPromise.then(idx => { _index = idx; });
-
-  document.getElementById('export-btn').addEventListener('click', () => {
+  document.getElementById('export-btn').addEventListener('click', async () => {
     const crumbs = state.breadcrumb;
     const level  = crumbs[crumbs.length - 1]?.level ?? 0;
 
+    // Viewing a single activity's data types — already fully loaded in state.
     if (level === 4) {
       exportCurrentView(crumbs);
-    } else if (_index) {
-      exportFullIndex();
-    } else {
-      showToast('Daten werden noch geladen…');
+      return;
+    }
+
+    // Exporting everything needs the full per-node index — load it on demand.
+    if (_busy) return;
+    _busy = true;
+    showToast('Daten werden vorbereitet…');
+    try {
+      const idx = await ensureFullIndex();
+      exportFullIndex(idx);
+    } catch {
+      showToast('Export fehlgeschlagen.');
+    } finally {
+      _busy = false;
     }
   });
 }
@@ -41,8 +50,8 @@ function exportCurrentView(crumbs) {
   download(csvString(rows), `datenatlas-${slug}.csv`);
 }
 
-function exportFullIndex() {
-  const rows = _index
+function exportFullIndex(index) {
+  const rows = index
     .filter(e => e.tile.details)
     .map(e => {
       const [sektor, org, activity] = e.displayPath.split(' · ');

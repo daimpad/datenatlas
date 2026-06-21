@@ -12,3 +12,4 @@ async function _fetch(filename) {
 
 export const loadMain = () => _fetch('main.json');
 export const loadSector = id => _fetch(`sector_${id}.json`);
+export const loadSearchIndex = () => _fetch('search-index.json');

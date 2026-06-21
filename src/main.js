@@ -2,9 +2,9 @@ import { IsometricRenderer } from './renderer.js';
 import { initWizard, openWizardWithContext } from './wizard.js';
 import { initControls }      from './controls.js';
 import { openSidebar, closeSidebar } from './modal.js';
-import { loadMain, loadSector }      from './dataLoader.js';
+import { loadMain, loadSector, loadSearchIndex } from './dataLoader.js';
 import { state, patchState }         from './state.js';
-import { applyTileColors, applyOpennessColors, esc, trapFocus } from './utils.js';
+import { applyTileColors, applyOpennessColors, esc, trapFocus, OPENNESS_COLORS } from './utils.js';
 import { buildSearchIndex, initSearch } from './search.js';
 import { initStats }  from './stats.js';
 import { initExport }   from './export.js';
@@ -206,15 +206,18 @@ function updateHash() {
   history.replaceState(null, '', path ? '#' + path : location.pathname);
 }
 
-async function restoreFromHash(hash) {
-  const decoded = decodeURIComponent(hash.replace(/^#/, ''));
-  if (!decoded) return;
-  const segments = decoded.split('/').filter(Boolean);
-  if (!segments.length) return;
+// Load a sector on demand and drill to sector/org/activity, rebuilding the
+// breadcrumb from the root. Optionally opens the sidebar for `leafId`. Shared by
+// deep-link restore (restoreFromHash) and jump-to-result navigation
+// (navigateToEntry) so neither needs the full taxonomy preloaded.
+async function drillToPath(sectorId, orgId, actId, leafId = null) {
+  _focusedId = null;
+  renderer.setFocused(null);
+  closeSidebar();
 
-  const sectorTile = _mainTiles.find(t => t.id === segments[0]);
+  const sectorTile = _mainTiles.find(t => t.id === sectorId);
   if (!sectorTile?.subFile) {
-    showError(`Link ungültig: Sektor „${segments[0]}" nicht gefunden.`, navigateHome);
+    showError(`Sektor „${sectorId}" nicht gefunden.`, navigateHome);
     return;
   }
 
@@ -222,45 +225,55 @@ async function restoreFromHash(hash) {
     showLoading(true);
     const sc = sectorTile.color;
     const sectorData = await loadSector(sectorTile.id);
-    _indexSector(sectorTile, sectorData);
-    const l2tiles = applyTileColors(sectorData.children ?? [], sc);
-    state.breadcrumb.push({ id: sectorTile.id, name: sectorTile.name, level: 2, tiles: l2tiles, sectorColor: sc });
-    if (segments.length === 1) { _finish(2, l2tiles); return; }
 
-    const l2tile = l2tiles.find(t => t.id === segments[1]);
-    if (!l2tile) {
-      _finish(2, l2tiles);
-      showError(`Eintrag „${segments[1]}" nicht gefunden — zeige Sektor.`, hideError);
-      return;
+    // Reset to the root crumb, then push the resolved levels
+    state.breadcrumb = [state.breadcrumb[0]];
+    let tiles = applyTileColors(sectorData.children ?? [], sc);
+    let level = 2;
+    state.breadcrumb.push({ id: sectorTile.id, name: sectorTile.name, level: 2, tiles, sectorColor: sc });
+
+    if (orgId) {
+      const l2tile = tiles.find(t => t.id === orgId);
+      if (l2tile?.children?.length) {
+        tiles = applyTileColors(l2tile.children, sc);
+        level = 3;
+        state.breadcrumb.push({ id: l2tile.id, name: l2tile.name, level: 3, tiles, sectorColor: sc });
+
+        if (actId) {
+          const l3tile = tiles.find(t => t.id === actId);
+          if (l3tile?.children?.length) {
+            tiles = applyTileColors(l3tile.children, sc);
+            level = 4;
+            state.breadcrumb.push({ id: l3tile.id, name: l3tile.name, level: 4, tiles, sectorColor: sc });
+          }
+        }
+      }
     }
-    if (!l2tile.children?.length) { _finish(2, l2tiles); return; }
-    const l3tiles = applyTileColors(l2tile.children, sc);
-    state.breadcrumb.push({ id: l2tile.id, name: l2tile.name, level: 3, tiles: l3tiles, sectorColor: sc });
-    if (segments.length === 2) { _finish(3, l3tiles); return; }
 
-    const l3tile = l3tiles.find(t => t.id === segments[2]);
-    if (!l3tile) {
-      _finish(3, l3tiles);
-      showError(`Eintrag „${segments[2]}" nicht gefunden — zeige Organisation.`, hideError);
-      return;
-    }
-    if (!l3tile.children?.length) { _finish(3, l3tiles); return; }
-    const l4tiles = applyTileColors(l3tile.children, sc);
-    state.breadcrumb.push({ id: l3tile.id, name: l3tile.name, level: 4, tiles: l4tiles, sectorColor: sc });
-    _finish(4, l4tiles);
-  } catch (err) {
-    console.error('URL restore failed:', err);
-    showError('Link konnte nicht geladen werden.', navigateHome);
-  } finally {
-    showLoading(false);
-  }
-
-  function _finish(lvl, tiles) {
-    patchState({ zoomLevel: lvl, currentTiles: tiles, panOffset: { x: 0, y: 0 } });
+    patchState({ zoomLevel: level, currentTiles: tiles, panOffset: { x: 0, y: 0 } });
     renderer.setTiles(tiles);
     renderer.setPan(0, 0);
     updateChrome();
+    applyFilter();
+
+    if (leafId) {
+      const target = tiles.find(t => t.id === leafId);
+      if (target) openSidebar(target, sidebarOpts(target));
+    }
+  } catch (err) {
+    console.error('Navigation failed:', err);
+    showError('Eintrag konnte nicht geladen werden.', navigateHome);
+  } finally {
+    showLoading(false);
   }
+}
+
+async function restoreFromHash(hash) {
+  const decoded = decodeURIComponent(hash.replace(/^#/, ''));
+  if (!decoded) return;
+  const [s, o, a] = decoded.split('/').filter(Boolean);
+  if (!s) return;
+  await drillToPath(s, o, a, null);
 }
 
 // ── Filter ────────────────────────────────────────────────────────────────────
@@ -343,7 +356,7 @@ function tileMatchesFilter(tile) {
 
 // ── Process index (for L5 → L6 cross-sector lookup) ──────────────────────────
 
-// Map<processName, searchIndexEntry[]> — built incrementally in _indexSector
+// Map<processName, searchIndexEntry[]> — populated lazily by ensureFullIndex()
 let methodIndex = null;
 
 // Colors assigned to process categories
@@ -373,49 +386,65 @@ function processColor(name) {
 // ── Boot ──────────────────────────────────────────────────────────────────────
 let _mainTiles = [];
 
-// Growing search index — sectors are added as they load
-const _liveIndex = [];
-let   _indexResolve;
-// Resolves once ALL sectors have been indexed (for stats/export/related/generator)
-const _fullIndexPromise = new Promise(r => { _indexResolve = r; });
-// Tracks which sector ids have already been indexed
-const _indexedSectors = new Set();
+// Slim search index (always loaded): powers search, stats, timeline, related and
+// the generator. Each slim record is adapted to the entry shape those consumers
+// already expect ({ tile, breadcrumb, displayPath, searchText }) so they need no
+// changes. _addr carries the ids needed for on-demand navigation.
+let _index = [];
+let _slimResolve;
+const _slimIndexPromise = new Promise(r => { _slimResolve = r; });
 
-// Index a single already-loaded sector; idempotent
-function _indexSector(sectorTile, sectorData) {
-  if (_indexedSectors.has(sectorTile.id)) return;
-  _indexedSectors.add(sectorTile.id);
-  const newEntries = buildSearchIndex(_mainTiles, [[sectorTile, sectorData]]);
-  _liveIndex.push(...newEntries);
-  // Incrementally extend methodIndex instead of rebuilding from scratch each time
-  if (!methodIndex) methodIndex = new Map();
-  for (const entry of newEntries) {
-    for (const p of entry.tile.details?.processes ?? []) {
-      if (!methodIndex.has(p.method)) methodIndex.set(p.method, []);
-      methodIndex.get(p.method).push(entry);
-    }
-  }
+function adaptEntry(e) {
+  const displayPath = `${e.sn} · ${e.on} · ${e.an}`;
+  const details = {};
+  if (e.c)  details.openness = { class: e.c };
+  if (e.th) details.theme    = { code: e.th };
+  if (e.ob) details.object   = { code: e.ob };
+  if (e.fq || e.yr) details.temporal = { update_frequency: e.fq ?? undefined, available_from: e.yr ?? undefined };
+  return {
+    tile: { id: e.i, name: e.n, level: 4, color: OPENNESS_COLORS[e.c] ?? '#4a5568', details },
+    breadcrumb: [
+      { id: null, name: 'Übersicht',  level: 0 },
+      { id: e.s,  name: e.sn, level: 2 },
+      { id: e.o,  name: e.on, level: 3 },
+      { id: e.a,  name: e.an, level: 4 },
+    ],
+    displayPath,
+    searchText: `${e.n} ${displayPath}`.toLowerCase(),
+    _addr: { s: e.s, o: e.o, a: e.a, i: e.i },
+  };
 }
 
-// Load sectors one by one in the background; prioritize `firstId` if given
-async function _buildIndexLazy(sectors, firstId) {
-  const ordered = firstId
-    ? [sectors.find(t => t.id === firstId), ...sectors.filter(t => t.id !== firstId)].filter(Boolean)
-    : sectors;
-  for (const t of ordered.filter(t => t.subFile)) {
-    try {
-      const data = await loadSector(t.id);
-      _indexSector(t, data);
-    } catch { /* skip failed sectors */ }
-    // yield between each sector so the event loop stays responsive
-    await new Promise(r => setTimeout(r, 0));
-  }
-  _indexResolve(_liveIndex);
+// Full per-node index (real details + process methods) — built lazily, only when
+// a feature truly needs cross-sector full data: CSV "export all" and process
+// exploration (L4→L5→L6). Most visits never trigger it, sparing the ~16 MB load.
+let _fullIndexPromise = null;
+function ensureFullIndex() {
+  if (_fullIndexPromise) return _fullIndexPromise;
+  _fullIndexPromise = (async () => {
+    methodIndex = methodIndex ?? new Map();
+    const entries = [];
+    for (const t of _mainTiles.filter(t => t.subFile)) {
+      try {
+        const data = await loadSector(t.id);
+        const part = buildSearchIndex(_mainTiles, [[t, data]]);
+        entries.push(...part);
+        for (const entry of part) {
+          for (const p of entry.tile.details?.processes ?? []) {
+            if (!methodIndex.has(p.method)) methodIndex.set(p.method, []);
+            methodIndex.get(p.method).push(entry);
+          }
+        }
+      } catch { /* skip failed sectors */ }
+      await new Promise(r => setTimeout(r, 0)); // keep the event loop responsive
+    }
+    return entries;
+  })();
+  return _fullIndexPromise;
 }
 
 (async () => {
   const _initialHash = location.hash;
-  const _firstSector = _initialHash ? _initialHash.replace(/^#/, '').split('/')[0] : null;
 
   try {
     showLoading(true);
@@ -429,15 +458,17 @@ async function _buildIndexLazy(sectors, firstId) {
     _hashEnabled = true;
     updateHash();
 
-    // Start background index build after initial render; prioritize current sector
-    setTimeout(() => _buildIndexLazy(sectors, _firstSector), 0);
+    // Load the slim index in the background; it powers search/stats/timeline/related/generator
+    loadSearchIndex()
+      .then(slim => { _index = (slim.entries ?? []).map(adaptEntry); _slimResolve(_index); })
+      .catch(err => { console.error('Search index failed to load:', err); _slimResolve([]); });
 
-    initSearch({ indexPromise: _fullIndexPromise, getLiveIndex: () => _liveIndex, onNavigate: navigateToSearchResult });
-    initStats(    { indexPromise: _fullIndexPromise, mainTiles: sectors });
-    initTimeline( { indexPromise: _fullIndexPromise, mainTiles: sectors });
-    initExport({ indexPromise: _fullIndexPromise });
-    initRelated({ indexPromise: _fullIndexPromise });
-    initGenerator({ indexPromise: _fullIndexPromise, onNavigate: navigateToSearchResult });
+    initSearch({ indexPromise: _slimIndexPromise, getLiveIndex: () => _index, onNavigate: navigateToEntry });
+    initStats(    { indexPromise: _slimIndexPromise, mainTiles: sectors });
+    initTimeline( { indexPromise: _slimIndexPromise, mainTiles: sectors });
+    initExport({ ensureFullIndex });
+    initRelated({ indexPromise: _slimIndexPromise });
+    initGenerator({ indexPromise: _slimIndexPromise, onNavigate: navigateToEntry });
   } catch (err) {
     console.error(err);
     showError('Hauptdaten konnten nicht geladen werden.', () => location.reload());
@@ -503,19 +534,12 @@ function navigateToCrumb(index) {
   applyFilter();
 }
 
-function navigateToSearchResult(result) {
-  _focusedId = null;
-  renderer.setFocused(null);
-  closeSidebar();
-  state.breadcrumb = result.breadcrumb.map(c => ({ ...c }));
-  const last = state.breadcrumb[state.breadcrumb.length - 1];
-  patchState({ zoomLevel: last.level, currentTiles: last.tiles, panOffset: { x:0, y:0 } });
-  renderer.setPan(0, 0);
-  animateIn(last.tiles);
-  updateChrome();
-  applyFilter();
-  const target = last.tiles.find(t => t.id === result.tile.id);
-  if (target) openSidebar(target, sidebarOpts(target));
+// Jump to a slim-index entry (search result, related item, generator tile):
+// load its sector on demand, drill to it, and open its full detail sidebar.
+function navigateToEntry(entry) {
+  const a = entry?._addr;
+  if (!a) return;
+  return drillToPath(a.s, a.o, a.a, a.i);
 }
 
 // ── Tile click handler ────────────────────────────────────────────────────────
@@ -556,7 +580,7 @@ function sidebarOpts(tile) {
       .map(c => c.name).join(' · ');
     const opts = {
       related,
-      onNavigate: navigateToSearchResult,
+      onNavigate: navigateToEntry,
       onWizard:   () => openWizardWithContext({ sectorId, tileName: tile.name, displayPath }),
     };
     if (tile.details?.processes?.length) {
@@ -586,7 +610,6 @@ async function navigateDeeper(tile) {
     try {
       showLoading(true);
       const data     = await loadSector(tile.id);
-      _indexSector(tile, data);         // index immediately so search works right away
       const children = data.children ?? [];
       if (children.length) {
         await animateOut(tile.id);
@@ -610,6 +633,9 @@ async function navigateDeeper(tile) {
 
   // ── L4 or L6: show linked processes as L5 tiles ──
   if ((lvl === 4 || lvl === 6) && tile.details?.processes?.length) {
+    // Cross-sector process links need the full per-node index — load it on demand.
+    showLoading(true);
+    try { await ensureFullIndex(); } finally { showLoading(false); }
     const processes = tile.details.processes;
     const l5 = processes.map(p => {
       const related = methodIndex?.get(p.method) ?? [];

@@ -5,7 +5,7 @@ import { trapFocus } from './utils.js';
 const SECTOR_MAP = {
   staat: 'public', wirtschaft: 'private', wissenschaft: 'research',
   zivilgesellschaft: 'civil', medien: 'private', religion: 'civil',
-  bildung: 'public',
+  bildung: 'public', kultur: 'public',
 };
 
 // Recommended license per sector × data type

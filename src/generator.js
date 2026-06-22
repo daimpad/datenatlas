@@ -6,7 +6,8 @@ export const SECTOR_META = {
   wirtschaft:        { name: 'Wirtschaft',               color: '#2c3e50' },
   wissenschaft:      { name: 'Wissenschaft & Forschung', color: '#4527a0' },
   zivilgesellschaft: { name: 'Zivilgesellschaft',        color: '#6d28d9' },
-  medien:            { name: 'Medien & Kultur',          color: '#be185d' },
+  medien:            { name: 'Medien',                   color: '#be185d' },
+  kultur:            { name: 'Kultur',                   color: '#a21caf' },
   religion:          { name: 'Religionsgemeinschaften',  color: '#134e4a' },
   bildung:           { name: 'Bildung',                  color: '#b45309' },
 };
@@ -185,7 +186,7 @@ export const SCENARIOS = [
     title: 'Kulturtourismus-Wertschöpfung',
     icon:  'fa-masks-theater',
     story: 'Wie weit reicht die wirtschaftliche Wirkung von Kultureinrichtungen in die regionale Wirtschaft hinein – und lässt sich das aus dem Abgleich von Besucherzahlen und touristischen Ausgabenstatistiken zeigen?\n\nBesucherstatistiken von Museen, Theatern und Konzerthäusern zeigen, wie viele Menschen eine Institution aufsuchen – aber nicht, ob diese Besucher aus der Region kommen oder von weither reisen, wie viel sie außerhalb der Einrichtung ausgeben und welchen wirtschaftlichen Fußabdruck ihr Besuch hinterlässt. Übernachtungs- und Ausgabenstatistiken der Tourismuswirtschaft zeigen regionale Wirtschaftsströme – aber nicht, welcher Anteil davon kulturmotiviert ist und welche Einrichtungen den Ausschlag geben.\n\nEinzig die Verknüpfung beider Datensätze erzeugt eine Wertschöpfungskarte des Kulturtourismus: Einrichtungen, deren Besucherherkunft mit touristischen Übernachtungsmustern korreliert, sind ökonomische Anker ihrer Region – mit einer Reichweite, die weit über den eigenen Eintrittsumsatz hinausgeht. Diese Wirkungskettenanalyse ist das eigenständige Erkenntnispotenzial der Kombination und eine empirische Grundlage für kulturförderpolitische Entscheidungen.',
-    a: { sector: 'medien',      theme: 'TH_04', label: 'Besucherstatistiken öffentl. Kultureinrichtungen', detail: 'Museen, Theater, Konzerthäuser nach Einrichtungstyp & PLZ 2023' },
+    a: { sector: 'kultur',      theme: 'TH_04', label: 'Besucherstatistiken öffentl. Kultureinrichtungen', detail: 'Museen, Theater, Konzerthäuser nach Einrichtungstyp & PLZ 2023' },
     b: { sector: 'wirtschaft',  theme: 'TH_04', label: 'Tagesausgaben Kulturtouristen nach Landkreis',    detail: 'Tourismusdestinationsstatistik Destatis / DZT 2023' },
   },
   {

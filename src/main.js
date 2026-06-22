@@ -85,6 +85,13 @@ function closeInfoModal() {
 infoBtn.addEventListener('click', openInfoModal);
 imClose.addEventListener('click', closeInfoModal);
 infoModal.addEventListener('click', e => { if (e.target === infoModal) closeInfoModal(); });
+// Feature shortcuts: clicking a feature entry closes the info modal and triggers the tool
+infoModal.addEventListener('click', e => {
+  const action = e.target.closest('[data-action]');
+  if (!action) return;
+  closeInfoModal();
+  document.getElementById(action.dataset.action)?.click();
+});
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && !infoModal.hidden && mobileSheet.hidden) closeInfoModal(); });
 
 // ── Mobile action sheet ───────────────────────────────────────────────────────

@@ -190,7 +190,7 @@ export function initWizard() {
   function renderS1() {
     const el = div('wz-step');
     el.innerHTML = `
-      <h2 class="wz-h">Wer sind Sie?</h2>
+      <h2 class="wz-h">Öffnungspotenzial eigener Daten ermitteln</h2>
       <p class="wz-p">Damit dieser Leitfaden die richtigen Empfehlungen gibt, brauchen wir einen kurzen Kontext. Die Antworten steuern, welche Lizenz- und Publikationswege in den nächsten Schritten erscheinen.</p>
 
       <h3 class="wz-subh">1. In welchem Bereich sind Sie tätig?</h3>

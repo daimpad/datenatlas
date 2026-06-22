@@ -305,6 +305,30 @@ function main() {
     [...result.issues.errors, ...result.issues.warnings].forEach(m => console.log(m));
   }
 
+  // --- Global id uniqueness across all sector files ---
+  const idFirst = new Map();
+  const dupes = [];
+  for (const filePath of sectorFiles) {
+    const fileName = path.basename(filePath);
+    let data;
+    try { data = JSON.parse(fs.readFileSync(filePath, 'utf8')); } catch { continue; }
+    const nodes = Array.isArray(data) ? data : (data.children ?? []);
+    const walk = n => {
+      if (n && n.id != null) {
+        if (idFirst.has(n.id)) dupes.push(`id "${n.id}" doppelt (${idFirst.get(n.id)} & ${fileName})`);
+        else idFirst.set(n.id, fileName);
+      }
+      (n.children ?? []).forEach(walk);
+    };
+    nodes.forEach(walk);
+  }
+  if (dupes.length) {
+    console.log(`\n✗ ${dupes.length} doppelte IDs:`);
+    dupes.slice(0, 50).forEach(d => console.log('  ✗ ' + d));
+    if (dupes.length > 50) console.log(`  … und ${dupes.length - 50} weitere`);
+    totalErrors += dupes.length;
+  }
+
   // --- Summary ---
   console.log(
     `\nSummary: ${totalFiles} files, ${totalL4} L4 data types, ` +

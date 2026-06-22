@@ -2,7 +2,7 @@
 
 **Welche Daten besitzt unsere Gesellschaft, und wie offen könnten sie sein?**
 
-Der Datenatlas macht sichtbar, welche Daten Behörden, Unternehmen, Forschungseinrichtungen, Zivilgesellschaft, Medien, Religionsgemeinschaften und Bildungseinrichtungen in Deutschland täglich erzeugen. Auf einer interaktiven isometrischen Karte lassen sich **8.861 Datentypen** quer durch **7 gesellschaftliche Sektoren** erkunden und bewerten.
+Der Datenatlas macht sichtbar, welche Daten Behörden, Unternehmen, Forschungseinrichtungen, Zivilgesellschaft, Medien, Kultur, Religionsgemeinschaften und Bildungseinrichtungen in Deutschland täglich erzeugen. Auf einer interaktiven isometrischen Karte lassen sich **10.149 Datentypen** quer durch **8 gesellschaftliche Sektoren** erkunden und bewerten.
 
 **→ [datenatlas.de](https://datenatlas.de)**
 
@@ -32,7 +32,7 @@ Staat und Verwaltung          ← Ebene 1: Sektor
 
 | Ebene | Was Sie sehen | Wie weiter |
 |---|---|---|
-| **1 Sektor** | Die 7 gesellschaftlichen Bereiche als Kachelgruppe | Kachel anklicken |
+| **1 Sektor** | Die 8 gesellschaftlichen Bereiche als Kachelgruppe | Kachel anklicken |
 | **2 Organisation** | Organisationstypen innerhalb des Sektors | Kachel anklicken |
 | **3 Aktivität** | Was diese Organisation tut | Kachel anklicken |
 | **4 Datentyp** | Konkrete Datensätze mit Bewertung und Metadaten | Kachel anklicken für Details |
@@ -59,14 +59,15 @@ Der **Öffnungsklasse-Filter** (Trichter-Symbol oben rechts) blendet auf Ebene 4
 
 | Sektor | Trägertyp | L2 | L4 |
 |---|---|---|---|
-| 🔵 **Staat und Verwaltung** | Bundesbehörden, Ministerien, Ämter, Kommunen auf allen Verwaltungsebenen | 46 | 2.766 |
-| ⚫ **Wirtschaft** | Private Unternehmen aller Branchen von Banken bis Pharmaindustrie | 23 | 1.381 |
-| 🟣 **Wissenschaft und Forschung** | Universitäten, Forschungsinstitute, Akademien, Transfereinrichtungen | 19 | 1.142 |
-| 🟪 **Zivilgesellschaft** | Vereine, NGOs, Wohlfahrtsverbände, Stiftungen — gegliedert nach ziviz-Monitor | 20 | 1.230 |
-| 🩷 **Medien und Kultur** | Öffentlich-rechtliche und private Medien, Verlage, Plattformen, Kultureinrichtungen | 17 | 1.022 |
-| 🌿 **Religionsgemeinschaften** | Kirchen, jüdische Gemeinden, muslimische Verbände, Hilfswerke | 10 | 600 |
-| 🟤 **Bildung** | Kitas, Schulen, Berufsschulen, Hochschulen, Volkshochschulen | 12 | 720 |
-| | **Gesamt** | **147** | **8.861** |
+| 🔵 **Staat und Verwaltung** | Bundesbehörden, Ministerien, Ämter, Kommunen auf allen Verwaltungsebenen | 46 | 3.174 |
+| ⚫ **Wirtschaft** | Private Unternehmen aller Branchen von Banken bis Pharmaindustrie | 23 | 1.587 |
+| 🟣 **Wissenschaft und Forschung** | Universitäten, Forschungsinstitute, Akademien, Transfereinrichtungen | 19 | 1.311 |
+| 🟪 **Zivilgesellschaft** | Vereine, NGOs, Wohlfahrtsverbände, Stiftungen — gegliedert nach ziviz-Monitor | 20 | 1.386 |
+| 🩷 **Medien** | Öffentlich-rechtlicher und privater Rundfunk, Nachrichtenagenturen, Streaming, Gaming, Werbung | 12 | 828 |
+| 🎭 **Kultur** | Museen, Theater, bildende Kunst sowie Musik-, Film- und Buchwirtschaft | 5 | 345 |
+| 🌿 **Religionsgemeinschaften** | Kirchen, jüdische Gemeinden, muslimische Verbände, Hilfswerke | 10 | 690 |
+| 🟤 **Bildung** | Kitas, Schulen, Berufsschulen, Hochschulen, Volkshochschulen | 12 | 828 |
+| | **Gesamt** | **147** | **10.149** |
 
 ---
 
@@ -99,7 +100,7 @@ Der **Öffnungsklasse-Filter** (Trichter-Symbol oben rechts) blendet auf Ebene 4
 ### Teilen und Exportieren
 
 - **Teilen-Button** (Ketten-Symbol) — kopiert den Link zur aktuellen Navigationstiefe; jede Ebene hat eine eigene URL
-- **Export** (Download-Symbol) — lädt alle sichtbaren L4-Datentypen als CSV oder JSON herunter; vollständig im Browser, kein Backend
+- **Export** (Download-Symbol) — lädt die sichtbaren L4-Datentypen als CSV herunter; vollständig im Browser, kein Backend
 
 ### Daten öffnen
 
@@ -168,7 +169,7 @@ src/
   modal.js        — Generisches Modal-System (Öffnen/Schließen/Trap-Focus)
   expand.js       — Expand-Ansicht (einzelner Sektor als eigene Seite)
   related.js      — "Ähnliche Datensätze" (Cross-Sektor-Ähnlichkeit)
-  export.js       — CSV/JSON-Export der sichtbaren L4-Datentypen
+  export.js       — CSV-Export der sichtbaren L4-Datentypen
   wizard.js       — "Daten öffnen"-Wizard (5-Schritt-Modal)
   stats.js        — Statistik-Dashboard (Öffnungsklassen-Balkendiagramm)
   timeline.js     — Timeline-View (kumulative Verfügbarkeit + Aktualisierungshäufigkeit)
@@ -193,7 +194,8 @@ scripts/
 | `sector_wirtschaft.json` | Wirtschaft | `#2c3e50` |
 | `sector_wissenschaft.json` | Wissenschaft & Forschung | `#4527a0` |
 | `sector_zivilgesellschaft.json` | Zivilgesellschaft | `#6d28d9` |
-| `sector_medien.json` | Medien und Kultur | `#be185d` |
+| `sector_medien.json` | Medien | `#8b1248` |
+| `sector_kultur.json` | Kultur | `#701a75` |
 | `sector_religion.json` | Religionsgemeinschaften | `#134e4a` |
 | `sector_bildung.json` | Bildung | `#b45309` |
 

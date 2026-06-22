@@ -15,7 +15,8 @@ const SECTORS = [
   { id: 'wirtschaft',        name: 'Wirtschaft',                 file: 'sector_wirtschaft.json',        color: '#1c2f3e' },
   { id: 'wissenschaft',      name: 'Wissenschaft und Forschung', file: 'sector_wissenschaft.json',      color: '#2d1a6e' },
   { id: 'zivilgesellschaft', name: 'Zivilgesellschaft',          file: 'sector_zivilgesellschaft.json', color: '#4a1a8c' },
-  { id: 'medien',            name: 'Medien und Kultur',          file: 'sector_medien.json',            color: '#8b1248' },
+  { id: 'medien',            name: 'Medien',                     file: 'sector_medien.json',            color: '#8b1248' },
+  { id: 'kultur',            name: 'Kultur',                     file: 'sector_kultur.json',            color: '#701a75' },
   { id: 'religion',          name: 'Religionsgemeinschaften',    file: 'sector_religion.json',          color: '#0a3d38' },
 ];
 

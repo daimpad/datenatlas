@@ -18,6 +18,7 @@ const SECTORS = [
   { id: 'medien',            name: 'Medien',                     file: 'sector_medien.json',            color: '#8b1248' },
   { id: 'kultur',            name: 'Kultur',                     file: 'sector_kultur.json',            color: '#701a75' },
   { id: 'religion',          name: 'Religionsgemeinschaften',    file: 'sector_religion.json',          color: '#0a3d38' },
+  { id: 'bildung',           name: 'Bildung',                    file: 'sector_bildung.json',           color: '#b45309' },
 ];
 
 const MIN_L4 = 15;

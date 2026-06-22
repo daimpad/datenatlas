@@ -47,7 +47,13 @@ export function initSearch({ indexPromise, getLiveIndex, onNavigate }) {
 
   // Use the live (growing) index for immediate results; full index when resolved
   let _fullIndex = null;
-  indexPromise.then(idx => { _fullIndex = idx; });
+  indexPromise.then(idx => {
+    _fullIndex = idx;
+    // If the search is open with a pending query, refresh now that the index is ready
+    if (header.classList.contains('search-mode') && inputEl.value.trim().length >= 2) {
+      render(query());
+    }
+  });
 
   function _index() {
     return _fullIndex ?? (getLiveIndex ? getLiveIndex() : []);
@@ -107,7 +113,22 @@ export function initSearch({ indexPromise, getLiveIndex, onNavigate }) {
   }
 
   function render(results) {
-    if (!results.length) { resultsEl.hidden = true; return; }
+    const q = inputEl.value.trim();
+
+    // Below 2 chars: keep the dropdown hidden (also the case right after opening)
+    if (q.length < 2) { resultsEl.hidden = true; resultsEl.innerHTML = ''; return; }
+
+    // No matches: distinguish "index still loading" from a genuine empty result,
+    // so the dropdown doesn't just silently vanish while the user is typing.
+    if (!results.length) {
+      const ready = _index().length > 0;
+      resultsEl.innerHTML = `<div class="sr-empty">${
+        ready ? `Keine Treffer für „${esc(q)}"` : 'Suchindex wird geladen …'
+      }</div>`;
+      resultsEl.hidden = false;
+      return;
+    }
+
     resultsEl.innerHTML = results.map((r, i) => `
       <div class="sr-item" data-i="${i}" data-op-class="${esc(r.tile.details?.openness?.class ?? '')}">
         <span class="sr-dot" style="background:${r.tile.color}"></span>

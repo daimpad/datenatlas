@@ -21,7 +21,7 @@ const SECTORS = [
   { id: 'bildung',           name: 'Bildung',                    file: 'sector_bildung.json',           color: '#b45309' },
 ];
 
-const MIN_L4 = 15;
+const MIN_L4 = 69;  // aktuelles Qualitätsziel (Sprint S-P): ≥69 L4 je L2
 
 // VOCAB and VALID_CODES are populated after vocabulary.json loads
 let VOCAB = {};
@@ -35,6 +35,10 @@ let sectorData    = null;
 let currentSector = null;
 let selectedL2    = null;
 let selectedL3    = null;
+
+// All ids across the whole atlas (ids must be globally unique) — loaded from the
+// slim search index, which carries every L4 (i) and sector/org/activity (s/o/a) id.
+let GLOBAL_IDS = null;
 
 // ── DOM refs ─────────────────────────────────────────────────────────────────
 
@@ -78,6 +82,18 @@ dlCtx.addEventListener('click',      downloadContext);
 
 // Load shared vocabulary, then optionally pre-fill from URL params
 const base = import.meta.env?.BASE_URL ?? './';
+
+// Load the global id set for cross-sector uniqueness checks (optional — degrades
+// gracefully to the per-sector check if unavailable).
+fetch(`${base}data/search-index.json`)
+  .then(r => r.json())
+  .then(idx => {
+    const set = new Set();
+    for (const e of idx.entries ?? []) { set.add(e.i); set.add(e.s); set.add(e.o); set.add(e.a); }
+    GLOBAL_IDS = set;
+  })
+  .catch(() => { /* no global check available */ });
+
 fetch(`${base}data/vocabulary.json`)
   .then(r => r.json())
   .then(vocab => {
@@ -376,8 +392,9 @@ function validatePaste() {
     const idx = `#${i+1} &quot;${escHtml(node.name ?? '?')}&quot;`;
 
     if (!node.id)                             errors.push(`${idx}: fehlendes "id"`);
-    else if (!/^[a-z0-9-]+$/.test(node.id))  errors.push(`${idx}: id enthält ungültige Zeichen ("${escHtml(node.id)}")`);
-    else if (existingIds.has(node.id))        errors.push(`${idx}: id "${escHtml(node.id)}" bereits vorhanden`);
+    else if (!/^[a-z0-9_-]+$/.test(node.id)) errors.push(`${idx}: id enthält ungültige Zeichen ("${escHtml(node.id)}")`);
+    else if (existingIds.has(node.id))        errors.push(`${idx}: id "${escHtml(node.id)}" in diesem Sektor bereits vorhanden`);
+    else if (GLOBAL_IDS && GLOBAL_IDS.has(node.id)) errors.push(`${idx}: id "${escHtml(node.id)}" in einem anderen Sektor bereits vergeben (IDs müssen global eindeutig sein)`);
     else if (newIds.has(node.id))             errors.push(`${idx}: id "${escHtml(node.id)}" doppelt im Batch`);
     else                                      newIds.add(node.id);
 

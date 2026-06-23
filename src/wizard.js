@@ -1,11 +1,18 @@
 // ── "Daten öffnen" Step-by-Step Wizard ───────────────────────────────────────
 import { trapFocus } from './utils.js';
 
-// Atlas sector ID → wizard sector
+// Atlas sector ID → wizard sector. Default per sector; Kultur ist gemischt
+// (Kultureinrichtungen öffentlich), daher öffentlich als Default.
 const SECTOR_MAP = {
   staat: 'public', wirtschaft: 'private', wissenschaft: 'research',
   zivilgesellschaft: 'civil', medien: 'private', religion: 'civil',
   bildung: 'public', kultur: 'public',
+};
+
+// Feiner: einzelne Organisationen (Taxonomie-L2) überschreiben den Sektor-Default.
+// Die Kreativwirtschaft im Sektor Kultur ist privatwirtschaftlich.
+const ORG_SECTOR_MAP = {
+  musikwirtschaft: 'private', 'filmwirtschaft-kino': 'private', buchverlage: 'private',
 };
 
 // Recommended license per sector × data type
@@ -48,7 +55,7 @@ export function initWizard() {
     st.dataType = null; st.stage2checks = new Set();
     st.license = null; st.hasRights = null; st.publishMethod = null;
     st.context = ctx ?? null;
-    st.sector = ctx ? (SECTOR_MAP[ctx.sectorId] ?? null) : null;
+    st.sector = ctx ? (ORG_SECTOR_MAP[ctx.orgId] ?? SECTOR_MAP[ctx.sectorId] ?? null) : null;
   }
 
   // ── Open / Close ──────────────────────────────────────────────────────────

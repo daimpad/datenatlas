@@ -581,6 +581,7 @@ function sidebarOpts(tile) {
   // L4 or L6 (cross-sector data type): navigate to its linked processes
   if (lvl === 4 || lvl === 6) {
     const sectorId   = state.breadcrumb.find(c => c.level === 2)?.id ?? null;
+    const orgId      = state.breadcrumb.find(c => c.level === 3)?.id ?? null;
     const related    = findRelated(tile, sectorId);
     const displayPath = state.breadcrumb
       .filter(c => c.id != null && c.level >= 2 && c.level <= 3)
@@ -588,7 +589,7 @@ function sidebarOpts(tile) {
     const opts = {
       related,
       onNavigate: navigateToEntry,
-      onWizard:   () => openWizardWithContext({ sectorId, tileName: tile.name, displayPath }),
+      onWizard:   () => openWizardWithContext({ sectorId, orgId, tileName: tile.name, displayPath }),
     };
     if (tile.details?.processes?.length) {
       opts.onExplore    = () => navigateDeeper(tile);

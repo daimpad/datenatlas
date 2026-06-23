@@ -72,10 +72,93 @@ function minifyDataJson() {
   };
 }
 
+const SITE_URL = 'https://datenatlas.de';
+
+function readSectors() {
+  return JSON.parse(fs.readFileSync(`${DATA_DIR}/main.json`, 'utf8'));
+}
+
+// SEO plugin: injects structured data (JSON-LD) and a crawlable, screen-reader
+// text outline of the sectors into index.html, and emits sitemap.xml. Both the
+// JSON-LD DataCatalog and the outline are generated from public/data/main.json,
+// so adding/renaming a sector requires no manual edits here — same philosophy
+// as the search index. Runs in dev and build via transformIndexHtml.
+function seo() {
+  const isIndex = (ctx) => {
+    const p = ctx.path || ctx.filename || '';
+    return p.includes('index.html');
+  };
+  const esc = (s) => String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+
+  return {
+    name: 'seo',
+    transformIndexHtml: {
+      order: 'pre',
+      handler(html, ctx) {
+        if (!isIndex(ctx)) return html;
+        const sectors = readSectors();
+
+        const org = { '@type': 'Organization', '@id': `${SITE_URL}/#org`, name: 'Datenatlas', url: `${SITE_URL}/`, logo: `${SITE_URL}/logo.svg` };
+        const jsonLd = {
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'WebSite', '@id': `${SITE_URL}/#website`, url: `${SITE_URL}/`,
+              name: 'Datenatlas',
+              description: 'Interaktiver Atlas der deutschen Datenlandschaft: 10.149 öffentliche Datentypen aus 8 Sektoren und ihr Open-Data-Potenzial.',
+              inLanguage: 'de-DE', publisher: { '@id': `${SITE_URL}/#org` },
+            },
+            org,
+            {
+              '@type': 'DataCatalog', '@id': `${SITE_URL}/#catalog`,
+              name: 'Datenatlas — Taxonomie öffentlicher Datentypen',
+              description: 'Vierstufige Taxonomie (Sektor → Organisation → Aktivität → Datentyp) öffentlicher Datentypen in Deutschland mit Bewertung des Open-Data-Potenzials.',
+              url: `${SITE_URL}/`, inLanguage: 'de-DE',
+              publisher: { '@id': `${SITE_URL}/#org` },
+              dataset: sectors.map((s) => ({
+                '@type': 'Dataset', name: s.name, description: s.description,
+                url: `${SITE_URL}/#${s.id}`, inLanguage: 'de-DE',
+                isPartOf: { '@id': `${SITE_URL}/#catalog` },
+                creator: { '@id': `${SITE_URL}/#org` },
+              })),
+            },
+          ],
+        };
+        const ldTag = `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`;
+
+        const items = sectors.map((s) =>
+          `<li><a href="#${esc(s.id)}"><strong>${esc(s.name)}</strong> — ${esc(s.description)}</a></li>`
+        ).join('');
+        const outline =
+          `<section id="seo-outline" class="visually-hidden">` +
+          `<h1>Datenatlas — Open-Data-Potenziale der deutschen Datenlandschaft</h1>` +
+          `<p>Der Datenatlas visualisiert 10.149 öffentliche Datentypen aus 8 gesellschaftlichen Sektoren und zeigt ihr Open-Data-Potenzial. Die Taxonomie ist vierstufig: Sektor, Organisation, Aktivität, Datentyp.</p>` +
+          `<nav aria-label="Sektoren"><ul>${items}</ul></nav>` +
+          `</section>`;
+
+        return html
+          .replace('</head>', `${ldTag}\n</head>`)
+          .replace('<body>', `<body>\n  ${outline}`);
+      },
+    },
+    generateBundle() {
+      const today = new Date().toISOString().slice(0, 10);
+      const sitemap =
+        `<?xml version="1.0" encoding="UTF-8"?>\n` +
+        `<urlset xmlns="http://www.w3.org/2000/sitemaps/0.9">\n` +
+        `  <url><loc>${SITE_URL}/</loc><lastmod>${today}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>\n` +
+        `</urlset>\n`;
+      this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap });
+    },
+  };
+}
+
 export default defineConfig({
   base: './',
   define: { __APP_VERSION__: JSON.stringify(appVersion) },
-  plugins: [searchIndex(), minifyDataJson()],
+  plugins: [searchIndex(), minifyDataJson(), seo()],
   build: {
     rollupOptions: {
       input: {

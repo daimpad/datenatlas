@@ -119,6 +119,10 @@ mobileSheet.querySelectorAll('.ms-item[data-target]').forEach(btn => {
     document.getElementById(btn.dataset.target)?.click();
   });
 });
+// External tool links open in a new tab; close the sheet behind them.
+mobileSheet.querySelectorAll('.ms-item--ext').forEach(link => {
+  link.addEventListener('click', closeMobileSheet);
+});
 
 // ── Canvas keyboard navigation ────────────────────────────────────────────────
 

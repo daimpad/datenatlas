@@ -648,6 +648,8 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
   transition: background 0.15s, border-color 0.15s;
 }
 .ms-item:hover, .ms-item:active { background: var(--surface-3); border-color: var(--border-hi); }
+a.ms-item { text-decoration: none; }
+.ms-ext { font-size: 10px; color: var(--text-3); margin-left: 3px; }
 
 .ms-icon { font-size: 22px; color: var(--accent); }
 
@@ -829,6 +831,15 @@ a.im-feat { text-decoration: none; color: inherit; }
   transition: transform 0.12s, color 0.12s;
 }
 .im-feat--action:hover::after { color: var(--accent); transform: translateX(2px); }
+/* External tool entries: north-east arrow + "extern" tag */
+.im-feat--ext::after { content: '\2197'; }   /* ↗ */
+.im-ext-tag {
+  display: inline-block;
+  font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--accent); background: #6200a80f;
+  border: 1px solid rgba(98,0,168,0.18); border-radius: 4px;
+  padding: 0 5px; margin-left: 6px; vertical-align: middle;
+}
 
 @media (max-width: 520px) {
   .im-card { padding: 24px 20px; }
@@ -1209,6 +1220,11 @@ a#footer-brand {
   transition: color 0.15s;
 }
 a#footer-brand:hover { color: var(--accent); }
+/* Footer tool links (Datengraf, Datenlotse) */
+#footer a.ft-tool { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; }
+.ft-ext { font-size: 9px; color: var(--text-3); }
+#footer a.ft-tool:hover .ft-ext { color: var(--accent); }
+.ft-sep { width: 1px; height: 14px; background: var(--border-hi); display: inline-block; }
 
 #build-hash {
   font-family: var(--mono);
@@ -1705,8 +1721,9 @@ a#footer-brand:hover { color: var(--accent); }
     align-items: center;
     gap: 4px 16px;
   }
-  #footer nav { justify-content: center; gap: 12px; width: 100%; }
+  #footer nav { justify-content: center; gap: 8px 12px; width: 100%; flex-wrap: wrap; }
   #footer nav a { font-size: 11px; }
+  .ft-sep { display: none; }
   a#footer-brand { width: 100%; text-align: center; font-size: 10px; }
   #build-hash    { display: none; }
 

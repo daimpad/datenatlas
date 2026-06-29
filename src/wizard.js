@@ -447,6 +447,41 @@ export function initWizard() {
         ${summaryRow('Publikationsweg', pubLabel[st.publishMethod])}
         ${summaryRow('Selbstcheck',     `${st.stage2checks.size} von 5 Kriterien bestätigt`)}
       </div>
+
+      <h3 class="wz-subh" style="margin-top:24px">Weiterführende Werkzeuge</h3>
+      <p class="wz-p">Veröffentlichen ist ein Schritt — das Verstehen und Steuern der Datenflüsse ist ein eigener. Diese beiden Werkzeuge begleiten Sie darüber hinaus:</p>
+
+      <div class="wz-rec-card">
+        <div class="wz-rec-head">
+          <span class="wz-rec-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></span>
+          <div>
+            <strong class="wz-rec-title">Datengraf<span class="wz-ext-badge"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> extern</span></strong>
+            <span class="wz-rec-sub">Datenflüsse kartieren &amp; das Datenökosystem sichtbar machen</span>
+          </div>
+        </div>
+        <p class="wz-rec-desc">Bilden Sie ab, woher Ihre Daten stammen, wie sie zwischen Akteuren fließen und wo Öffnungspotenziale entstehen — als zusammenhängender Datengraf statt isolierter Datensätze.</p>
+        <a class="wz-rec-cta" href="https://datengraf.nutzilla.net" target="_blank" rel="noopener noreferrer">
+          Datengraf öffnen
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          <span class="visually-hidden">(externer Link, öffnet in neuem Tab)</span>
+        </a>
+      </div>
+
+      <div class="wz-rec-card">
+        <div class="wz-rec-head">
+          <span class="wz-rec-icon"><i class="fa-solid fa-compass" aria-hidden="true"></i></span>
+          <div>
+            <strong class="wz-rec-title">Datenlotse<span class="wz-ext-badge"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> extern</span></strong>
+            <span class="wz-rec-sub">Geführtes Management für offene Daten</span>
+          </div>
+        </div>
+        <p class="wz-rec-desc">Umfassende Begleitung rund um die Veröffentlichung offener Daten: mit Hinweisen und Schritt-für-Schritt-Führung durch die einzelnen Prozesse — von der Inventarisierung über die Aufbereitung bis zur laufenden Pflege.</p>
+        <a class="wz-rec-cta" href="https://datenlotse.nutzilla.net" target="_blank" rel="noopener noreferrer">
+          Datenlotse öffnen
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          <span class="visually-hidden">(externer Link, öffnet in neuem Tab)</span>
+        </a>
+      </div>
     `;
     return el;
   }

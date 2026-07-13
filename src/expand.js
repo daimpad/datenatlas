@@ -360,6 +360,11 @@ function copyPromptText() {
   navigator.clipboard.writeText(promptOut.value).then(() => {
     copyPrompt.textContent = '✓ Kopiert!';
     setTimeout(() => copyPrompt.textContent = 'Kopieren', 1800);
+  }).catch(() => {
+    // Clipboard blocked: select the textarea so the user can copy manually.
+    promptOut.focus(); promptOut.select();
+    copyPrompt.textContent = 'Bitte manuell kopieren';
+    setTimeout(() => copyPrompt.textContent = 'Kopieren', 2500);
   });
 }
 

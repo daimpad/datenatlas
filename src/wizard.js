@@ -1,5 +1,5 @@
 // ── "Daten öffnen" Step-by-Step Wizard ───────────────────────────────────────
-import { trapFocus } from './utils.js';
+import { trapFocus, esc } from './utils.js';
 
 // Atlas sector ID → wizard sector. Default per sector; Kultur ist gemischt
 // (Kultureinrichtungen öffentlich), daher öffentlich als Default.
@@ -173,8 +173,8 @@ export function initWizard() {
     el.className = 'wz-context-banner';
     el.innerHTML = `
       <span class="wz-context-icon">◈</span>
-      <span>Kontext: <strong>${st.context.tileName}</strong>
-        ${st.context.displayPath ? `<span class="wz-context-path">· ${st.context.displayPath}</span>` : ''}
+      <span>Kontext: <strong>${esc(st.context.tileName)}</strong>
+        ${st.context.displayPath ? `<span class="wz-context-path">· ${esc(st.context.displayPath)}</span>` : ''}
       </span>`;
     return el;
   }

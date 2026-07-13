@@ -203,6 +203,10 @@ shareBtn.addEventListener('click', () => {
       shareBtn.classList.remove('copied');
       shareToast.hidden = true;
     }, 2000);
+  }).catch(() => {
+    // Clipboard blocked (insecure context / denied permission): show the URL
+    // so the user can copy it manually instead of failing silently.
+    window.prompt('Link kopieren:', location.href);
   });
 });
 

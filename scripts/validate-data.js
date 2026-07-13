@@ -26,6 +26,12 @@ const VOCAB = Object.fromEntries(
 const HEX_COLOR_RE = /^#[0-9a-fA-F]{6}$/;
 const DATA_DIR = path.resolve(__dirname, '../public/data');
 
+// Openness-class colors — reserved for the openness indicator, must NEVER be
+// used as a tile color (see CLAUDE.md). Derived from vocabulary.json.
+const RESERVED_COLORS = new Set(
+  (_vocabRaw.openness || []).map(o => (o.color || '').toLowerCase()).filter(Boolean)
+);
+
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
@@ -75,6 +81,8 @@ function validateMain(filePath) {
     if (entry.level !== 1)                     error(issues, `${loc}: level must be 1, got ${JSON.stringify(entry.level)}`);
     if (!isNonEmptyString(entry.name))         error(issues, `${loc}: name must be a non-empty string`);
     if (!isHexColor(entry.color))              error(issues, `${loc}: color must be a hex color (#rrggbb), got "${entry.color}"`);
+    else if (RESERVED_COLORS.has(entry.color.toLowerCase()))
+      error(issues, `${loc}: color "${entry.color}" is a reserved openness-indicator color`);
     if (!isNonEmptyString(entry.subFile))      error(issues, `${loc}: subFile must be a non-empty string`);
     if (!isNonEmptyString(entry.description))  error(issues, `${loc}: description must be a non-empty string`);
   });
@@ -92,6 +100,8 @@ function validateTileBase(tile, issues) {
     error(issues, `${loc}: level must be a number 1–6, got ${JSON.stringify(tile.level)}`);
   if (!isNonEmptyString(tile.name))  error(issues, `${loc}: name must be a non-empty string`);
   if (!isHexColor(tile.color))       error(issues, `${loc}: color must be a hex color (#rrggbb), got "${tile.color}"`);
+  else if (RESERVED_COLORS.has(tile.color.toLowerCase()))
+    error(issues, `${loc}: color "${tile.color}" is a reserved openness-indicator color and must not be used as a tile color`);
 }
 
 // ---------------------------------------------------------------------------

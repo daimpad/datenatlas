@@ -182,7 +182,11 @@ function render() {
   }
 
   const { freqTotals, sectors, allYears } = computeData();
-  const total = allYears.length;
+  // Denominator for all frequency percentages: every counted entry has a
+  // frequency (year-less entries fall back to FQ_05), so this is the true base
+  // and keeps every percentage ≤ 100 %. Year-based stats use `yearsAvail`.
+  const total      = Object.values(freqTotals).reduce((a, b) => a + b, 0);
+  const yearsAvail = allYears.length;
 
   if (!total) {
     body.innerHTML = `<div class="tl-loading"><p>Keine Zeitdaten verfügbar.</p></div>`;
@@ -192,8 +196,8 @@ function render() {
   // Summary cards: total, most common frequency, earliest, latest
   const topFreq   = Object.entries(freqTotals).sort((a, b) => b[1] - a[1])[0];
   const topMeta   = FREQ_META[topFreq[0]];
-  const earliest  = Math.min(...allYears);
-  const newestPct = Math.round(allYears.filter(y => y >= 2015).length / total * 100);
+  const earliest  = yearsAvail ? Math.min(...allYears) : null;
+  const newestPct = yearsAvail ? Math.round(allYears.filter(y => y >= 2015).length / yearsAvail * 100) : 0;
 
   const summaryCards = `
     <div class="tl-summary">
@@ -207,7 +211,7 @@ function render() {
         <div class="tl-sum-label">${topMeta.label}</div>
       </div>
       <div class="tl-sum-card">
-        <div class="tl-sum-num">ab ${earliest}</div>
+        <div class="tl-sum-num">${earliest ? 'ab ' + earliest : '—'}</div>
         <div class="tl-sum-label">Früheste Verfügbarkeit</div>
       </div>
       <div class="tl-sum-card">
@@ -242,7 +246,7 @@ function render() {
         ${freqBar(s.freqs, st, 8)}
         <div class="tl-sector-top">
           <span class="tl-freq-dot" style="background:${topFMeta.color}"></span>
-          ${topFMeta.label} (${Math.round(topF[1]/st*100)} %)
+          ${topFMeta.label} (${st ? Math.round(topF[1]/st*100) : 0} %)
         </div>
       </div>`;
   }).join('');
@@ -254,7 +258,7 @@ function render() {
 
     <div class="tl-section-title">Kumulative Datenverfügbarkeit</div>
     ${svgChart(allYears)}
-    <p class="tl-chart-caption">Schätzung: Wie viele Datentypen waren ab welchem Jahr verfügbar?</p>
+    <p class="tl-chart-caption">Schätzung: Wie viele Datentypen waren ab welchem Jahr verfügbar?${yearsAvail < total ? ` (basiert auf ${yearsAvail.toLocaleString('de-DE')} von ${total.toLocaleString('de-DE')} Datentypen mit Zeitangabe)` : ''}</p>
 
     <div class="tl-section-title">Aktualisierungshäufigkeit nach Sektor</div>
     <div class="tl-sectors">${sectorRows}</div>

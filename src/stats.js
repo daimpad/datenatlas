@@ -10,7 +10,7 @@ export function initStats({ indexPromise, mainTiles }) {
   const closeBtn = document.getElementById('st-close');
   const statsBtn = document.getElementById('stats-btn');
 
-  indexPromise.then(idx => { _index = idx; });
+  indexPromise.then(idx => { _index = idx; if (!modal.hidden) render(); });
 
   let _trapCleanup = null;
 
@@ -46,10 +46,11 @@ function computeStats() {
     const s = sectors.get(sectorId);
     if (!s) continue;
     const cls = entry.tile.details?.openness?.class;
-    s.total++;
     if (cls === 'OP_01') s.op01++;
     else if (cls === 'OP_02') s.op02++;
-    else s.op03++;
+    else if (cls === 'OP_03') s.op03++;
+    else continue;              // fehlende/unbekannte Klasse: nicht mitzählen
+    s.total++;
   }
   return [...sectors.values()];
 }

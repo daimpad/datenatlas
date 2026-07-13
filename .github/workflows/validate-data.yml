@@ -1,0 +1,32 @@
+name: Validate data
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - run: npm ci
+
+      # Taxonomy schema, vocabulary codes, reserved-color rule, unique IDs.
+      # Fails the check on any error (exit code non-zero).
+      - name: Validate taxonomy data
+        run: node scripts/validate-data.js
+
+      # Ensure the app still builds (also regenerates the search index & sitemap).
+      - name: Build
+        run: npm run build

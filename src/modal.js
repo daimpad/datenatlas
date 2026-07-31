@@ -129,7 +129,7 @@ function buildContent(tile, hasExplore = false, exploreLabel = 'Erkunden', relat
   if ((lvl === 4 || lvl === 6) && tile.details) {
     const relSection    = related.length ? buildRelatedSection(related) : '';
     const wizardSection = hasWizard ? buildWizardCta() : '';
-    return strip + header + exploreBtn + buildDetailSections(tile.details) + relSection + wizardSection;
+    return strip + header + exploreBtn + buildDetailSections(tile.details) + relSection + wizardSection + buildDatengrafCta();
   }
 
   // ── Level 1–3 — Zusammenfassung ──
@@ -211,6 +211,20 @@ function buildDetailSections(d) {
   }
 
   return parts.join('');
+}
+
+// Contextual pointer to the external Datengraf tool: the sidebar shows a single
+// data type, the graph tool is where its flows and neighbours get mapped.
+function buildDatengrafCta() {
+  return `<a class="sb-ext-cta" href="https://datengraf.nozilla.de" target="_blank" rel="noopener noreferrer">
+    <span class="sb-ext-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></span>
+    <span class="sb-ext-text">
+      <strong>Im Datengraf einordnen <span class="sb-ext-tag">extern</span></strong>
+      <span>Datenflüsse rund um diesen Datentyp kartieren — Herkunft, Empfänger und Anschlussnutzung.</span>
+    </span>
+    <i class="fa-solid fa-arrow-up-right-from-square sb-ext-arrow" aria-hidden="true"></i>
+    <span class="visually-hidden">(externer Link, öffnet in neuem Tab)</span>
+  </a>`;
 }
 
 function buildWizardCta() {

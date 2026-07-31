@@ -4,8 +4,8 @@
 
 Datenatlas is an isometric canvas-based data taxonomy explorer built with vanilla JS + Vite. It visualizes public data types across sectors of German society using a four-level hierarchy rendered as isometric tiles.
 
-**Live URL**: Deployed to GitHub Pages via the `gh-pages` branch.
-**Dev branch**: `claude/datenatlas-isometric-explorer-gmnfV`
+**Live URL**: [datenatlas.de](https://datenatlas.de) — deployed automatically from `main` (GitHub Pages + Netcup FTP, see Build & Deploy).
+**Workflow**: feature branch → PR → merge to `main`. Never commit directly to `main`.
 
 ---
 
@@ -13,19 +13,49 @@ Datenatlas is an isometric canvas-based data taxonomy explorer built with vanill
 
 ```
 src/
-  main.js         — app bootstrap, navigation, breadcrumb, onboarding modal
+  main.js         — app bootstrap, navigation, breadcrumb, onboarding, index adapter
   renderer.js     — isometric tile engine (canvas-based)
+  state.js        — navigation state & history
+  controls.js     — pan/zoom, touch gestures, keyboard navigation
+  dataLoader.js   — lazy loading of sector files and the search index
+  search.js       — search (slim index) + opt-in deep search over descriptions
+  modal.js        — detail sidebar and generic modal system (trap focus)
+  expand.js       — data expansion tool (logic behind expand.html)
+  related.js      — "Ähnliche Datensätze" (cross-sector similarity)
+  export.js       — CSV export of visible L4 types
+  wizard.js       — "Daten öffnen" wizard (5-step modal)
+  stats.js        — openness statistics dashboard
+  timeline.js     — availability curve + update frequencies
+  generator.js    — Datenkombinator (32 cross-sector fusion scenarios)
+  utils.js        — esc(), trapFocus(), safeUrl(), OPENNESS_COLORS
   style.css       — CSS variables, layout, modal styles
 public/
-  data/           — taxonomy JSON files (one per sector + main.json)
+  data/           — taxonomy JSON (one per sector + main.json + vocabulary.json)
   fonts/          — local font assets
+  logo.svg, favicon.svg, og-image.png, site.webmanifest, robots.txt, .htaccess
 index.html        — single-page shell
+expand.html       — data expansion tool (separate entry point)
+vite.config.js    — build plugins: search-index, minify-data-json, seo, precompress
 scripts/
-  validate-data.js — data validator (run before every commit)
+  validate-data.js      — data validator (run before every commit)
+  build-search-index.js — builds the slim search index (build artifact)
+  build-og-image.js     — builds the 1200×630 social image
 ```
 
 **Build**: `npm run build` → `dist/`  
 **Dev server**: `npm run dev`
+
+### Search index — do NOT hand-edit
+
+`data/search-index.json` is a **build artifact** generated from the sector files;
+it is never committed. Adding data types stays unchanged: edit the sector JSON,
+validate, commit — the index rebuilds itself.
+
+Format v2 keeps it small: entries are positional arrays referencing a shared
+path table instead of repeating sector/org/activity as id *and* name on every
+entry (1.16 MB instead of 3.00 MB). `adaptIndex()` in `main.js` restores the
+entry shape that search/stats/timeline/related/generator expect — **if you change
+the index format, change `adaptIndex()` and the id extraction in `expand.js` too.**
 
 ---
 
@@ -42,22 +72,32 @@ L4  Datentyp       (leaf node – the actual data product)
 
 Sektoren sind konsequent nach **Trägertyp** gegliedert (wer produziert die Daten).
 
+L1 colors are authoritative in `public/data/main.json`. L2–L4 are the intended
+per-level colors — **use these when adding nodes.** Each level is a lighter or
+darker variant of the sector hue; L4 is uniform per sector.
+
 | File | Sektor | L1-Color | L2-Color | L3-Color | L4-Color |
 |------|--------|----------|----------|----------|----------|
-| `sector_staat.json` | Staat & Verwaltung | `#1e5799` | `#2980b9` | `#3498db` | `#2471a3` |
-| `sector_wirtschaft.json` | Wirtschaft | `#2c3e50` | `#d35400` | `#e67e22` | `#ca6f1e` |
-| `sector_wissenschaft.json` | Wissenschaft & Forschung | `#4527a0` | `#4527a0` | `#5e35b1` | `#3d1a87` |
-| `sector_zivilgesellschaft.json` | Zivilgesellschaft | `#6d28d9` | `#6d28d9` | `#7c3aed` | `#6d28d9` |
-| `sector_medien.json` | Medien | `#8b1248` | `#8b1248` | `#db2777` | `#9d174d` |
-| `sector_kultur.json` | Kultur | `#701a75` | `#701a75` | `#a21caf` | `#9d174d` |
-| `sector_religion.json` | Religionsgemeinschaften | `#134e4a` | `#1a6b65` | `#0f766e` | `#0d5c57` |
+| `sector_staat.json` | Staat & Verwaltung | `#1a3461` | `#2980b9` | `#3498db` | `#2471a3` |
+| `sector_wirtschaft.json` | Wirtschaft | `#1c2f3e` | `#d35400` | `#e67e22` | `#ca6f1e` |
+| `sector_wissenschaft.json` | Wissenschaft & Forschung | `#2d1a6e` | `#4527a0` | `#5e35b1` | `#3d1a87` |
+| `sector_zivilgesellschaft.json` | Zivilgesellschaft | `#4a1a8c` | `#6d28d9` | `#7c3aed` | `#6d28d9` |
+| `sector_medien.json` | Medien | `#8b1248` | `#be185d` | `#db2777` | `#9d174d` |
+| `sector_kultur.json` | Kultur | `#701a75` | `#be185d` | `#db2777` | `#9d174d` |
+| `sector_religion.json` | Religionsgemeinschaften | `#0a3d38` | `#1a6b65` | `#0f766e` | `#0d5c57` |
 | `sector_bildung.json` | Bildung | `#b45309` | `#b45309` | `#d97706` | `#92400e` |
 
-**Inaktive Dateien** (existieren, sind aber nicht in main.json referenziert):
-`sector_behoerde.json`, `sector_forschung.json`,
-`sector_gesundheit.json`, `sector_infrastruktur.json`, `sector_kommunen.json`, `sector_ngo.json`
+All eight sector files are active; there are no unreferenced leftovers.
 
-**CRITICAL**: Sector colors must NEVER be `#27ae60`, `#d4a017`, or `#c0392b` — those are reserved for openness indicators.
+**Known legacy drift** (cosmetic, not a validator error) — some L2/L3 nodes still
+carry colors from earlier sector layouts: `wissenschaft` L3 (30× `#4527a0`
+instead of `#5e35b1`), plus a few foreign-sector tiles in `staat`, `medien`,
+`kultur` and `bildung`. Use the table above for new nodes; do not copy a
+neighbour's color blindly.
+
+**CRITICAL**: Tile and sector colors must NEVER be `#27ae60`, `#d4a017`, or
+`#c0392b` — those are reserved for openness indicators. The validator enforces
+this (it caught four such tiles in `sector_medien.json`).
 
 ---
 
@@ -88,16 +128,26 @@ Every L4 data type node **must** follow this exact structure (validator enforces
     "relevance": 5,
     "processes": [
       { "method": "Methode", "description": "Beschreibung der Verarbeitungsmethode" }
-    ]
+    ],
+    "temporal": {
+      "available_from": 2003,
+      "update_frequency": "FQ_02"
+    }
   }
 }
 ```
+
+`relevance` is a 1–5 scale. Every L4 node currently carries **≥ 5 processes** and
+a `temporal` block (100 % coverage) — keep both when adding nodes, otherwise the
+timeline and process navigation degrade.
 
 **Common mistakes to avoid**:
 - Do NOT use `"openness": { "code": "OP_01" }` — must be `"class"` not `"code"`
 - Do NOT use `"formats": [...]` — must be `"format"` (singular)
 - Do NOT omit the `"details"` wrapper — all metadata goes inside it
 - Do NOT use reserved openness colors as tile colors
+- Do NOT reuse an `id` — they must be unique **across all sector files**
+- Do NOT combine `OP_03` (metadata only) with a free license (`LI_01`–`LI_03`)
 
 ---
 
@@ -162,6 +212,18 @@ Every L4 data type node **must** follow this exact structure (validator enforces
 | `LI_03` | Datenlizenz Deutschland |
 | `LI_04` | Proprietär / Restriktiv |
 
+### Update Frequency (details.temporal.update_frequency)
+| Code | Häufigkeit |
+|------|-----------|
+| `FQ_01` | Echtzeit / Kontinuierlich |
+| `FQ_02` | Täglich |
+| `FQ_03` | Monatlich |
+| `FQ_04` | Jährlich |
+| `FQ_05` | Unregelmäßig |
+
+All vocabulary codes live in `public/data/vocabulary.json` — the validator reads
+them from there, so add new codes to that file first.
+
 ---
 
 ## Validation
@@ -176,10 +238,13 @@ The validator checks:
 - All required fields in `details` wrapper
 - `openness.class` (not `.code`)
 - `format` array (not `formats`)
-- Valid vocab codes for openness, format
+- Valid vocab codes (from `vocabulary.json`)
+- **Globally unique ids** across all sector files
+- **Reserved openness colors** not used as tile or sector colors
 - No structural anomalies in hierarchy
 
-Target: **0 warnings, 0 errors**
+Target: **0 warnings, 0 errors**. Exits with code 1 on errors and runs on every
+pull request via `.github/workflows/validate-data.yml`.
 
 ---
 
@@ -191,31 +256,28 @@ npm run dev         # starts Vite dev server
 npm run build       # builds to dist/
 ```
 
-### Deploy to GitHub Pages (gh-pages branch)
+### Deployment — automatic, no manual steps
 
-```bash
-# 1. Build
-npm run build
+Merging to `main` deploys. Do **not** hand-copy files to a `gh-pages` branch.
 
-# 2. Copy build output
-cp -r dist /tmp/datenatlas-dist
-cp -r public/data /tmp/datenatlas-data
+| Workflow | Purpose |
+|----------|---------|
+| `.github/workflows/deploy.yml` | GitHub Pages |
+| `.github/workflows/deploy-netcup.yml` | Netcup via FTP (`/httpdocs/`) |
+| `.github/workflows/validate-data.yml` | validator + build (PR and push) |
+| `.github/workflows/codeql.yml` | security analysis |
 
-# 3. Switch to gh-pages
-git checkout gh-pages
+The build also emits `.br`/`.gz` siblings for large text assets
+(`precompress` plugin); `public/.htaccess` serves them on Apache/Netcup by
+`Accept-Encoding`. GitHub Pages ignores them and gzips on its own.
 
-# 4. Copy files to root
-cp -r /tmp/datenatlas-dist/* .
-mkdir -p data && cp /tmp/datenatlas-data/* data/
+### SEO artifacts
 
-# 5. Commit and push
-git add -A
-git commit -m "Deploy: ..."
-git push origin gh-pages
-
-# 6. Return to dev branch
-git checkout claude/datenatlas-isometric-explorer-gmnfV
-```
+The `seo` plugin generates from `main.json` at build time: JSON-LD
+(`WebSite` incl. `SearchAction` for the `?q=` deep link, `Organization`,
+`DataCatalog` with the 8 sectors as `Dataset`), a screen-reader/crawler-readable
+sector outline (the canvas has no readable content), and `sitemap.xml`.
+Adding or renaming a sector requires no edits here.
 
 ---
 
@@ -233,17 +295,21 @@ Footer brand: `nozilla | bits & bytes mit ❤`
 When expanding a sector JSON:
 
 1. Use the `d4()` helper pattern (see below) to avoid format mistakes
-2. Assign unique `id` values in kebab-case
-3. Use the correct sector color (e.g. `#4527a0` for Wissenschaft)
-4. Run validator after each batch
-5. Commit before moving to the next task
+2. Assign `id` values in kebab-case, unique **across all sector files**
+3. Use the L4 color of that sector from the table above (e.g. `#3d1a87` for Wissenschaft)
+4. Give every node ≥ 5 processes and a `temporal` block
+5. Run validator after each batch
+6. Commit before moving to the next task
+
+There is no index to rebuild by hand — `search-index.json` regenerates on build.
 
 **Python d4() helper** (for scripted bulk additions):
 
 ```python
-C = "#4527a0"  # sector color
+C = "#3d1a87"  # L4 color of the sector being extended
 
-def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs):
+def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs,
+       year=2015, freq="FQ_04"):
     return {
         "id": id, "level": 4, "name": name, "color": C,
         "details": {
@@ -253,6 +319,7 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
             "format": [{"code": f[0], "label": f[1]} for f in fmts],
             "license": {"code": li}, "relevance": rel,
             "processes": [{"method": p[0], "description": p[1]} for p in procs],
+            "temporal": {"available_from": year, "update_frequency": freq},
         }
     }
 ```

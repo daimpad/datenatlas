@@ -2,13 +2,13 @@
 import { esc, trapFocus } from './utils.js';
 
 export const SECTOR_META = {
-  staat:             { name: 'Staat & Verwaltung',       color: '#1e5799' },
-  wirtschaft:        { name: 'Wirtschaft',               color: '#2c3e50' },
+  staat:             { name: 'Staat & Verwaltung',       color: '#2980b9' },
+  wirtschaft:        { name: 'Wirtschaft',               color: '#d35400' },
   wissenschaft:      { name: 'Wissenschaft & Forschung', color: '#4527a0' },
   zivilgesellschaft: { name: 'Zivilgesellschaft',        color: '#6d28d9' },
   medien:            { name: 'Medien',                   color: '#be185d' },
   kultur:            { name: 'Kultur',                   color: '#a21caf' },
-  religion:          { name: 'Religionsgemeinschaften',  color: '#134e4a' },
+  religion:          { name: 'Religionsgemeinschaften',  color: '#1a6b65' },
   bildung:           { name: 'Bildung',                  color: '#b45309' },
 };
 

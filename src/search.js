@@ -28,6 +28,9 @@ export function buildSearchIndex(mainTiles, sectorPairs) {
             // Precomputed lowercase blob so query() does one includes() per entry
             // instead of three toLowerCase() calls on every keystroke.
             searchText: `${tile.name} ${tile.details?.description ?? ''} ${displayPath}`.toLowerCase(),
+            // Same address shape the slim index carries, so navigateToEntry()
+            // works identically for full-data entries (deep search results).
+            _addr: { s: sectorTile.id, o: org.id, a: activity.id, i: dataType.id },
           });
         }
       }
@@ -39,24 +42,72 @@ export function buildSearchIndex(mainTiles, sectorPairs) {
 
 // ── UI ─────────────────────────────────────────────────────────────────────────
 
-export function initSearch({ indexPromise, getLiveIndex, onNavigate }) {
+export function initSearch({ indexPromise, getLiveIndex, onNavigate, ensureFullIndex = null }) {
   const header    = document.getElementById('header');
   const toggleBtn = document.getElementById('search-toggle');
   const inputEl   = document.getElementById('search-input');
   const resultsEl = document.getElementById('search-results');
 
-  // Use the live (growing) index for immediate results; full index when resolved
-  let _fullIndex = null;
+  // Use the live (growing) index for immediate results; slim index when resolved
+  let _slimIdx = null;
   indexPromise.then(idx => {
-    _fullIndex = idx;
+    _slimIdx = idx;
     // If the search is open with a pending query, refresh now that the index is ready
     if (header.classList.contains('search-mode') && inputEl.value.trim().length >= 2) {
       render(query());
     }
   });
 
+  // ── Deep search ────────────────────────────────────────────────────────────
+  // The slim index only carries name + path. Opting into deep search pulls the
+  // full taxonomy on demand (ensureFullIndex) and searches descriptions too.
+  // The full data is fetched once and reused; toggling back off is instant.
+  let _deepIdx     = null;
+  let _deep        = false;
+  let _deepLoading = false;
+
   function _index() {
-    return _fullIndex ?? (getLiveIndex ? getLiveIndex() : []);
+    if (_deep && _deepIdx) return _deepIdx;
+    return _slimIdx ?? (getLiveIndex ? getLiveIndex() : []);
+  }
+
+  async function toggleDeep() {
+    if (_deepLoading) return;
+
+    if (_deep) { _deep = false; render(query()); return; }
+
+    _deep = true;
+    if (!_deepIdx && ensureFullIndex) {
+      _deepLoading = true;
+      render(query());                 // keep current hits visible, show progress
+      try {
+        _deepIdx = await ensureFullIndex();
+      } catch {
+        _deep = false;                 // fall back to the slim index on failure
+      } finally {
+        _deepLoading = false;
+      }
+    }
+    render(query());
+  }
+
+  // Delegated so the control survives the innerHTML rewrites in render()
+  resultsEl.addEventListener('click', e => {
+    if (e.target.closest('.sr-deep')) { e.stopPropagation(); toggleDeep(); }
+  });
+
+  function deepFooter() {
+    if (!ensureFullIndex) return '';
+    const label = _deepLoading ? 'Volltext wird geladen …'
+                : _deep       ? 'Beschreibungen werden durchsucht'
+                              : 'Auch Beschreibungen durchsuchen';
+    return `<div class="sr-foot">
+      <button type="button" class="sr-deep${_deep ? ' on' : ''}" role="switch"
+              aria-checked="${_deep}"${_deepLoading ? ' disabled' : ''}>
+        <span class="sr-deep-sw"><span class="sr-deep-knob"></span></span>
+        <span class="sr-deep-label">${label}</span>
+      </button>
+    </div>`;
   }
 
   toggleBtn.addEventListener('click', () => {
@@ -133,9 +184,12 @@ export function initSearch({ indexPromise, getLiveIndex, onNavigate }) {
     // so the dropdown doesn't just silently vanish while the user is typing.
     if (!results.length) {
       const ready = _index().length > 0;
+      const hint  = ready && !_deep && ensureFullIndex
+        ? ' <span class="sr-empty-hint">Beschreibungen sind noch nicht durchsucht.</span>'
+        : '';
       resultsEl.innerHTML = `<div class="sr-empty">${
-        ready ? `Keine Treffer für „${esc(q)}"` : 'Suchindex wird geladen …'
-      }</div>`;
+        ready ? `Keine Treffer für „${esc(q)}"${hint}` : 'Suchindex wird geladen …'
+      }</div>` + deepFooter();
       resultsEl.hidden = false;
       return;
     }
@@ -147,7 +201,7 @@ export function initSearch({ indexPromise, getLiveIndex, onNavigate }) {
           <span class="sr-name">${esc(r.tile.name)}</span>
           <span class="sr-path">${esc(r.displayPath)}</span>
         </div>
-      </div>`).join('');
+      </div>`).join('') + deepFooter();
     resultsEl.hidden = false;
     resultsEl.dispatchEvent(new CustomEvent('search-rendered', { bubbles: true }));
     resultsEl.querySelectorAll('.sr-item').forEach(el => {

@@ -83,17 +83,17 @@ darker variant of the sector hue; L4 is uniform per sector.
 | `sector_wissenschaft.json` | Wissenschaft & Forschung | `#2d1a6e` | `#4527a0` | `#5e35b1` | `#3d1a87` |
 | `sector_zivilgesellschaft.json` | Zivilgesellschaft | `#4a1a8c` | `#6d28d9` | `#7c3aed` | `#6d28d9` |
 | `sector_medien.json` | Medien | `#8b1248` | `#be185d` | `#db2777` | `#9d174d` |
-| `sector_kultur.json` | Kultur | `#701a75` | `#be185d` | `#db2777` | `#9d174d` |
+| `sector_kultur.json` | Kultur | `#701a75` | `#8b1a91` | `#a21caf` | `#5c1560` |
 | `sector_religion.json` | Religionsgemeinschaften | `#0a3d38` | `#1a6b65` | `#0f766e` | `#0d5c57` |
 | `sector_bildung.json` | Bildung | `#b45309` | `#b45309` | `#d97706` | `#92400e` |
 
 All eight sector files are active; there are no unreferenced leftovers.
 
-**Known legacy drift** (cosmetic, not a validator error) — some L2/L3 nodes still
-carry colors from earlier sector layouts: `wissenschaft` L3 (30× `#4527a0`
-instead of `#5e35b1`), plus a few foreign-sector tiles in `staat`, `medien`,
-`kultur` and `bildung`. Use the table above for new nodes; do not copy a
-neighbour's color blindly.
+Every tile now matches this table exactly — the legacy drift from earlier sector
+layouts and the Medien→Kultur split was normalised (`scripts/datafix-colors.mjs`).
+Kultur has its own palette derived from its L1 gradient instead of the pink it
+inherited from Medien. Keep it that way: assign colors from this table, never by
+copying a neighbouring node.
 
 **CRITICAL**: Tile and sector colors must NEVER be `#27ae60`, `#d4a017`, or
 `#c0392b` — those are reserved for openness indicators. The validator enforces

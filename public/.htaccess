@@ -3,6 +3,49 @@
   AddType application/json .json
 </IfModule>
 
+# ── Pre-compressed assets ────────────────────────────────────────────────────
+# The build emits .br/.gz siblings (see precompress() in vite.config.js). Serve
+# them when the client accepts the encoding, falling back to the plain file.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Brotli (preferred)
+  RewriteCond %{HTTP:Accept-Encoding} br
+  RewriteCond %{REQUEST_FILENAME}.br -s
+  RewriteRule ^(.*)$ $1.br [QSA,L]
+
+  # gzip fallback
+  RewriteCond %{HTTP:Accept-Encoding} gzip
+  RewriteCond %{REQUEST_FILENAME}.gz -s
+  RewriteRule ^(.*)$ $1.gz [QSA,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Keep the original content type, add the encoding, and vary the cache on it
+  <FilesMatch "\.(js|css|json|svg|html|xml|webmanifest|txt)\.br$">
+    Header set Content-Encoding br
+    Header append Vary Accept-Encoding
+  </FilesMatch>
+  <FilesMatch "\.(js|css|json|svg|html|xml|webmanifest|txt)\.gz$">
+    Header set Content-Encoding gzip
+    Header append Vary Accept-Encoding
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_mime.c>
+  # Stop Apache from treating .br/.gz as their own types — RemoveType restores
+  # the underlying extension's type so Content-Type stays correct.
+  RemoveType .br .gz
+  AddType application/javascript      .js.br .js.gz
+  AddType text/css                    .css.br .css.gz
+  AddType application/json            .json.br .json.gz
+  AddType image/svg+xml               .svg.br .svg.gz
+  AddType text/html                   .html.br .html.gz
+  AddType application/xml             .xml.br .xml.gz
+  AddType application/manifest+json   .webmanifest.br .webmanifest.gz
+  AddType text/plain                  .txt.br .txt.gz
+</IfModule>
+
 # Disable directory listing
 Options -Indexes
 

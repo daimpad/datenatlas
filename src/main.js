@@ -409,24 +409,34 @@ let _index = [];
 let _slimResolve;
 const _slimIndexPromise = new Promise(r => { _slimResolve = r; });
 
-function adaptEntry(e) {
-  const displayPath = `${e.sn} · ${e.on} · ${e.an}`;
+// Index format v2: entries are positional arrays referencing a shared path
+// table (see scripts/build-search-index.js). Expanding them here keeps every
+// downstream consumer on the original entry shape.
+function adaptIndex(slim) {
+  const paths = slim.p ?? [];
+  return (slim.e ?? []).map(e => adaptEntry(e, paths));
+}
+
+function adaptEntry(e, paths) {
+  const [id, name, pi, c, th, ob, fq, yr] = e;
+  const [s, sn, o, on, a, an] = paths[pi] ?? [];
+  const displayPath = `${sn} · ${on} · ${an}`;
   const details = {};
-  if (e.c)  details.openness = { class: e.c };
-  if (e.th) details.theme    = { code: e.th };
-  if (e.ob) details.object   = { code: e.ob };
-  if (e.fq || e.yr) details.temporal = { update_frequency: e.fq ?? undefined, available_from: e.yr ?? undefined };
+  if (c)  details.openness = { class: c };
+  if (th) details.theme    = { code: th };
+  if (ob) details.object   = { code: ob };
+  if (fq || yr) details.temporal = { update_frequency: fq ?? undefined, available_from: yr ?? undefined };
   return {
-    tile: { id: e.i, name: e.n, level: 4, color: OPENNESS_COLORS[e.c] ?? '#4a5568', details },
+    tile: { id, name, level: 4, color: OPENNESS_COLORS[c] ?? '#4a5568', details },
     breadcrumb: [
-      { id: null, name: 'Übersicht',  level: 0 },
-      { id: e.s,  name: e.sn, level: 2 },
-      { id: e.o,  name: e.on, level: 3 },
-      { id: e.a,  name: e.an, level: 4 },
+      { id: null, name: 'Übersicht', level: 0 },
+      { id: s, name: sn, level: 2 },
+      { id: o, name: on, level: 3 },
+      { id: a, name: an, level: 4 },
     ],
     displayPath,
-    searchText: `${e.n} ${displayPath}`.toLowerCase(),
-    _addr: { s: e.s, o: e.o, a: e.a, i: e.i },
+    searchText: `${name} ${displayPath}`.toLowerCase(),
+    _addr: { s, o, a, i: id },
   };
 }
 
@@ -460,6 +470,9 @@ function ensureFullIndex() {
 
 (async () => {
   const _initialHash = location.hash;
+  // Read before updateHash() runs — it rewrites the URL to location.pathname at
+  // root level, which would drop the query string.
+  const _initialQuery = new URLSearchParams(location.search).get('q');
 
   try {
     showLoading(true);
@@ -475,10 +488,14 @@ function ensureFullIndex() {
 
     // Load the slim index in the background; it powers search/stats/timeline/related/generator
     loadSearchIndex()
-      .then(slim => { _index = (slim.entries ?? []).map(adaptEntry); _slimResolve(_index); })
+      .then(slim => { _index = adaptIndex(slim); _slimResolve(_index); })
       .catch(err => { console.error('Search index failed to load:', err); _slimResolve([]); });
 
-    initSearch({ indexPromise: _slimIndexPromise, getLiveIndex: () => _index, onNavigate: navigateToEntry });
+    const search = initSearch({ indexPromise: _slimIndexPromise, getLiveIndex: () => _index, onNavigate: navigateToEntry });
+
+    // ?q=… deep link (also backs the schema.org sitelinks searchbox): open the
+    // search overlay with the term. Results fill in once the index resolves.
+    if (_initialQuery) search.openWithQuery(_initialQuery);
     initStats(    { indexPromise: _slimIndexPromise, mainTiles: sectors });
     initTimeline( { indexPromise: _slimIndexPromise, mainTiles: sectors });
     initExport({ ensureFullIndex });

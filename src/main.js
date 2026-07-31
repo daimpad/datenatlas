@@ -491,7 +491,12 @@ function ensureFullIndex() {
       .then(slim => { _index = adaptIndex(slim); _slimResolve(_index); })
       .catch(err => { console.error('Search index failed to load:', err); _slimResolve([]); });
 
-    const search = initSearch({ indexPromise: _slimIndexPromise, getLiveIndex: () => _index, onNavigate: navigateToEntry });
+    const search = initSearch({
+      indexPromise: _slimIndexPromise,
+      getLiveIndex: () => _index,
+      onNavigate: navigateToEntry,
+      ensureFullIndex,          // powers the opt-in deep (description) search
+    });
 
     // ?q=… deep link (also backs the schema.org sitelinks searchbox): open the
     // search overlay with the term. Results fill in once the index resolves.

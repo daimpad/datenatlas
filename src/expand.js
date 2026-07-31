@@ -88,8 +88,10 @@ const base = import.meta.env?.BASE_URL ?? './';
 fetch(`${base}data/search-index.json`)
   .then(r => r.json())
   .then(idx => {
+    // Index format v2: [id, name, pathIdx, …] entries + [sId, sName, oId, oName, aId, aName] paths
     const set = new Set();
-    for (const e of idx.entries ?? []) { set.add(e.i); set.add(e.s); set.add(e.o); set.add(e.a); }
+    for (const e of idx.e ?? []) set.add(e[0]);
+    for (const p of idx.p ?? []) { set.add(p[0]); set.add(p[2]); set.add(p[4]); }
     GLOBAL_IDS = set;
   })
   .catch(() => { /* no global check available */ });

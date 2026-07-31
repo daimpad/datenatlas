@@ -34,8 +34,8 @@ function searchIndex() {
     generateBundle() {
       const json = buildSlimIndex(DATA_DIR);
       this.emitFile({ type: 'asset', fileName: 'data/search-index.json', source: json });
-      const { entries } = JSON.parse(json);
-      console.log(`[search-index] ${entries.length} entries, ${(Buffer.byteLength(json) / 1048576).toFixed(2)} MB`);
+      const { p, e } = JSON.parse(json);
+      console.log(`[search-index] v2: ${e.length} entries, ${p.length} paths, ${(Buffer.byteLength(json) / 1048576).toFixed(2)} MB`);
     },
   };
 }
@@ -67,6 +67,52 @@ function minifyDataJson() {
       if (before) {
         const mb = n => (n / 1048576).toFixed(1);
         console.log(`[minify-data-json] dist/data: ${mb(before)} MB → ${mb(after)} MB`);
+      }
+    },
+  };
+}
+
+// Emit pre-compressed .br/.gz siblings for the large text assets. Apache serves
+// them via the rewrite rules in public/.htaccess (Netcup); GitHub Pages ignores
+// them and applies its own gzip, so this is additive and never breaks a host.
+// Must run after minify-data-json so the minified JSON is what gets compressed.
+function precompress({ minBytes = 4096 } = {}) {
+  const EXT = /\.(json|js|css|svg|html|xml|webmanifest|txt)$/;
+  return {
+    name: 'precompress',
+    apply: 'build',
+    async closeBundle() {
+      let dir;
+      try { dir = fileURLToPath(new URL('./dist', import.meta.url)); }
+      catch { return; }
+      if (!fs.existsSync(dir)) return;
+
+      const { brotliCompressSync, gzipSync, constants } = await import('zlib');
+      let files = 0, before = 0, brAfter = 0;
+
+      const walk = (d) => {
+        for (const name of fs.readdirSync(d)) {
+          const p = `${d}/${name}`;
+          if (fs.statSync(p).isDirectory()) { walk(p); continue; }
+          if (!EXT.test(name) || name.endsWith('.br') || name.endsWith('.gz')) continue;
+          const raw = fs.readFileSync(p);
+          if (raw.length < minBytes) continue;
+          const br = brotliCompressSync(raw, {
+            params: {
+              [constants.BROTLI_PARAM_QUALITY]: 11,
+              [constants.BROTLI_PARAM_SIZE_HINT]: raw.length,
+            },
+          });
+          fs.writeFileSync(`${p}.br`, br);
+          fs.writeFileSync(`${p}.gz`, gzipSync(raw, { level: 9 }));
+          files++; before += raw.length; brAfter += br.length;
+        }
+      };
+      walk(dir);
+
+      if (files) {
+        const mb = n => (n / 1048576).toFixed(2);
+        console.log(`[precompress] ${files} Dateien: ${mb(before)} MB → ${mb(brAfter)} MB brotli (+ .gz)`);
       }
     },
   };
@@ -109,6 +155,13 @@ function seo() {
               name: 'Datenatlas',
               description: 'Interaktiver Atlas der deutschen Datenlandschaft: 10.149 öffentliche Datentypen aus 8 Sektoren und ihr Open-Data-Potenzial.',
               inLanguage: 'de-DE', publisher: { '@id': `${SITE_URL}/#org` },
+              // Sitelinks searchbox — the ?q= parameter is handled at boot in
+              // main.js, which opens the search overlay with the term applied.
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: { '@type': 'EntryPoint', urlTemplate: `${SITE_URL}/?q={search_term_string}` },
+                'query-input': 'required name=search_term_string',
+              },
             },
             org,
             {
@@ -158,7 +211,7 @@ function seo() {
 export default defineConfig({
   base: './',
   define: { __APP_VERSION__: JSON.stringify(appVersion) },
-  plugins: [searchIndex(), minifyDataJson(), seo()],
+  plugins: [searchIndex(), minifyDataJson(), seo(), precompress()],
   build: {
     rollupOptions: {
       input: {

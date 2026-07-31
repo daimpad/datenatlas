@@ -460,7 +460,7 @@ export function initWizard() {
           </div>
         </div>
         <p class="wz-rec-desc">Bilden Sie ab, woher Ihre Daten stammen, wie sie zwischen Akteuren fließen und wo Öffnungspotenziale entstehen — als zusammenhängender Datengraf statt isolierter Datensätze.</p>
-        <a class="wz-rec-cta" href="https://datengraf.nutzilla.net" target="_blank" rel="noopener noreferrer">
+        <a class="wz-rec-cta" href="https://datengraf.nozilla.net" target="_blank" rel="noopener noreferrer">
           Datengraf öffnen
           <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
           <span class="visually-hidden">(externer Link, öffnet in neuem Tab)</span>
@@ -476,7 +476,7 @@ export function initWizard() {
           </div>
         </div>
         <p class="wz-rec-desc">Umfassende Begleitung rund um die Veröffentlichung offener Daten: mit Hinweisen und Schritt-für-Schritt-Führung durch die einzelnen Prozesse — von der Inventarisierung über die Aufbereitung bis zur laufenden Pflege.</p>
-        <a class="wz-rec-cta" href="https://datenlotse.nutzilla.net" target="_blank" rel="noopener noreferrer">
+        <a class="wz-rec-cta" href="https://datenlotse.nozilla.net" target="_blank" rel="noopener noreferrer">
           Datenlotse öffnen
           <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
           <span class="visually-hidden">(externer Link, öffnet in neuem Tab)</span>

@@ -92,6 +92,17 @@ export function initSearch({ indexPromise, getLiveIndex, onNavigate }) {
     render([]);
   }
 
+  // Open the search overlay pre-filled with `term` (used for the ?q= deep link /
+  // sitelinks searchbox). Results render as soon as the index is available: the
+  // indexPromise handler above re-runs the query when it resolves.
+  function openWithQuery(term) {
+    const q = String(term ?? '').trim();
+    if (!q) return;
+    openSearch();
+    inputEl.value = q;
+    render(query());
+  }
+
   function closeSearch() {
     header.classList.remove('search-mode');
     resultsEl.hidden = true;
@@ -147,6 +158,6 @@ export function initSearch({ indexPromise, getLiveIndex, onNavigate }) {
     });
   }
 
-  return { close: closeSearch };
+  return { close: closeSearch, openWithQuery };
 }
 

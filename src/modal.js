@@ -216,7 +216,7 @@ function buildDetailSections(d) {
 // Contextual pointer to the external Datengraf tool: the sidebar shows a single
 // data type, the graph tool is where its flows and neighbours get mapped.
 function buildDatengrafCta() {
-  return `<a class="sb-ext-cta" href="https://datengraf.nozilla.de" target="_blank" rel="noopener noreferrer">
+  return `<a class="sb-ext-cta" href="https://datengraf.nozilla.net" target="_blank" rel="noopener noreferrer">
     <span class="sb-ext-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></span>
     <span class="sb-ext-text">
       <strong>Im Datengraf einordnen <span class="sb-ext-tag">extern</span></strong>

@@ -82,7 +82,8 @@ Der **Öffnungsklasse-Filter** (Trichter-Symbol oben rechts) blendet auf Ebene 4
 
 ### Suchen und Filtern
 
-- **Volltext-Suche** (Lupe oben rechts) — durchsucht Namen, Beschreibungen und Pfade über alle Sektoren hinweg; alle Sektordateien werden beim ersten Start im Hintergrund geladen
+- **Suche** (Lupe oben rechts) — durchsucht Namen und Sektor-/Organisations-/Aktivitätspfade über alle Sektoren hinweg. Grundlage ist ein schlanker Index, der beim Start im Hintergrund geladen wird; die vollständigen Sektordateien werden erst bei Bedarf nachgeladen.
+- **Tiefensuche** — ein Schalter im Ergebnis-Dropdown bezieht zusätzlich die **Beschreibungen** ein. Dafür werden die Volldaten einmalig nachgeladen; danach ist das Umschalten verzögerungsfrei. Beispiel: „pseudonymisiert" findet ohne Tiefensuche 0, mit Tiefensuche 5 Datentypen.
 - **Öffnungsklasse-Filter** (Trichter oben rechts) — auf Ebene 4 aktiv; nicht passende Kacheln werden als Ghost-Tiles ausgeblendet
 
 ### Details und Verknüpfungen
@@ -94,17 +95,25 @@ Der **Öffnungsklasse-Filter** (Trichter-Symbol oben rechts) blendet auf Ebene 4
 ### Analyse
 
 - **Statistik-Dashboard** — Öffnungsklassen-Verteilung als Balkendiagramm pro Sektor; zeigt auf einen Blick, welcher Sektor am offensten ist
-- **Zeitliche Datenverfügbarkeit** — kumulative Verfügbarkeitskurve 1980–2024 und Aktualisierungshäufigkeiten (Echtzeit bis unregelmäßig) je Sektor
+- **Zeitliche Datenverfügbarkeit** — kumulative Verfügbarkeitskurve (Achse 1980–2024, Daten 1988–2020) und Aktualisierungshäufigkeiten (Echtzeit bis unregelmäßig) je Sektor; alle 10.149 Datentypen tragen Zeitangaben
 - **Datenkombinator** — 32 Cross-Sektor-Fusionsszenarien mit Slot-Machine-Animation zeigen, welche Datentypen sektorübergreifend kombinierbar sind und welches Erkenntnispotenzial ihre Verknüpfung hat
 
 ### Teilen und Exportieren
 
 - **Teilen-Button** (Ketten-Symbol) — kopiert den Link zur aktuellen Navigationstiefe; jede Ebene hat eine eigene URL
 - **Export** (Download-Symbol) — lädt die sichtbaren L4-Datentypen als CSV herunter; vollständig im Browser, kein Backend
+- **Direkte Suchlinks** — `datenatlas.de/?q=Suchbegriff` öffnet die Suche direkt mit dem Begriff
 
 ### Daten öffnen
 
 - **Wizard "Daten öffnen"** — ein 5-stufiger interaktiver Leitfaden für Organisationen, die ihre Daten als Open Data veröffentlichen möchten. Lizenz- und Publikationsempfehlungen passen sich an Sektor, Datenart und Rechtslage an.
+- **Weiterführende Werkzeuge** — am Ende des Leitfadens sowie im Footer, im "Mehr erfahren"-Modal und im Menü verlinkt:
+  - **[Datengraf](https://datengraf.nozilla.net)** — Datenflüsse kartieren und das Datenökosystem als zusammenhängenden Graf sichtbar machen
+  - **[Datenlotse](https://datenlotse.nozilla.net)** — geführtes Management für offene Daten, mit Schritt-für-Schritt-Führung durch die Prozesse
+
+### Datenerweiterung
+
+- **`/expand.html`** — internes Werkzeug zum Ergänzen neuer Datentypen: erzeugt passende LLM-Prompts je Sektor und Organisation, validiert die eingefügte Ausgabe gegen das Schema (inklusive sektorübergreifender ID-Eindeutigkeit) und führt sie in die Sektordaten zusammen.
 
 ---
 
@@ -114,7 +123,7 @@ Alle Daten liegen als statische JSON-Dateien unter `public/data/`. Es gibt keine
 
 ### Aufbau
 
-Jeder Sektor hat eine eigene Datei (`sector_*.json`), die die komplette Hierarchie von Ebene 2 bis 4 enthält. Die Startseite (`main.json`) listet die 7 aktiven Sektoren.
+Jeder Sektor hat eine eigene Datei (`sector_*.json`), die die komplette Hierarchie von Ebene 2 bis 4 enthält. Die Startseite (`main.json`) listet die 8 aktiven Sektoren.
 
 ### Datentyp-Eintrag (Ebene 4)
 
@@ -164,10 +173,10 @@ src/
   renderer.js     — Isometrischer Kachel-Renderer (Canvas-basiert)
   state.js        — Zentraler Navigationszustand & History
   controls.js     — Pan/Zoom, Touch-Gesten, Keyboard-Navigation
-  dataLoader.js   — Lazy-Loading der Sektordateien, Index-Aufbau
-  search.js       — Volltext-Suche über alle Sektoren
-  modal.js        — Generisches Modal-System (Öffnen/Schließen/Trap-Focus)
-  expand.js       — Expand-Ansicht (einzelner Sektor als eigene Seite)
+  dataLoader.js   — Lazy-Loading der Sektordateien und des Suchindex
+  search.js       — Suche (schlanker Index) inkl. optionaler Tiefensuche
+  modal.js        — Detail-Sidebar und generisches Modal-System (Trap-Focus)
+  expand.js       — Datenerweiterung (Logik hinter expand.html)
   related.js      — "Ähnliche Datensätze" (Cross-Sektor-Ähnlichkeit)
   export.js       — CSV-Export der sichtbaren L4-Datentypen
   wizard.js       — "Daten öffnen"-Wizard (5-Schritt-Modal)
@@ -179,27 +188,51 @@ src/
 public/
   data/           — Taxonomie-JSON-Dateien (eine pro Sektor + main.json + vocabulary.json)
   fonts/          — Lokale Font-Assets
+  logo.svg, favicon.svg, og-image.png, site.webmanifest, robots.txt, .htaccess
 index.html        — Single-Page-Shell
+expand.html       — Datenerweiterung (eigener Einstiegspunkt)
+vite.config.js    — Build-Plugins: search-index, minify-data-json, seo, precompress
 scripts/
-  validate-data.js — Daten-Validator
+  validate-data.js      — Daten-Validator (Schema, Vokabular, ID-Eindeutigkeit, Farben)
+  build-search-index.js — erzeugt den schlanken Suchindex (Build-Artefakt)
+  build-og-image.js     — erzeugt das 1200×630-Social-Bild
 ```
 
 **Tile-Dimensionen (×1,5-Skalierung):** W=240, H=120, D=42
 
+### Suchindex
+
+Der Suchindex unter `data/search-index.json` ist ein **Build-Artefakt** — er wird aus den Sektordateien erzeugt, nie von Hand bearbeitet und nicht eingecheckt. Neue Datentypen ergänzen heißt deshalb unverändert: Sektor-JSON bearbeiten, validieren, committen.
+
+Format v2 hält den Index klein: Einträge sind positionsbasierte Arrays und verweisen über einen Index auf eine gemeinsame Pfadtabelle, statt Sektor, Organisation und Aktivität auf jedem Eintrag als ID *und* Name zu wiederholen (1,16 MB statt 3,00 MB). `adaptIndex()` in `main.js` stellt daraus wieder die Eintragsform her, die Suche, Statistik, Timeline, Related und Generator erwarten.
+
+### Auslieferung
+
+Das `precompress`-Plugin legt zu großen Textdateien `.br`- und `.gz`-Geschwister an. Auf Apache/Netcup liefert `public/.htaccess` sie passend zum `Accept-Encoding` aus; GitHub Pages ignoriert sie und komprimiert selbst.
+
+### SEO
+
+Das `seo`-Plugin erzeugt beim Build aus `main.json`:
+- **JSON-LD** — `WebSite` (inkl. `SearchAction` für die `?q=`-Suche), `Organization` und ein `DataCatalog` mit den 8 Sektoren als `Dataset`
+- **Sektor-Übersicht im HTML** — für Screenreader und Suchmaschinen, da der Canvas keinen auslesbaren Inhalt hat
+- **`sitemap.xml`**
+
 ## Sektordateien
 
-| Datei | Sektor | L1-Farbe |
-|---|---|---|
-| `sector_staat.json` | Staat & Verwaltung | `#1e5799` |
-| `sector_wirtschaft.json` | Wirtschaft | `#2c3e50` |
-| `sector_wissenschaft.json` | Wissenschaft & Forschung | `#4527a0` |
-| `sector_zivilgesellschaft.json` | Zivilgesellschaft | `#6d28d9` |
-| `sector_medien.json` | Medien | `#8b1248` |
-| `sector_kultur.json` | Kultur | `#701a75` |
-| `sector_religion.json` | Religionsgemeinschaften | `#134e4a` |
-| `sector_bildung.json` | Bildung | `#b45309` |
+Maßgeblich sind die Werte in `public/data/main.json`:
 
-> **Wichtig:** Die Farben `#27ae60`, `#d4a017` und `#c0392b` sind für Öffnungsklassen reserviert und dürfen nicht als Sektorfarben verwendet werden.
+| Datei | Sektor | L1-Farbe | Verlauf bis |
+|---|---|---|---|
+| `sector_staat.json` | Staat & Verwaltung | `#1a3461` | `#2e6db4` |
+| `sector_wirtschaft.json` | Wirtschaft | `#1c2f3e` | `#2d7a9c` |
+| `sector_wissenschaft.json` | Wissenschaft & Forschung | `#2d1a6e` | `#5e35b1` |
+| `sector_zivilgesellschaft.json` | Zivilgesellschaft | `#4a1a8c` | `#7c3aed` |
+| `sector_medien.json` | Medien | `#8b1248` | `#db2777` |
+| `sector_kultur.json` | Kultur | `#701a75` | `#a21caf` |
+| `sector_religion.json` | Religionsgemeinschaften | `#0a3d38` | `#0d9488` |
+| `sector_bildung.json` | Bildung | `#b45309` | `#d97706` |
+
+> **Wichtig:** Die Farben `#27ae60`, `#d4a017` und `#c0392b` sind für Öffnungsklassen reserviert und dürfen nicht als Kachel- oder Sektorfarben verwendet werden. Der Validator prüft das.
 
 ## L4-Node-Format
 
@@ -321,19 +354,18 @@ node scripts/validate-data.js
 
 Ziel: **0 Warnings, 0 Errors**
 
-## Deployment (GitHub Pages)
+Geprüft werden Pflichtfelder und Struktur der L4-Einträge, gültige Vokabular-Codes, sektorübergreifend eindeutige IDs sowie reservierte Öffnungsfarben. Der Validator läuft zusätzlich bei jedem Pull Request (`.github/workflows/validate-data.yml`) und bricht mit Exit-Code 1 ab.
 
-```bash
-npm run build
+## Deployment
 
-git checkout gh-pages
-cp dist/index.html .
-cp dist/assets/* assets/
-git add index.html assets/
-git commit -m "Deploy: ..."
-git push origin gh-pages
-git checkout claude/datenatlas-isometric-explorer-gmnfV
-```
+Beides läuft automatisch bei jedem Push auf `main` — kein manueller Schritt nötig:
+
+| Workflow | Ziel |
+|---|---|
+| `deploy.yml` | GitHub Pages |
+| `deploy-netcup.yml` | Netcup per FTP (`/httpdocs/`) |
+| `validate-data.yml` | Validator + Build (bei PR und Push) |
+| `codeql.yml` | Sicherheitsanalyse |
 
 </details>
 

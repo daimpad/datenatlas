@@ -4,7 +4,7 @@
 
 Der Datenatlas macht sichtbar, welche Daten Behörden, Unternehmen, Forschungseinrichtungen, Zivilgesellschaft, Medien, Kultur, Religionsgemeinschaften und Bildungseinrichtungen in Deutschland täglich erzeugen. Auf einer interaktiven isometrischen Karte lassen sich **10.149 Datentypen** quer durch **8 gesellschaftliche Sektoren** erkunden und bewerten.
 
-**→ [datenatlas.de](https://datenatlas.de)**
+**→ [datenatlas.de](https://datenatlas.de)**  ·  **Ausführlich: [Über den Datenatlas](https://datenatlas.de/ueber.html)** ([auch als Dokument](docs/ueber-den-datenatlas.md))
 
 ---
 
@@ -189,14 +189,22 @@ public/
   data/           — Taxonomie-JSON-Dateien (eine pro Sektor + main.json + vocabulary.json)
   fonts/          — Lokale Font-Assets
   logo.svg, favicon.svg, og-image.png, site.webmanifest, robots.txt, .htaccess
-index.html        — Single-Page-Shell
+index.html        — Single-Page-Shell (die Karte)
+ueber.html        — statische Projektbeschreibung, im Footer verlinkt
 expand.html       — Datenerweiterung (eigener Einstiegspunkt)
 vite.config.js    — Build-Plugins: search-index, minify-data-json, seo, precompress
+docs/
+  ueber-den-datenatlas.md — Projektbeschreibung als Dokument
 scripts/
   validate-data.js      — Daten-Validator (Schema, Vokabular, ID-Eindeutigkeit, Farben)
   build-search-index.js — erzeugt den schlanken Suchindex (Build-Artefakt)
   build-og-image.js     — erzeugt das 1200×630-Social-Bild
+  datafix-*.mjs         — einmalige Datenkorrekturen (dokumentieren vergangene Läufe)
 ```
+
+Alle drei HTML-Dateien sind eigene Build-Eingänge (`vite.config.js`). Die Karte
+und die Projektbeschreibung sind indexierbar, die Datenerweiterung ist als
+internes Werkzeug auf `noindex` gesetzt.
 
 **Tile-Dimensionen (×1,5-Skalierung):** W=240, H=120, D=42
 
@@ -215,7 +223,12 @@ Das `precompress`-Plugin legt zu großen Textdateien `.br`- und `.gz`-Geschwiste
 Das `seo`-Plugin erzeugt beim Build aus `main.json`:
 - **JSON-LD** — `WebSite` (inkl. `SearchAction` für die `?q=`-Suche), `Organization` und ein `DataCatalog` mit den 8 Sektoren als `Dataset`
 - **Sektor-Übersicht im HTML** — für Screenreader und Suchmaschinen, da der Canvas keinen auslesbaren Inhalt hat
-- **`sitemap.xml`**
+- **`sitemap.xml`** — Startseite und `ueber.html`
+
+JSON-LD und Sektor-Übersicht werden ausschließlich in `index.html` injiziert, damit
+`ueber.html` den Sektorkatalog nicht ein zweites Mal deklariert. Da die Startseite
+im Kern ein Canvas ist, trägt `ueber.html` den einzigen längeren Fließtext des
+Auftritts — für die Auffindbarkeit ist sie damit die inhaltlich stärkste Seite.
 
 ## Sektordateien
 

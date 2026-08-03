@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Über den Datenatlas — Aufbau, Nutzen und Zielgruppen</title>
+  <meta name="description" content="Was der Datenatlas ist, was er kann und wer ihn nutzen sollte: 10.149 Datentypen aus 8 Sektoren mit begründeter Bewertung ihres Open-Data-Potenzials." />
+  <link rel="canonical" href="https://datenatlas.de/ueber.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#6200a8" />
+
+  <meta property="og:title" content="Über den Datenatlas" />
+  <meta property="og:description" content="Was der Datenatlas ist, was er kann und wer ihn nutzen sollte — 10.149 Datentypen aus 8 Sektoren." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://datenatlas.de/ueber.html" />
+  <meta property="og:site_name" content="Datenatlas" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:image" content="https://datenatlas.de/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://datenatlas.de/og-image.png" />
+
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./favicon.svg" />
+  <link rel="manifest" href="./site.webmanifest" />
+
+  <style>
+    @font-face {
+      font-family: 'Cabin';
+      src: url('./fonts/cabin-latin-400-normal.woff2') format('woff2');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Cabin';
+      src: url('./fonts/cabin-latin-700-normal.woff2') format('woff2');
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+
+    /* Farbtokens identisch zur Hauptseite (src/style.css) */
+    :root {
+      --bg:        #f7f7f7;
+      --surface:   #ffffff;
+      --surface-2: #f3eeff;
+      --border:    rgba(98,0,168,0.12);
+      --border-hi: rgba(98,0,168,0.26);
+      --text-1:    #1a0f2e;
+      --text-2:    #5c4a7a;
+      --text-3:    #8f7fa8;
+      --accent:    #6200a8;
+      --accent-hi: #8b2be2;
+      --green:     #27ae60;
+      --yellow:    #d4a017;
+      --red:       #c0392b;
+      --ok:        #1e7a42;
+      --warn:      #b0840f;
+      --bad:       #b3392c;
+      --font:      'Cabin', system-ui, sans-serif;
+      --mono:      ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      --shadow:    0 1px 2px rgba(26,15,46,.05), 0 6px 24px rgba(98,0,168,.055);
+      --header-h:  52px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-1);
+      font-family: var(--font);
+      font-size: 16.5px;
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:hover { color: var(--accent-hi); }
+    :focus-visible { outline: 2px solid var(--accent-hi); outline-offset: 3px; border-radius: 2px; }
+
+    .visually-hidden {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Kopfleiste (wie auf der Hauptseite) ── */
+    header#top {
+      height: var(--header-h);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      position: sticky; top: 0; z-index: 50;
+    }
+    header#top .wrap { display: flex; align-items: center; gap: 16px; width: 100%; }
+    .logo-img { height: 20px; width: auto; display: block; }
+    .back {
+      margin-left: auto;
+      font-size: 13px; font-weight: 600;
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 6px 13px; border-radius: 7px;
+      border: 1px solid var(--border-hi);
+      transition: background .14s, border-color .14s;
+    }
+    .back:hover { background: var(--surface-2); border-color: var(--accent); }
+
+    /* ── Titelbereich ── */
+    .hero { padding: 68px 0 38px; border-bottom: 1px solid var(--border); }
+    .eyebrow {
+      font-family: var(--mono); font-size: 11px; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 20px;
+    }
+    h1 {
+      font-size: clamp(2.1rem, 5.4vw, 3.4rem); line-height: 1.05;
+      letter-spacing: -.03em; font-weight: 700; text-wrap: balance;
+    }
+    .lede {
+      font-size: clamp(1.02rem, 1.9vw, 1.22rem); line-height: 1.57;
+      color: var(--text-2); max-width: 36em; margin-top: 22px; text-wrap: pretty;
+    }
+    .lede strong { color: var(--text-1); }
+
+    .figs { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; list-style: none; }
+    .fig {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 13px 18px; flex: 1 1 128px; min-width: 128px;
+      box-shadow: var(--shadow);
+    }
+    .fig b { display: block; font-size: 1.55rem; line-height: 1.1; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+    .fig span { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .09em; text-transform: uppercase; color: var(--text-3); margin-top: 6px; }
+
+    /* ── Layout ── */
+    .cols { display: grid; grid-template-columns: 1fr; }
+    @media (min-width: 980px) {
+      .cols { grid-template-columns: 194px minmax(0,1fr); gap: 56px; align-items: start; }
+    }
+    nav.rail { display: none; }
+    @media (min-width: 980px) {
+      nav.rail { display: block; position: sticky; top: calc(var(--header-h) + 28px); padding-top: 56px; }
+      nav.rail ol { list-style: none; display: flex; flex-direction: column; }
+      nav.rail a {
+        display: block; font-size: 13px; line-height: 1.4; color: var(--text-3);
+        text-decoration: none; padding: 7px 0 7px 13px; border-left: 2px solid var(--border);
+      }
+      nav.rail a:hover { color: var(--accent); border-left-color: var(--accent); }
+    }
+
+    main { padding-bottom: 80px; }
+    section { padding-top: 56px; scroll-margin-top: calc(var(--header-h) + 16px); }
+    h2 { font-size: clamp(1.42rem, 2.8vw, 1.82rem); line-height: 1.18; letter-spacing: -.022em; font-weight: 700; margin-bottom: 8px; text-wrap: balance; }
+    h3 { font-size: 1.06rem; line-height: 1.35; font-weight: 700; margin: 32px 0 8px; }
+    p { margin-bottom: 16px; max-width: 65ch; text-wrap: pretty; }
+    .sub { color: var(--text-2); max-width: 60ch; margin-bottom: 24px; }
+
+    /* ── Hierarchie-Pfad ── */
+    .path {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 18px 20px; margin: 24px 0 8px; overflow-x: auto; box-shadow: var(--shadow);
+    }
+    .path ol { list-style: none; }
+    .path li { display: flex; align-items: baseline; gap: 12px; padding: 6px 0; white-space: nowrap; }
+    .path .lv { font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); width: 92px; flex-shrink: 0; }
+    .path .nm { font-size: 14.5px; }
+    .path .ct { font-family: var(--mono); font-size: 11px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+    .path li:nth-child(2) .nm { padding-left: 20px; }
+    .path li:nth-child(3) .nm { padding-left: 40px; }
+    .path li:nth-child(4) .nm { padding-left: 60px; color: var(--accent); font-weight: 700; }
+
+    /* ── Öffnungsverteilung ── */
+    .dist { margin: 26px 0 8px; }
+    .dist-bar { display: flex; height: 32px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+    .dist-bar i { display: block; }
+    .dist-key { display: flex; flex-wrap: wrap; gap: 6px 26px; margin-top: 14px; list-style: none; }
+    .dist-key li { display: flex; align-items: baseline; gap: 9px; font-size: 13.5px; color: var(--text-2); }
+    .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; transform: translateY(1px); }
+    .dist-key b { color: var(--text-1); font-variant-numeric: tabular-nums; }
+
+    /* ── Sektor-Ranking ── */
+    .rank { margin-top: 22px; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .rank li { display: grid; grid-template-columns: minmax(116px,1.3fr) minmax(0,3fr) 50px; gap: 13px; align-items: center; font-size: 14px; }
+    .rank .who { display: flex; align-items: center; gap: 9px; min-width: 0; }
+    .rank .who span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .rank .track { height: 9px; background: var(--surface-2); border-radius: 5px; overflow: hidden; }
+    .rank .fill { height: 100%; border-radius: 5px; background: var(--ok); }
+    .rank .pct { font-family: var(--mono); font-size: 12.5px; text-align: right; font-variant-numeric: tabular-nums; color: var(--text-2); }
+
+    /* ── Beispielkarten ── */
+    .cases { display: grid; gap: 15px; margin: 24px 0 6px; }
+    @media (min-width: 660px) { .cases { grid-template-columns: 1fr 1fr; } }
+    .case {
+      background: var(--surface); border: 1px solid var(--border);
+      border-top: 3px solid var(--bar); border-radius: 12px;
+      padding: 18px 20px; box-shadow: var(--shadow);
+    }
+    .case .tag { display: inline-flex; align-items: center; gap: 7px; font-family: var(--mono); font-size: 10px; letter-spacing: .09em; text-transform: uppercase; color: var(--bar); margin-bottom: 9px; }
+    .case h4 { font-size: 1rem; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+    .case p { font-size: 13.8px; line-height: 1.62; color: var(--text-2); margin: 0; }
+
+    /* ── Tabelle ── */
+    .tbl { overflow-x: auto; margin: 22px 0 4px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); box-shadow: var(--shadow); }
+    table { border-collapse: collapse; width: 100%; font-size: 14px; }
+    th, td { text-align: left; padding: 10px 17px; border-bottom: 1px solid var(--border); }
+    thead th { font-family: var(--mono); font-size: 10px; letter-spacing: .09em; text-transform: uppercase; color: var(--text-3); font-weight: 400; white-space: nowrap; }
+    tbody tr:last-child td { border-bottom: none; }
+    td.n, th.n { text-align: right; }
+    td.n { font-variant-numeric: tabular-nums; font-family: var(--mono); font-size: 13px; }
+    .sec-name { display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+
+    /* ── Kartenraster ── */
+    .blocks { display: grid; gap: 14px; margin-top: 22px; }
+    @media (min-width: 700px) { .blocks { grid-template-columns: 1fr 1fr; } }
+    .block { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; box-shadow: var(--shadow); }
+    .block h4 { font-size: .97rem; font-weight: 700; line-height: 1.32; margin-bottom: 7px; }
+    .block p { font-size: 13.8px; line-height: 1.6; color: var(--text-2); margin: 0; }
+
+    /* ── Zielgruppen ── */
+    .who-list { margin-top: 20px; list-style: none; }
+    .who-list li { padding: 14px 0; border-bottom: 1px solid var(--border); display: grid; gap: 4px 20px; }
+    @media (min-width: 720px) { .who-list li { grid-template-columns: 224px minmax(0,1fr); } }
+    .who-list li:last-child { border-bottom: none; }
+    .who-list b { font-size: 14.4px; line-height: 1.4; }
+    .who-list span { font-size: 13.8px; color: var(--text-2); line-height: 1.6; }
+
+    /* ── Abgrenzung ── */
+    .limits { margin-top: 20px; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .limits li { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 12px; font-size: 14.2px; line-height: 1.62; color: var(--text-2); max-width: 66ch; }
+    .limits .x { color: var(--bad); font-weight: 700; }
+    .limits b { color: var(--text-1); }
+
+    .callout {
+      background: var(--surface-2); border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0; padding: 17px 20px; margin: 24px 0 6px; max-width: 64ch;
+    }
+    .callout p { margin: 0; font-size: 14.8px; line-height: 1.62; }
+
+    /* ── Abschluss-Aufruf ── */
+    .cta {
+      margin-top: 44px; padding: 26px 24px; border-radius: 14px;
+      background: var(--surface); border: 1px solid var(--border-hi);
+      display: flex; flex-wrap: wrap; align-items: center; gap: 16px; box-shadow: var(--shadow);
+    }
+    .cta div { flex: 1 1 260px; }
+    .cta strong { display: block; font-size: 1.02rem; margin-bottom: 3px; }
+    .cta span { font-size: 13.8px; color: var(--text-2); }
+    .cta a {
+      background: var(--accent); color: #fff; text-decoration: none;
+      font-size: 14px; font-weight: 700; padding: 11px 20px; border-radius: 8px;
+      display: inline-flex; align-items: center; gap: 8px; transition: background .14s;
+    }
+    .cta a:hover { background: var(--accent-hi); color: #fff; }
+
+    /* ── Fußzeile (wie Hauptseite) ── */
+    footer#bottom {
+      background: var(--surface); border-top: 1px solid var(--border);
+      padding: 16px 0;
+    }
+    footer#bottom .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; }
+    footer#bottom a { font-size: 12px; text-decoration: none; }
+    footer#bottom a:hover { opacity: .72; }
+    .ft-brand { font-family: var(--mono); font-size: 11px; color: var(--text-3) !important; white-space: nowrap; }
+    .ft-brand:hover { color: var(--accent) !important; }
+    footer#bottom nav { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+    .ft-ext { font-size: 9px; color: var(--text-3); }
+    .ft-sep { width: 1px; height: 13px; background: var(--border-hi); }
+    @media (max-width: 640px) { .ft-sep { display: none; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="top">
+    <div class="wrap">
+      <a href="./" aria-label="Zur Startseite"><img class="logo-img" src="./logo.svg" alt="Datenatlas" /></a>
+      <a class="back" href="./">← Zur Karte</a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="hero">
+      <p class="eyebrow">Über das Projekt</p>
+      <h1>Eine Landkarte der deutschen Datenlandschaft</h1>
+      <p class="lede">Der Datenatlas kartiert <strong>10.149 Datentypen</strong> aus acht gesellschaftlichen Sektoren und bewertet für jeden einzelnen, wie leicht er sich als Open Data veröffentlichen ließe — mit Begründung. Kein Downloadportal, sondern eine strukturierte Übersicht darüber, <strong>wo Datenschätze liegen und was ihrer Öffnung im Weg steht</strong>.</p>
+      <ul class="figs">
+        <li class="fig"><b>10.149</b><span>Datentypen</span></li>
+        <li class="fig"><b>147</b><span>Organisationstypen</span></li>
+        <li class="fig"><b>418</b><span>Aktivitäten</span></li>
+        <li class="fig"><b>8</b><span>Sektoren</span></li>
+        <li class="fig"><b>50.745</b><span>Prozessbezüge</span></li>
+      </ul>
+    </div>
+
+    <div class="cols">
+      <nav class="rail" aria-label="Abschnitte dieser Seite">
+        <ol>
+          <li><a href="#problem">Das Problem</a></li>
+          <li><a href="#aufbau">Aufbau</a></li>
+          <li><a href="#bewertung">Öffnungsbewertung</a></li>
+          <li><a href="#koennen">Funktionsumfang</a></li>
+          <li><a href="#wozu">Einsatzszenarien</a></li>
+          <li><a href="#wer">Zielgruppen</a></li>
+          <li><a href="#grenzen">Abgrenzung</a></li>
+        </ol>
+      </nav>
+
+      <main>
+        <section id="problem">
+          <h2>Das Problem, das er adressiert</h2>
+          <p class="sub">Die Open-Data-Debatte krankt an einem blinden Fleck: Sie dreht sich um Portale, Lizenzen und Schnittstellen — also um Daten, die bereits veröffentlicht sind. Was fehlt, ist der Blick auf das, was noch nicht veröffentlicht ist.</p>
+          <div class="blocks">
+            <div class="block">
+              <h4>Organisationen kennen ihren Bestand nicht</h4>
+              <p>Ein Jugendamt weiß, dass es Fallakten führt. Dass daraus aggregierte Sozialraumstatistiken werden könnten, die für Stadtplanung und Forschung wertvoll wären, steht auf einem anderen Blatt.</p>
+            </div>
+            <div class="block">
+              <h4>„Zu sensibel“ ist oft ein Pauschalurteil</h4>
+              <p>Weil die Rohdaten personenbezogen sind, gilt der ganze Bestand als tabu — obwohl die aggregierte Auswertung völlig unproblematisch wäre.</p>
+            </div>
+            <div class="block">
+              <h4>Das Potenzial bleibt unsichtbar</h4>
+              <p>Wer nicht weiß, dass eine Datenart existiert, kann sie weder anfragen noch nutzen noch ihre Öffnung einfordern.</p>
+            </div>
+            <div class="block">
+              <h4>Der Engpass ist selten rechtlich</h4>
+              <p>Über zwei Drittel der erfassten Datentypen wären sofort publizierbar. Nur 3,4 % sind so sensibel, dass lediglich Metadaten veröffentlicht werden könnten.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="aufbau">
+          <h2>Wie der Atlas aufgebaut ist</h2>
+          <p class="sub">Der gesamte Bestand ist nach dem Prinzip <em>Wer produziert welche Daten wobei?</em> gegliedert — vier Ebenen, von der Gesellschaft bis zum einzelnen Datenprodukt.</p>
+
+          <div class="path">
+            <ol>
+              <li><span class="lv">Sektor</span><span class="nm">Staat und Verwaltung</span><span class="ct">8</span></li>
+              <li><span class="lv">Organisation</span><span class="nm">Ordnungsamt</span><span class="ct">147</span></li>
+              <li><span class="lv">Aktivität</span><span class="nm">Verkehrsüberwachung</span><span class="ct">418</span></li>
+              <li><span class="lv">Datentyp</span><span class="nm">Messstellen-Geodaten</span><span class="ct">10.149</span></li>
+            </ol>
+          </div>
+
+          <p>Die Sektoren sind konsequent nach <strong>Trägertyp</strong> geschnitten — danach, wer die Daten erzeugt, nicht worum es thematisch geht. Ein Krankenhausdatensatz liegt daher je nach Träger in <em>Staat</em> oder <em>Wirtschaft</em>, nicht in einem Sektor „Gesundheit“. Das klingt sperrig, ist aber entscheidend: Öffnungshürden hängen an der Trägerform, nicht am Thema. Eine kommunale Klinik unterliegt anderen Transparenzpflichten als eine private.</p>
+
+          <div class="tbl">
+            <table>
+              <thead>
+                <tr><th>Sektor</th><th class="n">Organisationstypen</th><th class="n">Datentypen</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="sec-name"><span class="dot" style="background:#1a3461"></span>Staat und Verwaltung</span></td><td class="n">46</td><td class="n">3.174</td></tr>
+                <tr><td><span class="sec-name"><span class="dot" style="background:#1c2f3e"></span>Wirtschaft</span></td><td class="n">23</td><td class="n">1.587</td></tr>
+                <tr><td><span class="sec-name"><span class="dot" style="background:#4a1a8c"></span>Zivilgesellschaft</span></td><td class="n">20</td><td class="n">1.386</td></tr>
+                <tr><td><span class="sec-name"><span class="dot" style="background:#2d1a6e"></span>Wissenschaft und Forschung</span></td><td class="n">19</td><td class="n">1.311</td></tr>
+                <tr><td><span class="sec-name"><span class="dot" style="background:#8b1248"></span>Medien</span></td><td class="n">12</td><td class="n">828</td></tr>
+                <tr><td><span class="sec-name"><span class="dot" style="background:#b45309"></span>Bildung</span></td><td class="n">12</td><td class="n">828</td></tr>
+                <tr><td><span class="sec-name"><span class="dot" style="background:#0a3d38"></span>Religionsgemeinschaften</span></td><td class="n">10</td><td class="n">690</td></tr>
+                <tr><td><span class="sec-name"><span class="dot" style="background:#701a75"></span>Kultur</span></td><td class="n">5</td><td class="n">345</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Was an jedem Datentyp hängt</h3>
+          <p>Jeder der 10.149 Einträge ist strukturiert erschlossen: Thema (10 Felder), Datenart (8 Typen), Granularität, Format, Lizenz, Relevanz auf einer Skala von 1 bis 5, Aktualisierungsrhythmus und Verfügbarkeitsjahr — dazu mindestens fünf Prozessbezüge. Diese Prozessbezüge sind mehr als Beiwerk: Sie verbinden Datentypen quer über Sektorgrenzen. Wer „Monitoring &amp; Evaluation“ verfolgt, sieht auf einen Schlag alle Datentypen aus allen acht Sektoren, die diesem Zweck dienen.</p>
+        </section>
+
+        <section id="bewertung">
+          <h2>Die Öffnungsbewertung</h2>
+          <p class="sub">Der eigentliche Kern. Jeder Datentyp trägt eine von drei Klassen — und die Einstufung steht nie allein, sondern immer mit Begründung.</p>
+
+          <div class="dist">
+            <div class="dist-bar" role="img" aria-label="Verteilung: 68,1 Prozent sofort publizierbar, 28,5 Prozent nach Aufbereitung, 3,4 Prozent nur Metadaten">
+              <i style="background:#27ae60;width:68.1%"></i>
+              <i style="background:#d4a017;width:28.5%"></i>
+              <i style="background:#c0392b;width:3.4%"></i>
+            </div>
+            <ul class="dist-key">
+              <li><span class="dot" style="background:#27ae60"></span><span><b>68,1 %</b> sofort publizierbar</span></li>
+              <li><span class="dot" style="background:#d4a017"></span><span><b>28,5 %</b> nach Aufbereitung</span></li>
+              <li><span class="dot" style="background:#c0392b"></span><span><b>3,4 %</b> nur Metadaten</span></li>
+            </ul>
+          </div>
+
+          <h3>Worin der Wert liegt</h3>
+          <p>Zwei Datentypen derselben Aktivität eines Ordnungsamts — mit gegensätzlicher Bewertung:</p>
+
+          <div class="cases">
+            <div class="case" style="--bar:var(--bad)">
+              <p class="tag"><span class="dot" style="background:currentColor"></span>Nur Metadaten</p>
+              <h4>Blitzerfoto-Datenbank</h4>
+              <p>Rohdaten enthalten biometrische Daten und Kennzeichen als direkte Personenidentifikatoren. Direktveröffentlichung ist rechtlich ausgeschlossen. Nur aggregierte Standortstatistiken ohne Fahrzeug- oder Personenbezug sind als Open Data geeignet.</p>
+            </div>
+            <div class="case" style="--bar:var(--ok)">
+              <p class="tag"><span class="dot" style="background:currentColor"></span>Sofort publizierbar</p>
+              <h4>Bußgeldstatistiken</h4>
+              <p>Vollständig anonymisierte Aggregatstatistiken ohne Personenbezug. Veröffentlichung steigert Transparenz und ermöglicht Verkehrssicherheitsforschung. Viele Städte — Berlin, Hamburg — veröffentlichen Vergleichbares bereits.</p>
+            </div>
+          </div>
+
+          <div class="callout">
+            <p>Genau diese Differenzierung ist der Punkt: nicht „Verkehrsüberwachung ist heikel“, sondern <strong>welcher Teil aus welchem Grund</strong> — und was stattdessen ginge.</p>
+          </div>
+
+          <h3>Öffnungsquote nach Sektor</h3>
+          <p class="sub">Anteil der Datentypen, die sofort publizierbar wären.</p>
+          <ul class="rank">
+            <li><span class="who"><span class="dot" style="background:#1a3461"></span><span>Staat und Verwaltung</span></span><span class="track"><span class="fill" style="width:76.7%"></span></span><span class="pct">76,7 %</span></li>
+            <li><span class="who"><span class="dot" style="background:#2d1a6e"></span><span>Wissenschaft</span></span><span class="track"><span class="fill" style="width:74.2%"></span></span><span class="pct">74,2 %</span></li>
+            <li><span class="who"><span class="dot" style="background:#4a1a8c"></span><span>Zivilgesellschaft</span></span><span class="track"><span class="fill" style="width:71.3%"></span></span><span class="pct">71,3 %</span></li>
+            <li><span class="who"><span class="dot" style="background:#701a75"></span><span>Kultur</span></span><span class="track"><span class="fill" style="width:67.2%"></span></span><span class="pct">67,2 %</span></li>
+            <li><span class="who"><span class="dot" style="background:#b45309"></span><span>Bildung</span></span><span class="track"><span class="fill" style="width:66.4%"></span></span><span class="pct">66,4 %</span></li>
+            <li><span class="who"><span class="dot" style="background:#0a3d38"></span><span>Religionsgemeinschaften</span></span><span class="track"><span class="fill" style="width:62.3%"></span></span><span class="pct">62,3 %</span></li>
+            <li><span class="who"><span class="dot" style="background:#1c2f3e"></span><span>Wirtschaft</span></span><span class="track"><span class="fill" style="width:57.1%"></span></span><span class="pct">57,1 %</span></li>
+            <li><span class="who"><span class="dot" style="background:#8b1248"></span><span>Medien</span></span><span class="track"><span class="fill" style="width:47.6%"></span></span><span class="pct">47,6 %</span></li>
+          </ul>
+        </section>
+
+        <section id="koennen">
+          <h2>Was der Atlas kann</h2>
+          <div class="blocks">
+            <div class="block">
+              <h4>Isometrische Karte</h4>
+              <p>Alle Datentypen einer Ebene als begehbare Kachellandschaft. Die Farbe jeder Kachel zeigt die Öffnungsklasse — Muster werden auf einen Blick sichtbar.</p>
+            </div>
+            <div class="block">
+              <h4>Suche und Tiefensuche</h4>
+              <p>Über Namen und Pfade aller Sektoren. Auf Wunsch zusätzlich über die Beschreibungen: „pseudonymisiert“ findet so fünf Datentypen statt keinem.</p>
+            </div>
+            <div class="block">
+              <h4>Statistik und Zeitverlauf</h4>
+              <p>Öffnungsverteilung je Sektor, kumulative Verfügbarkeitskurve und Aktualisierungsrhythmen — die Grundlage struktureller Aussagen.</p>
+            </div>
+            <div class="block">
+              <h4>Ähnliche Datensätze</h4>
+              <p>Zu jedem Datentyp bis zu fünf thematisch verwandte aus <em>anderen</em> Sektoren — der schnellste Weg zu Verknüpfungspotenzial.</p>
+            </div>
+            <div class="block">
+              <h4>Datenkombinator</h4>
+              <p>32 Fusionsszenarien zeigen, welches Erkenntnispotenzial in der Verknüpfung sektorübergreifender Daten steckt.</p>
+            </div>
+            <div class="block">
+              <h4>Leitfaden „Daten öffnen“</h4>
+              <p>Fünf Schritte zur Veröffentlichung, mit Lizenz- und Publikationsempfehlung nach Sektor, Datenart und Rechtslage — am Ende eine konkrete Checkliste.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="wozu">
+          <h2>Wozu er gebraucht werden kann</h2>
+          <div class="blocks">
+            <div class="block">
+              <h4>Den eigenen Bestand entdecken</h4>
+              <p>Unter dem eigenen Organisationstyp findet sich, was dort typischerweise anfällt — oft einschließlich Datenarten, an die intern niemand gedacht hat. Ein Einstieg in die Dateninventur, ohne bei null zu beginnen.</p>
+            </div>
+            <div class="block">
+              <h4>Öffnungsentscheidungen vorbereiten</h4>
+              <p>Statt „Dürfen wir das veröffentlichen?“ die differenzierte Vorlage: Welcher Teil ist unbedenklich, welcher braucht Aufbereitung — und warum. Verwendbar gegenüber Datenschutz, Leitung und Gremien.</p>
+            </div>
+            <div class="block">
+              <h4>Datenlücken adressieren</h4>
+              <p>Anfragen werden konkreter: nicht „Gibt es dazu Daten?“, sondern „Ihr Amt führt Aktivität X, dabei entsteht typischerweise Datentyp Y — in welcher Form liegt der vor?“</p>
+            </div>
+            <div class="block">
+              <h4>Verknüpfung erkennen</h4>
+              <p>Der Erkenntnisgewinn liegt selten im einzelnen Datensatz, sondern in der Kombination — etwa Umweltmessungen des Staates mit Gesundheitsdaten und zivilgesellschaftlichem Monitoring.</p>
+            </div>
+            <div class="block">
+              <h4>Politik und Strategie begründen</h4>
+              <p>Öffnungsquoten je Sektor machen strukturelle Aussagen möglich — gestützt auf Struktur statt Anekdote.</p>
+            </div>
+            <div class="block">
+              <h4>Lehre und Qualifizierung</h4>
+              <p>Ein realistischer, konsistenter Datenraum mit begründeten Bewertungen, an dem sich Abwägungen zwischen Transparenz und Schutzinteressen durchspielen lassen.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="wer">
+          <h2>Wer sich damit auseinandersetzen sollte</h2>
+          <ul class="who-list">
+            <li><b>Open-Data-Verantwortliche in Verwaltungen</b><span>Als Inventurhilfe und Priorisierungsgrundlage. Der Sektor Staat ist mit 46 Organisationstypen und 3.174 Datentypen am dichtesten erschlossen.</span></li>
+            <li><b>Kommunale Leitung und Digitalisierung</b><span>Um zu erkennen, welche Datenschätze im eigenen Haus liegen und welche mit vertretbarem Aufwand Transparenz und Verwaltungsnutzen erzeugen.</span></li>
+            <li><b>Datenschutzbeauftragte und Justiziariate</b><span>Als Grundlage für differenzierte statt pauschaler Bewertungen. Die Begründungen benennen Rechtsgrundlagen und zeigen Aggregationswege auf.</span></li>
+            <li><b>Datenjournalismus und Recherche</b><span>Um zielgerichtet zu erkennen, welche Daten bei welcher Stelle entstehen, und Anfragen präzise zu formulieren.</span></li>
+            <li><b>Forschung und Wissenschaft</b><span>Für Quellensuche und Forschungsdatenmanagement — und als Untersuchungsgegenstand für Transparenz- und Open-Government-Forschung.</span></li>
+            <li><b>Zivilgesellschaft und NGOs</b><span>Um Transparenzforderungen zu belegen und eigene Bestände einzuordnen. Der Sektor folgt den 16 Engagementfeldern des ZiviZ-Monitors.</span></li>
+            <li><b>Unternehmen mit Datenverantwortung</b><span>Mit 57,1 % Grün-Anteil zeigt der Wirtschaftssektor erhebliches Potenzial, besonders bei aggregierten Kennzahlen und Nachhaltigkeitsberichterstattung.</span></li>
+            <li><b>Politik und Verbände</b><span>Für Argumentationen zu Transparenzgesetzgebung, Open-Data-Strategien und Verwaltungsdigitalisierung.</span></li>
+          </ul>
+        </section>
+
+        <section id="grenzen">
+          <h2>Was der Atlas <em>nicht</em> ist</h2>
+          <p class="sub">Für einen redlichen Umgang sind die Grenzen ebenso wichtig wie die Möglichkeiten.</p>
+          <ul class="limits">
+            <li><span class="x">✕</span><span><b>Kein Datenkatalog und kein Downloadportal.</b> Er verzeichnet Daten<em>typen</em>, nicht einzelne Datensätze. Für tatsächlich verfügbare Daten sind GovData, Landesportale und Fachrepositorien die richtigen Anlaufstellen.</span></li>
+            <li><span class="x">✕</span><span><b>Kein Verzeichnis geprüfter Bestände einer konkreten Organisation.</b> Er modelliert, was bei einem Organisations<em>typ</em> typischerweise anfällt. Ob ein bestimmtes Amt einen bestimmten Datensatz führt, muss vor Ort geprüft werden.</span></li>
+            <li><span class="x">✕</span><span><b>Keine Rechtsberatung.</b> Die Öffnungsklassen sind fachlich begründete Einschätzungen, keine rechtsverbindlichen Feststellungen. Eine konkrete Entscheidung erfordert die Prüfung des Einzelfalls.</span></li>
+            <li><span class="x">✕</span><span><b>Zeitangaben sind illustrativ.</b> Verfügbarkeitsjahre und Aktualisierungsrhythmen bilden plausible Größenordnungen ab — sie sind nicht je Datentyp recherchiert.</span></li>
+          </ul>
+          <div class="callout">
+            <p>Kurz: Der Datenatlas ist ein <strong>Orientierungs-, Argumentations- und Planungswerkzeug</strong>. Er ersetzt keine Inventur, keine Rechtsprüfung und kein Datenportal — er macht sie zielgerichteter.</p>
+          </div>
+
+          <h3>Technisches Fundament</h3>
+          <p>Der Atlas läuft vollständig im Browser: keine Datenbank, kein Backend, kein Tracking. Der komplette Bestand liegt als statische Dateien vor, ist einsehbar und als CSV exportierbar — nichts passiert in einer Blackbox. Der <a href="https://github.com/daimpad/datenatlas" target="_blank" rel="noopener">Quellcode</a> steht unter MIT-Lizenz; die Struktur lässt sich für andere Länder oder Domänen übernehmen. Ein Validator prüft bei jeder Änderung Schema, Vokabular und Kennungen automatisch.</p>
+
+          <div class="cta">
+            <div>
+              <strong>Die Datenlandschaft erkunden</strong>
+              <span>Von den acht Sektoren bis zum einzelnen Datentyp — interaktiv auf der isometrischen Karte.</span>
+            </div>
+            <a href="./">Zur Karte →</a>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <footer id="bottom">
+    <div class="wrap">
+      <a class="ft-brand" href="https://nozilla.de" target="_blank" rel="noopener">nozilla | bits &amp; bytes mit ❤</a>
+      <nav>
+        <a href="./">Zur Karte</a>
+        <a class="ft-tool" href="https://datengraf.nozilla.net" target="_blank" rel="noopener noreferrer">Datengraf <i class="ft-ext" aria-hidden="true">↗</i><span class="visually-hidden"> (externer Link)</span></a>
+        <a class="ft-tool" href="https://datenlotse.nozilla.net" target="_blank" rel="noopener noreferrer">Datenlotse <i class="ft-ext" aria-hidden="true">↗</i><span class="visually-hidden"> (externer Link)</span></a>
+        <span class="ft-sep" aria-hidden="true"></span>
+        <a href="https://nozilla.de/impressum/" target="_blank" rel="noopener">Impressum</a>
+        <a href="https://nozilla.de/datenschutz/" target="_blank" rel="noopener">Datenschutz</a>
+        <a href="https://nozilla.de/kontakt/" target="_blank" rel="noopener">Kontakt</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

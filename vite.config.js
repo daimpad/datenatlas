@@ -202,6 +202,7 @@ function seo() {
         `<?xml version="1.0" encoding="UTF-8"?>\n` +
         `<urlset xmlns="http://www.w3.org/2000/sitemaps/0.9">\n` +
         `  <url><loc>${SITE_URL}/</loc><lastmod>${today}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>\n` +
+        `  <url><loc>${SITE_URL}/ueber.html</loc><lastmod>${today}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\n` +
         `</urlset>\n`;
       this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap });
     },
@@ -216,6 +217,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main:   'index.html',
+        ueber:  'ueber.html',
         expand: 'expand.html',
       },
     },

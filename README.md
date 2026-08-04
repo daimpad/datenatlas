@@ -189,22 +189,40 @@ public/
   data/           — Taxonomie-JSON-Dateien (eine pro Sektor + main.json + vocabulary.json)
   fonts/          — Lokale Font-Assets
   logo.svg, favicon.svg, og-image.png, site.webmanifest, robots.txt, .htaccess
-index.html        — Single-Page-Shell (die Karte)
-ueber.html        — statische Projektbeschreibung, im Footer verlinkt
-expand.html       — Datenerweiterung (eigener Einstiegspunkt)
-vite.config.js    — Build-Plugins: search-index, minify-data-json, seo, precompress
+index.html          — Single-Page-Shell (die Karte)
+ueber.html          — statische Projektbeschreibung, im Footer verlinkt
+expand.html         — Datenerweiterung (internes Werkzeug)
+begruendungen.html  — Öffnungsbegründungen überarbeiten (internes Werkzeug)
+vite.config.js      — Build-Plugins: search-index, minify-data-json, seo,
+                      static-pages, precompress
 docs/
   ueber-den-datenatlas.md — Projektbeschreibung als Dokument
 scripts/
-  validate-data.js      — Daten-Validator (Schema, Vokabular, ID-Eindeutigkeit, Farben)
-  build-search-index.js — erzeugt den schlanken Suchindex (Build-Artefakt)
-  build-og-image.js     — erzeugt das 1200×630-Social-Bild
-  datafix-*.mjs         — einmalige Datenkorrekturen (dokumentieren vergangene Läufe)
+  validate-data.js       — Daten-Validator (Schema, Vokabular, IDs, Farben)
+  build-search-index.js  — erzeugt den schlanken Suchindex (Build-Artefakt)
+  build-static-pages.js  — erzeugt die crawlbaren Sektor-/Organisationsseiten
+  build-og-image.js      — erzeugt das 1200×630-Social-Bild
+  datafix-*.mjs          — einmalige Datenkorrekturen (dokumentieren frühere Läufe)
 ```
 
-Alle drei HTML-Dateien sind eigene Build-Eingänge (`vite.config.js`). Die Karte
-und die Projektbeschreibung sind indexierbar, die Datenerweiterung ist als
-internes Werkzeug auf `noindex` gesetzt.
+Alle vier HTML-Dateien sind eigene Build-Eingänge (`vite.config.js`). Karte und
+Projektbeschreibung sind indexierbar; die beiden Werkzeuge stehen auf `noindex`.
+
+### Crawlbare Seiten
+
+Die Karte versteckt ihre 10.149 Datentypen hinter Hash-Fragmenten, die
+Suchmaschinen nicht als eigene Seiten indexieren. `build-static-pages.js`
+erzeugt deshalb beim Build **155 statische Seiten**:
+
+| Pfad | Anzahl | Inhalt |
+|---|---:|---|
+| `/sektor/<id>/` | 8 | Öffnungsverteilung, Kennzahlen, Verweise auf die Organisationstypen |
+| `/sektor/<id>/<org>.html` | 147 | alle Datentypen mit Beschreibung, Öffnungsbewertung samt Begründung, Metadaten und Prozessverwendung |
+
+Bewusst keine Seite je Datentyp: Eine Organisationsseite trägt im Schnitt 69
+Datentypen und rund 5.700 Wörter, eine Datentypseite käme auf 82 — zu wenig,
+um als eigene Seite zu tragen. Die Seiten entstehen aus denselben Quelldateien
+wie der Suchindex, brauchen also keine Pflege.
 
 **Tile-Dimensionen (×1,5-Skalierung):** W=240, H=120, D=42
 
@@ -368,6 +386,23 @@ node scripts/validate-data.js
 Ziel: **0 Warnings, 0 Errors**
 
 Geprüft werden Pflichtfelder und Struktur der L4-Einträge, gültige Vokabular-Codes, sektorübergreifend eindeutige IDs sowie reservierte Öffnungsfarben. Der Validator läuft zusätzlich bei jedem Pull Request (`.github/workflows/validate-data.yml`) und bricht mit Exit-Code 1 ab.
+
+Danach folgt ein **Qualitätsbericht** — bewusst als Hinweis, nicht als Warnung,
+damit das Ziel „0 Warnings" erreichbar bleibt und die redaktionelle Schuld
+trotzdem sichtbar wird:
+
+```
+Inhaltsqualität (Hinweis, keine Warnungen):
+  Öffnungsbegründungen unter 5 Wörtern: 942 (9 %)
+  mehrfach verwendete Begründungstexte: 1609 Knoten (16 %)
+```
+
+Diese Einträge lassen sich mit `begruendungen.html` abarbeiten — das Werkzeug
+legt sie mit vollem Kontext vor. Vorschläge eines Sprachmodells landen dort nur
+in den Eingabefeldern, nie direkt in den Daten, und Texte mit Rechtsbezug werden
+zur Prüfung markiert: Die Begründungen sollen gegenüber Datenschutzbeauftragten
+verwendbar sein, deshalb ist ein knapper richtiger Satz mehr wert als ein
+unbelegter Absatz.
 
 ## Deployment
 

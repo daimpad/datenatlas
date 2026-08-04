@@ -33,14 +33,24 @@ public/
   data/           — taxonomy JSON (one per sector + main.json + vocabulary.json)
   fonts/          — local font assets
   logo.svg, favicon.svg, og-image.png, site.webmanifest, robots.txt, .htaccess
-index.html        — single-page shell
-expand.html       — data expansion tool (separate entry point)
-vite.config.js    — build plugins: search-index, minify-data-json, seo, precompress
+index.html          — single-page shell (the map)
+ueber.html          — static project description, linked from the footer
+expand.html         — data expansion tool (internal)
+begruendungen.html  — openness-justification editor (internal)
+vite.config.js      — build plugins: search-index, minify-data-json, seo,
+                      static-pages, precompress
+docs/
+  ueber-den-datenatlas.md — project description as a document
 scripts/
-  validate-data.js      — data validator (run before every commit)
-  build-search-index.js — builds the slim search index (build artifact)
-  build-og-image.js     — builds the 1200×630 social image
+  validate-data.js       — data validator (run before every commit)
+  build-search-index.js  — builds the slim search index (build artifact)
+  build-static-pages.js  — builds the crawlable sector/organisation pages
+  build-og-image.js      — builds the 1200×630 social image
+  datafix-*.mjs          — one-off data corrections (record of past runs)
 ```
+
+All four HTML files are separate build inputs. The map and the project
+description are indexable; both tools are `noindex`.
 
 **Build**: `npm run build` → `dist/`  
 **Dev server**: `npm run dev`
@@ -56,6 +66,21 @@ path table instead of repeating sector/org/activity as id *and* name on every
 entry (1.16 MB instead of 3.00 MB). `adaptIndex()` in `main.js` restores the
 entry shape that search/stats/timeline/related/generator expect — **if you change
 the index format, change `adaptIndex()` and the id extraction in `expand.js` too.**
+
+### Crawlable static pages
+
+The canvas hides all 10.149 data types behind hash fragments, which search
+engines do not index as separate URLs. `build-static-pages.js` therefore emits
+**155 pages** at build time: `/sektor/<id>/` (8) and `/sektor/<id>/<org>.html`
+(147). They are generated from the sector files — no maintenance, new data types
+appear automatically.
+
+Deliberately **no page per data type**: an organisation page carries ~69 data
+types (~5.700 words); a data-type page would carry ~82 words — thin content that
+would hurt the domain. Keep it that way when extending.
+
+The crawlable sector outline in `index.html` links these pages rather than the
+hash deep links; without that they would be reachable only via the sitemap.
 
 ---
 
@@ -246,6 +271,23 @@ The validator checks:
 Target: **0 warnings, 0 errors**. Exits with code 1 on errors and runs on every
 pull request via `.github/workflows/validate-data.yml`.
 
+It then prints a **content-quality report** — deliberately not warnings, so the
+"0 warnings" target stays reachable while the editorial debt stays visible:
+
+```
+Inhaltsqualität (Hinweis, keine Warnungen):
+  Öffnungsbegründungen unter 5 Wörtern: 942 (9 %)
+  mehrfach verwendete Begründungstexte: 1609 Knoten (16 %)
+```
+
+Work these off with `begruendungen.html`. **Do not bulk-generate the
+justifications.** The short ones ("Haushaltsöffentlichkeit.", "Amtliche
+Statistik.") are terse but correct; inflating them means inventing statutes and
+practice claims. The site tells users to cite these justifications to data
+protection officers — a short correct sentence beats an unsourced paragraph.
+The tool's prompt forbids invented references, model output only ever lands in
+the input fields, and anything with a legal reference is flagged for checking.
+
 ---
 
 ## Build & Deploy
@@ -276,8 +318,18 @@ The build also emits `.br`/`.gz` siblings for large text assets
 The `seo` plugin generates from `main.json` at build time: JSON-LD
 (`WebSite` incl. `SearchAction` for the `?q=` deep link, `Organization`,
 `DataCatalog` with the 8 sectors as `Dataset`), a screen-reader/crawler-readable
-sector outline (the canvas has no readable content), and `sitemap.xml`.
-Adding or renaming a sector requires no edits here.
+sector outline (the canvas has no readable content), and `sitemap.xml`
+(157 URLs incl. the static pages). Adding or renaming a sector requires no edits
+here — the pages, the outline and the sitemap all follow `main.json`.
+
+Each sector `Dataset` declares a real `distribution` pointing at its public JSON
+file plus `license` and `isAccessibleForFree`, and its `url` points at the static
+sector page. **Keep it that way**: a `Dataset` without a reachable distribution,
+or pointing at a hash fragment that is no page, is misleading structured data.
+
+The repository is licensed under **MPL-2.0** (see `LICENSE`) — README,
+`ueber.html` and `docs/` claimed MIT until this was corrected. Check `LICENSE`
+before restating the licence anywhere.
 
 ---
 

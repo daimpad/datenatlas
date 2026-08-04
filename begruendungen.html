@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Datenatlas · Begründungen überarbeiten</title>
+  <meta name="description" content="Internes Werkzeug zum redaktionellen Überarbeiten der Öffnungsbegründungen.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @font-face {
+      font-family: 'Cabin';
+      src: url('./fonts/cabin-latin-400-normal.woff2') format('woff2');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Cabin';
+      src: url('./fonts/cabin-latin-700-normal.woff2') format('woff2');
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+
+    :root {
+      --bg:       #f7f7f7;
+      --surface:  #ffffff;
+      --surface2: #f3eeff;
+      --border:   rgba(98,0,168,0.10);
+      --border-hi:rgba(98,0,168,0.26);
+      --accent:   #6200a8;
+      --accent2:  #8b2be2;
+      --text:     #1a0f2e;
+      --muted:    #5c4a7a;
+      --faint:    #8f7fa8;
+      --ok:       #1e6e37;
+      --warn:     #b0840f;
+      --bad:      #c0392b;
+      --font:     'Cabin', system-ui, sans-serif;
+      --mono:     ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 14px; line-height: 1.5; }
+
+    .ex-header {
+      display: flex; align-items: center; gap: 16px;
+      padding: 14px 24px; background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .ex-header a { color: var(--muted); text-decoration: none; font-size: 13px; }
+    .ex-header a:hover { color: var(--text); }
+    .ex-header h1 { font-size: 16px; font-weight: 700; flex: 1; }
+    .ex-badge { font-size: 11px; background: var(--accent); color: #fff; border-radius: 4px; padding: 2px 8px; font-weight: 600; }
+
+    .ex-main { display: grid; grid-template-columns: 300px 1fr; height: calc(100vh - 53px); }
+
+    .ex-sidebar { border-right: 1px solid var(--border); display: flex; flex-direction: column; overflow-y: auto; }
+    .ex-controls { padding: 20px; display: flex; flex-direction: column; gap: 16px; border-bottom: 1px solid var(--border); }
+    .ex-field { display: flex; flex-direction: column; gap: 6px; }
+    .ex-label { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+
+    select, input[type=number] {
+      width: 100%; background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 6px; color: var(--text); font-family: var(--font); font-size: 13px;
+      padding: 9px 12px;
+    }
+    select { appearance: none; cursor: pointer; padding-right: 30px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238888aa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 10px center; }
+    select:focus, input:focus, textarea:focus { outline: none; border-color: var(--accent2); }
+    select:disabled { opacity: .4; cursor: default; }
+
+    button {
+      font-family: var(--font); font-size: 13px; font-weight: 600;
+      border: none; border-radius: 6px; padding: 9px 16px; cursor: pointer;
+      transition: opacity .15s, background .15s;
+    }
+    button:disabled { opacity: .35; cursor: default; }
+    .btn-primary { background: var(--accent2); color: #fff; width: 100%; }
+    .btn-primary:not(:disabled):hover { background: var(--accent); }
+    .btn-ghost { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+    .btn-ghost:not(:disabled):hover { border-color: var(--accent2); }
+    .btn-ok { background: #eaf7ee; color: var(--ok); border: 1px solid #b9e0c6; width: 100%; }
+    .btn-ok:not(:disabled):hover { background: #ddf1e4; }
+
+    .ex-status { font-size: 12px; color: var(--muted); min-height: 16px; }
+    .ex-status.err { color: var(--bad); }
+
+    .prog { padding: 16px 20px; border-bottom: 1px solid var(--border); }
+    .prog .ex-label { display: block; margin-bottom: 10px; }
+    .prog-row { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-bottom: 5px; }
+    .prog-row b { color: var(--text); font-variant-numeric: tabular-nums; }
+    .prog-track { height: 6px; background: var(--surface2); border-radius: 3px; overflow: hidden; margin-top: 8px; }
+    .prog-fill { height: 100%; background: var(--ok); border-radius: 3px; width: 0; transition: width .2s; }
+
+    .ex-dl { padding: 16px 20px; display: flex; flex-direction: column; gap: 8px; margin-top: auto; border-top: 1px solid var(--border); }
+
+    .ex-panel { overflow-y: auto; padding: 20px 24px 60px; display: flex; flex-direction: column; gap: 16px; }
+
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+    .card h2 { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+
+    textarea {
+      width: 100%; background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 6px; color: var(--text); font-family: var(--mono);
+      font-size: 12px; line-height: 1.6; padding: 11px; resize: vertical;
+    }
+    #prompt-out { height: 250px; }
+    #paste-area { height: 150px; }
+
+    .row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 11px; align-items: center; }
+    .hint { font-size: 11px; color: var(--muted); }
+
+    /* ── Arbeitsliste ── */
+    .item {
+      background: var(--surface); border: 1px solid var(--border);
+      border-left: 3px solid var(--sev); border-radius: 9px;
+      padding: 15px 17px; margin-bottom: 11px;
+    }
+    .item-path { font-family: var(--mono); font-size: 10.5px; color: var(--faint); margin-bottom: 5px; }
+    .item-name { font-size: 14.5px; font-weight: 700; line-height: 1.3; }
+    .item-desc { font-size: 12.5px; color: var(--muted); line-height: 1.55; margin-top: 5px; }
+    .item-meta { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
+    .chip { font-family: var(--mono); font-size: 10px; color: var(--muted); background: var(--surface2);
+      border: 1px solid var(--border); border-radius: 4px; padding: 2px 7px; }
+    .chip.op { font-weight: 700; }
+    .item-cur { font-size: 12px; color: var(--muted); margin-top: 10px; }
+    .item-cur b { color: var(--text); }
+    .item textarea { margin-top: 8px; height: 62px; font-family: var(--font); font-size: 13px; }
+    .item-foot { display: flex; align-items: center; gap: 12px; margin-top: 7px; font-size: 11px; color: var(--faint); }
+    .wc { font-variant-numeric: tabular-nums; }
+    .wc.good { color: var(--ok); font-weight: 700; }
+    .flag { color: var(--warn); font-weight: 700; }
+    .badge-reused { color: var(--warn); }
+
+    .empty { padding: 40px 20px; text-align: center; color: var(--faint); font-size: 13px; }
+
+    @media (max-width: 780px) {
+      .ex-main { grid-template-columns: 1fr; grid-template-rows: auto 1fr; height: auto; }
+      .ex-sidebar { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+  <header class="ex-header">
+    <a href="./">← Datenatlas</a>
+    <h1>Begründungen überarbeiten</h1>
+    <span class="ex-badge">Redaktionswerkzeug</span>
+  </header>
+
+  <div class="ex-main">
+    <aside class="ex-sidebar">
+      <div class="ex-controls">
+        <div class="ex-field">
+          <label class="ex-label" for="sector-sel">1. Sektor</label>
+          <select id="sector-sel"><option value="">— Sektor wählen —</option></select>
+          <span id="load-status" class="ex-status"></span>
+        </div>
+
+        <div class="ex-field">
+          <label class="ex-label" for="filter-sel">2. Auswahl</label>
+          <select id="filter-sel" disabled>
+            <option value="short">Unter 5 Wörtern</option>
+            <option value="reused">Mehrfach im Sektor verwendet</option>
+            <option value="both">Beides (kurz oder mehrfach)</option>
+            <option value="all">Alle Datentypen</option>
+          </select>
+        </div>
+
+        <div class="ex-field">
+          <label class="ex-label" for="limit-input">3. Anzahl anzeigen</label>
+          <input type="number" id="limit-input" value="25" min="1" max="200">
+        </div>
+
+        <button class="btn-primary" id="gen-prompt-btn" disabled>Prompt für Anzeige erzeugen</button>
+      </div>
+
+      <div class="prog" id="prog" hidden>
+        <span class="ex-label">Fortschritt im Sektor</span>
+        <div class="prog-row"><span>überarbeitet</span><b id="p-done">0</b></div>
+        <div class="prog-row"><span>unter 5 Wörtern</span><b id="p-short">0</b></div>
+        <div class="prog-row"><span>mehrfach im Sektor</span><b id="p-reused">0</b></div>
+        <div class="prog-track"><div class="prog-fill" id="p-fill"></div></div>
+      </div>
+
+      <div class="ex-dl">
+        <span class="ex-label">Ergebnis</span>
+        <button class="btn-ok" id="dl-btn" disabled>⬇ &nbsp;Sektor-JSON herunterladen</button>
+        <span class="hint">Enthält alle Änderungen dieser Sitzung. Danach im Repo ersetzen und den Validator laufen lassen.</span>
+      </div>
+    </aside>
+
+    <main class="ex-panel">
+      <div class="card">
+        <h2>Prompt für ein Sprachmodell</h2>
+        <textarea id="prompt-out" readonly placeholder="Sektor und Auswahl festlegen, dann „Prompt für Anzeige erzeugen“ klicken …"></textarea>
+        <div class="row">
+          <button class="btn-ghost" id="copy-btn" disabled>Kopieren</button>
+          <span class="hint">Der Prompt untersagt ausdrücklich das Erfinden von Paragrafen und Praxisbelegen.</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Antwort einfügen</h2>
+        <textarea id="paste-area" placeholder='JSON-Array einfügen, z. B. [{"id":"...","explanation":"..."}]'></textarea>
+        <div class="row">
+          <button class="btn-ghost" id="apply-btn">In Felder übernehmen</button>
+          <span id="apply-status" class="ex-status"></span>
+        </div>
+        <div class="row">
+          <span class="hint"><strong>Vorschläge landen nur in den Feldern, nicht direkt in den Daten.</strong> Sie gelten erst als überarbeitet, wenn du sie geprüft hast. Angaben mit Rechtsbezug werden markiert.</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Arbeitsliste</h2>
+        <div id="list"><div class="empty">Zuerst einen Sektor wählen.</div></div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="./src/begruendungen.js"></script>
+</body>
+</html>

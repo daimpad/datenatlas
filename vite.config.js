@@ -254,6 +254,7 @@ export default defineConfig({
         main:   'index.html',
         ueber:  'ueber.html',
         expand: 'expand.html',
+        begruendungen: 'begruendungen.html',
       },
     },
   },

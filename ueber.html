@@ -132,7 +132,13 @@
     .fig span { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .09em; text-transform: uppercase; color: var(--text-3); margin-top: 6px; }
 
     /* ── Layout ── */
-    .cols { display: grid; grid-template-columns: 1fr; }
+    /* minmax(0,1fr), nicht 1fr: `main` ist Grid-Item und hat damit
+       min-width:auto — die Spur kann nicht unter dessen min-content-Breite
+       schrumpfen. Die treiben der nowrap-Pfad und die Sektortabelle auf 486px,
+       wodurch die ganze Seite auf schmalen Viewports horizontal überlief. Mit
+       minmax(0,…) greifen deren eigene overflow-x:auto wieder. Die
+       Desktop-Regel darunter macht es schon richtig. */
+    .cols { display: grid; grid-template-columns: minmax(0, 1fr); }
     @media (min-width: 980px) {
       .cols { grid-template-columns: 194px minmax(0,1fr); gap: 56px; align-items: start; }
     }
@@ -188,6 +194,20 @@
 
     /* ── Beispielkarten ── */
     .cases { display: grid; gap: 15px; margin: 24px 0 6px; }
+    /* Auf schmalen Fenstern die Ebenenbezeichnung über den Wert setzen. Sonst
+       bleibt der Karte nur ein interner Seitwärts-Scroll (overflow-x:auto), den
+       auf dem Telefon niemand bemerkt — die Anzahl rechts wäre schlicht weg.
+       Die Einrückung wandert von .nm auf das li, damit die Verschachtelung
+       auch gestapelt erkennbar bleibt. */
+    @media (max-width: 560px) {
+      .path li { display: block; white-space: normal; padding: 8px 0; }
+      .path .lv { display: block; width: auto; margin-bottom: 2px; }
+      .path .nm { padding-left: 0 !important; margin-right: 8px; }
+      .path li:nth-child(2) { padding-left: 14px; }
+      .path li:nth-child(3) { padding-left: 28px; }
+      .path li:nth-child(4) { padding-left: 42px; }
+    }
+
     @media (min-width: 660px) { .cases { grid-template-columns: 1fr 1fr; } }
     .case {
       background: var(--surface); border: 1px solid var(--border);

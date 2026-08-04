@@ -221,6 +221,23 @@ timeline and process navigation degrade.
 | `GR_03` | Kleinräumig (Stadtteil / Gemeinde) |
 | `GR_04` | Individuell / Mikrodaten |
 
+**`granularity` meint die Ausweisungsebene, nicht die Erhebungsebene** — die
+Ebene, auf der der *beschriebene* Datensatz existiert, nicht die, auf der
+einmal erhoben wurde. „Bundesweite Vergleichsarbeiten auf Kreisebene" ist
+`GR_03`, nicht `GR_02`: erhoben bundesweit, ausgewiesen kleinräumig. Der Atlas
+bewertet Veröffentlichbarkeit, und dafür zählt, was man in die Hand bekommt.
+
+Ein Vorschlag, beide Ebenen als getrennte Felder zu führen, wurde verworfen:
+das wäre ein Pflichtfeld für alle 10.149 Einträge, um eine Mehrdeutigkeit zu
+lösen, die eine Definition schon löst. Ein Massenlauf über den Bestand wäre
+ebenfalls falsch — ein Suchmuster findet 136 `GR_03`-Einträge mit Bund/Land-
+Wörtern, aber deren Beschreibungen nennen die Erhebung *und* die Ausweisung,
+und das Muster kann beide nicht trennen. Genau die Verwechslung, um die es
+geht, steckt im Muster selbst. Einzelfälle beim Anfassen korrigieren.
+
+`GR_04` heißt **personenbezogene** Mikrodaten. Einzelereignisse ohne
+Personenbezug (Fahrten, Buchungen, Messungen) sind `GR_01`.
+
 ### Format (details.format[].code)
 | Code | Format |
 |------|--------|

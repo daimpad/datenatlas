@@ -3,6 +3,7 @@ import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
 import { buildSlimIndex } from './scripts/build-search-index.js';
+import { buildStaticPages } from './scripts/build-static-pages.js';
 
 const DATA_DIR = fileURLToPath(new URL('./public/data', import.meta.url));
 
@@ -182,7 +183,7 @@ function seo() {
         const ldTag = `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`;
 
         const items = sectors.map((s) =>
-          `<li><a href="#${esc(s.id)}"><strong>${esc(s.name)}</strong> — ${esc(s.description)}</a></li>`
+          `<li><a href="./sektor/${esc(s.id)}/"><strong>${esc(s.name)}</strong> — ${esc(s.description)}</a></li>`
         ).join('');
         const outline =
           `<section id="seo-outline" class="visually-hidden">` +
@@ -198,13 +199,34 @@ function seo() {
     },
     generateBundle() {
       const today = new Date().toISOString().slice(0, 10);
+      const { urls } = buildStaticPages(DATA_DIR);
+      const entry = (loc, changefreq, priority) =>
+        `  <url><loc>${loc}</loc><lastmod>${today}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>\n`;
       const sitemap =
         `<?xml version="1.0" encoding="UTF-8"?>\n` +
         `<urlset xmlns="http://www.w3.org/2000/sitemaps/0.9">\n` +
-        `  <url><loc>${SITE_URL}/</loc><lastmod>${today}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>\n` +
-        `  <url><loc>${SITE_URL}/ueber.html</loc><lastmod>${today}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\n` +
+        entry(`${SITE_URL}/`, 'weekly', '1.0') +
+        entry(`${SITE_URL}/ueber.html`, 'monthly', '0.7') +
+        urls.map(u => entry(u.loc, u.changefreq, u.priority)).join('') +
         `</urlset>\n`;
       this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap });
+    },
+  };
+}
+
+// Emits the crawlable sector and organisation pages (see
+// scripts/build-static-pages.js). The canvas app hides its 10.149 data types
+// behind hash fragments, which search engines do not index as separate URLs —
+// these pages give that content real, linkable addresses.
+function staticPages() {
+  return {
+    name: 'static-pages',
+    generateBundle() {
+      const { files } = buildStaticPages(DATA_DIR);
+      for (const f of files) this.emitFile({ type: 'asset', fileName: f.fileName, source: f.source });
+      const html = files.filter(f => f.fileName.endsWith('.html')).length;
+      const bytes = files.reduce((a, f) => a + Buffer.byteLength(f.source), 0);
+      console.log(`[static-pages] ${html} Seiten, ${(bytes / 1048576).toFixed(1)} MB`);
     },
   };
 }
@@ -212,7 +234,7 @@ function seo() {
 export default defineConfig({
   base: './',
   define: { __APP_VERSION__: JSON.stringify(appVersion) },
-  plugins: [searchIndex(), minifyDataJson(), seo(), precompress()],
+  plugins: [searchIndex(), minifyDataJson(), seo(), staticPages(), precompress()],
   build: {
     rollupOptions: {
       input: {

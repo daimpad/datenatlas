@@ -201,11 +201,11 @@ Kurz: Der Datenatlas ist ein **Orientierungs-, Argumentations- und Planungswerkz
 Der Datenatlas läuft **vollständig im Browser**. Es gibt keine Datenbank, kein Backend und kein Tracking; die gesamte Taxonomie liegt als statische JSON-Dateien vor. Das hat drei Konsequenzen, die für die Nutzung relevant sind:
 
 - **Nachvollziehbarkeit** — der komplette Datenbestand ist einsehbar und als CSV exportierbar; nichts passiert in einer Blackbox.
-- **Nachnutzbarkeit** — der Quellcode steht unter MIT-Lizenz auf [GitHub](https://github.com/daimpad/datenatlas); die Struktur lässt sich für andere Länder oder Domänen übernehmen.
+- **Nachnutzbarkeit** — der Quellcode steht unter der Mozilla Public License 2.0 auf [GitHub](https://github.com/daimpad/datenatlas); die Struktur lässt sich für andere Länder oder Domänen übernehmen.
 - **Dauerhaftigkeit** — ohne Serverkomponente gibt es nichts, das ausfallen oder unbemerkt veralten kann.
 
 Die Datenqualität wird maschinell abgesichert: Ein Validator prüft bei jeder Änderung Schema, Vokabular, sektorübergreifend eindeutige Kennungen und die Farbkonventionen; er läuft automatisch bei jedem Pull Request.
 
 ---
 
-*[datenatlas.de](https://datenatlas.de) · [Quellcode](https://github.com/daimpad/datenatlas) · MIT-Lizenz · von [nozilla](https://nozilla.de)*
+*[datenatlas.de](https://datenatlas.de) · [Quellcode](https://github.com/daimpad/datenatlas) · MPL-2.0 · von [nozilla](https://nozilla.de)*

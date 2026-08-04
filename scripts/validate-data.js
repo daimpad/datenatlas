@@ -339,6 +339,37 @@ function main() {
     totalErrors += dupes.length;
   }
 
+  // --- Content quality report ---
+  // Not counted as warnings: these are editorial debt, not schema violations,
+  // and the target of "0 warnings" should stay reachable. Reported so the debt
+  // is visible and measurable instead of silently accumulating.
+  {
+    const byText = new Map();
+    let short = 0, total = 0;
+    for (const file of sectorFiles) {          // absolute paths already
+      let data;
+      try { data = JSON.parse(fs.readFileSync(file, 'utf8')); }
+      catch { continue; }
+      (function walk(n) {
+        if (n.level === 4) {
+          total++;
+          const e = (n.details?.openness?.explanation ?? '').trim();
+          const words = e ? e.split(/\s+/).length : 0;
+          if (words < 5) short++;
+          byText.set(e, (byText.get(e) ?? 0) + 1);
+        }
+        (n.children ?? []).forEach(walk);
+      })({ children: data.children ?? [] });
+    }
+    const reused = [...byText.values()].filter(v => v > 1).reduce((a, b) => a + b, 0);
+    const pct = n => total ? (n / total * 100).toFixed(0) : '0';
+    console.log(
+      `\nInhaltsqualität (Hinweis, keine Warnungen):\n` +
+      `  Öffnungsbegründungen unter 5 Wörtern: ${short} (${pct(short)} %)\n` +
+      `  mehrfach verwendete Begründungstexte: ${reused} Knoten (${pct(reused)} %)`
+    );
+  }
+
   // --- Summary ---
   console.log(
     `\nSummary: ${totalFiles} files, ${totalL4} L4 data types, ` +

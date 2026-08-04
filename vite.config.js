@@ -120,6 +120,8 @@ function precompress({ minBytes = 4096 } = {}) {
 }
 
 const SITE_URL = 'https://datenatlas.de';
+// Matches the LICENSE file in the repository root (MPL-2.0).
+const LICENSE_URL = 'https://www.mozilla.org/en-US/MPL/2.0/';
 
 function readSectors() {
   return JSON.parse(fs.readFileSync(`${DATA_DIR}/main.json`, 'utf8'));
@@ -171,11 +173,22 @@ function seo() {
               description: 'Vierstufige Taxonomie (Sektor → Organisation → Aktivität → Datentyp) öffentlicher Datentypen in Deutschland mit Bewertung des Open-Data-Potenzials.',
               url: `${SITE_URL}/`, inLanguage: 'de-DE',
               publisher: { '@id': `${SITE_URL}/#org` },
+              // Each sector is a genuine dataset: its taxonomy ships as one
+              // publicly reachable JSON file. Declaring the distribution and
+              // pointing `url` at the static sector page (not a hash fragment,
+              // which is no page at all) is what makes this markup truthful.
               dataset: sectors.map((s) => ({
                 '@type': 'Dataset', name: s.name, description: s.description,
-                url: `${SITE_URL}/#${s.id}`, inLanguage: 'de-DE',
+                url: `${SITE_URL}/sektor/${s.id}/`, inLanguage: 'de-DE',
                 isPartOf: { '@id': `${SITE_URL}/#catalog` },
                 creator: { '@id': `${SITE_URL}/#org` },
+                license: LICENSE_URL,
+                isAccessibleForFree: true,
+                distribution: {
+                  '@type': 'DataDownload',
+                  encodingFormat: 'application/json',
+                  contentUrl: `${SITE_URL}/data/${s.subFile}`,
+                },
               })),
             },
           ],

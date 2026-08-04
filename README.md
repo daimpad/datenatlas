@@ -386,4 +386,4 @@ Beides läuft automatisch bei jedem Push auf `main` — kein manueller Schritt n
 
 ## Lizenz
 
-[MIT](LICENSE) · [datenatlas.de](https://datenatlas.de) · von [nozilla](https://nozilla.de)
+[MPL-2.0](LICENSE) · [datenatlas.de](https://datenatlas.de) · von [nozilla](https://nozilla.de)

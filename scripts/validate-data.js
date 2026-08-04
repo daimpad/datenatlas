@@ -346,6 +346,30 @@ function main() {
   {
     const byText = new Map();
     let short = 0, total = 0;
+    const contradictions = [];
+
+    // Widersprüche zwischen Beschreibung und Metadaten. Bewusst eng gefasst:
+    // Nur unbedingte Aussagen über den Inhalt zählen ("Enthält keine …"), keine
+    // qualifizierten. Ein breiteres Schlagwortmuster erzeugt fast nur
+    // Fehlalarme — "Kein Personenbezug in den veröffentlichten Aggregaten"
+    // widerspricht OB_01 nicht, und "aggregiert durch Destatis" sagt nichts
+    // über die Granularität. Lieber wenige Treffer, die alle stimmen.
+    const CONTRA = [
+      { re: /enthält keine[^.]{0,40}(personen|kunden)bezogenen? daten/i,
+        hits: n => n.details?.object?.code === 'OB_01',
+        why: 'Beschreibung schließt Personenbezug aus, Objekttyp ist OB_01' },
+      { re: /ohne rückschluss auf einzelpersonen/i,
+        hits: n => n.details?.object?.code === 'OB_01',
+        why: 'Beschreibung schließt Rückschluss aus, Objekttyp ist OB_01' },
+      { re: /enthält keine[^.]{0,40}(vertraulichen|unternehmensspezifischen)/i,
+        hits: n => n.details?.openness?.class === 'OP_03',
+        why: 'Beschreibung verneint Vertraulichkeit, Klasse ist OP_03' },
+      // Ohne `re`: hängt nicht an der Beschreibung, sondern nur an den Feldern.
+      { hits: n => n.details?.openness?.class === 'OP_03'
+                && ['LI_01', 'LI_02', 'LI_03'].includes(n.details?.license?.code),
+        why: 'OP_03 (nur Metadaten) mit freier Lizenz' },
+    ];
+
     for (const file of sectorFiles) {          // absolute paths already
       let data;
       try { data = JSON.parse(fs.readFileSync(file, 'utf8')); }
@@ -357,6 +381,14 @@ function main() {
           const words = e ? e.split(/\s+/).length : 0;
           if (words < 5) short++;
           byText.set(e, (byText.get(e) ?? 0) + 1);
+
+          const desc = n.details?.description ?? '';
+          for (const c of CONTRA) {
+            if ((!c.re || c.re.test(desc)) && c.hits(n)) {
+              contradictions.push(`${n.id} — ${c.why}`);
+              break;
+            }
+          }
         }
         (n.children ?? []).forEach(walk);
       })({ children: data.children ?? [] });
@@ -366,8 +398,11 @@ function main() {
     console.log(
       `\nInhaltsqualität (Hinweis, keine Warnungen):\n` +
       `  Öffnungsbegründungen unter 5 Wörtern: ${short} (${pct(short)} %)\n` +
-      `  mehrfach verwendete Begründungstexte: ${reused} Knoten (${pct(reused)} %)`
+      `  mehrfach verwendete Begründungstexte: ${reused} Knoten (${pct(reused)} %)\n` +
+      `  Beschreibung widerspricht den Metadaten: ${contradictions.length}`
     );
+    contradictions.slice(0, 15).forEach(c => console.log(`    · ${c}`));
+    if (contradictions.length > 15) console.log(`    … und ${contradictions.length - 15} weitere`);
   }
 
   // --- Summary ---

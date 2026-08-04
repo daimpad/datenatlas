@@ -12,6 +12,8 @@
 // richtiger Satz. Deshalb untersagt der Prompt das Erfinden von Fundstellen,
 // und alles mit Rechtsbezug wird zur Prüfung markiert.
 
+import { RULES, STATUS, normalizeStatus } from './begruendungs-regeln.js';
+
 const SECTORS = [
   { id: 'staat',             name: 'Staat und Verwaltung',       file: 'sector_staat.json' },
   { id: 'wirtschaft',        name: 'Wirtschaft',                 file: 'sector_wirtschaft.json' },
@@ -28,6 +30,12 @@ const MIN_WORDS = 5;   // gleiche Schwelle wie im Validator-Qualitätsbericht
 // Fundstellen und Zuschreibungen an konkrete Stellen — nicht falsch, aber
 // nachprüfbedürftig, weil ein Modell sie überzeugend erfinden kann.
 const CLAIM_RE = /(§+\s*\d|Art\.\s*\d|Artikel\s+\d|Abs\.\s*\d|\bDSGVO\b|\bBDSG\b|\bIFG\b|\bStGB\b|\bSGB\b|\bGG\b|\bEU-Verordnung\b)/i;
+
+// Regel 3 des Regelwerks: Aussagen über die Veröffentlichungspraxis Dritter —
+// in beide Richtungen. „Wird bereits veröffentlicht" ist genauso unbelegt wie
+// „veröffentlicht keine Rohdaten", und beides veraltet, sobald sich die Praxis
+// ändert. Muss zum Muster im Validator passen (scripts/validate-data.js).
+const PRACTICE_RE = /(veröffentlich(en|t) (bislang |bisher |in der regel |derzeit )?keine|(bereits|schon) (teilweise |weitgehend )?(öffentlich|frei) (zugänglich|verfügbar|abrufbar)|werden (bereits|regelmäßig|routinemäßig|standardmäßig) (veröffentlicht|publiziert|bereitgestellt)|teilweise (öffentlich|frei) (zugänglich|verfügbar)|(stellen|stellt) (die )?(daten )?nicht (öffentlich )?(bereit|zur verfügung)|geben (die daten )?nicht (heraus|frei))/i;
 
 function esc(s = '') {
   return String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;')
@@ -123,10 +131,12 @@ function currentExpl(e) {
 }
 
 function matches(e, mode) {
-  const short = words(currentExpl(e)) < MIN_WORDS;
-  if (mode === 'short')  return short;
-  if (mode === 'reused') return e.reused;
-  if (mode === 'both')   return short || e.reused;
+  const cur = currentExpl(e);
+  const short = words(cur) < MIN_WORDS;
+  if (mode === 'short')    return short;
+  if (mode === 'reused')   return e.reused;
+  if (mode === 'practice') return PRACTICE_RE.test(cur);
+  if (mode === 'both')     return short || e.reused || PRACTICE_RE.test(cur);
   return true;
 }
 
@@ -160,12 +170,15 @@ function render() {
         <span class="chip op" style="color:${opColor}">${esc(op.label ?? op.class ?? '—')}</span>
         ${chips}
         ${e.reused ? '<span class="chip badge-reused">mehrfach im Sektor</span>' : ''}
+        ${PRACTICE_RE.test(cur) ? '<span class="chip badge-practice">Aussage über fremde Praxis</span>' : ''}
       </div>
       <div class="item-cur">bisher: <b>${esc(cur) || '—'}</b></div>
       <textarea data-edit="${i}" placeholder="Begründung: Was macht diesen Datentyp publizierbar oder nicht?">${esc(cur)}</textarea>
       <div class="item-foot">
         <span class="wc" data-wc="${i}"></span>
         <span class="flag" data-flag="${i}" hidden>⚑ Rechtsbezug — bitte Fundstelle prüfen</span>
+        <span class="flag" data-practice="${i}" hidden>⚑ Aussage über fremde Veröffentlichungspraxis — Regel 3</span>
+        <span class="flag st" data-status="${i}" hidden></span>
       </div>
     </div>`;
   }).join('');
@@ -193,15 +206,28 @@ function updateFoot(i, value) {
   }
   const flag = listEl.querySelector(`[data-flag="${i}"]`);
   if (flag) flag.hidden = !CLAIM_RE.test(value);
+  const prac = listEl.querySelector(`[data-practice="${i}"]`);
+  if (prac) prac.hidden = !PRACTICE_RE.test(value);
+}
+
+// Ein Eintrag gilt als offen, wenn er zu kurz ist, seinen Text mit anderen
+// teilt oder gegen Regel 3 verstößt. Die drei Zähler zusammen ergeben nicht
+// die Summe — ein Eintrag kann mehrfach auffallen —, deshalb wird `open`
+// separat gezählt statt addiert.
+function isOpen(e) {
+  const cur = currentExpl(e);
+  return words(cur) < MIN_WORDS || (e.reused && cur === e.expl) || PRACTICE_RE.test(cur);
 }
 
 function updateProgress() {
   const short = entries.filter(e => words(currentExpl(e)) < MIN_WORDS).length;
   const reused = entries.filter(e => e.reused && currentExpl(e) === e.expl).length;
+  const practice = entries.filter(e => PRACTICE_RE.test(currentExpl(e))).length;
   el('p-done').textContent = touched.size.toLocaleString('de-DE');
   el('p-short').textContent = short.toLocaleString('de-DE');
   el('p-reused').textContent = reused.toLocaleString('de-DE');
-  const openCount = entries.filter(e => words(currentExpl(e)) < MIN_WORDS || (e.reused && currentExpl(e) === e.expl)).length;
+  el('p-practice').textContent = practice.toLocaleString('de-DE');
+  const openCount = entries.filter(isOpen).length;
   const total = entries.length || 1;
   el('p-fill').style.width = `${((total - openCount) / total * 100).toFixed(1)}%`;
 }
@@ -224,28 +250,7 @@ genBtn.addEventListener('click', () => {
     };
   });
 
-  promptOut.value = `Du überarbeitest Begründungstexte für den Datenatlas (datenatlas.de).
-
-Jeder Datentyp trägt eine Öffnungsklasse. Die Begründung erklärt, WARUM dieser
-Datentyp so eingestuft ist — also welcher Mechanismus die Veröffentlichung
-ermöglicht oder verhindert.
-
-REGELN — bitte strikt einhalten:
-1. Stütze dich AUSSCHLIESSLICH auf die unten gelieferten Angaben (Beschreibung,
-   Öffnungsklasse, Objekttyp, Granularität, Lizenz).
-2. Erfinde KEINE Paragrafen, Gesetzesfundstellen, Aktenzeichen oder Fristen.
-   Nenne eine Rechtsgrundlage nur, wenn sie sich zwingend aus den Angaben ergibt.
-3. Behaupte NICHT, dass bestimmte Behörden, Städte oder Organisationen etwas
-   bereits veröffentlichen — das ist ohne Recherche nicht belegbar.
-4. Benenne stattdessen den sachlichen Grund: Personenbezug vorhanden oder
-   aufgelöst? Aggregiert oder Einzelfall? Veröffentlichungspflicht oder
-   Ermessen? Welcher Aufbereitungsschritt wäre nötig?
-5. 15 bis 40 Wörter, ein bis zwei Sätze, sachlicher Ton, deutsche Sprache.
-6. Wenn die Angaben für eine tragfähige Begründung nicht ausreichen, gib die
-   bisherige Begründung unverändert zurück, statt zu spekulieren.
-
-AUSGABEFORMAT — ausschließlich dieses JSON-Array, ohne weiteren Text:
-[{"id":"<id>","explanation":"<neue Begründung>"}]
+  promptOut.value = `${RULES}
 
 ZU ÜBERARBEITENDE EINTRÄGE:
 ${JSON.stringify(items, null, 1)}`;
@@ -282,22 +287,48 @@ applyBtn.addEventListener('click', () => {
   }
 
   const byId = new Map(shown.map((e, i) => [e.node.id, i]));
-  let applied = 0, unknown = 0, flagged = 0, tooShort = 0;
+  let applied = 0, unknown = 0, flagged = 0, tooShort = 0, practice = 0;
+  const held = [];                       // ids mit status "unzureichend"/"widerspruechlich"
+  const byStatus = new Map();
+
   for (const item of parsed) {
     const i = byId.get(item?.id);
     if (i === undefined) { unknown++; continue; }
     const val = String(item.explanation ?? '').trim();
     if (!val) continue;
+
+    // Regelwerk v2 kennt vier Status. Bei "unzureichend" und "widerspruechlich"
+    // gibt das Modell den Alttext zurück — das ist kein Vorschlag, sondern ein
+    // Befund für die Datenpflege. Er wird angezeigt, aber nicht als
+    // Überarbeitung gezählt und überschreibt das Feld nicht.
+    const st = normalizeStatus(item.status);
+    if (st) byStatus.set(st, (byStatus.get(st) ?? 0) + 1);
+
+    const slot = listEl.querySelector(`[data-status="${i}"]`);
+    if (slot) {
+      slot.hidden = !st;
+      if (st) {
+        slot.textContent = `Status: ${STATUS[st].label}`;
+        slot.classList.toggle('hold', STATUS[st].keep);
+      }
+    }
+
+    if (st && STATUS[st].keep) { held.push(item.id); continue; }
+
     if (words(val) < MIN_WORDS) tooShort++;
     if (CLAIM_RE.test(val)) flagged++;
+    if (PRACTICE_RE.test(val)) practice++;
     const ta = listEl.querySelector(`textarea[data-edit="${i}"]`);
     if (ta) { ta.value = val; ta.dispatchEvent(new Event('input')); applied++; }
   }
 
   const parts = [`${applied} übernommen`];
+  if (byStatus.get('neu_gebildet')) parts.push(`${byStatus.get('neu_gebildet')} neu gebildet`);
+  if (held.length) parts.push(`${held.length} zurückgestellt (${held.slice(0, 3).join(', ')}${held.length > 3 ? ' …' : ''})`);
   if (unknown)  parts.push(`${unknown} unbekannte id`);
   if (tooShort) parts.push(`${tooShort} unter ${MIN_WORDS} Wörtern`);
   if (flagged)  parts.push(`${flagged} mit Rechtsbezug — prüfen`);
+  if (practice) parts.push(`${practice} mit Aussage über fremde Praxis — Regel 3`);
   applyStatus.textContent = parts.join(' · ');
 });
 

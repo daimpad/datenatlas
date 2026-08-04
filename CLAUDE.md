@@ -21,6 +21,8 @@ src/
   search.js       — search (slim index) + opt-in deep search over descriptions
   modal.js        — detail sidebar and generic modal system (trap focus)
   expand.js       — data expansion tool (logic behind expand.html)
+  begruendungen.js        — openness-justification editor (logic behind begruendungen.html)
+  begruendungs-regeln.js  — the justification ruleset, shared with scripts/ (see Validation)
   related.js      — "Ähnliche Datensätze" (cross-sector similarity)
   export.js       — CSV export of visible L4 types
   wizard.js       — "Daten öffnen" wizard (5-step modal)
@@ -276,17 +278,42 @@ It then prints a **content-quality report** — deliberately not warnings, so th
 
 ```
 Inhaltsqualität (Hinweis, keine Warnungen):
-  Öffnungsbegründungen unter 5 Wörtern: 942 (9 %)
-  mehrfach verwendete Begründungstexte: 1609 Knoten (16 %)
+  Öffnungsbegründungen unter 5 Wörtern: 752 (7 %)
+  mehrfach verwendete Begründungstexte: 1552 Knoten (15 %)
+  Aussagen über fremde Veröffentlichungspraxis: 41
+  Beschreibung widerspricht den Metadaten: 0
 ```
 
-Work these off with `begruendungen.html`. **Do not bulk-generate the
-justifications.** The short ones ("Haushaltsöffentlichkeit.", "Amtliche
-Statistik.") are terse but correct; inflating them means inventing statutes and
-practice claims. The site tells users to cite these justifications to data
-protection officers — a short correct sentence beats an unsourced paragraph.
-The tool's prompt forbids invented references, model output only ever lands in
-the input fields, and anything with a legal reference is flagged for checking.
+Work these off with `begruendungen.html` — it has one filter per metric.
+**Do not bulk-generate the justifications.** The short ones
+("Haushaltsöffentlichkeit.", "Amtliche Statistik.") are terse but correct;
+inflating them means inventing statutes and practice claims. The site tells
+users to cite these justifications to data protection officers — a short
+correct sentence beats an unsourced paragraph. The tool's prompt forbids
+invented references, model output only ever lands in the input fields, and
+anything with a legal reference is flagged for checking.
+
+The third metric implements **rule 3** of the justification ruleset: a
+justification must not claim that some organisation already publishes
+something — nor that it does not. Both are unverifiable without research and
+both go stale when the practice changes. The regex is deliberately narrow (set
+phrases, not keywords) and exists twice — `PRACTICE_RE` in
+`scripts/validate-data.js` and in `src/begruendungen.js`. **Change both
+together.**
+
+### The justification ruleset — one source
+
+`src/begruendungs-regeln.js` holds the prompt (`RULES`), the four answer
+statuses and the length target. Both consumers import it: the browser tool and
+`scripts/build-begruendungs-prompt.mjs`. It used to be copy-pasted into each,
+and the two copies had already drifted apart — one asked for 15–40 words and
+did not know rule 8 at all. Edit the module, never a consumer.
+
+Two of the four statuses (`unzureichend`, `widerspruechlich`) mean the model
+returns the *old* text on purpose rather than speculating. Those are the
+ruleset's safety valve, and in practice its most valuable output: the refusals
+are what surfaced six entries whose object type contradicted their own
+description. The tool shows them but does not count them as revisions.
 
 ---
 

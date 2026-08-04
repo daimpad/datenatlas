@@ -131,6 +131,11 @@
     .wc.good { color: var(--ok); font-weight: 700; }
     .flag { color: var(--warn); font-weight: 700; }
     .badge-reused { color: var(--warn); }
+    .badge-practice { color: var(--warn); border-color: currentColor; }
+    /* Status aus der Modellantwort. `hold` sind die beiden Status, bei denen
+       der Alttext stehen bleibt — sie sind ein Befund, keine Überarbeitung. */
+    .flag.st { color: var(--faint); font-weight: 400; }
+    .flag.st.hold { color: var(--warn); font-weight: 700; }
 
     .empty { padding: 40px 20px; text-align: center; color: var(--faint); font-size: 13px; }
 
@@ -161,7 +166,8 @@
           <select id="filter-sel" disabled>
             <option value="short">Unter 5 Wörtern</option>
             <option value="reused">Mehrfach im Sektor verwendet</option>
-            <option value="both">Beides (kurz oder mehrfach)</option>
+            <option value="practice">Aussage über fremde Praxis (Regel 3)</option>
+            <option value="both">Alles Offene</option>
             <option value="all">Alle Datentypen</option>
           </select>
         </div>
@@ -179,6 +185,7 @@
         <div class="prog-row"><span>überarbeitet</span><b id="p-done">0</b></div>
         <div class="prog-row"><span>unter 5 Wörtern</span><b id="p-short">0</b></div>
         <div class="prog-row"><span>mehrfach im Sektor</span><b id="p-reused">0</b></div>
+        <div class="prog-row"><span>Aussage über fremde Praxis</span><b id="p-practice">0</b></div>
         <div class="prog-track"><div class="prog-fill" id="p-fill"></div></div>
       </div>
 

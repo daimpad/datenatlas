@@ -130,6 +130,39 @@ const PRACTICE_ADVERB = /\b(werden|wird|sind|ist)\b[^.]{0,50}\b(bereits|schon|st
 const PRACTICE_ORT = /\b(im|in|über)\s+(dem\s+)?(Bundesanzeiger|Amtsblatt|GENESIS|Geoportal\w*|Datenportal\w*|[A-ZÄÖÜ][\wäöüß-]*(portal|atlas|datenbank))\b[^.]{0,40}\b(veröffentlich\w*|publizier\w*|zugänglich|abrufbar|verfügbar)\b/i;
 const PRACTICE_NEG = /veröffentlich(en|t) (bislang |bisher |in der regel |derzeit )?keine|(stellen|stellt) (die )?(daten )?nicht (öffentlich )?(bereit|zur verfügung)|geben (die daten )?nicht (heraus|frei)/i;
 
+// Zweite Erweiterung, aus demselben Grund wie die erste. „Berlin und Hamburg
+// veröffentlichen sie seit Jahren" und „viele Kommunen veröffentlichen solche
+// Kataster bereits" behaupten fremde Praxis so deutlich wie „Die Statistischen
+// Ämter veröffentlichen…", fielen aber durch beide Raster: PRACTICE_AKTEUR
+// verlangt ein Behörden-Suffix oder ein bekanntes Kürzel — Ortsnamen und
+// Sammelsubjekte haben keins —, und PRACTICE_ADVERB erwartet das Adverb VOR
+// dem Verb. Aufgefallen beim Öffnen eines beliebigen Detaileintrags, während
+// die Kennzahl auf 0 stand. Wieder gilt: Wer das Muster schärft, sieht die
+// Zahl steigen; das ist ihr Zweck, nicht ihr Fehler.
+//
+// Diese drei Muster tragen bewusst KEIN /i: Im Deutschen sind Ortsnamen und
+// Satzanfänge groß, „Essen" und „Halle" wären sonst jedes Abendessen und jede
+// Turnhalle. Groß- und Kleinschreibung der Verben ist stattdessen ausgeschrieben.
+const VERB_PUB = '(?:[Vv]eröffentlich\\w*|[Pp]ublizier\\w*|[Ss]tellen?\\b[^.]{0,25}\\bbereit)';
+
+const ORTSNAME = 'Berlin|Hamburg|München|Köln|Frankfurt|Stuttgart|Düsseldorf|Dortmund|Leipzig|Bremen|'
+  + 'Dresden|Hannover|Nürnberg|Duisburg|Bochum|Wuppertal|Bielefeld|Bonn|Münster|Karlsruhe|Mannheim|'
+  + 'Augsburg|Wiesbaden|Braunschweig|Chemnitz|Aachen|Magdeburg|Freiburg|Lübeck|Mainz|Erfurt|Rostock|'
+  + 'Kassel|Potsdam|Saarbrücken|Oldenburg|Osnabrück|Jena|Regensburg|Würzburg|Heidelberg|Göttingen|'
+  + 'Bayern|Sachsen|Hessen|Thüringen|Brandenburg|Saarland|Nordrhein-Westfalen|Baden-Württemberg|'
+  + 'Niedersachsen|Rheinland-Pfalz|Schleswig-Holstein|Mecklenburg-Vorpommern|Sachsen-Anhalt';
+
+const KOLLEKTIV = '(?:[Vv]iele|[Zz]ahlreiche|[Ee]inige|[Mm]ehrere|[Mm]anche|[Ee]tliche|[Dd]iverse|'
+  + '[Dd]ie meisten|[Aa]ndere)\\s+(?:[a-zäöüß-]+\\s+)?(?:Städte|Großstädte|Kommunen|Gemeinden|Länder|'
+  + 'Bundesländer|Verbünde|Hochschulen|Universitäten|Kliniken|Verlage|Anbieter|Plattformen|Träger|'
+  + 'Museen|Bibliotheken|Verbände|Kammern|Sender|Institute|Einrichtungen|Unternehmen|Betriebe|Vereine)'
+  + '|(?:Städte|Großstädte|Kommunen|Gemeinden|Länder|Verbünde|Hochschulen)\\s+wie\\b';
+
+const PRACTICE_ORTSNAME  = new RegExp(`\\b(?:${ORTSNAME})\\b[^.]{0,60}\\b${VERB_PUB}`);
+const PRACTICE_KOLLEKTIV = new RegExp(`(?:${KOLLEKTIV})\\b[^.]{0,60}\\b${VERB_PUB}`);
+const PRACTICE_ADVERB_NACH = new RegExp(
+  `\\b${VERB_PUB}\\b[^.]{0,45}\\b(?:bereits|schon|seit Jahren|standardmäßig|regelmäßig|routinemäßig)\\b`);
+
 const PFLICHT_RE = /(verpflichtet zur veröffentlichung|veröffentlichungspflicht|veröffentlicht werden müssen|ist zu veröffentlichen|unterliegt der veröffentlichung|publikationspflicht|bekanntmachungspflicht|veröffentlichungspflichtig|auslegungspflicht)/i;
 const MODAL_RE = /\b(kann|können|könnte|könnten|dürfen|darf|wäre|wären|ließe|ließen|sollte|müsste|müssen|muss)\b/i;
 
@@ -137,7 +170,9 @@ const MODAL_RE = /\b(kann|können|könnte|könnten|dürfen|darf|wäre|wären|lie
 export function claimsThirdPartyPractice(text) {
   for (const satz of String(text ?? '').split(/(?<=\.)\s+/)) {
     const praxis = PRACTICE_NEG.test(satz) || PRACTICE_AKTEUR.test(satz)
-      || PRACTICE_ADVERB.test(satz) || PRACTICE_ORT.test(satz);
+      || PRACTICE_ADVERB.test(satz) || PRACTICE_ORT.test(satz)
+      || PRACTICE_ORTSNAME.test(satz) || PRACTICE_KOLLEKTIV.test(satz)
+      || PRACTICE_ADVERB_NACH.test(satz);
     if (praxis && !PFLICHT_RE.test(satz) && !MODAL_RE.test(satz)) return true;
   }
   return false;

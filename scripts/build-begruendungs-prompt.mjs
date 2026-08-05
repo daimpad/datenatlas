@@ -21,7 +21,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { RULES } from '../src/begruendungs-regeln.js';
+import { RULES, claimsThirdPartyPractice } from '../src/begruendungs-regeln.js';
 
 const DATA_DIR = path.resolve(fileURLToPath(new URL('.', import.meta.url)), '../public/data');
 const MIN_WORDS = 5;   // gleiche Schwelle wie Validator und Browser-Werkzeug
@@ -34,9 +34,7 @@ const arg = (name, fallback = null) => {
 
 const onlyOp     = arg('op');
 // Auswahl nach Regel 3 statt nach Länge: Begründungen, die etwas über die
-// Veröffentlichungspraxis Dritter behaupten. Muster identisch mit
-// scripts/validate-data.js und src/begruendungen.js — alle drei zusammen ändern.
-const PRACTICE_RE = /(veröffentlich(en|t) (bislang |bisher |in der regel |derzeit )?keine|(bereits|schon) (teilweise |weitgehend )?(öffentlich|frei) (zugänglich|verfügbar|abrufbar)|werden (bereits|regelmäßig|routinemäßig|standardmäßig) (veröffentlicht|publiziert|bereitgestellt)|teilweise (öffentlich|frei) (zugänglich|verfügbar)|(stellen|stellt) (die )?(daten )?nicht (öffentlich )?(bereit|zur verfügung)|geben (die daten )?nicht (heraus|frei))/i;
+// Veröffentlichungspraxis Dritter behaupten (Muster in begruendungs-regeln.js).
 const onlyRegel3 = argv.includes('--regel3');
 const onlySector = arg('sektor');
 const batchSize  = Number(arg('batch', 50));
@@ -64,7 +62,7 @@ for (const sector of main) {
         if (dt.level !== 4) continue;
         const d = dt.details ?? {};
         const expl = (d.openness?.explanation ?? '').trim();
-        if (onlyRegel3) { if (!PRACTICE_RE.test(expl)) continue; }
+        if (onlyRegel3) { if (!claimsThirdPartyPractice(expl)) continue; }
         else if (words(expl) >= MIN_WORDS) continue;
         if (onlyOp && d.openness?.class !== onlyOp) continue;
 

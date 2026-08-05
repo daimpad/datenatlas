@@ -100,3 +100,45 @@ export function normalizeStatus(raw) {
 // Länge nach Regel 5. Der Validator misst weiterhin gegen MIN_WORDS = 5 (das
 // ist die Schwelle für „zu kurz"); hier geht es um das Zielband.
 export const TARGET_WORDS = { min: 20, max: 45 };
+
+// ── Regel 3: Aussagen über die Veröffentlichungspraxis Dritter ──────────────
+//
+// Einzige Quelle des Musters — vorher stand es in vier Kopien (Validator,
+// Browser-Werkzeug, Stapelgenerator, Anwendungsskript), was dieselbe Drift
+// eingeladen hätte wie beim Regeltext selbst.
+//
+// Die erste Fassung war absichtlich eng: nur feste Wendungen wie „werden
+// routinemäßig veröffentlicht". Sie fand 41 Einträge, die abgearbeitet wurden
+// — und meldete danach 0. Das war falsch. Die knappe Form „Destatis
+// veröffentlicht die Statistik" fiel durch, ebenso „von Statistikämtern
+// veröffentlicht" und „im Bundesanzeiger veröffentlicht". Tatsächlich sind es
+// rund 785.
+//
+// Der Preis der Erweiterung ist Trennschärfe, deshalb die beiden Ausnahmen:
+//
+//   PFLICHT_RE  Eine Veröffentlichungspflicht IST eine zulässige Begründung —
+//               Regel 4 verlangt ausdrücklich, sie zu benennen. „Satzungen
+//               müssen im Amtsblatt veröffentlicht werden" ist kein Verstoß.
+//   MODAL_RE    „Die Daten können nach Aggregation veröffentlicht werden"
+//               sagt etwas über Publizierbarkeit, nicht über fremde Praxis.
+//
+// Geprüft wird satzweise: Ein Eintrag gilt erst als Treffer, wenn ein Satz
+// eine Praxisaussage enthält und weder Pflicht noch Modalform trägt.
+
+const PRACTICE_AKTEUR = /\b([A-ZÄÖÜ][\wäöüß-]{2,}(?:ämter|ämtern|behörde[n]?|institut[e]?|kommissionen?|kommunen?|ministerien?|verbände|anstalten|agentur|bank|register)|BKA|BfV|BAMF|BMF|BMBF|BIBB|DIHK|RKI|DVV|GDV|VDMA|VCI|BVI|OVK|KEK|BNetzA|BaFin|Destatis|Eurostat|OECD|EU-Kommission)\b[^.]{0,60}\b(veröffentlich\w*|publizier\w*)\b/i;
+const PRACTICE_ADVERB = /\b(werden|wird|sind|ist)\b[^.]{0,50}\b(bereits|schon|standardmäßig|regelmäßig|routinemäßig|typischerweise|weit verbreitet)\b[^.]{0,50}\b(veröffentlich\w*|publizier\w*|zugänglich|verfügbar|abrufbar)\b/i;
+const PRACTICE_ORT = /\b(im|in|über)\s+(dem\s+)?(Bundesanzeiger|Amtsblatt|GENESIS|Geoportal\w*|Datenportal\w*|[A-ZÄÖÜ][\wäöüß-]*(portal|atlas|datenbank))\b[^.]{0,40}\b(veröffentlich\w*|publizier\w*|zugänglich|abrufbar|verfügbar)\b/i;
+const PRACTICE_NEG = /veröffentlich(en|t) (bislang |bisher |in der regel |derzeit )?keine|(stellen|stellt) (die )?(daten )?nicht (öffentlich )?(bereit|zur verfügung)|geben (die daten )?nicht (heraus|frei)/i;
+
+const PFLICHT_RE = /(verpflichtet zur veröffentlichung|veröffentlichungspflicht|veröffentlicht werden müssen|ist zu veröffentlichen|unterliegt der veröffentlichung|publikationspflicht|bekanntmachungspflicht|veröffentlichungspflichtig|auslegungspflicht)/i;
+const MODAL_RE = /\b(kann|können|könnte|könnten|dürfen|darf|wäre|wären|ließe|ließen|sollte|müsste|müssen|muss)\b/i;
+
+/** Verstößt die Begründung gegen Regel 3? */
+export function claimsThirdPartyPractice(text) {
+  for (const satz of String(text ?? '').split(/(?<=\.)\s+/)) {
+    const praxis = PRACTICE_NEG.test(satz) || PRACTICE_AKTEUR.test(satz)
+      || PRACTICE_ADVERB.test(satz) || PRACTICE_ORT.test(satz);
+    if (praxis && !PFLICHT_RE.test(satz) && !MODAL_RE.test(satz)) return true;
+  }
+  return false;
+}

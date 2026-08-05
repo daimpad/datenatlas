@@ -7,6 +7,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { claimsThirdPartyPractice } from '../src/begruendungs-regeln.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -349,17 +350,10 @@ function main() {
     const contradictions = [];
     const practice = [];
 
-    // Regel 3 des Begründungs-Regelwerks (src/begruendungs-regeln.js): Aussagen
-    // über die Veröffentlichungspraxis Dritter — in beide Richtungen. „Wird
-    // bereits veröffentlicht" ist genauso unbelegt wie „veröffentlicht keine
-    // Rohdaten"; beides veraltet zudem, sobald sich die Praxis ändert, und die
-    // Begründung soll gegenüber Dritten zitierbar bleiben. Das Muster ist
-    // absichtlich eng: es trifft feste Wendungen, keine Schlagwörter, sonst
-    // schlagen Sätze wie „aus öffentlich zugänglichen Quellen erhoben" an, die
-    // die Herkunft beschreiben und keine Praxis behaupten.
-    // Gleiches Muster in src/begruendungen.js (PRACTICE_RE) — beide zusammen
-    // ändern.
-    const PRACTICE_RE = /(veröffentlich(en|t) (bislang |bisher |in der regel |derzeit )?keine|(bereits|schon) (teilweise |weitgehend )?(öffentlich|frei) (zugänglich|verfügbar|abrufbar)|werden (bereits|regelmäßig|routinemäßig|standardmäßig) (veröffentlicht|publiziert|bereitgestellt)|teilweise (öffentlich|frei) (zugänglich|verfügbar)|(stellen|stellt) (die )?(daten )?nicht (öffentlich )?(bereit|zur verfügung)|geben (die daten )?nicht (heraus|frei))/i;
+    // Regel 3 des Begründungs-Regelwerks. Das Muster steht in
+    // src/begruendungs-regeln.js — geteilt mit Browser-Werkzeug,
+    // Stapelgenerator und Anwendungsskript, damit die vier nicht auseinander
+    // laufen.
 
     // Widersprüche zwischen Beschreibung und Metadaten. Bewusst eng gefasst:
     // Nur unbedingte Aussagen über den Inhalt zählen ("Enthält keine …"), keine
@@ -394,7 +388,7 @@ function main() {
           const words = e ? e.split(/\s+/).length : 0;
           if (words < 5) short++;
           byText.set(e, (byText.get(e) ?? 0) + 1);
-          if (PRACTICE_RE.test(e)) practice.push(n.id);
+          if (claimsThirdPartyPractice(e)) practice.push(n.id);
 
           const desc = n.details?.description ?? '';
           for (const c of CONTRA) {

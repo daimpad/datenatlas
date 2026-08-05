@@ -44,10 +44,13 @@ vite.config.js      — build plugins: search-index, minify-data-json, seo,
 docs/
   ueber-den-datenatlas.md — project description as a document
 scripts/
-  validate-data.js       — data validator (run before every commit)
+  validate-data.js       — data validator + quality report (run before every commit)
   build-search-index.js  — builds the slim search index (build artifact)
   build-static-pages.js  — builds the crawlable sector/organisation pages
   build-og-image.js      — builds the 1200×630 social image
+  analytics.js           — the GoatCounter snippet, once for all 157 pages
+  build-begruendungs-prompt.mjs — builds the prompt from the ruleset
+  apply-begruendungen.mjs — applies revised justifications in batches
   datafix-*.mjs          — one-off data corrections (record of past runs)
 ```
 
@@ -374,6 +377,29 @@ returns the *old* text on purpose rather than speculating. Those are the
 ruleset's safety valve, and in practice its most valuable output: the refusals
 are what surfaced six entries whose object type contradicted their own
 description. The tool shows them but does not count them as revisions.
+
+### Batch application — `scripts/apply-begruendungen.mjs`
+
+For the large passes the browser tool is too slow, so revised texts go in as a
+batch file: `[{"id": …, "explanation": …, "status": "ueberarbeitet"}]`, applied
+with `node scripts/apply-begruendungen.mjs <datei.json> [--dry]`. **Run it from
+the repo root** — it resolves `public/data/main.json` relatively.
+
+It validates the whole batch **before the first write** and refuses all of it on
+any failure. Five checks, in this order:
+
+1. the id exists and is an L4 node
+2. the new text passes `claimsThirdPartyPractice()` — rule 3, same function as
+   the validator
+3. 20–45 words (`TARGET_WORDS`)
+4. **every legal citation in the new text already appears in that entry's
+   description or name** — this is what keeps a rewrite from inventing a statute
+5. `unzureichend` / `widerspruechlich` keep the old text and are not written
+
+Check 4 is the one that bites in practice. `finanz-brh-it-beschaffung` carried
+„§ 97 BHO" in its old text while its description never mentions it; the citation
+was dropped rather than carried over. All-or-nothing is deliberate: a batch that
+half-applies leaves no way to tell which half.
 
 ---
 

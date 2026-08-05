@@ -177,13 +177,15 @@ src/
   search.js       — Suche (schlanker Index) inkl. optionaler Tiefensuche
   modal.js        — Detail-Sidebar und generisches Modal-System (Trap-Focus)
   expand.js       — Datenerweiterung (Logik hinter expand.html)
+  begruendungen.js        — Öffnungsbegründungen überarbeiten (Logik hinter begruendungen.html)
+  begruendungs-regeln.js  — das Begründungs-Regelwerk, geteilt mit scripts/
   related.js      — "Ähnliche Datensätze" (Cross-Sektor-Ähnlichkeit)
   export.js       — CSV-Export der sichtbaren L4-Datentypen
   wizard.js       — "Daten öffnen"-Wizard (5-Schritt-Modal)
   stats.js        — Statistik-Dashboard (Öffnungsklassen-Balkendiagramm)
   timeline.js     — Timeline-View (kumulative Verfügbarkeit + Aktualisierungshäufigkeit)
   generator.js    — Datenkombinator (32 Cross-Sektor-Fusionsszenarien)
-  utils.js        — esc(), trapFocus() und weitere Hilfsfunktionen
+  utils.js        — esc(), trapFocus(), safeUrl(), OPENNESS_COLORS
   style.css       — CSS-Variablen, Layout, Modal-Styles
 public/
   data/           — Taxonomie-JSON-Dateien (eine pro Sektor + main.json + vocabulary.json)
@@ -198,10 +200,13 @@ vite.config.js      — Build-Plugins: search-index, minify-data-json, seo,
 docs/
   ueber-den-datenatlas.md — Projektbeschreibung als Dokument
 scripts/
-  validate-data.js       — Daten-Validator (Schema, Vokabular, IDs, Farben)
+  validate-data.js       — Daten-Validator (Schema, Vokabular, IDs, Farben) + Qualitätsbericht
   build-search-index.js  — erzeugt den schlanken Suchindex (Build-Artefakt)
   build-static-pages.js  — erzeugt die crawlbaren Sektor-/Organisationsseiten
   build-og-image.js      — erzeugt das 1200×630-Social-Bild
+  analytics.js           — GoatCounter-Snippet, einmal für alle 157 Seiten
+  build-begruendungs-prompt.mjs — baut den Prompt aus dem Regelwerk
+  apply-begruendungen.mjs — übernimmt überarbeitete Begründungen stapelweise
   datafix-*.mjs          — einmalige Datenkorrekturen (dokumentieren frühere Läufe)
 ```
 
@@ -239,14 +244,20 @@ Das `precompress`-Plugin legt zu großen Textdateien `.br`- und `.gz`-Geschwiste
 ### SEO
 
 Das `seo`-Plugin erzeugt beim Build aus `main.json`:
-- **JSON-LD** — `WebSite` (inkl. `SearchAction` für die `?q=`-Suche), `Organization` und ein `DataCatalog` mit den 8 Sektoren als `Dataset`
-- **Sektor-Übersicht im HTML** — für Screenreader und Suchmaschinen, da der Canvas keinen auslesbaren Inhalt hat
-- **`sitemap.xml`** — Startseite und `ueber.html`
+- **JSON-LD** — `WebSite` (inkl. `SearchAction` für die `?q=`-Suche), `Organization` und ein `DataCatalog` mit den 8 Sektoren als `Dataset`. Jedes `Dataset` verweist über `distribution` auf seine öffentliche JSON-Datei und über `url` auf die statische Sektorseite — ein `Dataset` ohne erreichbare Distribution wäre irreführendes Markup.
+- **Sektor-Übersicht im HTML** — für Screenreader und Suchmaschinen, da der Canvas keinen auslesbaren Inhalt hat; sie verlinkt die statischen Seiten, die sonst nur über die Sitemap erreichbar wären
+- **`sitemap.xml`** — 157 URLs: Startseite, `ueber.html` und die 155 statischen Seiten
 
 JSON-LD und Sektor-Übersicht werden ausschließlich in `index.html` injiziert, damit
 `ueber.html` den Sektorkatalog nicht ein zweites Mal deklariert. Da die Startseite
 im Kern ein Canvas ist, trägt `ueber.html` den einzigen längeren Fließtext des
 Auftritts — für die Auffindbarkeit ist sie damit die inhaltlich stärkste Seite.
+
+Zwei Regeln stammen aus Fehlermeldungen der Search Console und sollten so
+bleiben: Katalogzugehörigkeit heißt `includedInDataCatalog`, **nicht** `isPartOf`
+(das erbt von `CreativeWork` und erwartet auch eines). Und **jede `@id`-Referenz
+trägt ihren `@type`** — eine nackte `{"@id": …}` auf einen Nachbarknoten löst
+Googles Parser nicht zuverlässig auf und wird als „falscher Namensraum" gemeldet.
 
 ## Sektordateien
 
@@ -357,6 +368,14 @@ Maßgeblich sind die Werte in `public/data/main.json`:
 | `GR_03` | Kleinräumig (Stadtteil / Gemeinde) |
 | `GR_04` | Individuell / Mikrodaten |
 
+Granularität meint die **Ausweisungsebene, nicht die Erhebungsebene** — die
+Ebene, auf der der beschriebene Datensatz existiert, nicht die, auf der einmal
+erhoben wurde. „Bundesweite Vergleichsarbeiten auf Kreisebene" ist `GR_03`, nicht
+`GR_02`: erhoben bundesweit, ausgewiesen kleinräumig. Der Atlas bewertet
+Veröffentlichbarkeit, und dafür zählt, was man in die Hand bekommt. `GR_04`
+heißt **personenbezogene** Mikrodaten; Einzelereignisse ohne Personenbezug
+(Fahrten, Buchungen, Messungen) sind `GR_01`.
+
 ### Format (`details.format[].code`)
 | Code | Format |
 |---|---|
@@ -393,16 +412,42 @@ trotzdem sichtbar wird:
 
 ```
 Inhaltsqualität (Hinweis, keine Warnungen):
-  Öffnungsbegründungen unter 5 Wörtern: 942 (9 %)
-  mehrfach verwendete Begründungstexte: 1609 Knoten (16 %)
+  Öffnungsbegründungen unter 5 Wörtern: 0 (0 %)
+  mehrfach verwendete Begründungstexte: 0 Knoten (0 %)
+  Aussagen über fremde Veröffentlichungspraxis: 0
+  Beschreibung widerspricht den Metadaten: 0
 ```
 
+Alle vier Kennzahlen stehen auf null: 942 Kurztexte, 1.492 formelhaft
+wiederverwendete Begründungen, 913 Praxisaussagen und 8 Metadaten-Widersprüche
+sind einzeln überarbeitet. Sie bleiben im Bericht, weil sie beim Anfassen wieder
+steigen — ein neuer Datentyp mit kopierter Begründung erscheint sofort als
+Dublette. Genau dafür sind sie da.
+
+Zwei Kennzahlen sind im Lauf der Arbeit **schärfer geworden und dadurch
+gestiegen**, bevor sie wieder auf null gingen. Die dritte prüft Regel 3 des
+Begründungs-Regelwerks: Eine Begründung darf nicht behaupten, dass irgendeine
+Organisation etwas bereits veröffentlicht — und ebenso wenig, dass sie es nicht
+tut. Beides ist ohne Recherche nicht überprüfbar und veraltet, sobald sich die
+Praxis ändert. Das Muster kannte anfangs weder Ortsnamen noch Sammelsubjekte
+(„viele Kommunen", „Städte wie …") und erwartete das Adverb vor dem Verb, nicht
+dahinter. Nach jeder Erweiterung meldete es Texte, die vorher unsichtbar waren.
+**Wer die Prüfung verschärft, sieht die Zahl steigen; das ist ihr Zweck, nicht
+ihr Fehler.**
+
+Die Prüfung lebt **einmal**, als `claimsThirdPartyPractice()` in
+`src/begruendungs-regeln.js`; Validator, Browser-Werkzeug und Stapel-Applier
+importieren sie von dort. Früher war sie in vier Dateien kopiert, und genau so
+kam es dazu, dass sie 41 Treffer meldete, wo 776 waren.
+
 Diese Einträge lassen sich mit `begruendungen.html` abarbeiten — das Werkzeug
-legt sie mit vollem Kontext vor. Vorschläge eines Sprachmodells landen dort nur
-in den Eingabefeldern, nie direkt in den Daten, und Texte mit Rechtsbezug werden
-zur Prüfung markiert: Die Begründungen sollen gegenüber Datenschutzbeauftragten
-verwendbar sein, deshalb ist ein knapper richtiger Satz mehr wert als ein
-unbelegter Absatz.
+legt sie mit vollem Kontext vor und hat je einen Filter pro Kennzahl. Vorschläge
+eines Sprachmodells landen dort nur in den Eingabefeldern, nie direkt in den
+Daten, und Texte mit Rechtsbezug werden zur Prüfung markiert: Die Begründungen
+sollen gegenüber Datenschutzbeauftragten verwendbar sein, deshalb ist ein
+knapper richtiger Satz mehr wert als ein unbelegter Absatz. **Massenhaft
+erzeugen lassen sich sie deshalb nicht** — einen kurzen, korrekten Satz
+aufzublähen heißt, Rechtsgrundlagen und Veröffentlichungspraxis zu erfinden.
 
 ## Deployment
 
@@ -414,6 +459,24 @@ Beides läuft automatisch bei jedem Push auf `main` — kein manueller Schritt n
 | `deploy-netcup.yml` | Netcup per FTP (`/httpdocs/`) |
 | `validate-data.yml` | Validator + Build (bei PR und Push) |
 | `codeql.yml` | Sicherheitsanalyse |
+
+## Reichweitenmessung
+
+GoatCounter, cookiefrei und ohne personenbezogene Speicherung. Das Snippet steht
+**einmal** in `scripts/analytics.js` und erreicht die Seiten auf zwei Wegen: Das
+`analytics()`-Plugin injiziert es in `index.html` und `ueber.html`,
+`build-static-pages.js` schreibt es in die 155 erzeugten Seiten. 157 der 160
+gebauten HTML-Dateien tragen es — ohne sind nur die beiden internen Werkzeuge
+(`noindex`) und die Google-Verifikationsdatei. Der Endpunkt wird im Modul
+geändert, nie in einer Seite. `apply: 'build'` hält den Dev-Server aus der
+Statistik heraus.
+
+Die Karte wird dabei **nur beim ersten Aufruf gezählt**: Alle Navigation läuft
+über Hash-Fragmente (`#medien/zdf`), und `count.js` meldet einen Seitenaufruf
+beim Laden. Die Zahlen beantworten also „welche der 157 URLs werden gefunden",
+nicht „wie wird die Karte benutzt". Hash-Wechsel mitzuzählen bräuchte einen
+expliziten Aufruf bei jeder Navigation — eine bewusste Entscheidung, kein
+Versehen.
 
 </details>
 

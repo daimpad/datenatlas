@@ -12,7 +12,7 @@
 // richtiger Satz. Deshalb untersagt der Prompt das Erfinden von Fundstellen,
 // und alles mit Rechtsbezug wird zur Prüfung markiert.
 
-import { RULES, STATUS, normalizeStatus } from './begruendungs-regeln.js';
+import { RULES, STATUS, normalizeStatus, claimsThirdPartyPractice } from './begruendungs-regeln.js';
 
 const SECTORS = [
   { id: 'staat',             name: 'Staat und Verwaltung',       file: 'sector_staat.json' },
@@ -31,11 +31,6 @@ const MIN_WORDS = 5;   // gleiche Schwelle wie im Validator-Qualitätsbericht
 // nachprüfbedürftig, weil ein Modell sie überzeugend erfinden kann.
 const CLAIM_RE = /(§+\s*\d|Art\.\s*\d|Artikel\s+\d|Abs\.\s*\d|\bDSGVO\b|\bBDSG\b|\bIFG\b|\bStGB\b|\bSGB\b|\bGG\b|\bEU-Verordnung\b)/i;
 
-// Regel 3 des Regelwerks: Aussagen über die Veröffentlichungspraxis Dritter —
-// in beide Richtungen. „Wird bereits veröffentlicht" ist genauso unbelegt wie
-// „veröffentlicht keine Rohdaten", und beides veraltet, sobald sich die Praxis
-// ändert. Muss zum Muster im Validator passen (scripts/validate-data.js).
-const PRACTICE_RE = /(veröffentlich(en|t) (bislang |bisher |in der regel |derzeit )?keine|(bereits|schon) (teilweise |weitgehend )?(öffentlich|frei) (zugänglich|verfügbar|abrufbar)|werden (bereits|regelmäßig|routinemäßig|standardmäßig) (veröffentlicht|publiziert|bereitgestellt)|teilweise (öffentlich|frei) (zugänglich|verfügbar)|(stellen|stellt) (die )?(daten )?nicht (öffentlich )?(bereit|zur verfügung)|geben (die daten )?nicht (heraus|frei))/i;
 
 function esc(s = '') {
   return String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;')
@@ -135,8 +130,8 @@ function matches(e, mode) {
   const short = words(cur) < MIN_WORDS;
   if (mode === 'short')    return short;
   if (mode === 'reused')   return e.reused;
-  if (mode === 'practice') return PRACTICE_RE.test(cur);
-  if (mode === 'both')     return short || e.reused || PRACTICE_RE.test(cur);
+  if (mode === 'practice') return claimsThirdPartyPractice(cur);
+  if (mode === 'both')     return short || e.reused || claimsThirdPartyPractice(cur);
   return true;
 }
 
@@ -170,7 +165,7 @@ function render() {
         <span class="chip op" style="color:${opColor}">${esc(op.label ?? op.class ?? '—')}</span>
         ${chips}
         ${e.reused ? '<span class="chip badge-reused">mehrfach im Sektor</span>' : ''}
-        ${PRACTICE_RE.test(cur) ? '<span class="chip badge-practice">Aussage über fremde Praxis</span>' : ''}
+        ${claimsThirdPartyPractice(cur) ? '<span class="chip badge-practice">Aussage über fremde Praxis</span>' : ''}
       </div>
       <div class="item-cur">bisher: <b>${esc(cur) || '—'}</b></div>
       <textarea data-edit="${i}" placeholder="Begründung: Was macht diesen Datentyp publizierbar oder nicht?">${esc(cur)}</textarea>
@@ -207,7 +202,7 @@ function updateFoot(i, value) {
   const flag = listEl.querySelector(`[data-flag="${i}"]`);
   if (flag) flag.hidden = !CLAIM_RE.test(value);
   const prac = listEl.querySelector(`[data-practice="${i}"]`);
-  if (prac) prac.hidden = !PRACTICE_RE.test(value);
+  if (prac) prac.hidden = !claimsThirdPartyPractice(value);
 }
 
 // Ein Eintrag gilt als offen, wenn er zu kurz ist, seinen Text mit anderen
@@ -216,13 +211,13 @@ function updateFoot(i, value) {
 // separat gezählt statt addiert.
 function isOpen(e) {
   const cur = currentExpl(e);
-  return words(cur) < MIN_WORDS || (e.reused && cur === e.expl) || PRACTICE_RE.test(cur);
+  return words(cur) < MIN_WORDS || (e.reused && cur === e.expl) || claimsThirdPartyPractice(cur);
 }
 
 function updateProgress() {
   const short = entries.filter(e => words(currentExpl(e)) < MIN_WORDS).length;
   const reused = entries.filter(e => e.reused && currentExpl(e) === e.expl).length;
-  const practice = entries.filter(e => PRACTICE_RE.test(currentExpl(e))).length;
+  const practice = entries.filter(e => claimsThirdPartyPractice(currentExpl(e))).length;
   el('p-done').textContent = touched.size.toLocaleString('de-DE');
   el('p-short').textContent = short.toLocaleString('de-DE');
   el('p-reused').textContent = reused.toLocaleString('de-DE');
@@ -317,7 +312,7 @@ applyBtn.addEventListener('click', () => {
 
     if (words(val) < MIN_WORDS) tooShort++;
     if (CLAIM_RE.test(val)) flagged++;
-    if (PRACTICE_RE.test(val)) practice++;
+    if (claimsThirdPartyPractice(val)) practice++;
     const ta = listEl.querySelector(`textarea[data-edit="${i}"]`);
     if (ta) { ta.value = val; ta.dispatchEvent(new Event('input')); applied++; }
   }

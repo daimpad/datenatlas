@@ -25,16 +25,13 @@
 //
 // Run: node scripts/apply-begruendungen.mjs <datei.json> [--dry]
 import fs from 'fs';
-import { normalizeStatus, STATUS, TARGET_WORDS } from '../src/begruendungs-regeln.js';
+import { normalizeStatus, STATUS, TARGET_WORDS, claimsThirdPartyPractice } from '../src/begruendungs-regeln.js';
 
 const DIR = 'public/data';
 const file = process.argv[2];
 const dry = process.argv.includes('--dry');
 if (!file) { console.error('Aufruf: node scripts/apply-begruendungen.mjs <datei.json> [--dry]'); process.exit(2); }
 
-// Muss zum Muster in scripts/validate-data.js, src/begruendungen.js und
-// scripts/build-begruendungs-prompt.mjs passen — alle vier zusammen ändern.
-const PRACTICE_RE = /(veröffentlich(en|t) (bislang |bisher |in der regel |derzeit )?keine|(bereits|schon) (teilweise |weitgehend )?(öffentlich|frei) (zugänglich|verfügbar|abrufbar)|werden (bereits|regelmäßig|routinemäßig|standardmäßig) (veröffentlicht|publiziert|bereitgestellt)|teilweise (öffentlich|frei) (zugänglich|verfügbar)|(stellen|stellt) (die )?(daten )?nicht (öffentlich )?(bereit|zur verfügung)|geben (die daten )?nicht (heraus|frei))/i;
 
 // Fundstellen und benannte Rechtsakte. Bewusst großzügig: lieber ein Treffer
 // zu viel, der sich in der Beschreibung wiederfindet, als eine erfundene
@@ -82,7 +79,7 @@ for (const item of input) {
   const text = String(item.explanation ?? '').trim();
   if (!text) { errors.push(`${id}: leere Begründung`); continue; }
 
-  if (PRACTICE_RE.test(text)) errors.push(`${id}: Regel 3 — Aussage über fremde Veröffentlichungspraxis`);
+  if (claimsThirdPartyPractice(text)) errors.push(`${id}: Regel 3 — Aussage über fremde Veröffentlichungspraxis`);
 
   const w = words(text);
   if (w < TARGET_WORDS.min || w > TARGET_WORDS.max) {

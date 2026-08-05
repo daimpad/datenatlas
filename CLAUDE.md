@@ -371,6 +371,24 @@ file plus `license` and `isAccessibleForFree`, and its `url` points at the stati
 sector page. **Keep it that way**: a `Dataset` without a reachable distribution,
 or pointing at a hash fragment that is no page, is misleading structured data.
 
+### Analytics
+
+GoatCounter, cookiefrei. The snippet lives once in `scripts/analytics.js` and
+reaches the pages two ways: the `analytics()` plugin injects it into
+`index.html` and `ueber.html`, `build-static-pages.js` writes it into the 155
+generated pages. **157 of 160 built HTML files carry it** — the three without
+are `expand.html`, `begruendungen.html` (internal tools, `noindex`) and the
+Google verification file (plain text). Change the endpoint in the module, never
+in a page.
+
+`apply: 'build'` keeps the dev server out of the statistics.
+
+**The canvas is not counted beyond the first view.** All map navigation is hash
+based (`#medien/zdf`), and `count.js` records one pageview on load. So the
+numbers answer "which of the 157 URLs get found", not "how is the map used".
+Counting hash changes would need an explicit `goatcounter.count({path})` call
+on navigation — a deliberate decision, not an oversight.
+
 The repository is licensed under **MPL-2.0** (see `LICENSE`) — README,
 `ueber.html` and `docs/` claimed MIT until this was corrected. Check `LICENSE`
 before restating the licence anywhere.

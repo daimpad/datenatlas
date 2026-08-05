@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
 import { buildSlimIndex } from './scripts/build-search-index.js';
 import { buildStaticPages } from './scripts/build-static-pages.js';
+import { ANALYTICS_TAG } from './scripts/analytics.js';
 
 const DATA_DIR = fileURLToPath(new URL('./public/data', import.meta.url));
 
@@ -132,6 +133,28 @@ function readSectors() {
 // JSON-LD DataCatalog and the outline are generated from public/data/main.json,
 // so adding/renaming a sector requires no manual edits here — same philosophy
 // as the search index. Runs in dev and build via transformIndexHtml.
+// Analytics: hängt das GoatCounter-Snippet in die beiden öffentlichen Seiten.
+// `apply: 'build'` — im Dev-Server wird nicht gezählt, sonst landen die eigenen
+// Klicks während der Entwicklung in der Statistik. Die internen Werkzeuge
+// (expand, begruendungen) bleiben absichtlich außen vor, siehe
+// scripts/analytics.js. Die 155 statischen Seiten bekommen dasselbe Snippet
+// aus derselben Konstante in build-static-pages.js.
+function analytics() {
+  const PUBLIC_PAGES = ['index.html', 'ueber.html'];
+  return {
+    name: 'analytics',
+    apply: 'build',
+    transformIndexHtml: {
+      order: 'post',
+      handler(html, ctx) {
+        const p = ctx.path || ctx.filename || '';
+        if (!PUBLIC_PAGES.some(name => p.endsWith(name))) return html;
+        return html.replace('</head>', `  ${ANALYTICS_TAG}\n</head>`);
+      },
+    },
+  };
+}
+
 function seo() {
   const isIndex = (ctx) => {
     const p = ctx.path || ctx.filename || '';
@@ -247,7 +270,7 @@ function staticPages() {
 export default defineConfig({
   base: './',
   define: { __APP_VERSION__: JSON.stringify(appVersion) },
-  plugins: [searchIndex(), minifyDataJson(), seo(), staticPages(), precompress()],
+  plugins: [searchIndex(), minifyDataJson(), seo(), analytics(), staticPages(), precompress()],
   build: {
     rollupOptions: {
       input: {

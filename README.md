@@ -2,7 +2,7 @@
 
 **Welche Daten besitzt unsere Gesellschaft, und wie offen könnten sie sein?**
 
-Der Datenatlas macht sichtbar, welche Daten Behörden, Unternehmen, Forschungseinrichtungen, Zivilgesellschaft, Medien, Kultur, Religionsgemeinschaften und Bildungseinrichtungen in Deutschland täglich erzeugen. Auf einer interaktiven isometrischen Karte lassen sich **10.149 Datentypen** quer durch **8 gesellschaftliche Sektoren** erkunden und bewerten.
+Der Datenatlas macht sichtbar, welche Daten Behörden, Unternehmen, Forschungseinrichtungen, Zivilgesellschaft, Medien, Kultur, Religionsgemeinschaften und Bildungseinrichtungen in Deutschland täglich erzeugen. Auf einer interaktiven isometrischen Karte lassen sich **10.494 Datentypen** quer durch **8 gesellschaftliche Sektoren** erkunden und bewerten.
 
 **→ [datenatlas.de](https://datenatlas.de)**  ·  **Ausführlich: [Über den Datenatlas](https://datenatlas.de/ueber.html)** ([auch als Dokument](docs/ueber-den-datenatlas.md))
 
@@ -64,10 +64,10 @@ Der **Öffnungsklasse-Filter** (Trichter-Symbol oben rechts) blendet auf Ebene 4
 | 🟣 **Wissenschaft und Forschung** | Universitäten, Forschungsinstitute, Akademien, Transfereinrichtungen | 19 | 1.311 |
 | 🟪 **Zivilgesellschaft** | Vereine, NGOs, Wohlfahrtsverbände, Stiftungen — gegliedert nach ziviz-Monitor | 20 | 1.386 |
 | 🩷 **Medien** | Öffentlich-rechtlicher und privater Rundfunk, Nachrichtenagenturen, Streaming, Gaming, Werbung | 12 | 828 |
-| 🎭 **Kultur** | Museen, Theater, bildende Kunst sowie Musik-, Film- und Buchwirtschaft | 5 | 345 |
+| 🎭 **Kultur** | Museen, Theater, Archive und Denkmalpflege, Bibliotheken, Soziokultur sowie Musik-, Film- und Buchwirtschaft | 10 | 690 |
 | 🌿 **Religionsgemeinschaften** | Kirchen, jüdische Gemeinden, muslimische Verbände, Hilfswerke | 10 | 690 |
 | 🟤 **Bildung** | Kitas, Schulen, Berufsschulen, Hochschulen, Volkshochschulen | 12 | 828 |
-| | **Gesamt** | **147** | **10.149** |
+| | **Gesamt** | **152** | **10.494** |
 
 ---
 
@@ -95,7 +95,7 @@ Der **Öffnungsklasse-Filter** (Trichter-Symbol oben rechts) blendet auf Ebene 4
 ### Analyse
 
 - **Statistik-Dashboard** — Öffnungsklassen-Verteilung als Balkendiagramm pro Sektor; zeigt auf einen Blick, welcher Sektor am offensten ist
-- **Zeitliche Datenverfügbarkeit** — kumulative Verfügbarkeitskurve (Achse 1980–2024, Daten 1988–2020) und Aktualisierungshäufigkeiten (Echtzeit bis unregelmäßig) je Sektor; alle 10.149 Datentypen tragen Zeitangaben
+- **Zeitliche Datenverfügbarkeit** — kumulative Verfügbarkeitskurve (Achse 1980–2024, Daten 1988–2020) und Aktualisierungshäufigkeiten (Echtzeit bis unregelmäßig) je Sektor; alle 10.494 Datentypen tragen Zeitangaben
 - **Datenkombinator** — 32 Cross-Sektor-Fusionsszenarien mit Slot-Machine-Animation zeigen, welche Datentypen sektorübergreifend kombinierbar sind und welches Erkenntnispotenzial ihre Verknüpfung hat
 
 ### Teilen und Exportieren
@@ -205,7 +205,7 @@ scripts/
   build-search-index.js  — erzeugt den schlanken Suchindex (Build-Artefakt)
   build-static-pages.js  — erzeugt die crawlbaren Sektor-/Organisationsseiten
   build-og-image.js      — erzeugt das 1200×630-Social-Bild
-  analytics.js           — GoatCounter-Snippet, einmal für alle 157 Seiten
+  analytics.js           — GoatCounter-Snippet, einmal für alle 162 Seiten
   build-begruendungs-prompt.mjs — baut den Prompt aus dem Regelwerk
   apply-begruendungen.mjs — übernimmt überarbeitete Begründungen stapelweise
   datafix-*.mjs          — einmalige Datenkorrekturen (dokumentieren frühere Läufe)
@@ -216,14 +216,14 @@ Projektbeschreibung sind indexierbar; die beiden Werkzeuge stehen auf `noindex`.
 
 ### Crawlbare Seiten
 
-Die Karte versteckt ihre 10.149 Datentypen hinter Hash-Fragmenten, die
+Die Karte versteckt ihre 10.494 Datentypen hinter Hash-Fragmenten, die
 Suchmaschinen nicht als eigene Seiten indexieren. `build-static-pages.js`
-erzeugt deshalb beim Build **155 statische Seiten**:
+erzeugt deshalb beim Build **160 statische Seiten**:
 
 | Pfad | Anzahl | Inhalt |
 |---|---:|---|
 | `/sektor/<id>/` | 8 | Öffnungsverteilung, Kennzahlen, Verweise auf die Organisationstypen |
-| `/sektor/<id>/<org>.html` | 147 | alle Datentypen mit Beschreibung, Öffnungsbewertung samt Begründung, Metadaten und Prozessverwendung |
+| `/sektor/<id>/<org>.html` | 152 | alle Datentypen mit Beschreibung, Öffnungsbewertung samt Begründung, Metadaten und Prozessverwendung |
 
 Bewusst keine Seite je Datentyp: Eine Organisationsseite trägt im Schnitt 69
 Datentypen und rund 5.700 Wörter, eine Datentypseite käme auf 82 — zu wenig,
@@ -247,7 +247,7 @@ Das `precompress`-Plugin legt zu großen Textdateien `.br`- und `.gz`-Geschwiste
 Das `seo`-Plugin erzeugt beim Build aus `main.json`:
 - **JSON-LD** — `WebSite` (inkl. `SearchAction` für die `?q=`-Suche), `Organization` und ein `DataCatalog` mit den 8 Sektoren als `Dataset`. Jedes `Dataset` verweist über `distribution` auf seine öffentliche JSON-Datei und über `url` auf die statische Sektorseite — ein `Dataset` ohne erreichbare Distribution wäre irreführendes Markup.
 - **Sektor-Übersicht im HTML** — für Screenreader und Suchmaschinen, da der Canvas keinen auslesbaren Inhalt hat; sie verlinkt die statischen Seiten, die sonst nur über die Sitemap erreichbar wären
-- **`sitemap.xml`** — 157 URLs: Startseite, `ueber.html` und die 155 statischen Seiten
+- **`sitemap.xml`** — 162 URLs: Startseite, `ueber.html` und die 160 statischen Seiten
 
 JSON-LD und Sektor-Übersicht werden ausschließlich in `index.html` injiziert, damit
 `ueber.html` den Sektorkatalog nicht ein zweites Mal deklariert. Da die Startseite
@@ -482,7 +482,7 @@ Beides läuft automatisch bei jedem Push auf `main` — kein manueller Schritt n
 GoatCounter, cookiefrei und ohne personenbezogene Speicherung. Das Snippet steht
 **einmal** in `scripts/analytics.js` und erreicht die Seiten auf zwei Wegen: Das
 `analytics()`-Plugin injiziert es in `index.html` und `ueber.html`,
-`build-static-pages.js` schreibt es in die 155 erzeugten Seiten. 157 der 160
+`build-static-pages.js` schreibt es in die 160 erzeugten Seiten. 162 der 165
 gebauten HTML-Dateien tragen es — ohne sind nur die beiden internen Werkzeuge
 (`noindex`) und die Google-Verifikationsdatei. Der Endpunkt wird im Modul
 geändert, nie in einer Seite. `apply: 'build'` hält den Dev-Server aus der
@@ -490,7 +490,7 @@ Statistik heraus.
 
 Die Karte wird dabei **nur beim ersten Aufruf gezählt**: Alle Navigation läuft
 über Hash-Fragmente (`#medien/zdf`), und `count.js` meldet einen Seitenaufruf
-beim Laden. Die Zahlen beantworten also „welche der 157 URLs werden gefunden",
+beim Laden. Die Zahlen beantworten also „welche der 162 URLs werden gefunden",
 nicht „wie wird die Karte benutzt". Hash-Wechsel mitzuzählen bräuchte einen
 expliziten Aufruf bei jeder Navigation — eine bewusste Entscheidung, kein
 Versehen.

@@ -24,6 +24,28 @@ const VOCAB = Object.fromEntries(
     .map(([key, items]) => [key, new Set(items.map(i => i.code))])
 );
 
+// Code → Beschriftung. Der Validator prüfte lange nur, ob der Code existiert,
+// nie ob das danebenstehende Label dazu passt. So kamen 914 Datentypen mit
+// „Kultur & Freizeit" auf TH_09 (Natur/Biodiversität) und „Statistik &
+// Kennzahlen" auf OB_01 (Personenbezogene Daten) durch — die Sidebar zeigte das
+// Label, die Verknüpfungslogik las den Code, und niemand sah den Widerspruch.
+const VOCAB_LABEL = Object.fromEntries(
+  Object.values(_vocabRaw).filter(Array.isArray).flat().map(i => [i.code, i.label])
+);
+
+/**
+ * Meldet ein Label, das nicht zu seinem Code gehört.
+ * `schluessel` ist 'code' überall außer bei openness — dort heißt das Feld
+ * `class` (siehe CLAUDE.md, das ist Absicht und ein häufiger Stolperstein).
+ */
+function checkLabel(issues, id, feld, obj, schluessel = 'code') {
+  const code = obj && obj[schluessel];
+  if (!code) return;
+  const soll = VOCAB_LABEL[code];
+  if (soll && obj.label != null && obj.label !== soll)
+    warn(issues, `L4 "${id}": ${feld}.label "${obj.label}" widerspricht ${code} ("${soll}")`);
+}
+
 const HEX_COLOR_RE = /^#[0-9a-fA-F]{6}$/;
 const DATA_DIR = path.resolve(__dirname, '../public/data');
 
@@ -170,6 +192,15 @@ function validateL4Details(tile, issues) {
   } else if (!VOCAB.license.has(d.license.code)) {
     error(issues, `L4 "${id}": details.license.code "${d.license.code}" not in ${[...VOCAB.license].join(', ')}`);
   }
+
+  // Labels müssen zu ihrem Code gehören — siehe VOCAB_LABEL oben.
+  checkLabel(issues, id, 'details.openness', d.openness, 'class');
+  checkLabel(issues, id, 'details.theme', d.theme);
+  checkLabel(issues, id, 'details.object', d.object);
+  checkLabel(issues, id, 'details.granularity', d.granularity);
+  checkLabel(issues, id, 'details.license', d.license);
+  if (Array.isArray(d.format))
+    d.format.forEach((f, i) => checkLabel(issues, id, `details.format[${i}]`, f));
 
   // relevance
   if (typeof d.relevance !== 'number' || d.relevance < 1 || d.relevance > 5)

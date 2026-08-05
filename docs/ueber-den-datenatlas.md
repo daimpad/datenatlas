@@ -198,11 +198,13 @@ Kurz: Der Datenatlas ist ein **Orientierungs-, Argumentations- und Planungswerkz
 
 ## Technisches Fundament
 
-Der Datenatlas läuft **vollständig im Browser**. Es gibt keine Datenbank, kein Backend und kein Tracking; die gesamte Taxonomie liegt als statische JSON-Dateien vor. Das hat drei Konsequenzen, die für die Nutzung relevant sind:
+Der Datenatlas läuft **vollständig im Browser**. Es gibt keine Datenbank, kein Backend und keine Nutzerkonten; die gesamte Taxonomie liegt als statische JSON-Dateien vor. Das hat drei Konsequenzen, die für die Nutzung relevant sind:
 
 - **Nachvollziehbarkeit** — der komplette Datenbestand ist einsehbar und als CSV exportierbar; nichts passiert in einer Blackbox.
 - **Nachnutzbarkeit** — der Quellcode steht unter der Mozilla Public License 2.0 auf [GitHub](https://github.com/daimpad/datenatlas); die Struktur lässt sich für andere Länder oder Domänen übernehmen.
 - **Dauerhaftigkeit** — ohne Serverkomponente gibt es nichts, das ausfallen oder unbemerkt veralten kann.
+
+Zur Reichweitenmessung läuft [GoatCounter](https://www.goatcounter.com/) mit — ohne Cookies und ohne Wiedererkennung über Besuche oder Geräte hinweg. Gezählt werden Seitenaufrufe, nicht Personen; auf der Karte zusätzlich der jeweils angezeigte Ausschnitt, weil sonst jeder Besuch nur als Startseite erschiene. Die internen Redaktionswerkzeuge sind ausgenommen.
 
 Die Datenqualität wird maschinell abgesichert: Ein Validator prüft bei jeder Änderung Schema, Vokabular, sektorübergreifend eindeutige Kennungen und die Farbkonventionen; er läuft automatisch bei jedem Pull Request.
 

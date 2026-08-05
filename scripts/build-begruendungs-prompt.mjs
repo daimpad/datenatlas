@@ -11,6 +11,7 @@
 //   node scripts/build-begruendungs-prompt.mjs                    # alle kurzen
 //   node scripts/build-begruendungs-prompt.mjs --op OP_03         # nur eine Klasse
 //   node scripts/build-begruendungs-prompt.mjs --sektor staat     # nur ein Sektor
+//   node scripts/build-begruendungs-prompt.mjs --regel3            # nur Regel-3-Verstöße
 //   node scripts/build-begruendungs-prompt.mjs --batch 40 --out ./prompts
 //
 // Die Antwort des Modells wird in begruendungen.html eingefügt („Antwort
@@ -32,6 +33,11 @@ const arg = (name, fallback = null) => {
 };
 
 const onlyOp     = arg('op');
+// Auswahl nach Regel 3 statt nach Länge: Begründungen, die etwas über die
+// Veröffentlichungspraxis Dritter behaupten. Muster identisch mit
+// scripts/validate-data.js und src/begruendungen.js — alle drei zusammen ändern.
+const PRACTICE_RE = /(veröffentlich(en|t) (bislang |bisher |in der regel |derzeit )?keine|(bereits|schon) (teilweise |weitgehend )?(öffentlich|frei) (zugänglich|verfügbar|abrufbar)|werden (bereits|regelmäßig|routinemäßig|standardmäßig) (veröffentlicht|publiziert|bereitgestellt)|teilweise (öffentlich|frei) (zugänglich|verfügbar)|(stellen|stellt) (die )?(daten )?nicht (öffentlich )?(bereit|zur verfügung)|geben (die daten )?nicht (heraus|frei))/i;
+const onlyRegel3 = argv.includes('--regel3');
 const onlySector = arg('sektor');
 const batchSize  = Number(arg('batch', 50));
 const outDir     = arg('out', path.resolve(fileURLToPath(new URL('.', import.meta.url)), '../prompts'));
@@ -58,7 +64,8 @@ for (const sector of main) {
         if (dt.level !== 4) continue;
         const d = dt.details ?? {};
         const expl = (d.openness?.explanation ?? '').trim();
-        if (words(expl) >= MIN_WORDS) continue;
+        if (onlyRegel3) { if (!PRACTICE_RE.test(expl)) continue; }
+        else if (words(expl) >= MIN_WORDS) continue;
         if (onlyOp && d.openness?.class !== onlyOp) continue;
 
         items.push({
@@ -90,7 +97,7 @@ const batches = [];
 for (let i = 0; i < items.length; i += batchSize) batches.push(items.slice(i, i + batchSize));
 
 fs.mkdirSync(outDir, { recursive: true });
-const tag = [onlyOp, onlySector].filter(Boolean).join('-') || 'alle';
+const tag = [onlyRegel3 ? 'regel3' : null, onlyOp, onlySector].filter(Boolean).join('-') || 'alle';
 
 batches.forEach((batch, i) => {
   const n = String(i + 1).padStart(2, '0');

@@ -210,6 +210,29 @@ shareBtn.addEventListener('click', () => {
   });
 });
 
+// Reichweitenmessung der Karte.
+//
+// Die Navigation läuft vollständig über Hash-Fragmente, und count.js von
+// GoatCounter zählt nur den ersten Aufruf. Ohne diesen Zähler wäre die
+// gesamte Nutzung der Karte unsichtbar — die Statistik zeigte für jeden
+// Besuch genau „/", egal wie viele Sektoren jemand durchgeht.
+//
+// Der naheliegende Weg wäre ein hashchange-Listener. Der feuert hier aber nie:
+// updateHash() benutzt history.replaceState, und das löst kein hashchange aus.
+// Deshalb hängt der Zähler direkt an updateHash().
+//
+// Gezählt wird ausschließlich der Pfad. Keine Kennung, keine Verweildauer,
+// nichts, was zwei Aufrufe derselben Person verbinden könnte — GoatCounter
+// setzt keine Cookies. `window.goatcounter` fehlt im Dev-Server (das Snippet
+// wird nur beim Build eingehängt), der optionale Aufruf greift dort ins Leere.
+let _lastCounted = null;
+
+function countView(path) {
+  if (path === _lastCounted) return;   // gleiche Ansicht nicht doppelt zählen
+  _lastCounted = path;
+  window.goatcounter?.count?.({ path, title: document.title, event: false });
+}
+
 function updateHash() {
   if (!_hashEnabled) return;
   const lvl = currentLevel();
@@ -219,6 +242,9 @@ function updateHash() {
     .map(c => c.id)
     .join('/');
   history.replaceState(null, '', path ? '#' + path : location.pathname);
+  // Der erste Aufruf ist schon von count.js gezählt; ab dem zweiten übernimmt
+  // countView. Deshalb wird _lastCounted beim Start vorbelegt.
+  countView(location.pathname + (path ? '#' + path : ''));
 }
 
 // Load a sector on demand and drill to sector/org/activity, rebuilding the
@@ -473,6 +499,9 @@ function ensureFullIndex() {
   // Read before updateHash() runs — it rewrites the URL to location.pathname at
   // root level, which would drop the query string.
   const _initialQuery = new URLSearchParams(location.search).get('q');
+  // count.js zählt den Einstieg bereits selbst — hier vorbelegen, damit die
+  // erste updateHash()-Runde ihn nicht ein zweites Mal meldet.
+  _lastCounted = location.pathname + _initialHash;
 
   try {
     showLoading(true);

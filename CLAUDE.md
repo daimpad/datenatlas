@@ -29,6 +29,7 @@ src/
   stats.js        — openness statistics dashboard
   timeline.js     — availability curve + update frequencies
   generator.js    — Datenkombinator (32 cross-sector fusion scenarios)
+  vokabular.js    — Vokabular-Codes und Beschriftungen, einmal für alle Consumer
   utils.js        — esc(), trapFocus(), safeUrl(), OPENNESS_COLORS
   style.css       — CSS variables, layout, modal styles
 public/
@@ -203,6 +204,9 @@ timeline and process navigation degrade.
 | `TH_08` | Recht |
 | `TH_09` | Natur/Biodiversität |
 | `TH_10` | Wissenschaft/Technik |
+| `TH_11` | Infrastruktur & Mobilität |
+| `TH_12` | Kultur & Freizeit |
+| `TH_13` | Medien & Kommunikation |
 
 ### Object Type (details.object.code)
 | Code | Typ |
@@ -215,6 +219,7 @@ timeline and process navigation degrade.
 | `OB_06` | Mediendaten |
 | `OB_07` | Transaktionsdaten |
 | `OB_08` | Metadaten |
+| `OB_09` | Statistik / Aggregatdaten |
 
 ### Granularity (details.granularity.code)
 | Code | Granularität |
@@ -250,6 +255,8 @@ Personenbezug (Fahrten, Buchungen, Messungen) sind `GR_01`.
 | `FT_04` | XML |
 | `FT_05` | GeoJSON |
 | `FT_06` | Shapefile |
+| `FT_07` | PDF |
+| `FT_08` | Excel (XLSX) |
 
 ### License (details.license.code)
 | Code | Lizenz |
@@ -269,7 +276,44 @@ Personenbezug (Fahrten, Buchungen, Messungen) sind `GR_01`.
 | `FQ_05` | Unregelmäßig |
 
 All vocabulary codes live in `public/data/vocabulary.json` — the validator reads
-them from there, so add new codes to that file first.
+them from there, so add new codes to that file first. `src/vokabular.js` mirrors
+it for consumers that cannot fetch it (browser before the fetch, Node scripts);
+**add a code to both.**
+
+### Der Code ist die Wahrheit, das Label folgt ihm
+
+`TH_11`–`TH_13`, `OB_09`, `FT_07` und `FT_08` sind nachgetragen, weil 914
+Datentypen (9 %) einen Code trugen, dessen Bedeutung ihrem eigenen Label
+widersprach: „Kultur & Freizeit" auf `TH_09` (Natur/Biodiversität), „Statistik &
+Kennzahlen" auf `OB_01` (Personenbezogene Daten), „Excel (XLSX)" auf `FT_05`
+(GeoJSON), „Lokal (Gemeinde/Kreis)" 474× auf `GR_02` statt `GR_03`.
+
+Unsichtbar blieb das, weil drei Stellen dieselbe Frage verschieden beantworteten:
+`modal.js` zeigte das Label **aus den Daten**, `export.js` die Beschriftung
+**zum Code**, `related.js` gruppierte **allein über den Code**. Derselbe Knoten,
+drei Antworten — und die einzige, die ein Mensch zu sehen bekam, war die
+falsche. Die Museumsbesucher-Statistik stand damit in der Ähnlichkeitssuche
+neben Biodiversitätsdaten.
+
+Behoben in drei Schritten, und alle drei müssen zusammen bleiben:
+
+1. **Umcodiert**, wo ein richtiger Code existierte (2.808 Felder); das
+   Vokabular nur dort erweitert, wo der Begriff wirklich fehlte (6 Codes).
+2. **Ein Modul statt sechs Kopien** — `src/vokabular.js`. `labelFor()` liest
+   `LABELS[code]` **vor** `obj.label`; genau dieses Vorrangverhältnis hat den
+   Fehler verdeckt. Es war derselbe Kopierfehler wie damals bei `PRACTICE_RE`.
+3. **Der Validator prüft Labels gegen ihren Code** (`checkLabel()`). Vorher
+   prüfte er nur, ob der Code existiert. Bei `openness` heißt der Schlüssel
+   `class`, nicht `code` — die Funktion nimmt ihn deshalb als Parameter.
+
+Die 861 Öffnungs-Labels („Grün — sofort publizierbar", „Rot — Steuergeheimnis")
+sind dabei mit normalisiert worden. Ihre Klasse war fast immer richtig, die
+Beschriftung nur frei formuliert — drei Ausnahmen trugen aber `OP_02` mit dem
+Label „Sofort publizierbar", also gelb mit grüner Aufschrift. Die Begründung
+steht ohnehin im Feld darunter; die Klasse braucht keine zweite Stimme.
+
+**Beim Anlegen neuer Knoten deshalb: Code wählen, Label aus dem Vokabular
+kopieren.** Ein selbst formuliertes Label ist ab jetzt eine Validator-Warnung.
 
 ---
 
@@ -286,6 +330,7 @@ The validator checks:
 - `openness.class` (not `.code`)
 - `format` array (not `formats`)
 - Valid vocab codes (from `vocabulary.json`)
+- **Labels matching their code** — a self-worded label is a warning
 - **Globally unique ids** across all sector files
 - **Reserved openness colors** not used as tile or sector colors
 - No structural anomalies in hierarchy

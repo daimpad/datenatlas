@@ -185,6 +185,7 @@ src/
   stats.js        — Statistik-Dashboard (Öffnungsklassen-Balkendiagramm)
   timeline.js     — Timeline-View (kumulative Verfügbarkeit + Aktualisierungshäufigkeit)
   generator.js    — Datenkombinator (32 Cross-Sektor-Fusionsszenarien)
+  vokabular.js    — Vokabular-Codes und Beschriftungen, einmal für alle Consumer
   utils.js        — esc(), trapFocus(), safeUrl(), OPENNESS_COLORS
   style.css       — CSS-Variablen, Layout, Modal-Styles
 public/
@@ -347,6 +348,9 @@ Maßgeblich sind die Werte in `public/data/main.json`:
 | `TH_08` | Recht |
 | `TH_09` | Natur/Biodiversität |
 | `TH_10` | Wissenschaft/Technik |
+| `TH_11` | Infrastruktur & Mobilität |
+| `TH_12` | Kultur & Freizeit |
+| `TH_13` | Medien & Kommunikation |
 
 ### Objekttyp (`details.object.code`)
 | Code | Typ |
@@ -359,6 +363,7 @@ Maßgeblich sind die Werte in `public/data/main.json`:
 | `OB_06` | Mediendaten |
 | `OB_07` | Transaktionsdaten |
 | `OB_08` | Metadaten |
+| `OB_09` | Statistik / Aggregatdaten |
 
 ### Granularität (`details.granularity.code`)
 | Code | Granularität |
@@ -385,6 +390,8 @@ heißt **personenbezogene** Mikrodaten; Einzelereignisse ohne Personenbezug
 | `FT_04` | XML |
 | `FT_05` | GeoJSON |
 | `FT_06` | Shapefile |
+| `FT_07` | PDF |
+| `FT_08` | Excel (XLSX) |
 
 ### Lizenz (`details.license.code`)
 | Code | Lizenz |
@@ -404,7 +411,17 @@ node scripts/validate-data.js
 
 Ziel: **0 Warnings, 0 Errors**
 
-Geprüft werden Pflichtfelder und Struktur der L4-Einträge, gültige Vokabular-Codes, sektorübergreifend eindeutige IDs sowie reservierte Öffnungsfarben. Der Validator läuft zusätzlich bei jedem Pull Request (`.github/workflows/validate-data.yml`) und bricht mit Exit-Code 1 ab.
+Geprüft werden Pflichtfelder und Struktur der L4-Einträge, gültige Vokabular-Codes, **Beschriftungen passend zu ihrem Code**, sektorübergreifend eindeutige IDs sowie reservierte Öffnungsfarben. Der Validator läuft zusätzlich bei jedem Pull Request (`.github/workflows/validate-data.yml`) und bricht mit Exit-Code 1 ab.
+
+Die Label-Prüfung ist neu und hat einen konkreten Anlass: 914 Datentypen (9 %)
+trugen einen Code, dessen Bedeutung ihrem eigenen Label widersprach — „Kultur &
+Freizeit" auf `TH_09` (Natur/Biodiversität), „Statistik & Kennzahlen" auf
+`OB_01` (Personenbezogene Daten), „Excel (XLSX)" auf `FT_05` (GeoJSON).
+Unsichtbar blieb das, weil die Sidebar das Label aus den Daten zeigte, der
+CSV-Export die Beschriftung zum Code und die Ähnlichkeitssuche allein den Code
+las: derselbe Knoten, drei Antworten. Seitdem gilt **der Code als Wahrheit, das
+Label folgt ihm** — nachzulesen in `src/vokabular.js`, das die vorher sechsfach
+kopierte Tabelle einmal hält.
 
 Danach folgt ein **Qualitätsbericht** — bewusst als Hinweis, nicht als Warnung,
 damit das Ziel „0 Warnings" erreichbar bleibt und die redaktionelle Schuld

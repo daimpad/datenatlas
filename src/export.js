@@ -1,11 +1,12 @@
 import { state } from './state.js';
 
-const THEME       = { TH_01:'Gesundheit', TH_02:'Bildung', TH_03:'Soziales', TH_04:'Wirtschaft', TH_05:'Verwaltung', TH_06:'Umwelt', TH_07:'Finanzen', TH_08:'Recht', TH_09:'Natur/Biodiversität', TH_10:'Wissenschaft/Technik' };
-const OBJECT      = { OB_01:'Personenbezogene Daten', OB_02:'Textdokumente', OB_03:'Finanzdaten', OB_04:'Messungen / Sensordaten', OB_05:'Geodaten', OB_06:'Mediendaten', OB_07:'Transaktionsdaten', OB_08:'Metadaten' };
-const GRANULARITY = { GR_01:'Einzelereignis / Rohdaten', GR_02:'Aggregiert', GR_03:'Kleinräumig', GR_04:'Individuell / Mikrodaten' };
-const LICENSE     = { LI_01:'CC0 / Public Domain', LI_02:'CC BY 4.0', LI_03:'Datenlizenz Deutschland', LI_04:'Proprietär / Restriktiv' };
-const FORMAT      = { FT_01:'CSV', FT_02:'JSON', FT_03:'NetCDF / HDF5', FT_04:'XML', FT_05:'GeoJSON', FT_06:'Shapefile' };
-const OPENNESS    = { OP_01:'Sofort publizierbar', OP_02:'Nach Aufbereitung', OP_03:'Nur Metadaten' };
+import { LABELS } from './vokabular.js';
+
+// Der Export beschriftete früher über eigene Kopien dieser Tabellen. Solange
+// die Daten Labels trugen, die ihrem Code widersprachen, sagte die CSV etwas
+// anderes als die Sidebar zum selben Knoten. Beide lesen jetzt LABELS.
+const THEME = LABELS, OBJECT = LABELS, GRANULARITY = LABELS,
+      LICENSE = LABELS, FORMAT = LABELS, OPENNESS = LABELS;
 
 const HEADERS = ['Name','Sektor','Organisation','Aktivität','Öffnungsklasse','Thema','Objekttyp','Granularität','Format','Lizenz','Relevanz','Beschreibung'];
 

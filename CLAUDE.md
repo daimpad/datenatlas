@@ -295,11 +295,31 @@ It then prints a **content-quality report** — deliberately not warnings, so th
 
 ```
 Inhaltsqualität (Hinweis, keine Warnungen):
-  Öffnungsbegründungen unter 5 Wörtern: 752 (7 %)
-  mehrfach verwendete Begründungstexte: 1552 Knoten (15 %)
-  Aussagen über fremde Veröffentlichungspraxis: 41
+  Öffnungsbegründungen unter 5 Wörtern: 0 (0 %)
+  mehrfach verwendete Begründungstexte: 1434 Knoten (14 %)
+  Aussagen über fremde Veröffentlichungspraxis: 0
   Beschreibung widerspricht den Metadaten: 0
 ```
+
+Drei der vier Kennzahlen stehen auf null. Die **kurzen Begründungen** wurden in
+vierzehn Stapeln über `scripts/apply-begruendungen.mjs` abgearbeitet (942 → 0),
+die **Praxisaussagen** in dreizehn weiteren (776 → 0), die
+**Metadaten-Widersprüche** einzeln (8 → 0). Offen bleiben die 1.434 formelhaft
+wiederverwendeten Texte — jeder braucht einen individuell geschriebenen Satz,
+keinen Massenlauf.
+
+Die 776 waren **kein Anstieg gegenüber der früher dokumentierten 41**, sondern
+die erste ehrliche Messung: das alte Muster traf fast nichts. Wer die Kennzahl
+weiter verschärft, wird sie erneut steigen sehen — das ist ihr Zweck.
+
+Beim Abarbeiten von Regel 3 hat sich ein Ersatzmuster bewährt, das die Alttexte
+fast nie hatten: **die Zähleinheit benennen.** Ein Krankenhausaufenthalt ist ein
+Gesundheitsdatum, die Summe über tausende Fälle ist keines mehr; gezählt werden
+Fahrten statt Fahrgäste, Gemeinden statt Gläubige, Belegungen statt Personen.
+Und dort, wo Aggregation *nicht* genügt — seltene Prozeduren in kleinen
+Häusern, Gewerbesteuer bei einem Großbetrieb, Herkunftsland mal seltener Beruf —
+steht jetzt eine Mindestfallzahl oder eine Vergröberungsauflage statt einer
+Unbedenklichkeitserklärung.
 
 Work these off with `begruendungen.html` — it has one filter per metric.
 **Do not bulk-generate the justifications.** The short ones
@@ -313,10 +333,12 @@ anything with a legal reference is flagged for checking.
 The third metric implements **rule 3** of the justification ruleset: a
 justification must not claim that some organisation already publishes
 something — nor that it does not. Both are unverifiable without research and
-both go stale when the practice changes. The regex is deliberately narrow (set
-phrases, not keywords) and exists twice — `PRACTICE_RE` in
-`scripts/validate-data.js` and in `src/begruendungen.js`. **Change both
-together.**
+both go stale when the practice changes. The check is deliberately narrow (set
+phrases plus a Pflicht/Modal exception, not keywords) and lives **once**, as
+`claimsThirdPartyPractice()` in `src/begruendungs-regeln.js` — the validator,
+the browser tool and the batch applier all import it. It used to be a copied
+`PRACTICE_RE` in four places, which is exactly how it came to report 41 hits
+where there were 776.
 
 ### The justification ruleset — one source
 

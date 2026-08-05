@@ -371,6 +371,17 @@ file plus `license` and `isAccessibleForFree`, and its `url` points at the stati
 sector page. **Keep it that way**: a `Dataset` without a reachable distribution,
 or pointing at a hash fragment that is no page, is misleading structured data.
 
+Two rules the Search Console taught us the hard way:
+
+- Catalog membership is `includedInDataCatalog`, **not** `isPartOf`. `isPartOf`
+  is inherited from `CreativeWork` and expects a `CreativeWork`; pointing it at
+  a `DataCatalog` produced *„Ungültiger Objekttyp für Feld isPartOf"*.
+- **Every `@id` reference carries its `@type`.** A bare `{"@id": …}` pointing at
+  a sibling — or worse, at the enclosing node — is not reliably resolved by
+  Google's parser, which then reports *„falscher Namensraum"*. `isPartOf` with a
+  typed `WebSite` (as in `ueber.html` and the static pages) was never the
+  problem; the untyped back-references were.
+
 ### Analytics
 
 GoatCounter, cookiefrei. The snippet lives once in `scripts/analytics.js` and

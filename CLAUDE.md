@@ -49,7 +49,7 @@ scripts/
   build-search-index.js  — builds the slim search index (build artifact)
   build-static-pages.js  — builds the crawlable sector/organisation pages
   build-og-image.js      — builds the 1200×630 social image
-  analytics.js           — the GoatCounter snippet, once for all 162 pages
+  analytics.js           — the GoatCounter snippet, once for all 161 pages
   build-begruendungs-prompt.mjs — builds the prompt from the ruleset
   apply-begruendungen.mjs — applies revised justifications in batches
   datafix-*.mjs          — one-off data corrections (record of past runs)
@@ -75,10 +75,10 @@ the index format, change `adaptIndex()` and the id extraction in `expand.js` too
 
 ### Crawlable static pages
 
-The canvas hides all 10.494 data types behind hash fragments, which search
+The canvas hides all 10.428 data types behind hash fragments, which search
 engines do not index as separate URLs. `build-static-pages.js` therefore emits
-**160 pages** at build time: `/sektor/<id>/` (8) and `/sektor/<id>/<org>.html`
-(152). They are generated from the sector files — no maintenance, new data types
+**159 pages** at build time: `/sektor/<id>/` (8) and `/sektor/<id>/<org>.html`
+(151). They are generated from the sector files — no maintenance, new data types
 appear automatically.
 
 Deliberately **no page per data type**: an organisation page carries ~69 data
@@ -125,6 +125,32 @@ layouts and the Medien→Kultur split was normalised (`scripts/datafix-colors.mj
 Kultur has its own palette derived from its L1 gradient instead of the pink it
 inherited from Medien. Keep it that way: assign colors from this table, never by
 copying a neighbouring node.
+
+### Vier Bildungseinrichtungen stehen bewusst doppelt
+
+`staat` führt vier L2, die `bildung` namensgleich ebenfalls führt:
+`staat-allgemeinbildende-schule`, `staat-berufsschule`, `staat-volkshochschule`
+und `staat-kita-fruehbildung` — zusammen 276 L4. Gleiche L3-Namen, 58 wortgleiche
+Beschreibungen, ids mit `staat-`-Präfix: eine kopierte Teilstruktur.
+
+**Das bleibt so, und zwar absichtlich.** Dieselbe Datenquelle erscheint einmal
+aus Sicht der Einrichtung (`bildung`) und einmal aus Sicht des Trägers
+(`staat`) — eine Schülerstatistik ist für das Schulamt eine Planungsgrundlage
+und für die Schule ein Verwaltungsdatum. Wer die Doppelung findet und für einen
+Fehler hält, soll hier lesen, dass sie geprüft und entschieden wurde.
+
+Nicht verwechseln mit den echten Behördenknoten: `schulamt`
+(„Schulamt & Schulverwaltung") und `bildungsverwaltung-politik` bilden die
+Aufsichts- und Politikebene ab und sind von der Doppelung unabhängig.
+
+**Öffentliche Bibliotheken waren ein anderer Fall.** `staat` führte sie als
+„Bibliotheken & Medienzentren", `kultur` seit S-Q als „Öffentliche Bibliotheken"
+— zwei Knoten für denselben Einrichtungstyp, entstanden weil die S-Q-Prüfung
+über Knotennamen lief und der alte Knoten anders heißt. Der staat-Knoten ist
+aufgelöst; die drei echten Schulmedienzentrums-Einträge stehen jetzt unter
+`bildung/digitale-bildungsplattformen`. Eine Stadtbibliothek ist nach dem
+Trägertyp-Prinzip eine Kultureinrichtung, auch wenn die Kommune sie betreibt —
+sonst gehörten Stadtwerke und Krankenhäuser ebenfalls nach `staat`.
 
 Der Kultur-Sektor ist in S-Q von 5 auf 10 L2 gegliedert worden. Der frühere
 Sammelknoten `kulturbetriebe` trug vier Trägertypen in einem Knoten; er heißt
@@ -243,7 +269,7 @@ einmal erhoben wurde. „Bundesweite Vergleichsarbeiten auf Kreisebene" ist
 bewertet Veröffentlichbarkeit, und dafür zählt, was man in die Hand bekommt.
 
 Ein Vorschlag, beide Ebenen als getrennte Felder zu führen, wurde verworfen:
-das wäre ein Pflichtfeld für alle 10.494 Einträge, um eine Mehrdeutigkeit zu
+das wäre ein Pflichtfeld für alle 10.428 Einträge, um eine Mehrdeutigkeit zu
 lösen, die eine Definition schon löst. Ein Massenlauf über den Bestand wäre
 ebenfalls falsch — ein Suchmuster findet 136 `GR_03`-Einträge mit Bund/Land-
 Wörtern, aber deren Beschreibungen nennen die Erhebung *und* die Ausweisung,
@@ -484,7 +510,7 @@ The `seo` plugin generates from `main.json` at build time: JSON-LD
 (`WebSite` incl. `SearchAction` for the `?q=` deep link, `Organization`,
 `DataCatalog` with the 8 sectors as `Dataset`), a screen-reader/crawler-readable
 sector outline (the canvas has no readable content), and `sitemap.xml`
-(162 URLs incl. the static pages). Adding or renaming a sector requires no edits
+(161 URLs incl. the static pages). Adding or renaming a sector requires no edits
 here — the pages, the outline and the sitemap all follow `main.json`.
 
 Each sector `Dataset` declares a real `distribution` pointing at its public JSON
@@ -507,8 +533,8 @@ Two rules the Search Console taught us the hard way:
 
 GoatCounter, cookiefrei. The snippet lives once in `scripts/analytics.js` and
 reaches the pages two ways: the `analytics()` plugin injects it into
-`index.html` and `ueber.html`, `build-static-pages.js` writes it into the 160
-generated pages. **162 of 165 built HTML files carry it** — the three without
+`index.html` and `ueber.html`, `build-static-pages.js` writes it into the 159
+generated pages. **161 of 164 built HTML files carry it** — the three without
 are `expand.html`, `begruendungen.html` (internal tools, `noindex`) and the
 Google verification file (plain text). Change the endpoint in the module, never
 in a page.
@@ -517,7 +543,7 @@ in a page.
 
 **The canvas is not counted beyond the first view.** All map navigation is hash
 based (`#medien/zdf`), and `count.js` records one pageview on load. So the
-numbers answer "which of the 162 URLs get found", not "how is the map used".
+numbers answer "which of the 161 URLs get found", not "how is the map used".
 Counting hash changes would need an explicit `goatcounter.count({path})` call
 on navigation — a deliberate decision, not an oversight.
 
@@ -578,15 +604,15 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 
 | Sektor | L2 | L3 | L4 | Ø L4/L2 |
 |--------|----|----|-----|---------|
-| staat | 46 | 125 | 3174 | 69,0 |
+| staat | 45 | 122 | 3105 | 69,0 |
 | wirtschaft | 23 | 67 | 1587 | 69,0 |
 | wissenschaft | 19 | 52 | 1311 | 69,0 |
 | zivilgesellschaft | 20 | 58 | 1386 | 69,3 |
 | medien | 12 | 35 | 828 | 69,0 |
 | kultur | 10 | 30 | 690 | 69,0 |
 | religion | 10 | 30 | 690 | 69,0 |
-| bildung | 12 | 36 | 828 | 69,0 |
-| **Gesamt** | **152** | **433** | **10.494** | **69,0** |
+| bildung | 12 | 36 | 831 | 69,3 |
+| **Gesamt** | **151** | **430** | **10.428** | **69,1** |
 
 ---
 
@@ -679,6 +705,7 @@ Sprint-Format (Features):
 - [x] **S-M** Qualitätspass Processes IV — alle 7.940 L4-Nodes auf ≥4 Prozesseinträge gebracht ✓
 - [x] **S-N** Tiefenausbau VII — alle 147 L2 auf ≥60 L4, +921 L4, 7.940→8.861 ✓
 - [x] **S-O** Qualitätspass Processes V — alle 8.861 L4-Nodes auf ≥5 Prozesseinträge gebracht ✓
+- [x] **S-S** Bibliotheken entdoppelt — `staat/bibliotheken-medienzentren` (69 L4) und das in S-Q angelegte `kultur/oeffentliche-bibliotheken` beschrieben denselben Einrichtungstyp. Der staat-Knoten ist aufgelöst, drei echte Schulmedienzentrums-Einträge nach `bildung/digitale-bildungsplattformen` gerettet. staat 46→45 L2, Gesamt 10.494→10.428. Die vier Bildungs-L2 in staat bleiben bewusst doppelt (siehe oben) ✓
 - [x] **S-Q** Breitenausbau kultur — der Sammelknoten „Kulturbetriebe und Kulturwirtschaft" trug vier Trägertypen in einem L2 (Museen, darstellende Künste, Kulturförderung, Archive). Aufgelöst zu je eigenen L2, dazu zwei ganz fehlende: Öffentliche Bibliotheken (Schulbibliotheken standen unter bildung, Stadtbibliotheken nirgends) und Soziokultur. 5→10 L2, +345 L4, kultur 345→690, Gesamt 10.149→10.494 ✓
 - [x] **S-R** Vokabular — 914 Datentypen trugen einen Code, dessen Bedeutung ihrem Label widersprach. 2.808 Felder umcodiert, 6 Codes ergänzt, `src/vokabular.js` als einzige Quelle, Validator prüft Labels gegen ihren Code ✓ (PR #156)
 - [x] **S-P** Tiefenausbau VIII — alle 147 L2 auf ≥69 L4. religion (PR #94), bildung (PR #96), medien (PR #97), wissenschaft (PR #98), zivilgesellschaft (PR #99), wirtschaft (PR #100), staat (2766→3174, +408). Gesamt 8.861→10.149 L4 ✓

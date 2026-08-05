@@ -180,7 +180,7 @@ function seo() {
               '@type': 'WebSite', '@id': `${SITE_URL}/#website`, url: `${SITE_URL}/`,
               name: 'Datenatlas',
               description: 'Interaktiver Atlas der deutschen Datenlandschaft: 10.149 öffentliche Datentypen aus 8 Sektoren und ihr Open-Data-Potenzial.',
-              inLanguage: 'de-DE', publisher: { '@id': `${SITE_URL}/#org` },
+              inLanguage: 'de-DE', publisher: { '@type': 'Organization', '@id': `${SITE_URL}/#org` },
               // Sitelinks searchbox — the ?q= parameter is handled at boot in
               // main.js, which opens the search overlay with the term applied.
               potentialAction: {
@@ -195,16 +195,27 @@ function seo() {
               name: 'Datenatlas — Taxonomie öffentlicher Datentypen',
               description: 'Vierstufige Taxonomie (Sektor → Organisation → Aktivität → Datentyp) öffentlicher Datentypen in Deutschland mit Bewertung des Open-Data-Potenzials.',
               url: `${SITE_URL}/`, inLanguage: 'de-DE',
-              publisher: { '@id': `${SITE_URL}/#org` },
+              publisher: { '@type': 'Organization', '@id': `${SITE_URL}/#org` },
               // Each sector is a genuine dataset: its taxonomy ships as one
               // publicly reachable JSON file. Declaring the distribution and
               // pointing `url` at the static sector page (not a hash fragment,
               // which is no page at all) is what makes this markup truthful.
+              // `includedInDataCatalog`, nicht `isPartOf`: Für die Zugehörigkeit
+              // eines Dataset zu einem Katalog hat schema.org eine eigene
+              // Eigenschaft. `isPartOf` erbt Dataset von CreativeWork und
+              // erwartet dort ein CreativeWork — die Search Console meldet für
+              // einen DataCatalog folgerichtig „ungültiger Objekttyp".
+              //
+              // Und die Referenzen sind typisiert. Eine nackte `{"@id": …}`
+              // verweist hier auf den umgebenden Knoten; Googles Parser löst
+              // solche Rückverweise nicht zuverlässig auf und sieht einen
+              // Knoten ohne Typ — daher zusätzlich die Meldung „falscher
+              // Namensraum". Mit `@type` daneben ist keine Auflösung nötig.
               dataset: sectors.map((s) => ({
                 '@type': 'Dataset', name: s.name, description: s.description,
                 url: `${SITE_URL}/sektor/${s.id}/`, inLanguage: 'de-DE',
-                isPartOf: { '@id': `${SITE_URL}/#catalog` },
-                creator: { '@id': `${SITE_URL}/#org` },
+                includedInDataCatalog: { '@type': 'DataCatalog', '@id': `${SITE_URL}/#catalog` },
+                creator: { '@type': 'Organization', '@id': `${SITE_URL}/#org` },
                 license: LICENSE_URL,
                 isAccessibleForFree: true,
                 distribution: {

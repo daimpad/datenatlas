@@ -89,10 +89,16 @@ for (const item of input) {
     errors.push(`${id}: Regel 5 — ${w} Wörter (Ziel ${TARGET_WORDS.min}–${TARGET_WORDS.max})`);
   }
 
+  // Vor dem Vergleich normalisieren: „§ 7a" und „§7a" sind dieselbe Fundstelle,
+  // und ob die Beschreibung ein Leerzeichen setzt, ist Zufall der Erfassung.
+  // Ohne das meldet die Prüfung eine erfundene Fundstelle, wo nur die
+  // Schreibweise abweicht — und ein Fehlalarm, der den ganzen Stapel stoppt,
+  // untergräbt genau die Prüfung, auf die es ankommt.
+  const norm = (s) => String(s).replace(/(§+|Art\.|Artikel)\s+/g, '$1').replace(/\s+/g, ' ');
   const d = hit.node.details ?? {};
-  const haystack = `${d.description ?? ''} ${hit.node.name ?? ''}`;
+  const haystack = norm(`${d.description ?? ''} ${hit.node.name ?? ''}`);
   for (const cite of new Set(text.match(CITE_RE) ?? [])) {
-    if (!haystack.includes(cite)) {
+    if (!haystack.includes(norm(cite))) {
       errors.push(`${id}: Regel 2 — „${cite}" steht nicht in Beschreibung oder Name`);
     }
   }

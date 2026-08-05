@@ -10,6 +10,7 @@
 // back into the interactive map via the matching hash deep link.
 import fs from 'fs';
 import path from 'path';
+import { ANALYTICS_TAG } from './analytics.js';
 
 const SITE = 'https://datenatlas.de';
 
@@ -91,6 +92,7 @@ function shell({ title, description, canonical, breadcrumb, body, jsonLd }) {
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
 <link rel="stylesheet" href="../pages.css" />
 ${graph.map(g => `<script type="application/ld+json">${JSON.stringify(g)}</script>`).join('\n')}
+${ANALYTICS_TAG}
 </head>
 <body>
 <header class="top">

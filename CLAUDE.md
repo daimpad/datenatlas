@@ -296,24 +296,28 @@ It then prints a **content-quality report** — deliberately not warnings, so th
 ```
 Inhaltsqualität (Hinweis, keine Warnungen):
   Öffnungsbegründungen unter 5 Wörtern: 0 (0 %)
-  mehrfach verwendete Begründungstexte: 1434 Knoten (14 %)
+  mehrfach verwendete Begründungstexte: 0 Knoten (0 %)
   Aussagen über fremde Veröffentlichungspraxis: 0
   Beschreibung widerspricht den Metadaten: 0
 ```
 
-Drei der vier Kennzahlen stehen auf null. Die **kurzen Begründungen** wurden in
+Alle vier Kennzahlen stehen auf null. Die **kurzen Begründungen** wurden in
 vierzehn Stapeln über `scripts/apply-begruendungen.mjs` abgearbeitet (942 → 0),
 die **Praxisaussagen** in dreizehn weiteren (776 → 0), die
-**Metadaten-Widersprüche** einzeln (8 → 0). Offen bleiben die 1.434 formelhaft
-wiederverwendeten Texte — jeder braucht einen individuell geschriebenen Satz,
-keinen Massenlauf.
+**Metadaten-Widersprüche** einzeln (8 → 0) und die **formelhaft
+wiederverwendeten Texte** in vierundzwanzig Stapeln à 60 (1.492 → 0). Jeder
+dieser Sätze ist einzeln geschrieben; einen Massenlauf gab es dafür nicht.
+
+Die Kennzahlen bleiben im Bericht, weil sie beim Anfassen wieder steigen: ein
+neuer Datentyp mit kopierter Begründung erscheint sofort als Dublette, eine zu
+knappe Formulierung als Kurztext. Das ist ihr Zweck.
 
 Die 776 waren **kein Anstieg gegenüber der früher dokumentierten 41**, sondern
 die erste ehrliche Messung: das alte Muster traf fast nichts. Wer die Kennzahl
 weiter verschärft, wird sie erneut steigen sehen — das ist ihr Zweck.
 
-Beim Abarbeiten von Regel 3 hat sich ein Ersatzmuster bewährt, das die Alttexte
-fast nie hatten: **die Zähleinheit benennen.** Ein Krankenhausaufenthalt ist ein
+Beim Abarbeiten von Regel 3 und der Dubletten hat sich ein Ersatzmuster bewährt,
+das die Alttexte fast nie hatten: **die Zähleinheit benennen.** Ein Krankenhausaufenthalt ist ein
 Gesundheitsdatum, die Summe über tausende Fälle ist keines mehr; gezählt werden
 Fahrten statt Fahrgäste, Gemeinden statt Gläubige, Belegungen statt Personen.
 Und dort, wo Aggregation *nicht* genügt — seltene Prozeduren in kleinen

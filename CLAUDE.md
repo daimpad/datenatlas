@@ -303,10 +303,11 @@ Inhaltsqualität (Hinweis, keine Warnungen):
 
 Alle vier Kennzahlen stehen auf null. Die **kurzen Begründungen** wurden in
 vierzehn Stapeln über `scripts/apply-begruendungen.mjs` abgearbeitet (942 → 0),
-die **Praxisaussagen** in dreizehn weiteren (776 → 0), die
-**Metadaten-Widersprüche** einzeln (8 → 0) und die **formelhaft
-wiederverwendeten Texte** in vierundzwanzig Stapeln à 60 (1.492 → 0). Jeder
-dieser Sätze ist einzeln geschrieben; einen Massenlauf gab es dafür nicht.
+die **Praxisaussagen** in dreizehn weiteren (776 → 0) und nach dem Schärfen des
+Musters in drei letzten (137 → 0), die **Metadaten-Widersprüche** einzeln
+(8 → 0) und die **formelhaft wiederverwendeten Texte** in vierundzwanzig
+Stapeln à 60 (1.492 → 0). Jeder dieser Sätze ist einzeln geschrieben; einen
+Massenlauf gab es dafür nicht.
 
 Die Kennzahlen bleiben im Bericht, weil sie beim Anfassen wieder steigen: ein
 neuer Datentyp mit kopierter Begründung erscheint sofort als Dublette, eine zu
@@ -314,7 +315,14 @@ knappe Formulierung als Kurztext. Das ist ihr Zweck.
 
 Die 776 waren **kein Anstieg gegenüber der früher dokumentierten 41**, sondern
 die erste ehrliche Messung: das alte Muster traf fast nichts. Wer die Kennzahl
-weiter verschärft, wird sie erneut steigen sehen — das ist ihr Zweck.
+weiter verschärft, wird sie erneut steigen sehen — das ist ihr Zweck. Genau das
+ist danach ein zweites Mal passiert: bei einem Stichprobenklick durch die App
+stand „Berlin und Hamburg veröffentlichen sie seit Jahren" in einem Detail,
+während die Kennzahl 0 anzeigte. Das Muster kannte weder Ortsnamen noch
+Sammelsubjekte („viele Kommunen", „Städte wie …") und erwartete das Adverb vor
+dem Verb, nicht dahinter („veröffentlicht … bereits"). Nach der Erweiterung
+meldete es 137 Texte — alle älter als die Erweiterung, alle inzwischen einzeln
+neu geschrieben.
 
 Beim Abarbeiten von Regel 3 und der Dubletten hat sich ein Ersatzmuster bewährt,
 das die Alttexte fast nie hatten: **die Zähleinheit benennen.** Ein Krankenhausaufenthalt ist ein
@@ -343,6 +351,15 @@ phrases plus a Pflicht/Modal exception, not keywords) and lives **once**, as
 the browser tool and the batch applier all import it. It used to be a copied
 `PRACTICE_RE` in four places, which is exactly how it came to report 41 hits
 where there were 776.
+
+Es hat inzwischen sieben Teilmuster; drei davon (`PRACTICE_ORTSNAME`,
+`PRACTICE_KOLLEKTIV`, `PRACTICE_ADVERB_NACH`) tragen bewusst **kein** `/i` —
+im Deutschen sind Ortsnamen groß, sonst wäre „Essen" jedes Abendessen und
+„Halle" jede Turnhalle. Groß- und Kleinschreibung der Verben steht stattdessen
+ausgeschrieben im Muster. `PRACTICE_KOLLEKTIV` erzeugt gelegentlich einen
+Fehlalarm, wenn „mehrere Einrichtungen" als *Auflage* im selben Satz steht wie
+„publizierbar" — dann ist der Satz umzustellen, nicht das Muster zu
+entschärfen; ein zu weites Muster ist hier billiger als ein zu enges.
 
 ### The justification ruleset — one source
 

@@ -51,7 +51,7 @@ Jeder Datentyp trägt eine Farbbewertung, die anzeigt, wie leicht er als Open Da
 | 🟡 **Gelb** | Nach Aufbereitung publizierbar — Anonymisierung oder Aggregation nötig |
 | 🔴 **Rot** | Nur Metadaten veröffentlichbar — Inhalt ist zu sensibel |
 
-Der **Öffnungsklasse-Filter** (Trichter-Symbol oben rechts) blendet auf Ebene 4 alle Kacheln einer bestimmten Klasse hervor. So lässt sich z. B. schnell sehen, welche Daten eines Sektors sofort veröffentlicht werden könnten.
+Der **Öffnungsklasse-Filter** erscheint neben der Suche, sobald ein Suchbegriff eingegeben ist, und grenzt die Ergebnisse auf eine Klasse ein. So lässt sich z. B. schnell sehen, welche Treffer sofort veröffentlicht werden könnten.
 
 ---
 
@@ -75,6 +75,7 @@ Der **Öffnungsklasse-Filter** (Trichter-Symbol oben rechts) blendet auf Ebene 4
 
 ### Erkunden
 
+- **Geführte Tour** — Schritt für Schritt durch Karte, Detailansicht und Werkzeuge, gut eine Minute. Startet aus dem Willkommensfenster, aus „Mehr erfahren" oder dem Menü ⋮ — oder direkt über `datenatlas.de/?tour`. Die Tour steuert die echte Karte: Sie öffnet einen Sektor und zeigt einen konkreten Datentyp in der Detailansicht.
 - **Isometrische Karte** — alle Kacheln eines Levels auf einem Blick, frei verschiebbar und zoombar
 - **Pan & Zoom** — Karte mit der Maus ziehen, Scroll-Wheel oder Pinch-to-Zoom auf Touch-Geräten
 - **Drill-Down-Animation** — beim Klicken zoomt die Ansicht in Richtung der gewählten Kachel
@@ -84,7 +85,7 @@ Der **Öffnungsklasse-Filter** (Trichter-Symbol oben rechts) blendet auf Ebene 4
 
 - **Suche** (Lupe oben rechts) — durchsucht Namen und Sektor-/Organisations-/Aktivitätspfade über alle Sektoren hinweg. Grundlage ist ein schlanker Index, der beim Start im Hintergrund geladen wird; die vollständigen Sektordateien werden erst bei Bedarf nachgeladen.
 - **Tiefensuche** — ein Schalter im Ergebnis-Dropdown bezieht zusätzlich die **Beschreibungen** ein. Dafür werden die Volldaten einmalig nachgeladen; danach ist das Umschalten verzögerungsfrei. Beispiel: „pseudonymisiert" findet ohne Tiefensuche 0, mit Tiefensuche 5 Datentypen.
-- **Öffnungsklasse-Filter** (Trichter oben rechts) — auf Ebene 4 aktiv; nicht passende Kacheln werden als Ghost-Tiles ausgeblendet
+- **Öffnungsklasse-Filter** — erscheint neben der Suche, sobald ein Suchbegriff eingegeben ist, und grenzt die Ergebnisse auf Grün, Gelb oder Rot ein
 
 ### Details und Verknüpfungen
 
@@ -175,6 +176,7 @@ src/
   controls.js     — Pan/Zoom, Touch-Gesten, Keyboard-Navigation
   dataLoader.js   — Lazy-Loading der Sektordateien und des Suchindex
   search.js       — Suche (schlanker Index) inkl. optionaler Tiefensuche
+  tour.js         — Geführte Tour (Spotlight, steuert die echte Karte)
   modal.js        — Detail-Sidebar und generisches Modal-System (Trap-Focus)
   expand.js       — Datenerweiterung (Logik hinter expand.html)
   begruendungen.js        — Öffnungsbegründungen überarbeiten (Logik hinter begruendungen.html)

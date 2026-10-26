@@ -11,6 +11,7 @@ import { initExport }   from './export.js';
 import { initRelated, findRelated } from './related.js';
 import { initGenerator } from './generator.js';
 import { initTimeline }  from './timeline.js';
+import { initTour }      from './tour.js';
 
 // ── Build hash ────────────────────────────────────────────────────────────────
 const _buildHashEl = document.getElementById('build-hash');
@@ -60,12 +61,43 @@ errorRetry.addEventListener('click', () => { hideError(); _retryFn?.(); });
 
 // ── Onboarding ────────────────────────────────────────────────────────────────
 // Always show on every page load — no localStorage
-{
-  const obCleanup = trapFocus(onboarding);
-  function dismissOnboarding() { obCleanup(); onboarding.hidden = true; }
-  document.getElementById('ob-start').addEventListener('click', dismissOnboarding);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !onboarding.hidden) dismissOnboarding(); });
+// Anfangsfokus bleibt auf „Erkunden": Enter beim Laden soll wie bisher die
+// Karte freigeben, nicht die Tour starten, die im DOM davor steht.
+const _obCleanup = trapFocus(onboarding, { initialFocus: false });
+document.getElementById('ob-start').focus();
+function dismissOnboarding() {
+  if (onboarding.hidden) return;
+  _obCleanup();
+  onboarding.hidden = true;
 }
+document.getElementById('ob-start').addEventListener('click', dismissOnboarding);
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !onboarding.hidden) dismissOnboarding(); });
+
+// ── Geführte Tour ─────────────────────────────────────────────────────────────
+// Die Tour bewegt sich über dieselben Funktionen durch die Karte wie ein
+// Mensch, der klickt — kein eigener Navigationsweg, der davon abweichen könnte.
+let _mainReadyResolve;
+const _mainReady = new Promise(r => { _mainReadyResolve = r; });
+
+const tour = initTour({
+  actions: {
+    ready:       () => _mainReady,
+    home:        () => { if (state.breadcrumb.length > 1) navigateHome(); else closeSidebar(); },
+    openSector:  id => drillToPath(id, null, null, null),
+    openExample: e  => drillToPath(e.sector, e.org, e.act, e.leaf),
+    closeSidebar,
+  },
+});
+
+// Einstiege: Onboarding, „Mehr erfahren" und das Menü ⋮ tragen data-tour-start.
+// Was gerade offen ist, wird vorher geschlossen.
+document.addEventListener('click', e => {
+  if (!e.target.closest('[data-tour-start]')) return;
+  dismissOnboarding();
+  if (!infoModal.hidden)   closeInfoModal();
+  if (!mobileSheet.hidden) closeMobileSheet();
+  tour.start();
+});
 
 // ── Info modal ────────────────────────────────────────────────────────────────
 let _infoTrapCleanup = null;
@@ -499,6 +531,8 @@ function ensureFullIndex() {
   // Read before updateHash() runs — it rewrites the URL to location.pathname at
   // root level, which would drop the query string.
   const _initialQuery = new URLSearchParams(location.search).get('q');
+  // ?tour startet die geführte Tour direkt — zum Verlinken aus Anleitungen.
+  const _initialTour  = new URLSearchParams(location.search).has('tour');
   // count.js zählt den Einstieg bereits selbst — hier vorbelegen, damit die
   // erste updateHash()-Runde ihn nicht ein zweites Mal meldet.
   _lastCounted = location.pathname + _initialHash;
@@ -514,6 +548,8 @@ function ensureFullIndex() {
     }
     _hashEnabled = true;
     updateHash();
+    _mainReadyResolve();
+    if (_initialTour) { dismissOnboarding(); tour.start(); }
 
     // Load the slim index in the background; it powers search/stats/timeline/related/generator
     loadSearchIndex()
@@ -540,6 +576,7 @@ function ensureFullIndex() {
     showError('Hauptdaten konnten nicht geladen werden.', () => location.reload());
   } finally {
     showLoading(false);
+    _mainReadyResolve();   // eine wartende Tour nicht ewig hängen lassen
   }
 })();
 

@@ -2501,6 +2501,97 @@ a#footer-brand:hover { color: var(--accent); }
   .gen-hint { display: none; }
 }
 
+/* ── Geführte Tour ───────────────────────────────────────────────────────────
+   Spotlight über einen Box-Shadow mit großer Ausbreitung: Das ausgeschnittene
+   Rechteck bleibt hell, der Rest wird abgedunkelt — ohne SVG-Maske und ohne den
+   Seiteninhalt zu verschieben. Bei Schritten ohne Ziel ist der Spot 0×0 groß
+   und dunkelt damit die ganze Seite ab. Höher als jedes andere Element (das
+   bisher höchste ist der Share-Toast mit 9999). */
+#tour { position: fixed; inset: 0; z-index: 10000; }
+#tour[hidden] { display: none; }
+.tour-shield { position: absolute; inset: 0; cursor: default; }
+.tour-spot {
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: 0 0 0 200vmax rgba(26, 15, 46, 0.58);
+  outline: 2px solid var(--accent-hi);
+  outline-offset: 0;
+  pointer-events: none;
+  transition: left var(--dur) var(--ease-out), top var(--dur) var(--ease-out),
+              width var(--dur) var(--ease-out), height var(--dur) var(--ease-out);
+}
+.tour-spot[data-empty] { outline: none; }
+
+.tour-pop {
+  position: absolute;
+  width: min(360px, calc(100vw - 24px));
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: 14px;
+  box-shadow: 0 18px 48px rgba(26, 15, 46, 0.28);
+  padding: 16px 18px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: left var(--dur) var(--ease-out), top var(--dur) var(--ease-out), opacity 0.15s;
+}
+.tour-pop[data-busy] { opacity: 0.55; }
+.tour-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.tour-count { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; }
+.tour-skip {
+  background: none; border: none; padding: 4px 2px;
+  font: inherit; font-size: 12px; color: var(--text-3); cursor: pointer;
+}
+.tour-skip:hover { color: var(--accent); text-decoration: underline; }
+.tour-progress { height: 3px; background: var(--surface-3); border-radius: 2px; overflow: hidden; }
+.tour-progress-fill { display: block; height: 100%; width: 0; background: var(--accent); transition: width var(--dur) var(--ease-out); }
+.tour-title { font-size: 17px; font-weight: 700; color: var(--text-1); line-height: 1.3; margin: 2px 0 0; }
+.tour-text { font-size: 13.5px; color: var(--text-2); line-height: 1.6; }
+.tour-text strong { color: var(--text-1); }
+.tour-list { margin: 6px 0 6px 18px; padding: 0; display: flex; flex-direction: column; gap: 3px; }
+.tour-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin: 0 6px 1px 0; vertical-align: middle; }
+.tour-kbd {
+  display: inline-block; min-width: 18px; padding: 0 5px;
+  border: 1px solid var(--border-hi); border-bottom-width: 2px; border-radius: 4px;
+  background: var(--surface-2); color: var(--text-1);
+  font-size: 11px; font-weight: 700; line-height: 17px; text-align: center;
+}
+.tour-after { margin-top: 8px; }
+.tour-note { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); font-size: 12.5px; }
+.tour-nav { display: flex; justify-content: flex-end; gap: 8px; margin-top: 2px; }
+.tour-btn {
+  border-radius: 8px; padding: 9px 16px;
+  font: inherit; font-size: 13px; font-weight: 700; cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.tour-btn--primary { background: var(--accent); color: #fff; border: 1px solid var(--accent); }
+.tour-btn--primary:hover:not(:disabled) { background: var(--accent-hi); border-color: var(--accent-hi); }
+.tour-btn--ghost { background: transparent; color: var(--text-2); border: 1px solid var(--border-hi); }
+.tour-btn--ghost:hover:not(:disabled) { color: var(--accent); border-color: var(--accent); }
+.tour-btn:disabled { cursor: wait; }
+.tour-btn:focus-visible, .tour-skip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.tour-btn[hidden] { display: none; }
+
+/* Einstiege */
+.ob-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.ob-actions #ob-start { align-self: auto; }
+#ob-tour {
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  border-radius: 8px;
+  padding: 11px 22px;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+#ob-tour:hover { background: var(--surface-2); }
+#ob-tour:focus-visible, #ob-start:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+#ob-tour i { margin-right: 4px; }
+.im-tour { border-color: var(--border-hi); }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -2619,4 +2710,10 @@ a#footer-brand:hover { color: var(--accent); }
   .wz-body { padding: 16px; }
   .wz-footer { padding: 12px 16px; }
   .wz-card { max-height: 100dvh; border-radius: 0; }
+
+  /* Tour: etwas kompakter; die Platzierung selbst wählt tour.js. */
+  .tour-pop { padding: 14px 14px 12px; gap: 8px; }
+  .tour-title { font-size: 16px; }
+  .tour-text { font-size: 13px; }
+  .ob-actions { flex-direction: column-reverse; align-items: stretch; }
 }

@@ -185,19 +185,24 @@
         <div class="im-header">
           <img class="logo-img logo-img--lg" src="./logo.svg" alt="Datenatlas" />
         </div>
-        <p class="im-intro">Der Datenatlas macht sichtbar, welche Daten Behörden, Unternehmen, Forschungseinrichtungen, Zivilgesellschaft, Medien, Kultur, Religionsgemeinschaften und Bildungseinrichtungen in Deutschland erzeugen — und wie offen diese Daten sein könnten. Über <strong>10.149 Datentypen</strong> in <strong>8 Sektoren</strong> sind kartiert und bewertet.</p>
+        <p class="im-intro">Der Datenatlas macht sichtbar, welche Daten Behörden, Unternehmen, Forschungseinrichtungen, Zivilgesellschaft, Medien, Kultur, Religionsgemeinschaften und Bildungseinrichtungen in Deutschland erzeugen — und wie offen diese Daten sein könnten. Über <strong>10.428 Datentypen</strong> in <strong>8 Sektoren</strong> sind kartiert und bewertet.</p>
+
+        <button type="button" class="im-feat im-feat--action im-tour" data-tour-start>
+          <span class="im-feat-icon"><i class="fa-solid fa-route" aria-hidden="true"></i></span>
+          <div><strong>Geführte Tour starten</strong><br>Schritt für Schritt durch Karte, Detailansicht und Werkzeuge — gut eine Minute.</div>
+        </button>
 
         <section class="im-section">
           <h3 class="im-heading">Sektoren</h3>
           <div class="im-sectors">
-            <div class="im-sector-item"><span class="im-sector-dot" style="background:#2980b9"></span><div><strong>Staat &amp; Verwaltung</strong><br>Bundesbehörden, Ministerien, Ämter, Kommunen — 46 Organisationstypen, 3.174 Datentypen</div></div>
+            <div class="im-sector-item"><span class="im-sector-dot" style="background:#2980b9"></span><div><strong>Staat &amp; Verwaltung</strong><br>Bundesbehörden, Ministerien, Ämter, Kommunen — 45 Organisationstypen, 3.105 Datentypen</div></div>
             <div class="im-sector-item"><span class="im-sector-dot" style="background:#d35400"></span><div><strong>Wirtschaft</strong><br>Unternehmen aller Branchen von Banken bis Pharmaindustrie — 23 Organisationstypen, 1.587 Datentypen</div></div>
             <div class="im-sector-item"><span class="im-sector-dot" style="background:#4527a0"></span><div><strong>Wissenschaft &amp; Forschung</strong><br>Universitäten, Forschungsinstitute, Akademien — 19 Organisationstypen, 1.311 Datentypen</div></div>
             <div class="im-sector-item"><span class="im-sector-dot" style="background:#6d28d9"></span><div><strong>Zivilgesellschaft</strong><br>Vereine, NGOs, Wohlfahrtsverbände, Stiftungen — 20 Organisationstypen, 1.386 Datentypen</div></div>
             <div class="im-sector-item"><span class="im-sector-dot" style="background:#be185d"></span><div><strong>Medien</strong><br>Öffentlich-rechtlicher und privater Rundfunk, Nachrichtenagenturen, Streaming, Gaming, Werbung — 12 Organisationstypen, 828 Datentypen</div></div>
-            <div class="im-sector-item"><span class="im-sector-dot" style="background:#a21caf"></span><div><strong>Kultur</strong><br>Museen, Theater, bildende Kunst sowie Musik-, Film- und Buchwirtschaft — 5 Organisationstypen, 345 Datentypen</div></div>
+            <div class="im-sector-item"><span class="im-sector-dot" style="background:#a21caf"></span><div><strong>Kultur</strong><br>Museen, Theater, Archive und Denkmalpflege, Bibliotheken, Soziokultur sowie Musik-, Film- und Buchwirtschaft — 10 Organisationstypen, 690 Datentypen</div></div>
             <div class="im-sector-item"><span class="im-sector-dot" style="background:#0f766e"></span><div><strong>Religionsgemeinschaften</strong><br>Kirchen, jüdische Gemeinden, muslimische Verbände, Hilfswerke — 10 Organisationstypen, 690 Datentypen</div></div>
-            <div class="im-sector-item"><span class="im-sector-dot" style="background:#d97706"></span><div><strong>Bildung</strong><br>Schulen, Kitas, Berufsschulen, Hochschulen, Volkshochschulen — 12 Organisationstypen, 828 Datentypen</div></div>
+            <div class="im-sector-item"><span class="im-sector-dot" style="background:#d97706"></span><div><strong>Bildung</strong><br>Schulen, Kitas, Berufsschulen, Hochschulen, Volkshochschulen — 12 Organisationstypen, 831 Datentypen</div></div>
           </div>
         </section>
 
@@ -267,7 +272,7 @@
             </button>
             <div class="im-feat">
               <span class="im-feat-icon"><i class="fa-solid fa-sliders"></i></span>
-              <div><strong>Öffnungsklasse-Filter</strong><br>Blende auf Ebene 4 alle Kacheln einer bestimmten Klasse hervor: Grün, Gelb oder Rot.</div>
+              <div><strong>Öffnungsklasse-Filter</strong><br>Grenzt Suchergebnisse auf eine Klasse ein — Grün, Gelb oder Rot. Erscheint neben der Suche, sobald ein Suchbegriff eingegeben ist.</div>
             </div>
             <button type="button" class="im-feat im-feat--action" data-action="stats-btn">
               <span class="im-feat-icon"><i class="fa-solid fa-chart-bar"></i></span>
@@ -371,7 +376,10 @@
             <div><strong>Suchen</strong><br>Datentypen direkt finden</div>
           </div>
         </div>
-        <button id="ob-start">Erkunden →</button>
+        <div class="ob-actions">
+          <button id="ob-tour" type="button" data-tour-start><i class="fa-solid fa-route" aria-hidden="true"></i> Geführte Tour</button>
+          <button id="ob-start">Erkunden →</button>
+        </div>
       </div>
     </div>
 
@@ -509,6 +517,10 @@
           <button class="ms-item" data-target="timeline-btn">
             <i class="fa-regular fa-clock ms-icon" aria-hidden="true"></i>
             <span>Timeline</span>
+          </button>
+          <button class="ms-item" data-tour-start>
+            <i class="fa-solid fa-route ms-icon" aria-hidden="true"></i>
+            <span>Geführte Tour</span>
           </button>
           <button class="ms-item" data-target="info-btn">
             <i class="fa-solid fa-circle-info ms-icon" aria-hidden="true"></i>

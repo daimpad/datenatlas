@@ -19,6 +19,7 @@ src/
   controls.js     — pan/zoom, touch gestures, keyboard navigation
   dataLoader.js   — lazy loading of sector files and the search index
   search.js       — search (slim index) + opt-in deep search over descriptions
+  tour.js         — guided tour (spotlight steps that drive the real map)
   modal.js        — detail sidebar and generic modal system (trap focus)
   expand.js       — data expansion tool (logic behind expand.html)
   begruendungen.js        — openness-justification editor (logic behind begruendungen.html)
@@ -553,6 +554,40 @@ before restating the licence anywhere.
 
 ---
 
+## Guided Tour — `src/tour.js`
+
+A spotlight tour of 14 steps through map, detail sidebar and tools. Entry
+points: the onboarding (`#ob-tour`), the info modal and the mobile menu ⋮ —
+every element with `data-tour-start` starts it — plus the `?tour` deep link.
+
+**It drives the real map**, not a mock-up: step 4 opens the Kultur sector,
+step 6 drills to one concrete data type and opens its sidebar. The navigation
+comes from `main.js` as `actions` (`drillToPath`, `navigateHome`,
+`closeSidebar`) — no second navigation path that could drift from the real one.
+
+Three things break silently if changed elsewhere, so check the tour when you
+touch them:
+
+- **`EXAMPLE` in `tour.js`** names `kultur / museen-sammlungen / museen /
+  museumsbesucher`. Rename or move that node and step 6 shows no sidebar.
+  S-S just showed how routinely ids move in a cleanup.
+- **Header button ids** are the step targets. Each step lists targets in order
+  and takes the first visible one; on narrow screens the labelled buttons are
+  hidden and the step falls back to `#more-btn` and appends a note about the
+  menu. A new header button needs a step; a removed one needs its step removed.
+- **Sentences that point at something** („oben links") go into `withTarget`,
+  which only renders when the target is visible. `#level-overlay` and the
+  legend are hidden below 580px — a sentence pointing at them would point at
+  nothing there.
+
+While the tour runs, a transparent shield swallows every click (a click on the
+highlighted stats button would otherwise open a modal under the tour), and a
+capture-phase key handler owns Esc and ←/→ before canvas and modals see them.
+The onboarding keeps its initial focus on „Erkunden"; the tour button sits
+before it in the DOM, and Enter on load must not start the tour.
+
+---
+
 ## Renderer Notes
 
 Tile dimensions (×1.5 scale): W=240, H=120, D=42  
@@ -705,6 +740,7 @@ Sprint-Format (Features):
 - [x] **S-M** Qualitätspass Processes IV — alle 7.940 L4-Nodes auf ≥4 Prozesseinträge gebracht ✓
 - [x] **S-N** Tiefenausbau VII — alle 147 L2 auf ≥60 L4, +921 L4, 7.940→8.861 ✓
 - [x] **S-O** Qualitätspass Processes V — alle 8.861 L4-Nodes auf ≥5 Prozesseinträge gebracht ✓
+- [x] **F-08** Geführte Tour — 14 Spotlight-Schritte durch Karte, Detailansicht und Werkzeuge, steuert die echte Navigation; Einstieg aus Onboarding, „Mehr erfahren", Menü ⋮ und `?tour`. Mitkorrigiert: Info-Fenster zeigte noch Zahlen vor S-Q/S-S, und Filter-Beschreibung in Info-Fenster und README („auf Ebene 4, Ghost-Tiles") passte nicht zum Code, der nur Suchergebnisse filtert ✓
 - [x] **S-S** Bibliotheken entdoppelt — `staat/bibliotheken-medienzentren` (69 L4) und das in S-Q angelegte `kultur/oeffentliche-bibliotheken` beschrieben denselben Einrichtungstyp. Der staat-Knoten ist aufgelöst, drei echte Schulmedienzentrums-Einträge nach `bildung/digitale-bildungsplattformen` gerettet. staat 46→45 L2, Gesamt 10.494→10.428. Die vier Bildungs-L2 in staat bleiben bewusst doppelt (siehe oben) ✓
 - [x] **S-Q** Breitenausbau kultur — der Sammelknoten „Kulturbetriebe und Kulturwirtschaft" trug vier Trägertypen in einem L2 (Museen, darstellende Künste, Kulturförderung, Archive). Aufgelöst zu je eigenen L2, dazu zwei ganz fehlende: Öffentliche Bibliotheken (Schulbibliotheken standen unter bildung, Stadtbibliotheken nirgends) und Soziokultur. 5→10 L2, +345 L4, kultur 345→690, Gesamt 10.149→10.494 ✓
 - [x] **S-R** Vokabular — 914 Datentypen trugen einen Code, dessen Bedeutung ihrem Label widersprach. 2.808 Felder umcodiert, 6 Codes ergänzt, `src/vokabular.js` als einzige Quelle, Validator prüft Labels gegen ihren Code ✓ (PR #156)

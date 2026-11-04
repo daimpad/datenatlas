@@ -3,13 +3,19 @@ import { esc, trapFocus } from './utils.js';
 let _index     = null;
 let _mainTiles = null;
 
+// Reihenfolge = Anzeige: vom häufigsten zum seltensten Rhythmus. FQ_06/FQ_07
+// sind nachgetragen (Quellenprüfung: SurvStat wöchentlich, Bundesbank-
+// Zahlungsverkehrsstatistik halbjährlich) und stehen deshalb nicht nach Nummer.
 const FREQ_META = {
   FQ_01: { label: 'Echtzeit',      color: '#2563eb', short: 'RT'   },
   FQ_02: { label: 'Täglich',       color: '#0891b2', short: 'Tag'  },
+  FQ_06: { label: 'Wöchentlich',   color: '#0d9488', short: 'Wo'   },
   FQ_03: { label: 'Monatlich',     color: '#059669', short: 'Mon'  },
+  FQ_07: { label: 'Halbjährlich',  color: '#6366f1', short: 'Hj'   },
   FQ_04: { label: 'Jährlich',      color: '#7c3aed', short: 'Jahr' },
   FQ_05: { label: 'Unregelmäßig',  color: '#9ca3af', short: 'Unr'  },
 };
+const zeroFreqs = () => Object.fromEntries(Object.keys(FREQ_META).map(k => [k, 0]));
 
 export function initTimeline({ indexPromise, mainTiles }) {
   _mainTiles = mainTiles;
@@ -47,14 +53,14 @@ export function initTimeline({ indexPromise, mainTiles }) {
 // ── Data computation ────────────────────────────────────────────────────────
 
 function computeData() {
-  const freqTotals = { FQ_01: 0, FQ_02: 0, FQ_03: 0, FQ_04: 0, FQ_05: 0 };
+  const freqTotals = zeroFreqs();
   const sectorMap  = new Map();   // sectorId → { name, color, freqs, years[] }
   const allYears   = [];
 
   for (const t of _mainTiles) {
     sectorMap.set(t.id, {
       id: t.id, name: t.name, color: t.color,
-      freqs: { FQ_01: 0, FQ_02: 0, FQ_03: 0, FQ_04: 0, FQ_05: 0 },
+      freqs: zeroFreqs(),
       years: [],
     });
   }

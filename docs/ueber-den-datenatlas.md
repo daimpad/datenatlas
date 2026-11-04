@@ -8,7 +8,7 @@
 
 Der Datenatlas beantwortet eine Frage, die sich bislang niemand systematisch gestellt hat: *Welche Daten entstehen eigentlich in unserer Gesellschaft — und welche davon könnten offen sein?*
 
-Er kartiert **10.149 Datentypen** aus **8 gesellschaftlichen Sektoren** und bewertet für jeden einzelnen, wie leicht er sich als Open Data veröffentlichen ließe — mit Begründung. Nicht als Datenkatalog zum Herunterladen, sondern als strukturierte Übersicht darüber, **wo Datenschätze liegen und was ihrer Öffnung im Weg steht**.
+Er kartiert **10.428 Datentypen** aus **8 gesellschaftlichen Sektoren** und bewertet für jeden einzelnen, wie leicht er sich als Open Data veröffentlichen ließe — mit Begründung. Nicht als Datenkatalog zum Herunterladen, sondern als strukturierte Übersicht darüber, **wo Datenschätze liegen und was ihrer Öffnung im Weg steht**.
 
 **→ [datenatlas.de](https://datenatlas.de)**
 
@@ -34,24 +34,24 @@ Der gesamte Bestand ist nach dem Prinzip *Wer produziert welche Daten wobei?* ge
 
 ```
 Staat und Verwaltung                    ← Sektor        (8)
-  └── Ordnungsamt                       ← Organisation  (147)
-        └── Verkehrsüberwachung         ← Aktivität     (418)
-              └── Messstellen-Geodaten  ← Datentyp      (10.149)
+  └── Ordnungsamt                       ← Organisation  (151)
+        └── Verkehrsüberwachung         ← Aktivität     (430)
+              └── Messstellen-Geodaten  ← Datentyp      (10.428)
 ```
 
 Die Sektoren sind konsequent nach **Trägertyp** geschnitten — also danach, wer die Daten erzeugt, nicht danach, worum es thematisch geht. Ein Krankenhausdatensatz liegt daher je nach Träger in *Staat* oder *Wirtschaft*, nicht in einem Sektor „Gesundheit". Das klingt sperrig, ist aber entscheidend: Öffnungshürden hängen an der Trägerform, nicht am Thema. Eine kommunale Klinik unterliegt anderen Transparenzpflichten als eine private.
 
 | Sektor | Organisationstypen | Datentypen |
 |---|---:|---:|
-| Staat und Verwaltung | 46 | 3.174 |
+| Staat und Verwaltung | 45 | 3.105 |
 | Wirtschaft | 23 | 1.587 |
 | Zivilgesellschaft | 20 | 1.386 |
 | Wissenschaft und Forschung | 19 | 1.311 |
+| Bildung | 12 | 831 |
 | Medien | 12 | 828 |
-| Bildung | 12 | 828 |
 | Religionsgemeinschaften | 10 | 690 |
-| Kultur | 5 | 345 |
-| **Gesamt** | **147** | **10.149** |
+| Kultur | 10 | 690 |
+| **Gesamt** | **151** | **10.428** |
 
 ### Die Öffnungsbewertung — der eigentliche Kern
 
@@ -59,33 +59,35 @@ Jeder Datentyp trägt eine von drei Öffnungsklassen. Entscheidend ist: Die Eins
 
 | Klasse | Anteil | Bedeutung |
 |---|---:|---|
-| 🟢 Sofort publizierbar | 68,1 % | kein oder minimaler Aufbereitungsbedarf |
-| 🟡 Nach Aufbereitung publizierbar | 28,5 % | Anonymisierung oder Aggregation nötig |
-| 🔴 Nur Metadaten publizierbar | 3,4 % | Inhalt zu sensibel, aber Existenz dokumentierbar |
+| 🟢 Sofort publizierbar | 67,7 % | kein oder minimaler Aufbereitungsbedarf |
+| 🟡 Nach Aufbereitung publizierbar | 29,0 % | Anonymisierung oder Aggregation nötig |
+| 🔴 Nur Metadaten publizierbar | 3,3 % | Inhalt zu sensibel, aber Existenz dokumentierbar |
 
 Ein Beispiel aus dem Bestand zeigt, worin der Wert liegt. Für die **Blitzerfoto-Datenbank** eines Ordnungsamts lautet die Einstufung *rot*, mit dieser Begründung:
 
 > Rohdaten enthalten biometrische Daten (Gesichtsbilder) und KFZ-Kennzeichen als direkte Personenidentifikatoren. Direktveröffentlichung ist rechtlich ausgeschlossen. Nur aggregierte Standortstatistiken (Anzahl Verstöße pro Messort und Monat) ohne Fahrzeug- oder Personenbezug sind als Open Data geeignet.
 
-Direkt daneben stehen die **Bußgeldstatistiken** derselben Aktivität — *grün*, weil der Personenbezug bereits aufgelöst ist, mit dem Hinweis, dass Berlin und Hamburg Vergleichbares bereits veröffentlichen.
+Direkt daneben stehen die **Bußgeldstatistiken** derselben Aktivität — *grün*, mit dieser Begründung:
+
+> Gezählt werden Vorgänge nach Deliktart, Bezirk und Tageszeit, nicht Betroffene. Ein Mensch mit zwanzig Verwarnungen erscheint als zwanzig Fälle; Kennzeichen und Namen bleiben im Vorgang.
 
 Genau diese Differenzierung ist der Punkt: Nicht „Verkehrsüberwachung ist heikel", sondern **welcher Teil davon aus welchem Grund** — und was stattdessen ginge.
 
 ### Die Metadaten je Datentyp
 
-Über die Öffnungsklasse hinaus ist jeder der 10.149 Einträge strukturiert erschlossen:
+Über die Öffnungsklasse hinaus ist jeder der 10.428 Einträge strukturiert erschlossen:
 
 | Merkmal | Ausprägungen | Häufigste Werte |
 |---|---|---|
-| **Thema** | 10 Felder | Wirtschaft (20,8 %), Soziales (14,7 %), Bildung (14,0 %) |
-| **Datenart** | 8 Typen | Metadaten (29,4 %), Finanzdaten (15,2 %), Textdokumente (13,9 %) |
+| **Thema** | 13 Felder | Wirtschaft (20,9 %), Soziales (14,3 %), Bildung (13,9 %) |
+| **Datenart** | 9 Typen | Metadaten (32,2 %), Finanzdaten (14,8 %), Textdokumente (13,3 %) |
 | **Granularität** | 4 Stufen | Einzelereignis bis aggregiert |
-| **Format** | 6 Formate | CSV, JSON, GeoJSON, XML, Shapefile, NetCDF |
-| **Lizenz** | 4 Modelle | Datenlizenz Deutschland (41,1 %), CC BY (32,2 %), CC0 (13,9 %), proprietär (12,8 %) |
+| **Format** | 8 Formate | CSV, JSON, GeoJSON, XML, Shapefile, NetCDF, PDF, Excel |
+| **Lizenz** | 4 Modelle | Datenlizenz Deutschland (42,2 %), CC BY (31,3 %), CC0 (13,9 %), proprietär (12,6 %) |
 | **Relevanz** | Skala 1–5 | 62,6 % auf Stufe 4 oder 5 |
-| **Aktualisierung** | 5 Rhythmen | jährlich (57,1 %), monatlich (29,7 %), Echtzeit (5,0 %) |
-| **Verfügbar ab** | Jahreszahl | Zeitraum 1988–2020 |
-| **Prozesse** | ≥ 5 je Datentyp | **50.745** Verknüpfungen insgesamt |
+| **Aktualisierung** | 5 Rhythmen | jährlich (57,7 %), monatlich (28,9 %), täglich (5,0 %) |
+| **Verfügbar ab** | Jahreszahl | Zeitraum 1981–2020 |
+| **Prozesse** | ≥ 5 je Datentyp | **52.140** Verknüpfungen insgesamt |
 
 Die Prozessverknüpfungen sind dabei mehr als Beiwerk: Sie verbinden Datentypen quer über Sektorgrenzen. Wer „Monitoring & Evaluation" verfolgt, sieht auf einen Schlag alle Datentypen aus allen acht Sektoren, die diesem Zweck dienen.
 
@@ -147,13 +149,13 @@ Die Auswertung über den Gesamtbestand macht strukturelle Aussagen möglich. Die
 | Staat und Verwaltung | 76,7 % |
 | Wissenschaft und Forschung | 74,2 % |
 | Zivilgesellschaft | 71,3 % |
-| Kultur | 67,2 % |
 | Bildung | 66,4 % |
+| Kultur | 63,6 % |
 | Religionsgemeinschaften | 62,3 % |
 | Wirtschaft | 57,1 % |
 | Medien | 47,6 % |
 
-Der Befund dahinter ist bemerkenswert: **Über zwei Drittel aller erfassten Datentypen wären sofort publizierbar**, und nur 3,4 % sind tatsächlich so sensibel, dass lediglich Metadaten veröffentlicht werden könnten. Der Engpass ist demnach überwiegend kein rechtlicher, sondern ein organisatorischer und kultureller.
+Der Befund dahinter ist bemerkenswert: **Über zwei Drittel aller erfassten Datentypen wären sofort publizierbar**, und nur 3,3 % sind tatsächlich so sensibel, dass lediglich Metadaten veröffentlicht werden könnten. Der Engpass ist demnach überwiegend kein rechtlicher, sondern ein organisatorischer und kultureller.
 
 ### 6. Lehre und Qualifizierung
 
@@ -163,7 +165,7 @@ Die Struktur eignet sich als Lehrmaterial für Verwaltungsinformatik, Data Liter
 
 ## Wer sich damit auseinandersetzen sollte
 
-**Open-Data-Verantwortliche in Verwaltungen** — als Inventurhilfe und Priorisierungsgrundlage. Der Sektor Staat ist mit 46 Organisationstypen und 3.174 Datentypen am dichtesten erschlossen, von Bundesbehörden bis zu kommunalen Ämtern.
+**Open-Data-Verantwortliche in Verwaltungen** — als Inventurhilfe und Priorisierungsgrundlage. Der Sektor Staat ist mit 45 Organisationstypen und 3.105 Datentypen am dichtesten erschlossen, von Bundesbehörden bis zu kommunalen Ämtern.
 
 **Kommunale Leitungs- und Digitalisierungsebene** — um zu erkennen, welche Datenschätze im eigenen Haus liegen und welche davon mit vertretbarem Aufwand Transparenz und Verwaltungsnutzen erzeugen.
 
@@ -183,14 +185,35 @@ Die Struktur eignet sich als Lehrmaterial für Verwaltungsinformatik, Data Liter
 
 ---
 
+## Woher die Angaben stammen
+
+Die Einträge sind **modelliert**, nicht aus den Beständen realer Organisationen abgeschrieben. Das ist die wichtigste Einschränkung des Atlas — deshalb steht sie hier ausführlich.
+
+**Wie ein Eintrag entsteht.** Für jeden Organisationstyp wird systematisch gefragt: Was erhebt diese Art von Organisation? Was produziert sie als Bericht oder Statistik? Was muss sie veröffentlichen? Und was davon wäre für andere Sektoren wertvoll? Daraus entstehen Beschreibung, Metadaten und Öffnungsbewertung. Das Ergebnis ist ein Modell dessen, was bei einem Organisations*typ* typischerweise anfällt — keine Erhebung bei einzelnen Organisationen und keine Abschrift aus deren Verzeichnissen.
+
+**Mit Quelle oder Einschätzung.** Aus der Entstehungszeit der Einträge gibt es keine Quellenangaben. Jeder Datentyp zeigt deshalb in der Detailansicht, im CSV-Export und auf den Organisationsseiten seinen Status:
+
+- **Mit Quelle** — die Angaben sind in einer Primärquelle nachgelesen, etwa beim Herausgeber der Statistik. Genannt werden Quelle, Prüfdatum und die Aussage, die sie stützt — nicht mehr.
+- **Einschätzung** — noch nicht gegen eine Quelle geprüft. Beschreibung, Öffnungsklasse und Zeitangaben sind modelliert. Das gilt derzeit für fast alle Einträge.
+
+Eine Quelle wird erst eingetragen, wenn die Aussage auf der Quellseite tatsächlich steht. Die ersten geprüften Einträge zeigen, warum das nötig ist: Von sieben stimmten zwei, drei mussten korrigiert werden, zwei ließen sich nicht belegen. Dass die jeweilige Statistik bei dieser Art von Organisation existiert, bestätigte sich jedes Mal. Ungenau waren die Details — Abdeckung, Erscheinungsrhythmus, Gliederung.
+
+**Beispiellinks.** Ein Teil der Einträge verweist auf Beispieldatensätze. Diese Links werden wöchentlich automatisch geprüft; bei der ersten Prüfung waren 231 von 937 nicht mehr erreichbar und wurden entfernt. Ein Beispiellink zeigt, dass es Vergleichbares gibt. Die Angaben des Eintrags belegt er nicht.
+
+**Öffnungsbegründungen.** Für die Begründungen gelten feste Regeln: keine Behauptung darüber, was andere Organisationen bereits veröffentlichen oder nicht, und keine Rechtsgrundlage, die sich aus dem Eintrag selbst nicht ergibt. Verstöße gegen die erste Regel meldet ein Prüfprogramm bei jeder Änderung. Auch mit Quelle bleibt die Öffnungsklasse eine fachliche Einschätzung, keine rechtliche Prüfung.
+
+Für die Nutzung heißt das: Der Atlas zeigt, **wonach man fragen sollte**. Ob ein bestimmter Datensatz so existiert, klärt erst die Nachfrage bei der Organisation. Hinweise auf Fehler oder geeignete Quellen nehmen wir gern über [GitHub](https://github.com/daimpad/datenatlas) oder den [Kontakt](https://nozilla.de/kontakt/) entgegen.
+
+---
+
 ## Was der Datenatlas *nicht* ist
 
 Für einen redlichen Umgang mit dem Werkzeug sind seine Grenzen ebenso wichtig wie seine Möglichkeiten:
 
-- **Kein Datenkatalog und kein Downloadportal.** Er verzeichnet Daten*typen*, nicht einzelne Datensätze. Es gibt keine Downloadlinks und keine Schnittstellen zu konkreten Beständen. Für tatsächlich verfügbare Daten sind GovData, Landesportale und Fachrepositorien die richtigen Anlaufstellen.
+- **Kein Datenkatalog und kein Downloadportal.** Er verzeichnet Daten*typen*, nicht einzelne Datensätze. Es gibt keine Schnittstellen zu konkreten Beständen; Beispiel- und Quellenlinks führen zu den jeweiligen Herausgebern. Für tatsächlich verfügbare Daten sind GovData, Landesportale und Fachrepositorien die richtigen Anlaufstellen.
 - **Kein Verzeichnis geprüfter Bestände einer konkreten Organisation.** Der Atlas modelliert, was bei einem Organisations*typ* typischerweise anfällt. Ob ein bestimmtes Amt einen bestimmten Datensatz tatsächlich führt, muss vor Ort geprüft werden.
 - **Keine Rechtsberatung.** Die Öffnungsklassen sind fachlich begründete Einschätzungen, keine rechtsverbindlichen Feststellungen. Eine konkrete Veröffentlichungsentscheidung erfordert die Prüfung des Einzelfalls.
-- **Zeitangaben sind illustrativ.** Verfügbarkeitsjahre und Aktualisierungsrhythmen bilden plausible Größenordnungen ab und stützen die Zeitanalyse — sie sind nicht je Datentyp recherchiert.
+- **Zeitangaben sind illustrativ.** Verfügbarkeitsjahre und Aktualisierungsrhythmen bilden plausible Größenordnungen ab und stützen die Zeitanalyse — sie sind nicht je Datentyp recherchiert, außer bei Einträgen mit geprüfter Quelle.
 
 Kurz: Der Datenatlas ist ein **Orientierungs-, Argumentations- und Planungswerkzeug**. Er ersetzt keine Inventur, keine Rechtsprüfung und kein Datenportal — er macht sie zielgerichteter.
 

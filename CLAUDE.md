@@ -491,11 +491,15 @@ half-applies leaves no way to tell which half.
 ### Die Einträge sind modelliert, nicht abgeschrieben
 
 Es gibt kein Quellenfeld aus der Entstehungszeit. Beschreibung, Öffnungsklasse
-und Zeitangaben sind eine Modellierung dessen, was bei einem Organisationstyp
-typischerweise anfällt — großteils KI-gestützt geschrieben. Weltwissen eines
-Sprachmodells hat keine Herkunftsangabe; eine nachträglich „gefundene“ Quelle
-wäre Rekonstruktion, nicht Ursprung. Deshalb gilt: **eine Quelle bekommt ein
-Datentyp erst, wenn die Aussage auf der Quellseite nachgelesen ist.**
+und Zeitangaben sind **modelliert** — was bei einem Organisationstyp
+typischerweise anfällt, nicht was eine bestimmte Organisation führt. Eine
+nachträglich „gefundene“ Quelle wäre Rekonstruktion, nicht Ursprung. Deshalb
+gilt: **eine Quelle bekommt ein Datentyp erst, wenn die Aussage auf der
+Quellseite nachgelesen ist.**
+
+Öffentlich erklärt ist das im Abschnitt „Woher die Angaben stammen“ auf
+`ueber.html` (und gleichlautend in `docs/ueber-den-datenatlas.md`). Dort heißt
+es „modelliert“ — bei dieser Wortwahl bleiben.
 
 Optionales Feld `details.sources`:
 
@@ -696,16 +700,19 @@ def d4(id, name, desc, op_cls, op_lbl, op_expl, th, ob, gr, fmts, li, rel, procs
 
 ## Current Sector Statistics
 
-*Update this table after every expansion sprint.*
+*Update this table after every expansion sprint* — and the figures in
+`ueber.html` and `docs/ueber-den-datenatlas.md` (hero, sector table, openness
+distribution, ranking). Those are hand-written; until this was noticed they
+still showed 10.149 data types and Kultur with 5 L2.
 
 | Sektor | L2 | L3 | L4 | Ø L4/L2 |
 |--------|----|----|-----|---------|
-| staat | 45 | 122 | 3105 | 69,0 |
+| staat | 45 | 123 | 3105 | 69,0 |
 | wirtschaft | 23 | 67 | 1587 | 69,0 |
 | wissenschaft | 19 | 52 | 1311 | 69,0 |
 | zivilgesellschaft | 20 | 58 | 1386 | 69,3 |
 | medien | 12 | 35 | 828 | 69,0 |
-| kultur | 10 | 30 | 690 | 69,0 |
+| kultur | 10 | 29 | 690 | 69,0 |
 | religion | 10 | 30 | 690 | 69,0 |
 | bildung | 12 | 36 | 831 | 69,3 |
 | **Gesamt** | **151** | **430** | **10.428** | **69,1** |

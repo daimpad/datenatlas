@@ -3,14 +3,16 @@ import { esc, trapFocus } from './utils.js';
 let _index     = null;
 let _mainTiles = null;
 
-// Reihenfolge = Anzeige: vom häufigsten zum seltensten Rhythmus. FQ_06/FQ_07
-// sind nachgetragen (Quellenprüfung: SurvStat wöchentlich, Bundesbank-
-// Zahlungsverkehrsstatistik halbjährlich) und stehen deshalb nicht nach Nummer.
+// Reihenfolge = Anzeige: vom häufigsten zum seltensten Rhythmus. FQ_06–FQ_08
+// sind nachgetragen (Quellenprüfung: SurvStat wöchentlich, IVW-Auflagen
+// vierteljährlich, Bundesbank-Zahlungsverkehr halbjährlich) und stehen
+// deshalb nicht nach Nummer.
 const FREQ_META = {
   FQ_01: { label: 'Echtzeit',      color: '#2563eb', short: 'RT'   },
   FQ_02: { label: 'Täglich',       color: '#0891b2', short: 'Tag'  },
   FQ_06: { label: 'Wöchentlich',   color: '#0d9488', short: 'Wo'   },
   FQ_03: { label: 'Monatlich',     color: '#059669', short: 'Mon'  },
+  FQ_08: { label: 'Vierteljährlich', color: '#65a30d', short: 'Q'  },
   FQ_07: { label: 'Halbjährlich',  color: '#6366f1', short: 'Hj'   },
   FQ_04: { label: 'Jährlich',      color: '#7c3aed', short: 'Jahr' },
   FQ_05: { label: 'Unregelmäßig',  color: '#9ca3af', short: 'Unr'  },

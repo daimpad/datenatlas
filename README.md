@@ -142,7 +142,7 @@ Jeder Datentyp enthält neben Name und Beschreibung strukturierte Metadaten:
 | `relevance` | Gesellschaftliche Relevanz | Skala 1–5 |
 | `processes` | Verknüpfte Prozesse (≥ 5) | Methodenname + Beschreibung |
 | `temporal.available_from` | Verfügbar ab (Jahr) | `2003` |
-| `temporal.update_frequency` | Aktualisierungshäufigkeit | `FQ_01` (Echtzeit) … `FQ_05` (unregelmäßig) |
+| `temporal.update_frequency` | Aktualisierungshäufigkeit | `FQ_01` (Echtzeit) … `FQ_05` (unregelmäßig), dazu `FQ_06` wöchentlich, `FQ_07` halbjährlich, `FQ_08` vierteljährlich |
 | `examples` *(optional)* | Beispieldatensätze | Titel, Herausgeber, URL |
 | `sources` *(optional)* | Geprüfte Quellen | Titel, Herausgeber, URL, `checked` (Prüfdatum), `supports` (welche Aussage sie stützt) |
 
@@ -440,7 +440,7 @@ Inhaltsqualität (Hinweis, keine Warnungen):
   mehrfach verwendete Begründungstexte: 0 Knoten (0 %)
   Aussagen über fremde Veröffentlichungspraxis: 0
   Beschreibung widerspricht den Metadaten: 0
-  Datentypen mit geprüfter Quelle: 5 von 10428
+  Datentypen mit geprüfter Quelle: 19 von 10428
 ```
 
 Die ersten vier Kennzahlen stehen auf null: 942 Kurztexte, 1.492 formelhaft

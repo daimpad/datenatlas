@@ -82,6 +82,7 @@ export const VOKABULAR = {
     { code: 'FQ_05', label: 'Unregelmäßig' },
     { code: 'FQ_06', label: 'Wöchentlich' },
     { code: 'FQ_07', label: 'Halbjährlich' },
+    { code: 'FQ_08', label: 'Vierteljährlich' },
   ],
 };
 

@@ -470,11 +470,11 @@
               "name": "Mediatheken-Reichweitendaten ARD/ZDF",
               "color": "#9d174d",
               "details": {
-                "description": "Quartalsweise Reichweitendaten der ARD Mediathek und ZDF Mediathek mit Abrufzahlen je Sendung, Nutzungszeiten, Wiedersehquoten und Verweildauer. Die Daten stammen aus der gemeinsamen AGF-Videoforschung (Arbeitsgemeinschaft Fernsehforschung) sowie den internen Mediathekenreports der öffentlich-rechtlichen Rundfunkanstalten, die im Rahmen des Rundfunkstaatsvertrags publiziert werden.",
+                "description": "Streaming-Reichweitendaten der AGF Videoforschung, die auch die Streaming-Angebote von ARD und ZDF erfassen: Views, Nettoreichweiten und verweildauerbasierte Werte, ausgewiesen auf Ebene von Einzelvideos, Publishern und Ausspielplattformen. Die AGF weist seit 2017 monatlich und seit 2019 täglich Streamingdaten aus; öffentlich erscheint monatlich eine Top-25-Hitliste. Die Rechte an den Daten liegen bei der AGF Videoforschung.",
                 "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Gezählt werden Abrufe und Verweildauern je Sendung und Quartal. Bezugseinheit ist der Abruf; Sitzungs-, Geräte- und Kontomerkmale sind vor der Auswertung zu entfernen."
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Die Datenbankrechte an der Streamingmessung liegen bei der AGF Videoforschung; eine Weitergabe in recherchierbarer Form braucht ihre Zustimmung. Personenbezug ist nicht das Hindernis, gezählt werden Abrufe und Verweildauern je Video, nicht Nutzende."
                 },
                 "theme": {
                   "code": "TH_10",
@@ -499,8 +499,7 @@
                   }
                 ],
                 "license": {
-                  "code": "LI_02",
-                  "label": "CC BY 4.0"
+                  "code": "LI_04"
                 },
                 "relevance": 5,
                 "processes": [
@@ -526,9 +525,39 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 2007,
-                  "update_frequency": "FQ_05"
-                }
+                  "available_from": 2017,
+                  "update_frequency": "FQ_02"
+                },
+                "sources": [
+                  {
+                    "title": "Videostreaming-Daten",
+                    "publisher": "AGF Videoforschung",
+                    "url": "https://www.agf.de/daten/videostreaming-daten",
+                    "checked": "2026-11-04",
+                    "supports": "Ausweis seit 2017 monatlich, seit 2019 täglich; Einzelvideo, Publisher, Plattform; monatliche Top-25-Liste"
+                  },
+                  {
+                    "title": "Messung Videostreaming",
+                    "publisher": "AGF Videoforschung",
+                    "url": "https://www.agf.de/bewegtbildforschung/messung/videostreaming",
+                    "checked": "2026-11-04",
+                    "supports": "Views, Verweildauern, Nettoreichweiten"
+                  },
+                  {
+                    "title": "TV- und Video-Bilanz 2025 (Pressemitteilung)",
+                    "publisher": "AGF Videoforschung",
+                    "url": "https://www.agf.de/fileadmin/agf/service/Pressemitteilungen/2026/260108_PM_Jahresbilanz/260108_AGF_PM_Video_Jahresbilanz_2025_final.pdf",
+                    "checked": "2026-11-04",
+                    "supports": "ARD und ZDF in der Streamingmessung"
+                  },
+                  {
+                    "title": "Umgang mit AGF-Daten / Urheberrechte",
+                    "publisher": "AGF Videoforschung",
+                    "url": "https://www.agf.de/daten/umgang-mit-agf-daten-/-urheberrechte-an-agf-daten",
+                    "checked": "2026-11-04",
+                    "supports": "Rechte bei der AGF; keine Weitergabe in recherchierbarer Form"
+                  }
+                ]
               }
             },
             {
@@ -4877,11 +4906,11 @@
               "name": "E-Paper-Auflagen und Digitalabonnements",
               "color": "#9d174d",
               "details": {
-                "description": "IVW-gemeldete E-Paper-Auflagen und digitale Abonnementzahlen von Tageszeitungen und Wochenpublikationen. Zeigt den Wandel vom Print- zum Digitalvertrieb im deutschen Pressemarkt.",
+                "description": "Von der IVW geprüfte, quartalsweise gemeldete Auflagen von Tages- und Wochenzeitungen, Publikums- und Fachzeitschriften einschließlich der ePaper-Verkäufe sowie Stand-alone-ePaper. Ergänzend veröffentlicht die IVW monatlich die tagesdurchschnittlich verkauften Nutzungsrechte von Paid-Content-Angeboten nach Preiskorridoren.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "IVW veröffentlicht E-Paper-Auflagen quartalsmäßig kostenlos auf ivw.de."
+                  "explanation": "Gezählt werden verkaufte Exemplare und Zugänge je Titel und Quartal, keine Abonnentinnen und Abonnenten. Die Zahlen sind Marktdaten der Verlage; Kundendaten bleiben im Vertrieb."
                 },
                 "theme": {
                   "code": "TH_04",
@@ -4930,8 +4959,31 @@
                 ],
                 "temporal": {
                   "available_from": 1997,
-                  "update_frequency": "FQ_03"
-                }
+                  "update_frequency": "FQ_08"
+                },
+                "sources": [
+                  {
+                    "title": "Print und ePublishing",
+                    "publisher": "IVW",
+                    "url": "https://ivw.de/print-epublishing/",
+                    "checked": "2026-11-04",
+                    "supports": "quartalsweise geprüfte Auflagen gedruckter und digitaler Ausgaben"
+                  },
+                  {
+                    "title": "Paid Content",
+                    "publisher": "IVW",
+                    "url": "https://ivw.de/paid-content/",
+                    "checked": "2026-11-04",
+                    "supports": "monatliche Paid-Content-Zugänge nach Preiskorridoren"
+                  },
+                  {
+                    "title": "Pressemitteilung IVW-Auflagenstatistik Q3/2026",
+                    "publisher": "IVW",
+                    "url": "https://ivw.de/pressemitteilung-ivw-auflagenstatistik-q32026/",
+                    "checked": "2026-11-04",
+                    "supports": "erfasste Gattungen einschließlich ePaper"
+                  }
+                ]
               }
             },
             {
@@ -8137,11 +8189,11 @@
               "name": "Eigentümerstruktur Verlage",
               "color": "#9d174d",
               "details": {
-                "description": "Systematische Erfassung der Beteiligungsstrukturen und Eigentumsverhältnisse bei deutschen Zeitungs- und Zeitschriftenverlagen, basierend auf Handelsregisterdaten (Unternehmensregister), KEK-Medienkonzentrationsberichten (Kommission zur Ermittlung der Konzentration im Medienbereich) und den nach § 60 MStV vorgeschriebenen Transparenzberichten der Medienunternehmen. Das Hans-Bredow-Institut und die bpb pflegen ergänzend die Mediendatenbank mediendaten.de.",
+                "description": "Inhaber- und Beteiligungsverhältnisse von Medienunternehmen in Presse, Hörfunk, Fernsehen und Onlinebereich, wie sie die Mediendatenbank der KEK (Kommission zur Ermittlung der Konzentration im Medienbereich) ausweist. Die KEK beschreibt außerdem Verflechtungen zwischen bundesweiten Fernsehveranstaltern und Tageszeitungsverlagen; ihr Konzentrationsbericht erscheint nach § 60 MStV alle drei Jahre oder auf Anforderung der Länder.",
                 "openness": {
                   "class": "OP_02",
                   "label": "Nach Aufbereitung publizierbar",
-                  "explanation": "Handelsregisterdaten und KEK-Berichte sind öffentlich zugänglich, jedoch nicht strukturiert maschinenlesbar; verschachtelte Beteiligungsstrukturen erfordern manuelle Aufbereitung und Validierung vor der Veröffentlichung als verknüpfter Datensatz."
+                  "explanation": "Aufzubereiten sind verschachtelte Beteiligungsketten über mehrere Gesellschaften, damit mittelbare Anteile und Zurechnungen nachvollziehbar werden. Gesellschafter sind überwiegend Unternehmen; wo Privatpersonen beteiligt sind, genügt die Angabe des Anteils."
                 },
                 "theme": {
                   "code": "TH_08",
@@ -8195,7 +8247,30 @@
                 "temporal": {
                   "available_from": 2001,
                   "update_frequency": "FQ_04"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Mediendatenbank",
+                    "publisher": "KEK",
+                    "url": "https://www.kek-online.de/mediendatenbank/",
+                    "checked": "2026-11-04",
+                    "supports": "Inhaber- und Beteiligungsverhältnisse, auch der Presse"
+                  },
+                  {
+                    "title": "Tageszeitungen – Verflechtungen",
+                    "publisher": "KEK",
+                    "url": "https://www.kek-online.de/medienkonzentration/medienrelevante-verwandte-maerkte/tageszeitungen/",
+                    "checked": "2026-11-04",
+                    "supports": "Verflechtungen von Fernsehveranstaltern und Tageszeitungsverlagen"
+                  },
+                  {
+                    "title": "MStV § 60 Sicherung der Meinungsvielfalt im Fernsehen",
+                    "publisher": "Freistaat Bayern (gesetze-bayern.de)",
+                    "url": "https://www.gesetze-bayern.de/Content/Document/MStV-60",
+                    "checked": "2026-11-04",
+                    "supports": "KEK-Bericht alle drei Jahre oder auf Anforderung der Länder"
+                  }
+                ]
               }
             },
             {

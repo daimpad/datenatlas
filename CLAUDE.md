@@ -310,6 +310,15 @@ Personenbezug (Fahrten, Buchungen, Messungen) sind `GR_01`.
 | `FQ_03` | Monatlich |
 | `FQ_04` | Jährlich |
 | `FQ_05` | Unregelmäßig |
+| `FQ_06` | Wöchentlich |
+| `FQ_07` | Halbjährlich |
+| `FQ_08` | Vierteljährlich |
+
+`FQ_06`–`FQ_08` kamen mit der zweiten Quellenprüfung: Sieben von 15 geprüften
+Einträgen trugen einen falschen Rhythmus, und für SurvStat (wöchentlich), die
+IVW-Auflagen (vierteljährlich) und die Bundesbank-Zahlungsverkehrsstatistik
+(halbjährlich) gab es keinen richtigen Code. Die Nummern folgen nicht der
+Häufigkeit; `FREQ_META` in `timeline.js` legt die Anzeigereihenfolge fest.
 
 All vocabulary codes live in `public/data/vocabulary.json` — the validator reads
 them from there, so add new codes to that file first. `src/vokabular.js` mirrors
@@ -383,7 +392,7 @@ Inhaltsqualität (Hinweis, keine Warnungen):
   mehrfach verwendete Begründungstexte: 0 Knoten (0 %)
   Aussagen über fremde Veröffentlichungspraxis: 0
   Beschreibung widerspricht den Metadaten: 0
-  Datentypen mit geprüfter Quelle: 5 von 10428
+  Datentypen mit geprüfter Quelle: 19 von 10428
 ```
 
 Die ersten vier Kennzahlen stehen auf null (die fünfte siehe „Quellen und
@@ -529,6 +538,31 @@ Einkommensklassen, die die KSK nicht ausweist, ein nicht belegbarer
 §-Verweis. Was sich nicht belegen lässt („nach Branche“ bei der
 Künstlersozialabgabe), bleibt Einschätzung — keine Quelle anhängen, die nur
 die Hälfte stützt.
+
+Die **Zweitbelegung** (`scripts/datafix-quellen-zweitbelegung.mjs`) hat 15
+Einträge geprüft, die eine benannte Statistik meinen. Keiner stimmte
+vollständig; 14 tragen jetzt Quellen, einer bleibt Einschätzung. Typische
+Fehler: Rhythmus (7×), Startjahr (6×), falscher Herausgeber oder falsches
+Gesetz (BaFin statt Eurex, EntgTranspG statt Verdiensterhebung, § 60 MStV als
+„Transparenzbericht“, ein erfundener „Engagement-Atlas“ von ZiviZ) und zweimal
+eine freie Lizenz, wo der Rechteinhaber die Weitergabe untersagt (AGF,
+Media Control). Dort steht jetzt `OP_02` mit `LI_04`: Das Hindernis ist das
+Nutzungsrecht, nicht der Personenbezug.
+
+So wird geprüft: Je Eintrag Aussagen zerlegen, Primärquelle suchen, jede
+Aussage als belegt, widerlegt oder nicht gefunden markieren — mit wörtlichem
+Zitat. **Jedes Zitat wird danach maschinell auf der Quellseite gesucht**
+(130 von 130 gefunden); ein Beleg, der nur aus dem Gedächtnis stammt, fällt
+dabei durch. Für Seiten mit Latin-1-Kodierung und Inline-Tags muss der
+Abgleich Zeichensatz und Leerraum normalisieren, sonst meldet er falsche
+Fehlschläge (Förderkatalog, BA, Destatis).
+
+**Bekannte Lücke in Regel 3:** Vier der 15 alten Begründungen enthielten
+Praxisaussagen, die `claimsThirdPartyPractice()` nicht erkennt — eine Abkürzung
+als Subjekt („IVW veröffentlicht … kostenlos auf ivw.de“), „… sind vollständig
+öffentlich zugänglich“, „nach dem Vorbild des RKI-Dashboards“. Die Kennzahl 0
+ist deshalb eine Untergrenze. Wer das Muster erweitert, wird sie wieder steigen
+sehen.
 
 ### Beispiellinks (`details.examples`)
 

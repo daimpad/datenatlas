@@ -18310,10 +18310,10 @@
               "name": "Förderprojektdatenbank",
               "color": "#3d1a87",
               "details": {
-                "description": "Vollständiges Verzeichnis bewilligter Forschungsprojekte mit Fördersumme, Laufzeit, beteiligter Institution und Fachgebiet. Beispiele: DFG-GEPRIS, BMBF-Förderkatalog, CORDIS (EU).",
+                "description": "Verzeichnisse bewilligter Forschungsvorhaben, etwa der Förderkatalog des Bundes mit Laufzeit, Bewilligungssumme, Förderempfänger und Leistungsplansystematik; er gibt nach eigener Angabe keinen vollständigen Überblick über alle Vorhaben des Bundes. GEPRIS der DFG informiert über Projekte aus fast allen DFG-Förderprogrammen mit beteiligten Personen, Einrichtungen und Fachklassifikation. CORDIS stellt EU-geförderte Projekte mit Laufzeit, Gesamtkosten und EU-Beitrag als monatlich erzeugte Datensätze bereit.",
                 "openness": {
                   "label": "Sofort publizierbar",
-                  "explanation": "DFG-GEPRIS, BMBF-Förderkatalog und CORDIS sind vollständig öffentlich zugänglich und über APIs abrufbar. Transparenz ist ausdrückliches Ziel der Förderer.",
+                  "explanation": "Bewilligte Vorhaben dokumentieren die Verwendung öffentlicher Mittel. Titel, Laufzeit, Fördersumme und Empfängereinrichtung betreffen Institutionen; die Namen der Projektleitungen sind Teil der Bewilligung, private Kontaktdaten gehören nicht in den Datensatz.",
                   "class": "OP_01"
                 },
                 "theme": {
@@ -18368,7 +18368,37 @@
                 "temporal": {
                   "available_from": 2009,
                   "update_frequency": "FQ_03"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Förderkatalog",
+                    "publisher": "Bundesregierung (foerderportal.bund.de)",
+                    "url": "https://foerderportal.bund.de/foekat/jsp/StartAction.do",
+                    "checked": "2026-11-04",
+                    "supports": "Verzeichnis geförderter Bundesvorhaben, nach eigener Angabe nicht vollständig"
+                  },
+                  {
+                    "title": "Förderkatalog – Detailsuche",
+                    "publisher": "Bundesregierung (foerderportal.bund.de)",
+                    "url": "https://foerderportal.bund.de/foekat/jsp/SucheAction.do?actionMode=searchmask",
+                    "checked": "2026-11-04",
+                    "supports": "Merkmale Laufzeit, Bewilligungssumme, Förderempfänger, Leistungsplansystematik"
+                  },
+                  {
+                    "title": "GEPRIS Project Information System Relaunched",
+                    "publisher": "Deutsche Forschungsgemeinschaft",
+                    "url": "https://www.dfg.de/en/news/news-topics/announcements-proposals/2026/ifr-26-43",
+                    "checked": "2026-11-04",
+                    "supports": "Projekte fast aller DFG-Programme mit Personen, Einrichtungen, Fachklassifikation"
+                  },
+                  {
+                    "title": "CORDIS – EU research projects under Horizon Europe (2021–2027)",
+                    "publisher": "Amt für Veröffentlichungen der EU (data.europa.eu)",
+                    "url": "https://data.europa.eu/api/hub/search/datasets/cordis-eu-research-projects-under-horizon-europe-2021-2027",
+                    "checked": "2026-11-04",
+                    "supports": "monatlich erzeugte Projektdatensätze mit Laufzeit, Gesamtkosten, EU-Beitrag"
+                  }
+                ]
               }
             },
             {

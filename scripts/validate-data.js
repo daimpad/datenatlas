@@ -8,6 +8,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { claimsThirdPartyPractice } from '../src/begruendungs-regeln.js';
+import { linkProblems } from './link-regeln.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -221,6 +222,27 @@ function validateL4Details(tile, issues) {
       }
     });
   }
+
+  // examples (Beispieldatensätze) und sources (Belege der Beschreibung).
+  // Beide sind optional — aber was drinsteht, muss eine Adresse sein, die es
+  // gibt. Abgeschaltete Portale (mcloud.de) lehnt link-regeln.mjs ab; ob ein
+  // Link noch antwortet, prüft scripts/check-links.mjs wöchentlich.
+  for (const field of ['examples', 'sources']) {
+    if (d[field] === undefined) continue;
+    if (!Array.isArray(d[field])) { error(issues, `L4 "${id}": details.${field} must be an array`); continue; }
+    d[field].forEach((e, i) => {
+      for (const p of linkProblems(e)) error(issues, `L4 "${id}": details.${field}[${i}]: ${p}`);
+    });
+  }
+  // Eine Quelle ist erst eine Quelle, wenn jemand sie aufgerufen und mit der
+  // Beschreibung abgeglichen hat. `checked` hält fest, wann — ohne Datum ist
+  // es nur ein Link, der so aussieht wie ein Beleg.
+  (Array.isArray(d.sources) ? d.sources : []).forEach((e, i) => {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(e?.checked ?? ''))
+      error(issues, `L4 "${id}": details.sources[${i}].checked must be a date YYYY-MM-DD`);
+    if (!isNonEmptyString(e?.supports))
+      error(issues, `L4 "${id}": details.sources[${i}].supports must say which claim the source backs`);
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -380,6 +402,7 @@ function main() {
     let short = 0, total = 0;
     const contradictions = [];
     const practice = [];
+    let sourced = 0;
 
     // Regel 3 des Begründungs-Regelwerks. Das Muster steht in
     // src/begruendungs-regeln.js — geteilt mit Browser-Werkzeug,
@@ -420,6 +443,7 @@ function main() {
           if (words < 5) short++;
           byText.set(e, (byText.get(e) ?? 0) + 1);
           if (claimsThirdPartyPractice(e)) practice.push(n.id);
+          if (n.details?.sources?.length) sourced++;
 
           const desc = n.details?.description ?? '';
           for (const c of CONTRA) {
@@ -439,7 +463,8 @@ function main() {
       `  Öffnungsbegründungen unter 5 Wörtern: ${short} (${pct(short)} %)\n` +
       `  mehrfach verwendete Begründungstexte: ${reused} Knoten (${pct(reused)} %)\n` +
       `  Aussagen über fremde Veröffentlichungspraxis: ${practice.length}\n` +
-      `  Beschreibung widerspricht den Metadaten: ${contradictions.length}`
+      `  Beschreibung widerspricht den Metadaten: ${contradictions.length}\n` +
+      `  Datentypen mit geprüfter Quelle: ${sourced} von ${total}`
     );
     contradictions.slice(0, 15).forEach(c => console.log(`    · ${c}`));
     if (contradictions.length > 15) console.log(`    … und ${contradictions.length - 15} weitere`);

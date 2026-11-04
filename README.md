@@ -90,6 +90,7 @@ Der **Öffnungsklasse-Filter** erscheint neben der Suche, sobald ein Suchbegriff
 ### Details und Verknüpfungen
 
 - **Detail-Sidebar** — pro Datentyp: Öffnungsklassenbewertung mit Begründung, Thema, Objekt, Granularität, Format, Lizenz und Prozessverknüpfungen
+- **Quellenstatus** — jeder Datentyp zeigt, ob er eine geprüfte Quelle hat („Mit Quelle“, mit Prüfdatum und der Aussage, die sie stützt) oder eine Einschätzung ist. Die meisten Einträge sind derzeit Einschätzungen; der Status steht auch im CSV-Export und auf den statischen Organisationsseiten
 - **Ähnliche Datensätze** — bis zu 5 thematisch verwandte Datentypen aus anderen Sektoren direkt in der Sidebar
 - **Prozess-Navigation** — von einem Datentyp aus lassen sich verknüpfte Prozesse öffnen; von dort erscheinen alle Datentypen, die diesen Prozess nutzen, auch sektorübergreifend
 
@@ -142,6 +143,8 @@ Jeder Datentyp enthält neben Name und Beschreibung strukturierte Metadaten:
 | `processes` | Verknüpfte Prozesse (≥ 5) | Methodenname + Beschreibung |
 | `temporal.available_from` | Verfügbar ab (Jahr) | `2003` |
 | `temporal.update_frequency` | Aktualisierungshäufigkeit | `FQ_01` (Echtzeit) … `FQ_05` (unregelmäßig) |
+| `examples` *(optional)* | Beispieldatensätze | Titel, Herausgeber, URL |
+| `sources` *(optional)* | Geprüfte Quellen | Titel, Herausgeber, URL, `checked` (Prüfdatum), `supports` (welche Aussage sie stützt) |
 
 ---
 
@@ -210,6 +213,8 @@ scripts/
   analytics.js           — GoatCounter-Snippet, einmal für alle 161 Seiten
   build-begruendungs-prompt.mjs — baut den Prompt aus dem Regelwerk
   apply-begruendungen.mjs — übernimmt überarbeitete Begründungen stapelweise
+  check-links.mjs        — prüft alle Links in examples/sources (wöchentlich per Workflow)
+  link-regeln.mjs        — Formregeln für Links, geteilt von Validator und Linkprüfung
   datafix-*.mjs          — einmalige Datenkorrekturen (dokumentieren frühere Läufe)
 ```
 
@@ -435,13 +440,34 @@ Inhaltsqualität (Hinweis, keine Warnungen):
   mehrfach verwendete Begründungstexte: 0 Knoten (0 %)
   Aussagen über fremde Veröffentlichungspraxis: 0
   Beschreibung widerspricht den Metadaten: 0
+  Datentypen mit geprüfter Quelle: 5 von 10428
 ```
 
-Alle vier Kennzahlen stehen auf null: 942 Kurztexte, 1.492 formelhaft
+Die ersten vier Kennzahlen stehen auf null: 942 Kurztexte, 1.492 formelhaft
 wiederverwendete Begründungen, 913 Praxisaussagen und 8 Metadaten-Widersprüche
 sind einzeln überarbeitet. Sie bleiben im Bericht, weil sie beim Anfassen wieder
 steigen — ein neuer Datentyp mit kopierter Begründung erscheint sofort als
 Dublette. Genau dafür sind sie da.
+
+Die fünfte zählt in die andere Richtung. Die Einträge sind modelliert, nicht
+aus Quellen abgeschrieben; eine Quelle (`details.sources`) bekommt ein
+Datentyp erst, wenn jemand die Aussage auf der Quellseite nachgelesen hat. Der
+Validator verlangt dafür Prüfdatum (`checked`) und die gestützte Aussage
+(`supports`).
+
+## Linkprüfung
+
+```bash
+node scripts/check-links.mjs [--json bericht.json] [--strict]
+```
+
+Prüft alle URLs in `examples` und `sources`. Als **tot** gelten nur 404/410
+und abgeschaltete Portale (mCLOUD); 401/403/429/5xx, Zeitüberschreitungen und
+die 400-Antworten der GDI-DE-Firewall gelten als **nicht prüfbar** und bleiben
+stehen. `--strict` beendet mit Exit-Code 1, wenn tote Links gefunden werden.
+`.github/workflows/check-links.yml` läuft montags und bei Bedarf von Hand —
+bewusst nicht bei jedem Pull Request, damit ein Wartungsfenster auf einem
+Landesportal keinen PR rot färbt.
 
 Zwei Kennzahlen sind im Lauf der Arbeit **schärfer geworden und dadurch
 gestiegen**, bevor sie wieder auf null gingen. Die dritte prüft Regel 3 des

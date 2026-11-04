@@ -138,6 +138,7 @@ function buildDetailSections(d) {
   const parts = [];
 
   parts.push(section('<i class="fa-solid fa-file-lines"></i> Beschreibung', `<p>${esc(d.description)}</p>`));
+  parts.push(sourcesSection(d.sources));
 
   if (d.openness) {
     const op = d.openness;
@@ -229,6 +230,34 @@ function buildRelatedSection(entries) {
     </div>`;
   }).join('');
   return section('<i class="fa-solid fa-circle-nodes"></i> Ähnliche Datensätze', `<div class="rel-list">${items}</div>`);
+}
+
+// Steht direkt unter der Beschreibung, damit vor der Öffnungsklasse klar ist,
+// worauf sie beruht. Die meisten Datentypen sind Einschätzungen ohne Quelle —
+// das wird gesagt, statt es offen zu lassen. Eine Quelle zählt nur mit
+// Prüfdatum und der Angabe, welche Aussage sie belegt (siehe Validator).
+function sourcesSection(sources) {
+  const fmt = iso => { const [y, m, d] = iso.split('-'); return `${+d}.${+m}.${y}`; };
+  if (!sources?.length) {
+    return section('<i class="fa-solid fa-scale-balanced"></i> Quellen', `
+      <div class="src-status src-status--est">Einschätzung</div>
+      <p class="src-note">Für diesen Datentyp ist keine geprüfte Quelle hinterlegt.
+      Beschreibung, Öffnungsklasse und Zeitangaben sind eine Modellierung dessen,
+      was bei dieser Art von Organisation typischerweise anfällt.</p>`);
+  }
+  const items = sources.map(s => `
+    <a href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer" class="example-item src-item">
+      <span class="example-title">${esc(s.title)}</span>
+      <span class="example-pub">${esc(s.publisher)} · geprüft am ${esc(fmt(s.checked))}</span>
+      <span class="src-supports">belegt: ${esc(s.supports)}</span>
+    </a>`).join('');
+  // „Mit Quelle", nicht „Belegt": Eine Quelle stützt die Aussage, die unter
+  // `supports` steht — die Öffnungsklasse bleibt eine Einschätzung.
+  return section('<i class="fa-solid fa-scale-balanced"></i> Quellen', `
+    <div class="src-status src-status--ok">Mit Quelle</div>
+    <div class="example-list">${items}</div>
+    <p class="src-note">Die Quellen stützen die jeweils genannte Aussage. Die
+    Öffnungsklasse bleibt eine fachliche Einschätzung, keine rechtliche Prüfung.</p>`);
 }
 
 function section(title, inner) {

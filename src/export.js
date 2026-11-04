@@ -8,7 +8,7 @@ import { LABELS } from './vokabular.js';
 const THEME = LABELS, OBJECT = LABELS, GRANULARITY = LABELS,
       LICENSE = LABELS, FORMAT = LABELS, OPENNESS = LABELS;
 
-const HEADERS = ['Name','Sektor','Organisation','Aktivität','Öffnungsklasse','Thema','Objekttyp','Granularität','Format','Lizenz','Relevanz','Beschreibung'];
+const HEADERS = ['Name','Sektor','Organisation','Aktivität','Öffnungsklasse','Thema','Objekttyp','Granularität','Format','Lizenz','Relevanz','Beschreibung','Quellenstatus','Quellen'];
 
 export function initExport({ ensureFullIndex }) {
   let _busy = false;
@@ -76,6 +76,9 @@ function tileRow(tile, sektor, org, activity) {
     LICENSE[d.license?.code]   ?? d.license?.code     ?? '',
     d.relevance ?? '',
     d.description ?? '',
+    // Wer exportiert, zitiert womöglich weiter — der Status muss mit.
+    d.sources?.length ? 'mit Quelle' : 'Einschätzung',
+    (d.sources ?? []).map(s => `${s.publisher}: ${s.title} <${s.url}> (geprüft ${s.checked})`).join('; '),
   ];
 }
 

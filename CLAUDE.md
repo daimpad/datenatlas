@@ -53,6 +53,8 @@ scripts/
   analytics.js           — the GoatCounter snippet, once for all 161 pages
   build-begruendungs-prompt.mjs — builds the prompt from the ruleset
   apply-begruendungen.mjs — applies revised justifications in batches
+  check-links.mjs        — checks every URL in examples/sources (weekly workflow)
+  link-regeln.mjs        — link form rules, shared by validator and link check
   datafix-*.mjs          — one-off data corrections (record of past runs)
 ```
 
@@ -381,9 +383,11 @@ Inhaltsqualität (Hinweis, keine Warnungen):
   mehrfach verwendete Begründungstexte: 0 Knoten (0 %)
   Aussagen über fremde Veröffentlichungspraxis: 0
   Beschreibung widerspricht den Metadaten: 0
+  Datentypen mit geprüfter Quelle: 5 von 10428
 ```
 
-Alle vier Kennzahlen stehen auf null. Die **kurzen Begründungen** wurden in
+Die ersten vier Kennzahlen stehen auf null (die fünfte siehe „Quellen und
+Beispiellinks“). Die **kurzen Begründungen** wurden in
 vierzehn Stapeln über `scripts/apply-begruendungen.mjs` abgearbeitet (942 → 0),
 die **Praxisaussagen** in dreizehn weiteren (776 → 0) und nach dem Schärfen des
 Musters in drei letzten (137 → 0), die **Metadaten-Widersprüche** einzeln
@@ -482,6 +486,62 @@ half-applies leaves no way to tell which half.
 
 ---
 
+## Quellen und Beispiellinks
+
+### Die Einträge sind modelliert, nicht abgeschrieben
+
+Es gibt kein Quellenfeld aus der Entstehungszeit. Beschreibung, Öffnungsklasse
+und Zeitangaben sind eine Modellierung dessen, was bei einem Organisationstyp
+typischerweise anfällt — großteils KI-gestützt geschrieben. Weltwissen eines
+Sprachmodells hat keine Herkunftsangabe; eine nachträglich „gefundene“ Quelle
+wäre Rekonstruktion, nicht Ursprung. Deshalb gilt: **eine Quelle bekommt ein
+Datentyp erst, wenn die Aussage auf der Quellseite nachgelesen ist.**
+
+Optionales Feld `details.sources`:
+
+```json
+"sources": [{
+  "title": "KSK in Zahlen",
+  "publisher": "Künstlersozialkasse",
+  "url": "https://www.kuenstlersozialkasse.de/service/ksk-in-zahlen",
+  "checked": "2026-11-04",
+  "supports": "Versicherte nach Berufsgruppe, Geschlecht und Alter"
+}]
+```
+
+`checked` (ISO-Datum) und `supports` (welche Aussage die Quelle stützt) sind
+Pflicht; der Validator prüft beides. `supports` ist bewusst schmal: eine Quelle
+für die Besuchszahlen belegt nicht die Öffnungsklasse. Sidebar, CSV-Export und
+die statischen Organisationsseiten zeigen den Status — „Mit Quelle“ oder
+„Einschätzung“ — und die Sidebar sagt dazu, dass die Öffnungsklasse auch mit
+Quelle eine fachliche Einschätzung bleibt, keine rechtliche Prüfung.
+
+**Beim Prüfen die Beschreibung an die Quelle anpassen, nie umgekehrt.** Die
+Erstbelegung (`scripts/datafix-quellen-erstbelegung.mjs`) hat sieben Einträge
+geprüft: zwei stimmten, drei mussten korrigiert werden, zwei ließen sich nicht
+belegen. Korrigiert wurden „aller deutschen Museen“
+(2024 antworteten 4.592 von über 6.500), täglich statt jährlich seit 1981,
+Einkommensklassen, die die KSK nicht ausweist, ein nicht belegbarer
+§-Verweis. Was sich nicht belegen lässt („nach Branche“ bei der
+Künstlersozialabgabe), bleibt Einschätzung — keine Quelle anhängen, die nur
+die Hälfte stützt.
+
+### Beispiellinks (`details.examples`)
+
+Von 937 Beispiellinks waren 231 tot (404/410 oder das abgeschaltete mCLOUD)
+und sind entfernt (`scripts/datafix-tote-links.mjs`); 148 Datentypen haben
+seitdem keine Beispiele mehr. Übrig sind 706 Links an 369 Datentypen. Rund 335
+davon antworten mit 400 (Firewall der GDI-DE), 401/403/429 oder 5xx — die
+gelten als **nicht prüfbar**, nicht als tot, und bleiben stehen.
+
+`scripts/check-links.mjs` prüft alle URLs in `examples` und `sources` mit
+ehrlichem User-Agent (`datenatlas-linkcheck`), höchstens zwei Anfragen je Host.
+`--strict` beendet mit 1 bei toten Links; der Wochen-Workflow nutzt das. Ein
+neu abgeschaltetes Portal gehört nach `RETIRED_HOSTS` in
+`scripts/link-regeln.mjs` — dann meldet es auch der Validator.
+
+---
+
 ## Build & Deploy
 
 ### Local Development
@@ -500,6 +560,7 @@ Merging to `main` deploys. Do **not** hand-copy files to a `gh-pages` branch.
 | `.github/workflows/deploy-netcup.yml` | Netcup via FTP (`/httpdocs/`) |
 | `.github/workflows/validate-data.yml` | validator + build (PR and push) |
 | `.github/workflows/codeql.yml` | security analysis |
+| `.github/workflows/check-links.yml` | link check, Mondays + manual (not on PRs) |
 
 The build also emits `.br`/`.gz` siblings for large text assets
 (`precompress` plugin); `public/.htaccess` serves them on Apache/Netcup by

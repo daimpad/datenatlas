@@ -61,6 +61,24 @@ function opennessBar(dist) {
     </div>`;
 }
 
+// Quellen je Datentyp, wie in der Detailansicht (sourcesSection in
+// src/modal.js). Ohne Quelle steht hier nichts — derselbe Satz 69-mal auf einer
+// Seite wäre Rauschen; den Status sagt einmal sourcesNote() oben auf der Seite.
+function sourcesLine(sources) {
+  if (!sources?.length) return '';
+  const links = sources.map(s =>
+    `<a href="${esc(s.url)}" rel="noopener">${esc(s.title)}</a> (${esc(s.publisher)}, geprüft ${esc(s.checked)})`).join('; ');
+  return `<p class="src">Quelle: ${links}</p>`;
+}
+
+function sourcesNote(acts, total) {
+  const n = acts.reduce((s, a) => s + (a.children ?? []).filter(t => t.details?.sources?.length).length, 0);
+  const rest = n === 0
+    ? 'Keiner der Datentypen auf dieser Seite hat bisher eine geprüfte Quelle'
+    : `${n} von ${total.toLocaleString('de-DE')} Datentypen ${n === 1 ? 'hat' : 'haben'} eine geprüfte Quelle, die übrigen nicht`;
+  return `<p class="src-note">${rest}. Ohne Quelle sind Beschreibung, Öffnungsklasse und Zeitangaben eine Einschätzung dessen, was bei dieser Art von Organisation typischerweise anfällt.</p>`;
+}
+
 function shell({ title, description, canonical, breadcrumb, body, jsonLd }) {
   const crumbLd = {
     '@context': 'https://schema.org',
@@ -207,6 +225,7 @@ function orgPage(sector, org, siblings, vocab) {
         ${op ? `<p class="op ${op.cls}"><span class="dot" style="background:${op.color}"></span>
           <b>${esc(op.label)}</b>${d.openness?.explanation ? ` — ${esc(d.openness.explanation)}` : ''}</p>` : ''}
         ${chips ? `<p class="chips">${chips}</p>` : ''}
+        ${sourcesLine(d.sources)}
         ${procs ? `<details><summary>Verwendung in ${(d.processes ?? []).length} Prozessen</summary><ul class="procs">${procs}</ul></details>` : ''}
       </article>`;
     }).join('');
@@ -226,6 +245,7 @@ function orgPage(sector, org, siblings, vocab) {
     <h1>${esc(org.name)}</h1>
     <p class="lede">Welche Daten bei dieser Organisationsform entstehen — und wie offen sie sein könnten. ${acts.length} ${acts.length === 1 ? 'Aktivität' : 'Aktivitäten'}, ${l4.toLocaleString('de-DE')} Datentypen.</p>
     ${opennessBar(dist)}
+    ${sourcesNote(acts, l4)}
     <p class="cta"><a href="../../#${esc(sector.id)}/${esc(org.id)}">Auf der interaktiven Karte öffnen →</a></p>
     ${sections}
     ${others ? `<section class="more">
@@ -336,6 +356,7 @@ p{margin-bottom:14px;max-width:66ch;text-wrap:pretty}
 .op{display:flex;gap:9px;align-items:baseline;font-size:13.6px}
 .op b{color:var(--text-1);white-space:nowrap}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
+.src,.src-note{font-size:.88rem;color:#5c4a7a}.src-note{border-left:3px solid #e6d5ff;padding-left:10px}
 .chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);border-radius:5px;padding:2px 8px}
 details{margin-top:4px}
 summary{cursor:pointer;font-size:12.5px;color:var(--text-3);font-family:var(--mono)}

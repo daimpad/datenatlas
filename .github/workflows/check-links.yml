@@ -1,0 +1,50 @@
+name: Check links
+
+# Prüft wöchentlich alle Links in details.examples und details.sources.
+#
+# Bewusst nicht bei jedem Pull Request: Fremde Server antworten mal langsam,
+# mal mit 429, mal sperren sie Rechenzentrums-Adressen aus. Ein PR soll nicht
+# rot werden, weil ein Landesportal gerade Wartung hat. Rot wird dieser Lauf nur
+# bei eindeutig toten Links (404/410, abgeschaltete Portale) — dann zeigt die
+# Zusammenfassung, welche, und das JSON-Artefakt enthält die betroffenen
+# Datentypen.
+
+on:
+  schedule:
+    - cron: '17 5 * * 1'     # montags 05:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check links
+        run: |
+          set -o pipefail
+          node scripts/check-links.mjs --json link-report.json --strict | tee link-report.txt
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo '## Linkprüfung'
+            echo '```'
+            cat link-report.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: link-report
+          path: link-report.json
+          retention-days: 30

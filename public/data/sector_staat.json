@@ -13709,11 +13709,11 @@
               "name": "Infektionsstatistik",
               "color": "#2471a3",
               "details": {
-                "description": "Aggregierte Wochendaten zu Infektionskrankheiten auf Kreisebene: Fallzahlen je Erkrankungstyp, Inzidenz pro 100.000 Einwohner, Altersverteilung und saisonale Trends. Wird aus anonymisierten Meldedaten abgeleitet und entspricht dem Standard der RKI-Veröffentlichungen.",
+                "description": "Aggregierte Fallzahlen meldepflichtiger Infektionskrankheiten nach dem Infektionsschutzgesetz, gegliedert nach Meldewoche, Kreis (zuständiges Gesundheitsamt), Krankheit bzw. Erreger, Altersgruppe und Geschlecht, wahlweise als Inzidenz pro 100.000 Einwohner und nach Saisonwochen. Grundlage ist ein vereinfachter Datenbestand der Fälle, die die Gesundheitsämter über die Landesstellen an das RKI übermitteln; voreingestellt ist die Referenzdefinition der RKI-Publikationen. Die Ergebnistabellen lassen sich als CSV herunterladen.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "Wöchentliche Inzidenzdaten auf Kreisebene sind nach dem Vorbild des RKI-Dashboards (COVID-19) und SurvStat ohne datenschutzrechtliche Einschränkungen veröffentlichbar. Die Aggregation auf Kreisebene verhindert Rückschlüsse auf Einzelpersonen. Hoher öffentlicher Informationswert, insbesondere in Ausbruchsphasen."
+                  "explanation": "Ausgewiesen werden gemeldete Fälle je Kreis, Meldewoche, Erreger, Altersgruppe und Geschlecht, also Fallzählungen ohne Personenmerkmale. Der Datenbestand ist für diese Auswertung vereinfacht; die Referenzdefinition macht Zahlen verschiedener Abfragen vergleichbar."
                 },
                 "theme": {
                   "code": "TH_01",
@@ -13724,17 +13724,12 @@
                   "label": "Statistik / Aggregatdaten"
                 },
                 "granularity": {
-                  "code": "GR_02",
-                  "label": "Aggregiert (zeitlich oder räumlich)"
+                  "code": "GR_03"
                 },
                 "format": [
                   {
                     "code": "FT_01",
                     "label": "CSV"
-                  },
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
                   }
                 ],
                 "license": {
@@ -13765,9 +13760,32 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 1994,
-                  "update_frequency": "FQ_05"
-                }
+                  "available_from": 2001,
+                  "update_frequency": "FQ_06"
+                },
+                "sources": [
+                  {
+                    "title": "SurvStat@RKI 2.0 – Anleitung",
+                    "publisher": "Robert Koch-Institut",
+                    "url": "https://survstat.rki.de/Docs/SurvStat2Anleitung.pdf",
+                    "checked": "2026-11-04",
+                    "supports": "Meldeweg Gesundheitsamt – Landesstelle – RKI; Gliederung nach Meldewoche, Kreis, Erreger, Alter, Geschlecht und Saison; Inzidenz pro 100.000; Daten ab 2001; wöchentlich; CSV"
+                  },
+                  {
+                    "title": "SurvStat@RKI 2.0 – Variablenübersicht",
+                    "publisher": "Robert Koch-Institut",
+                    "url": "https://survstat.rki.de/Docs/Variablen%C3%BCbersicht.pdf",
+                    "checked": "2026-11-04",
+                    "supports": "Kreis = für den Fall zuständiges Gesundheitsamt"
+                  },
+                  {
+                    "title": "Forschungsdaten nutzen – SurvStat@RKI",
+                    "publisher": "Robert Koch-Institut",
+                    "url": "https://www.rki.de/DE/Aktuelles/Publikationen/Forschungsdaten/survstat_inhalt.html",
+                    "checked": "2026-11-04",
+                    "supports": "vereinfachter Datenbestand der meldepflichtigen Fälle"
+                  }
+                ]
               }
             },
             {
@@ -54148,14 +54166,14 @@
             {
               "id": "wirtschaftsstandort-beschaeftigungsstruktur-branche",
               "level": 4,
-              "name": "Beschäftigungsstruktur nach Branche und Bezirk",
+              "name": "Beschäftigte nach Stadtbezirk (kleinräumige BA-Daten)",
               "color": "#2471a3",
               "details": {
-                "description": "Sozialversicherungspflichtige Beschäftigung nach WZ-2008-Abschnitt, Qualifikationsniveau und Stadtbezirk, jährlich auf Basis der Beschäftigtenstatistik der Bundesagentur für Arbeit. Ermöglicht Analyse der wirtschaftlichen Spezialisierung einzelner Stadtteile. Unverzichtbar für Strukturberichte der kommunalen Wirtschaftsförderung.",
+                "description": "Sozialversicherungspflichtig Beschäftigte und weitere Arbeitsmarktdaten der Bundesagentur für Arbeit für kleinräumige Teilgebiete wie Stadtbezirke und Ortsteile, zugeordnet nach der Wohnadresse und ausgewiesen für die Stichtage im März, Juni, September und Dezember. Kommunen beziehen sie über gesonderte, kostenpflichtige Vereinbarungen; im Internet berichtet die BA bis zur Gemeinde.",
                 "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "BA-Beschäftigtenstatistik nach Gemeindebaustein ist als Regionaldaten öffentlich verfügbar und kommunal nutzbar"
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Kleinräumige Beschäftigtenzahlen unterliegen der statistischen Geheimhaltung; in dünn besetzten Teilgebieten verweist eine kleine Zelle auf Einzelne. Die Weitergabe regelt der Bezugsvertrag mit der BA, Bezirkswerte sind erst ab einer Mindestbesetzung auszuweisen."
                 },
                 "theme": {
                   "code": "TH_04",
@@ -54176,8 +54194,7 @@
                   }
                 ],
                 "license": {
-                  "code": "LI_03",
-                  "label": "Datenlizenz Deutschland"
+                  "code": "LI_04"
                 },
                 "relevance": 5,
                 "processes": [
@@ -54204,8 +54221,31 @@
                 ],
                 "temporal": {
                   "available_from": 1994,
-                  "update_frequency": "FQ_04"
-                }
+                  "update_frequency": "FQ_08"
+                },
+                "sources": [
+                  {
+                    "title": "Arbeitsmarktdaten für kleinräumige Gebiete",
+                    "publisher": "Bundesagentur für Arbeit, Statistik",
+                    "url": "https://statistik.arbeitsagentur.de/DE/Navigation/Service/akg/akg-Nav.html",
+                    "checked": "2026-11-04",
+                    "supports": "kleinräumige Teilgebiete (Ortsteile, Stadtbezirke); gesonderte vertragliche Vereinbarung, kostenpflichtig; Stichtage März, Juni, September, Dezember"
+                  },
+                  {
+                    "title": "Kleinräumige Gebiete – Fragen und Antworten",
+                    "publisher": "Bundesagentur für Arbeit, Statistik",
+                    "url": "https://statistik.arbeitsagentur.de/DE/Statischer-Content/Service/akg/Generische-Publikationen/Fragen-und-Antworten.pdf?__blob=publicationFile&v=1",
+                    "checked": "2026-11-04",
+                    "supports": "Zuordnung der Personen nach Wohnadresse"
+                  },
+                  {
+                    "title": "Kleinräumige Gebiete – Informationsbroschüre",
+                    "publisher": "Bundesagentur für Arbeit, Statistik",
+                    "url": "https://statistik.arbeitsagentur.de/DE/Statischer-Content/Service/akg/Generische-Publikationen/Informationsbroschuere.pdf?__blob=publicationFile&v=1",
+                    "checked": "2026-11-04",
+                    "supports": "kleinste Ebene der Internet-Berichterstattung ist die Gemeinde"
+                  }
+                ]
               }
             },
             {

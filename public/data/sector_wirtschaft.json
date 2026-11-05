@@ -5173,7 +5173,7 @@
               "name": "Zahlungsverkehrsvolumen Bankkonten",
               "color": "#ca6f1e",
               "details": {
-                "description": "Aggregiertes Volumen und Transaktionszahl im inländischen Zahlungsverkehr nach Zahlungsinstrument (Überweisung, Lastschrift, Kartenzahlung). Deutsche Bundesbank erhebt diese Daten im Rahmen der Payment Statistics. Wichtige Kennzahl für Finanzstabilität und Digitalisierungsgrad.",
+                "description": "Anzahl und Wert der Zahlungstransaktionen nach Zahlungsinstrument (u. a. Überweisungen, SEPA-Echtzeitüberweisungen, Lastschriften, Kartenzahlungen), erfasst für Kunden inländischer Zahlungsdienstleister und aufgeteilt nach Inland und Ausland. Die Deutsche Bundesbank erhebt die Zahlungsverkehrsstatistik als Vollerhebung; seit dem Berichtsjahr 2022 werden die meisten Positionen halbjährlich gemeldet und in einer halbjährlichen Statistischen Fachreihe veröffentlicht.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
@@ -5229,9 +5229,32 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 2006,
-                  "update_frequency": "FQ_04"
-                }
+                  "available_from": 2002,
+                  "update_frequency": "FQ_07"
+                },
+                "sources": [
+                  {
+                    "title": "Zahlungsverkehrs- und Wertpapierabwicklungsstatistiken (Statistische Fachreihe)",
+                    "publisher": "Deutsche Bundesbank",
+                    "url": "https://www.bundesbank.de/resource/blob/804046/804f3e2eac4977f67b4b5f7c8b177362/472B63F073F071307366337C94F8C870/0-zahlungsverkehrs-und-wertpapierabwicklungsstatistiken-data.pdf",
+                    "checked": "2026-11-04",
+                    "supports": "Anzahl und Wert der Transaktionen nach Zahlungsinstrument; Vollerhebung; erscheint halbjährlich"
+                  },
+                  {
+                    "title": "Zahlungsverkehrsstatistik (Meldewesen)",
+                    "publisher": "Deutsche Bundesbank",
+                    "url": "https://www.bundesbank.de/de/service/meldewesen/bankenstatistik/zahlungsverkehrsstatistik-613524",
+                    "checked": "2026-11-04",
+                    "supports": "überwiegend halbjährliche Meldung ab 2022"
+                  },
+                  {
+                    "title": "Statistiken über den Zahlungsverkehr in Deutschland 2002–2006",
+                    "publisher": "Deutsche Bundesbank",
+                    "url": "https://www.bundesbank.de/resource/blob/615864/ea59c03f9e9bb8553a23fecc973020f2/472B63F073F071307366337C94F8C870/statistiken-ueber-den-zahlungsverkehr-in-deutschland-2002-2006-data.pdf",
+                    "checked": "2026-11-04",
+                    "supports": "Zahlungsverkehrsdaten ab 2002"
+                  }
+                ]
               }
             },
             {
@@ -7936,7 +7959,7 @@
               "name": "Derivate-Marktstatistik",
               "color": "#ca6f1e",
               "details": {
-                "description": "Volumen und Anzahl abgeschlossener Derivatekontrakte (Futures, Optionen, Swaps) an deutschen Handelsplätzen, veröffentlicht von Börsen und BaFin.",
+                "description": "Anzahl der gehandelten börsennotierten Derivatekontrakte (Futures und Optionen) an der Eurex, gegliedert nach Produktgruppen wie Zins-, Index- und Aktienderivaten, veröffentlicht als monatliche Statistik der Börse. Swaps erscheinen dort nicht als gehandelte Kontrakte, sondern im OTC-Clearing als Nominalvolumen.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
@@ -7994,7 +8017,16 @@
                 "temporal": {
                   "available_from": 1992,
                   "update_frequency": "FQ_03"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Eurex Monthly Statistics September 2026",
+                    "publisher": "Eurex",
+                    "url": "https://www.eurex.com/resource/blob/5619300/123b20220f20deb12dc1bbf726359039/data/monthlystat_202609.pdf",
+                    "checked": "2026-11-04",
+                    "supports": "monatliche Zahl gehandelter Futures und Optionen nach Produktgruppe; Swaps nur als OTC-Clearing-Nominalvolumen"
+                  }
+                ]
               }
             },
             {
@@ -11256,11 +11288,11 @@
               "name": "Entgeltgleichheits-Reporting (Gender Pay Gap)",
               "color": "#ca6f1e",
               "details": {
-                "description": "Statistische Auswertungen zum bereinigten und unbereinigten Gender Pay Gap je Branche, Berufsgruppe und Unternehmensgröße. Erhoben auf Basis der Entgeltgleichheitsanalyse nach EntgTranspG und der Verdienststrukturerhebung des Statistischen Bundesamts.",
+                "description": "Betriebliche Auswertung der Entgelte von Frauen und Männern, etwa im Rahmen eines Prüfverfahrens, zu dem das Entgelttransparenzgesetz private Arbeitgeber mit in der Regel mehr als 500 Beschäftigten auffordert. Der gesetzliche Bericht zur Gleichstellung und Entgeltgleichheit nennt nach Geschlecht nur Beschäftigtenzahlen, keine Entgeltlücke. Vergleichswerte nach Wirtschaftszweig und Unternehmensgröße liefert der unbereinigte Gender Pay Gap des Statistischen Bundesamts.",
                 "openness": {
                   "class": "OP_02",
                   "label": "Nach Aufbereitung publizierbar",
-                  "explanation": "Individuelle Gehaltsdaten sind tariflich und datenschutzrechtlich geschützt; aggregierte Lückenstatistiken sind rechtlich zur Veröffentlichung vorgesehen."
+                  "explanation": "Einzelne Entgelte sind Personaldaten, und in kleinen Entgeltgruppen lässt schon ein Mittelwert auf einzelne Beschäftigte schließen. Auszuweisen sind Lücken je Entgeltgruppe deshalb erst ab einer Mindestbesetzung je Geschlecht."
                 },
                 "theme": {
                   "code": "TH_03",
@@ -11308,9 +11340,39 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 1997,
+                  "available_from": 2017,
                   "update_frequency": "FQ_04"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Entgelttransparenzgesetz",
+                    "publisher": "Bundesministerium der Justiz (gesetze-im-internet.de)",
+                    "url": "https://www.gesetze-im-internet.de/entgtranspg/BJNR215210017.html",
+                    "checked": "2026-11-04",
+                    "supports": "Gesetz vom 30. Juni 2017"
+                  },
+                  {
+                    "title": "EntgTranspG § 17 Betriebliche Prüfverfahren",
+                    "publisher": "Bundesministerium der Justiz (gesetze-im-internet.de)",
+                    "url": "https://www.gesetze-im-internet.de/entgtranspg/__17.html",
+                    "checked": "2026-11-04",
+                    "supports": "Aufforderung an private Arbeitgeber mit in der Regel mehr als 500 Beschäftigten"
+                  },
+                  {
+                    "title": "EntgTranspG § 21 Bericht zur Gleichstellung und Entgeltgleichheit",
+                    "publisher": "Bundesministerium der Justiz (gesetze-im-internet.de)",
+                    "url": "https://www.gesetze-im-internet.de/entgtranspg/__21.html",
+                    "checked": "2026-11-04",
+                    "supports": "Bericht nennt nach Geschlecht Beschäftigtenzahlen, keine Entgeltlücke"
+                  },
+                  {
+                    "title": "Unbereinigter Verdienstunterschied nach unternehmensbezogenen Merkmalen",
+                    "publisher": "Statistisches Bundesamt (Destatis)",
+                    "url": "https://www.destatis.de/DE/Themen/Arbeit/Verdienste/Verdienste-GenderPayGap/Tabellen/gpg-unternehmen.html",
+                    "checked": "2026-11-04",
+                    "supports": "unbereinigter Gender Pay Gap nach Wirtschaftszweig und Unternehmensgröße"
+                  }
+                ]
               }
             },
             {

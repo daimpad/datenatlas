@@ -196,7 +196,7 @@ Die Einträge sind **modelliert**, nicht aus den Beständen realer Organisatione
 - **Mit Quelle** — die Angaben sind in einer Primärquelle nachgelesen, etwa beim Herausgeber der Statistik. Genannt werden Quelle, Prüfdatum und die Aussage, die sie stützt — nicht mehr.
 - **Einschätzung** — noch nicht gegen eine Quelle geprüft. Beschreibung, Öffnungsklasse und Zeitangaben sind modelliert. Das gilt derzeit für fast alle Einträge.
 
-Eine Quelle wird erst eingetragen, wenn die Aussage auf der Quellseite tatsächlich steht. Die ersten geprüften Einträge zeigen, warum das nötig ist: Von sieben stimmten zwei, drei mussten korrigiert werden, zwei ließen sich nicht belegen. Dass die jeweilige Statistik bei dieser Art von Organisation existiert, bestätigte sich jedes Mal. Ungenau waren die Details — Abdeckung, Erscheinungsrhythmus, Gliederung.
+Eine Quelle wird erst eingetragen, wenn die Aussage auf der Quellseite tatsächlich steht. Die bisher geprüften Einträge zeigen, warum das nötig ist: Von 22 stimmten zwei vollständig, 17 mussten korrigiert werden, drei ließen sich im Kern nicht belegen. Meist gab es die beschriebene Statistik, ungenau waren die Details — Erscheinungsrhythmus, Startjahr, Gliederung, gelegentlich der Herausgeber. In zwei Fällen gab es den beschriebenen Datensatz so nicht.
 
 **Beispiellinks.** Ein Teil der Einträge verweist auf Beispieldatensätze. Diese Links werden wöchentlich automatisch geprüft; bei der ersten Prüfung waren 231 von 937 nicht mehr erreichbar und wurden entfernt. Ein Beispiellink zeigt, dass es Vergleichbares gibt. Die Angaben des Eintrags belegt er nicht.
 

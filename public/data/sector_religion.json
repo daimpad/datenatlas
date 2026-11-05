@@ -19,11 +19,11 @@
               "name": "EKD-Mitgliederstatistik",
               "color": "#0d5c57",
               "details": {
-                "description": "Anzahl evangelischer Kirchenmitglieder nach Landeskirche, Altersgruppe und Geschlecht — jährlich durch EKD erhoben.",
+                "description": "Jährliche Kirchenmitgliederstatistik der EKD zum Stichtag 31. Dezember, erstellt vom Kirchenamt der EKD aus dem kirchlichen Meldewesen. Ausgewiesen werden die evangelischen Kirchenmitglieder nach den 20 Gliedkirchen und nach Bundesländern, jeweils insgesamt und darunter Frauen, sowie im Verhältnis zur Bevölkerung.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "Aggregierte Mitgliederzahlen ohne Personenbezug werden vom EKD-Statistischen Amt veröffentlicht."
+                  "explanation": "Gezählt werden Kirchenmitglieder je Gliedkirche und Bundesland zum Jahresende, nicht einzelne Personen. Die Zahlen stammen aus dem kirchlichen Meldewesen; Einzeldaten bleiben in den Verzeichnissen der Gemeinden."
                 },
                 "theme": {
                   "code": "TH_03",
@@ -39,8 +39,12 @@
                 },
                 "format": [
                   {
-                    "code": "FT_01",
-                    "label": "CSV"
+                    "code": "FT_07",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_08",
+                    "label": "Excel (XLSX)"
                   }
                 ],
                 "license": {
@@ -71,9 +75,25 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 2000,
+                  "available_from": 2001,
                   "update_frequency": "FQ_04"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Kirchenmitgliederzahlen am 31.12.2025",
+                    "publisher": "EKD",
+                    "url": "https://www.ekd.de/ekd_de/ds_doc/Bericht_Kirchenmitglieder_2025.pdf",
+                    "checked": "2026-11-04",
+                    "supports": "Mitglieder nach Gliedkirchen und Bundesländern, insgesamt und Frauen; aus dem kirchlichen Meldewesen"
+                  },
+                  {
+                    "title": "Kirchenmitgliederzahlen (Downloads)",
+                    "publisher": "EKD",
+                    "url": "https://www.ekd.de/kirchenmitgliederzahlen-downloads-44413.htm",
+                    "checked": "2026-11-04",
+                    "supports": "jährliche Berichte seit Stichtag 31.12.2001; PDF, ab 2023 auch XLSX"
+                  }
+                ]
               }
             },
             {
@@ -11115,11 +11135,11 @@
               "name": "Antisemitismusmeldestellen — Vorfälle nach Bundesland",
               "color": "#0d5c57",
               "details": {
-                "description": "Jährliche Statistik antisemitischer Vorfälle aus den Meldestellen der Bundesländer (RIAS — Recherche- und Informationsstelle Antisemitismus) sowie dem Bundeskriminalamt (BKA, PMK-Statistik). Enthält Vorfallskategorien (Beleidigung, Bedrohung, Angriff, Sachbeschädigung) nach Bundesland.",
+                "description": "Jährlicher Bericht „Antisemitische Vorfälle in Deutschland“ des Bundesverbands RIAS e. V. mit den Vorfällen, die regionale RIAS-Meldestellen dokumentieren. Er weist die Vorfälle je Bundesland als Gesamtzahl aus und bundesweit nach sechs Vorfalltypen: extreme Gewalt, Angriffe, gezielte Sachbeschädigungen, Bedrohungen, verletzendes Verhalten und Massenzuschriften. Getrennt davon nennt das Bundeskriminalamt jährlich die Zahl polizeilich registrierter antisemitischer Straftaten; beide Zählungen werden nicht systematisch abgeglichen.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "Vorfallskategorien je Bundesland machen ein Lagebild überhaupt erst möglich. Meldende und Betroffene sind besonders schutzbedürftig — ausgewiesen wird ausschließlich die Fallzahl je Kategorie und Land."
+                  "explanation": "Ausgewiesen werden Vorfallzahlen je Bundesland und bundesweit je Vorfalltyp, keine Fallschilderungen mit Ort und Datum. Meldende und Betroffene sind besonders schutzbedürftig; Einzelfallangaben, die auf sie verweisen könnten, bleiben bei den Meldestellen."
                 },
                 "theme": {
                   "code": "TH_08",
@@ -11130,17 +11150,12 @@
                   "label": "Metadaten"
                 },
                 "granularity": {
-                  "code": "GR_03",
-                  "label": "Kleinräumig (Stadtteil / Gemeinde)"
+                  "code": "GR_02"
                 },
                 "format": [
                   {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  },
-                  {
-                    "code": "FT_02",
-                    "label": "JSON"
+                    "code": "FT_07",
+                    "label": "PDF"
                   }
                 ],
                 "license": {
@@ -11173,7 +11188,30 @@
                 "temporal": {
                   "available_from": 2001,
                   "update_frequency": "FQ_04"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Antisemitische Vorfälle in Deutschland. Jahresbericht 2025",
+                    "publisher": "Bundesverband RIAS",
+                    "url": "https://www.report-antisemitism.de/documents/17-06-26_RIAS_Bund_Jahresbericht_2025.pdf",
+                    "checked": "2026-11-04",
+                    "supports": "Vorfälle je Bundesland (Gesamtzahl) und bundesweit nach Vorfalltyp; kein systematischer Abgleich mit Polizeidaten"
+                  },
+                  {
+                    "title": "Arbeitsweisen",
+                    "publisher": "Bundesverband RIAS",
+                    "url": "https://www.report-antisemitism.de/arbeitsweisen/",
+                    "checked": "2026-11-04",
+                    "supports": "sechs Vorfalltypen"
+                  },
+                  {
+                    "title": "Fallzahlen zur Politisch motivierten Kriminalität 2025",
+                    "publisher": "Bundeskriminalamt",
+                    "url": "https://www.bka.de/DE/UnsereAufgaben/Deliktsbereiche/PMK/PMKZahlen/PMKZahlen_node.html",
+                    "checked": "2026-11-04",
+                    "supports": "jährliche Zahl antisemitischer Straftaten"
+                  }
+                ]
               }
             },
             {
@@ -32283,11 +32321,11 @@
               "name": "Hilfswerk-Spendeneinnahmen Zeitreihe",
               "color": "#0d5c57",
               "details": {
-                "description": "Zeitreihe der Spendeneinnahmen kirchlicher Hilfswerke in Deutschland (Brot für die Welt, Misereor, Caritas International, Diakonie Katastrophenhilfe) über mehrere Jahrzehnte, differenziert nach Spendenkampagnen und Krisenereignissen. Quelle: Jahresberichte, DZI.",
+                "description": "Jährliche Spendeneinnahmen der kirchlichen Hilfswerke Brot für die Welt, Misereor, Caritas international und Diakonie Katastrophenhilfe aus ihren Jahresberichten; die Diakonie Katastrophenhilfe nennt dabei auch Spendenbeträge für einzelne Krisen. Mehrjährige Übersichten bieten Brot für die Welt (2021–2025) und Misereor (2016–2025). Der DZI Spenden-Almanach enthält einen statistischen Anhang zu den Einnahmen der Spenden-Siegel-Organisationen.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "Spendeneinnahmen werden in Jahresberichten und DZI-Spenden-Almanach publiziert; Transparenzpflicht für DZI-Siegel-Träger."
+                  "explanation": "Spendeneinnahmen sind Gesamtsummen je Hilfswerk und Jahr, keine Angaben zu Spendenden. Einzelspenden und Spenderdaten bleiben in der Buchhaltung; ausgewiesen werden Summen je Jahr und gegebenenfalls je Krise."
                 },
                 "theme": {
                   "code": "TH_07",
@@ -32336,8 +32374,45 @@
                 ],
                 "temporal": {
                   "available_from": 2005,
-                  "update_frequency": "FQ_03"
-                }
+                  "update_frequency": "FQ_04"
+                },
+                "sources": [
+                  {
+                    "title": "Jahresbericht und Zahlen",
+                    "publisher": "Brot für die Welt",
+                    "url": "https://www.brot-fuer-die-welt.de/ueber-uns/transparenz/jahresbericht-uebersicht/",
+                    "checked": "2026-11-04",
+                    "supports": "Spenden und Kollekten 2021–2025"
+                  },
+                  {
+                    "title": "Jahresbericht",
+                    "publisher": "Misereor",
+                    "url": "https://www.misereor.de/ueber-misereor/transparenz/jahresbericht",
+                    "checked": "2026-11-04",
+                    "supports": "Einnahmen 2016–2025"
+                  },
+                  {
+                    "title": "Pressemitteilung zum Jahresbericht 2025",
+                    "publisher": "Caritas international",
+                    "url": "https://www.caritas-international.de/cms/contents/caritas-internationa/medien/dokumente/sonstiges/jahresberichte/pressemitteilung--ja/jpk_2026_pressemitteilung.docx",
+                    "checked": "2026-11-04",
+                    "supports": "private Spenden 2025 und Vorjahr"
+                  },
+                  {
+                    "title": "Jahresbericht 2025",
+                    "publisher": "Diakonie Katastrophenhilfe",
+                    "url": "https://www.diakonie-katastrophenhilfe.de/fileadmin/Mediapool/40_ueber-uns/Jahresberichte/2026/DKH_Jahresbericht_2025.pdf",
+                    "checked": "2026-11-04",
+                    "supports": "Spendeneinnahmen 2025 und Spenden je Krise"
+                  },
+                  {
+                    "title": "Spenden-Almanach",
+                    "publisher": "DZI",
+                    "url": "https://www.dzi.de/spendenberatung/spendenauskunfte-und-information/spenden-almanach/",
+                    "checked": "2026-11-04",
+                    "supports": "statistischer Anhang zu Einnahmen der Spenden-Siegel-Organisationen"
+                  }
+                ]
               }
             },
             {

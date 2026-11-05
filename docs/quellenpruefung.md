@@ -432,13 +432,13 @@ automatisch durch, 81 an den Beleg.
   mit Quellenangabe“ fanden. Die Entscheidung am Beleg wertete dieselben Bedingungen bei drei Schwestereinträgen
   als `LI_04`. Beide blieben auf `LI_04`: ein Herausgeber, eine Bedingung, ein Code. Der Feldvergleich vergleicht
   Läufe je Eintrag, nicht je Herausgeber — das ist eine Lücke des Verfahrens.
-- **Fünf Beschreibungen nannten Daten, die es so nicht gibt**: eine Deckungssummen-Verteilung beim GDV (beide Läufe:
+- **Mehrere Beschreibungen nannten Angaben, die die Quelle nicht ausweist**: eine Deckungssummen-Verteilung beim GDV (beide Läufe:
   `existenz` = nein; `uebernehmen.mjs` stellt sie zurück), eine jährliche Nachfolgestatistik aus Kammerdaten (belegt
   sind eine Studie und eine einmalige Sonderumfrage), Gewerk-Gliederungen im ZDH-Konjunkturbericht (ausgewiesen sind
   Gewerbegruppen), „Versicherungsdichte“ für Cyber, „Schadenquoten nach Region“ für Klimaschäden.
 - **Die AGOF ist in Liquidation**; ihre Online-Reichweitenforschung liegt seit dem Jahreswechsel 2022/2023 bei der
   agma. Zwei IVW-Digitaleinträge hatten sie als Messstelle genannt.
-- **Startjahre**: Alle 14 gingen an den Beleg. Bei den drei ZDH-Konjunktureinträgen entschied Opus gegen Lauf B
+- **Startjahre**: 14 von 17 gingen an den Beleg (die übrigen 3 hatten in beiden Läufen keine Zahl). Bei den drei ZDH-Konjunktureinträgen entschied Opus gegen Lauf B
   (2012, das Archiv vergangener Jahre) für 2025: Der aktuelle Bericht weist nur Tabellenwerte ab dort aus (Regel 7e).
 - **Zitatabgleich**: Drei Zitate aus der IVW-Auflagen-CSV fehlten zunächst. Die Datei ist Latin-1 ohne
   Zeichensatzangabe, `zitate-pruefen.mjs` las sie als UTF-8. Behoben: ohne Angabe UTF-8, sonst Windows-1252.

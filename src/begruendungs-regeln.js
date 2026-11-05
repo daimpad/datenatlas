@@ -185,6 +185,11 @@ const PRACTICE_SUBJEKT = /(?<!\bzu\s)\b[A-ZÄÖÜ][\wäöüß-]{2,}(?:\s+(?:und|
 const PRACTICE_PASSIV_ORT = /\b(?:werden|wird|sind|ist)\b[^.;]{0,70}\b(?:auf|in|im|über)\b[^.;]{0,50}\b(?:veröffentlicht|publiziert|bereitgestellt|zugänglich gemacht|öffentlich zugänglich)\b/;
 const PRACTICE_PASSIV_AKTEUR = /\b(?:werden|wird|sind|ist)\b[^.;]{0,60}\b(?:von|vom|durch)\s+(?:der\s+|dem\s+|den\s+)?[A-ZÄÖÜ][\wäöüß.-]*(?:\s+[A-ZÄÖÜ][\wäöüß.-]*){0,3}[^.;]{0,40}\b(?:veröffentlicht|publiziert|bereitgestellt|ausgewiesen|herausgegeben)\b/;
 const PRACTICE_VERFUEGBAR = /\b(?:ist|sind|wird|werden)\b[^.;]{0,30}\b(?:öffentlich|frei|kostenlos|online)\b[^.;]{0,20}\b(?:zugänglich|verfügbar|abrufbar|einsehbar)\b|\bbereits\b[^.;]{0,40}\b(?:verfügbar|zugänglich|abrufbar|veröffentlicht|publiziert|als Open Data)\b|\bnach dem Vorbild\b|\b[Rr]egulär (?:im|in|von|als|veröffentlicht|publiziert)\b/;
+// „Nur aggregierte Quoten publizieren“, „… nur in Form von Gesamtflächenplänen veröffentlichen“: ein Infinitiv
+// mit „nur“ ist eine Auflage, keine Aussage über die Praxis anderer. Das großgeschriebene Objekt davor hielt
+// PRACTICE_SUBJEKT für ein Subjekt. „Nur wenige Kommunen veröffentlichen“ bleibt eine Praxisaussage: Mengenwörter
+// nach „nur“ nehmen die Ausnahme zurück.
+const AUFLAGE_RE = /\bnur\b(?!\s+(?:wenige|einzelne|einige|manche|teilweise|selten|vereinzelt|\d))[^.;]{0,120}\b(?:publizieren|veröffentlichen)\b(?![^.;]*\b(?:werden|wird|sind|ist)\b)/i;
 const REF_RE = /§|\bArt\.\s*\d|Gesetz|Verordnung|Richtlinie\b|\bVO\b|\bgemäß\b|[Vv]erpflicht\w*|Pflicht\w*|zwingend|\bzu veröffentlichen\b/;
 
 const PFLICHT_RE = /(verpflichtet zur veröffentlichung|veröffentlichungspflicht|veröffentlicht werden müssen|ist zu veröffentlichen|unterliegt der veröffentlichung|publikationspflicht|bekanntmachungspflicht|veröffentlichungspflichtig|auslegungspflicht)/i;
@@ -198,7 +203,7 @@ export function claimsThirdPartyPractice(text) {
       || PRACTICE_ORTSNAME.test(satz) || PRACTICE_KOLLEKTIV.test(satz)
       || PRACTICE_ADVERB_NACH.test(satz);
     // Die Muster der dritten Erweiterung sind weiter gefasst und brauchen die Ausnahme für Normen und Pflichten.
-    const praxisNeu = !REF_RE.test(satz) && (PRACTICE_KUERZEL.test(satz) || PRACTICE_SUBJEKT.test(satz)
+    const praxisNeu = !REF_RE.test(satz) && !AUFLAGE_RE.test(satz) && (PRACTICE_KUERZEL.test(satz) || PRACTICE_SUBJEKT.test(satz)
       || PRACTICE_PASSIV_ORT.test(satz) || PRACTICE_PASSIV_AKTEUR.test(satz) || PRACTICE_VERFUEGBAR.test(satz));
     if ((praxis || praxisNeu) && !PFLICHT_RE.test(satz) && !MODAL_RE.test(satz)) return true;
   }

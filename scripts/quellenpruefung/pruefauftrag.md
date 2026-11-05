@@ -3,7 +3,8 @@
 <!-- Kalibriert mit der Fassung aus Commit 72947a9 (Regeln 1–6). Die Regeln
 7–10 sind danach ergänzt, aus den Fehlern der Kalibrierung (Startjahr beim
 KBA und Breitbandatlas, Lizenz bei DSA und KBA, Format bei den Häfen,
-Quellentyp im Pilot) — an neuem Material noch nicht gemessen. -->
+Quellentyp im Pilot). In Runde 1 (20 Einträge) gemessen; danach Regel 7 und 8 geschärft,
+Regel 11 ergänzt und `beleg_art` im Prüfbogen eingeführt (Fassung ab Runde 2). -->
 
 Du prüfst Einträge des Datenatlas, eines Verzeichnisses der Datentypen, die
 deutsche Organisationen erzeugen. Die Einträge sind **modelliert**, nicht aus
@@ -42,21 +43,35 @@ gutes Ergebnis wie eine Bestätigung.
    Datensatzbeschreibung des Herausgebers. „Frei zugänglich“ oder „kostenlos“
    ist keine Lizenz.
 6. **Nur lesen.** Außer diesem Auftrag und deiner Eingabedatei liest du keine
-   lokalen Dateien, und du schreibst nur deine Ausgabedatei und Downloads.
+   lokalen Dateien, und du schreibst nur deine Ausgabedatei und Downloads —
+   Hilfsskripte gehören ins Arbeitsverzeichnis deines Auftrags, nicht daneben.
 
 7. **Startjahr** ist das früheste Jahr, für das Daten des beschriebenen
    Datensatzes abrufbar sind — nicht das Gründungsjahr eines Angebots und nicht
    bloß die früheste Auswahl auf einer einzelnen Seite. Unterscheiden sich
    Produkte (Open-Data-Datei ab 2011, Gesamtreihe ab 1991), beide in `hinweis`.
+   Bündelt der Eintrag mehrere Produkte (mehrere Tabellen, Reihen, Auswertungen),
+   gilt das Produkt, das der **Name des Eintrags** nennt; die Jahre der übrigen
+   stehen in `hinweis`. Ist kein Jahr für den Gegenstand belegbar: `nicht_gefunden`,
+   nicht das Jahr eines Nachbarprodukts.
 8. **Lizenzbeleg** muss sich auf genau diese Daten oder ihr Datenportal
    beziehen. Gibt es mehrere Aussagen — allgemeiner Urheberrechtshinweis,
    Nutzungsbedingungen der Seite, Lizenz der Daten —, gilt die spezifischste
    für die Daten; die anderen in `hinweis`. Die Lizenzseite eines anderen
-   Angebots (anderes Portal, andere Datenbank) belegt nichts.
+   Angebots (anderes Portal, andere Datenbank) belegt nichts. Im Feld `beleg_art`
+   steht `daten`, wenn die Aussage genau diese Daten, Dateien oder ihr Datenportal
+   nennt, und `seite`, wenn nur eine allgemeine Klausel der Website (Impressum,
+   Urheberrechtshinweis) gilt. Eine bloße Urheberangabe („© …“) ohne Vorbehalt
+   der Verwendung ist keine Lizenz: dann `nicht_gefunden`.
 9. **Format**: alle Bezugswege prüfen — Statistischer Bericht, Datenbank
    (etwa GENESIS), Open-Data-Datei, Download-Bereich.
 10. **Quellentyp `statistik`** nur für tatsächlich veröffentlichte Daten; eine
     Nutzungsbedingung oder ein Register ohne Auswertung ist keine Statistik.
+
+11. **URLs** in Zitaten müssen beim Abruf die zitierte Datei oder Seite selbst
+    liefern. Prüfe Downloads mit `curl -sI` auf den Content-Type: Liefert die
+    URL HTML statt der Datei, nimm die URL mit dem Parameter, mit dem du die
+    Datei tatsächlich geladen hast (bei kba.de `?__blob=publicationFile`).
 
 ## Prüfbogen
 
@@ -84,7 +99,7 @@ Für jeden Eintrag füllst du dieselben Felder. Jedes Feld ist ein Objekt:
 | `rhythmus` | Erscheinungs- bzw. Aktualisierungsrhythmus der beschriebenen Daten: FQ-Code |
 | `startjahr` | erstes verfügbares Jahr der beschriebenen Daten: Zahl |
 | `format` | Liste von FT-Codes; Formate ohne Code in `hinweis` |
-| `lizenz` | LI-Code; den Wortlaut der Bedingung als Beleg |
+| `lizenz` | LI-Code; den Wortlaut der Bedingung als Beleg; zusätzlich `beleg_art`: `daten` oder `seite` |
 | `rechtsgrundlage` | Norm, die Erhebung, Führung oder Veröffentlichung regelt, falls es eine gibt |
 
 Außerdem je Eintrag:

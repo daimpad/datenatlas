@@ -13,6 +13,9 @@ const CODE = {
 // Ergebnisdateien kennen zwei Formen: Felder direkt am Eintrag oder unter `felder`.
 export const feld = (e, n) => e?.felder?.[n] ?? e?.[n];
 
+// `existenz` steht in den Ergebnisdateien als Objekt {wert, erlaeuterung} (Runde 1) oder als bloßer Text (Runde 2).
+export const existenzVon = e => typeof e?.existenz === 'string' ? e.existenz : e?.existenz?.wert;
+
 export const statusVon = f => String(f?.status ?? '').replace(' ', '_');
 export const ohneWert = f => !f || ['nicht_gefunden', 'entfaellt'].includes(statusVon(f));
 

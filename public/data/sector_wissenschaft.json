@@ -18474,10 +18474,10 @@
               "name": "Fördervolumen-Zeitreihen",
               "color": "#3d1a87",
               "details": {
-                "description": "Historische Entwicklung der Fördervolumina nach Förderer (DFG, BMBF, EU), Fachgebiet und Hochschultyp über mehrere Jahrzehnte.",
+                "description": "Das Datenportal des Bundesministeriums für Forschung, Technologie und Raumfahrt (BMFTR) führt Zeitreihen der Ausgaben des Bundes für Wissenschaft, Forschung und Entwicklung, nach Ressorts und Förderarten ab 1991 und nach Förderbereichen ab 2009, als Tabellen in HTML, Excel und PDF unter der Datenlizenz Deutschland Namensnennung 2.0. Für die DFG weist der alle drei Jahre erscheinende Förderatlas Bewilligungen an Hochschulen in einer Reihe seit 1991 aus und analysiert daneben die Mittel des Bundes und der EU (Horizon Europe).",
                 "openness": {
                   "label": "Sofort publizierbar",
-                  "explanation": "Langfristige Förderstatistiken sind vollständig offen und werden im DFG-Förderatlas und im Bundesbericht Forschung und Innovation publiziert.",
+                  "explanation": "Gezählt werden Ausgaben und Bewilligungen in Euro je Förderer, Ressort und Zeitraum, nicht Projekte oder Personen; es sind Summen ohne Personenbezug. Die BMFTR-Tabellen stehen unter der Datenlizenz Deutschland, der Förderatlas unter CC BY-SA 4.0.",
                   "class": "OP_01"
                 },
                 "theme": {
@@ -18494,17 +18494,17 @@
                 },
                 "format": [
                   {
-                    "code": "FT_01",
-                    "label": "CSV"
+                    "code": "FT_07",
+                    "label": "PDF"
                   },
                   {
-                    "code": "FT_02",
-                    "label": "JSON"
+                    "code": "FT_08",
+                    "label": "Excel (XLSX)"
                   }
                 ],
                 "license": {
-                  "code": "LI_01",
-                  "label": "CC0 / Public Domain"
+                  "code": "LI_03",
+                  "label": "Datenlizenz Deutschland"
                 },
                 "relevance": 4,
                 "processes": [
@@ -18532,7 +18532,23 @@
                 "temporal": {
                   "available_from": 1991,
                   "update_frequency": "FQ_05"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Förderatlas 2024",
+                    "publisher": "Deutsche Forschungsgemeinschaft",
+                    "url": "https://foerderatlas.dfg.de/wp-content/uploads/2024/11/foerderatlas_2024.pdf",
+                    "checked": "2026-11-05",
+                    "supports": "DFG-Bewilligungen 1991 bis 2022, Zeitreihe seit 1991 bis 1995, Hochschulen und Fachgebiete; CC BY-SA 4.0"
+                  },
+                  {
+                    "title": "Tabellenauswahl: Ausgaben des Bundes für Wissenschaft, Forschung und Entwicklung",
+                    "publisher": "Bundesministerium für Forschung, Technologie und Raumfahrt",
+                    "url": "https://www.datenportal.bmftr.bund.de/portal/de/K11.html",
+                    "checked": "2026-11-05",
+                    "supports": "Zeitreihen 1991 bis 2026, HTML/Excel/PDF, Datenlizenz Deutschland Namensnennung 2.0"
+                  }
+                ]
               }
             },
             {
@@ -18671,11 +18687,11 @@
               "name": "DFG Bewilligungsstatistik",
               "color": "#3d1a87",
               "details": {
-                "description": "Bewilligte DFG-Anträge nach Fachgebiet, Hochschule und Förderinstrument.",
+                "description": "Die Deutsche Forschungsgemeinschaft (DFG) weist ihre Bewilligungen nach Hochschulen und Forschungsfeldern im Förderatlas aus, der im Drei-Jahres-Abstand erscheint; die Reihe beginnt mit dem Zeitraum 1991 bis 1995, die Ausgabe 2024 umfasst DFG-Bewilligungen von 1991 bis 2022. Die Tabellen gibt es im PDF und als Webtabellen mit Datendownload. Die DFG-Statistik ist eine Bewilligungs- und keine Ausgabenstatistik; nach Fachgebieten und Wissenschaftsbereichen gliedert die DFG-Fachsystematik.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "DFG veröffentlicht GEPRIS-Datenbank als Open Data."
+                  "explanation": "Gezählt werden Bewilligungen und Fördersummen je Hochschule und Forschungsfeld im Dreijahreszeitraum, nicht einzelne Projekte oder Antragstellende. Es sind Summen ohne Personenbezug; der Förderatlas steht unter CC BY-SA 4.0, mit Namensnennung und Weitergabe unter gleichen Bedingungen."
                 },
                 "theme": {
                   "code": "TH_10",
@@ -18686,18 +18702,22 @@
                   "label": "Finanzdaten"
                 },
                 "granularity": {
-                  "code": "GR_02",
-                  "label": "Aggregiert (zeitlich oder räumlich)"
+                  "code": "GR_03",
+                  "label": "Kleinräumig (Stadtteil / Gemeinde)"
                 },
                 "format": [
                   {
                     "code": "FT_01",
                     "label": "CSV"
+                  },
+                  {
+                    "code": "FT_07",
+                    "label": "PDF"
                   }
                 ],
                 "license": {
-                  "code": "LI_01",
-                  "label": "CC0 / Public Domain"
+                  "code": "LI_05",
+                  "label": "Eigene Nutzungsbedingungen"
                 },
                 "relevance": 5,
                 "processes": [
@@ -18723,9 +18743,39 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 2005,
-                  "update_frequency": "FQ_03"
-                }
+                  "available_from": 1991,
+                  "update_frequency": "FQ_05"
+                },
+                "sources": [
+                  {
+                    "title": "Kennzahlen-Portal",
+                    "publisher": "Deutsche Forschungsgemeinschaft",
+                    "url": "https://www.dfg.de/de/aktuelles/zahlen-fakten/kennzahlen-portal",
+                    "checked": "2026-11-05",
+                    "supports": "DFG-Kennzahlen zum Förderhandeln als Grafiken und Datensätze exportierbar"
+                  },
+                  {
+                    "title": "Förderatlas 2024",
+                    "publisher": "Deutsche Forschungsgemeinschaft",
+                    "url": "https://foerderatlas.dfg.de/wp-content/uploads/2024/11/foerderatlas_2024.pdf",
+                    "checked": "2026-11-05",
+                    "supports": "DFG-Bewilligungen je Hochschule und Fachgebiet, Datenbasis 1991 bis 2022, CC BY-SA 4.0"
+                  },
+                  {
+                    "title": "DFG Kennzahlen-Portal: Allgemeine methodische Hinweise",
+                    "publisher": "Deutsche Forschungsgemeinschaft",
+                    "url": "https://www.dfg.de/resource/blob/356902/dfg-kennzahlen-portal-methodische-hinweise.pdf",
+                    "checked": "2026-11-05",
+                    "supports": "Bewilligungsstatistik, Fachsystematik (14 Fachgebiete), Programmgruppen"
+                  },
+                  {
+                    "title": "Förderatlas 2024",
+                    "publisher": "Deutsche Forschungsgemeinschaft",
+                    "url": "https://foerderatlas.dfg.de/",
+                    "checked": "2026-11-05",
+                    "supports": "DFG-Bewilligungen 2020 bis 2022 nach Hochschulen und Fachgebieten; Erscheinen im Drei-Jahres-Abstand"
+                  }
+                ]
               }
             },
             {
@@ -18994,11 +19044,11 @@
               "name": "Förderquoten nach Antragstyp",
               "color": "#3d1a87",
               "details": {
-                "description": "Jährliche Erfolgsquoten für Förderanträge nach Antragstyp (Einzelantrag, Forschergruppe, Sonderforschungsbereich, Exzellenzcluster, ERC Grants) und Fachgebiet, erhoben von DFG, BMBF und EU-Kommission. Zentrale Kennzahl für Wettbewerbsintensität im deutschen Wissenschaftssystem.",
+                "description": "Die Deutsche Forschungsgemeinschaft (DFG) weist im Kennzahlen-Portal und im Jahresbericht jährliche Erfolgsquoten ihrer Förderung aus. In der Einzelförderung sind das die Förderquote (bewilligte zu entschiedenen Anträgen) und die Bewilligungsquote (bewilligte zu beantragten Mitteln), je Wissenschaftsbereich; für koordinierte Programme wie Sonderforschungsbereiche die Empfehlungsquote der Antragsskizzen und die Einrichtungsquote der Vollanträge. Die Diagrammdaten des Portals lassen sich als Datensätze exportieren.",
                 "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Förderquoten sind standardmäßige Leistungskennzahlen, die DFG und EU-Kommission bereits öffentlich in Jahresberichten ausweisen."
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Gezählt werden Anträge je Wissenschaftsbereich und Jahr als Quoten, nicht einzelne Anträge oder Gutachten. Die Quoten sind Verhältniszahlen ohne Personenbezug. Die DFG behält sich Rechte an ihren Inhalten vor; das Hindernis ist das Nutzungsrecht."
                 },
                 "theme": {
                   "code": "TH_07",
@@ -19016,11 +19066,15 @@
                   {
                     "code": "FT_01",
                     "label": "CSV"
+                  },
+                  {
+                    "code": "FT_07",
+                    "label": "PDF"
                   }
                 ],
                 "license": {
-                  "code": "LI_02",
-                  "label": "CC BY 4.0"
+                  "code": "LI_04",
+                  "label": "Proprietär / Restriktiv"
                 },
                 "relevance": 5,
                 "processes": [
@@ -19048,7 +19102,23 @@
                 "temporal": {
                   "available_from": 1992,
                   "update_frequency": "FQ_04"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Erfolgsquoten (Kennzahlen-Portal)",
+                    "publisher": "Deutsche Forschungsgemeinschaft",
+                    "url": "https://www.dfg.de/de/aktuelles/zahlen-fakten/kennzahlen-portal/erfolgsquoten",
+                    "checked": "2026-11-05",
+                    "supports": "Förderquote, Bewilligungsquote, Empfehlungsquote, Einrichtungsquote; jährliche Quoten"
+                  },
+                  {
+                    "title": "Jahresbericht 2025",
+                    "publisher": "Deutsche Forschungsgemeinschaft",
+                    "url": "https://www.dfg.de/resource/blob/399728/dfg-jb2025.pdf",
+                    "checked": "2026-11-05",
+                    "supports": "Entwicklung der Bewilligungsquoten in der Einzelförderung 2016 bis 2025; Quoten je Wissenschaftsbereich"
+                  }
+                ]
               }
             },
             {
@@ -20089,11 +20159,11 @@
               "name": "Förderdatenbank bewilligte Projekte",
               "color": "#3d1a87",
               "details": {
-                "description": "Öffentlich zugängliche Datenbank bewilligter Forschungsprojekte mit Titel, Abstract, Fördersumme, Laufzeit und beteiligter Institution (z.B. GEPRIS der DFG).",
+                "description": "GEPRIS ist das Informationssystem der Deutschen Forschungsgemeinschaft (DFG) zu den von ihr geförderten Forschungsvorhaben und bildet rund 150.000 bewilligte Projekte aus nahezu allen DFG-Förderprogrammen ab, mit Projekttitel, projektverantwortlichen Personen oder Einrichtungen, Förderzeitraum und fachlicher Zuordnung. Projektbeschreibungen und Zusammenfassungen von Abschlussberichten stammen von den Antragstellenden; ihre Nutzung bedarf der Zustimmung der Autor*innen. Die Datenbestände werden in der Regel wöchentlich aktualisiert.",
                 "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Verzeichnet werden bewilligte Projekte mit Titel, Abstract, Summe und Laufzeit. Die Bewilligung ist eine Verwendung öffentlicher Mittel; abgelehnte Anträge und Gutachtervoten sind kein Bestandteil des Verzeichnisses."
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Verzeichnet werden bewilligte Projekte mit Titel, Förderzeitraum und fachlicher Zuordnung; die Beschreibungen stammen von den Antragstellenden. Deren Nutzung bedarf ihrer Zustimmung, daher ist nicht jedes Feld frei weiterverwendbar."
                 },
                 "theme": {
                   "code": "TH_10",
@@ -20111,15 +20181,11 @@
                   {
                     "code": "FT_02",
                     "label": "JSON"
-                  },
-                  {
-                    "code": "FT_04",
-                    "label": "XML"
                   }
                 ],
                 "license": {
-                  "code": "LI_01",
-                  "label": "CC0 / Public Domain"
+                  "code": "LI_04",
+                  "label": "Proprietär / Restriktiv"
                 },
                 "relevance": 5,
                 "processes": [
@@ -20146,8 +20212,38 @@
                 ],
                 "temporal": {
                   "available_from": 2005,
-                  "update_frequency": "FQ_02"
-                }
+                  "update_frequency": "FQ_06"
+                },
+                "sources": [
+                  {
+                    "title": "Informationssysteme: GEPRIS",
+                    "publisher": "Deutsche Forschungsgemeinschaft",
+                    "url": "https://www.dfg.de/de/gefoerderte-projekte/informationssysteme",
+                    "checked": "2026-11-05",
+                    "supports": "GEPRIS als frei zugängliches Projektinformationssystem; Texte von den Antragstellenden"
+                  },
+                  {
+                    "title": "Projektinformationssystem GEPRIS in neuer Version",
+                    "publisher": "Deutsche Forschungsgemeinschaft",
+                    "url": "https://www.dfg.de/de/aktuelles/neuigkeiten-themen/info-wissenschaft/2026/ifw-26-43",
+                    "checked": "2026-11-05",
+                    "supports": "rund 150.000 bewilligte Projekte; Inhalte: Personen, Einrichtungen, fachliche Zuordnung"
+                  },
+                  {
+                    "title": "GEPRIS – Über GEPRIS",
+                    "publisher": "Deutsche Forschungsgemeinschaft",
+                    "url": "https://gepris.dfg.de/about",
+                    "checked": "2026-11-05",
+                    "supports": "Inhalt und Umfang: bewilligte Projekte, Personen, Einrichtungen; Texte stammen von den Antragstellenden"
+                  },
+                  {
+                    "title": "GEPRIS – FAQ",
+                    "publisher": "Deutsche Forschungsgemeinschaft",
+                    "url": "https://gepris.dfg.de/about/faq",
+                    "checked": "2026-11-05",
+                    "supports": "wöchentliche Aktualisierung; strukturierter Bezug nur auf Anfrage"
+                  }
+                ]
               }
             },
             {
@@ -20491,11 +20587,11 @@
               "name": "Bewilligungsquoten nach Programm",
               "color": "#3d1a87",
               "details": {
-                "description": "Antrags- und Bewilligungsquoten der Förderprogramme (z. B. DFG-Förderatlas).",
+                "description": "Die Deutsche Forschungsgemeinschaft (DFG) weist im Kennzahlen-Portal und im Jahresbericht jährliche Erfolgsquoten ihrer Förderung aus. In der Einzelförderung sind das die Förderquote (bewilligte zu entschiedenen Anträgen) und die Bewilligungsquote (bewilligte zu beantragten Mitteln), je Wissenschaftsbereich; für koordinierte Programme wie Sonderforschungsbereiche die Empfehlungsquote der Antragsskizzen und die Einrichtungsquote der Vollanträge. Die Diagrammdaten des Portals lassen sich als Datensätze exportieren.",
                 "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Die Quote setzt bewilligte ins Verhältnis zu eingereichten Anträgen je Programm. Beides sind Jahressummen; einzelne Anträge und ihre Bewertungen sind darin nicht enthalten."
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Die Förderquote setzt bewilligte ins Verhältnis zu entschiedenen Anträgen, die Bewilligungsquote bewilligte zu beantragten Mitteln, je Wissenschaftsbereich und Jahr. Einzelne Anträge und Bewertungen sind darin nicht enthalten; die Nutzung unterliegt dem Urheberrechtsvorbehalt der DFG."
                 },
                 "theme": {
                   "code": "TH_07",
@@ -20513,11 +20609,15 @@
                   {
                     "code": "FT_01",
                     "label": "CSV"
+                  },
+                  {
+                    "code": "FT_07",
+                    "label": "PDF"
                   }
                 ],
                 "license": {
-                  "code": "LI_03",
-                  "label": "Datenlizenz Deutschland"
+                  "code": "LI_04",
+                  "label": "Proprietär / Restriktiv"
                 },
                 "relevance": 4,
                 "processes": [
@@ -20545,7 +20645,23 @@
                 "temporal": {
                   "available_from": 2012,
                   "update_frequency": "FQ_04"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Erfolgsquoten (Kennzahlen-Portal)",
+                    "publisher": "Deutsche Forschungsgemeinschaft",
+                    "url": "https://www.dfg.de/de/aktuelles/zahlen-fakten/kennzahlen-portal/erfolgsquoten",
+                    "checked": "2026-11-05",
+                    "supports": "Definition und jährliche Berichterstattung von Förder-, Bewilligungs-, Empfehlungs- und Einrichtungsquote"
+                  },
+                  {
+                    "title": "Jahresbericht 2025",
+                    "publisher": "Deutsche Forschungsgemeinschaft",
+                    "url": "https://www.dfg.de/resource/blob/399728/dfg-jb2025.pdf",
+                    "checked": "2026-11-05",
+                    "supports": "Bewilligungsquoten in der Einzelförderung 2016 bis 2025; Antragszahlen und Förderquoten je Programm"
+                  }
+                ]
               }
             },
             {

@@ -56823,11 +56823,11 @@
               "name": "Breitbandversorgungskarte",
               "color": "#2471a3",
               "details": {
-                "description": "Georeferenzierte Versorgungsdaten für Festnetz- und Mobilfunk-Breitband (Mbit/s je Technologie) auf Adress- und Gemeindeebene; Grundlage: Bundesnetzagentur-Meldungen.",
+                "description": "Der Breitbandatlas der Bundesnetzagentur (Zentrale Informationsstelle des Bundes) zeigt die Verfügbarkeit von Festnetz- und Mobilfunk-Breitband nach Technologie und Bandbreitenklasse von 10 bis 1000 Mbit/s. Ausgewiesen wird auf Rasterzellen von 100 m × 100 m sowie für Bund, Länder, Landkreise und Gemeinden; erhoben wird adressgenau. Grundlage sind die halbjährlichen Versorgungsmeldungen der verpflichteten Telekommunikationsunternehmen.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "Öffentlich vom BMWK und BNetzA bereitgestellt; Nutzung ohne Einschränkungen."
+                  "explanation": "Ausgewiesen wird Versorgung je Rasterzelle und Gemeinde, nicht je Anschluss. Die adressgenauen Meldungen der Netzbetreiber bleiben in der Erhebung; die Weiterverwendung ist frei, verlangt aber Quellenangabe und die Kennzeichnung eigener Änderungen."
                 },
                 "theme": {
                   "code": "TH_10",
@@ -56843,17 +56843,16 @@
                 },
                 "format": [
                   {
-                    "code": "FT_05",
-                    "label": "GeoJSON"
+                    "code": "FT_08",
+                    "label": "Excel (XLSX)"
                   },
                   {
-                    "code": "FT_06",
-                    "label": "Shapefile"
+                    "code": "FT_01",
+                    "label": "CSV"
                   }
                 ],
                 "license": {
-                  "code": "LI_03",
-                  "label": "Datenlizenz Deutschland"
+                  "code": "LI_05"
                 },
                 "relevance": 5,
                 "processes": [
@@ -56879,9 +56878,32 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 2000,
-                  "update_frequency": "FQ_04"
-                }
+                  "available_from": 2018,
+                  "update_frequency": "FQ_07"
+                },
+                "sources": [
+                  {
+                    "title": "Breitbandatlas",
+                    "publisher": "Bundesnetzagentur (Gigabit-Grundbuch)",
+                    "url": "https://gigabitgrundbuch.bund.de/GIGA/DE/Breitbandatlas/start.html",
+                    "checked": "2026-11-05",
+                    "supports": "Betreiber Bundesnetzagentur/ZIS; Festnetz und Mobilfunk; adressgenaue Erhebung; Datenstände ab Ende 2018"
+                  },
+                  {
+                    "title": "Methodenbericht zum Breitbandatlas",
+                    "publisher": "Bundesnetzagentur (Gigabit-Grundbuch)",
+                    "url": "https://gigabitgrundbuch.bund.de/GIGA/DE/Breitbandatlas/Dokumente/Methodenbericht_BBA.html",
+                    "checked": "2026-11-05",
+                    "supports": "Bandbreitenklassen; Rasterzellen 100 m und Verwaltungsebenen bis Gemeinde; halbjährliche Datenlieferung"
+                  },
+                  {
+                    "title": "Downloads",
+                    "publisher": "Bundesnetzagentur (Gigabit-Grundbuch)",
+                    "url": "https://gigabitgrundbuch.bund.de/GIGA/DE/Downloads_Suche/start.html",
+                    "checked": "2026-11-05",
+                    "supports": "Formate xlsx, csv, gpkg"
+                  }
+                ]
               }
             },
             {
@@ -61921,7 +61943,7 @@
               "name": "Grundsicherungsstatistik SGB II / SGB XII",
               "color": "#2471a3",
               "details": {
-                "description": "Monatliche Anzahl der Bedarfsgemeinschaften und Leistungsempfänger nach SGB II und SGB XII, aufgegliedert nach Gemeinde, Altersgruppe und Haushaltsgröße. Quelle: BA-Statistik und Statistisches Bundesamt.",
+                "description": "Die Statistik der Bundesagentur für Arbeit weist monatlich die Bedarfsgemeinschaften und ihre Mitglieder nach dem SGB II für Deutschland, Länder und Kreise aus, mit Zeitreihen ab 2005 und Angaben zum Typ der Bedarfsgemeinschaft. Die Empfänger von Grundsicherung im Alter und bei Erwerbsminderung nach dem SGB XII erhebt das Statistische Bundesamt seit 2015 quartalsweise; Standardveröffentlichungen liegen vor allem für Bund und Länder vor.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
@@ -61946,8 +61968,7 @@
                   }
                 ],
                 "license": {
-                  "code": "LI_03",
-                  "label": "Datenlizenz Deutschland"
+                  "code": "LI_05"
                 },
                 "relevance": 5,
                 "processes": [
@@ -61973,9 +61994,32 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 2013,
-                  "update_frequency": "FQ_04"
-                }
+                  "available_from": 2005,
+                  "update_frequency": "FQ_03"
+                },
+                "sources": [
+                  {
+                    "title": "Grundsicherung für Arbeitsuchende – Personengruppen und Bedarfsgemeinschaften",
+                    "publisher": "Bundesagentur für Arbeit, Statistik",
+                    "url": "https://statistik.arbeitsagentur.de/DE/Navigation/Statistiken/Fachstatistiken/Grundsicherung-fuer-Arbeitsuchende-SGBII/Personengruppen-Bedarfsgemeinschaften/Personengruppen-Bedarfsgemeinschaften-Nav.html",
+                    "checked": "2026-11-05",
+                    "supports": "monatlich; Länder und Kreise; Typ der Bedarfsgemeinschaft"
+                  },
+                  {
+                    "title": "Grundsicherung für Arbeitsuchende – Überblick",
+                    "publisher": "Bundesagentur für Arbeit, Statistik",
+                    "url": "https://statistik.arbeitsagentur.de/DE/Navigation/Statistiken/Fachstatistiken/Grundsicherung-fuer-Arbeitsuchende-SGBII/Ueberblick/Ueberblick-Nav.html",
+                    "checked": "2026-11-05",
+                    "supports": "Zeitreihe ab 2005; Kreisebene"
+                  },
+                  {
+                    "title": "Qualitätsbericht Grundsicherung im Alter und bei Erwerbsminderung",
+                    "publisher": "Statistisches Bundesamt (Destatis)",
+                    "url": "https://www.destatis.de/DE/Methoden/Qualitaet/Qualitaetsberichte/Soziales/grundsicherung-alter-erwerbsminderung.pdf?__blob=publicationFile&v=11",
+                    "checked": "2026-11-05",
+                    "supports": "SGB XII quartalsweise seit 2015; Standardveröffentlichung Bund und Länder"
+                  }
+                ]
               }
             },
             {
@@ -135624,11 +135668,11 @@
               "name": "Gewerbesteueraufkommen nach Gemeinde und Hebesatz",
               "color": "#2471a3",
               "details": {
-                "description": "Jährliches Gewerbesteueraufkommen je Gemeinde sowie die kommunalen Hebesätze, veröffentlicht vom Statistischen Bundesamt (Destatis, Fachserie 14, Reihe 10.1). Enthält auch Zerlegungsbeträge für überörtlich tätige Unternehmen. Zentraler Datensatz für kommunale Finanzanalysen und Standortvergleiche.",
+                "description": "Das Statistische Bundesamt (Destatis) weist im jährlichen Realsteuervergleich das Istaufkommen der Gewerbesteuer und die Hebesätze der Realsteuern aus. Erhoben wird bei den Gemeinden; die Ergebnisse werden für die Gemeinden und aggregiert für höhere regionale Ebenen dargestellt. Die frühere Fachserie 14 Reihe 10.1 ist eingestellt und durch einen Statistischen Bericht ersetzt.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "Aggregierte Gemeindedaten ohne Einzelunternehmensbezug; bereits öffentlich über Destatis verfügbar."
+                  "explanation": "Ausgewiesen werden Istaufkommen und Hebesätze je Gemeinde. Das Aufkommen ist eine Haushaltsgröße der Gemeinde, kein einzelner Steuerfall; die Hebesätze legt jede Gemeinde ohnehin per Satzung fest."
                 },
                 "theme": {
                   "code": "TH_07",
@@ -135644,12 +135688,8 @@
                 },
                 "format": [
                   {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  },
-                  {
-                    "code": "FT_04",
-                    "label": "XML"
+                    "code": "FT_08",
+                    "label": "Excel (XLSX)"
                   }
                 ],
                 "license": {
@@ -135682,7 +135722,30 @@
                 "temporal": {
                   "available_from": 2003,
                   "update_frequency": "FQ_04"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Qualitätsbericht Realsteuervergleich",
+                    "publisher": "Statistisches Bundesamt (Destatis)",
+                    "url": "https://www.destatis.de/DE/Methoden/Qualitaet/Qualitaetsberichte/Steuern/realsteuervergleich.pdf?__blob=publicationFile&v=11",
+                    "checked": "2026-11-05",
+                    "supports": "Gewerbesteuer-Istaufkommen und Hebesätze je Gemeinde; jährlich"
+                  },
+                  {
+                    "title": "Realsteuervergleich – Fachserie 14 Reihe 10.1",
+                    "publisher": "Statistisches Bundesamt (Destatis)",
+                    "url": "https://www.destatis.de/DE/Themen/Staat/Steuern/Steuereinnahmen/Publikationen/Downloads-Realsteuern/realsteuervergleich-2141010217004.pdf",
+                    "checked": "2026-11-05",
+                    "supports": "Fachserie eingestellt"
+                  },
+                  {
+                    "title": "Steuereinnahmen",
+                    "publisher": "Statistisches Bundesamt (Destatis)",
+                    "url": "https://www.destatis.de/DE/Themen/Staat/Steuern/Steuereinnahmen/_inhalt.html",
+                    "checked": "2026-11-05",
+                    "supports": "Statistischer Bericht Realsteuervergleich als xlsx"
+                  }
+                ]
               }
             },
             {
@@ -156353,11 +156416,11 @@
               "name": "Wetterradar-Rohdaten & Niederschlagsanalysen (DWD)",
               "color": "#2471a3",
               "details": {
-                "description": "Der Deutsche Wetterdienst (DWD) betreibt ein Netz von 17 Doppler-Wetterradaren und stellt daraus abgeleitete Niederschlagsprodukte bereit. Enthalten sind RADOLAN-Rasterdaten (1 km Auflösung, 5-Minuten-Intervalle), Radarmosaike und historische Zeitreihen ab 2001.",
+                "description": "Der Deutsche Wetterdienst (DWD) betreibt einen Verbund von 17 Wetterradaren und leitet daraus mit dem Verfahren RADOLAN flächendeckende Niederschlagsanalysen mit 1 km² räumlicher Auflösung im Echtzeitbetrieb ab; RADOLAN läuft seit Juni 2005 im Routinebetrieb. Auf dem Open-Data-Server liegen Radarkomposite, Einzelstandortdaten im HDF5-Format und reprozessierte Radarniederschlagsdaten ab 2001 im NetCDF-Format.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "DWD-Radardaten sind seit 2017 nach §6 DWDG kostenfrei und lizenzfrei über den DWD Open Data Server zugänglich."
+                  "explanation": "Radarreflektivität und daraus berechnete Niederschlagsmengen sind Messwerte über Flächen von einem Quadratkilometer, ohne jeden Bezug zu Personen. Für die Weiterverwendung genügt ein Quellenvermerk."
                 },
                 "theme": {
                   "code": "TH_06",
@@ -156375,15 +156438,10 @@
                   {
                     "code": "FT_03",
                     "label": "NetCDF / HDF5"
-                  },
-                  {
-                    "code": "FT_05",
-                    "label": "GeoJSON"
                   }
                 ],
                 "license": {
-                  "code": "LI_01",
-                  "label": "CC0 / Public Domain"
+                  "code": "LI_02"
                 },
                 "relevance": 5,
                 "processes": [
@@ -156409,9 +156467,32 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 1992,
+                  "available_from": 2001,
                   "update_frequency": "FQ_01"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "RADOLAN (Radar-Online-Aneichung)",
+                    "publisher": "Deutscher Wetterdienst",
+                    "url": "https://www.dwd.de/DE/leistungen/radolan/radolan.html",
+                    "checked": "2026-11-05",
+                    "supports": "17 Wetterradare; 1 km² Auflösung; Echtzeitbetrieb; Routinebetrieb seit Juni 2005"
+                  },
+                  {
+                    "title": "Reprozessierte RADOLAN-Daten (NetCDF)",
+                    "publisher": "Deutscher Wetterdienst (Open-Data-Server)",
+                    "url": "https://opendata.dwd.de/climate_environment/CDC/grids_germany/hourly/radolan/reproc/2017_002/netCDF/",
+                    "checked": "2026-11-05",
+                    "supports": "NetCDF-Zeitreihe ab 2001"
+                  },
+                  {
+                    "title": "Rechtliche Hinweise",
+                    "publisher": "Deutscher Wetterdienst",
+                    "url": "https://www.dwd.de/DE/service/rechtliche_hinweise/rechtliche_hinweise_node.html",
+                    "checked": "2026-11-05",
+                    "supports": "Lizenz CC BY 4.0 für frei zugängliche Geodaten"
+                  }
+                ]
               }
             },
             {

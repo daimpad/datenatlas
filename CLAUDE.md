@@ -301,6 +301,13 @@ Personenbezug (Fahrten, Buchungen, Messungen) sind `GR_01`.
 | `LI_02` | CC BY 4.0 |
 | `LI_03` | Datenlizenz Deutschland |
 | `LI_04` | Proprietär / Restriktiv |
+| `LI_05` | Eigene Nutzungsbedingungen |
+
+`LI_05` kam mit der dritten Quellenprüfung: Breitbandatlas, BA-Statistik,
+thru.de (PRTR) und Destatis-Publikationen erlauben die Nutzung frei mit
+Quellenangabe, aber unter eigenen Bedingungen — weder Datenlizenz
+Deutschland noch CC BY. `LI_04` hätte freie Nutzung als Sperre dargestellt.
+Die Regel „kein `OP_03` mit freier Lizenz“ prüft nur `LI_01`–`LI_03`.
 
 ### Update Frequency (details.temporal.update_frequency)
 | Code | Häufigkeit |
@@ -313,12 +320,19 @@ Personenbezug (Fahrten, Buchungen, Messungen) sind `GR_01`.
 | `FQ_06` | Wöchentlich |
 | `FQ_07` | Halbjährlich |
 | `FQ_08` | Vierteljährlich |
+| `FQ_09` | Zweijährlich |
 
 `FQ_06`–`FQ_08` kamen mit der zweiten Quellenprüfung: Sieben von 15 geprüften
 Einträgen trugen einen falschen Rhythmus, und für SurvStat (wöchentlich), die
 IVW-Auflagen (vierteljährlich) und die Bundesbank-Zahlungsverkehrsstatistik
-(halbjährlich) gab es keinen richtigen Code. Die Nummern folgen nicht der
-Häufigkeit; `FREQ_META` in `timeline.js` legt die Anzeigereihenfolge fest.
+(halbjährlich) gab es keinen richtigen Code; `FQ_09` kam mit dem
+Kulturfinanzbericht. Die Nummern folgen nicht der Häufigkeit; `FREQ_META` in
+`timeline.js` legt die Anzeigereihenfolge fest.
+
+Ein `available_from` in der Zukunft ist erlaubt, wenn es belegt ist (das
+Stiftungsregister startet am 1.1.2028). Die Zeitleiste lässt solche Jahre aus
+der Verfügbarkeitskurve heraus, statt sie am rechten Rand als vorhanden zu
+zeigen.
 
 All vocabulary codes live in `public/data/vocabulary.json` — the validator reads
 them from there, so add new codes to that file first. `src/vokabular.js` mirrors
@@ -392,7 +406,7 @@ Inhaltsqualität (Hinweis, keine Warnungen):
   mehrfach verwendete Begründungstexte: 0 Knoten (0 %)
   Aussagen über fremde Veröffentlichungspraxis: 0
   Beschreibung widerspricht den Metadaten: 0
-  Datentypen mit geprüfter Quelle: 19 von 10428
+  Datentypen mit geprüfter Quelle: 35 von 10428
 ```
 
 Die ersten vier Kennzahlen stehen auf null (die fünfte siehe „Quellen und
@@ -552,17 +566,34 @@ Nutzungsrecht, nicht der Personenbezug.
 So wird geprüft: Je Eintrag Aussagen zerlegen, Primärquelle suchen, jede
 Aussage als belegt, widerlegt oder nicht gefunden markieren — mit wörtlichem
 Zitat. **Jedes Zitat wird danach maschinell auf der Quellseite gesucht**
-(130 von 130 gefunden); ein Beleg, der nur aus dem Gedächtnis stammt, fällt
+(127 von 127 gefunden); ein Beleg, der nur aus dem Gedächtnis stammt, fällt
 dabei durch. Für Seiten mit Latin-1-Kodierung und Inline-Tags muss der
 Abgleich Zeichensatz und Leerraum normalisieren, sonst meldet er falsche
 Fehlschläge (Förderkatalog, BA, Destatis).
 
-**Bekannte Lücke in Regel 3:** Vier der 15 alten Begründungen enthielten
-Praxisaussagen, die `claimsThirdPartyPractice()` nicht erkennt — eine Abkürzung
-als Subjekt („IVW veröffentlicht … kostenlos auf ivw.de“), „… sind vollständig
-öffentlich zugänglich“, „nach dem Vorbild des RKI-Dashboards“. Die Kennzahl 0
-ist deshalb eine Untergrenze. Wer das Muster erweitert, wird sie wieder steigen
-sehen.
+Die **Drittbelegung** (`scripts/datafix-quellen-drittbelegung.mjs`) hat 16
+Einträge anderer Herausgeber geprüft (Bundesnetzagentur, DWD, KBA, UBA,
+GKV-Spitzenverband, Destatis-Fachstatistiken u. a.). Wieder stimmte keiner
+vollständig; alle 16 tragen jetzt Quellen. Korrigiert: Startjahr 12×, Format
+9×, Rhythmus 7×, Lizenz 7×. Drei Einträge beschrieben einen Datensatz, den es
+so nicht gibt — eine Neueintragungsstatistik des Stiftungsregisters „seit
+2026“ (Start ist der 1.1.2028), eine öffentliche Liste der
+AMNOG-Erstattungsbeträge (seit 2025 können sie vertraulich bleiben), eine
+amtliche Versorgungsstatistik katholischer Krankenhäuser. Ihre Beschreibung
+sagt das jetzt selbst.
+
+Der Zitatabgleich muss außer Zeichensatz auch HTML-Entities (`&sect;`,
+`&ndash;`) übersetzen, ohne Leerraum vergleichen (Inline-Tags zerreißen
+`*.csv` zu `*. csv`) und XLSX-Dateien lesen können. 160 von 160 Zitaten der
+dritten Runde sind so wiedergefunden.
+
+**Bekannte Lücke in Regel 3:** 15 der 31 alten Begründungen aus Runde 2 und 3
+enthielten Praxisaussagen, die `claimsThirdPartyPractice()` nicht erkennt — eine
+Abkürzung als Subjekt („IVW veröffentlicht … kostenlos auf ivw.de“, „KBA
+veröffentlicht …“), „bereits als Open Data verfügbar“, „sind öffentlich
+zugänglich“, „nach dem Vorbild des RKI-Dashboards“. Die Kennzahl 0 ist deshalb
+eine Untergrenze, und bei fast der Hälfte der Stichprobe eine deutliche. Wer
+das Muster erweitert, wird sie wieder steigen sehen.
 
 ### Beispiellinks (`details.examples`)
 

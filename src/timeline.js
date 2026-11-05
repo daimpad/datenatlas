@@ -3,10 +3,10 @@ import { esc, trapFocus } from './utils.js';
 let _index     = null;
 let _mainTiles = null;
 
-// Reihenfolge = Anzeige: vom häufigsten zum seltensten Rhythmus. FQ_06–FQ_08
+// Reihenfolge = Anzeige: vom häufigsten zum seltensten Rhythmus. FQ_06–FQ_09
 // sind nachgetragen (Quellenprüfung: SurvStat wöchentlich, IVW-Auflagen
-// vierteljährlich, Bundesbank-Zahlungsverkehr halbjährlich) und stehen
-// deshalb nicht nach Nummer.
+// vierteljährlich, Bundesbank-Zahlungsverkehr halbjährlich, Kulturfinanz-
+// bericht zweijährlich) und stehen deshalb nicht nach Nummer.
 const FREQ_META = {
   FQ_01: { label: 'Echtzeit',      color: '#2563eb', short: 'RT'   },
   FQ_02: { label: 'Täglich',       color: '#0891b2', short: 'Tag'  },
@@ -15,6 +15,7 @@ const FREQ_META = {
   FQ_08: { label: 'Vierteljährlich', color: '#65a30d', short: 'Q'  },
   FQ_07: { label: 'Halbjährlich',  color: '#6366f1', short: 'Hj'   },
   FQ_04: { label: 'Jährlich',      color: '#7c3aed', short: 'Jahr' },
+  FQ_09: { label: 'Zweijährlich',  color: '#a78bfa', short: '2J'   },
   FQ_05: { label: 'Unregelmäßig',  color: '#9ca3af', short: 'Unr'  },
 };
 const zeroFreqs = () => Object.fromEntries(Object.keys(FREQ_META).map(k => [k, 0]));
@@ -93,6 +94,9 @@ const YEAR_END   = 2024;
 function buildCumulativePoints(allYears) {
   const counts = new Array(YEAR_END - YEAR_START + 1).fill(0);
   for (const y of allYears) {
+    // Angekündigt, aber noch nicht verfügbar (Stiftungsregister ab 2028): nicht
+    // in die Kurve, sonst stünde der Datentyp am rechten Rand als vorhanden.
+    if (y > YEAR_END) continue;
     const idx = Math.max(0, Math.min(counts.length - 1, y - YEAR_START));
     counts[idx]++;
   }

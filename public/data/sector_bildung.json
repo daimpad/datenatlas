@@ -2359,14 +2359,14 @@
             {
               "id": "schulabschlussquoten-schulform-bundesland",
               "level": 4,
-              "name": "Schulabschlussquoten nach Schulform und Bundesland",
+              "name": "Absolventen und Abgänger nach Abschluss, Schulart und Bundesland",
               "color": "#92400e",
               "details": {
-                "description": "Anteil der Schülerinnen und Schüler, die einen bestimmten Schulabschluss (Hauptschulabschluss, Mittlere Reife, Abitur, ohne Abschluss) erreichen, aufgeschlüsselt nach Bundesland und Schulform. Destatis veröffentlicht diese Quoten jährlich im Rahmen der Bildung und Kultur-Fachserie 11, Reihe 1.",
+                "description": "Absolventen und Abgänger allgemeinbildender Schulen nach Bundesland, Schulart, Schulabschluss und Geschlecht aus der jährlichen Schulstatistik des Statistischen Bundesamts (GENESIS-Online). Ausgewiesen werden Anzahlen, keine Abschlussquoten; die Ergebnisse erscheinen außerdem im Statistischen Bericht „Allgemeinbildende Schulen“, der die frühere Fachserie 11 Reihe 1 abgelöst hat.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "Vollständig anonymisierte Aggregatdaten ohne Personenbezug; von Destatis bereits als Open Data verfügbar."
+                  "explanation": "Gezählt werden Absolventen und Abgänger je Land, Schulart, Abschluss und Geschlecht, nicht einzelne Schülerinnen und Schüler. Auf Landesebene sind die Zellen so groß, dass kein Wert auf Einzelne verweist."
                 },
                 "theme": {
                   "code": "TH_02",
@@ -2382,12 +2382,8 @@
                 },
                 "format": [
                   {
-                    "code": "FT_01",
-                    "label": "CSV"
-                  },
-                  {
-                    "code": "FT_04",
-                    "label": "XML"
+                    "code": "FT_08",
+                    "label": "Excel (XLSX)"
                   }
                 ],
                 "license": {
@@ -2420,7 +2416,30 @@
                 "temporal": {
                   "available_from": 2003,
                   "update_frequency": "FQ_04"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Schulen",
+                    "publisher": "Statistisches Bundesamt (Destatis)",
+                    "url": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bildung-Forschung-Kultur/Schulen/_inhalt.html",
+                    "checked": "2026-11-05",
+                    "supports": "Absolventen und Abgänger nach Bundesland, Schulart und Schulabschluss"
+                  },
+                  {
+                    "title": "Publikationen Allgemeinbildende Schulen",
+                    "publisher": "Statistisches Bundesamt (Destatis)",
+                    "url": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bildung-Forschung-Kultur/Schulen/Publikationen/_publikationen-innen-schulen-allgemeinbildende.html",
+                    "checked": "2026-11-05",
+                    "supports": "Statistischer Bericht als XLSX statt Fachserie"
+                  },
+                  {
+                    "title": "Impressum (Copyright GENESIS-Online)",
+                    "publisher": "Statistisches Bundesamt (Destatis)",
+                    "url": "https://www.destatis.de/DE/Service/Impressum/_inhalt.html",
+                    "checked": "2026-11-05",
+                    "supports": "Datenlizenz Deutschland 2.0"
+                  }
+                ]
               }
             },
             {

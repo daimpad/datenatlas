@@ -16152,11 +16152,11 @@
               "name": "Kaufpreisindizes Wohnimmobilien",
               "color": "#ca6f1e",
               "details": {
-                "description": "Hedonische Kaufpreisindizes für Eigentumswohnungen und Einfamilienhäuser, berechnet aus Kaufvertragsdaten der Gutachterausschüsse und ergänzenden Inseratsdaten von Immobilienportalen (ImmoScout24, Immowelt). Datenproduzenten sind das Statistische Bundesamt (DESTATIS Häuserpreisindex), die Bundesbank und private Anbieter wie empirica-systeme. Anwendung in der geldpolitischen Analyse, Pfandbriefbewertung und kommunalen Stadtentwicklungsplanung.",
+                "description": "Häuserpreisindex des Statistischen Bundesamtes: Preisindizes für Eigentumswohnungen sowie Ein- und Zweifamilienhäuser, berechnet aus den Transaktionspreisen, die die Gutachterausschüsse für Grundstückswerte melden, mit hedonischer Qualitätsbereinigung. Die Ergebnisse erscheinen vierteljährlich, zusätzlich getrennt nach Regionstypen; Zeitreihen auf Bundesebene reichen bis 2000 zurück.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "DESTATIS-Häuserpreisindex und Bundesbank-Immobilienpreisstatistiken sind frei zugänglich; portalbasierte Indizes werden von privaten Anbietern kostenpflichtig bereitgestellt."
+                  "explanation": "Der Index verdichtet die Preise vieler Kaufverträge zu Indexwerten je Objektart und Regionstyp. Einzelne Kaufpreise und Grundstücke sind darin nicht erkennbar; sie bleiben in den Kaufpreissammlungen der Gutachterausschüsse."
                 },
                 "theme": {
                   "code": "TH_04",
@@ -16208,9 +16208,32 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 1996,
-                  "update_frequency": "FQ_03"
-                }
+                  "available_from": 2000,
+                  "update_frequency": "FQ_08"
+                },
+                "sources": [
+                  {
+                    "title": "Qualitätsbericht Häuserpreisindex",
+                    "publisher": "Statistisches Bundesamt (Destatis)",
+                    "url": "https://www.destatis.de/DE/Methoden/Qualitaet/Qualitaetsberichte/Preise/haeuserpreisindex.pdf?__blob=publicationFile&v=3",
+                    "checked": "2026-11-05",
+                    "supports": "Gutachterausschüsse als Datenquelle; hedonische Qualitätsbereinigung; vierteljährlich"
+                  },
+                  {
+                    "title": "Preise für Wohnimmobilien im 2. Quartal 2026 (Pressemitteilung)",
+                    "publisher": "Statistisches Bundesamt (Destatis)",
+                    "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/09/PD26_336_61262.html",
+                    "checked": "2026-11-05",
+                    "supports": "Zeitreihen ab 2000; Regionstypen"
+                  },
+                  {
+                    "title": "Impressum (Copyright GENESIS-Online)",
+                    "publisher": "Statistisches Bundesamt (Destatis)",
+                    "url": "https://www.destatis.de/DE/Service/Impressum/_inhalt.html",
+                    "checked": "2026-11-05",
+                    "supports": "Datenlizenz Deutschland 2.0"
+                  }
+                ]
               }
             },
             {
@@ -67548,11 +67571,11 @@
               "name": "Arzneimittel-Erstattungspreise",
               "color": "#ca6f1e",
               "details": {
-                "description": "Verhandlungsergebnisse und Erstattungsbeträge für neue Arzneimittel nach Nutzenbewertung (AMNOG-Verfahren), veröffentlicht durch GKV-Spitzenverband und IQWIG.",
+                "description": "Erstattungsbeträge für neue Arzneimittel nach der frühen Nutzenbewertung, vereinbart zwischen GKV-Spitzenverband und Herstellern (§ 130b Abs. 1 SGB V) oder festgesetzt (§ 130b Abs. 4 SGB V); betroffen sind Mittel, die ab dem 1. Januar 2011 in Verkehr gebracht wurden. Der GKV-Spitzenverband listet, für welche Arzneimittel ein Betrag vereinbart ist; den Betrag selbst meldet der Hersteller an das Preis- und Produktverzeichnis. Seit 2025 kann er nach § 130b Abs. 1c SGB V bestimmen, dass der Betrag dort nicht gemeldet wird.",
                 "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "AMNOG-Erstattungsbeträge werden nach Abschluss der Verhandlungen im Rahmen gesetzlicher Transparenzpflichten publiziert."
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Erstattungsbeträge sind Preise, die die gesetzliche Krankenversicherung zahlt, und betreffen keine Personen. Seit der Hersteller Vertraulichkeit wählen kann, ist für diese Fälle nur noch die Tatsache der Vereinbarung veröffentlichbar, nicht der Betrag."
                 },
                 "theme": {
                   "code": "TH_01",
@@ -67577,8 +67600,7 @@
                   }
                 ],
                 "license": {
-                  "code": "LI_03",
-                  "label": "Datenlizenz Deutschland"
+                  "code": "LI_04"
                 },
                 "relevance": 5,
                 "processes": [
@@ -67604,9 +67626,46 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 2000,
+                  "available_from": 2011,
                   "update_frequency": "FQ_03"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Erstattungsbetragsvereinbarungen nach § 130b SGB V",
+                    "publisher": "GKV-Spitzenverband",
+                    "url": "https://www.gkv-spitzenverband.de/krankenversicherung/arzneimittel/verhandlungen_nach_amnog/ebv_130b/ebv_nach_130b.jsp",
+                    "checked": "2026-11-05",
+                    "supports": "Liste der Arzneimittel mit vereinbartem oder festgesetztem Erstattungsbetrag"
+                  },
+                  {
+                    "title": "Erstattungsbetrag – Meldung an das Preis- und Produktverzeichnis",
+                    "publisher": "GKV-Spitzenverband",
+                    "url": "https://www.gkv-spitzenverband.de/krankenversicherung/arzneimittel/verhandlungen_nach_amnog/ebv_130b/wirkstoff_192514.jsp",
+                    "checked": "2026-11-05",
+                    "supports": "Meldepflicht des Herstellers an das Preis- und Produktverzeichnis"
+                  },
+                  {
+                    "title": "Verhandlungen nach AMNOG",
+                    "publisher": "GKV-Spitzenverband",
+                    "url": "https://www.gkv-spitzenverband.de/krankenversicherung/arzneimittel/verhandlungen_nach_amnog/rabatt_verhandlungen_nach_amnog.jsp",
+                    "checked": "2026-11-05",
+                    "supports": "Arzneimittel ab 1.1.2011; seit 2025 vertraulicher Erstattungsbetrag nach § 130b Abs. 1c SGB V möglich"
+                  },
+                  {
+                    "title": "Bestimmungsrecht für vertrauliche Erstattungsbeträge",
+                    "publisher": "GKV-Spitzenverband",
+                    "url": "https://www.gkv-spitzenverband.de/krankenversicherung/arzneimittel/verhandlungen_nach_amnog/vertrauliche_eb_bestimmungsrecht/veb_bestimmungsrecht.jsp",
+                    "checked": "2026-11-05",
+                    "supports": "vertraulicher Betrag wird nicht im öffentlichen Verzeichnis gelistet"
+                  },
+                  {
+                    "title": "Impressum",
+                    "publisher": "GKV-Spitzenverband",
+                    "url": "https://www.gkv-spitzenverband.de/impressum/impressum.jsp",
+                    "checked": "2026-11-05",
+                    "supports": "Zitieren nur unverändert und im Sachzusammenhang"
+                  }
+                ]
               }
             },
             {
@@ -73517,11 +73576,11 @@
               "name": "Neuzulassungen PKW (KBA-Monatsbericht)",
               "color": "#ca6f1e",
               "details": {
-                "description": "Monatliche Neuzulassungszahlen für PKW nach Marke, Modell, Antriebsart und Haltertyp (Privat/Gewerbe) vom Kraftfahrt-Bundesamt (KBA). Enthält auch Flottenzulassungen und regionale Aufschlüsselung nach Bundesland.",
+                "description": "Das Kraftfahrt-Bundesamt (KBA) veröffentlicht monatlich die Neuzulassungen von Personenkraftwagen nach Marken und Modellreihen (FZ 10). Die Monatsergebnisse (FZ 8) gliedern die Neuzulassungen unter anderem nach Bundesländern, Herstellern, Kraftstoffarten sowie nach privaten und gewerblichen Haltern.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "KBA veröffentlicht Zulassungsstatistiken monatlich als kostenlose Dateidownloads (CSV, XLSX) auf kba.de unter Datenlizenz Deutschland."
+                  "explanation": "Gezählt werden neu zugelassene Fahrzeuge je Marke, Modellreihe, Kraftstoffart und Haltergruppe, nicht Halterinnen und Halter. Die Gliederung reicht bis zum Bundesland; Namen und Anschriften bleiben im Zentralen Fahrzeugregister."
                 },
                 "theme": {
                   "code": "TH_04",
@@ -73537,8 +73596,8 @@
                 },
                 "format": [
                   {
-                    "code": "FT_01",
-                    "label": "CSV"
+                    "code": "FT_08",
+                    "label": "Excel (XLSX)"
                   }
                 ],
                 "license": {
@@ -73569,9 +73628,39 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 2003,
+                  "available_from": 2004,
                   "update_frequency": "FQ_03"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Neuzulassungen von Pkw nach Marken und Modellreihen (FZ 10)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz10/fz10_gentab.html",
+                    "checked": "2026-11-05",
+                    "supports": "monatlich nach Marke und Modellreihe; Archiv ab 2004"
+                  },
+                  {
+                    "title": "Produkte der Statistik 2026",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/produkte_der_statistik.pdf?__blob=publicationFile&v=16",
+                    "checked": "2026-11-05",
+                    "supports": "FZ 8 nach Bundesländern, Kraftstoffarten, privaten und gewerblichen Haltern"
+                  },
+                  {
+                    "title": "Downloadbereich Fahrzeuge",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Fahrzeuge/Downloadbereich/Downloadbereich_Fahrzeuge_node.html",
+                    "checked": "2026-11-05",
+                    "supports": "seit 2023 nur Excel"
+                  },
+                  {
+                    "title": "Fragen und Antworten zur Statistik",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/FaQ_Statistik/faq_node.html",
+                    "checked": "2026-11-05",
+                    "supports": "Datenlizenz Deutschland – Namensnennung 2.0"
+                  }
+                ]
               }
             },
             {
@@ -83984,11 +84073,11 @@
               "name": "UBA PRTR Emissionsregister Chemische Industrie",
               "color": "#ca6f1e",
               "details": {
-                "description": "Schadstofffreisetzungs- und Verbringungsregister (PRTR / E-PRTR) des Umweltbundesamts für Chemieunternehmen: Jahresemissionen in Luft, Wasser und Boden von rund 90 Schadstoffen für alle meldepflichtigen Anlagen.",
+                "description": "Schadstofffreisetzungs- und -verbringungsregister (PRTR) des Umweltbundesamts auf thru.de: jährliche Angaben berichtspflichtiger Industriebetriebe, darunter der chemischen Industrie, zu Freisetzungen von 91 Schadstoffen und Schadstoffgruppen in Luft, Wasser und Boden. Berichten müssen Betriebe oberhalb von Kapazitäts- und Emissionsschwellen; das Register ist nach § 2 Abs. 1 SchadRegProtAG frei und unentgeltlich zugänglich, der Gesamtdatenbestand reicht bis zum ersten Berichtsjahr 2007 zurück.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "Das PRTR ist gesetzlich öffentlich (§ 5 SchadRegProtAG); Daten werden auf thru.de frei zur Verfügung gestellt."
+                  "explanation": "Das Register weist Freisetzungen und Verbringungen je Betrieb aus; Betriebe sind Unternehmen, keine Privatpersonen. Die Weiterverwendung ist mit Quellenhinweis frei, die Inhalte dürfen dabei aber nicht verändert werden."
                 },
                 "theme": {
                   "code": "TH_06",
@@ -84008,13 +84097,12 @@
                     "label": "CSV"
                   },
                   {
-                    "code": "FT_05",
-                    "label": "GeoJSON"
+                    "code": "FT_08",
+                    "label": "Excel (XLSX)"
                   }
                 ],
                 "license": {
-                  "code": "LI_03",
-                  "label": "Datenlizenz Deutschland"
+                  "code": "LI_05"
                 },
                 "relevance": 5,
                 "processes": [
@@ -84040,9 +84128,39 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 2001,
-                  "update_frequency": "FQ_01"
-                }
+                  "available_from": 2007,
+                  "update_frequency": "FQ_04"
+                },
+                "sources": [
+                  {
+                    "title": "FAQ",
+                    "publisher": "Umweltbundesamt (thru.de)",
+                    "url": "https://thru.de/faq/",
+                    "checked": "2026-11-05",
+                    "supports": "91 Schadstoffe; chemische Industrie; Schwellenwerte; jährlich; erstes Berichtsjahr 2007"
+                  },
+                  {
+                    "title": "Downloads – PRTR-Gesamtdatenbestand",
+                    "publisher": "Umweltbundesamt (thru.de)",
+                    "url": "https://thru.de/downloads/",
+                    "checked": "2026-11-05",
+                    "supports": "Formate XLSX, ODS, CSV, SQLite"
+                  },
+                  {
+                    "title": "Gesetz zur Ausführung des PRTR-Protokolls (SchadRegProtAG)",
+                    "publisher": "Bundesministerium der Justiz (gesetze-im-internet.de)",
+                    "url": "https://www.gesetze-im-internet.de/schadregprotag/BJNR100210007.html",
+                    "checked": "2026-11-05",
+                    "supports": "Register frei und unentgeltlich zugänglich (§ 2 Abs. 1); jährlich"
+                  },
+                  {
+                    "title": "Nutzungsbedingungen",
+                    "publisher": "Umweltbundesamt (thru.de)",
+                    "url": "https://thru.de/nutzungsbedingungen/",
+                    "checked": "2026-11-05",
+                    "supports": "Quellenhinweis; keine Veränderung"
+                  }
+                ]
               }
             },
             {
@@ -90894,11 +91012,11 @@
               "name": "Güterumschlag der deutschen Seehäfen",
               "color": "#ca6f1e",
               "details": {
-                "description": "Monatlicher Güterumschlag der deutschen Seehäfen nach Güterarten, Herkunfts-/Zielregionen und Verkehrsträgern (Statistisches Bundesamt, Destatis).",
+                "description": "Seeverkehrsstatistik des Statistischen Bundesamtes: monatlich erhobener Güterumschlag der deutschen Seehäfen nach Güterart, Ladungsart, Lade- und Löschhafen sowie Schiffsart und Flagge, ausgewiesen für Bund, Länder und Häfen. Als Open-Data-Datensatz stehen Monatsdaten ab 2011 im CSV-Format bereit, die jährlich gebündelt bereitgestellt werden. Nach § 29 Abs. 3 VerkStatG dürfen die Ergebnisse nach Häfen auch dann veröffentlicht werden, wenn sie Einzelangaben enthalten.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "Güterumschlag nach Güterart, Region und Verkehrsträger ist eine europäisch abgestimmte Pflichtstatistik. Sie beschreibt Warenströme über Häfen; Reedereien, Ladungen und Auftraggeber gehen in den Monatswerten auf."
+                  "explanation": "Ausgewiesen wird Güterumschlag je Hafen, Güterart und Flagge. Das Gesetz erlaubt die Veröffentlichung nach Häfen auch dann, wenn ein Wert auf wenige Umschläge zurückgeht; die Namen der meldenden Unternehmen bleiben geschützt."
                 },
                 "theme": {
                   "code": "TH_04",
@@ -90952,7 +91070,30 @@
                 "temporal": {
                   "available_from": 2011,
                   "update_frequency": "FQ_04"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Open Data Schiffsverkehr",
+                    "publisher": "Statistische Ämter des Bundes und der Länder",
+                    "url": "https://www.statistikportal.de/de/veroeffentlichungen/open-data-schiffsverkehr",
+                    "checked": "2026-11-05",
+                    "supports": "CSV-Monatsdaten ab 2011; jährliche Bereitstellung; Gliederungsmerkmale"
+                  },
+                  {
+                    "title": "Qualitätsbericht Seeverkehrsstatistik",
+                    "publisher": "Statistisches Bundesamt (Destatis)",
+                    "url": "https://www.destatis.de/DE/Methoden/Qualitaet/Qualitaetsberichte/Transport-Verkehr/seeverkehr.pdf?__blob=publicationFile&v=14",
+                    "checked": "2026-11-05",
+                    "supports": "monatliche Erhebung; Merkmale; Ebene Häfen; Veröffentlichung nach § 29 Abs. 3 VerkStatG"
+                  },
+                  {
+                    "title": "Open Data",
+                    "publisher": "Statistische Ämter des Bundes und der Länder",
+                    "url": "https://www.statistikportal.de/de/open-data",
+                    "checked": "2026-11-05",
+                    "supports": "Datenlizenz Deutschland 2.0; CSV und XML"
+                  }
+                ]
               }
             },
             {

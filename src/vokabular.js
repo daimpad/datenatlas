@@ -73,6 +73,7 @@ export const VOKABULAR = {
     { code: 'LI_02', label: 'CC BY 4.0' },
     { code: 'LI_03', label: 'Datenlizenz Deutschland' },
     { code: 'LI_04', label: 'Proprietär / Restriktiv' },
+    { code: 'LI_05', label: 'Eigene Nutzungsbedingungen' },
   ],
   update_frequency: [
     { code: 'FQ_01', label: 'Echtzeit / Kontinuierlich' },
@@ -83,6 +84,7 @@ export const VOKABULAR = {
     { code: 'FQ_06', label: 'Wöchentlich' },
     { code: 'FQ_07', label: 'Halbjährlich' },
     { code: 'FQ_08', label: 'Vierteljährlich' },
+    { code: 'FQ_09', label: 'Zweijährlich' },
   ],
 };
 

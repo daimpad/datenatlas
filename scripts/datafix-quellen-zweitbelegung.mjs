@@ -4,7 +4,7 @@
 // Statistik meint; allgemeine Typen („kommunales Zuwendungsregister“) lassen
 // sich mit einer Quelle nicht belegen. Jede Aussage wurde gegen die Seite oder
 // das PDF des Herausgebers geprüft, jedes Belegzitat danach automatisch per
-// Textsuche auf der Quellseite wiedergefunden (130 von 130).
+// Textsuche auf der Quellseite wiedergefunden (127 von 127).
 //
 // Ergebnis: keiner der 15 Einträge stimmte vollständig. 14 sind auf das
 // Belegte korrigiert und tragen jetzt Quellen. Einer bleibt Einschätzung, weil

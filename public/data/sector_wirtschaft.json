@@ -73669,11 +73669,11 @@
               "name": "Elektro-Neuzulassungen BEV/PHEV (KBA)",
               "color": "#ca6f1e",
               "details": {
-                "description": "Monatliche Neuzulassungen batterieelektrischer Fahrzeuge (BEV) und Plug-in-Hybride (PHEV) nach Marke und Modell. Quelle: KBA-Datenbank FZ 10 (Neuzulassungen nach Kraftstoffarten), ergänzt durch VDIK-Importeurzahlen.",
+                "description": "Monatliche Pkw-Neuzulassungen mit Elektroantrieb (BEV) und Plug-in-Hybridantrieb nach Marke und Modellreihe aus der Tabelle FZ 10 des Kraftfahrt-Bundesamts; der Elektroantrieb steht dort seit Januar 2017 als eigene Spalte, der Plug-in-Hybridantrieb seit Januar 2021. Ergänzend weist FZ 28 (alternative Antriebe, ab Januar 2021) Pkw nach Marken und Kraftstoffarten aus; beide erscheinen als Excel-Datei. Im KBA-Statistikportal liegt die Modellreihen-Tabelle mit beiden Antriebsarten ab 2020 auch als CSV- und GeoJSON-Export vor.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "KBA stellt Elektromobilitätsdaten als spezifische Sonderauswertung kostenlos bereit; politisch priorisierte Veröffentlichung im Rahmen des Klimaschutzprogramms."
+                  "explanation": "Gezählt werden Neuzulassungen je Marke, Modellreihe und Monat, nicht Halter oder einzelne Fahrzeuge. Die Tabellen enthalten keine Halterdaten; ein Personenbezug entsteht auch bei seltenen Modellreihen nicht, weil keine Merkmale einer Person ausgewiesen werden."
                 },
                 "theme": {
                   "code": "TH_06",
@@ -73695,6 +73695,14 @@
                   {
                     "code": "FT_02",
                     "label": "JSON"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_08",
+                    "label": "Excel (XLSX)"
                   }
                 ],
                 "license": {
@@ -73725,9 +73733,25 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 1997,
+                  "available_from": 2017,
                   "update_frequency": "FQ_03"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Neuzulassungen von Personenkraftwagen nach Marken und Modellreihen – Monatsergebnisse (FZ 10)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz10/fz10_gentab.html",
+                    "checked": "2026-11-05",
+                    "supports": "Monatliche Pkw-Neuzulassungen nach Marke und Modellreihe mit BEV- und Plug-in-Hybrid-Spalten; XLSX; Datenlizenz Deutschland"
+                  },
+                  {
+                    "title": "Neuzulassungen von Kraftfahrzeugen mit alternativem Antrieb – Monatsergebnisse (FZ 28)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz28/fz28_gentab.html",
+                    "checked": "2026-11-05",
+                    "supports": "Monatliche Pkw-Neuzulassungen nach Marken und Kraftstoffarten/Energiequellen, ab Januar 2021"
+                  }
+                ]
               }
             },
             {
@@ -73736,11 +73760,11 @@
               "name": "Fahrzeugbestand Zentrales Fahrzeugregister (KBA FZ1)",
               "color": "#ca6f1e",
               "details": {
-                "description": "Jahresbestand aller zugelassenen Kraftfahrzeuge in Deutschland nach Fahrzeugklasse, Antriebsart, Alter und Haltereigenschaft aus dem Zentralen Fahrzeugregister (ZFZR) des KBA, Tabelle FZ 1.",
+                "description": "Bestand an Kraftfahrzeugen und Kraftfahrzeuganhängern zum 1. Januar nach Zulassungsbezirken und Fahrzeugarten aus dem Zentralen Fahrzeugregister des Kraftfahrt-Bundesamts (Tabelle FZ 1); Pkw zusätzlich nach Kraftstoffarten und Emissionsgruppen. Die Tabelle erscheint jährlich; abrufbar sind die Jahrgänge ab 2007, bis 2017 als PDF und seit 2019 als XLSX.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "KBA veröffentlicht den Fahrzeugbestand jährlich (Stichtag 1. Januar) als offizielle Statistik unter Datenlizenz Deutschland."
+                  "explanation": "Gezählt wird der Fahrzeugbestand zum Stichtag 1. Januar je Zulassungsbezirk und Fahrzeugart, nicht der einzelne Halter. Die Tabelle ist ein Aggregat aus dem Zentralen Fahrzeugregister; Halter- und Kennzeichendaten bleiben im Register."
                 },
                 "theme": {
                   "code": "TH_04",
@@ -73794,7 +73818,23 @@
                 "temporal": {
                   "available_from": 2007,
                   "update_frequency": "FQ_04"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Bestand nach Zulassungsbezirken (FZ 1)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz1_b_uebersicht.html",
+                    "checked": "2026-11-05",
+                    "supports": "Jährlicher Bestand zum 1. Januar nach Zulassungsbezirken, Fahrzeugarten, Kraftstoffarten, Emissionsgruppen; ab 2007; XLSX/PDF; Datenlizenz Deutschland"
+                  },
+                  {
+                    "title": "Methodische Erläuterungen zu Statistiken über Fahrzeugzulassungen",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Fahrzeuge/fz_methodik/fz_methodische_erlaueterungen_202402_pdf.pdf?__blob=publicationFile&v=2",
+                    "checked": "2026-11-05",
+                    "supports": "Stichtag 1. Januar; Rechtsgrundlage der Statistik"
+                  }
+                ]
               }
             },
             {
@@ -73929,11 +73969,11 @@
               "name": "Regionale KFZ-Zulassungen nach Kreisen (KBA FZ6)",
               "color": "#ca6f1e",
               "details": {
-                "description": "Neuzulassungen nach Landkreis und kreisfreier Stadt differenziert nach Fahrzeugart und Antrieb. Quelle: KBA-Tabelle FZ 6 (Neuzulassungen nach Gemeinden), Jahres- und Quartalsdaten.",
+                "description": "Jährliche Neuzulassungen, Besitzumschreibungen und Außerbetriebsetzungen von Kraftfahrzeugen und Kraftfahrzeuganhängern nach Zulassungsbezirken und Fahrzeugarten, für Pkw, Lkw, Zugmaschinen und Anhänger auch nach Haltergruppen; das Kraftfahrt-Bundesamt veröffentlicht sie als Tabelle FZ 5 (FZ 6 ist der Bestand nach Herstellern und Typen). Eine Gliederung nach Antrieb enthält FZ 5 nicht. Abrufbar sind die Berichtsjahre ab 2006, bis 2016 als PDF und seit 2018 als XLSX.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "KBA veröffentlicht regionale Zulassungsstatistiken auf Kreisebene unter Datenlizenz Deutschland."
+                  "explanation": "Gezählt werden Zulassungsvorgänge je Zulassungsbezirk und Fahrzeugart, nach Haltergruppen nur als Kategorie privat oder gewerblich. Einzelne Halter sind nicht genannt; bei seltenen Fahrzeugarten in kleinen Bezirken können Zellen aber sehr kleine Fallzahlen tragen."
                 },
                 "theme": {
                   "code": "TH_04",
@@ -73987,7 +74027,16 @@
                 "temporal": {
                   "available_from": 2006,
                   "update_frequency": "FQ_04"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Neuzulassungen, Besitzumschreibungen, Außerbetriebsetzungen nach Zulassungsbezirken (FZ 5)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz5_nua_uebersicht.html",
+                    "checked": "2026-11-05",
+                    "supports": "Jährliche Neuzulassungen nach Zulassungsbezirken, Fahrzeugarten, Haltergruppen; ab 2006; XLSX/PDF; Datenlizenz Deutschland"
+                  }
+                ]
               }
             },
             {
@@ -74122,11 +74171,11 @@
               "name": "KFZ-Neuzulassungen nach Kreisen und Gemeinden",
               "color": "#ca6f1e",
               "details": {
-                "description": "Räumlich hochaufgelöste Neuzulassungsstatistiken des Kraftfahrtbundesamts (KBA) auf Kreisebene: Pkw-Neuzulassungen nach Antriebsart, Kraftstofftyp und Fahrzeugsegment je 1.000 Einwohner. Grundlage für Ladeinfrastrukturplanung.",
+                "description": "Jährliche Statistik des Kraftfahrt-Bundesamts (FZ 5): Neuzulassungen von Kraftfahrzeugen und Kraftfahrzeuganhängern je Zulassungsbezirk nach Fahrzeugarten, für Pkw, Lkw, Zugmaschinen und Anhänger zusätzlich nach Haltergruppen. Ausgewiesen wird der Zulassungsbezirk, nicht die Gemeinde; Antriebsart, Segment und einen Bezug auf die Einwohnerzahl enthält die Statistik nicht. Abrufbar sind die Berichtsjahre ab 2006, bis 2016 als PDF und seit 2018 als XLSX.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "KBA veröffentlicht monatlich Neuzulassungsstatistiken bis auf Kreisebene ohne personenbezogene Daten; frei zugänglich über KBA-Statistikportal."
+                  "explanation": "Gezählt werden Neuzulassungen je Zulassungsbezirk und Fahrzeugart, für einige Fahrzeugarten nach Haltergruppen, nicht je Halter. Eine Ausweisung unterhalb des Bezirks, etwa je Gemeinde, enthält die Statistik nicht; einzelne Halter bleiben unbenannt."
                 },
                 "theme": {
                   "code": "TH_04",
@@ -74142,12 +74191,12 @@
                 },
                 "format": [
                   {
-                    "label": "CSV",
-                    "code": "FT_01"
+                    "code": "FT_07",
+                    "label": "PDF"
                   },
                   {
-                    "label": "GeoJSON",
-                    "code": "FT_05"
+                    "code": "FT_08",
+                    "label": "Excel (XLSX)"
                   }
                 ],
                 "license": {
@@ -74180,7 +74229,16 @@
                 "temporal": {
                   "available_from": 2006,
                   "update_frequency": "FQ_04"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Neuzulassungen, Besitzumschreibungen, Außerbetriebsetzungen von Kraftfahrzeugen und Kraftfahrzeuganhängern nach Zulassungsbezirken (FZ 5)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz5_nua_uebersicht.html",
+                    "checked": "2026-11-05",
+                    "supports": "Jährliche Neuzulassungen je Zulassungsbezirk nach Fahrzeugarten und Haltergruppen, Excel, Datenlizenz Deutschland, ab 2006"
+                  }
+                ]
               }
             },
             {
@@ -74189,11 +74247,11 @@
               "name": "Fahrzeughalterstruktur und Flottenanalyse",
               "color": "#ca6f1e",
               "details": {
-                "description": "Strukturanalyse des deutschen Fahrzeugbestands nach Haltertyp: Anteil privater, gewerblicher und öffentlicher Halter, Flottengrößenverteilung, durchschnittliche Halterzeiten und Fahrzeugalter je Halterkategorie. KBA-Bestandsstatistik.",
+                "description": "Jährliche Bestandsstatistik des Kraftfahrt-Bundesamts zum 1. Januar (FZ 23): Kraftfahrzeuge und Kraftfahrzeuganhänger nach Haltergruppen und Wirtschaftszweigen; für Pkw zusätzlich nach Lebensalter der Halter und Hubraum sowie nach Haltergruppen und Bundesländern. Ausgaben liegen ab dem 1. Januar 2010 vor (bis 2022 als PDF, seit 2023 als XLSX), ihre Pkw-Zeitreihe nach Haltergruppen beginnt 2002. Flottengrößen und Haltedauer enthält die Statistik nicht.",
                 "openness": {
                   "class": "OP_02",
                   "label": "Nach Aufbereitung publizierbar",
-                  "explanation": "KBA-Fahrzeugregister enthält Halterdaten mit Personenbezug; aggregierte Halterstrukturstatistiken werden nach Anonymisierung publiziert."
+                  "explanation": "Das Fahrzeugregister enthält personenbezogene Halterdaten; erst die Zählung nach Haltergruppen, Wirtschaftszweigen und Lebensalter der Halter ist ein Aggregat. Bei seltenen Altersgruppen je Bundesland sind kleine Zellen möglich, hier hilft eine Mindestfallzahl."
                 },
                 "theme": {
                   "code": "TH_04",
@@ -74245,9 +74303,18 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 1994,
+                  "available_from": 2002,
                   "update_frequency": "FQ_04"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Bestand nach Haltergruppen und Wirtschaftszweigen (FZ 23)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz23_b_uebersicht.html",
+                    "checked": "2026-11-05",
+                    "supports": "Jährlicher Bestand nach Haltergruppen/Wirtschaftszweigen zum 1. Januar, Excel ab 2023, PDF 2010–2022, Datenlizenz Deutschland"
+                  }
+                ]
               }
             },
             {
@@ -74256,11 +74323,11 @@
               "name": "KFZ-Halterstruktur Flottenfahrzeuge vs. Privathalter",
               "color": "#ca6f1e",
               "details": {
-                "description": "Anteil gewerblicher Flottenfahrzeuge und Privatfahrzeuge an Neuzulassungen nach Segment und Region. KBA veröffentlicht diese Zulassungsstruktur monatlich in der Tabelle FZ 10. Grundlage für Vertriebssteuerung und Marktanalysen der Automobilindustrie.",
+                "description": "Anteil privater und gewerblicher Halter an den Pkw-Neuzulassungen, veröffentlicht vom Kraftfahrt-Bundesamt: monatlich und bundesweit in FZ 8 nach Marken und ausgewählten Haltergruppen und in FZ 11 als Anteil gewerblicher Halter je Segment und Modellreihe, jährlich in FZ 5 je Zulassungsbezirk nach Haltergruppen. Ein Merkmal „Flottenfahrzeug“ und eine Tabelle nach Segment und Region zugleich gibt es nicht. Eine Pkw-Zeitreihe nach Haltergruppen ab 2001 enthält die eingestellte Jahrespublikation FZ 24 (letzte Ausgabe 2021, PDF); die übrigen Tabellen erscheinen als XLSX.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "KBA veröffentlicht monatliche Zulassungsstatistiken nach Haltergruppe als offene Daten."
+                  "explanation": "Gezählt werden Neuzulassungen privater und gewerblicher Halter als Kategorien, bundesweit je Marke oder Modellreihe und je Zulassungsbezirk. Einzelne Halter und Flotten werden nicht ausgewiesen; ein eigenes Merkmal Flottenfahrzeug kennt die Statistik nicht."
                 },
                 "theme": {
                   "code": "TH_04",
@@ -74276,8 +74343,12 @@
                 },
                 "format": [
                   {
-                    "code": "FT_01",
-                    "label": "CSV"
+                    "code": "FT_07",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_08",
+                    "label": "Excel (XLSX)"
                   }
                 ],
                 "license": {
@@ -74308,9 +74379,39 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 2004,
-                  "update_frequency": "FQ_04"
-                }
+                  "available_from": 2001,
+                  "update_frequency": "FQ_03"
+                },
+                "sources": [
+                  {
+                    "title": "Neuzulassungen von Kraftfahrzeugen und Kraftfahrzeuganhängern – Monatsergebnisse (FZ 8)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz8/fz8_gentab.html",
+                    "checked": "2026-11-05",
+                    "supports": "Pkw-Neuzulassungen nach Marken und Haltergruppen (FZ 8.9), alle Kfz nach Haltergruppen (FZ 8.17), monatlich ab 2009, Excel"
+                  },
+                  {
+                    "title": "Neuzulassungen nach Haltern und Wirtschaftszweigen (FZ 24)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz24_n_uebersicht.html",
+                    "checked": "2026-11-05",
+                    "supports": "Jährliche Neuzulassungen nach Haltergruppen, Ausgaben 2009–2021, PDF"
+                  },
+                  {
+                    "title": "Neuzulassungen von Personenkraftwagen nach Segmenten und Modellreihen (FZ 11)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz11/fz11_gentab.html",
+                    "checked": "2026-11-05",
+                    "supports": "Anteil gewerblicher Halter je Segment und Modellreihe, monatlich"
+                  },
+                  {
+                    "title": "Neuzulassungen nach Zulassungsbezirken (FZ 5)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz5_nua_uebersicht.html",
+                    "checked": "2026-11-05",
+                    "supports": "Jährlich je Zulassungsbezirk nach Haltergruppen (FZ 5.2)"
+                  }
+                ]
               }
             },
             {
@@ -74382,11 +74483,11 @@
               "name": "KBA-Neuzulassungsstatistik",
               "color": "#ca6f1e",
               "details": {
-                "description": "Monatliche PKW-Neuzulassungen nach Hersteller, Modell, Kraftstoffart, Zulassungstyp (Privat/Gewerbe) und Bundesland.",
+                "description": "Monatliche Pkw-Neuzulassungen des Kraftfahrt-Bundesamts in getrennten Tabellen: FZ 10 nach Marken und Modellreihen, FZ 8 unter anderem nach Marken, nach Marken und ausgewählten Haltergruppen (private und gewerbliche Halter) sowie nach Kraftstoffarten, Emissionsgruppen und Bundesländern. FZ 10 reicht bis Januar 2004 zurück, FZ 8 bis Januar 2009; FZ 8 erschien bis 2022 als PDF, seit 2023 als XLSX. Die Modellreihen-Tabelle liegt im KBA-Statistikportal ab 2020 auch als CSV- und GeoJSON-Export vor.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "KBA veröffentlicht Neuzulassungsdaten nach §32 FZV monatlich als amtliche Statistik."
+                  "explanation": "Gezählt werden Neuzulassungen je Marke, Modellreihe und Haltergruppe, nicht einzelne Halter oder Fahrzeuge. Die Haltergruppe unterscheidet privat und gewerblich nur als Kategorie; Halterdaten bleiben im Fahrzeugregister und gehören nicht zur Statistik."
                 },
                 "theme": {
                   "code": "TH_04",
@@ -74406,8 +74507,20 @@
                     "label": "CSV"
                   },
                   {
-                    "code": "FT_04",
-                    "label": "XML"
+                    "code": "FT_02",
+                    "label": "JSON"
+                  },
+                  {
+                    "code": "FT_05",
+                    "label": "GeoJSON"
+                  },
+                  {
+                    "code": "FT_07",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_08",
+                    "label": "Excel (XLSX)"
                   }
                 ],
                 "license": {
@@ -74440,7 +74553,23 @@
                 "temporal": {
                   "available_from": 2004,
                   "update_frequency": "FQ_03"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Neuzulassungen von Kraftfahrzeugen und Kraftfahrzeuganhängern – Monatsergebnisse (FZ 8)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz8/fz8_gentab.html",
+                    "checked": "2026-11-05",
+                    "supports": "Monatliche Pkw-Neuzulassungen nach Marken, Haltergruppen, Kraftstoffarten und Bundesländern; XLSX; Datenlizenz Deutschland"
+                  },
+                  {
+                    "title": "Neuzulassungen von Personenkraftwagen nach Marken und Modellreihen (FZ 10)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz10/fz10_gentab.html",
+                    "checked": "2026-11-05",
+                    "supports": "Monatliche Pkw-Neuzulassungen nach Marke und Modellreihe; ab Januar 2004"
+                  }
+                ]
               }
             },
             {
@@ -74449,11 +74578,11 @@
               "name": "KBA-Fahrzeugbestandsstatistik",
               "color": "#ca6f1e",
               "details": {
-                "description": "Jährlicher Fahrzeugbestand in Deutschland nach Antriebsart, Alter, Emissionsklasse und regionalem Bestand.",
+                "description": "Jährlicher Bestand an Kraftfahrzeugen zum 1. Januar aus dem Zentralen Fahrzeugregister des Kraftfahrt-Bundesamts, verteilt auf mehrere Tabellen: FZ 13 nach Umwelt-Merkmalen (Bundesländer, Kraftstoffarten, Emissionsklassen; Pkw nach Kraftstoffarten als Reihe ab 1960), FZ 1 nach Zulassungsbezirken (ab 2007) und FZ 3 nach Gemeinden. Den Bestand nach Fahrzeugalter (FZ 15) führt das KBA nicht weiter, die letzte Ausgabe ist vom 1. Januar 2022. Die aktuellen Jahrgänge erscheinen als XLSX, ältere als PDF.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "KBA-Bestandsstatistik wird jährlich zum 1.1. als amtliche Statistik veröffentlicht."
+                  "explanation": "Gezählt wird der Bestand zum 1. Januar je Bundesland, Zulassungsbezirk oder Gemeinde, nach Kraftstoff- und Umwelt-Merkmalen, nicht je Halter. In kleinen Gemeinden sind Zellen mit wenigen Fahrzeugen möglich; Halterangaben enthält die Statistik nicht."
                 },
                 "theme": {
                   "code": "TH_06",
@@ -74505,9 +74634,46 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 2003,
+                  "available_from": 1960,
                   "update_frequency": "FQ_04"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Bestand nach Umwelt-Merkmalen (FZ 13)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz13_b_uebersicht.html",
+                    "checked": "2026-11-05",
+                    "supports": "Jährlicher Pkw-Bestand nach Kraftstoffarten (Reihe ab 1960) und Emissionsklassen; XLSX/PDF; Datenlizenz Deutschland"
+                  },
+                  {
+                    "title": "Bestand nach Gemeinden (FZ 3)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz3_b_uebersicht.html",
+                    "checked": "2026-11-05",
+                    "supports": "Jährlicher Bestand zum 1. Januar nach Gemeinden, ab 2007"
+                  },
+                  {
+                    "title": "Bestand nach Fahrzeugalter (FZ 15)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz15_b_uebersicht.html",
+                    "checked": "2026-11-05",
+                    "supports": "Bestand nach Fahrzeugalter, 1.1.2010 bis 1.1.2022, danach keine Aktualisierung"
+                  },
+                  {
+                    "title": "Methodische Erläuterungen zu Statistiken über Fahrzeugzulassungen",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Fahrzeuge/fz_methodik/fz_methodische_erlaueterungen_202402_pdf.pdf?__blob=publicationFile&v=2",
+                    "checked": "2026-11-05",
+                    "supports": "Stichtag 1. Januar, Merkmale, Rechtsgrundlage"
+                  },
+                  {
+                    "title": "Bestand nach Zulassungsbezirken (FZ 1)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz1_b_uebersicht.html",
+                    "checked": "2026-11-05",
+                    "supports": "Jährlicher Bestand zum 1. Januar nach Zulassungsbezirken, Kraftstoffarten, Emissionsgruppen, ab 2007"
+                  }
+                ]
               }
             },
             {
@@ -74516,7 +74682,7 @@
               "name": "Kfz-Neuzulassungen Kraftfahrt-Bundesamt",
               "color": "#ca6f1e",
               "details": {
-                "description": "Monatliche Statistik des Kraftfahrt-Bundesamts (KBA) zu Pkw-Neuzulassungen nach Marke, Modell, Motorisierungsart, Haltergruppe (Privat vs. Gewerbe) und Bundesland. Wichtigster Marktindikator der deutschen Automobilwirtschaft.",
+                "description": "Monatliche Statistik des Kraftfahrt-Bundesamts zu Pkw-Neuzulassungen in getrennten Tabellen: FZ 10 nach Marken und Modellreihen mit Antriebsarten (u. a. Diesel, Plug-in-Hybrid, Elektro), FZ 8 nach Marken und ausgewählten Haltergruppen (private und gewerbliche Halter) sowie nach Kraftstoffarten, Emissionsgruppen und Bundesländern. Eine Tabelle, die alle diese Merkmale zugleich enthält, gibt es nicht. Veröffentlicht als Excel-Datei; FZ 10 reicht bis Januar 2004 zurück.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
@@ -74570,7 +74736,30 @@
                 "temporal": {
                   "available_from": 2004,
                   "update_frequency": "FQ_03"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Neuzulassungen von Personenkraftwagen nach Marken und Modellreihen – Monatsergebnisse (FZ 10)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz10/fz10_gentab.html",
+                    "checked": "2026-11-05",
+                    "supports": "Pkw-Neuzulassungen nach Marke, Modellreihe und Antriebsart, monatlich, ab 2004, Excel, Datenlizenz Deutschland"
+                  },
+                  {
+                    "title": "Neuzulassungen von Kraftfahrzeugen und Kraftfahrzeuganhängern – Monatsergebnisse (FZ 8)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz8/fz8_gentab.html",
+                    "checked": "2026-11-05",
+                    "supports": "Monatliche Neuzulassungen nach Haltergruppen (FZ 8.9, 8.17) und Bundesländern (FZ 8.6), ab 2009"
+                  },
+                  {
+                    "title": "Neuzulassungen von Kraftfahrzeugen mit alternativem Antrieb (FZ 28)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz28/fz28_gentab.html",
+                    "checked": "2026-11-05",
+                    "supports": "Monatliche Pkw-Neuzulassungen nach Haltergruppen, Marken, Segmenten und Bundesländern"
+                  }
+                ]
               }
             },
             {
@@ -74776,7 +74965,7 @@
               "name": "Pkw-Neuzulassungen",
               "color": "#ca6f1e",
               "details": {
-                "description": "Neuzulassungen nach Antriebsart und Marke (KBA).",
+                "description": "Pkw-Neuzulassungen nach Marke und Antriebsart, veröffentlicht vom Kraftfahrt-Bundesamt: jährlich in FZ 14 (Umwelt-Merkmale) nach Marken und Kraftstoffarten (u. a. Benzin, Diesel, Hybrid, Elektro), monatlich in FZ 10 nach Marken und Modellreihen mit Spalten für Diesel-, Plug-in-Hybrid- und Elektroantrieb. FZ 14 liegt für die Berichtsjahre ab 2009 vor, bis 2021 als PDF, seit 2022 als XLSX; FZ 10 erscheint als Excel-Datei.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
@@ -74830,7 +75019,23 @@
                 "temporal": {
                   "available_from": 2004,
                   "update_frequency": "FQ_03"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Neuzulassungen von Personenkraftwagen nach Marken und Modellreihen – Monatsergebnisse (FZ 10)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz10/fz10_gentab.html",
+                    "checked": "2026-11-05",
+                    "supports": "Pkw-Neuzulassungen nach Marke, Modellreihe und Antriebsart, monatlich, ab 2004, Excel, Datenlizenz Deutschland"
+                  },
+                  {
+                    "title": "Neuzulassungen nach Umwelt-Merkmalen (FZ 14)",
+                    "publisher": "Kraftfahrt-Bundesamt",
+                    "url": "https://www.kba.de/DE/Statistik/Produktkatalog/produkte/Fahrzeuge/fz14_n_uebersicht.html",
+                    "checked": "2026-11-05",
+                    "supports": "Jahresauswertung der Pkw-Neuzulassungen nach Marken und Antriebsarten (FZ 14.5)"
+                  }
+                ]
               }
             },
             {

@@ -411,7 +411,7 @@ Inhaltsqualität (Hinweis, keine Warnungen):
   mehrfach verwendete Begründungstexte: 0 Knoten (0 %)
   Aussagen über fremde Veröffentlichungspraxis: 0
   Beschreibung widerspricht den Metadaten: 0
-  Datentypen mit geprüfter Quelle: 35 von 10428
+  Datentypen mit geprüfter Quelle: 55 von 10428
 ```
 
 Die ersten vier Kennzahlen stehen auf null (die fünfte siehe „Quellen und
@@ -591,6 +591,16 @@ Der Zitatabgleich muss außer Zeichensatz auch HTML-Entities (`&sect;`,
 `&ndash;`) übersetzen, ohne Leerraum vergleichen (Inline-Tags zerreißen
 `*.csv` zu `*. csv`) und XLSX-Dateien lesen können. 160 von 160 Zitaten der
 dritten Runde sind so wiedergefunden.
+
+Die **erste Produktionsrunde** des kalibrierten Vorgehens (`docs/quellenpruefung.md`,
+`scripts/quellenpruefung/runden/1/`) hat 20 Einträge geprüft (KBA-Zulassungen, IVW-Auflagen,
+EKD-Mitgliedschaft): zwei Sonnet-Läufe, Feldvergleich, Opus am Beleg. Übernommen mit
+`scripts/quellenpruefung/uebernehmen.mjs` in zwei Schritten — erst die Codefelder, bei denen beide
+Läufe einig waren, dann Beschreibung, Quellen und Klasse. Wieder stimmte keiner vollständig
+(Format 16 von 16, Startjahr 10 von 10 falsch). Neu: IVW und EKD stehen auf `LI_04` statt
+CC BY 4.0, deshalb `OP_02` statt `OP_01` (Hindernis ist das Nutzungsrecht, wie bei AGF).
+**Eine Quelle wird erst mit der neuen Beschreibung angehängt**, nicht vorher — „Mit Quelle“
+soll heißen, dass die Aussagen des Eintrags nachgelesen sind.
 
 **Bekannte Lücke in Regel 3:** 15 der 31 alten Begründungen aus Runde 2 und 3
 enthielten Praxisaussagen, die `claimsThirdPartyPractice()` nicht erkennt — eine

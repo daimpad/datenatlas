@@ -1,0 +1,120 @@
+{
+  "_hinweis": "Referenz für die Kalibrierung: geprüfte Befunde der dritten Quellenprüfung (scripts/datafix-quellen-drittbelegung.mjs, 160 von 160 Zitaten maschinell wiedergefunden). null = in Runde 3 nicht belegt, wird nicht gewertet. Listen = jeder dieser Werte zählt als richtig. Kernbefunde: Fehler im ursprünglichen Eintrag, die eine Prüfung finden muss; das Muster sucht im Ergebnis außerhalb der Felder alt und praxisaussage.",
+  "breitbandversorgung-geodaten": {
+    "startjahr": [2018], "rhythmus": ["FQ_07"], "format": ["FT_08", "FT_01"], "lizenz": ["LI_05"],
+    "existenz": ["ja", "teilweise"], "praxisaussage": true,
+    "kernbefunde": [
+      { "text": "Bereitsteller ist nicht das BMWK", "muster": "BMWK" },
+      { "text": "ausgewiesen auf 100-m-Raster und Gemeinden, nicht je Adresse", "muster": "100\\s?(m|Meter)|Rasterzelle" }
+    ]
+  },
+  "bfa-wetterradar-daten": {
+    "startjahr": [2001, 2005], "rhythmus": ["FQ_01"], "format": ["FT_03"], "lizenz": ["LI_02"],
+    "existenz": ["ja"], "praxisaussage": true,
+    "kernbefunde": [
+      { "text": "Lizenz CC BY 4.0, nicht CC0/lizenzfrei", "muster": "CC BY|Namensnennung|Creative Commons" }
+    ]
+  },
+  "finanzen-steuer-gewerbesteuer-kommunal": {
+    "startjahr": null, "rhythmus": ["FQ_04"], "format": ["FT_08"], "lizenz": null,
+    "existenz": ["ja", "teilweise"], "praxisaussage": true,
+    "kernbefunde": [
+      { "text": "Fachserie 14 Reihe 10.1 eingestellt, Gemeindewerte anderswo", "muster": "eingestellt|Statistischer Bericht|Regionaldatenbank" }
+    ]
+  },
+  "staat-gesundheit-soziales-grundsicherung-statistik": {
+    "startjahr": [2005], "rhythmus": ["FQ_03"], "format": null, "lizenz": ["LI_05"],
+    "existenz": ["ja", "teilweise"], "praxisaussage": false,
+    "kernbefunde": [
+      { "text": "SGB II nur bis Kreisebene, nicht Gemeinde", "muster": "Kreis" },
+      { "text": "SGB XII vierteljährlich seit 2015 (Destatis)", "muster": "vierteljähr|quartal" }
+    ]
+  },
+  "auto-neuzulassungen-kba-monatsbericht": {
+    "startjahr": [2004], "rhythmus": ["FQ_03"], "format": ["FT_08"], "lizenz": ["LI_03"],
+    "existenz": ["ja", "teilweise"], "praxisaussage": true,
+    "kernbefunde": [
+      { "text": "seit 2023 nur Excel, kein CSV", "muster": "(nur|ausschließlich)[^\"]{0,60}Excel|Excel-Format|seit 2023" }
+    ]
+  },
+  "kaufpreisindizes-wohnimmobilien": {
+    "startjahr": [2000], "rhythmus": ["FQ_08"], "format": ["FT_01", "FT_04"], "lizenz": ["LI_03"],
+    "existenz": ["ja", "teilweise"], "praxisaussage": true,
+    "kernbefunde": [
+      { "text": "vierteljährlich, nicht monatlich", "muster": "vierteljähr|quartal" },
+      { "text": "Bundesbank-Indizes beruhen auf bulwiengesa, nicht Gutachterausschüssen", "muster": "bulwiengesa" }
+    ]
+  },
+  "hafen-umschlagsstatistik": {
+    "startjahr": [2011], "rhythmus": ["FQ_03", "FQ_04"], "format": ["FT_01", "FT_04"], "lizenz": ["LI_03"],
+    "existenz": ["ja", "teilweise"], "praxisaussage": false,
+    "kernbefunde": [
+      { "text": "§ 29 Abs. 3 VerkStatG erlaubt Veröffentlichung trotz Einzelangaben", "muster": "29[^\"]{0,25}VerkStatG|Verkehrsstatistikgesetz" }
+    ]
+  },
+  "pharma-erstattungspreise": {
+    "startjahr": [2011], "rhythmus": null, "format": null, "lizenz": ["LI_04"],
+    "existenz": ["teilweise", "nein"], "praxisaussage": true,
+    "kernbefunde": [
+      { "text": "GKV-SV veröffentlicht nicht die Beträge; Meldung an Preis- und Produktverzeichnis", "muster": "Preis.{1,3}und Produktverzeichnis|Lauer" },
+      { "text": "vertrauliche Erstattungsbeträge seit 2025 (§ 130b Abs. 1c SGB V)", "muster": "1c|vertraulich" }
+    ]
+  },
+  "uba-emissionsregister-chemie": {
+    "startjahr": [2007], "rhythmus": ["FQ_04"], "format": ["FT_01", "FT_08"], "lizenz": ["LI_05"],
+    "existenz": ["ja", "teilweise"], "praxisaussage": true,
+    "kernbefunde": [
+      { "text": "Öffentlichkeit aus § 2 Abs. 1, nicht § 5 SchadRegProtAG", "muster": "§\\s?2\\s?(Abs\\.?|Absatz)\\s?1|§\\s?2 SchadRegProtAG" }
+    ]
+  },
+  "klimafolgen-vegetationsperiode-phänologie": {
+    "startjahr": [1951], "rhythmus": null, "format": ["FT_01"], "lizenz": ["LI_02"],
+    "existenz": ["ja", "teilweise"], "praxisaussage": false,
+    "kernbefunde": []
+  },
+  "netzdg-berichte-beschwerdestatistik": {
+    "startjahr": [2018], "rhythmus": ["FQ_07"], "format": null, "lizenz": null,
+    "existenz": ["ja", "teilweise"], "praxisaussage": false,
+    "kernbefunde": [
+      { "text": "§ 2 NetzDG weggefallen (2024)", "muster": "weggefallen|aufgehoben|außer Kraft" },
+      { "text": "veröffentlicht im Bundesanzeiger, nicht beim BfJ eingereicht", "muster": "Bundesanzeiger" }
+    ]
+  },
+  "transparenzberichte-plattformen-dsa": {
+    "startjahr": [2023], "rhythmus": ["FQ_07"], "format": ["FT_01", "FT_08"], "lizenz": null,
+    "existenz": ["ja", "teilweise"], "praxisaussage": true,
+    "kernbefunde": [
+      { "text": "Art. 42 DSA, nicht Art. 15", "muster": "Art(ikel|\\.)?\\s?42" },
+      { "text": "erste Benennungen 25. April 2023, nicht Februar", "muster": "25\\.\\s?0?4\\.\\s?2023|25\\. April 2023|April 2023" }
+    ]
+  },
+  "stiftungsregister-bund-neueintragungen": {
+    "startjahr": [2028], "rhythmus": null, "format": null, "lizenz": null,
+    "existenz": ["nein"], "praxisaussage": false,
+    "kernbefunde": [
+      { "text": "Register startet erst am 1.1.2028", "muster": "2028" }
+    ]
+  },
+  "schulabschlussquoten-schulform-bundesland": {
+    "startjahr": null, "rhythmus": ["FQ_04"], "format": ["FT_08"], "lizenz": ["LI_03"],
+    "existenz": ["ja", "teilweise"], "praxisaussage": true,
+    "kernbefunde": [
+      { "text": "Anzahlen, keine Quoten", "muster": "Anzahl|absolute|keine (Abschluss)?[Qq]uote" }
+    ]
+  },
+  "kath-bs-krankenhaus-statistik": {
+    "startjahr": null, "rhythmus": null, "format": null, "lizenz": null,
+    "existenz": ["teilweise", "nein"], "praxisaussage": true,
+    "kernbefunde": [
+      { "text": "261 (bzw. 244) statt rund 370", "muster": "\\b2(61|44)\\b" },
+      { "text": "amtliche Statistik ohne konfessionelle Träger", "muster": "freigemeinnützig|konfessionell" }
+    ]
+  },
+  "bund-kulturfoerderung": {
+    "startjahr": [2001], "rhythmus": ["FQ_09"], "format": ["FT_07", "FT_08"], "lizenz": ["LI_05"],
+    "existenz": ["ja", "teilweise"], "praxisaussage": true,
+    "kernbefunde": [
+      { "text": "zweijährlich, nicht jährlich", "muster": "zweijährlich|alle zwei Jahre|FQ_09" }
+    ]
+  }
+}

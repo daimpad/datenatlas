@@ -19,6 +19,8 @@
 //   PDF über pdftotext, XLSX/ODS über unzip   Qualitätsberichte, Destatis-Tabellen
 //   Bruchstrich ⁄ und Trennstrich am Zitatende   Destatis (&frasl;), PDF-Zeilenumbruch („Excel-“)
 //   PDF-Tabellenzeilen über pdftotext -layout     EKD-Kirchenmitgliederzahlen („Anhalt 9.361 13.795 23.156“)
+//   Bindestrich am Zeilenende in zwei Lesarten    Destatis („Nominal- und Reallohnindex“), HTML-Tabellenzelle „-“ (FDZ)
+//   altes .xls (OLE) als Latin-1/UTF-16           ZDH-Statistik (load_doc.php?datei=….xls)
 // Abgerufen wird mit ehrlichem User-Agent. Eine nicht abrufbare Seite gilt
 // als nicht prüfbar, nie als gefunden.
 
@@ -49,12 +51,15 @@ const htmlText = html => decodeEntities(html
   .replace(/<[^>]+>/g, ' '));
 
 // Für den Vergleich: Varianten vereinheitlichen, dann allen Leerraum entfernen.
-const flat = s => s
+// `entwirrt` entfernt Bindestrich + Zeilenumbruch im Seitentext (PDF-Silbentrennung: „Excel-\nDatei“).
+// Das muss eine zweite Lesart sein, keine einzige: „Nominal-\nund Reallohnindex“ und die Tabellenzelle
+// „-“ vor </td> sind echte Bindestriche, die das Zitat enthält.
+const flat = (s, entwirrt = false) => s
   .normalize('NFKC')
   .replace(/[\u2044\u2215]/g, '/')        // Bruchstrich als Schrägstrich (Destatis: „barrierefrei⁄barrierearm“)
   .replace(/-\s*$/, '')                    // Zitat endet in einer Silbentrennung („…als Excel-“)
   .replace(/­/g, '')
-  .replace(/-\s*\n\s*/g, '')
+  .replace(/-\s*\n\s*/g, entwirrt ? '' : '-')
   .replace(/[„“”"«»‚‘’']/g, '"')
   .replace(/[–—‑]/g, '-')
   .toLowerCase()
@@ -81,6 +86,9 @@ async function load(url, attempt = 1) {
         try { xml += execFileSync('unzip', ['-p', file, part], { maxBuffer: 1 << 28, stdio: ['ignore', 'pipe', 'ignore'] }).toString(); } catch {}
       }
       return { t: htmlText(xml.replace(/<\/(t|si|text:p)>/g, ' ')) };
+    }
+    if (buf.subarray(0, 4).toString('hex') === 'd0cf11e0') {    // altes Excel (OLE): Zeichenketten liegen als Latin-1 oder UTF-16
+      return { t: [buf.toString('latin1'), buf.toString('utf16le'), buf.subarray(1).toString('utf16le')].join('\u0001') };
     }
     if (ct.includes('pdf') || buf.subarray(0, 5).toString() === '%PDF-') {
       writeFileSync(file, buf);
@@ -132,7 +140,8 @@ async function worker() {
   while (next < items.length) {
     const it = items[next++];
     const r = await pageText(it.url);
-    it.result = r.t == null ? 'nicht_abrufbar' : flat(r.t).includes(flat(it.zitat)) ? 'gefunden' : 'fehlt';
+    const q = flat(it.zitat);
+    it.result = r.t == null ? 'nicht_abrufbar' : [false, true].some(e => flat(r.t, e).includes(q)) ? 'gefunden' : 'fehlt';
     if (r.err) it.fehler = r.err;
   }
 }

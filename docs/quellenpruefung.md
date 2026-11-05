@@ -277,6 +277,31 @@ Der Teil der Regel, der den Gegenstand festlegt, hat geholfen (9 einig, Runde 2:
 Rückwärtssuche: Sie belohnt jede Fundstelle, auch eine, die der Herausgeber nie als seine Reihe geführt hat.
 Prüfauftrag und Entscheidungsauftrag bleiben in der Fassung von Runde 2.
 
+**Dritte Fassung (derselbe Aufbau, 16,12 $, 413 Anfragen).** Sie schloss die Fehlerarten des ersten Tests aus:
+nur Quellen des Herausgebers (keine Bibliothekskopien, Zenodo, Drittjahrbücher), keine aus Diagrammen abgelesenen oder
+rückwirkend verknüpften Zahlen, begrenzte Rückwärtssuche (Abbruch nach zwei älteren Ausgaben ohne frühere Zahl), die
+Hauptgliederung des ersten Beschreibungssatzes gehört zum Datensatz. Zitate 71 von 72 (ein GEPRIS-Zitat stammte aus
+einem Suchtreffer, nicht von der angegebenen URL).
+
+**Ergebnis: schlechter als die zweite Fassung.** 5 von 15 einig (vorher 9), davon 3 gleich Opus (vorher 4; zählt man
+„beide nicht gefunden“ bei IVW als Übereinstimmung mit Opus' `offen`). Die Läufe weichen jetzt dort ab, wo die Regel
+Auslegung verlangt:
+
+| Auslegungsfrage | Beispiele (A / B) |
+|---|---|
+| Was ist die Hauptgliederung? | Pkw-Bestand 2010 / 1960; Halterstruktur 2009 / 2018 |
+| Was ist ein „Archiv des Herausgebers“? | Statistische Bibliothek wird von einem Lauf mitgezählt (Mikrozensus 1957) |
+| Was ist „die heutige Methode“? | Verdienste 1977 / 2007 |
+| Zählt ein Wert, den nur eine Diagrammbeschriftung nennt? | Förderquoten 2004 / 1997, DFG-Quote 1998 / 1997 |
+| Welche Kenngröße der Name zuerst nennt | Streaming-Umsätze 2009 (Anteile) / 2008 (Euro) |
+
+Zwei Tests mit je sechs Läufen (zusammen 28,63 $) zeigen: Je mehr die Regel festlegt, desto mehr Auslegung stecken die
+Läufe hinein, und jede Auslegung ist eine neue Quelle der Uneinigkeit. Der Text der Regel ist nicht der Hebel.
+
+**Folgerung (noch nicht umgesetzt):** Startjahre nicht mehr von der Einigkeit zweier Läufe abhängig machen, sondern immer an
+den Beleg geben, und die Bedeutung des Feldes an das Prinzip binden, das der Atlas bei der Granularität schon hat — es zählt,
+was man in die Hand bekommt: das erste Jahr der **aktuell abrufbaren** Reihe beim Herausgeber, ohne Archivsuche.
+
 ## Grenzen dieser Messung
 
 - 16 Einträge plus 6 im Pilot plus 2 × 20 in den Produktionsrunden — Stichproben, keine Statistik.

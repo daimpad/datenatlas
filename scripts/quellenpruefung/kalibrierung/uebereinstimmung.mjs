@@ -13,6 +13,7 @@
 // Mit --za/--zb (Ausgaben von ../zitate-pruefen.mjs --json) zählt ein Wert nur,
 // wenn mindestens ein Beleg wiedergefunden wurde; sonst gilt er als fehlend.
 import { readFileSync } from 'node:fs';
+import { wert, gleich, passt } from '../felder.mjs';
 
 const args = process.argv.slice(2);
 const opt = n => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : null; };
@@ -22,22 +23,7 @@ const A = load(opt('--a')), B = load(opt('--b'));
 const zit = f => f ? JSON.parse(readFileSync(f, 'utf8')).zitate : null;
 const ZA = zit(opt('--za')), ZB = zit(opt('--zb'));
 
-const CODE = { rhythmus: /FQ_\d\d/g, format: /FT_\d\d/g, lizenz: /LI_\d\d/g };
-const feld = (e, n) => e?.felder?.[n] ?? e?.[n];
-const belegt = (Z, id, n) => !Z || Z.some(z => z.id === id && z.result === 'gefunden'
-  && (z.path.startsWith(`${n}.`) || z.path.startsWith(`felder.${n}.`)));
-
-function wert(e, id, n, Z) {
-  const f = feld(e, n);
-  if (!f || ['nicht_gefunden', 'entfaellt'].includes(String(f.status).replace(' ', '_'))) return null;
-  if (!belegt(Z, id, n)) return null;
-  const raw = JSON.stringify(f.wert ?? '');
-  if (n === 'startjahr') { const m = raw.match(/\b(1[89]\d\d|20\d\d)\b/); return m ? [Number(m[1])] : null; }
-  const m = raw.match(CODE[n]); return m ? [...new Set(m)].sort() : null;
-}
-const gleich = (x, y) => x && y && x.length === y.length && x.every((v, i) => v === y[i]);
-// Wie vergleich.mjs: Format muss als Menge stimmen, sonst genügt einer der zulässigen Werte.
-const passt = (n, v, r) => !r ? null : n === 'format' ? gleich(v, [...r].sort()) : v.some(x => r.includes(x));
+// Feldlogik (Wert aus dem Prüfbogen, Beleg gefunden, gleich/passt) liegt in ../felder.mjs.
 
 const T = { einig_richtig: 0, einig_falsch: 0, einig_ohneRef: 0, uneinig: 0, uneinig_ohneRef: 0, uneinig_mitFehler: 0, einer_fehlt: 0, beide_fehlen: 0 };
 const liste = [];

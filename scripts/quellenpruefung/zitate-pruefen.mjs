@@ -41,9 +41,10 @@ const decodeEntities = s => s
   .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
   .replace(/&([a-z]+);/gi, (m, n) => ENT[n] ?? m);
 
+// Endtags mit [^>]*: Browser schließen auch bei „</script >“ oder „</script foo>“.
 const htmlText = html => decodeEntities(html
-  .replace(/<script[\s\S]*?<\/script>/gi, ' ')
-  .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+  .replace(/<script[\s\S]*?<\/script[^>]*>/gi, ' ')
+  .replace(/<style[\s\S]*?<\/style[^>]*>/gi, ' ')
   .replace(/<[^>]+>/g, ' '));
 
 // Für den Vergleich: Varianten vereinheitlichen, dann allen Leerraum entfernen.

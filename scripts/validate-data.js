@@ -7,7 +7,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { claimsThirdPartyPractice } from '../src/begruendungs-regeln.js';
+import { claimsThirdPartyPractice, isSchablone } from '../src/begruendungs-regeln.js';
 import { linkProblems } from './link-regeln.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -399,7 +399,7 @@ function main() {
   // is visible and measurable instead of silently accumulating.
   {
     const byText = new Map();
-    let short = 0, total = 0;
+    let short = 0, total = 0, schablonen = 0;
     const contradictions = [];
     const practice = [];
     let sourced = 0;
@@ -443,6 +443,7 @@ function main() {
           if (words < 5) short++;
           byText.set(e, (byText.get(e) ?? 0) + 1);
           if (claimsThirdPartyPractice(e)) practice.push(n.id);
+          if (isSchablone(e)) schablonen++;
           if (n.details?.sources?.length) sourced++;
 
           const desc = n.details?.description ?? '';
@@ -463,6 +464,7 @@ function main() {
       `  Öffnungsbegründungen unter 5 Wörtern: ${short} (${pct(short)} %)\n` +
       `  mehrfach verwendete Begründungstexte: ${reused} Knoten (${pct(reused)} %)\n` +
       `  Aussagen über fremde Veröffentlichungspraxis: ${practice.length}\n` +
+      `  Begründungen als Schablone („Datensatz ‚X‘ ist sofort publizierbar“): ${schablonen}\n` +
       `  Beschreibung widerspricht den Metadaten: ${contradictions.length}\n` +
       `  Datentypen mit geprüfter Quelle: ${sourced} von ${total}`
     );

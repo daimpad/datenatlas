@@ -221,3 +221,12 @@ export function claimsThirdPartyPractice(text) {
   }
   return false;
 }
+
+/**
+ * Schablone statt Begründung: „Datensatz ‚X‘ ist sofort publizierbar.“ Der Satz wiederholt die Klasse und nennt den
+ * Namen, begründet aber nichts. Er ist länger als fünf Wörter und je Eintrag verschieden, deshalb fing ihn weder die
+ * Kurztext- noch die Dublettenkennzahl.
+ */
+export function isSchablone(text) {
+  return /^Datensatz\s+.{3,150}?\s+ist\s+(?:sofort\s+)?publizierbar\.?$/.test(String(text ?? '').trim());
+}

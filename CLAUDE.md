@@ -422,7 +422,7 @@ Inhaltsqualität (Hinweis, keine Warnungen):
   mehrfach verwendete Begründungstexte: 0 Knoten (0 %)
   Aussagen über fremde Veröffentlichungspraxis: 0
   Beschreibung widerspricht den Metadaten: 0
-  Datentypen mit geprüfter Quelle: 74 von 10428
+  Datentypen mit geprüfter Quelle: 90 von 10428
 ```
 
 Die ersten vier Kennzahlen stehen auf null (die fünfte siehe „Quellen und
@@ -639,6 +639,15 @@ stimmte vollständig, und bei ZDH-Handwerk stammen die Zahlen vom Statistischen 
 Ein Eintrag (BVMI-Exportumsätze) beschreibt einen Datensatz, den beide Läufe nicht fanden; er
 bleibt unverändert Einschätzung. Für CC BY-SA 4.0 (DFG-Förderatlas) wurde `LI_06` angelegt;
 `dfg-bewilligungsstatistik` steht darauf.
+
+Die **vierte Produktionsrunde** (GDV, IVW, ZDH, VDA, VCI) ging von dem Widerspruch aus, dass 75 Einträge `OP_01`
+mit `LI_04` trugen, und prüfte die 17 mit benannter Stelle (19 $). Acht stehen jetzt auf `OP_02`: Die
+GDV-Nutzungsbedingungen verlangen schriftliche Zustimmung für Statistik-Portale und Text- und Data-Mining, VDA, VCI
+und die bAV-Studie behalten die Verwertung vor. **Ein Herausgeber, eine Bedingung, ein Code:** Der Automatismus
+hätte zwei GDV-Einträge auf `LI_05` gesetzt, die drei Schwestereinträge wertete Opus als `LI_04` — beide blieben
+auf `LI_04`. Fünf IVW- und drei ZDH-Einträge bleiben auf `OP_01` mit `LI_04`, ohne Lizenzbeleg: Nutzungs-
+bedingungen der Seite fehlen oder gelten für einen anderen Datensatz. Ein GDV-Eintrag (Deckungssummen) beschreibt
+einen Datensatz, den es nicht gibt, und ist unverändert. Die AGOF ist in Liquidation (Reichweitenforschung bei der agma).
 
 **Lücke in Regel 3 (geschlossen am 5. November 2026):** 15 der 31 alten Begründungen aus
 Runde 2 und 3 enthielten Praxisaussagen, die `claimsThirdPartyPractice()` nicht erkannte —

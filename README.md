@@ -441,7 +441,7 @@ Inhaltsqualität (Hinweis, keine Warnungen):
   mehrfach verwendete Begründungstexte: 0 Knoten (0 %)
   Aussagen über fremde Veröffentlichungspraxis: 0
   Beschreibung widerspricht den Metadaten: 0
-  Datentypen mit geprüfter Quelle: 74 von 10428
+  Datentypen mit geprüfter Quelle: 90 von 10428
 ```
 
 Vier Kennzahlen stehen auf null: 942 Kurztexte, 1.492 formelhaft

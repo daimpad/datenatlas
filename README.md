@@ -214,6 +214,7 @@ scripts/
   build-begruendungs-prompt.mjs — baut den Prompt aus dem Regelwerk
   apply-begruendungen.mjs — übernimmt überarbeitete Begründungen stapelweise
   check-links.mjs        — prüft alle Links in examples/sources (wöchentlich per Workflow)
+  quellenpruefung/       — Prüfauftrag, Zitatabgleich und Kalibrierung der Quellenprüfung
   link-regeln.mjs        — Formregeln für Links, geteilt von Validator und Linkprüfung
   datafix-*.mjs          — einmalige Datenkorrekturen (dokumentieren frühere Läufe)
 ```

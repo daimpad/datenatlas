@@ -54,6 +54,7 @@ scripts/
   build-begruendungs-prompt.mjs — builds the prompt from the ruleset
   apply-begruendungen.mjs — applies revised justifications in batches
   check-links.mjs        — checks every URL in examples/sources (weekly workflow)
+  quellenpruefung/       — Prüfauftrag, Zitatabgleich, Kalibrierung (docs/quellenpruefung.md)
   link-regeln.mjs        — link form rules, shared by validator and link check
   datafix-*.mjs          — one-off data corrections (record of past runs)
 ```
@@ -597,6 +598,16 @@ veröffentlicht …“), „bereits als Open Data verfügbar“, „sind öffent
 zugänglich“, „nach dem Vorbild des RKI-Dashboards“. Die Kennzahl 0 ist deshalb
 eine Untergrenze, und bei fast der Hälfte der Stichprobe eine deutliche. Wer
 das Muster erweitert, wird sie wieder steigen sehen.
+
+### Vorgehen für weitere Prüfungen
+
+`docs/quellenpruefung.md` beschreibt das kalibrierte Vorgehen: zwei
+unabhängige Sonnet-Läufe nach `scripts/quellenpruefung/pruefauftrag.md`,
+Zitatabgleich, Feldvergleich — einig wird automatisch übernommen, uneinig am
+Beleg entschieden. In der Kalibrierung (16 Einträge, Referenz Runde 3) waren
+36 von 37 einigen Feldwerten richtig, und alle 6 Uneinigkeiten enthielten einen
+Fehler — auch zwei der Referenz selbst. Der Prüfauftrag ist die einzige
+Fassung; Läufe lesen ihn, sie bekommen ihn nicht kopiert.
 
 ### Beispiellinks (`details.examples`)
 

@@ -17,6 +17,7 @@
 //   Vergleich ohne Leerraum                Inline-Tags zerreißen „*.csv“ zu „*. csv“ (thru.de, DWD)
 //   Anführungszeichen, Striche, &shy;      typografische Varianten in PDFs
 //   PDF über pdftotext, XLSX/ODS über unzip   Qualitätsberichte, Destatis-Tabellen
+//   Bruchstrich ⁄ und Trennstrich am Zitatende   Destatis (&frasl;), PDF-Zeilenumbruch („Excel-“)
 // Abgerufen wird mit ehrlichem User-Agent. Eine nicht abrufbare Seite gilt
 // als nicht prüfbar, nie als gefunden.
 
@@ -33,7 +34,7 @@ const ENT = { sect: '§', ndash: '–', mdash: '—', nbsp: ' ', shy: '', euro: 
   quot: '"', apos: "'", laquo: '«', raquo: '»', lsquo: '‘', rsquo: '’', sbquo: '‚', bdquo: '„', ldquo: '“',
   rdquo: '”', hellip: '…', middot: '·', para: '¶', deg: '°', auml: 'ä', ouml: 'ö', uuml: 'ü', Auml: 'Ä',
   Ouml: 'Ö', Uuml: 'Ü', szlig: 'ß', eacute: 'é', egrave: 'è', agrave: 'à', ccedil: 'ç', times: '×',
-  copy: '©', reg: '®', bull: '•', thinsp: ' ', ensp: ' ', emsp: ' ' };
+  copy: '©', reg: '®', bull: '•', thinsp: ' ', ensp: ' ', emsp: ' ', frasl: '/' };
 
 const decodeEntities = s => s
   .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n))
@@ -48,6 +49,8 @@ const htmlText = html => decodeEntities(html
 // Für den Vergleich: Varianten vereinheitlichen, dann allen Leerraum entfernen.
 const flat = s => s
   .normalize('NFKC')
+  .replace(/[\u2044\u2215]/g, '/')        // Bruchstrich als Schrägstrich (Destatis: „barrierefrei⁄barrierearm“)
+  .replace(/-\s*$/, '')                    // Zitat endet in einer Silbentrennung („…als Excel-“)
   .replace(/­/g, '')
   .replace(/-\s*\n\s*/g, '')
   .replace(/[„“”"«»‚‘’']/g, '"')

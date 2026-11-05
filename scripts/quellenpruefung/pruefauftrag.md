@@ -1,5 +1,10 @@
 # Prüfauftrag: Datentypen gegen Primärquellen prüfen
 
+<!-- Kalibriert mit der Fassung aus Commit 72947a9 (Regeln 1–6). Die Regeln
+7–10 sind danach ergänzt, aus den Fehlern der Kalibrierung (Startjahr beim
+KBA und Breitbandatlas, Lizenz bei DSA und KBA, Format bei den Häfen,
+Quellentyp im Pilot) — an neuem Material noch nicht gemessen. -->
+
 Du prüfst Einträge des Datenatlas, eines Verzeichnisses der Datentypen, die
 deutsche Organisationen erzeugen. Die Einträge sind **modelliert**, nicht aus
 Quellen abgeschrieben. Erfahrungsgemäß stimmt kaum ein Eintrag vollständig:
@@ -38,6 +43,20 @@ gutes Ergebnis wie eine Bestätigung.
    ist keine Lizenz.
 6. **Nur lesen.** Außer diesem Auftrag und deiner Eingabedatei liest du keine
    lokalen Dateien, und du schreibst nur deine Ausgabedatei und Downloads.
+
+7. **Startjahr** ist das früheste Jahr, für das Daten des beschriebenen
+   Datensatzes abrufbar sind — nicht das Gründungsjahr eines Angebots und nicht
+   bloß die früheste Auswahl auf einer einzelnen Seite. Unterscheiden sich
+   Produkte (Open-Data-Datei ab 2011, Gesamtreihe ab 1991), beide in `hinweis`.
+8. **Lizenzbeleg** muss sich auf genau diese Daten oder ihr Datenportal
+   beziehen. Gibt es mehrere Aussagen — allgemeiner Urheberrechtshinweis,
+   Nutzungsbedingungen der Seite, Lizenz der Daten —, gilt die spezifischste
+   für die Daten; die anderen in `hinweis`. Die Lizenzseite eines anderen
+   Angebots (anderes Portal, andere Datenbank) belegt nichts.
+9. **Format**: alle Bezugswege prüfen — Statistischer Bericht, Datenbank
+   (etwa GENESIS), Open-Data-Datei, Download-Bereich.
+10. **Quellentyp `statistik`** nur für tatsächlich veröffentlichte Daten; eine
+    Nutzungsbedingung oder ein Register ohne Auswertung ist keine Statistik.
 
 ## Prüfbogen
 

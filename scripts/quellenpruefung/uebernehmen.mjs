@@ -82,10 +82,17 @@ function setze(id, feld, wert) {
   if (String(alt) === String(neu)) return;
   dateien.get(k.pfad).geaendert = true;
   log.push(`${id} · ${feld}: ${alt} → ${neu}`);
-  if (feld === 'lizenz' && d.openness?.class === 'OP_01' && neu === 'LI_04') {
-    d.openness = { ...d.openness, class: 'OP_02', label: LABELS.OP_02 };
-    log.push(`${id} · Öffnungsklasse: OP_01 → OP_02 (Lizenz LI_04) — Begründung neu schreiben`);
-  }
+}
+
+// Hindernis ist das Nutzungsrecht, nicht der Personenbezug (AGF, Media Control, IVW): LI_04 und
+// „sofort publizierbar“ passen nicht zusammen. Gilt für jeden Eintrag, den `review` anfasst,
+// auch wenn die Lizenz schon vorher LI_04 war.
+function klasseZurLizenz(id) {
+  const k = knoten.get(id), d = k.n.details;
+  if (d.license?.code !== 'LI_04' || d.openness?.class !== 'OP_01') return;
+  d.openness = { ...d.openness, class: 'OP_02', label: LABELS.OP_02 };
+  dateien.get(k.pfad).geaendert = true;
+  log.push(`${id} · Öffnungsklasse: OP_01 → OP_02 (Lizenz LI_04) — Begründung neu schreiben`);
 }
 
 function haengeAn(id, q) {
@@ -140,6 +147,7 @@ if (modus === 'auto') {
       if (w) setze(id, d.feld, w);
       else zurueck.push(`${id} · ${d.feld} — kein Wert übernommen (${d.urteil}${d.wert ? '' : ', ohne Wert'})`);
     }
+    klasseZurLizenz(id);
   }
 }
 

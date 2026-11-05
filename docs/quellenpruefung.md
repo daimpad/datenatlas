@@ -79,8 +79,8 @@ Wie `feldvergleich.mjs` die Tabelle umsetzt, wo sie Spielraum ließ:
 Ergebnis in die Sektordateien, ohne `--schreiben` nur als Vorschau. `auto` übernimmt die
 automatisch eingeteilten Codefelder (Startjahr, Rhythmus, Format, Lizenz, Ebene).
 `review` übernimmt die Entscheidungen am Beleg: neue Beschreibung, entschiedene Felder,
-Quellen. Wechselt dabei die Lizenz auf `LI_04` bei Klasse `OP_01`, wird die Klasse
-`OP_02` (wie bei AGF und Media Control). Die Öffnungsbegründung schreibt das Skript nie;
+Quellen. Steht ein Eintrag danach auf `LI_04` bei Klasse `OP_01`, wird die Klasse
+`OP_02` (wie bei AGF und Media Control); die Begründung dazu wird einzeln geschrieben. Die Öffnungsbegründung schreibt das Skript nie;
 sie geht einzeln durch `apply-begruendungen.mjs` und dessen Regelprüfung.
 
 **Stufe 4** wie im Konzept: ein Auto-PR je Runde, der bei grüner CI selbst
@@ -193,8 +193,10 @@ Rechtsgrundlage nicht gemessen; eine Hochrechnung wäre geraten.
 20 Einträge aus drei Gruppen — KBA-Zulassungen (10, zwei Runden), IVW-Auflagen (5),
 EKD-Mitgliedschaft (5) —, je Runde zwei unabhängige Sonnet-Läufe mit dem Agententyp
 `quellenpruefer`, dann Zitatabgleich, `feldvergleich.mjs`, und Opus 5.5 am Beleg
-(`entscheidungsauftrag.md`). Alles liegt in `scripts/quellenpruefung/runden/1/`; die
-Daten in `public/data/` sind **nicht** angefasst, es gibt noch keinen Übernahmeschritt.
+(`entscheidungsauftrag.md`). Alles liegt in `scripts/quellenpruefung/runden/1/`. Übernommen
+wurde in zwei PRs mit `uebernehmen.mjs`: erst die Codefelder, bei denen beide Läufe einig waren
+(41 Änderungen an 18 Einträgen), dann Beschreibung, Quellen, Klasse und Begründung (20 Einträge;
+55 von 10.428 Datentypen haben jetzt eine geprüfte Quelle).
 
 | | Läufe A (4) | Läufe B (4) | Opus am Beleg |
 |---|---|---|---|

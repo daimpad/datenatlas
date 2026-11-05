@@ -334,6 +334,15 @@ IVW-Auflagen (vierteljährlich) und die Bundesbank-Zahlungsverkehrsstatistik
 Kulturfinanzbericht. Die Nummern folgen nicht der Häufigkeit; `FREQ_META` in
 `timeline.js` legt die Anzeigereihenfolge fest.
 
+**`available_from` meint das erste Jahr der Zeitreihe, die der Herausgeber heute bereithält** — in der
+aktuellen Ausgabe, dem aktuellen Portal, der aktuellen Tabelle, nicht den Beginn der Erhebung, des
+Angebots oder eines Archivs („seit 1957“, „seit über 25 Jahren“). Es ist dieselbe Frage wie bei der
+Granularität: Es zählt, was man in die Hand bekommt. Entstanden ist die Definition aus zwei Tests einer
+Regel mit Rückwärtssuche (28,63 $): Je mehr sie festlegte, desto mehr Auslegung steckten die Läufe hinein
+(Verdienste ab 1913 über eine verknüpfte Indexreihe, Halterstruktur ab 1968 aus einem Bibliotheksjahrbuch).
+Startjahre gehen deshalb bei der Quellenprüfung immer an die Entscheidung am Beleg. Einträge, die vor dieser
+Definition geprüft wurden (Runde 1 und 2), können abweichen — `docs/quellenpruefung.md`.
+
 Ein `available_from` in der Zukunft ist erlaubt, wenn es belegt ist (das
 Stiftungsregister startet am 1.1.2028). Die Zeitleiste lässt solche Jahre aus
 der Verfügbarkeitskurve heraus, statt sie am rechten Rand als vorhanden zu

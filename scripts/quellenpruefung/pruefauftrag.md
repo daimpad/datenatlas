@@ -4,7 +4,8 @@
 7–10 sind danach ergänzt, aus den Fehlern der Kalibrierung (Startjahr beim
 KBA und Breitbandatlas, Lizenz bei DSA und KBA, Format bei den Häfen,
 Quellentyp im Pilot). In Runde 1 (20 Einträge) gemessen; danach Regel 7 und 8 geschärft,
-Regel 11 ergänzt und `beleg_art` im Prüfbogen eingeführt (Fassung ab Runde 2). -->
+Regel 11 ergänzt und `beleg_art` im Prüfbogen eingeführt (Fassung ab Runde 2). Regel 7 ist
+seit den Tests vom 5. November 2026 neu gefasst (aktuell abrufbare Reihe, Startjahr immer am Beleg). -->
 
 Du prüfst Einträge des Datenatlas, eines Verzeichnisses der Datentypen, die
 deutsche Organisationen erzeugen. Die Einträge sind **modelliert**, nicht aus
@@ -46,14 +47,26 @@ gutes Ergebnis wie eine Bestätigung.
    lokalen Dateien, und du schreibst nur deine Ausgabedatei und Downloads —
    Hilfsskripte gehören ins Arbeitsverzeichnis deines Auftrags, nicht daneben.
 
-7. **Startjahr** ist das früheste Jahr, für das Daten des beschriebenen
-   Datensatzes abrufbar sind — nicht das Gründungsjahr eines Angebots und nicht
-   bloß die früheste Auswahl auf einer einzelnen Seite. Unterscheiden sich
-   Produkte (Open-Data-Datei ab 2011, Gesamtreihe ab 1991), beide in `hinweis`.
-   Bündelt der Eintrag mehrere Produkte (mehrere Tabellen, Reihen, Auswertungen),
-   gilt das Produkt, das der **Name des Eintrags** nennt; die Jahre der übrigen
-   stehen in `hinweis`. Ist kein Jahr für den Gegenstand belegbar: `nicht_gefunden`,
-   nicht das Jahr eines Nachbarprodukts.
+7. **Startjahr** ist das erste Jahr der Zeitreihe, die der Herausgeber **heute** zum
+   Gegenstand des Eintrags bereithält — in der aktuellen Ausgabe, dem aktuellen Portal
+   oder der aktuellen Tabelle. Es zählt, was man heute in die Hand bekommt; Archive
+   älterer Ausgaben suchst du nicht. (Mehrere Fassungen dieser Regel mit Rückwärtssuche
+   haben in zwei Tests gerade deshalb abweichende Jahre ergeben.)
+   a) *Gegenstand* ist die erste Kenngröße im Namen des Eintrags. Nennt der Name eine
+      bestimmte Publikation oder Tabelle (Fachserie 16, FZ 10), gilt deren aktuelle Ausgabe.
+   b) Nur Seiten des Herausgebers (Regel 1) und nur ausdrücklich genannte Zahlen im
+      Text oder in einer Tabelle; ein aus einem Diagramm abgelesener Wert zählt nicht.
+   c) *Nicht zählen*: Beginn der Erhebung, des Angebots oder des Portals („seit 1957“,
+      „seit über 25 Jahren“), ein Jahrzehnt ohne Jahr, das Jahr eines Nachbarprodukts,
+      das den Gegenstand nicht ausweist (Mikrodaten für „Ergebnisse“).
+   d) Beginnen mehrere heutige Reihen zu verschiedenen Jahren (Gesamt- und Teilreihe,
+      Gliederung nach Land oder Antrieb), steht in `wert` das früheste Jahr der Reihe,
+      die den Gegenstand ausweist; jede weitere Reihe mit ihrem Jahr steht in `hinweis`.
+   e) Ältere Ausgaben nennst du höchstens in `hinweis`, ohne sie zu suchen.
+   f) Findest du keine Zahl: `nicht_gefunden` mit `gesucht`.
+   Das Feld geht danach immer an die Entscheidung am Beleg (zwei Läufe stimmen bei
+   Startjahren zu selten überein); belege es deshalb so, dass jemand anderes die Reihe
+   auf der Seite nachschlagen kann.
 8. **Lizenzbeleg** muss sich auf genau diese Daten oder ihr Datenportal
    beziehen. Gibt es mehrere Aussagen — allgemeiner Urheberrechtshinweis,
    Nutzungsbedingungen der Seite, Lizenz der Daten —, gilt die spezifischste

@@ -28,8 +28,11 @@ nachsehen. Die ursprüngliche Beschreibung steht in der Eingabedatei des Auftrag
    entscheide, ob die Klausel die Daten erfasst: Stehen sie auf der Website des
    Rechteinhabers ohne eigene Lizenz und die Klausel behält die Verwendung vor, gilt
    `LI_04`; vermerke in `notiz` „Klausel der Seite“. Sonst `offen`.
-   Startjahr: früheste abrufbare Daten des Gegenstands, den der Name des Eintrags
-   nennt (Regel 7).
+   Startjahr: erstes Jahr der Reihe, die der Herausgeber heute zum Gegenstand bereithält
+   (Regel 7); jedes Startjahr kommt zu dir, auch wenn beide Läufe einig sind. Prüfe die
+   genannte Reihe auf der Seite des Herausgebers, nimm ausdrücklich genannte Zahlen
+   (kein Diagramm) und suche keine Archive. Bei mehreren Reihen gilt die, die der Name des
+   Eintrags nennt; die anderen stehen in `notiz`.
 4. **Beschreibung**: schreibe die endgültige Fassung — zwei bis drei Sätze, jede Zahl,
    jedes Jahr und jeder Paragraph mit Beleg. Übernimmst du Teile aus A oder B, prüfe sie
    neu; ein Detail ohne Beleg fällt weg. Keine Aussage darüber, was eine Organisation

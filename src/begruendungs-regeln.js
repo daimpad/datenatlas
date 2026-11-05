@@ -163,17 +163,44 @@ const PRACTICE_KOLLEKTIV = new RegExp(`(?:${KOLLEKTIV})\\b[^.]{0,60}\\b${VERB_PU
 const PRACTICE_ADVERB_NACH = new RegExp(
   `\\b${VERB_PUB}\\b[^.]{0,45}\\b(?:bereits|schon|seit Jahren|standardmäßig|regelmäßig|routinemäßig)\\b`);
 
+// Dritte Erweiterung (5. November 2026), wieder aus demselben Grund. Die Quellenprüfung fand in 10 von 20
+// und in 17 von 20 Begründungen eine Praxisaussage, die das Muster nicht kannte; eine Stichprobe über den
+// Bestand ergab dasselbe Bild. Es fehlten: ein Kürzel oder Eigenname als Subjekt, der nicht in der Liste von
+// PRACTICE_AKTEUR steht („KMK veröffentlicht …“, „BfS veröffentlicht …“, „Thünen veröffentlicht …“), das Passiv
+// mit Akteur („werden von Statistischen Ämtern veröffentlicht“), das Passiv mit Ort („werden im Jahresbericht
+// veröffentlicht“) und die Wendungen „bereits als Open Data bereitgestellt“, „regulär publiziert“, „frei verfügbar“.
+// Gemessen an der ganzen Datei: 1.500 von 10.428 Begründungen (14 %). Die Trefferprobe (30 zufällige) enthielt
+// keinen sicheren Fehlalarm, die Lückenprobe (30 zufällige Texte mit „veröffentlich…“ ohne Treffer) noch etwa zwei.
+//
+// Die Ausnahme REF_RE gilt für diese neuen Muster zusätzlich: Wer sich auf eine Norm oder eine Pflicht stützt
+// („gemäß VO (EG) …“, „nach § 9 HGB öffentlich einsehbar“), behauptet keine freie Praxis, sondern ein Recht.
+// Geprüft wird jetzt je Teilsatz (an „.“ und „;“): „… werden teilweise im Jahresbericht veröffentlicht; Rohdaten
+// müssen aufbereitet werden“ trägt die Praxisaussage vorn, und das „müssen“ hinten darf sie nicht entschuldigen.
+const GESETZ_KUERZEL = 'DSGVO|BDSG|SGB|DSA|DMA|DGA|GG|StGB|HGB|AO|BGB|TKG|TMG|DDG|EU|UN';
+const PRACTICE_KUERZEL = new RegExp(
+  `\\b(?!(?:${GESETZ_KUERZEL})\\b)(?:[A-ZÄÖÜ]{2,7}|[A-ZÄÖÜ][a-zäöü]?[A-ZÄÖÜ][A-Za-zäöüÄÖÜ]{0,4}|BaFin)(?:-[A-ZÄÖÜ][\\wäöüß]*)?\\b[^.;]{0,60}`
+  + `\\b(?:veröffentlicht|veröffentlichen|publiziert|publizieren|bereitgestellt|ausgewiesen|herausgegeben`
+  + `|stellt\\b[^.;]{0,70}\\bbereit|stellen\\b[^.;]{0,70}\\bbereit|weist\\b[^.;]{0,30}\\baus|weisen\\b[^.;]{0,30}\\baus)\\b`);
+const PRACTICE_SUBJEKT = /(?<!\bzu\s)\b[A-ZÄÖÜ][\wäöüß-]{2,}(?:\s+(?:und|oder)\s+[A-ZÄÖÜ][\wäöüß-]+)?\s+(?:[a-zäöüß]+\s+){0,2}(?:veröffentlicht|veröffentlichen|publiziert|publizieren)\b/;
+const PRACTICE_PASSIV_ORT = /\b(?:werden|wird|sind|ist)\b[^.;]{0,70}\b(?:auf|in|im|über)\b[^.;]{0,50}\b(?:veröffentlicht|publiziert|bereitgestellt|zugänglich gemacht|öffentlich zugänglich)\b/;
+const PRACTICE_PASSIV_AKTEUR = /\b(?:werden|wird|sind|ist)\b[^.;]{0,60}\b(?:von|vom|durch)\s+(?:der\s+|dem\s+|den\s+)?[A-ZÄÖÜ][\wäöüß.-]*(?:\s+[A-ZÄÖÜ][\wäöüß.-]*){0,3}[^.;]{0,40}\b(?:veröffentlicht|publiziert|bereitgestellt|ausgewiesen|herausgegeben)\b/;
+const PRACTICE_VERFUEGBAR = /\b(?:ist|sind|wird|werden)\b[^.;]{0,30}\b(?:öffentlich|frei|kostenlos|online)\b[^.;]{0,20}\b(?:zugänglich|verfügbar|abrufbar|einsehbar)\b|\bbereits\b[^.;]{0,40}\b(?:verfügbar|zugänglich|abrufbar|veröffentlicht|publiziert|als Open Data)\b|\bnach dem Vorbild\b|\b[Rr]egulär (?:im|in|von|als|veröffentlicht|publiziert)\b/;
+const REF_RE = /§|\bArt\.\s*\d|Gesetz|Verordnung|Richtlinie\b|\bVO\b|\bgemäß\b|[Vv]erpflicht\w*|Pflicht\w*|zwingend|\bzu veröffentlichen\b/;
+
 const PFLICHT_RE = /(verpflichtet zur veröffentlichung|veröffentlichungspflicht|veröffentlicht werden müssen|ist zu veröffentlichen|unterliegt der veröffentlichung|publikationspflicht|bekanntmachungspflicht|veröffentlichungspflichtig|auslegungspflicht)/i;
 const MODAL_RE = /\b(kann|können|könnte|könnten|dürfen|darf|wäre|wären|ließe|ließen|sollte|müsste|müssen|muss)\b/i;
 
 /** Verstößt die Begründung gegen Regel 3? */
 export function claimsThirdPartyPractice(text) {
-  for (const satz of String(text ?? '').split(/(?<=\.)\s+/)) {
+  for (const satz of String(text ?? '').split(/(?<=[.;])\s+/)) {
     const praxis = PRACTICE_NEG.test(satz) || PRACTICE_AKTEUR.test(satz)
       || PRACTICE_ADVERB.test(satz) || PRACTICE_ORT.test(satz)
       || PRACTICE_ORTSNAME.test(satz) || PRACTICE_KOLLEKTIV.test(satz)
       || PRACTICE_ADVERB_NACH.test(satz);
-    if (praxis && !PFLICHT_RE.test(satz) && !MODAL_RE.test(satz)) return true;
+    // Die Muster der dritten Erweiterung sind weiter gefasst und brauchen die Ausnahme für Normen und Pflichten.
+    const praxisNeu = !REF_RE.test(satz) && (PRACTICE_KUERZEL.test(satz) || PRACTICE_SUBJEKT.test(satz)
+      || PRACTICE_PASSIV_ORT.test(satz) || PRACTICE_PASSIV_AKTEUR.test(satz) || PRACTICE_VERFUEGBAR.test(satz));
+    if ((praxis || praxisNeu) && !PFLICHT_RE.test(satz) && !MODAL_RE.test(satz)) return true;
   }
   return false;
 }

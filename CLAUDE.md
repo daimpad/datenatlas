@@ -420,13 +420,14 @@ It then prints a **content-quality report** — deliberately not warnings, so th
 Inhaltsqualität (Hinweis, keine Warnungen):
   Öffnungsbegründungen unter 5 Wörtern: 0 (0 %)
   mehrfach verwendete Begründungstexte: 0 Knoten (0 %)
-  Aussagen über fremde Veröffentlichungspraxis: 0
+  Aussagen über fremde Veröffentlichungspraxis: 1502
   Beschreibung widerspricht den Metadaten: 0
   Datentypen mit geprüfter Quelle: 74 von 10428
 ```
 
-Die ersten vier Kennzahlen stehen auf null (die fünfte siehe „Quellen und
-Beispiellinks“). Die **kurzen Begründungen** wurden in
+Drei der vier ersten Kennzahlen stehen auf null (die fünfte siehe „Quellen und
+Beispiellinks“); die **Praxisaussagen** stehen seit der dritten Erweiterung des
+Musters wieder bei 1.502 (14 %), siehe unten. Die **kurzen Begründungen** wurden in
 vierzehn Stapeln über `scripts/apply-begruendungen.mjs` abgearbeitet (942 → 0),
 die **Praxisaussagen** in dreizehn weiteren (776 → 0) und nach dem Schärfen des
 Musters in drei letzten (137 → 0), die **Metadaten-Widersprüche** einzeln
@@ -485,6 +486,20 @@ ausgeschrieben im Muster. `PRACTICE_KOLLEKTIV` erzeugt gelegentlich einen
 Fehlalarm, wenn „mehrere Einrichtungen" als *Auflage* im selben Satz steht wie
 „publizierbar" — dann ist der Satz umzustellen, nicht das Muster zu
 entschärfen; ein zu weites Muster ist hier billiger als ein zu enges.
+
+**Dritte Erweiterung (5. November 2026): 0 → 1.502.** Die Quellenprüfung hatte gezeigt,
+dass 10 von 20 und 17 von 20 geprüften Begründungen eine Praxisaussage trugen, die das
+Muster nicht kannte. Hinzugekommen sind fünf Teilmuster: ein Kürzel oder Eigenname als
+Subjekt („KMK veröffentlicht …“, „DBU veröffentlicht …“), das Passiv mit Akteur („werden
+von Statistischen Ämtern veröffentlicht“), das Passiv mit Ort („werden im Jahresbericht
+publiziert“), „bereits … verfügbar/als Open Data“, „regulär publiziert“, „nach dem Vorbild“.
+Geprüft wird jetzt je Teilsatz (an „.“ und „;“), und die neuen Muster entschuldigt zusätzlich
+`REF_RE` (Norm, Verordnung, „gemäß“, Pflicht): wer sich auf eine Rechtspflicht stützt,
+behauptet keine freie Praxis. Eine Zufallsprobe von 25 der 1.502 Treffer enthielt keinen
+sicheren Fehlalarm. Die Zahl ist weiterhin eine Untergrenze (Sätze ohne Subjekt und
+Substantivformen wie „regelmäßige Veröffentlichung durch …“ bleiben unerkannt).
+**Die 1.502 sind Redaktionsschuld, kein Fehler der Daten**; sie werden einzeln über
+`apply-begruendungen.mjs` abgearbeitet — mit der Zähleinheit statt der Praxisaussage.
 
 ### The justification ruleset — one source
 
@@ -620,13 +635,11 @@ Ein Eintrag (BVMI-Exportumsätze) beschreibt einen Datensatz, den beide Läufe n
 bleibt unverändert Einschätzung. Für CC BY-SA 4.0 (DFG-Förderatlas) wurde `LI_06` angelegt;
 `dfg-bewilligungsstatistik` steht darauf.
 
-**Bekannte Lücke in Regel 3:** 15 der 31 alten Begründungen aus Runde 2 und 3
-enthielten Praxisaussagen, die `claimsThirdPartyPractice()` nicht erkennt — eine
-Abkürzung als Subjekt („IVW veröffentlicht … kostenlos auf ivw.de“, „KBA
-veröffentlicht …“), „bereits als Open Data verfügbar“, „sind öffentlich
-zugänglich“, „nach dem Vorbild des RKI-Dashboards“. Die Kennzahl 0 ist deshalb
-eine Untergrenze, und bei fast der Hälfte der Stichprobe eine deutliche. Wer
-das Muster erweitert, wird sie wieder steigen sehen.
+**Lücke in Regel 3 (geschlossen am 5. November 2026):** 15 der 31 alten Begründungen aus
+Runde 2 und 3 enthielten Praxisaussagen, die `claimsThirdPartyPractice()` nicht erkannte —
+Kürzel als Subjekt („IVW veröffentlicht … kostenlos auf ivw.de“), „bereits als Open Data
+verfügbar“, „sind öffentlich zugänglich“, „nach dem Vorbild des RKI-Dashboards“. Das Muster
+erkennt sie jetzt; die Kennzahl stieg dadurch von 0 auf 1.502 (siehe „Validation“).
 
 ### Vorgehen für weitere Prüfungen
 

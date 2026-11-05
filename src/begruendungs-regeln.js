@@ -163,6 +163,16 @@ const PRACTICE_KOLLEKTIV = new RegExp(`(?:${KOLLEKTIV})\\b[^.]{0,60}\\b${VERB_PU
 const PRACTICE_ADVERB_NACH = new RegExp(
   `\\b${VERB_PUB}\\b[^.]{0,45}\\b(?:bereits|schon|seit Jahren|standardmäßig|regelmäßig|routinemäßig)\\b`);
 
+// Vierte Erweiterung (5. November 2026): Bei der Durchsicht der 58 allgemeinen Einträge mit OP_01 und LI_04 fielen
+// acht Praxisaussagen durch, während die Kennzahl 0 zeigte. Drei Lücken: (1) Verbände schreiben sich klein oder mit
+// „e.V.“ („agma veröffentlicht …“, „game e.V. veröffentlicht …“), PRACTICE_KUERZEL und PRACTICE_SUBJEKT verlangen
+// Großbuchstaben; (2) Partizip ohne Hilfsverb („regelmäßig vom MIRO e.V. publiziert“); (3) „öffentlich kommuniziert“
+// und „sind öffentlich“ am Satzende. Die Namensliste ist bewusst eine Liste, kein Mustererkenner: ein kleingeschriebenes
+// Wort vor „veröffentlicht“ ist sonst fast immer ein Adverb („sofort veröffentlicht“).
+// JavaScript-\b kennt Umlaute nicht als Wortzeichen: „\böffentlich“ passt nie hinter einem Leerzeichen. Deshalb Lookarounds.
+const PRACTICE_KLEINNAME = /(?:\b(?:agma|game|eco|dena|bevh|vzbv|bdzv|ifo)|\be\.V)\s+(?:[a-zäöüß]+\s+){0,2}(?:veröffentlicht|veröffentlichen|publiziert|publizieren)\b/;
+const PRACTICE_PARTIZIP_AKTEUR = /\b(?:vom|von|durch)\s+(?:der\s+|dem\s+|den\s+)?[A-ZÄÖÜ][\wäöüß.-]*(?:\s+(?:[A-ZÄÖÜ][\wäöüß.-]*|e\.V)){0,3}\s+(?:(?:regelmäßig|jährlich|monatlich|öffentlich)\s+)?(?:veröffentlicht|publiziert|kommuniziert)\b/;
+
 // Dritte Erweiterung (5. November 2026), wieder aus demselben Grund. Die Quellenprüfung fand in 10 von 20
 // und in 17 von 20 Begründungen eine Praxisaussage, die das Muster nicht kannte; eine Stichprobe über den
 // Bestand ergab dasselbe Bild. Es fehlten: ein Kürzel oder Eigenname als Subjekt, der nicht in der Liste von
@@ -183,8 +193,8 @@ const PRACTICE_KUERZEL = new RegExp(
   + `|stellt\\b[^.;]{0,70}\\bbereit|stellen\\b[^.;]{0,70}\\bbereit|weist\\b[^.;]{0,30}\\baus|weisen\\b[^.;]{0,30}\\baus)\\b`);
 const PRACTICE_SUBJEKT = /(?<!\bzu\s)\b[A-ZÄÖÜ][\wäöüß-]{2,}(?:\s+(?:und|oder)\s+[A-ZÄÖÜ][\wäöüß-]+)?\s+(?:[a-zäöüß]+\s+){0,2}(?:veröffentlicht|veröffentlichen|publiziert|publizieren)\b/;
 const PRACTICE_PASSIV_ORT = /\b(?:werden|wird|sind|ist)\b[^.;]{0,70}\b(?:auf|in|im|über)\b[^.;]{0,50}\b(?:veröffentlicht|publiziert|bereitgestellt|zugänglich gemacht|öffentlich zugänglich)\b/;
-const PRACTICE_PASSIV_AKTEUR = /\b(?:werden|wird|sind|ist)\b[^.;]{0,60}\b(?:von|vom|durch)\s+(?:der\s+|dem\s+|den\s+)?[A-ZÄÖÜ][\wäöüß.-]*(?:\s+[A-ZÄÖÜ][\wäöüß.-]*){0,3}[^.;]{0,40}\b(?:veröffentlicht|publiziert|bereitgestellt|ausgewiesen|herausgegeben)\b/;
-const PRACTICE_VERFUEGBAR = /\b(?:ist|sind|wird|werden)\b[^.;]{0,30}\b(?:öffentlich|frei|kostenlos|online)\b[^.;]{0,20}\b(?:zugänglich|verfügbar|abrufbar|einsehbar)\b|\bbereits\b[^.;]{0,40}\b(?:verfügbar|zugänglich|abrufbar|veröffentlicht|publiziert|als Open Data)\b|\bnach dem Vorbild\b|\b[Rr]egulär (?:im|in|von|als|veröffentlicht|publiziert)\b/;
+const PRACTICE_PASSIV_AKTEUR = /\b(?:werden|wird|sind|ist)\b[^.;]{0,60}\b(?:von|vom|durch)\s+(?:der\s+|dem\s+|den\s+)?[A-ZÄÖÜ][\wäöüß.-]*(?:\s+[A-ZÄÖÜ][\wäöüß.-]*){0,3}[^.;]{0,40}\b(?:veröffentlicht|publiziert|bereitgestellt|ausgewiesen|herausgegeben|kommuniziert|bekanntgegeben)\b/;
+const PRACTICE_VERFUEGBAR = /\b(?:ist|sind|wird|werden)\b[^.;]{0,30}(?<![\wäöüß])(?:öffentlich|frei|kostenlos|online)(?![\wäöüß])[^.;]{0,60}\b(?:zugänglich|verfügbar|abrufbar|einsehbar)\b|\b(?:ist|sind)\s+öffentlich(?=\s*(?:[.;,]|$))|\bbereits\b[^.;]{0,40}\b(?:verfügbar|zugänglich|abrufbar|veröffentlicht|publiziert|als Open Data)\b|\bnach dem Vorbild\b|\b[Rr]egulär (?:im|in|von|als|veröffentlicht|publiziert)\b/;
 // „Nur aggregierte Quoten publizieren“, „… nur in Form von Gesamtflächenplänen veröffentlichen“: ein Infinitiv
 // mit „nur“ ist eine Auflage, keine Aussage über die Praxis anderer. Das großgeschriebene Objekt davor hielt
 // PRACTICE_SUBJEKT für ein Subjekt. „Nur wenige Kommunen veröffentlichen“ bleibt eine Praxisaussage: Mengenwörter
@@ -197,14 +207,16 @@ const MODAL_RE = /\b(kann|können|könnte|könnten|dürfen|darf|wäre|wären|lie
 
 /** Verstößt die Begründung gegen Regel 3? */
 export function claimsThirdPartyPractice(text) {
-  for (const satz of String(text ?? '').split(/(?<=[.;])\s+/)) {
+  // „e.V.“ endet auf einen Punkt, ist aber kein Satzende: ohne diese Zeile risse „game e.V. veröffentlicht …“ in zwei Teile.
+  for (const satz of String(text ?? '').replace(/\be\.V\./g, 'e.V').split(/(?<=[.;])\s+/)) {
     const praxis = PRACTICE_NEG.test(satz) || PRACTICE_AKTEUR.test(satz)
       || PRACTICE_ADVERB.test(satz) || PRACTICE_ORT.test(satz)
       || PRACTICE_ORTSNAME.test(satz) || PRACTICE_KOLLEKTIV.test(satz)
       || PRACTICE_ADVERB_NACH.test(satz);
     // Die Muster der dritten Erweiterung sind weiter gefasst und brauchen die Ausnahme für Normen und Pflichten.
     const praxisNeu = !REF_RE.test(satz) && !AUFLAGE_RE.test(satz) && (PRACTICE_KUERZEL.test(satz) || PRACTICE_SUBJEKT.test(satz)
-      || PRACTICE_PASSIV_ORT.test(satz) || PRACTICE_PASSIV_AKTEUR.test(satz) || PRACTICE_VERFUEGBAR.test(satz));
+      || PRACTICE_PASSIV_ORT.test(satz) || PRACTICE_PASSIV_AKTEUR.test(satz) || PRACTICE_VERFUEGBAR.test(satz)
+      || PRACTICE_KLEINNAME.test(satz) || PRACTICE_PARTIZIP_AKTEUR.test(satz));
     if ((praxis || praxisNeu) && !PFLICHT_RE.test(satz) && !MODAL_RE.test(satz)) return true;
   }
   return false;

@@ -17,7 +17,7 @@
 // --referenz nur zum Testen an der Kalibrierung: zählt, wie viele Felder, die
 //   „automatisch“ durchgehen, von der Referenz abweichen.
 //
-// Einteilung (jede Regel steht in der Tabelle der Stufe 3):
+// Einteilung (jede Regel steht in der Tabelle der Stufe 3; Ausnahme Startjahr: immer am Beleg):
 //   automatisch   Codefeld in beiden Läufen belegt und gleich · Textfeld in beiden
 //                 „belegt“ · Existenz/Urteil gleich · Quelle mit wiedergefundenem
 //                 Zitat auf ihrer Seite · nichts zu übernehmen
@@ -83,6 +83,8 @@ function codefeld(id, n, a, b, eingabe) {
   const roh = { a: fa, b: fb };
   const hatA = !ohneWert(fa), hatB = !ohneWert(fb);
   if (!hatA && !hatB) return melde(id, n, 'automatisch', 'in beiden Läufen nicht belegt — nichts zu übernehmen', { aktion: 'keine' });
+  // Startjahre stimmen zu selten überein (Tests zu Regel 7, 5.11.2026): immer an den Beleg, auch bei Einigkeit.
+  if (n === 'startjahr') return melde(id, n, 'beleg', gleich(wa, wb) ? 'Startjahr geht immer an den Beleg (beide Läufe einig)' : 'Startjahr geht immer an den Beleg', { a: wa, b: wb, beleg: roh });
   if (hatA !== hatB || (!wa !== !wb)) {
     const grund = !wa && !wb ? 'Zitat zum Wert in beiden Läufen nicht wiedergefunden'
       : hatA !== hatB ? 'nur ein Lauf hat einen Wert' : 'Zitat zum Wert in einem Lauf nicht wiedergefunden';

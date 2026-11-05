@@ -71,6 +71,8 @@ Wie `feldvergleich.mjs` die Tabelle umsetzt, wo sie Spielraum ließ:
   automatisch freigeben könnte, ist weiterhin nicht gebaut. Gebaut ist ein
   Hinweis: Zahlen, Jahre und Paragraphen der Beschreibung, die in keinem
   wiedergefundenen Zitat des Laufs stehen. Er ist schwach (siehe Runde 1).
+- **Startjahre** gehen immer an den Beleg, auch wenn beide Läufe dasselbe Jahr nennen; nur wenn beide kein Jahr
+  fanden, bleibt der Eintrag, wie er ist.
 - **Öffnungsklasse** ist kein Feld des Prüfbogens. Der Vergleich prüft stattdessen,
   ob ein geänderter Lizenzwert zur Klasse der Eingabe passt (frei bei „Nur
   Metadaten“, nicht frei bei „Sofort publizierbar“).
@@ -298,9 +300,14 @@ Auslegung verlangt:
 Zwei Tests mit je sechs Läufen (zusammen 28,63 $) zeigen: Je mehr die Regel festlegt, desto mehr Auslegung stecken die
 Läufe hinein, und jede Auslegung ist eine neue Quelle der Uneinigkeit. Der Text der Regel ist nicht der Hebel.
 
-**Folgerung (noch nicht umgesetzt):** Startjahre nicht mehr von der Einigkeit zweier Läufe abhängig machen, sondern immer an
-den Beleg geben, und die Bedeutung des Feldes an das Prinzip binden, das der Atlas bei der Granularität schon hat — es zählt,
-was man in die Hand bekommt: das erste Jahr der **aktuell abrufbaren** Reihe beim Herausgeber, ohne Archivsuche.
+**Folgerung, umgesetzt (5. November 2026):** Startjahre hängen nicht mehr von der Einigkeit zweier Läufe ab, sondern gehen
+immer an den Beleg (`feldvergleich.mjs`). Die Bedeutung des Feldes folgt dem Prinzip, das der Atlas bei der Granularität schon
+hat — es zählt, was man in die Hand bekommt: Startjahr ist das erste Jahr der **aktuell abrufbaren** Reihe beim Herausgeber,
+ohne Archivsuche (Regel 7 im Prüfauftrag, Startjahr-Absatz im Entscheidungsauftrag). Eine dritte Gegenprobe mit Sonnet gab es
+nicht; die Definition wurde nicht getestet, sondern aus den Ursachen der Uneinigkeit abgeleitet. Folge an der Kalibrierung:
+Von den 16 Startjahren gehen 10 richtige zusätzlich an den Beleg (36 → 26 automatisch richtige Felder, das eine falsche entfällt);
+in Runde 2 wären 18 von 20 Startjahren am Beleg gelandet. Bereits übernommene Startjahre (Runde 1 und 2) folgen noch der alten
+Regel; ob sie unter der neuen Definition abweichen (Pkw-Bestand 1960, Mikrozensus 1973), ist nicht geprüft.
 
 ## Grenzen dieser Messung
 

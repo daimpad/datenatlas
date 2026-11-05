@@ -404,3 +404,46 @@ node scripts/quellenpruefung/kosten.mjs a-1=protokoll.jsonl           # Protokol
 
 `NODE_USE_ENV_PROXY=1` nur hinter einem Proxy (Node ≥ 22). Der Abgleich braucht
 `pdftotext` und `unzip`.
+
+## Vierte Produktionsrunde (5. November 2026)
+
+17 Einträge, die zusammen `OP_01` und `LI_04` trugen und eine bestimmte Stelle nennen (GDV 6, IVW 5, ZDH 4,
+VDA 1, VCI 1) — der Widerspruch zwischen Klasse und Lizenz war der Anlass, nicht ein Herausgeber. Derselbe
+Ablauf; die 58 übrigen Einträge mit diesem Widerspruch sind allgemeine Datentypen ohne eine einzelne Quelle
+und bleiben unverändert. Übernommen in zwei PRs: 27 Codefelder an 16 Einträgen, dann Beschreibung, Quellen,
+Klassen und Begründungen (16 Einträge, 90 von 10.428 mit geprüfter Quelle).
+
+| | Läufe A (4) | Läufe B (4) | Opus am Beleg (2) |
+|---|---|---|---|
+| Kosten | 6,54 $ | 7,27 $ | 5,33 $ |
+| Anfragen | 164 | 183 | 90 |
+| Zitate wiedergefunden | 229 / 229 | 239 / 239 | 184 / 184 |
+
+Gesamt 19,15 $ (437 Anfragen), Startkontext 29.765 Tokens (Sonnet) und 29.948 (Opus). Von 252 Feldern gehen 171
+automatisch durch, 81 an den Beleg.
+
+**Was die Runde ergab.**
+
+- **Acht Einträge von `OP_01` auf `OP_02`**, weil die Nutzungsbedingungen die Verwertung vorbehalten: GDV (drei Sach- und
+  Cyber-Einträge, Risikoleben), VDA-Produktion, VCI-Energieintensität, bAV-Studie und die Nachfolgestudie des
+  KCE. Der GDV verlangt schriftliche Zustimmung, bevor Daten in einem Statistik-Portal erscheinen oder für
+  Text- und Data-Mining dienen — das ist mehr als eine Pflicht zur Quellenangabe.
+- **Der Automatismus hätte zwei GDV-Einträge auf `LI_05` gesetzt**, weil beide Läufe die Seite „kostenfreie Nutzung
+  mit Quellenangabe“ fanden. Die Entscheidung am Beleg wertete dieselben Bedingungen bei drei Schwestereinträgen
+  als `LI_04`. Beide blieben auf `LI_04`: ein Herausgeber, eine Bedingung, ein Code. Der Feldvergleich vergleicht
+  Läufe je Eintrag, nicht je Herausgeber — das ist eine Lücke des Verfahrens.
+- **Mehrere Beschreibungen nannten Angaben, die die Quelle nicht ausweist**: eine Deckungssummen-Verteilung beim GDV (beide Läufe:
+  `existenz` = nein; `uebernehmen.mjs` stellt sie zurück), eine jährliche Nachfolgestatistik aus Kammerdaten (belegt
+  sind eine Studie und eine einmalige Sonderumfrage), Gewerk-Gliederungen im ZDH-Konjunkturbericht (ausgewiesen sind
+  Gewerbegruppen), „Versicherungsdichte“ für Cyber, „Schadenquoten nach Region“ für Klimaschäden.
+- **Die AGOF ist in Liquidation**; ihre Online-Reichweitenforschung liegt seit dem Jahreswechsel 2022/2023 bei der
+  agma. Zwei IVW-Digitaleinträge hatten sie als Messstelle genannt.
+- **Startjahre**: 14 von 17 gingen an den Beleg (die übrigen 3 hatten in beiden Läufen keine Zahl). Bei den drei ZDH-Konjunktureinträgen entschied Opus gegen Lauf B
+  (2012, das Archiv vergangener Jahre) für 2025: Der aktuelle Bericht weist nur Tabellenwerte ab dort aus (Regel 7e).
+- **Zitatabgleich**: Drei Zitate aus der IVW-Auflagen-CSV fehlten zunächst. Die Datei ist Latin-1 ohne
+  Zeichensatzangabe, `zitate-pruefen.mjs` las sie als UTF-8. Behoben: ohne Angabe UTF-8, sonst Windows-1252.
+
+**Offen** blieb, was die Läufe nicht entscheiden konnten: Bei den fünf IVW-Einträgen und den drei ZDH-Konjunktureinträgen
+fand kein Lauf einen Lizenzbeleg (Nutzungsbedingungen der Seite: 404 oder anderer Datensatz). Sie stehen weiter auf
+`OP_01` mit `LI_04`; weder ist `LI_04` belegt noch ein anderer Code. Der Haftpflicht-Eintrag beschreibt einen Datensatz,
+den es nicht gibt, und ist nicht angefasst.

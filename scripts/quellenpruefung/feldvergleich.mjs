@@ -53,7 +53,7 @@ const GUELTIG = {
   lizenz: new Set(VOC.license.map(v => v.code)),
   raeumliche_ebene: new Set(VOC.granularity.map(v => v.code)),
 };
-const FREIE_LIZENZ = new Set(['LI_01', 'LI_02', 'LI_03', 'LI_05']);
+const FREIE_LIZENZ = new Set(['LI_01', 'LI_02', 'LI_03', 'LI_05', 'LI_06']);
 
 // ── kleine Helfer ──
 const host = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return ''; } };

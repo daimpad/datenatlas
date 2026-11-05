@@ -148,7 +148,7 @@ Außerdem je Eintrag:
   `FT_05` GeoJSON · `FT_06` Shapefile · `FT_07` PDF · `FT_08` Excel (XLSX)
 - **LI** (Lizenz): `LI_01` CC0 · `LI_02` CC BY 4.0 · `LI_03` Datenlizenz
   Deutschland · `LI_04` proprietär/restriktiv · `LI_05` eigene
-  Nutzungsbedingungen (frei, etwa mit Quellenangabe)
+  Nutzungsbedingungen (frei, etwa mit Quellenangabe) · `LI_06` CC BY-SA 4.0
 - **GR** (Ebene): `GR_01` Einzelereignis/Rohdaten · `GR_02` aggregiert
   (Bund, Land) · `GR_03` kleinräumig (Kreis, Gemeinde, Stadtteil) ·
   `GR_04` personenbezogene Mikrodaten

@@ -74,6 +74,7 @@ export const VOKABULAR = {
     { code: 'LI_03', label: 'Datenlizenz Deutschland' },
     { code: 'LI_04', label: 'Proprietär / Restriktiv' },
     { code: 'LI_05', label: 'Eigene Nutzungsbedingungen' },
+    { code: 'LI_06', label: 'CC BY-SA 4.0' },
   ],
   update_frequency: [
     { code: 'FQ_01', label: 'Echtzeit / Kontinuierlich' },

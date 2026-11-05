@@ -18,6 +18,7 @@
 //   Anführungszeichen, Striche, &shy;      typografische Varianten in PDFs
 //   PDF über pdftotext, XLSX/ODS über unzip   Qualitätsberichte, Destatis-Tabellen
 //   Bruchstrich ⁄ und Trennstrich am Zitatende   Destatis (&frasl;), PDF-Zeilenumbruch („Excel-“)
+//   PDF-Tabellenzeilen über pdftotext -layout     EKD-Kirchenmitgliederzahlen („Anhalt 9.361 13.795 23.156“)
 // Abgerufen wird mit ehrlichem User-Agent. Eine nicht abrufbare Seite gilt
 // als nicht prüfbar, nie als gefunden.
 
@@ -77,13 +78,17 @@ async function load(url, attempt = 1) {
       writeFileSync(file, buf);
       let xml = '';
       for (const part of ['xl/sharedStrings.xml', 'content.xml']) {
-        try { xml += execFileSync('unzip', ['-p', file, part], { maxBuffer: 1 << 28 }).toString(); } catch {}
+        try { xml += execFileSync('unzip', ['-p', file, part], { maxBuffer: 1 << 28, stdio: ['ignore', 'pipe', 'ignore'] }).toString(); } catch {}
       }
       return { t: htmlText(xml.replace(/<\/(t|si|text:p)>/g, ' ')) };
     }
     if (ct.includes('pdf') || buf.subarray(0, 5).toString() === '%PDF-') {
       writeFileSync(file, buf);
-      return { t: execFileSync('pdftotext', ['-q', file, '-'], { maxBuffer: 1 << 28 }).toString() };
+      // Tabellenzeilen: pdftotext liest ohne -layout Zelle für Zelle, ein Zitat „Anhalt 9.361 13.795“
+      // steht dann auf drei Zeilen weit auseinander. Beide Lesarten durchsuchen; das Trennzeichen
+      // (NUL) übersteht flat() und kommt in keinem Zitat vor, ein Treffer kann sie also nicht überbrücken.
+      const lies = a => execFileSync('pdftotext', ['-q', ...a, file, '-'], { maxBuffer: 1 << 28 }).toString();
+      return { t: lies([]) + '\u0000' + lies(['-layout']) };
     }
     const head = buf.subarray(0, 4096).toString('latin1');
     const cs = (ct.match(/charset=([\w-]+)/i) ?? head.match(/charset=["']?([\w-]+)/i))?.[1] ?? 'utf-8';

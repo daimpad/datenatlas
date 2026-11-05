@@ -420,15 +420,17 @@ It then prints a **content-quality report** — deliberately not warnings, so th
 Inhaltsqualität (Hinweis, keine Warnungen):
   Öffnungsbegründungen unter 5 Wörtern: 0 (0 %)
   mehrfach verwendete Begründungstexte: 0 Knoten (0 %)
-  Aussagen über fremde Veröffentlichungspraxis: 403
+  Aussagen über fremde Veröffentlichungspraxis: 0
+  Begründungen als Schablone („Datensatz ‚X‘ ist sofort publizierbar“): 0
   Beschreibung widerspricht den Metadaten: 0
   Datentypen mit geprüfter Quelle: 90 von 10428
 ```
 
-Drei der vier ersten Kennzahlen stehen auf null (die fünfte siehe „Quellen und
+Die ersten fünf Kennzahlen stehen auf null (die sechste siehe „Quellen und
 Beispiellinks“); die **Praxisaussagen** standen nach der dritten Erweiterung des
 Musters bei 1.502 (14 %), wurden in allen acht Sektoren einzeln neu geschrieben
-(1.502 → 0) und stehen nach der vierten Erweiterung wieder bei 403 (4 %), siehe unten.
+(1.502 → 0), stiegen nach der vierten Erweiterung wieder auf 403 (4 %) und sind seit der
+Nacharbeit in fünf Stapeln (zusammen mit den Schablonen, 509 Texte) wieder bei 0.
 Die **kurzen Begründungen** wurden in
 vierzehn Stapeln über `scripts/apply-begruendungen.mjs` abgearbeitet (942 → 0),
 die **Praxisaussagen** in dreizehn weiteren (776 → 0) und nach dem Schärfen des
@@ -516,8 +518,14 @@ veröffentlicht …“, `PRACTICE_KLEINNAME`, eine Namensliste, kein Mustererken
 Punkt auseinander (der Satzteiler ersetzt es jetzt vorab); **(3)** Partizip ohne Hilfsverb („regelmäßig vom MIRO e.V.
 publiziert“, `PRACTICE_PARTIZIP_AKTEUR`) und „öffentlich kommuniziert“. Eine Zufallsprobe von 30 der 403 Treffer enthielt
 keinen Fehlalarm. **Ein Muster mit `\b` vor einem Umlaut ist zu prüfen** — dieselbe Falle steckt in jedem Muster, das mit
-ä, ö, ü beginnt oder endet. Die 403 sind wieder Redaktionsschuld, kein Fehler der Daten; sie werden wie die 1.502
-einzeln über `apply-begruendungen.mjs` abgearbeitet.
+ä, ö, ü beginnt oder endet. Die 403 waren wieder Redaktionsschuld, kein Fehler der Daten; sie sind wie die 1.502
+einzeln über `apply-begruendungen.mjs` abgearbeitet worden (Entwürfe `begruendungen-q5-1.json` bis `-5.json`).
+
+**Schablonen (neue Kennzahl, 106 → 0).** „Datensatz ‚X‘ ist sofort publizierbar.“ wiederholt die Klasse und begründet nichts.
+Der Satz ist länger als fünf Wörter und je Eintrag verschieden, deshalb zählte ihn weder die Kurztext- noch die
+Dublettenkennzahl; `isSchablone()` in `src/begruendungs-regeln.js` und der Validator zählen ihn jetzt. Alle 106 sind
+einzeln durch Begründungen mit Zähleinheit ersetzt. Die Klasse blieb dabei bewusst unberührt, auch bei den 24 Einträgen
+mit `OP_01` und `LI_04`: Die Lizenzfrage ist eine Frage an die Quelle, nicht an den Schreibtisch.
 
 ### The justification ruleset — one source
 

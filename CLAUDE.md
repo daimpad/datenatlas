@@ -420,15 +420,16 @@ It then prints a **content-quality report** — deliberately not warnings, so th
 Inhaltsqualität (Hinweis, keine Warnungen):
   Öffnungsbegründungen unter 5 Wörtern: 0 (0 %)
   mehrfach verwendete Begründungstexte: 0 Knoten (0 %)
-  Aussagen über fremde Veröffentlichungspraxis: 0
+  Aussagen über fremde Veröffentlichungspraxis: 403
   Beschreibung widerspricht den Metadaten: 0
   Datentypen mit geprüfter Quelle: 90 von 10428
 ```
 
-Die ersten vier Kennzahlen stehen auf null (die fünfte siehe „Quellen und
+Drei der vier ersten Kennzahlen stehen auf null (die fünfte siehe „Quellen und
 Beispiellinks“); die **Praxisaussagen** standen nach der dritten Erweiterung des
-Musters bei 1.502 (14 %), siehe unten, und sind in allen acht Sektoren einzeln
-neu geschrieben (1.502 → 0). Die **kurzen Begründungen** wurden in
+Musters bei 1.502 (14 %), wurden in allen acht Sektoren einzeln neu geschrieben
+(1.502 → 0) und stehen nach der vierten Erweiterung wieder bei 403 (4 %), siehe unten.
+Die **kurzen Begründungen** wurden in
 vierzehn Stapeln über `scripts/apply-begruendungen.mjs` abgearbeitet (942 → 0),
 die **Praxisaussagen** in dreizehn weiteren (776 → 0) und nach dem Schärfen des
 Musters in drei letzten (137 → 0), die **Metadaten-Widersprüche** einzeln
@@ -505,6 +506,18 @@ veröffentlichen“ aber als Praxisaussage stehen.
 `apply-begruendungen.mjs` abgearbeitet worden (Entwürfe unter `scripts/quellenpruefung/runden/begruendungen-*.json`) —
 mit der Zähleinheit statt der Praxisaussage, und mit der Auflage „Nutzungsrecht vorab klären“,
 wo die Quelle proprietär lizenziert ist.
+
+**Vierte Erweiterung (5. November 2026): 0 → 403.** Eine Durchsicht der 58 allgemeinen Einträge mit `OP_01`
+und `LI_04` fand acht Praxisaussagen, die die Kennzahl nicht zählte. Drei Ursachen: **(1) JavaScript-`\b` kennt
+Umlaute nicht als Wortzeichen** — `\böffentlich` passt nie hinter einem Leerzeichen, deshalb traf „X ist öffentlich
+zugänglich“ seit der dritten Erweiterung nicht, obwohl es im Muster stand (Lookarounds statt `\b`, und „sind
+öffentlich“ am Satzende); **(2)** Verbände schreiben sich klein oder mit „e.V.“ („agma veröffentlicht …“, „game e.V.
+veröffentlicht …“, `PRACTICE_KLEINNAME`, eine Namensliste, kein Mustererkenner) und „e.V.“ riss den Satz an seinem
+Punkt auseinander (der Satzteiler ersetzt es jetzt vorab); **(3)** Partizip ohne Hilfsverb („regelmäßig vom MIRO e.V.
+publiziert“, `PRACTICE_PARTIZIP_AKTEUR`) und „öffentlich kommuniziert“. Eine Zufallsprobe von 30 der 403 Treffer enthielt
+keinen Fehlalarm. **Ein Muster mit `\b` vor einem Umlaut ist zu prüfen** — dieselbe Falle steckt in jedem Muster, das mit
+ä, ö, ü beginnt oder endet. Die 403 sind wieder Redaktionsschuld, kein Fehler der Daten; sie werden wie die 1.502
+einzeln über `apply-begruendungen.mjs` abgearbeitet.
 
 ### The justification ruleset — one source
 

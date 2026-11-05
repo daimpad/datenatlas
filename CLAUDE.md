@@ -303,10 +303,13 @@ Personenbezug (Fahrten, Buchungen, Messungen) sind `GR_01`.
 | `LI_04` | Proprietär / Restriktiv |
 | `LI_05` | Eigene Nutzungsbedingungen |
 
-`LI_05` kam mit der dritten Quellenprüfung: Breitbandatlas, BA-Statistik,
-thru.de (PRTR) und Destatis-Publikationen erlauben die Nutzung frei mit
-Quellenangabe, aber unter eigenen Bedingungen — weder Datenlizenz
-Deutschland noch CC BY. `LI_04` hätte freie Nutzung als Sperre dargestellt.
+`LI_05` kam mit der dritten Quellenprüfung: BA-Statistik, thru.de (PRTR) und
+Destatis-Publikationen erlauben die Nutzung frei mit Quellenangabe, aber unter
+eigenen Bedingungen — weder Datenlizenz Deutschland noch CC BY. (Der
+Breitbandatlas stand zunächst auch hier; die Kalibrierung fand im Impressum
+die Datenlizenz Deutschland für seine Downloads, siehe
+`scripts/datafix-quellen-kalibrierung.mjs`. Nutzungsbedingungen einer Seite
+und Lizenz ihrer Daten sind zweierlei.) `LI_04` hätte freie Nutzung als Sperre dargestellt.
 Die Regel „kein `OP_03` mit freier Lizenz“ prüft nur `LI_01`–`LI_03`.
 
 ### Update Frequency (details.temporal.update_frequency)

@@ -427,7 +427,7 @@ function main() {
         why: 'Beschreibung verneint Vertraulichkeit, Klasse ist OP_03' },
       // Ohne `re`: hängt nicht an der Beschreibung, sondern nur an den Feldern.
       { hits: n => n.details?.openness?.class === 'OP_03'
-                && ['LI_01', 'LI_02', 'LI_03'].includes(n.details?.license?.code),
+                && ['LI_01', 'LI_02', 'LI_03', 'LI_06'].includes(n.details?.license?.code),
         why: 'OP_03 (nur Metadaten) mit freier Lizenz' },
     ];
 

@@ -304,6 +304,7 @@ Personenbezug (Fahrten, Buchungen, Messungen) sind `GR_01`.
 | `LI_03` | Datenlizenz Deutschland |
 | `LI_04` | Proprietär / Restriktiv |
 | `LI_05` | Eigene Nutzungsbedingungen |
+| `LI_06` | CC BY-SA 4.0 |
 
 `LI_05` kam mit der dritten Quellenprüfung: BA-Statistik, thru.de (PRTR) und
 Destatis-Publikationen erlauben die Nutzung frei mit Quellenangabe, aber unter
@@ -312,7 +313,8 @@ Breitbandatlas stand zunächst auch hier; die Kalibrierung fand im Impressum
 die Datenlizenz Deutschland für seine Downloads, siehe
 `scripts/datafix-quellen-kalibrierung.mjs`. Nutzungsbedingungen einer Seite
 und Lizenz ihrer Daten sind zweierlei.) `LI_04` hätte freie Nutzung als Sperre dargestellt.
-Die Regel „kein `OP_03` mit freier Lizenz“ prüft nur `LI_01`–`LI_03`.
+`LI_06` (CC BY-SA 4.0) kam mit der zweiten Produktionsrunde: Der DFG-Förderatlas steht darunter, und `LI_05` hätte eine
+Standardlizenz als „eigene Bedingungen“ geführt. Die Regel „kein `OP_03` mit freier Lizenz“ prüft `LI_01`–`LI_03` und `LI_06`.
 
 ### Update Frequency (details.temporal.update_frequency)
 | Code | Häufigkeit |
@@ -615,8 +617,8 @@ Die **zweite Produktionsrunde** (BVMI, DFG, Destatis, ZDH) brachte denselben Bef
 stimmte vollständig, und bei ZDH-Handwerk stammen die Zahlen vom Statistischen Bundesamt
 (Handwerkszählung), nicht vom ZDH. Lizenz `LI_04` bei BVMI und DFG-Quoten, deshalb dort `OP_02`.
 Ein Eintrag (BVMI-Exportumsätze) beschreibt einen Datensatz, den beide Läufe nicht fanden; er
-bleibt unverändert Einschätzung. Für CC BY-SA 4.0 (DFG-Förderatlas) gibt es keinen Code; bei
-`dfg-bewilligungsstatistik` steht `LI_05` als Notbehelf.
+bleibt unverändert Einschätzung. Für CC BY-SA 4.0 (DFG-Förderatlas) wurde `LI_06` angelegt;
+`dfg-bewilligungsstatistik` steht darauf.
 
 **Bekannte Lücke in Regel 3:** 15 der 31 alten Begründungen aus Runde 2 und 3
 enthielten Praxisaussagen, die `claimsThirdPartyPractice()` nicht erkennt — eine

@@ -25,7 +25,8 @@
 //                 nicht wiedergefunden · Öffnungsklasse betroffen · Datensatz
 //                 existiert laut einem Lauf nicht · neue Begründung · neue
 //                 Beschreibung (immer) · Vokabularcode unbekannt · Lizenzbeleg von
-//                 anderer Domain als die Quellen · Textfeld korrigiert · Quellentyp
+//                 anderer Domain als die Quellen · Lizenzbeleg nur von der Seite
+//                 (`beleg_art`) · Textfeld korrigiert · Quellentyp
 //                 uneinig · Datensatz laut einem Lauf nicht belegbar (Quellen)
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -95,6 +96,9 @@ function codefeld(id, n, a, b, eingabe) {
   const unbekannt = GUELTIG[n] && wa.filter(c => !GUELTIG[n].has(c));
   if (unbekannt?.length) return melde(id, n, 'beleg', `Vokabularcode unbekannt: ${unbekannt.join(', ')}`, extra);
   if (n === 'lizenz') {
+    // Fassung des Prüfauftrags ab Runde 2: `beleg_art` sagt, ob die Aussage die Daten oder nur die Seite betrifft.
+    if (fa?.beleg_art === 'seite' || fb?.beleg_art === 'seite')
+      return melde(id, n, 'beleg', 'Lizenzbeleg ist nur eine allgemeine Klausel der Seite', extra);
     const eigene = new Set([...feldBelege(ZA, id, n), ...feldBelege(ZB, id, n)].map(z => domain(z.url)));
     const haupt = quellenDomains(id);
     const fremd = [...eigene].filter(d => haupt.size && !haupt.has(d));

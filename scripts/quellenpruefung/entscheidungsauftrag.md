@@ -3,7 +3,7 @@
 Zwei unabhängige Prüfläufe haben Einträge des Datenatlas nach
 `scripts/quellenpruefung/pruefauftrag.md` geprüft. Wo sie uneinig waren, nur
 einer einen Wert hatte oder eine neue Beschreibung vorgeschlagen wurde, entscheidest
-du am Beleg. Lies zuerst den Prüfauftrag (Regeln 1–10 gelten auch für dich) und dann
+du am Beleg. Lies zuerst den Prüfauftrag (Regeln 1–11 gelten auch für dich) und dann
 die Beleg-Datei aus deinem Auftrag.
 
 ## Eingabe
@@ -24,7 +24,12 @@ nachsehen. Die ursprüngliche Beschreibung steht in der Eingabedatei des Auftrag
 2. Stimmt keine der Fassungen, suche selbst die Primärquelle. Findest du sie nicht
    nach zwei gezielten Suchen: `offen` mit `gesucht`.
 3. Lizenz: nur die Aussage, die sich auf genau diese Daten bezieht (Regel 8).
-   Startjahr: früheste abrufbare Daten des beschriebenen Datensatzes (Regel 7).
+   Hat ein Lauf `beleg_art: seite` angegeben (nur allgemeine Klausel der Website),
+   entscheide, ob die Klausel die Daten erfasst: Stehen sie auf der Website des
+   Rechteinhabers ohne eigene Lizenz und die Klausel behält die Verwendung vor, gilt
+   `LI_04`; vermerke in `notiz` „Klausel der Seite“. Sonst `offen`.
+   Startjahr: früheste abrufbare Daten des Gegenstands, den der Name des Eintrags
+   nennt (Regel 7).
 4. **Beschreibung**: schreibe die endgültige Fassung — zwei bis drei Sätze, jede Zahl,
    jedes Jahr und jeder Paragraph mit Beleg. Übernimmst du Teile aus A oder B, prüfe sie
    neu; ein Detail ohne Beleg fällt weg. Keine Aussage darüber, was eine Organisation

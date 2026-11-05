@@ -54,7 +54,8 @@ scripts/
   build-begruendungs-prompt.mjs — builds the prompt from the ruleset
   apply-begruendungen.mjs — applies revised justifications in batches
   check-links.mjs        — checks every URL in examples/sources (weekly workflow)
-  quellenpruefung/       — Prüfauftrag, Zitatabgleich, Kalibrierung (docs/quellenpruefung.md)
+  quellenpruefung/       — Prüfauftrag, Gruppieren, Zitatabgleich, Feldvergleich, Kosten,
+                           Kalibrierung, Runden (docs/quellenpruefung.md)
   link-regeln.mjs        — link form rules, shared by validator and link check
   datafix-*.mjs          — one-off data corrections (record of past runs)
 ```

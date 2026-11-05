@@ -420,15 +420,15 @@ It then prints a **content-quality report** — deliberately not warnings, so th
 Inhaltsqualität (Hinweis, keine Warnungen):
   Öffnungsbegründungen unter 5 Wörtern: 0 (0 %)
   mehrfach verwendete Begründungstexte: 0 Knoten (0 %)
-  Aussagen über fremde Veröffentlichungspraxis: 1440
+  Aussagen über fremde Veröffentlichungspraxis: 0
   Beschreibung widerspricht den Metadaten: 0
   Datentypen mit geprüfter Quelle: 74 von 10428
 ```
 
-Drei der vier ersten Kennzahlen stehen auf null (die fünfte siehe „Quellen und
-Beispiellinks“); die **Praxisaussagen** stehen seit der dritten Erweiterung des
-Musters wieder bei 1.502 (14 %), siehe unten; mit jedem Stapel sinkt die Zahl (Stand nach Bildung, Stapel 1 und
-Auflagen-Ausnahme: 1.440). Die **kurzen Begründungen** wurden in
+Die ersten vier Kennzahlen stehen auf null (die fünfte siehe „Quellen und
+Beispiellinks“); die **Praxisaussagen** standen nach der dritten Erweiterung des
+Musters bei 1.502 (14 %), siehe unten, und sind in allen acht Sektoren einzeln
+neu geschrieben (1.502 → 0). Die **kurzen Begründungen** wurden in
 vierzehn Stapeln über `scripts/apply-begruendungen.mjs` abgearbeitet (942 → 0),
 die **Praxisaussagen** in dreizehn weiteren (776 → 0) und nach dem Schärfen des
 Musters in drei letzten (137 → 0), die **Metadaten-Widersprüche** einzeln
@@ -501,8 +501,10 @@ sicheren Fehlalarm. Die Zahl ist weiterhin eine Untergrenze (Sätze ohne Subjekt
 Substantivformen wie „regelmäßige Veröffentlichung durch …“ bleiben unerkannt).
 `AUFLAGE_RE` nimmt „nur … publizieren“ als Auflage aus (Infinitiv mit „nur“), lässt „nur wenige Kommunen
 veröffentlichen“ aber als Praxisaussage stehen.
-**Die 1.502 sind Redaktionsschuld, kein Fehler der Daten**; sie werden einzeln über
-`apply-begruendungen.mjs` abgearbeitet — mit der Zähleinheit statt der Praxisaussage.
+**Die 1.502 waren Redaktionsschuld, kein Fehler der Daten**; sie sind sektorweise einzeln über
+`apply-begruendungen.mjs` abgearbeitet worden (Entwürfe unter `scripts/quellenpruefung/runden/begruendungen-*.json`) —
+mit der Zähleinheit statt der Praxisaussage, und mit der Auflage „Nutzungsrecht vorab klären“,
+wo die Quelle proprietär lizenziert ist.
 
 ### The justification ruleset — one source
 

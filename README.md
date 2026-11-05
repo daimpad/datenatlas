@@ -439,15 +439,15 @@ trotzdem sichtbar wird:
 Inhaltsqualität (Hinweis, keine Warnungen):
   Öffnungsbegründungen unter 5 Wörtern: 0 (0 %)
   mehrfach verwendete Begründungstexte: 0 Knoten (0 %)
-  Aussagen über fremde Veröffentlichungspraxis: 1440
+  Aussagen über fremde Veröffentlichungspraxis: 0
   Beschreibung widerspricht den Metadaten: 0
   Datentypen mit geprüfter Quelle: 74 von 10428
 ```
 
-Drei Kennzahlen stehen auf null: 942 Kurztexte, 1.492 formelhaft
-wiederverwendete Begründungen und 8 Metadaten-Widersprüche sind einzeln überarbeitet.
-Die Praxisaussagen (913 früher bearbeitet) stehen nach Verschärfung des Prüfmusters
-bei 1.502 (aktuell 1.440) und werden Sektor für Sektor abgearbeitet. Sie bleiben im Bericht, weil sie beim Anfassen wieder
+Vier Kennzahlen stehen auf null: 942 Kurztexte, 1.492 formelhaft
+wiederverwendete Begründungen, 8 Metadaten-Widersprüche und die Praxisaussagen sind einzeln überarbeitet.
+Bei den Praxisaussagen (913 früher bearbeitet) hatte die Verschärfung des Prüfmusters
+1.502 Treffer ergeben; sie sind Sektor für Sektor abgearbeitet. Sie bleiben im Bericht, weil sie beim Anfassen wieder
 steigen — ein neuer Datentyp mit kopierter Begründung erscheint sofort als
 Dublette. Genau dafür sind sie da.
 

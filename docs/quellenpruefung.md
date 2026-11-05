@@ -61,7 +61,12 @@ Wie `feldvergleich.mjs` die Tabelle umsetzt, wo sie Spielraum ließ:
 - **Quellen** gehen automatisch durch, wenn auf ihrer Seite ein Zitat des
   nennenden Laufs wiedergefunden wurde — auch wenn nur ein Lauf sie nennt. Eine
   Pflicht zur Doppelnennung würde fast jede Quelle zur Prüfung schicken: die Läufe
-  wählen oft verschiedene Dokumente derselben Stelle.
+  wählen oft verschiedene Dokumente derselben Stelle. Angehängt wird sie aber erst
+  zusammen mit der neuen Beschreibung des Eintrags: „Mit Quelle“ sagt, dass die
+  Aussagen des Eintrags nachgelesen sind, und die alte Beschreibung ist es nicht.
+  Quellen vom Typ `rechtsgrundlage` und `beispiel` sowie Seiten, die nach Nutzungs-
+  bedingung oder Preisliste aussehen, schreibt `uebernehmen.mjs` nie selbst (die Sidebar kann
+  Rechtsgrundlagen noch nicht von Veröffentlichungen unterscheiden).
 - **Neue Beschreibungen gehen immer an den Beleg.** Der Check, der sie
   automatisch freigeben könnte, ist weiterhin nicht gebaut. Gebaut ist ein
   Hinweis: Zahlen, Jahre und Paragraphen der Beschreibung, die in keinem
@@ -69,6 +74,14 @@ Wie `feldvergleich.mjs` die Tabelle umsetzt, wo sie Spielraum ließ:
 - **Öffnungsklasse** ist kein Feld des Prüfbogens. Der Vergleich prüft stattdessen,
   ob ein geänderter Lizenzwert zur Klasse der Eingabe passt (frei bei „Nur
   Metadaten“, nicht frei bei „Sofort publizierbar“).
+
+**Übernahme.** `uebernehmen.mjs <Runde> --modus auto|review [--schreiben]` schreibt das
+Ergebnis in die Sektordateien, ohne `--schreiben` nur als Vorschau. `auto` übernimmt die
+automatisch eingeteilten Codefelder (Startjahr, Rhythmus, Format, Lizenz, Ebene).
+`review` übernimmt die Entscheidungen am Beleg: neue Beschreibung, entschiedene Felder,
+Quellen. Wechselt dabei die Lizenz auf `LI_04` bei Klasse `OP_01`, wird die Klasse
+`OP_02` (wie bei AGF und Media Control). Die Öffnungsbegründung schreibt das Skript nie;
+sie geht einzeln durch `apply-begruendungen.mjs` und dessen Regelprüfung.
 
 **Stufe 4** wie im Konzept: ein Auto-PR je Runde, der bei grüner CI selbst
 mergt, ein Review-PR für den Rest, nie zwei Runden gleichzeitig offen.
@@ -268,6 +281,7 @@ worden, damit Runde 2 mit derselben Fassung vergleichbar bleibt.
 | `scripts/quellenpruefung/entscheidungsauftrag.md` | Auftrag für die Entscheidung am Beleg |
 | `scripts/quellenpruefung/gruppieren.mjs` | Stufe 0: Gruppen, Eingabedateien |
 | `scripts/quellenpruefung/zitate-pruefen.mjs` | Zitatabgleich; jede Normalisierung darin hat einmal einen falschen Fehlschlag erzeugt |
+| `scripts/quellenpruefung/uebernehmen.mjs` | Übernahme in die Sektordateien (`auto`, `review`) |
 | `scripts/quellenpruefung/feldvergleich.mjs` | zwei Läufe ohne Referenz, Einteilung nach Stufe 3, Beleg-Datei |
 | `scripts/quellenpruefung/felder.mjs` | gemeinsame Feldlogik für beide Vergleiche |
 | `scripts/quellenpruefung/kosten.mjs` | Kosten und Startkontext aus Agentenprotokollen |

@@ -13,6 +13,7 @@
 // Jede Normalisierung unten hat in der Quellenprüfung einmal einen falschen
 // Fehlschlag erzeugt — keine davon ist Vorsorge:
 //   Zeichensatz aus Header oder <meta>    gesetze-im-internet.de, Förderkatalog (ISO-8859-1)
+//   ohne Angabe: UTF-8, sonst Windows-1252    IVW-Auflagen-CSV (Latin-1 ohne Header, „Süddeutsche“)
 //   HTML-Entities                          GKV-Spitzenverband (&sect;, &ndash;)
 //   Vergleich ohne Leerraum                Inline-Tags zerreißen „*.csv“ zu „*. csv“ (thru.de, DWD)
 //   Anführungszeichen, Striche, &shy;      typografische Varianten in PDFs
@@ -99,7 +100,10 @@ async function load(url, attempt = 1) {
       return { t: lies([]) + '\u0000' + lies(['-layout']) };
     }
     const head = buf.subarray(0, 4096).toString('latin1');
-    const cs = (ct.match(/charset=([\w-]+)/i) ?? head.match(/charset=["']?([\w-]+)/i))?.[1] ?? 'utf-8';
+    let cs = (ct.match(/charset=([\w-]+)/i) ?? head.match(/charset=["']?([\w-]+)/i))?.[1];
+    if (!cs) {                                                  // nichts deklariert: UTF-8, sonst Windows-1252 (IVW-CSV: „Süddeutsche“)
+      try { new TextDecoder('utf-8', { fatal: true }).decode(buf); cs = 'utf-8'; } catch { cs = 'windows-1252'; }
+    }
     let dec; try { dec = new TextDecoder(cs.toLowerCase()); } catch { dec = new TextDecoder('utf-8'); }
     return { t: htmlText(dec.decode(buf)) };
   } catch (e) {

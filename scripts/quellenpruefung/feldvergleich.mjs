@@ -31,7 +31,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { CODEFELDER, TEXTFELDER, feld, statusVon, ohneWert, codeWert, wert, gleich, passt } from './felder.mjs';
+import { CODEFELDER, TEXTFELDER, feld, statusVon, ohneWert, codeWert, wert, gleich, passt, existenzVon } from './felder.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const args = process.argv.slice(2);
@@ -124,7 +124,7 @@ function textfeld(id, n, a, b) {
 }
 
 function existenz(id, a, b) {
-  const x = a.existenz?.wert, y = b.existenz?.wert, roh = { a: a.existenz, b: b.existenz };
+  const x = existenzVon(a), y = existenzVon(b), roh = { a: a.existenz, b: b.existenz };
   if (x === 'nein' || y === 'nein') return melde(id, 'existenz', 'beleg', 'Datensatz existiert laut einem Lauf nicht', { a: x, b: y, beleg: roh });
   if (x !== y) return melde(id, 'existenz', 'beleg', 'Läufe uneinig', { a: x, b: y, beleg: roh });
   melde(id, 'existenz', 'automatisch', `beide Läufe: ${x}`, { wert: x });
@@ -167,7 +167,7 @@ function beschreibung(id, a, b) {
 function quellen(id, a, b) {
   const qa = a.quellen ?? [], qb = b.quellen ?? [];
   if (!qa.length && !qb.length) return melde(id, 'quellen', 'automatisch', 'keine Quelle vorgeschlagen', { aktion: 'keine' });
-  const sperre = a.existenz?.wert === 'nein' || b.existenz?.wert === 'nein' || a.urteil === 'nicht_belegbar' || b.urteil === 'nicht_belegbar';
+  const sperre = existenzVon(a) === 'nein' || existenzVon(b) === 'nein' || a.urteil === 'nicht_belegbar' || b.urteil === 'nicht_belegbar';
   const index = (qs, Z) => new Map(qs.map(q => [schluessel(q.url ?? ''), { q, zitiert: Z.some(z => z.id === id && z.result === 'gefunden' && schluessel(z.url) === schluessel(q.url ?? '')) }]));
   const ia = index(qa, ZA), ib = index(qb, ZB);
   for (const k of new Set([...ia.keys(), ...ib.keys()])) {

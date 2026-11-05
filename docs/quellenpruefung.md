@@ -182,8 +182,8 @@ der Startkontext (78.000 Tokens beim allgemeinen Agenten); der Agententyp mit
 nur fünf Werkzeugen hat ihn auf 27.600 verkleinert (Runde 1).
 
 **Hochrechnung.** Runde 1 kostete 1,07 $ je Eintrag (zwei Läufe 0,78 $, Opus am Beleg
-0,29 $); die Kalibrierung hatte für zwei Läufe 0,94 $ gemessen. Für die 1.233 Einträge
-mit benannter Stelle wären das rund 1.300 $. Ob die Gruppierung das senkt, zeigt Runde 1
+0,29 $), Runde 2 1,16 $ (0,89 $ und 0,27 $); die Kalibrierung hatte für zwei Läufe 0,94 $
+gemessen. Für die 1.233 Einträge mit benannter Stelle wären das rund 1.300 bis 1.400 $. Ob die Gruppierung das senkt, zeigt Runde 1
 nicht: Jede Runde bestand aus einer Gruppe, eine Vergleichsrunde mit denselben Einträgen
 ohne Gruppierung gab es nicht. Für die allgemeinen Datentypen ist die Gruppierung nach
 Rechtsgrundlage nicht gemessen; eine Hochrechnung wäre geraten.
@@ -255,8 +255,8 @@ Lizenz-Check an den Beleg geschickt (Opus bestätigte alle).
 
 ## Grenzen dieser Messung
 
-- 16 Einträge plus 6 im Pilot plus 20 in Runde 1 — Stichproben, keine Statistik.
-  Runde 1 deckt drei Herausgeber ab, alle mit Excel- oder PDF-Veröffentlichungen.
+- 16 Einträge plus 6 im Pilot plus 2 × 20 in den Produktionsrunden — Stichproben, keine Statistik.
+  Sieben Herausgeber, durchweg mit Excel-, PDF- oder Webtabellen.
 - „Einig, aber falsch“ ist in Runde 1 nicht gemessen: Opus sah nur die strittigen
   Felder. Die 80 einigen Codefelder sind nur durch gefundene Zitate gedeckt.
 - Die Referenz der Kalibrierung stammt aus einem einzigen Opus-Lauf; zwei ihrer
@@ -270,10 +270,55 @@ Lizenz-Check an den Beleg geschickt (Opus bestätigte alle).
   Auftrag; wie viel der Ersparnis am Modell und wie viel am Prüfbogen liegt, ist
   nicht getrennt.
 
-**Offen aus Runde 1:** Regel 7 braucht eine Aussage zu gebündelten Produkten; Regel 8
-eine zum Fall „nur allgemeines Impressum“; Quellen-URLs sollen die Datei selbst liefern
-(KBA: `?__blob=publicationFile`). Der Prüfauftrag ist dafür bewusst nicht geändert
-worden, damit Runde 2 mit derselben Fassung vergleichbar bleibt.
+**Offen aus Runde 1** (Regel 7, Regel 8, URL-Form) ist in der Fassung des Prüfauftrags ab
+Runde 2 bearbeitet; die Messung steht unten.
+
+## Zweite Produktionsrunde (5. November 2026)
+
+20 Einträge aus vier Gruppen — BVMI-Tonträgermarkt, DFG-Projektförderung, Destatis-
+Statistikproduktion, ZDH-Handwerk (je 5) —, derselbe Ablauf wie Runde 1, aber mit dem
+geschärften Prüfauftrag (Regeln 6, 7, 8, 11, Feld `beleg_art`). Übernommen in zwei PRs:
+29 Codefelder an 13 Einträgen, dann Beschreibung, Quellen, Klassen und Begründungen
+(19 Einträge, 74 von 10.428 mit geprüfter Quelle). Ein Eintrag blieb unverändert: Beide
+Läufe verneinten die BVMI-Exportstatistik, es gibt keinen Datensatz, für den man Lizenz
+und Klasse setzen könnte.
+
+| | Läufe A (4) | Läufe B (4) | Opus am Beleg |
+|---|---|---|---|
+| Kosten | 8,20 $ | 9,55 $ | 5,44 $ |
+| Anfragen | 194 | 224 | 84 |
+| Zitate wiedergefunden | 289 / 289 | 335 / 335 | 199 / 199 |
+
+Startkontext 28.110 Tokens (Runde 1: 27.645; mein Auftrag war etwas länger). Von 315 Feldern
+gehen 200 automatisch durch, 115 an den Beleg (76 Entscheidungen).
+
+**Uneinigkeit zeigt Fehler.** Bei den 19 uneinigen Codefeldern lag in 15 genau ein Lauf
+falsch, in 2 beide, in 2 stimmten beide (zwei Bezugswege). Runde 1: 14 von 15, Kalibrierung 6 von 6.
+
+**Die Regeländerungen aus Runde 1 an neuem Material.**
+
+| Regel | Befund |
+|---|---|
+| 7 Startjahr (Name des Eintrags) | Hat nicht geholfen: 9 von 20 an den Beleg (Runde 1: 6 von 20), Opus ließ 3 offen. Die Läufe lasen „der Gegenstand, den der Name nennt“ verschieden (GEPRIS-Start online gegen erste Daten; Quoten ab 2016 gegen ältere Jahresberichte). Der Name legt den Gegenstand nicht fest, wenn er eine Reihe mit Vorläufern benennt. Offen |
+| 8 Lizenz, `beleg_art` | Wirkt wie gedacht: 14 Lizenzaussagen kamen als `seite`, 17 als `daten`; die vier einigen `seite`-Fälle gingen alle an den Beleg (Opus bestätigte `LI_04`). Strenger ist auch der Preis: Bei 4 Lizenzen hatte nur ein Lauf einen Wert, 2 waren uneinig; Opus entschied 10 von 11 (offen blieb das Chartportal, das mit 403 antwortet). Eine Fehlstelle: CC BY-SA 4.0 hat keinen Code (`LI_05` als Notbehelf bei DFG) |
+| 11 URL liefert die Datei | 0 falsche URLs (Runde 1: 3 von 662). Alle fünf anfänglich fehlenden Zitate waren Lücken im Abgleich |
+| 6 nur Ausgabe und Downloads | 1 von 8 Läufen schrieb außerhalb (ein Verzeichnis `x/` im Repository, wieder entfernt); Runde 1: 4 von 8 |
+| 10 Quellentyp | 7 von 91 `statistik`-Quellen sind Impressum- oder Copyright-Seiten (Runde 1: 0 von 77). Folge von Regel 8: Die Läufe führen ihre Lizenzbelege jetzt als Quelle. `uebernehmen.mjs` hält sie zurück |
+| 1 | `datenatlas.de` öffnete keiner der acht Läufe |
+
+**Zwei Fehler der Werkzeuge, von der Runde gefunden.**
+
+- `feldvergleich.mjs` las `existenz` nur als Objekt `{wert}`. In Runde 2 stand sie bei einem Teil der
+  Läufe als bloßer Text; 14 der 15 „uneinigen“ Existenz-Entscheidungen waren dadurch Artefakte.
+  Beide Formen werden jetzt gelesen (`felder.mjs`). An Runde 1 und der Kalibrierung ändert das nichts.
+- Der Zitatabgleich entfernte in der Seitenvorlage jeden Bindestrich vor einem Zeilenumbruch.
+  Das macht aus „Nominal- und Reallohnindex“ und aus der HTML-Tabellenzelle „-“ (FDZ-Seite)
+  ein falsches Fehlen. Jetzt gelten beide Lesarten; alte `.xls`-Dateien (ZDH) werden gelesen.
+
+**Was die Maschine nicht erkannte.** Die Läufe fanden in 10 von 20 Öffnungsbegründungen eine
+Praxisaussage (beide Läufe dieselben 10); `claimsThirdPartyPractice()` trifft keine (Runde 1: 17 von 20).
+Die DFG-Einträge zu GEPRIS belegen Aussagen nur in JavaScript-Dateien mit Hash im Namen; die
+lesbaren Seiten-URLs tragen die Quelle, aber ein Abgleich ist dort nicht möglich.
 
 ## Werkzeuge
 
@@ -290,7 +335,7 @@ worden, damit Runde 2 mit derselben Fassung vergleichbar bleibt.
 | `scripts/quellenpruefung/kalibrierung/vergleich.mjs` | bewertet Läufe gegen eine Referenz |
 | `scripts/quellenpruefung/kalibrierung/uebereinstimmung.mjs` | vergleicht zwei Läufe Feld für Feld gegen eine Referenz |
 | `scripts/quellenpruefung/kalibrierung/laeufe/` | Eingaben und Ergebnisse der Kalibrierung |
-| `scripts/quellenpruefung/runden/1/` | Runde 1: Eingaben, Läufe, Zitatabgleich, Feldvergleich, Entscheidung, Kosten |
+| `scripts/quellenpruefung/runden/1/`, `…/2/` | Eingaben, Läufe, Zitatabgleich, Feldvergleich, Entscheidung, Kosten, Begründungen |
 | `.claude/agents/quellenpruefer.md` | Agententyp: Sonnet, fünf Werkzeuge |
 
 ```bash

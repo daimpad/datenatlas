@@ -26,6 +26,7 @@
 //   – Quellen vom Typ `beispiel`, und `statistik`-Quellen, die nach Nutzungsbedingung,
 //     Impressum oder Richtlinie aussehen (Regel 10 des Prüfauftrags).
 //   – Werte, die keine Entscheidung tragen (Opus: `offen`, kein Jahr).
+//   – Einträge, deren Datensatz beide Läufe verneinen (existenz `nein`): im Modus `review` ganz.
 //
 // Schreibt nur Felder, die in der Eingabe der Runde standen; alles geht durch dieselbe
 // Beschriftung aus src/vokabular.js wie der Validator.
@@ -33,7 +34,7 @@ import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { LABELS } from '../../src/vokabular.js';
-import { codeWert } from './felder.mjs';
+import { codeWert, existenzVon } from './felder.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DATA = join(ROOT, 'public', 'data');
@@ -85,11 +86,12 @@ function setze(id, feld, wert) {
 }
 
 // Hindernis ist das Nutzungsrecht, nicht der Personenbezug (AGF, Media Control, IVW): LI_04 und
-// „sofort publizierbar“ passen nicht zusammen. Gilt für jeden Eintrag, den `review` anfasst,
-// auch wenn die Lizenz schon vorher LI_04 war.
-function klasseZurLizenz(id) {
+// „sofort publizierbar“ passen nicht zusammen. Gilt für jeden Eintrag, den `review` anfasst und
+// dessen Lizenz in dieser Runde belegt wurde (auch wenn sie schon vorher LI_04 war) — ein offen
+// gebliebener Lizenzwert rechtfertigt keinen Klassenwechsel.
+function klasseZurLizenz(id, lizenzBelegt) {
   const k = knoten.get(id), d = k.n.details;
-  if (d.license?.code !== 'LI_04' || d.openness?.class !== 'OP_01') return;
+  if (!lizenzBelegt || d.license?.code !== 'LI_04' || d.openness?.class !== 'OP_01') return;
   d.openness = { ...d.openness, class: 'OP_02', label: LABELS.OP_02 };
   dateien.get(k.pfad).geaendert = true;
   log.push(`${id} · Öffnungsklasse: OP_01 → OP_02 (Lizenz LI_04) — Begründung neu schreiben`);
@@ -127,6 +129,12 @@ if (modus === 'auto') {
   for (const [id, e] of Object.entries(lies('entscheidung.json'))) {
     const k = knoten.get(id);
     if (!k) { zurueck.push(`${id}: unbekannte id`); continue; }
+    // Beide Läufe verneinen den Datensatz: Eine Lizenz oder Klasse für etwas, das es so nicht gibt,
+    // wäre erfunden. Der Eintrag bleibt Einschätzung und wird gemeldet.
+    if (existenzVon(A[id]) === 'nein' && existenzVon(B[id]) === 'nein') {
+      zurueck.push(`${id} — Datensatz existiert laut beiden Läufen nicht: nichts übernommen`);
+      continue;
+    }
     if (e.beschreibung?.text && e.beschreibung.text !== k.n.details.description) {
       k.n.details.description = e.beschreibung.text;
       dateien.get(k.pfad).geaendert = true;
@@ -147,7 +155,9 @@ if (modus === 'auto') {
       if (w) setze(id, d.feld, w);
       else zurueck.push(`${id} · ${d.feld} — kein Wert übernommen (${d.urteil}${d.wert ? '' : ', ohne Wert'})`);
     }
-    klasseZurLizenz(id);
+    const entschieden = (e.entscheidungen ?? []).find(d => d.feld === 'lizenz');
+    klasseZurLizenz(id, entschieden ? entschieden.urteil !== 'offen' && !!entschieden.wert
+      : fv.some(f => f.id === id && f.feld === 'lizenz' && f.stufe === 'automatisch' && f.wert));
   }
 }
 

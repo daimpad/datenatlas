@@ -411,7 +411,7 @@ Inhaltsqualität (Hinweis, keine Warnungen):
   mehrfach verwendete Begründungstexte: 0 Knoten (0 %)
   Aussagen über fremde Veröffentlichungspraxis: 0
   Beschreibung widerspricht den Metadaten: 0
-  Datentypen mit geprüfter Quelle: 55 von 10428
+  Datentypen mit geprüfter Quelle: 74 von 10428
 ```
 
 Die ersten vier Kennzahlen stehen auf null (die fünfte siehe „Quellen und
@@ -601,6 +601,13 @@ Läufe einig waren, dann Beschreibung, Quellen und Klasse. Wieder stimmte keiner
 CC BY 4.0, deshalb `OP_02` statt `OP_01` (Hindernis ist das Nutzungsrecht, wie bei AGF).
 **Eine Quelle wird erst mit der neuen Beschreibung angehängt**, nicht vorher — „Mit Quelle“
 soll heißen, dass die Aussagen des Eintrags nachgelesen sind.
+
+Die **zweite Produktionsrunde** (BVMI, DFG, Destatis, ZDH) brachte denselben Befund: kein Eintrag
+stimmte vollständig, und bei ZDH-Handwerk stammen die Zahlen vom Statistischen Bundesamt
+(Handwerkszählung), nicht vom ZDH. Lizenz `LI_04` bei BVMI und DFG-Quoten, deshalb dort `OP_02`.
+Ein Eintrag (BVMI-Exportumsätze) beschreibt einen Datensatz, den beide Läufe nicht fanden; er
+bleibt unverändert Einschätzung. Für CC BY-SA 4.0 (DFG-Förderatlas) gibt es keinen Code; bei
+`dfg-bewilligungsstatistik` steht `LI_05` als Notbehelf.
 
 **Bekannte Lücke in Regel 3:** 15 der 31 alten Begründungen aus Runde 2 und 3
 enthielten Praxisaussagen, die `claimsThirdPartyPractice()` nicht erkennt — eine

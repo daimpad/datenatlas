@@ -253,6 +253,30 @@ Lizenz-Check an den Beleg geschickt (Opus bestätigte alle).
 - Der Zahlenhinweis zur Beschreibung markierte 10 Zahlen; 8 davon stehen in Opus' Fassung
   mit Beleg. Er ist ein schlechter Filter.
 
+## Test einer neuen Regel 7 (5. November 2026, nicht übernommen)
+
+Die 15 Einträge, deren Startjahr in Runde 1 und 2 strittig war, mit einer neuen Fassung von Regel 7
+(Gegenstand = erste Kenngröße im Namen; Rückwärtssuche in älteren Ausgaben und Archiven;
+Beginn von Erhebung oder Angebot zählt nicht; früheste gefundene Zahl, sonst `nicht_gefunden`).
+Zwei Sonnet-Läufe je Eintrag, nur Startjahr, ursprüngliche Eingaben. Kosten 12,51 $ (363 Anfragen;
+die Schätzung vorab lag bei 3 $ und war falsch — die Rückwärtssuche ist teuer). Zitate 67 von 67
+wiedergefunden. Maßstab war: mindestens 12 von 15 einig und mit Opus' Urteil vereinbar.
+
+**Ergebnis: durchgefallen.** 9 von 15 einig, aber nur 4 davon gleich Opus' Urteil (BVMI-Streaming 2008,
+DFG-Bewilligungen 1991, Pkw-Bestand 1960, Streaming-Charts 2012). Vier einige Werte weichen ab, sechs Einträge
+bleiben uneinig.
+
+| Fehlerart | Beispiele |
+|---|---|
+| Rückwärtssuche läuft aus dem Ruder: Bibliothekskopien, Sekundärdatensätze, verknüpfte Reihen | Verdienste 1913 (beide Läufe; Indexreihe mit dem Statistischen Reichsamt), Halterstruktur 1968 (Statistisches Jahrbuch 1969 aus einer Bibliothek), GEPRIS 1921 (Zenodo-Analysedatensatz), Kirchensteuer 1973 |
+| Zahl aus einem Diagramm abgelesen | Förderquoten 1991, DFG-Quote 1982 |
+| Gliederungen verschieben das Jahr nicht: Das Ergebnis beantwortet nicht, ab wann der beschriebene Datensatz vorliegt | Elektro-Neuzulassungen 1975 (43 Pkw) bzw. 2006, obwohl der Eintrag monatliche Zahlen je Marke und Modellreihe beschreibt (Opus: 2017) |
+| Gegenstand „Ergebnisse“ gegen Mikrodaten | Mikrozensus 1957 (Fachserie, mit Zahlen) statt 1973 (Forschungsdatenzentrum) — hier ist die neue Fassung plausibler als Opus |
+
+Der Teil der Regel, der den Gegenstand festlegt, hat geholfen (9 einig, Runde 2: 11 von 20 an den Beleg). Das Risiko liegt in der
+Rückwärtssuche: Sie belohnt jede Fundstelle, auch eine, die der Herausgeber nie als seine Reihe geführt hat.
+Prüfauftrag und Entscheidungsauftrag bleiben in der Fassung von Runde 2.
+
 ## Grenzen dieser Messung
 
 - 16 Einträge plus 6 im Pilot plus 2 × 20 in den Produktionsrunden — Stichproben, keine Statistik.

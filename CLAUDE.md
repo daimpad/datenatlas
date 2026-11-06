@@ -423,7 +423,7 @@ Inhaltsqualität (Hinweis, keine Warnungen):
   Aussagen über fremde Veröffentlichungspraxis: 0
   Begründungen als Schablone („Datensatz ‚X‘ ist sofort publizierbar“): 0
   Beschreibung widerspricht den Metadaten: 0
-  Datentypen mit geprüfter Quelle: 100 von 10428
+  Datentypen mit geprüfter Quelle: 126 von 10428
 ```
 
 Die ersten fünf Kennzahlen stehen auf null (die sechste siehe „Quellen und
@@ -676,6 +676,12 @@ vollständig. Sechs stehen jetzt auf `OP_02` (AGEB nur nicht-kommerziell, BDEW, 
 Lizenz), drei trugen `LI_04` zu Unrecht (game und GIE `LI_05`, Destatis-Seeverkehr `LI_03`). Das Repowering bleibt auf
 `OP_01` mit `LI_04`: Die Seite erlaubt Weitergabe nur unverändert und nennt keine Lizenz. Es bleiben 48 solche
 Einträge ohne Quelle; `STELLEN` in `gruppieren.mjs` kennt ihre Herausgeber nicht.
+
+Die **sechste Produktionsrunde** (30 weitere Einträge mit `OP_01` und `LI_04`, 48,58 $) setzte die Stichprobe fort: Wieder
+stimmte keiner vollständig. 14 stehen jetzt auf `OP_02`, drei auf CC BY 4.0 (Bitkom, Bundesnetzagentur). Zehn bleiben
+auf `OP_01` mit `LI_04`, weil keine Lizenz zu belegen war (nur „©“) — ohne Beleg weder Vorbehalt noch freie Lizenz.
+Vier Einträge beschreiben Datensätze, die es nicht gibt (Case-Mix-Index, Wiederaufnahmerate, Reiseveranstalter-
+Insolvenzen, GDV-Haftpflicht) und sind unverändert. Es bleiben 41 Einträge mit `OP_01` und `LI_04`, davon 22 ohne Quelle.
 
 **Lücke in Regel 3 (geschlossen am 5. November 2026):** 15 der 31 alten Begründungen aus
 Runde 2 und 3 enthielten Praxisaussagen, die `claimsThirdPartyPractice()` nicht erkannte —

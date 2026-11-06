@@ -502,3 +502,53 @@ wäre der erste Schritt für eine weitere Runde.
 **Handhabung.** `uebernehmen.mjs` erwartet je Runde zusammengeführte Dateien (`eingabe.json`, `entscheidung.json`,
 `zitate-a/b/opus.json`, `feldvergleich.json`). Bei zwei Teileingaben wurden sie per Einmalskript vereinigt und der
 Feldvergleich über die vereinigten Läufe neu gerechnet.
+
+## Sechste Produktionsrunde: 30 Einträge mit `OP_01` und `LI_04` (6. November 2026)
+
+Fortsetzung der Stichprobe: 30 der 48 Einträge, bei denen die Beschreibung einen Herausgeber nahelegt, in sechs
+Eingaben zu je fünf, nach Herausgeber zusammengestellt (BVMI, Börsenverein, Deutsche Börse, GDV, ZDH, Bitkom und
+Bundesnetzagentur, BVE und AMI, BStBK und G-BA). Die übrigen 18 (Musikschulen, duale Hochschulen, EdTech, Esports,
+Streaming-Kataloge, Theater, Filmverleih, IG BCE u. a.) blieben ungeprüft.
+
+| | Läufe A (6) | Läufe B (6) | Opus am Beleg (6) |
+|---|---|---|---|
+| Kosten | 16,50 $ | 15,45 $ | 16,63 $ |
+| Zitate wiedergefunden | 420 / 420 (davon 4 von Hand) | 370 / 370 (davon 1 von Hand) | 309 / 309 (davon 4 von Hand) |
+
+Gesamt 48,58 $ (928 Anfragen), 1,62 $ je Eintrag — mehr als in Runde 4 (1,13 $) und Runde 5 (1,32 $), weil die Läufe
+zuerst den Herausgeber suchen mussten und teils verschiedene wählten. Von 442 Feldern gingen 278 automatisch durch, 164
+an den Beleg. Übernommen in zwei PRs: 41 Codefelder an 26 Einträgen, dann 140 Änderungen an 27 Einträgen
+(Beschreibung, Quellen, Startjahre, Klassen) und 25 neue Öffnungsbegründungen. Datentypen mit geprüfter Quelle:
+126 von 10.428.
+
+**Was die Runde ergab.**
+
+- **Kein Eintrag stimmte vollständig.** Rhythmus „monatlich“ und Format „CSV“ waren fast überall falsch: Die Herausgeber
+  veröffentlichen jährlich oder vierteljährlich als PDF.
+- **14 Einträge von `OP_01` auf `OP_02`**, weil `LI_04` belegt ist: BVMI, agma, ZAW, GDV (zweimal), VDA, VDMA, HDE, ADV,
+  AMI, DRV, Pro Generika und die beiden Börsenverein-Einträge (dort fehlt eine Lizenz; wie in Runde 5 hat der
+  Vorbehalt von Media Control den Ausschlag gegeben und der Schwestereintrag stand schon auf `OP_02`).
+- **Drei Einträge trugen `LI_04` zu Unrecht**: Bitkom und die Bundesnetzagentur (zwei Einträge) stehen unter CC BY 4.0.
+  Dort entfiel die Auflage „Nutzungsrecht vorab klären“, `OP_01` bleibt.
+- **Zehn Einträge bleiben auf `OP_01` mit `LI_04`, weil keine Lizenz zu belegen war** (nur „©“): drei ZDH, zwei Deutsche
+  Börse, ADM, BVE, BStBK, BIOCOM, BGR-Steinbruch. Opus empfahl bei einem Teil `OP_02`; entschieden wurde wie in Runde 4:
+  ohne Beleg weder ein Vorbehalt noch eine freie Lizenz. Die Begründungen sagen das offen.
+- **Vier Einträge beschreiben Datensätze, die es nicht gibt**: Case-Mix-Index nach Fachabteilung (kein Pflichtinhalt des
+  Qualitätsberichts), Wiederaufnahmerate „QUIPS“ (ein Benchmark zur Schmerztherapie am Uniklinikum Jena), Insolvenzen von
+  Reiseveranstaltern (keine Statistik bei Creditreform, BMWK oder Destatis gefunden) und der GDV-Haftpflicht-Eintrag aus
+  Runde 4. Sie sind unverändert; über sie wird als Gruppe entschieden.
+- **Die Läufe wählten für denselben Eintrag verschiedene Herausgeber** (Luftfracht: Destatis oder ADV; Breitband: VATM
+  oder Bundesnetzagentur; E-Commerce: HDE oder bevh). Das Verfahren hat dafür keine Regel; Opus entschied am Beleg
+  nach dem Sektor des Eintrags (Luftfracht: ADV, weil die Flughäfen die Daten erzeugen).
+- **Websuchkontingent**: In zwei Läufen (A4 und B4, beide Eingabe 4) war es gegen Ende aufgebraucht; ADV und bevh
+  wurden deshalb nicht von beiden geprüft, Opus schloss die Lücke. Zwölf Läufe gleichzeitig mögen dazu beigetragen
+  haben (nicht untersucht).
+- **Zitatabgleich**: Neun Zitate fehlten und wurden von Hand bestätigt. Ursachen: das Zeichen „∅“ auf der agma-Seite,
+  ein Trennstrich am PDF-Zeilenumbruch („Newsletter-Marketing“), mehrzellige XLSX-Kopfzeilen mit Jahren als Zahlen
+  (Bundesnetzagentur) — der Abgleich vergleicht Zellen einzeln.
+- **Werkzeug**: `uebernehmen.mjs` übergeht im Modus `auto` jetzt Einträge, deren Datensatz beide Läufe verneinen, wie im
+  Modus `review`. Sonst wären Format und Lizenz des Qualitätsberichts auf den Case-Mix-Eintrag gelangt, und `auto` hätte
+  `LI_05` gesetzt, wo Opus `LI_04` entschied.
+
+**Offen**: Startjahr beim Getreide-Eintrag (2009, von keinem Lauf geprüft), beim NIM-Konsumklima und bei der agma
+(Beginn des Angebots, nicht der Reihe); 41 Einträge mit `OP_01` und `LI_04` insgesamt, davon 22 ohne Quelle.

@@ -59,8 +59,8 @@ Jeder Datentyp trägt eine von drei Öffnungsklassen. Entscheidend ist: Die Eins
 
 | Klasse | Anteil | Bedeutung |
 |---|---:|---|
-| 🟢 Sofort publizierbar | 67,7 % | kein oder minimaler Aufbereitungsbedarf |
-| 🟡 Nach Aufbereitung publizierbar | 29,0 % | Anonymisierung oder Aggregation nötig |
+| 🟢 Sofort publizierbar | 67,4 % | kein oder minimaler Aufbereitungsbedarf |
+| 🟡 Nach Aufbereitung publizierbar | 29,3 % | Anonymisierung oder Aggregation nötig |
 | 🔴 Nur Metadaten publizierbar | 3,3 % | Inhalt zu sensibel, aber Existenz dokumentierbar |
 
 Ein Beispiel aus dem Bestand zeigt, worin der Wert liegt. Für die **Blitzerfoto-Datenbank** eines Ordnungsamts lautet die Einstufung *rot*, mit dieser Begründung:
@@ -146,14 +146,14 @@ Die Auswertung über den Gesamtbestand macht strukturelle Aussagen möglich. Die
 
 | Sektor | sofort publizierbar |
 |---|---:|
-| Staat und Verwaltung | 76,7 % |
-| Wissenschaft und Forschung | 74,2 % |
+| Staat und Verwaltung | 76,6 % |
+| Wissenschaft und Forschung | 74,0 % |
 | Zivilgesellschaft | 71,3 % |
 | Bildung | 66,4 % |
-| Kultur | 63,6 % |
-| Religionsgemeinschaften | 62,3 % |
-| Wirtschaft | 57,1 % |
-| Medien | 47,6 % |
+| Kultur | 62,9 % |
+| Religionsgemeinschaften | 61,7 % |
+| Wirtschaft | 56,3 % |
+| Medien | 46,7 % |
 
 Der Befund dahinter ist bemerkenswert: **Über zwei Drittel aller erfassten Datentypen wären sofort publizierbar**, und nur 3,3 % sind tatsächlich so sensibel, dass lediglich Metadaten veröffentlicht werden könnten. Der Engpass ist demnach überwiegend kein rechtlicher, sondern ein organisatorischer und kultureller.
 

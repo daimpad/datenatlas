@@ -50499,11 +50499,11 @@
               "name": "Stromerzeugungsstatistik private Erzeuger",
               "color": "#ca6f1e",
               "details": {
-                "description": "Stromerzeugung nach Energieträger und Erzeugerkategorie (AGEB-Daten).",
+                "description": "Die AG Energiebilanzen weist die Brutto- und Nettostromerzeugung in Deutschland in TWh nach Energieträgern aus (Braunkohle, Steinkohle, Kernenergie, Erdgas, Mineralöl, erneuerbare Energien und Sonstige), nur für Deutschland insgesamt. Die aktuelle Tabelle reicht von 1990 bis 2025 und steht als PDF und XLSX bereit. Eine Gliederung nach Erzeugerkategorie oder privaten Erzeugern enthält sie nicht.",
                 "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Gezählt wird die Stromerzeugung je Energieträger und Erzeugerkategorie aus einer Energiebilanz. Es sind Mengen ohne Personenbezug; Anlagen einzelner privater Betreiber sind nicht Teil der Zahlen. Das Nutzungsrecht an der Quelle ist vorab zu klären."
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Gezählt wird die Stromerzeugung in TWh je Energieträger für Deutschland insgesamt, also Mengen ohne Personenbezug. Hindernis ist das Nutzungsrecht: Die AG Energiebilanzen gestattet die Verwendung ihrer Daten und Grafiken nur zu nicht-kommerziellen Zwecken, eine Weitergabe ist vorab zu klären."
                 },
                 "theme": {
                   "code": "TH_06",
@@ -50519,8 +50519,12 @@
                 },
                 "format": [
                   {
-                    "code": "FT_01",
-                    "label": "CSV"
+                    "code": "FT_07",
+                    "label": "PDF"
+                  },
+                  {
+                    "code": "FT_08",
+                    "label": "Excel (XLSX)"
                   }
                 ],
                 "license": {
@@ -50551,9 +50555,32 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 2020,
-                  "update_frequency": "FQ_03"
-                }
+                  "available_from": 1990,
+                  "update_frequency": "FQ_04"
+                },
+                "sources": [
+                  {
+                    "title": "Stromerzeugung nach Energieträgern (Strommix) von 1990 bis 2025",
+                    "publisher": "AG Energiebilanzen e.V.",
+                    "url": "https://ag-energiebilanzen.de/daten-und-fakten/stromerzeugung/",
+                    "checked": "2026-11-06",
+                    "supports": "Brutto-/Nettostromerzeugung nach Energieträgern, Deutschland insgesamt, 1990 bis 2025, PDF und XLSX"
+                  },
+                  {
+                    "title": "AGEB FAQ: Verwendung von Daten und Grafiken",
+                    "publisher": "AG Energiebilanzen e.V.",
+                    "url": "https://ag-energiebilanzen.de/faq/sonstiges/",
+                    "checked": "2026-11-06",
+                    "supports": "Nutzung nicht-kommerziell frei mit Quellenangabe"
+                  },
+                  {
+                    "title": "Stromerzeugung nach Energieträgern (Strommix) 1990 bis 2025, Deutschland insgesamt",
+                    "publisher": "AG Energiebilanzen e. V.",
+                    "url": "https://ag-energiebilanzen.de/wp-content/uploads/Strerz-Abgabe-September-2026.pdf",
+                    "checked": "2026-11-06",
+                    "supports": "Brutto- und Nettostromerzeugung nach Energieträgern in TWh ab 1990, als PDF"
+                  }
+                ]
               }
             },
             {
@@ -50562,11 +50589,11 @@
               "name": "Stromhandelspreise",
               "color": "#ca6f1e",
               "details": {
-                "description": "Day-Ahead- und Intraday-Preise am deutschen Stromgroßhandelsmarkt (EPEX SPOT).",
+                "description": "EPEX SPOT SE bietet für das Marktgebiet Deutschland Preise und Mengen, aggregierte Kurven und Blockgebote der Day-Ahead- und der europaweiten Intraday-Auktionen sowie Abschlüsse und anonyme Orderhistorien des kontinuierlichen Intraday-Handels als lizenzierte, gebührenpflichtige Informationsprodukte an. Geliefert wird per sFTP als End-of-Day-Daten nach Handelsschluss oder als Historie bis zum Vorjahr, in Echtzeit über eine API. Interne und externe Nutzung, etwa die Anzeige auf einer Website, werden getrennt lizenziert.",
                 "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Erfasst werden Day-Ahead- und Intraday-Preise im deutschen Stromgroßhandel. Es sind Marktpreise ohne Personenbezug; Gebote einzelner Händler gehören nicht dazu. Das Nutzungsrecht an den Börsendaten ist vorab zu klären."
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Gezählt werden Preise und Mengen je Marktgebiet und Handelszeitraum; Blockgebote und anonyme Orderhistorien sind eigene Produkte ohne Händlernamen. Hindernis ist das Nutzungsrecht: Die Daten sind lizenz- und gebührenpflichtig, Weitergabe und Anzeige auf einer Website werden getrennt lizenziert."
                 },
                 "theme": {
                   "code": "TH_06",
@@ -50616,7 +50643,23 @@
                 "temporal": {
                   "available_from": 2014,
                   "update_frequency": "FQ_02"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Day-Ahead Auction Prices and Volumes - EOD",
+                    "publisher": "EEX Group Webshop (EPEX SPOT Market Data)",
+                    "url": "https://webshop.eex-group.com/data-type/be-ch-de-dk-fi-fr-gb-nl-no-pl-se-day-ahead-auction-prices-and-volumes-eod",
+                    "checked": "2026-11-06",
+                    "supports": "Day-Ahead-Preise und -Volumen, täglich nach Handelsschluss, Abo gegen Entgelt"
+                  },
+                  {
+                    "title": "General Conditions applicable to EPEX SPOT Information Product (1 Nov 2025)",
+                    "publisher": "EPEX SPOT SE",
+                    "url": "https://www.epexspot.com/sites/default/files/download_center_files/EPEX%20SPOT%20GENERAL%20CONDITIONS_Market%20Data%20as%20of%201st%20November%202025.pdf",
+                    "checked": "2026-11-06",
+                    "supports": "Lizenzumfang: Internal vs. External Usage"
+                  }
+                ]
               }
             },
             {
@@ -51607,11 +51650,11 @@
               "name": "Repowering Windkraftanlagen Statistik",
               "color": "#ca6f1e",
               "details": {
-                "description": "Anzahl und Leistungszuwachs durch Repowering-Maßnahmen bei Windkraftanlagen nach Bundesland. Deutsche Windguard und BWE erheben diese Daten jährlich aus Anlagenregistern. Zeigt Effizienzgewinne durch technologische Erneuerung des Windparks.",
+                "description": "Anzahl und Leistung der im Rahmen eines Repowerings in Betrieb genommenen Windenergieanlagen an Land nach Bundesland, mit dem Anteil am Gesamtzubau im Land (2025: 279 Anlagen mit 1.548 MW in 12 Bundesländern). Die Fachagentur Wind und Solar wertet dafür im Auftrag von Bundesverband Windenergie und VDMA Power Systems das Marktstammdatenregister, eigene Recherchen und Akteursbefragungen aus. Der Status erscheint als PDF zum ersten Halbjahr und zum Gesamtjahr.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "Gezählt werden ersetzte Windkraftanlagen und der Leistungszuwachs je Bundesland und Jahr. Anlagenregister enthalten Standortdaten, daher werden nur Summen je Land ausgewiesen. Nutzungsrecht der Verbandsauswertung vorab klären."
+                  "explanation": "Gezählt werden Anzahl und Leistung repowerter Windenergieanlagen je Bundesland und Berichtszeitraum; Standorte einzelner Anlagen werden nicht ausgewiesen. Die Fachagentur Wind und Solar erlaubt die Weitergabe mit Urhebernennung, aber nur unverändert; Bearbeitungen sind vorab abzustimmen."
                 },
                 "theme": {
                   "code": "TH_06",
@@ -51659,9 +51702,32 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 2000,
-                  "update_frequency": "FQ_04"
-                }
+                  "available_from": 2025,
+                  "update_frequency": "FQ_07"
+                },
+                "sources": [
+                  {
+                    "title": "Status des Windenergieausbaus an Land in Deutschland – Jahr 2025",
+                    "publisher": "Fachagentur Wind und Solar e.V.",
+                    "url": "https://www.fachagentur-wind-solar.de/fileadmin/Veroeffentlichungen/Wind/Analysen/FA_Wind_Solar_Status_des_Windenergieausbaus_an_Land_Jahr_2025.pdf",
+                    "checked": "2026-11-06",
+                    "supports": "Repowering 2025: Anzahl, Leistung, Verteilung nach Bundesland (Tabelle 3)"
+                  },
+                  {
+                    "title": "Status des Windenergieausbaus an Land in Deutschland – 1. Halbjahr 2025",
+                    "publisher": "Fachagentur Wind und Solar e.V.",
+                    "url": "https://www.fachagentur-wind-solar.de/fileadmin/Veroeffentlichungen/Wind/Daten/FA_Wind_Solar_Status_des_Windenergieausbaus_an_Land_Halbjahr_2025.pdf",
+                    "checked": "2026-11-06",
+                    "supports": "Repowering im 1. Halbjahr 2025 nach Bundesland, Halbjahresrhythmus"
+                  },
+                  {
+                    "title": "Status of Onshore Wind Energy Development in Germany. Year 2025 (Mediathek)",
+                    "publisher": "Fachagentur Wind und Solar e. V.",
+                    "url": "https://www.fachagentur-wind-solar.de/veroeffentlichungen/mediathek/detail/status-of-onshore-wind-energy-development-in-germany-year-2025",
+                    "checked": "2026-11-06",
+                    "supports": "jährliche Ausgaben 2024 und 2025, Auftrag von BWE und VDMA Power Systems"
+                  }
+                ]
               }
             },
             {
@@ -53515,11 +53581,11 @@
               "name": "Gasabsatzstatistik",
               "color": "#ca6f1e",
               "details": {
-                "description": "Erdgasabsatz nach Abnehmerkategorie und Region (BDEW-Statistik).",
+                "description": "Der BDEW weist im Statusreport Gas den Erdgasabsatz in Deutschland in Mrd. kWh nach Letztverbrauchern aus: Industrie, private Haushalte, Gewerbe/Handel/Dienstleistungen, Stromversorgung, Fernwärme- und Kälteversorgung sowie Verkehr, ohne den Eigenverbrauch der Gaswirtschaft. Die Reihe umfasst die Jahre 2015 bis 2025 (letztes Jahr vorläufig) und liegt als PDF vor; Quellen sind Destatis, AG Energiebilanzen und BDEW. Eine regionale Gliederung enthält sie nicht.",
                 "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Gezählt wird der Erdgasabsatz je Abnehmerkategorie und Region. Es sind Mengen aus einer Verbandsstatistik; Absätze einzelner Versorger sind bei wenigen Anbietern je Zelle zusammenzufassen. Das Nutzungsrecht an der Quelle ist vorab zu klären."
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Gezählt wird der Erdgasabsatz in Mrd. kWh je Letztverbrauchergruppe für Deutschland insgesamt; Angaben zu einzelnen Versorgern oder Regionen enthält die Reihe nicht. Hindernis ist das Nutzungsrecht: Das BDEW-Impressum verlangt die Zustimmung des Rechteinhabers, sie ist vor einer Weitergabe einzuholen."
                 },
                 "theme": {
                   "code": "TH_06",
@@ -53567,9 +53633,25 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 2013,
+                  "available_from": 2015,
                   "update_frequency": "FQ_04"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "Erdgas: Absatz und Verbrauch (Erdgasabsatz nach Kundengruppen)",
+                    "publisher": "BDEW",
+                    "url": "https://www.bdew.de/service/daten-und-grafiken/erdgas-absatz-und-verbrauch/",
+                    "checked": "2026-11-06",
+                    "supports": "Erdgasabsatz nach Kundengruppen als PDF-Grafik (Zehnjahresvergleich, Entwicklung 10 Jahre)"
+                  },
+                  {
+                    "title": "Statusreport Gas: Entwicklung des Erdgasabsatzes nach Letztverbrauchern",
+                    "publisher": "BDEW Bundesverband der Energie- und Wasserwirtschaft",
+                    "url": "https://www.bdew.de/media/documents/2026_09_28_Statusreport_Gas_final.pdf",
+                    "checked": "2026-11-06",
+                    "supports": "Erdgasabsatz nach Letztverbrauchergruppen, Zehnjahresreihe 2015 bis 2025, PDF"
+                  }
+                ]
               }
             },
             {
@@ -53578,11 +53660,11 @@
               "name": "Gasspeicherstatistik",
               "color": "#ca6f1e",
               "details": {
-                "description": "Füllstände und Kapazitäten der deutschen Erdgasspeicher.",
+                "description": "Gas Infrastructure Europe veröffentlicht auf der Plattform AGSI die von den Speicherbetreibern freiwillig gemeldeten täglichen Füllstände und Kapazitäten der Erdgasspeicher (Gas in Storage, Arbeitsgasvolumen, Einspeicherleistung), je Speicheranlage und aggregiert nach Unternehmen und Land. Angefordert sind Daten ab 1.1.2011 oder ab Inbetriebnahme; einzelne Betreiber liefern erst seit Beginn des REMIT-Reportings am 7.4.2016. Die Daten sind über eine kostenlose JSON-API abrufbar und dürfen mit Nennung von GIE als Quelle weiterverwendet werden.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "Gemessen werden Füllstände und Kapazitäten der Erdgasspeicher je Speicher und Tag. Es sind Mengen ohne Personenbezug; Einspeicherungen einzelner Händler gehören nicht dazu. Das Nutzungsrecht an der Quelle ist vorab zu klären."
+                  "explanation": "Gezählt werden Füllstände und Kapazitäten je Speicheranlage und Tag, also Gasmengen ohne Personenbezug. Die Nutzung ist mit Nennung von Gas Infrastructure Europe als Quelle gestattet; die Quellenangabe ist Auflage jeder Weiterverwendung, eine Einzelfreigabe entfällt."
                 },
                 "theme": {
                   "code": "TH_06",
@@ -53630,9 +53712,18 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 2005,
+                  "available_from": 2011,
                   "update_frequency": "FQ_02"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "GIE API documentation v007 (AGSI/ALSI)",
+                    "publisher": "Gas Infrastructure Europe (GIE)",
+                    "url": "https://www.gie.eu/transparency-platform/GIE_API_documentation_v007.pdf",
+                    "checked": "2026-11-06",
+                    "supports": "Tägliche Speicherbestände je Anlage und Land, ab 2011, JSON-API, freie Nutzung mit Quellenangabe"
+                  }
+                ]
               }
             },
             {
@@ -65528,11 +65619,11 @@
               "name": "Verbrauchervertrauen Index Deutschland",
               "color": "#ca6f1e",
               "details": {
-                "description": "GfK-Konsumklimaindex und Unterkomponenten (Konjunkturerwartung, Einkommenserwartung, Anschaffungsneigung) als monatlicher Stimmungsindikator. GfK erhebt diese Daten in monatlichen Verbraucherpanelbefragungen. Vorlaufindikator für private Konsumausgaben.",
+                "description": "Monatlicher Konsumklima-Indikator für Deutschland („NIM Konsumklima powered by GfK“), berechnet aus Einkommenserwartung, Anschaffungsneigung und Sparneigung; Konjunktur- und Preiserwartung werden als weitere Stimmungsindikatoren erhoben. Grundlage sind monatlich rund 2.000 Verbraucherinterviews, die NIQ/GfK im Auftrag des Nürnberg Instituts für Marktentscheidungen (NIM) erhebt; das NIM wertet sie aus und gibt sie heraus.",
                 "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Berechnet wird ein Konsumklimaindex mit Teilindikatoren zu Konjunktur-, Einkommenserwartung und Anschaffungsneigung aus monatlichen Befragungen. Als Index über viele Interviews ohne Einzelangaben ist er publizierbar; das Nutzungsrecht ist vorab zu klären."
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Gezählt wird ein Indexwert je Monat, berechnet aus Einkommenserwartung, Anschaffungsneigung und Sparneigung aus rund 2.000 Verbraucherinterviews; Einzelangaben sind nicht Teil der Reihe. Hindernis ist das Nutzungsrecht: Die Nutzungsbedingungen des NIM behalten die Vervielfältigung vor, die Weitergabe ist vorab zu klären."
                 },
                 "theme": {
                   "code": "TH_04",
@@ -65582,7 +65673,30 @@
                 "temporal": {
                   "available_from": 2012,
                   "update_frequency": "FQ_03"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "NIM Konsumklima powered by GfK",
+                    "publisher": "Nürnberg Institut für Marktentscheidungen e.V.",
+                    "url": "https://www.nim.org/konsumklima",
+                    "checked": "2026-11-06",
+                    "supports": "monatlicher Konsumklima-Indikator, Herausgeber, Datenerhebung durch NIQ/GfK"
+                  },
+                  {
+                    "title": "Methode des NIM Konsumklimas powered by GfK",
+                    "publisher": "Nürnberg Institut für Marktentscheidungen e.V.",
+                    "url": "https://www.nim.org/konsumklima/methode",
+                    "checked": "2026-11-06",
+                    "supports": "Stichprobe, Befragungsrhythmus, Indikatoren und Bildung des Index"
+                  },
+                  {
+                    "title": "NIM Konsumklima Oktober 2026 (Pressemitteilung)",
+                    "publisher": "Nürnberg Institut für Marktentscheidungen e.V.",
+                    "url": "https://www.nim.org/fileadmin/PUBLIC/3_1_Konsumklima/2026/2026_10/2026_10_PM_NIM_Konsumklima_powered_by_GfK_dt_fin.pdf",
+                    "checked": "2026-11-06",
+                    "supports": "monatliche Veröffentlichung, Herausgeber, Erhebung durch NIQ/GfK, PDF-Format"
+                  }
+                ]
               }
             },
             {
@@ -91733,11 +91847,11 @@
               "name": "Containerumschlag und Liegeplatzbelegung in deutschen Containerhäfen",
               "color": "#ca6f1e",
               "details": {
-                "description": "TEU-Umschlagszahlen, Schiffsankünfte und Liegeplatzbelegungsgrade der großen deutschen Containerhäfen (Hamburg, Bremen/Bremerhaven, Wilhelmshaven).",
+                "description": "Die Seeverkehrsstatistik des Statistischen Bundesamts weist monatlich den Güter- und Containerumschlag (in 1 000 TEU) der deutschen Seehäfen aus, gegliedert unter anderem nach Bundesländern, Verkehrsbeziehungen und Containergrößen, sowie Schiffsankünfte nach Schiffsart und Bruttoraumzahl; erfasst werden Seeschiffe ab 100 Bruttoraumzahl. Die GENESIS-Tabellen für ausgewählte Häfen beginnen 2011, die Schiffsankünfte 2001; bereitgestellt werden ein Statistischer Bericht als Excel-Datei und Open-Data-CSV. Liegeplatzbelegungsgrade enthält die Statistik nicht.",
                 "openness": {
                   "class": "OP_01",
                   "label": "Sofort publizierbar",
-                  "explanation": "Gezählt werden Container-Umschlag in TEU, Schiffsankünfte und die Belegung von Liegeplätzen der großen Containerhäfen. Es sind Summen je Hafen und Monat; das Nutzungsrecht an den Betreiberzahlen ist vor einer Weitergabe zu klären."
+                  "explanation": "Gezählt werden Umschlag in TEU und Schiffsankünfte je Hafen oder Bundesland und Monat, also Summen aus amtlicher Statistik ohne Personenbezug. Die Datenlizenz Deutschland erlaubt die Nutzung mit Namensnennung; Angaben zur Liegeplatzbelegung enthält die Statistik nicht."
                 },
                 "theme": {
                   "code": "TH_04",
@@ -91757,13 +91871,13 @@
                     "label": "CSV"
                   },
                   {
-                    "code": "FT_02",
-                    "label": "JSON"
+                    "code": "FT_08",
+                    "label": "Excel (XLSX)"
                   }
                 ],
                 "license": {
-                  "code": "LI_04",
-                  "label": "Proprietär / Restriktiv"
+                  "code": "LI_03",
+                  "label": "Datenlizenz Deutschland"
                 },
                 "relevance": 5,
                 "processes": [
@@ -91789,9 +91903,32 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 2002,
-                  "update_frequency": "FQ_04"
-                }
+                  "available_from": 2011,
+                  "update_frequency": "FQ_03"
+                },
+                "sources": [
+                  {
+                    "title": "Seeverkehr 2025: Güterumschlag steigt um 3,8 % gegenüber dem Vorjahr",
+                    "publisher": "Statistisches Bundesamt",
+                    "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/03/PD26_077_463.html",
+                    "checked": "2026-11-06",
+                    "supports": "Containerumschlag Deutschland 2025 in TEU, Verweis auf GENESIS 46331"
+                  },
+                  {
+                    "title": "Seeschifffahrt - Fachserie 8 Reihe 5 - 2016 (Letzte Ausgabe)",
+                    "publisher": "Statistisches Bundesamt",
+                    "url": "https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Transport-Verkehr/Gueterverkehr/Publikationen/Downloads-Schifffahrt/seeschifffahrt-jahr-2080500167004.pdf",
+                    "checked": "2026-11-06",
+                    "supports": "TEU nach Häfen und Fahrtgebieten, Überführung in GENESIS 46331"
+                  },
+                  {
+                    "title": "Statistischer Bericht Seeverkehrsstatistik August 2026",
+                    "publisher": "Statistisches Bundesamt (Destatis)",
+                    "url": "https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Transport-Verkehr/Gueterverkehr/Publikationen/Downloads-Schifffahrt/statistischer-bericht-seeschifffahrt-2080500261085.xlsx?__blob=publicationFile&v=2",
+                    "checked": "2026-11-06",
+                    "supports": "Containerumschlag in 1 000 TEU, Schiffsankünfte, Übersicht GENESIS 46331 mit Zeiträumen, Nutzung mit Quellenangabe"
+                  }
+                ]
               }
             },
             {

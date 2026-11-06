@@ -423,7 +423,7 @@ Inhaltsqualität (Hinweis, keine Warnungen):
   Aussagen über fremde Veröffentlichungspraxis: 0
   Begründungen als Schablone („Datensatz ‚X‘ ist sofort publizierbar“): 0
   Beschreibung widerspricht den Metadaten: 0
-  Datentypen mit geprüfter Quelle: 90 von 10428
+  Datentypen mit geprüfter Quelle: 100 von 10428
 ```
 
 Die ersten fünf Kennzahlen stehen auf null (die sechste siehe „Quellen und
@@ -669,6 +669,13 @@ hätte zwei GDV-Einträge auf `LI_05` gesetzt, die drei Schwestereinträge werte
 auf `LI_04`. Fünf IVW- und drei ZDH-Einträge bleiben auf `OP_01` mit `LI_04`, ohne Lizenzbeleg: Nutzungs-
 bedingungen der Seite fehlen oder gelten für einen anderen Datensatz. Ein GDV-Eintrag (Deckungssummen) beschreibt
 einen Datensatz, den es nicht gibt, und ist unverändert. Die AGOF ist in Liquidation (Reichweitenforschung bei der agma).
+
+Die **fünfte Produktionsrunde** war eine Stichprobe von zehn der 58 „allgemeinen“ Einträge mit `OP_01` und `LI_04`
+(13,24 $) — und widerlegte die Annahme, sie hätten keinen Herausgeber: Bei allen ließ er sich ableiten, keiner stimmte
+vollständig. Sechs stehen jetzt auf `OP_02` (AGEB nur nicht-kommerziell, BDEW, EPEX, ZAW, NIM, Börsenverein ohne
+Lizenz), drei trugen `LI_04` zu Unrecht (game und GIE `LI_05`, Destatis-Seeverkehr `LI_03`). Das Repowering bleibt auf
+`OP_01` mit `LI_04`: Die Seite erlaubt Weitergabe nur unverändert und nennt keine Lizenz. Es bleiben 48 solche
+Einträge ohne Quelle; `STELLEN` in `gruppieren.mjs` kennt ihre Herausgeber nicht.
 
 **Lücke in Regel 3 (geschlossen am 5. November 2026):** 15 der 31 alten Begründungen aus
 Runde 2 und 3 enthielten Praxisaussagen, die `claimsThirdPartyPractice()` nicht erkannte —

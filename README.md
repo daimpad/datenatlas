@@ -442,7 +442,7 @@ Inhaltsqualität (Hinweis, keine Warnungen):
   Aussagen über fremde Veröffentlichungspraxis: 0
   Begründungen als Schablone („Datensatz ‚X‘ ist sofort publizierbar“): 0
   Beschreibung widerspricht den Metadaten: 0
-  Datentypen mit geprüfter Quelle: 90 von 10428
+  Datentypen mit geprüfter Quelle: 100 von 10428
 ```
 
 Fünf Kennzahlen stehen auf null: 942 Kurztexte, 1.492 formelhaft

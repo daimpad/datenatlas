@@ -591,3 +591,30 @@ Gesamt 6,33 $ (127 Anfragen), 2,11 $ je Eintrag. Von 55 Feldern gingen 33 automa
   Quellen, deren Zitat nur in der Archivkopie steht (Leopoldina-Verzeichnis, OECD-Public-Use-Files, Scientific-Use-File-Seiten
   ZA5845 und ZA9009), blieben außen; übernommen sind die Quellen mit wiedergefundenem Zitat auf der Live-Seite (bei PIAAC zwei
   GESIS-Seiten und die BMFTR-Meldung, bei den Akademien BBAW-Liste und Leopoldina-PDF).
+
+## Zweiter Test einer neuen Regel 7 (6. November 2026, nicht übernommen)
+
+15 Einträge (13 Problemfälle: Handwerks-Konjunktur ×5, ZAW, VDA-Zulieferer, ADV-Luftfracht, digitale Werbung, Softwaremarkt,
+Ladenstruktur, E-Commerce, Repowering; 2 Kontrollen: Gasspeicher, Telekommunikationsmarkt) mit einer Testfassung der Regel 7
+(`runden/8/regel7-test.md`): eigenes Archiv des Herausgebers bis zwei Schritte von der verlinkten Seite erlaubt, beschriftete
+Diagrammwerte zählen, Gliederung nur bei Nennung im Namen, gleitendes Fenster mit erstem heutigen Jahr, Herkunft `heute` oder
+`archiv`. Zwei Sonnet-Läufe je Eintrag, nur Startjahr, Startjahr aus der Eingabe entfernt. Kosten 9,04 $ (267 Anfragen). Der
+Opus-Schritt wurde nicht ausgeführt.
+
+**Ergebnis: durchgefallen.** Die beiden Läufe nannten bei 8 von 15 Einträgen dasselbe Jahr (Maßstab des ersten Tests: mindestens 12).
+- Die fünf Handwerks-Einträge wichen alle ab: Lauf A blieb bei `heute` (2006, einmal 2025, einmal kein Jahr), Lauf B öffnete das
+  Archiv und nannte 1992, 2000 und 2003. Die Archivöffnung erzeugt die Abweichung.
+- Ladenstruktur: 2025 (Größenklasse als Gliederung im Namen) gegen 2015 (Gesamtreihe, Archiv des Börsenvereins).
+- Telekommunikationsmarkt: 2015 (aktuelle Ausgabe) gegen 2014 (Datensammlung auf derselben Seite). Die Kontrolle war nicht
+  eindeutig; auch der Gasspeicher (2011 laut Definitionsseite, vollständig erst ab 2016) war es nicht.
+- Luftfracht: beide nahmen 1991 aus der Downloadbibliothek; die Portalreihe beginnt 2020.
+- Bei E-Commerce, Repowering und den Handwerks-Diagrammen steht das Jahr an einer Achse oder einem Balken, den der Textlayer vom
+  Wert trennt; die Läufe lasen es am gerenderten Bild. Die Einigkeit bei E-Commerce und Repowering zeigt zwei übereinstimmende
+  Lesungen, keine maschinell prüfbare Stelle.
+- Zitatabgleich: 84 von 88 gefunden (Lauf A 36 von 38, Lauf B 48 von 50). Es fehlten ein Satz zu 58,1 Mrd. € und eine Zahlenfolge
+  (Softwaremarkt, Repowering) in Lauf A, in Lauf B der Dataverse-Satz zum Softwaremarkt und ein Gasspeicher-Zitat aus einem
+  JS-Bundle mit Hash im Namen. Lauf A zu Eingabe 2 meldete alle Zitate als gefunden; der Abgleich fand eines nicht.
+
+**Folgerung:** Die geltende Regel 7 bleibt. Ein Opus-Schritt hätte den Maßstab nicht mehr erreichen können (Einigkeit der Läufe
+höchstens 8 von 15). Die Definition von `available_from` in CLAUDE.md ändert sich nicht. Offen bleibt die Frage, ob ein
+Eintrag mit gleitendem Fenster überhaupt ein Startjahr tragen soll; das ist eine Entscheidung über das Feld, nicht über die Regel.

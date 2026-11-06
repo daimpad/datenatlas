@@ -292,8 +292,11 @@ Haushalte (Befragungen, Panels, Steuer-Mikrofiles, Register) und behalten `GR_04
 Begründungen den Personenbezug schon benannt — der Objekttyp war der Fehler, nicht die Granularität. Der Validator
 zählt die Kombination jetzt unter den Metadaten-Widersprüchen. **Offen**: Drei der 13 stehen auf `OP_01` mit freier
 Lizenz (`expertendatenbank`, `akademiemitglieder-verzeichnis` und die PIAAC-Kompetenzdaten); bei namentlichen
-Personendaten und Individualdaten ist das eine eigene Prüfung, die dieser Lauf nicht vorgenommen hat. Bei einigen der
-89 passt außerdem der Objekttyp nicht (etwa Stellungnahmen als `OB_04`); auch das ist unberührt.
+Personendaten und Individualdaten ist das eine eigene Prüfung, die dieser Lauf nicht vorgenommen hat. Bei 37 der
+89 passte außerdem der Objekttyp nicht (etwa Stellungnahmen als `OB_04`, Sternkataloge als `OB_05`); einzeln
+korrigiert in `scripts/datafix-objekttyp-nach-gr04.mjs`. Sechs bleiben ohne passenden Code (Betriebspanels und
+Unternehmensumfragen als `OB_07`/`OB_04`, Simulationsarchive als `OB_05`); das Vokabular kennt keine Befragungsdaten
+von Organisationen.
 
 ### Format (details.format[].code)
 | Code | Format |

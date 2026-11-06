@@ -679,7 +679,7 @@ und die bAV-Studie behalten die Verwertung vor. **Ein Herausgeber, eine Bedingun
 hätte zwei GDV-Einträge auf `LI_05` gesetzt, die drei Schwestereinträge wertete Opus als `LI_04` — beide blieben
 auf `LI_04`. Fünf IVW- und drei ZDH-Einträge bleiben auf `OP_01` mit `LI_04`, ohne Lizenzbeleg: Nutzungs-
 bedingungen der Seite fehlen oder gelten für einen anderen Datensatz. Ein GDV-Eintrag (Deckungssummen) beschreibt
-einen Datensatz, den es nicht gibt, und ist unverändert. Die AGOF ist in Liquidation (Reichweitenforschung bei der agma).
+einen Datensatz, den es nicht gibt, und wurde in der sechsten Runde auf das Belegte gefasst. Die AGOF ist in Liquidation (Reichweitenforschung bei der agma).
 
 Die **fünfte Produktionsrunde** war eine Stichprobe von zehn der 58 „allgemeinen“ Einträge mit `OP_01` und `LI_04`
 (13,24 $) — und widerlegte die Annahme, sie hätten keinen Herausgeber: Bei allen ließ er sich ableiten, keiner stimmte
@@ -692,7 +692,9 @@ Die **sechste Produktionsrunde** (30 weitere Einträge mit `OP_01` und `LI_04`, 
 stimmte keiner vollständig. 14 stehen jetzt auf `OP_02`, drei auf CC BY 4.0 (Bitkom, Bundesnetzagentur). Zehn bleiben
 auf `OP_01` mit `LI_04`, weil keine Lizenz zu belegen war (nur „©“) — ohne Beleg weder Vorbehalt noch freie Lizenz.
 Vier Einträge beschreiben Datensätze, die es nicht gibt (Case-Mix-Index, Wiederaufnahmerate, Reiseveranstalter-
-Insolvenzen, GDV-Haftpflicht) und sind unverändert. Es bleiben 41 Einträge mit `OP_01` und `LI_04`, davon 22 ohne Quelle.
+Insolvenzen, GDV-Haftpflicht); ihre Beschreibung sagt das jetzt selbst und nennt nur das Belegte, die Begründungen
+behaupten nichts mehr, Codes, Namen und Ids blieben (`scripts/datafix-nicht-belegbare-datensaetze.mjs`). Entfernt wurden sie
+nicht: Das hätte die Gesamtzahl und Deep Links berührt und ist eine eigene Entscheidung. Es bleiben 41 Einträge mit `OP_01` und `LI_04`, davon 22 ohne Quelle.
 
 **Lücke in Regel 3 (geschlossen am 5. November 2026):** 15 der 31 alten Begründungen aus
 Runde 2 und 3 enthielten Praxisaussagen, die `claimsThirdPartyPractice()` nicht erkannte —

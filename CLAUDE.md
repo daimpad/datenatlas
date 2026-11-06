@@ -591,6 +591,9 @@ Quellseite nachgelesen ist.**
 Öffentlich erklärt ist das im Abschnitt „Woher die Angaben stammen“ auf
 `ueber.html` (und gleichlautend in `docs/ueber-den-datenatlas.md`). Dort heißt
 es „modelliert“ — bei dieser Wortwahl bleiben.
+Die Prüfstatistik in diesem Abschnitt (geprüft, davon vollständig richtig, korrigiert, nicht belegbar; Einträge mit Quelle)
+ist von Hand gepflegt und nach jeder Runde zu erneuern: `node scripts/quellenpruefung/zaehlen.mjs` zählt sie aus den
+Laufprotokollen, die Zahl der Einträge mit Quelle nennt der Validator.
 
 Optionales Feld `details.sources`:
 

@@ -372,6 +372,7 @@ Maßgeblich sind die Werte in `public/data/main.json`:
 | `OB_07` | Transaktionsdaten |
 | `OB_08` | Metadaten |
 | `OB_09` | Statistik / Aggregatdaten |
+| `OB_10` | Befragungsdaten (Organisationen) |
 
 ### Granularität (`details.granularity.code`)
 | Code | Granularität |

@@ -284,6 +284,17 @@ geht, steckt im Muster selbst. Einzelfälle beim Anfassen korrigieren.
 `GR_04` heißt **personenbezogene** Mikrodaten. Einzelereignisse ohne
 Personenbezug (Fahrten, Buchungen, Messungen) sind `GR_01`.
 
+Die Definition war verletzt: 102 Datentypen trugen `GR_04` mit einem anderen Objekttyp als `OB_01`, 94 davon in
+Wissenschaft und Zivilgesellschaft. Einzeln nach der Beschreibung entschieden (`scripts/datafix-granularitaet-gr04.mjs`):
+89 sind Verzeichnisse, Berichte, Messreihen, Betriebsdaten oder Auswertungen und stehen jetzt auf `GR_01` (einzelne
+Datensätze, Dokumente, Messungen) oder `GR_02` (ausgewertet); 13 beschreiben wirklich Datensätze über Personen oder
+Haushalte (Befragungen, Panels, Steuer-Mikrofiles, Register) und behalten `GR_04` mit `OB_01`. Bei den 13 hatten die
+Begründungen den Personenbezug schon benannt — der Objekttyp war der Fehler, nicht die Granularität. Der Validator
+zählt die Kombination jetzt unter den Metadaten-Widersprüchen. **Offen**: Drei der 13 stehen auf `OP_01` mit freier
+Lizenz (`expertendatenbank`, `akademiemitglieder-verzeichnis` und die PIAAC-Kompetenzdaten); bei namentlichen
+Personendaten und Individualdaten ist das eine eigene Prüfung, die dieser Lauf nicht vorgenommen hat. Bei einigen der
+89 passt außerdem der Objekttyp nicht (etwa Stellungnahmen als `OB_04`); auch das ist unberührt.
+
 ### Format (details.format[].code)
 | Code | Format |
 |------|--------|

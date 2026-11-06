@@ -447,3 +447,58 @@ automatisch durch, 81 an den Beleg.
 fand kein Lauf einen Lizenzbeleg (Nutzungsbedingungen der Seite: 404 oder anderer Datensatz). Sie stehen weiter auf
 `OP_01` mit `LI_04`; weder ist `LI_04` belegt noch ein anderer Code. Der Haftpflicht-Eintrag beschreibt einen Datensatz,
 den es nicht gibt, und ist nicht angefasst.
+
+## Fünfte Produktionsrunde: Stichprobe der allgemeinen Einträge (6. November 2026)
+
+Die vierte Runde hatte die 58 übrigen Einträge mit `OP_01` und `LI_04` als „allgemeine Datentypen ohne eine einzelne
+Quelle“ unverändert gelassen. Die Stichprobe von zehn dieser Einträge widerlegt das: Bei allen zehn ließ sich aus der
+Beschreibung ein Herausgeber ableiten (AGEB, BDEW, EPEX SPOT, GIE, Destatis, Börsenverein, game, ZAW, Fachagentur Wind
+und Solar, NIM/GfK), und keiner stimmte vollständig. Ausgewählt wurden Einträge, bei denen die Beschreibung einen
+Herausgeber nahelegt; die Stichprobe ist deshalb nicht zufällig und nicht auf die übrigen 48 übertragbar.
+
+| | Läufe A (2) | Läufe B (2) | Opus am Beleg (2) |
+|---|---|---|---|
+| Kosten | 3,10 $ | 4,84 $ | 5,30 $ |
+| Zitate wiedergefunden | 118 / 118 | 125 / 126 (+1 von Hand) | 101 / 101 |
+
+Gesamt 13,24 $ (256 Anfragen), 1,32 $ je Eintrag und damit mehr als in Runde 4 (1,13 $), weil die Läufe erst den
+Herausgeber suchen mussten. Von 149 Feldern gingen 97 automatisch durch, 52 an den Beleg. Das eine fehlende Zitat war
+ein Destatis-Zitat über zwei Zellen derselben XLSX-Zeile; der Abgleich vergleicht Zellen einzeln. Die Zeile wurde von
+Hand bestätigt (Blatt 4, Zellen 82, 83 und 6) und in `zitate-b.json` mit dem Vermerk `von_hand` auf „gefunden“ gesetzt.
+
+**Was die Runde ergab.**
+
+- **Sechs Einträge von `OP_01` auf `OP_02`**: AGEB-Strommix (die Daten sind nur zu nicht-kommerziellen Zwecken frei),
+  BDEW-Gasabsatz (Zustimmung des Rechteinhabers), EPEX-Preise (lizenz- und gebührenpflichtig), ZAW-Werbeumsätze („Alle
+  Rechte beim Verlag“), NIM-Konsumklima (Vervielfältigung vorbehalten) und der Börsenverein-Buchmarkt. Beim Börsenverein
+  fand sich keine Lizenz, nur „© Börsenverein“ und für die Warengruppen „© Media Control“; wie bei AGF und Media Control
+  ist das Hindernis das Nutzungsrecht. `uebernehmen.mjs` stuft nur um, wenn sich die Lizenz ändert; die Klasse wurde
+  hier von Hand gesetzt.
+- **Drei Einträge trugen `LI_04` zu Unrecht**: game (`LI_05`: „Zahlen und Grafiken … dürfen mit Quellenangabe verwendet
+  werden“), Gasspeicher/GIE (`LI_05`) und Containerhäfen (`LI_03`). `OP_01` bleibt dort richtig; die alte Auflage
+  „Nutzungsrecht vorab klären“ war überholt und ist durch die Quellenangabe als Auflage ersetzt.
+- **Häfen: zwei Wortlaute für dieselbe Statistik.** Der Statistische Bericht erlaubt „Vervielfältigung und Verbreitung …
+  mit Quellenangabe“ (`LI_05`), das Impressum nennt für die Datenbank GENESIS-Online die Datenlizenz Deutschland
+  (`LI_03`). Gewählt wurde `LI_03`, weil sie die Datenbank betrifft; die Faustregel „Destatis-Publikationen = `LI_05`“
+  gilt für die Berichte.
+- **Repowering bleibt offen**: Die Fachagentur Wind und Solar erlaubt die Weitergabe mit Urhebernennung, aber nur
+  unverändert; eine Lizenz nennt die Seite nicht. Der Eintrag steht weiter auf `OP_01` mit `LI_04`, die Begründung nennt
+  die Bedingung offen. Entschieden vom Nutzer, nicht von den Läufen.
+- **Beschreibungen nannten Dinge, die es nicht gibt**: „private Erzeuger“ und „Erzeugerkategorie“ (AGEB weist nur
+  Energieträger aus), „nach Region“ (BDEW weist nur Verbrauchergruppen aus), Liegeplatzbelegung (Destatis erhebt sie
+  nicht), „Wissenschaft“ als Warengruppe mit Euro-Beträgen (nur Prozentanteile), „Leistungszuwachs“ und WindGuard als
+  Herausgeber (ausgewiesen ist die Leistung neuer Anlagen), Konjunkturerwartung als Index-Komponente (es sind
+  Einkommenserwartung, Anschaffungsneigung und Sparneigung). Die EPEX-Begründung „Gebote einzelner Händler gehören
+  nicht dazu“ war falsch: Blockgebote und anonyme Orderhistorien sind eigene Produkte.
+- **Startjahre** gingen alle an den Beleg: 1990 (AGEB), 2015 (BDEW), 2011 (GIE, Häfen), 2021 (Börsenverein, game),
+  2022 (ZAW), 2025 (Repowering). Beim NIM fand kein Lauf eine Zahl (1974 und 1980 sind der Erhebungsbeginn); das Jahr
+  steht unverändert und unbelegt.
+
+**Folgerung.** Von den 58 Einträgen mit `OP_01` und `LI_04` ohne Quelle bleiben 48; sie sind keine „allgemeinen“
+Datentypen im Sinne von „ohne Herausgeber“, sondern Einträge, die `gruppieren.mjs` nur deshalb nicht fand, weil
+`STELLEN` den Herausgeber nicht kennt. Die Tabelle um EPEX, GIE, game, ZAW, Börsenverein, NIM und AGEB zu erweitern,
+wäre der erste Schritt für eine weitere Runde.
+
+**Handhabung.** `uebernehmen.mjs` erwartet je Runde zusammengeführte Dateien (`eingabe.json`, `entscheidung.json`,
+`zitate-a/b/opus.json`, `feldvergleich.json`). Bei zwei Teileingaben wurden sie per Einmalskript vereinigt und der
+Feldvergleich über die vereinigten Läufe neu gerechnet.

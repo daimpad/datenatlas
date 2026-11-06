@@ -393,6 +393,19 @@ function main() {
     totalErrors += dupes.length;
   }
 
+  // --- Id-Schriftzeichen ---
+  // Ids bestehen aus lateinischen Buchstaben (mit den deutschen Umlauten: 135 Ids tragen ä, ö, ü oder ß, sie
+  // funktionieren und stecken in Deep Links), Ziffern und Trennzeichen. Ein Buchstabe aus einer anderen Schrift ist
+  // fast immer ein Tippfehler, etwa ein kyrillisches „а“ (U+0430) statt eines lateinischen „a“: `bnetzа-lizenzregister`
+  // war weder zu suchen noch einzutippen. Unterstriche (117 Ids) prüft das nicht; das ist eine andere Frage.
+  const FREMDE_SCHRIFT = /[^\p{Script=Latin}\p{Script=Common}]/u;
+  const badIdChars = [...idFirst.keys()].filter(id => FREMDE_SCHRIFT.test(id));
+  if (badIdChars.length) {
+    console.log(`\n⚠ ${badIdChars.length} IDs mit Buchstaben aus einer anderen Schrift:`);
+    badIdChars.slice(0, 30).forEach(id => console.log(`  ⚠ "${id}" — ${[...id].filter(c => FREMDE_SCHRIFT.test(c)).map(c => 'U+' + c.codePointAt(0).toString(16).toUpperCase().padStart(4, '0')).join(', ')}`));
+    totalWarnings += badIdChars.length;
+  }
+
   // --- Content quality report ---
   // Not counted as warnings: these are editorial debt, not schema violations,
   // and the target of "0 warnings" should stay reachable. Reported so the debt

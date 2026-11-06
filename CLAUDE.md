@@ -418,6 +418,8 @@ The validator checks:
 - Valid vocab codes (from `vocabulary.json`)
 - **Labels matching their code** — a self-worded label is a warning
 - **Globally unique ids** across all sector files
+- **Ids in einer Schrift** — ein Buchstabe außerhalb des lateinischen Alphabets (etwa ein kyrillisches „а“ statt „a“) ist eine
+  Warnung; die Umlaute in 135 Ids und die Unterstriche in 117 Ids prüft das nicht
 - **Reserved openness colors** not used as tile or sector colors
 - No structural anomalies in hierarchy
 

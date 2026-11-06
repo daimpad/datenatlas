@@ -26,7 +26,8 @@
 //   – Quellen vom Typ `beispiel`, und `statistik`-Quellen, die nach Nutzungsbedingung,
 //     Impressum oder Richtlinie aussehen (Regel 10 des Prüfauftrags).
 //   – Werte, die keine Entscheidung tragen (Opus: `offen`, kein Jahr).
-//   – Einträge, deren Datensatz beide Läufe verneinen (existenz `nein`): im Modus `review` ganz.
+//   – Einträge, deren Datensatz beide Läufe verneinen (existenz `nein`): in beiden Modi ganz (im Modus
+//     `auto` seit Runde 6; vorher wären Format und Lizenz des Qualitätsberichts auf den Eintrag gelangt).
 //
 // Schreibt nur Felder, die in der Eingabe der Runde standen; alles geht durch dieselbe
 // Beschriftung aus src/vokabular.js wie der Validator.
@@ -117,8 +118,12 @@ let wartend = 0;
 const vorschlag = (id, titel) => [A[id], B[id]].flatMap(r => r?.quellen ?? []).find(q => `quellen: ${q.title}` === titel);
 
 if (modus === 'auto') {
+  const verneint = new Set(Object.keys(A).filter(id => existenzVon(A[id]) === 'nein' && existenzVon(B[id]) === 'nein'));
   for (const f of fv) {
     if (f.stufe !== 'automatisch') continue;
+    // Wie im Modus review: Format, Lizenz oder Rhythmus eines Datensatzes, den beide Läufe nicht fanden,
+    // beschreiben die Quelle der Suche (etwa den Qualitätsbericht), nicht den Eintrag (Runde 6).
+    if (verneint.has(f.id)) { if (!zurueck.some(z => z.startsWith(`${f.id} —`))) zurueck.push(`${f.id} — Datensatz existiert laut beiden Läufen nicht: nichts übernommen`); continue; }
     if (f.aktion === 'aendern') setze(f.id, f.feld, f.wert);
     else if (f.aktion === 'anhaengen') {
       if (beschreibungOffen.has(f.id)) wartend++;

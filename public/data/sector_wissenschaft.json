@@ -8093,11 +8093,11 @@
               "name": "Expertendatenbank",
               "color": "#3d1a87",
               "details": {
-                "description": "Öffentlich zugängliche Profile von Wissenschaftler:innen mit Forschungsschwerpunkten, Publikationslisten und Kontaktdaten für Medien, Politik und Öffentlichkeit.",
+                "description": "Der Eintrag meint eine Gattung, kein bestimmtes Angebot: Verzeichnisse auskunftsbereiter Wissenschaftler:innen, über die Medien Interviewpartner und Fachleute finden. Beim Informationsdienst Wissenschaft (idw) laden seit 2025 die Pressestellen der Einrichtungen ihre Expert:innen in eine Datenbank, die nur akkreditierte Journalist:innen durchsuchen und nach Region und Sprache filtern. Hochschulen wie die Universität Stuttgart stellen Fachleute auf Webseiten mit einer Kurzbeschreibung des Arbeitsgebiets und einem persönlichen Porträt vor.",
                 "openness": {
-                  "label": "Sofort publizierbar",
-                  "explanation": "Expertendatenbanken basieren auf freiwilliger Selbstauskunft; Forschende entscheiden selbst über die Sichtbarkeit ihrer Profile.",
-                  "class": "OP_01"
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Gezählt werden Profile auskunftsbereiter Wissenschaftler:innen mit Fachgebiet und Kontaktdaten, also namentliche Angaben. Beim idw sind Datenbank und Suche akkreditierten Journalist:innen vorbehalten, eine freie Lizenz ist bei keinem Angebot belegt; das Nutzungsrecht ist vor einer Weitergabe zu klären.",
+                  "class": "OP_02"
                 },
                 "theme": {
                   "code": "TH_10",
@@ -8122,8 +8122,8 @@
                   }
                 ],
                 "license": {
-                  "code": "LI_02",
-                  "label": "CC BY 4.0"
+                  "code": "LI_04",
+                  "label": "Proprietär / Restriktiv"
                 },
                 "relevance": 4,
                 "processes": [
@@ -16208,11 +16208,11 @@
               "name": "Akademiemitglieder-Verzeichnis",
               "color": "#3d1a87",
               "details": {
-                "description": "Öffentliches Register der Mitglieder nationaler Wissenschaftsakademien mit Fachgebiet, Institutszugehörigkeit, Aufnahmedatum und Kurzbiografie.",
+                "description": "Ein gemeinsames Register gibt es nicht; jede Akademie führt ihr eigenes Mitgliederverzeichnis. Die Leopoldina listet online Name, Fach, Ort und Wahljahr und gibt das PDF „Struktur und Mitglieder“ mit den Mitgliedern je Sektion heraus (Stand 30.06.2026), die BBAW nennt Geburtsjahr, Status und Klasse sowie auf Einzelseiten Zuwahljahr, Fach und Institution, acatech zeigt je Mitglied Fachgebiet, Forschungsfeld und Mitgliedsstatus. Die Union der deutschen Akademien der Wissenschaften führt zusätzlich eine Mitgliederdatenbank mit Name, Akademie, Fachgebiet und Stadt.",
                 "openness": {
-                  "label": "Sofort publizierbar",
-                  "explanation": "Verzeichnet werden Mitglieder nationaler Wissenschaftsakademien mit Fachgebiet, Institut, Aufnahmedatum und Kurzbiografie. Es sind namentliche Daten einer öffentlichen Ehrung; private Angaben wie Wohnadressen gehören nicht dazu.",
-                  "class": "OP_01"
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Gezählt werden Mitglieder je Akademie mit Fach und Wahljahr, also namentliche Angaben zur Mitgliedschaft. Die Verzeichnisse sind getrennt; BBAW und acatech behalten die Verwendung vor, bei der Leopoldina fehlt eine Lizenz, eine Weitergabe als Datensatz ist vorab zu klären.",
+                  "class": "OP_02"
                 },
                 "theme": {
                   "code": "TH_10",
@@ -16228,17 +16228,13 @@
                 },
                 "format": [
                   {
-                    "code": "FT_02",
-                    "label": "JSON"
-                  },
-                  {
-                    "code": "FT_01",
-                    "label": "CSV"
+                    "code": "FT_07",
+                    "label": "PDF"
                   }
                 ],
                 "license": {
-                  "code": "LI_01",
-                  "label": "CC0 / Public Domain"
+                  "code": "LI_04",
+                  "label": "Proprietär / Restriktiv"
                 },
                 "relevance": 3,
                 "processes": [
@@ -16266,7 +16262,23 @@
                 "temporal": {
                   "available_from": 2011,
                   "update_frequency": "FQ_04"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "BBAW-Mitglieder (Aktuelle Akademiemitglieder)",
+                    "publisher": "Berlin-Brandenburgische Akademie der Wissenschaften",
+                    "url": "https://www.bbaw.de/die-akademie/bbaw-mitglieder",
+                    "checked": "2026-11-06",
+                    "supports": "Mitgliederliste mit Status, Klasse, Geburtsjahr; Mitgliederzahlen"
+                  },
+                  {
+                    "title": "Leopoldina – Struktur und Mitglieder 2026",
+                    "publisher": "Deutsche Akademie der Naturforscher Leopoldina",
+                    "url": "https://www.leopoldina.org/fileadmin/user_upload/Dokumente/2026_Leopoldina_Struktur_und_Mitglieder.pdf",
+                    "checked": "2026-11-06",
+                    "supports": "jährliche PDF-Ausgabe (Stand 30.06.2026): Mitglieder je Sektion, Lebensläufe der Neugewählten"
+                  }
+                ]
               }
             },
             {
@@ -71310,11 +71322,11 @@
               "name": "PIAAC Kompetenzmessung Erwachsener (Deutschland)",
               "color": "#3d1a87",
               "details": {
-                "description": "OECD-Kompetenzstudie PIAAC: direkte Messung von Lese-, Alltags- und technologischen Kompetenzen bei 16–65-Jährigen in Deutschland. Quelle: PIAAC 2012, PIAAC 2023 (Deutschland-Datei via GESIS/OECD).",
+                "description": "Die OECD-Studie PIAAC misst seit 2012 alle zehn Jahre Lesen, Alltagsmathematik und Problemlösen bei 16- bis 65-Jährigen, dazu einen Hintergrundfragebogen; in Deutschland lief die Erhebung von August 2011 bis März 2012 und von September 2022 bis Mai 2023. Die OECD stellt Einzeldatensätze als Public Use Files in SAS, SPSS und CSV bereit, deren Nutzungsbedingungen die Weitergabe an Dritte untersagen; im deutschen Public Use File sind Variablen aus Datenschutzgründen unterdrückt oder vergröbert. Das Scientific Use File mit unvergröberten Angaben, etwa zu Alter und Einkommen, gibt GESIS nur an Mitarbeitende wissenschaftlicher Einrichtungen per Datennutzungsvertrag und gegen Gebühr ab.",
                 "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Gezählt werden Testergebnisse von 16- bis 65-Jährigen in Lesen, Alltagsmathematik und technologiebasierter Problemlösung. Einzelergebnisse sind Mikrodaten; zu prüfen ist, ob Merkmalskombinationen Personen erkennbar machen, ausgewiesen sind Gruppenwerte."
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Gezählt werden Testergebnisse und Hintergrundangaben einzelner Personen im Alter von 16 bis 65 Jahren; im Public Use File sind Variablen vergröbert oder unterdrückt. Die OECD-Nutzungsbedingungen untersagen die Weitergabe an Dritte, das Scientific Use File steht nur per Datennutzungsvertrag bereit."
                 },
                 "theme": {
                   "code": "TH_02",
@@ -71335,8 +71347,8 @@
                   }
                 ],
                 "license": {
-                  "code": "LI_01",
-                  "label": "CC0 / Public Domain"
+                  "code": "LI_04",
+                  "label": "Proprietär / Restriktiv"
                 },
                 "relevance": 5,
                 "processes": [
@@ -71362,9 +71374,32 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 1998,
-                  "update_frequency": "FQ_04"
-                }
+                  "available_from": 2012,
+                  "update_frequency": "FQ_05"
+                },
+                "sources": [
+                  {
+                    "title": "PIAAC Germany – Reduced Version (ZA5845), Metadaten",
+                    "publisher": "GESIS Datenarchiv (data.gesis.org)",
+                    "url": "https://data.gesis.org/datasearchkg/Dataset/10.4232/1.12660",
+                    "checked": "2026-11-06",
+                    "supports": "Scientific Use File Zyklus 1: Feldphase 2011-08 bis 2012-03, Zugangsklasse C (nur akademische Forschung)"
+                  },
+                  {
+                    "title": "User Guide for the German PIAAC Scientific Use File (Version II)",
+                    "publisher": "GESIS",
+                    "url": "https://access.gesis.org/dbk/56325",
+                    "checked": "2026-11-06",
+                    "supports": "SUF nur akademisch nach Vertrag, SPSS/Stata; PUF kostenlos in SPSS, SAS, CSV"
+                  },
+                  {
+                    "title": "PIAAC 2023-Studie veröffentlicht",
+                    "publisher": "BMFTR",
+                    "url": "https://www.bmftr.bund.de/SharedDocs/Kurzmeldungen/DE/2024/12/PIAAC.html",
+                    "checked": "2026-11-06",
+                    "supports": "zehnjähriger Zyklus seit 2012, Zielgruppe 16–65, Ergebnisse 10.12.2024, GESIS als nationales Projektmanagement"
+                  }
+                ]
               }
             },
             {

@@ -555,3 +555,39 @@ an den Beleg. Übernommen in zwei PRs: 41 Codefelder an 26 Einträgen, dann 140 
 
 **Offen**: Startjahr beim Getreide-Eintrag (2009, von keinem Lauf geprüft), beim NIM-Konsumklima und bei der agma
 (Beginn des Angebots, nicht der Reihe); 41 Einträge mit `OP_01` und `LI_04` insgesamt, davon 22 ohne Quelle.
+
+## Siebte Produktionsrunde: drei Einträge mit Personendaten (6. November 2026)
+
+Anlass war die Korrektur von `GR_04`: Drei der 13 Einträge, die wirklich Daten über Personen beschreiben, standen auf `OP_01`
+mit freier Lizenz (Expertendatenbank, Akademiemitglieder-Verzeichnis, PIAAC). Eine Eingabe, zwei Sonnet-Läufe, Opus am
+Beleg.
+
+| | Lauf A | Lauf B | Opus am Beleg |
+|---|---|---|---|
+| Kosten | 2,34 $ | 1,87 $ | 2,12 $ |
+| Zitate wiedergefunden | 52 / 52 | 40 / 40 | 51 / 51 |
+
+Gesamt 6,33 $ (127 Anfragen), 2,11 $ je Eintrag. Von 55 Feldern gingen 33 automatisch durch, 22 an den Beleg.
+
+- **PIAAC** (`LI_04`, `OP_02`, Startjahr 2012, `FQ_05`): Die Läufe waren bei der Lizenz uneinig — Lauf A fand für die Public Use
+  Files die allgemeinen OECD-Datenbedingungen (`LI_05`), Lauf B die eigenen Nutzungsbedingungen der Public Use Files, die die
+  Weitergabe an Dritte untersagen. Opus entschied für die spezifischere Bedingung (Regel 8); das Scientific Use File bei
+  GESIS gibt es nur per Datennutzungsvertrag, gegen Gebühr und für Mitarbeitende wissenschaftlicher Einrichtungen. Die alte
+  Begründung („ausgewiesen sind Gruppenwerte“) widersprach den Einzeldatensätzen. Für die unvergröberten Mikrodaten des
+  Scientific Use File allein wäre `OP_03` richtig; der Eintrag führt die vergröberten Public Use Files.
+- **Akademiemitglieder** (`LI_04`, `OP_02`, `FT_07`): Es gibt kein gemeinsames Register, sondern ein Verzeichnis je
+  Akademie. BBAW (Verwendung nur auf Anfrage) und acatech (nur privat, nicht kommerziell) behalten die Verwendung vor, die
+  Leopoldina nennt nur eine Rechteangabe, die Akademienunion keine Lizenz. Ein Herausgeber, eine Bedingung, ein Code:
+  `LI_04` als strengste belegte Bedingung. Von den vorgeschlagenen Quellen wurden die Listenseiten und das
+  Leopoldina-PDF übernommen, nicht die Einzelprofile namentlicher Personen.
+- **Expertendatenbank** (`LI_04`, `OP_02`): Der Eintrag meint eine Gattung. Belegt sind der idw (seit 2025, Pressestellen laden
+  hoch, durchsuchbar nur für akkreditierte Journalist:innen) und Hochschul-Expertenservices wie an der Universität Stuttgart;
+  eine freie Lizenz nennt kein Angebot. Die beiden Beispiele stehen in der Beschreibung, nicht als Quellen (Typ
+  `beispiel` schreibt `uebernehmen.mjs` nie). Klasse und Lizenz setzte ich nach Opus' Empfehlung von Hand, weil sich das Skript
+  nur bei geänderter Lizenz umstuft und hier keine belegt war; `LI_04` steht für den eingeschränkten Zugang, nicht für einen
+  belegten Lizenztext. Startjahr 2006 und Format bleiben unbelegt.
+- **Zitate hinter Zugriffssperren**: GESIS, OECD und Leopoldina sperren automatische Abrufe (Cloudflare, 403). Die Läufe
+  haben keine Sperre umgangen und Archivkopien (web.archive.org) zitiert; der Abgleich fand diese Zitate dort. Die
+  Quellen, deren Zitat nur in der Archivkopie steht (Leopoldina-Verzeichnis, OECD-Public-Use-Files, Scientific-Use-File-Seiten
+  ZA5845 und ZA9009), blieben außen; übernommen sind die Quellen mit wiedergefundenem Zitat auf der Live-Seite (bei PIAAC zwei
+  GESIS-Seiten und die BMFTR-Meldung, bei den Akademien BBAW-Liste und Leopoldina-PDF).

@@ -59,7 +59,7 @@ Jeder Datentyp trägt eine von drei Öffnungsklassen. Entscheidend ist: Die Eins
 
 | Klasse | Anteil | Bedeutung |
 |---|---:|---|
-| 🟢 Sofort publizierbar | 67,3 % | kein oder minimaler Aufbereitungsbedarf |
+| 🟢 Sofort publizierbar | 67,2 % | kein oder minimaler Aufbereitungsbedarf |
 | 🟡 Nach Aufbereitung publizierbar | 29,4 % | Anonymisierung oder Aggregation nötig |
 | 🔴 Nur Metadaten publizierbar | 3,3 % | Inhalt zu sensibel, aber Existenz dokumentierbar |
 
@@ -147,7 +147,7 @@ Die Auswertung über den Gesamtbestand macht strukturelle Aussagen möglich. Die
 | Sektor | sofort publizierbar |
 |---|---:|
 | Staat und Verwaltung | 76,6 % |
-| Wissenschaft und Forschung | 74,0 % |
+| Wissenschaft und Forschung | 73,8 % |
 | Zivilgesellschaft | 71,3 % |
 | Bildung | 66,4 % |
 | Kultur | 62,5 % |

@@ -434,7 +434,7 @@ Inhaltsqualität (Hinweis, keine Warnungen):
   Aussagen über fremde Veröffentlichungspraxis: 0
   Begründungen als Schablone („Datensatz ‚X‘ ist sofort publizierbar“): 0
   Beschreibung widerspricht den Metadaten: 0
-  Datentypen mit geprüfter Quelle: 126 von 10428
+  Datentypen mit geprüfter Quelle: 128 von 10428
 ```
 
 Die ersten fünf Kennzahlen stehen auf null (die sechste siehe „Quellen und
@@ -695,6 +695,14 @@ Vier Einträge beschreiben Datensätze, die es nicht gibt (Case-Mix-Index, Wiede
 Insolvenzen, GDV-Haftpflicht); ihre Beschreibung sagt das jetzt selbst und nennt nur das Belegte, die Begründungen
 behaupten nichts mehr, Codes, Namen und Ids blieben (`scripts/datafix-nicht-belegbare-datensaetze.mjs`). Entfernt wurden sie
 nicht: Das hätte die Gesamtzahl und Deep Links berührt und ist eine eigene Entscheidung. Es bleiben 41 Einträge mit `OP_01` und `LI_04`, davon 22 ohne Quelle.
+
+Die **siebte Runde** (6,33 $) prüfte die drei Personendaten-Einträge, die nach der `GR_04`-Korrektur auf `OP_01` mit freier
+Lizenz standen. Keiner trug: PIAAC liegt als Public Use File der OECD (Weitergabe an Dritte untersagt) und als
+Scientific Use File bei GESIS (nur per Datennutzungsvertrag) vor — `LI_04`, Startjahr 2012, zehnjährig; das
+Akademie-„Register“ sind getrennte Verzeichnisse von Leopoldina, BBAW, acatech und Akademienunion (keine freie Lizenz
+belegt); die Expertendatenbank ist eine Gattung, kein bestimmtes Angebot. Alle drei stehen auf `OP_02` mit `LI_04`.
+Die Leopoldina, GESIS und die OECD sperren automatische Abrufe: Ihre Zitate stehen in Archivkopien, die Live-Seiten
+meldet der Linkcheck als nicht prüfbar.
 
 **Lücke in Regel 3 (geschlossen am 5. November 2026):** 15 der 31 alten Begründungen aus
 Runde 2 und 3 enthielten Praxisaussagen, die `claimsThirdPartyPractice()` nicht erkannte —

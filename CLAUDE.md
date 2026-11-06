@@ -299,7 +299,9 @@ korrigiert in `scripts/datafix-objekttyp-nach-gr04.mjs`. Für Betriebspanels und
 Unternehmensumfragen kam danach `OB_10` „Befragungsdaten (Organisationen)“ hinzu: Es gilt, wenn die Befragung von
 Betrieben, Unternehmen, Verbandsmitgliedern oder Trägern selbst der beschriebene Datensatz ist (Antworten oder direkt
 veröffentlichte Ergebnisse wie Geschäftsklimaindizes), nicht für Kennzahlen, die eine Befragung nur als eine von mehreren
-Quellen nutzen. 33 Einträge stehen darauf (`scripts/datafix-objekttyp-befragungen.mjs`, einzeln aus 55 Kandidaten).
+Quellen nutzen. 35 Einträge stehen darauf (`scripts/datafix-objekttyp-befragungen.mjs`, einzeln aus 55 Kandidaten, und zwei
+aus `scripts/datafix-objekttyp-kennzahlen.mjs`). Von den übrigen Kandidaten trugen 19 weitere einen falschen Objekttyp
+(Tarifbindungs- und Organisationsquoten als Textdokumente oder Metadaten); sie stehen jetzt auf `OB_09` bzw. `OB_03`.
 Ohne passenden Code bleiben ein Simulationsarchiv (`OB_05`) und ein Mischbestand aus Berichten und Raten (`OB_08`).
 
 ### Format (details.format[].code)

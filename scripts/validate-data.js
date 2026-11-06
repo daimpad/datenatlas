@@ -429,6 +429,11 @@ function main() {
       { hits: n => n.details?.openness?.class === 'OP_03'
                 && ['LI_01', 'LI_02', 'LI_03', 'LI_06'].includes(n.details?.license?.code),
         why: 'OP_03 (nur Metadaten) mit freier Lizenz' },
+      // GR_04 heißt personenbezogene Mikrodaten (siehe CLAUDE.md). 102 Einträge trugen GR_04 mit
+      // einem anderen Objekttyp; 89 waren Verzeichnisse, Berichte oder Messreihen, 13 hatten den
+      // falschen Objekttyp (datafix-granularitaet-gr04.mjs).
+      { hits: n => n.details?.granularity?.code === 'GR_04' && n.details?.object?.code !== 'OB_01',
+        why: 'GR_04 (personenbezogene Mikrodaten) ohne Objekttyp OB_01' },
     ];
 
     for (const file of sectorFiles) {          // absolute paths already

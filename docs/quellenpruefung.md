@@ -536,7 +536,10 @@ an den Beleg. Übernommen in zwei PRs: 41 Codefelder an 26 Einträgen, dann 140 
 - **Vier Einträge beschreiben Datensätze, die es nicht gibt**: Case-Mix-Index nach Fachabteilung (kein Pflichtinhalt des
   Qualitätsberichts), Wiederaufnahmerate „QUIPS“ (ein Benchmark zur Schmerztherapie am Uniklinikum Jena), Insolvenzen von
   Reiseveranstaltern (keine Statistik bei Creditreform, BMWK oder Destatis gefunden) und der GDV-Haftpflicht-Eintrag aus
-  Runde 4. Sie sind unverändert; über sie wird als Gruppe entschieden.
+  Runde 4. Als Gruppe auf das Belegte gefasst: Die Beschreibung sagt, dass der Datensatz nicht belegbar ist, und nennt, was
+  die Quelle tatsächlich enthält (Qualitätsbericht: Fallzahlen, ICD-10-Hauptdiagnosen, OPS-Prozeduren; GDV: Geschäftsentwicklung
+  der Allgemeinen Haftpflicht). Codes, Namen und Ids blieben — ohne Beleg weder Vorbehalt noch freie Lizenz —, damit steht
+  `OP_01` neben `LI_04` weiter bei diesen vier; entfernt wurde keiner (`datafix-nicht-belegbare-datensaetze.mjs`).
 - **Die Läufe wählten für denselben Eintrag verschiedene Herausgeber** (Luftfracht: Destatis oder ADV; Breitband: VATM
   oder Bundesnetzagentur; E-Commerce: HDE oder bevh). Das Verfahren hat dafür keine Regel; Opus entschied am Beleg
   nach dem Sektor des Eintrags (Luftfracht: ADV, weil die Flughäfen die Daten erzeugen).

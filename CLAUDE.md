@@ -258,6 +258,7 @@ timeline and process navigation degrade.
 | `OB_07` | Transaktionsdaten |
 | `OB_08` | Metadaten |
 | `OB_09` | Statistik / Aggregatdaten |
+| `OB_10` | Befragungsdaten (Organisationen) |
 
 ### Granularity (details.granularity.code)
 | Code | Granularität |
@@ -294,9 +295,12 @@ zählt die Kombination jetzt unter den Metadaten-Widersprüchen. **Offen**: Drei
 Lizenz (`expertendatenbank`, `akademiemitglieder-verzeichnis` und die PIAAC-Kompetenzdaten); bei namentlichen
 Personendaten und Individualdaten ist das eine eigene Prüfung, die dieser Lauf nicht vorgenommen hat. Bei 37 der
 89 passte außerdem der Objekttyp nicht (etwa Stellungnahmen als `OB_04`, Sternkataloge als `OB_05`); einzeln
-korrigiert in `scripts/datafix-objekttyp-nach-gr04.mjs`. Sechs bleiben ohne passenden Code (Betriebspanels und
-Unternehmensumfragen als `OB_07`/`OB_04`, Simulationsarchive als `OB_05`); das Vokabular kennt keine Befragungsdaten
-von Organisationen.
+korrigiert in `scripts/datafix-objekttyp-nach-gr04.mjs`. Für Betriebspanels und
+Unternehmensumfragen kam danach `OB_10` „Befragungsdaten (Organisationen)“ hinzu: Es gilt, wenn die Befragung von
+Betrieben, Unternehmen, Verbandsmitgliedern oder Trägern selbst der beschriebene Datensatz ist (Antworten oder direkt
+veröffentlichte Ergebnisse wie Geschäftsklimaindizes), nicht für Kennzahlen, die eine Befragung nur als eine von mehreren
+Quellen nutzen. 33 Einträge stehen darauf (`scripts/datafix-objekttyp-befragungen.mjs`, einzeln aus 55 Kandidaten).
+Ohne passenden Code bleiben ein Simulationsarchiv (`OB_05`) und ein Mischbestand aus Berichten und Raten (`OB_08`).
 
 ### Format (details.format[].code)
 | Code | Format |

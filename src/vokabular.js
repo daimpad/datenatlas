@@ -51,6 +51,7 @@ export const VOKABULAR = {
     { code: 'OB_07', label: 'Transaktionsdaten' },
     { code: 'OB_08', label: 'Metadaten' },
     { code: 'OB_09', label: 'Statistik / Aggregatdaten' },
+    { code: 'OB_10', label: 'Befragungsdaten (Organisationen)' },
   ],
   granularity: [
     { code: 'GR_01', label: 'Einzelereignis / Rohdaten' },

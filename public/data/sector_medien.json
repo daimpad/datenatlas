@@ -16730,11 +16730,11 @@
               "name": "Statistik der Webradio-Streams privater Hörfunkanbieter",
               "color": "#9d174d",
               "details": {
-                "description": "Monatliche Streamingzahlen (Unique Listener, Listening Hours) der 50 reichweitenstärksten deutschen Webradio-Streams privater Anbieter, zertifiziert durch Arbeitsgemeinschaft Media-Analyse (agma).",
+                "description": "Die ma IP Audio der Arbeitsgemeinschaft Media-Analyse (agma) weist viermal im Jahr für jedes teilnehmende Webradio- und Musikstreaming-Angebot die Sessions in der durchschnittlichen Woche, im 14-Tageszeitraum und im Monat, die durchschnittliche Sessiondauer und die Hörstunden aus. Gemessen wird logfilebasiert; Angaben zu Hörern enthält sie nicht, und die Teilnahme steht jeder Form von Online-Audio offen. Die Ergebnisse stehen in einem Webfrontend für teilnehmende Publisher und Channels sowie Werbeagenturen und Werbetreibende aus dem Kreis der agma.",
                 "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Gezählt werden Unique Listener und Hörstunden der reichweitenstärksten Webradio-Streams privater Anbieter je Monat. Zähleinheit ist der Stream, nicht der Hörer; das Nutzungsrecht an den zertifizierten Messwerten ist vor einer Weitergabe zu klären."
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Gezählt werden Sessions und Hörstunden je Angebot und Zeitraum, aber keine Hörer; einzelne Nutzer sind nicht erkennbar. Hindernis ist das Nutzungsrecht: Die Ergebnisse der ma IP Audio sind auf Teilnehmer und den agma-Kreis beschränkt, die Nutzungsrichtlinien untersagen die Weitergabe."
                 },
                 "theme": {
                   "code": "TH_04",
@@ -16788,7 +16788,23 @@
                 "temporal": {
                   "available_from": 2003,
                   "update_frequency": "FQ_08"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "ma IP Audio – Berichterstattung",
+                    "publisher": "Arbeitsgemeinschaft Media-Analyse (agma)",
+                    "url": "https://www.agma-mmc.de/media-analyse/ma-ip-audio/berichterstattung",
+                    "checked": "2026-11-06",
+                    "supports": "Ausweisungseinheiten, quartalsweise Berichterstattung, Zugang nur für Teilnehmer und agma-Kreis"
+                  },
+                  {
+                    "title": "ma IP Audio Management Summary",
+                    "publisher": "Media-Micro-Census GmbH",
+                    "url": "https://www.agma-mmc.de/fileadmin/user_upload/Webradio/ma_IP_Audio_Management_Summary.pdf",
+                    "checked": "2026-11-06",
+                    "supports": "Sessions statt Streamstarts, viermal jährlich veröffentlicht"
+                  }
+                ]
               }
             },
             {
@@ -52229,11 +52245,11 @@
               "name": "Digitale Werbung Formatstatistik",
               "color": "#9d174d",
               "details": {
-                "description": "Marktanteile digitaler Werbeformate (Display, Video, Search, Social) in Deutschland.",
+                "description": "Jährliche Netto-Werbeeinnahmen im Segment Internet in Deutschland nach Werbeform, in Mio. Euro: Search, Display Ads (einschließlich Video-Streaming und Social Network Sites), In-Stream Video, Classifieds und In-Stream Audio; Marktanteile weist die Tabelle nicht aus. Der Zentralverband der deutschen Werbewirtschaft (ZAW) veröffentlicht sie in seinem Jahrbuch (PDF), dessen Tabelle 2024 und 2025 zeigt; Search und Display Ads sind Schätzungen des BVDW und seines Online-Vermarkterkreises (OVK).",
                 "openness": {
-                  "class": "OP_01",
-                  "label": "Sofort publizierbar",
-                  "explanation": "Marktanteile digitaler Werbeformate sind Summen über den Markt; einzelne Vermarkter und Kampagnen sind darin nicht erkennbar. Die restriktive Lizenz der Erhebung bleibt zu beachten."
+                  "class": "OP_02",
+                  "label": "Nach Aufbereitung publizierbar",
+                  "explanation": "Gezählt werden Netto-Werbeeinnahmen in Mio. Euro je Werbeform im Internet-Segment, also Branchenschätzungen ohne Personenbezug. Hindernis ist das Nutzungsrecht: Das ZAW-Jahrbuch trägt den Vorbehalt „Alle Rechte beim Verlag“, eine Weitergabe ist vorab zu klären."
                 },
                 "theme": {
                   "code": "TH_04",
@@ -52281,9 +52297,39 @@
                   }
                 ],
                 "temporal": {
-                  "available_from": 2000,
+                  "available_from": 2024,
                   "update_frequency": "FQ_04"
-                }
+                },
+                "sources": [
+                  {
+                    "title": "ZAW Jahrbuch 2026 – Netto-Werbeeinnahmen erfassbarer Werbeträger in Deutschland 2024 und 2025",
+                    "publisher": "Zentralverband der deutschen Werbewirtschaft ZAW e. V.",
+                    "url": "https://zaw.de/app/uploads/2026/09/ZAW_Jahrbuch_0826_ansicht.pdf",
+                    "checked": "2026-11-06",
+                    "supports": "Search, Display Ads (incl. Video-Streaming, Social Network Sites), In-Stream Video in Mio. Euro"
+                  },
+                  {
+                    "title": "Werbemarkt nach Medien",
+                    "publisher": "Zentralverband der deutschen Werbewirtschaft ZAW e. V.",
+                    "url": "https://zaw.de/branchendaten/werbemarkt-nach-medien/",
+                    "checked": "2026-11-06",
+                    "supports": "Jahresbilanz 2025 mit Search und Display Ads"
+                  },
+                  {
+                    "title": "OVK-Report 2026/02",
+                    "publisher": "Online-Vermarkterkreis im Bundesverband Digitale Wirtschaft (BVDW) e. V.",
+                    "url": "https://www.bvdw.org/wp-content/uploads/2026/09/OVK-Report-2026_02.pdf",
+                    "checked": "2026-11-06",
+                    "supports": "Umsatz und Anteil Display/Video 2024–2026, Methodik-Scope, Rechtshinweis"
+                  },
+                  {
+                    "title": "OVK-Prognose 2/2026",
+                    "publisher": "Bundesverband Digitale Wirtschaft (BVDW) e. V.",
+                    "url": "https://www.bvdw.org/news-und-publikationen/ovk-prognose-2-2026/",
+                    "checked": "2026-11-06",
+                    "supports": "Video-Anteil 51 % (2025) und 53 % (2026), Erscheinungsdatum"
+                  }
+                ]
               }
             },
             {

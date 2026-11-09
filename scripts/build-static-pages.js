@@ -273,6 +273,33 @@ function orgPage(sector, org, siblings, vocab) {
 }
 
 // ── Entry point ─────────────────────────────────────────────────────────────
+// Entfernte Organisationsseiten: GitHub Pages kann nicht serverseitig weiterleiten, deshalb steht unter der alten
+// Adresse eine kleine Seite mit sofortigem meta refresh und kanonischem Verweis auf das Ziel. Google wertet das wie
+// eine dauerhafte Weiterleitung. Diese Seiten stehen nicht in der Sitemap und tragen kein Analytics.
+// Ziel muss eine erzeugte Seite sein; buildStaticPages() bricht sonst ab.
+const MOVED = {
+  // S-S: der staat-Knoten „Bibliotheken & Medienzentren“ ist aufgelöst, derselbe Einrichtungstyp steht unter kultur.
+  'sektor/staat/bibliotheken-medienzentren.html': 'sektor/kultur/oeffentliche-bibliotheken.html',
+};
+
+function redirectPage(from, to) {
+  const depth = from.split('/').length - 1;
+  const rel = '../'.repeat(depth) + to;
+  return `<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Verschoben – Datenatlas</title>
+<link rel="canonical" href="${SITE}/${to}">
+<meta http-equiv="refresh" content="0; url=${rel}">
+</head>
+<body>
+<p>Diese Seite ist umgezogen: <a href="${rel}">${SITE}/${to}</a></p>
+</body>
+</html>
+`;
+}
+
 export function buildStaticPages(dataDir) {
   const read = f => JSON.parse(fs.readFileSync(path.join(dataDir, f), 'utf8'));
   const main = read('main.json');
@@ -295,6 +322,13 @@ export function buildStaticPages(dataDir) {
       files.push({ fileName: `sektor/${sector.id}/${org.id}.html`, source: orgPage(sector, org, orgs, vocab) });
       urls.push({ loc: `${SITE}/sektor/${sector.id}/${org.id}.html`, priority: '0.6', changefreq: 'monthly' });
     }
+  }
+
+  const built = new Set(files.map(f => f.fileName));
+  for (const [from, to] of Object.entries(MOVED)) {
+    if (!built.has(to)) throw new Error(`Weiterleitungsziel fehlt: ${to}`);
+    if (built.has(from)) throw new Error(`Weiterleitung überdeckt eine erzeugte Seite: ${from}`);
+    files.push({ fileName: from, source: redirectPage(from, to) });
   }
 
   files.push({ fileName: 'sektor/pages.css', source: PAGES_CSS });

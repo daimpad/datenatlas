@@ -93,6 +93,12 @@ would hurt the domain. Keep it that way when extending.
 The crawlable sector outline in `index.html` links these pages rather than the
 hash deep links; without that they would be reachable only via the sitemap.
 
+**Removed organisation pages get a redirect page**, not a 404: GitHub Pages cannot redirect server-side, so
+`MOVED` in `build-static-pages.js` emits a page with an immediate `meta refresh` and a canonical link to the
+target (Google treats that like a permanent redirect). Redirect pages are not in the sitemap. The first entry is
+`staat/bibliotheken-medienzentren` → `kultur/oeffentliche-bibliotheken` (S-S); the Search Console listed it as 404.
+**When you remove or rename an L2, add it to `MOVED`** — the build fails if the target page does not exist.
+
 ---
 
 ## Data Hierarchy
@@ -804,9 +810,10 @@ Two rules the Search Console taught us the hard way:
 GoatCounter, cookiefrei. The snippet lives once in `scripts/analytics.js` and
 reaches the pages two ways: the `analytics()` plugin injects it into
 `index.html` and `ueber.html`, `build-static-pages.js` writes it into the 159
-generated pages. **161 of 164 built HTML files carry it** — the three without
-are `expand.html`, `begruendungen.html` (internal tools, `noindex`) and the
-Google verification file (plain text). Change the endpoint in the module, never
+generated pages. **161 of 165 built HTML files carry it** — the four without
+are `expand.html`, `begruendungen.html` (internal tools, `noindex`), the
+Google verification file (plain text) and the redirect page for
+`/sektor/staat/bibliotheken-medienzentren.html`. Change the endpoint in the module, never
 in a page.
 
 `apply: 'build'` keeps the dev server out of the statistics.
